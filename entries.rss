@@ -1,1 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Craven</title><link>http://hibariya.github.com/</link><dc:date>2011-09-09</dc:date><description>歓喜 幸福 象さん</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20110909.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20110909.html"><title>2011/09/09</title><description><![CDATA[<h1 id="a0">hibariya.github.com</h1><p>test test</p><h1 id="a1">masterにpushでいいんでしたっけ</h1><p>反映されるかテスト</p>]]></description><dc:date>2011-09-09</dc:date><link>http://hibariya.github.com/entries/20110909.html</link><author>hibariya</author></item></rdf:RDF>
+<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Craven</title><link>http://hibariya.github.com/</link><dc:date>2011-09-11</dc:date><description>歓喜 幸福 象さん</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20110911.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110909.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20110911.html"><title>2011/09/11</title><description><![CDATA[<h1 id="a0">Retterというgemをつくった</h1><p><a href="https://github.com/hibariya/retter">Retter</a></p><p>きちんと日記をつける習慣がないのでどうにかしたくて、出来る限り楽をするための日記生成ツールを作った。
+<a href="https://github.com/hibariya/retter">Retter</a> という名前の理由は、片手で打てるから。</p><p>日記をつける習慣がうまく根付かない理由のうち、どうにか解決できそうな問題は2つくらいあって、</p><ol>
+<li>書くことがない</li>
+<li>書き始めるまでの心理的な障壁</li>
+</ol>
+<p>で、1は日記生成ツールを育てるという暫く終わりそうにないテーマが追加されたので一旦解決。
+2もこのツールをきちんと育てることで解決できるんじゃないかなあと思った。</p><p>このツールの基本的な機能がだいたい出来上がる直前にJekilやOctopressの存在を知ったので、モチベーションが少し下がってきたとこ。</p><h1 id="a1">楽に日記を書くために解決できそうなこと</h1><p>最低限動くようなところまで開発して、<a href="https://rubygems.org/gems/retter">Gem</a>も公開するところまでの作業はひと通りできた。
+当初、楽をするために考えたありったけのわがままは、</p><ol>
+<li>エディタはターミナルで使い慣れてるやつ(vim)がいい</li>
+<li>一瞬で起動して欲しい</li>
+<li>どのファイルに書くかとか考えたくない</li>
+<li>下書きのままブラウザですぐ確認したい</li>
+<li>ローカルでも本番と同じように動いて欲しい</li>
+<li>RSSフィードは勝手に吐いて欲しい</li>
+<li>気が向いたらrackでも動いて欲しい</li>
+<li>サーバに反映するのめんどくさい</li>
+</ol>
+<p>ひとまず、ここ一週間でなんとなく対応できそうなものに対応してみた。</p><ul>
+<li>$EDITOR次第で使うエディタが選べるよ</li>
+<li>ファイルシステム上のどこに居ようがretterと打つだけで今日の記事を書くファイルが開くよ</li>
+<li>デフォルトブラウザですぐ（本番と遜色ない程度に）プレビューできる</li>
+<li>サーバ起動したりしなくてもサイト全体をオフラインでかくにんできる</li>
+<li>HTMLを生成するときにフィードも勝手に生成する</li>
+<li>rackupできるけど静的HTMLだからherokuかgithub pagesにpushするだけで反映できるよ</li>
+<li>たとえロリポップでも、ファイルの配置さえできてしまえばきっと動く</li>
+<li>gitで管理するから何だか楽しそう</li>
+<li>コマンド自体はruby1.9以降なら多分動く。でもWindowsでは多分動かない</li>
+</ul>
+<p>とりあえず暫く様子をみようかなあ。</p><p><a href="https://github.com/hibariya/retter/blob/master/README.md">README</a>の英語がひどいのは十分承知してるんだけど、日本語だけで書かないことで最低限の義務を果たした気分になっています。</p>]]></description><dc:date>2011-09-11</dc:date><link>http://hibariya.github.com/entries/20110911.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110909.html"><title>2011/09/09</title><description><![CDATA[<h1 id="a0">hibariya.github.com</h1><p>test test</p><h1 id="a1">masterにpushでいいんでしたっけ</h1><p>反映されるかテスト</p>]]></description><dc:date>2011-09-09</dc:date><link>http://hibariya.github.com/entries/20110909.html</link><author>hibariya</author></item></rdf:RDF>
