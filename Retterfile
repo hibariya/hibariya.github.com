@@ -1,6 +1,12 @@
+#!/usr/bin/env ruby
 # coding: utf-8
 
 url         'http://hibariya.github.com/'
 title       'Joy Luck Craven'
 description '歓喜 幸福 象さん'
 author      'hibariya'
+
+#hook :publish do
+#  system "cd #{config.retter_home}"
+#  system 'git push origin master'
+#end
