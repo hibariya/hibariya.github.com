@@ -10,6 +10,5 @@ after :rebind, :commit
 
 after :commit do
   system "cd #{config.retter_home}"
-  puts 'git push origin master'
-  #system 'git push origin master'
+  system 'git push origin master'
 end
