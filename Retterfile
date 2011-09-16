@@ -6,7 +6,10 @@ title       'Joy Luck Craven'
 description '歓喜 幸福 象さん'
 author      'hibariya'
 
-#hook :publish do
-#  system "cd #{config.retter_home}"
-#  system 'git push origin master'
-#end
+after :rebind, :commit
+
+after :commit do
+  system "cd #{config.retter_home}"
+  puts 'git push origin master'
+  #system 'git push origin master'
+end
