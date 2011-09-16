@@ -19,7 +19,11 @@ HTML生成以降の手順をショートカットした場合の手順を想像�
 <li>手順3-5を単純にまとめたサブコマンドをひとつ用意する</li>
 <li>HTML生成にフックしていろいろできる機能を用意する</li>
 </ol>
-<p>デプロイ方法としてgitだけではなくてrsyncとかもあり得るなら2がいい。</p>]]></description><dc:date>2011-09-16</dc:date><link>http://hibariya.github.com/entries/20110916.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110915.html"><title>2011/09/15</title><description><![CDATA[<h1 id="a0">thorについて</h1><p><a href="https://github.com/wycats/thor"></a><a href="https://github.com/wycats/thor">https://github.com/wycats/thor</a></p><ul>
+<p>デプロイ方法としてgitだけではなくてrsyncとかもあり得るなら2がいい。</p><h1 id="a1">retter 0.0.3</h1><p>それで早速バージョンを上げた。</p><p>やったこと:</p><ol>
+<li>依存しているgemのバージョンを明記するようにした</li>
+<li>いくつかのコマンドにフックするコールバックを定義できるようにした</li>
+</ol>
+<p>コールバックを無効にする --silent オプションを入れるのを忘れていたので次のに入れる。</p>]]></description><dc:date>2011-09-16</dc:date><link>http://hibariya.github.com/entries/20110916.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110915.html"><title>2011/09/15</title><description><![CDATA[<h1 id="a0">thorについて</h1><p><a href="https://github.com/wycats/thor"></a><a href="https://github.com/wycats/thor">https://github.com/wycats/thor</a></p><ul>
 <li>引数とかオプションの扱いがとっても面倒なrakeの代わりにうってつけのthor。</li>
 <li>Rubyで手っ取り早くコマンドのようなものを作るのに適しているthor。</li>
 <li>Railsのジェネレータみたいなことが一瞬で実現できるthor。</li>
