@@ -32,6 +32,27 @@
 <div id="entries">
 <article><div class="entry">
 <h1 class="date">
+<a href="./entries/20110918.html">2011/09/18</a>
+</h1>
+<h1 id="a0">ファイルを直接弄るような細かい作業</h1>
+<p>作業ディレクトリを一旦クリーンに戻したいような場面。
+retterで生成するサイトはgitで管理することを前提にしているせいもあって、直にgitコマンドを実行したい場面がどうしても出てくるみたい。
+例えば、<code>git reset</code> したいときとか、<code>git commit --amend</code> したいときとか。</p>
+<p>ファイルシステム上のどこに居ようが編集から公開までをできるというメリットはできるだけ殺したくなくて、いちいちリポジトリに移動してgitコマンドを実行するのはちょっと嫌だ。</p>
+<p>そこで新たに <code>rette home</code> というコマンドを作ってみた。
+<code>home</code> サブコマンドは<code>$RETTER_HOME</code>に移動して新たなシェルを起動する。</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ retter home
+  (retter) pwd
+  /path/to/retter_home
+  (retter) exit
+  bye
+</pre></div>
+</div>
+<p>これで、いくつものどうでもいい機能の実装を免れるきがする。</p>
+</div>
+</article><article><div class="entry">
+<h1 class="date">
 <a href="./entries/20110916.html">2011/09/16</a>
 </h1>
 <h1 id="a0">記事公開までの手順を楽にしたい</h1>
