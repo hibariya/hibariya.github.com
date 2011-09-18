@@ -8,7 +8,10 @@ retterで生成するサイトはgitで管理することを前提にしてい�
   (retter) exit
   bye
 </pre></div>
-</div><p>これで、いくつものどうでもいい機能の実装を免れるきがする。</p>]]></description><dc:date>2011-09-18</dc:date><link>http://hibariya.github.com/entries/20110918.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110916.html"><title>2011/09/16</title><description><![CDATA[<h1 id="a0">記事公開までの手順を楽にしたい</h1><p>今時点でretterを使うとこんな感じの5ステップくらいで記事が公開できるようになる。</p><ol>
+</div><p>これで、いくつものどうでもいい機能の実装を免れるきがする。</p><h1 id="a1">直近でやること</h1><ol>
+<li>書きかけの記事の有無とか、今まで何個記事を書いたかとか表示するサブコマンド（status）がほしい</li>
+<li>もっときれいなソースコードが読みたい（リファクタリング）</li>
+</ol>]]></description><dc:date>2011-09-18</dc:date><link>http://hibariya.github.com/entries/20110918.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110916.html"><title>2011/09/16</title><description><![CDATA[<h1 id="a0">記事公開までの手順を楽にしたい</h1><p>今時点でretterを使うとこんな感じの5ステップくらいで記事が公開できるようになる。</p><ol>
 <li>記事を編集する (retter)</li>
 <li>記事を確認する (retter preview)</li>
 <li>記事を生成する (retter rebind)</li>
