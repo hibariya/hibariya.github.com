@@ -10,7 +10,7 @@ author      'hibariya'
 after :rebind, :commit
 
 after :commit do
-  if yes?("Deploy now?")
+  if yes?("Deploy now? [yes/no]")
     system "cd #{config.retter_home}"
     system 'git push origin master'
   end
