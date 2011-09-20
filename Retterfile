@@ -7,7 +7,7 @@ description '歓喜 幸福 象さん'
 author      'hibariya'
 
 
-#after :rebind, :commit
+after :rebind, :commit
 
 after :commit do
   system "cd #{config.retter_home}"
