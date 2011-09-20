@@ -6,6 +6,9 @@ title       'Joy Luck Crab'
 description '歓喜 幸福 象さん'
 author      'hibariya'
 
+after :edit do
+  preview if yes?("Preview now? [yes/no]")
+end
 
 after :rebind, :commit
 
