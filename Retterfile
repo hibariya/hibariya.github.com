@@ -17,4 +17,23 @@ after :commit do
     system "cd #{config.retter_home}"
     system 'git push origin master'
   end
+
+  if yes?("Selkma now [yes/no]")
+    STDOUT.sync = true
+
+    print 'Username: '
+    username = STDIN.gets.strip
+    print 'Password: '
+    system "stty -echo"
+    password =  STDIN.gets.strip
+    system "stty echo"
+
+    a = Mechanize.new
+    a.get('https://www.hatena.ne.jp/login')
+    form = a.page.forms.first
+    form.field_with(name: 'name').value username
+    form.field_with(name: 'password').value password
+    form.click_button
+
+  end
 end

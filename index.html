@@ -33,6 +33,193 @@
 <div id="entries">
 <article><div class="entry">
 <h1 class="date">
+<a href="./entries/20111002.html">2011/10/02</a>
+</h1>
+<h1 id="a0">RETTER (レッター) Flyweight diary workflow.</h1>
+<p>手軽さを追求した記事作成ツール。以下のような特徴があります。</p>
+<ul>
+<li>CLIでの操作を前提としています</li>
+<li>どこ（cwd）にいてもすぐに記事を編集できます（Markdown）</li>
+<li>オフラインで簡単にプレビューできます</li>
+<li>だいたいどんなサーバ上でも動作します（静的HTMLまたはRackアプリとして）</li>
+<li>RSSフィードを吐きます</li>
+<li>トラックバック、コメントなどの機能はありません</li>
+<li>コールバックを設定することでさらに手数を減らすことができます</li>
+</ul>
+<h2>インストール - Installation</h2>
+<p><em>ruby-1.9.2</em> or later is required.</p>
+<div class="CodeRay">
+  <div class="code"><pre>  gem install retter
+</pre></div>
+</div>
+<h2>使い方 - Usage</h2>
+<h3>新規サイト生成 - New site</h3>
+<p><code>retter new</code>で新しいサイトのひな形を生成し、依存ライブラリをインストールし、gitリポジトリを初期化します。</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ retter new my_sweet_diary
+</pre></div>
+</div>
+<p>生成するファイルはHAMLテンプレート、設定ファイル、デフォルトのCSS、Rackアプリ用の設定などです。</p>
+<h3>初期設定 - Settings</h3>
+<h4>$EDITOR</h4>
+<p><strong>retter requires <code>$EDITOR</code> variable.</strong>
+Retterで記事を編集する際には任意のエディタが起動します。そのためには<code>$EDITOR</code>環境変数が設定されている必要があります。
+大抵の場合は設定されていると思いますが、もし設定されていなければ<code>~/.bash_profile</code>や<code>~/.zshenv</code>などに追記する必要があります。</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ echo "export EDITOR=vim" &gt;&gt; ~/.bash_profile
+  $ . ~/.bash_profile
+</pre></div>
+</div>
+<h4>$RETTER_HOME</h4>
+<p>ファイルシステム上のどこに居ても<code>retter</code>コマンドを使って編集から公開まで行えるよう、 事前に<code>$RETTER_HOME</code>環境変数を設定します。</p>
+<p>You can use <code>retter</code> command anywhere, If you set <code>$RETTER_HOME</code> variable.</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ echo "export RETTER_HOME=/path/to/my_sweet_diary" &gt;&gt; ~/.bash_profile
+  $ . ~/.bash_profile
+</pre></div>
+</div>
+<p>作業ディレクトリにRetterfileがある場合は、そのディレクトリが<code>$RETTER_HOME</code>に指定されているものとして動作します。</p>
+<h3>記事を書く - Write an article</h3>
+<p><code>retter</code>コマンドは設定されているエディタを起動します。今のところMarkdown形式で記事を書くことができます。</p>
+<p><code>retter</code> opens <code>$EDITOR</code>. Write an article with Markdown.</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ retter
+</pre></div>
+</div>
+<p>記事をひと通り書き終えたり確認したくなったら、エディタの機能で記事を保存して終了してください。
+保存された記事は、その段階ではまだ下書きの状態です。</p>
+<h3>プレビュー - Preview</h3>
+<p>下書きの記事を確認するには<code>preview</code>サブコマンドを使います（デフォルトブラウザが起動します）。</p>
+<p><code>preview</code> opens the draft article by your default browser.</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ retter preview
+</pre></div>
+</div>
+<p>気に入らない箇所を見つけたらページを閉じて、また<code>retter</code>コマンドで記事を編集します。
+満足のいく文章が出来上がるまで編集とプレビューを繰り返しましょう。</p>
+<h3>記事の生成 - Bind</h3>
+<p>下書きが完成したら、記事をそのサイトのページとして生成します。
+<code>bind</code>, <code>rebind</code> は下書きの記事をその日の記事として保存し、すべてのHTMLを再生成します。</p>
+<p><code>bind</code> and <code>rebind</code> binds the draft article. And re-generates actual html web pages. All html pages will be overwritten.</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ retter bind
+</pre></div>
+</div>
+<h3>サイト全体の確認 - Browse Offline</h3>
+<p>生成されるすべてのページは静的HTMLですから、オフラインでも自分のマシンで全体的な見栄えを確認できます。
+<code>open</code>サブコマンドはデフォルトブラウザを起動してサイトのトップページを開きます。</p>
+<p><code>open</code> sub-command opens your (static) website by your default browser.</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ retter open
+</pre></div>
+</div>
+<p>デプロイ先のサーバではRackアプリとして起動しているということであれば、rackupで確認しましょう。</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ retter home # `home` opens a new shell in $RETTER_HOME.
+  (retter) bundle exec rackup
+</pre></div>
+</div>
+<h3>記事の公開 - Publish</h3>
+<p>記事をインターネット上に公開するには、必要なすべてのファイルを git リポジトリにコミットしリモートサーバに push、または単純にファイルをアップロードします。</p>
+<p>To publish, use the git command. Or, upload the file to your server.</p>
+<h4>Basic flow</h4>
+<p>最も原始的な方法は、gitコマンドを直接使う方法です。</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ cd $RETTER_HOME
+  $ git add .
+  $ git commit -m 'commit message'
+  $ git push [remote] [branch]     # heroku, github pages, etc..
+</pre></div>
+</div>
+<h4>Using shortcut commands</h4>
+<p>いくつかのショートカットを使い、コミットメッセージを書くことを省略したりすることができます。</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ retter commit # Shortcut of `git add . ; git commit -m 'Retter commit'`
+  $ retter home   # Open a new shell at $RETTER_HOME
+  (retter) git push [remote] [branch] # heroku, github pages, etc..
+</pre></div>
+</div>
+<p>後述するコールバックを設定しておくことで、さらに手数を減らすことも可能です。</p>
+<h3>特定の日付の記事を編集する - Edit article (specific date).</h3>
+<p>昨日、明日、過去や未来の日付を指定して記事を編集・プレビューするには、 <code>--date</code> オプションを用います。</p>
+<p><code>--date</code> option is available in <code>edit</code> <code>preview</code> sub-command.</p>
+<div class="CodeRay">
+  <div class="code"><pre>  retter edit --date 20110101
+  retter preview --date 20110101
+</pre></div>
+</div>
+<h3>コールバック - Callbacks</h3>
+<p>コールバックはいくつかのサブコマンド（edit bind rebind commit）の実行直後に自動的に実行されます。
+コールバックを定義しておくことで、手数の多い割に代わり映えのしない作業を自動化することができます。</p>
+<p>Callback is enabled in <code>edit</code>, <code>bind</code>, <code>rebind</code> and <code>commit</code> sub-command.</p>
+<h4>Syntax</h4>
+<div class="CodeRay">
+  <div class="code"><pre>  after [command], [invoke command <span style="color:#080;font-weight:bold">or</span> proc]
+</pre></div>
+</div>
+<h4>HTMLの生成時、デプロイまでの作業を自動化する - Auto deploying</h4>
+<p>以下のような内容を Retterfile に記述しておくことで、rebind または bind が実行されると即座に公開までの処理も実行されます。</p>
+<p>In Retterfile:</p>
+<div class="CodeRay">
+  <div class="code"><pre>  after <span style="color:#A60">:rebind</span>, <span style="color:#A60">:commit</span> <span style="color:#888"># git commit</span>
+
+  after <span style="color:#A60">:commit</span> <span style="color:#080;font-weight:bold">do</span>       <span style="color:#888"># deploy</span>
+    system <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">cd </span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>config.retter_home<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
+    system <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">git push origin master</span><span style="color:#710">'</span></span>
+  <span style="color:#080;font-weight:bold">end</span>
+</pre></div>
+</div>
+<p>もし毎回デプロイするのが煩わしい場合は、<code>--silent</code>オプションを付けることでコールバックを回避できます。
+その場合は<code>retter rebind</code>ではなく<code>retter rebind --silent</code>を実行することになります。</p>
+<p><code>--silent</code> option skip the callback.</p>
+<h4>エディタを終了したとき即座にプレビューする - Auto preview</h4>
+<p>記事を編集しエディタを終了したあとブラウザでプレビューしたい場合は、<code>edit</code>へのコールバックを設定できます。</p>
+<div class="CodeRay">
+  <div class="code"><pre>  after <span style="color:#A60">:edit</span> <span style="color:#080;font-weight:bold">do</span>
+    preview <span style="color:#080;font-weight:bold">if</span> yes?(<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">Preview now? [yes/no]</span><span style="color:#710">"</span></span>)
+  <span style="color:#080;font-weight:bold">end</span>
+</pre></div>
+</div>
+<p>もしもコールバックを毎回実行したくない場合、<code>--silent</code>を指定する以外に、上記のようには確認プロンプトを表示させるという方法もあります。</p>
+<h3>組込みテーマ - Pre-installed themes</h3>
+<p>スタイルシートを変更することでテーマを変更できます。HTMLのヘッダを変更するには <code>layouts/retter.html.haml</code> を編集します。
+スタイルシートの指定を変更し、<code>retter rebind</code>コマンドを実行するとすべてのページが更新されます。</p>
+<h4>Default</h4>
+<div class="CodeRay">
+  <div class="code"><pre>    %link{href: '/stylesheets/default.css', media: 'screen', rel: 'stylesheet', type: 'text/css'}
+</pre></div>
+</div>
+<p><img src="http://hibariya.github.com/images/theme_samples/retter_default.jpg" alt="Default"></p>
+<h4>Orange</h4>
+<div class="CodeRay">
+  <div class="code"><pre>    %link{href: '/stylesheets/orange.css', media: 'screen', rel: 'stylesheet', type: 'text/css'}
+</pre></div>
+</div>
+<p><img src="http://hibariya.github.com/images/theme_samples/retter_orange.jpg" alt="Orange"></p>
+<h3>HTMLの修正 - HTML Layout</h3>
+<p>HTMLのレイアウト自体を変更するには<code>layouts/</code>ディレクトリ以下のHAMLファイルを修正します。
+これらのファイルを変更したとしても、<code>retter rebind</code>コマンドを実行するまでは反映されません。</p>
+<div class="CodeRay">
+  <div class="code"><pre>layouts
+  |-- entries.html.haml
+  |-- entry.html.haml
+  |-- index.html.haml
+  |-- profile.html.haml
+  `-- retter.html.haml
+</pre></div>
+</div>
+<p><code>retter.html.haml</code>はHTML宣言を含めた全体のHTMLが含まれています。
+<code>entry.html.haml</code>を変更することで記事のレイアウトを変更することができます。
+その他のファイルは実際のURLと名前が対応しています。</p>
+<h2>LICENSE</h2>
+<p>The MIT License</p>
+<p>Copyright (c) 2011 hibariya</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+</div>
+</article><article><div class="entry">
+<h1 class="date">
 <a href="./entries/20110919.html">2011/09/19</a>
 </h1>
 <h1 id="a0">スタイルシートを追加してテーマを変えられるようにした</h1>
@@ -105,19 +292,6 @@ HTML生成以降の手順をショートカットした場合の手順を想像�
 <li>いくつかのコマンドにフックするコールバックを定義できるようにした</li>
 </ol>
 <p>コールバックを無効にする --silent オプションを入れるのを忘れていたので次のに入れる。</p>
-</div>
-</article><article><div class="entry">
-<h1 class="date">
-<a href="./entries/20110915.html">2011/09/15</a>
-</h1>
-<h1 id="a0">thorについて</h1>
-<p><a href="https://github.com/wycats/thor"></a><a href="https://github.com/wycats/thor">https://github.com/wycats/thor</a></p>
-<ul>
-<li>引数とかオプションの扱いがとっても面倒なrakeの代わりにうってつけのthor。</li>
-<li>Rubyで手っ取り早くコマンドのようなものを作るのに適しているthor。</li>
-<li>Railsのジェネレータみたいなことが一瞬で実現できるthor。</li>
-<li>出力に色をつけるのだってとっても簡単なthor。</li>
-</ul>
 </div>
 </article><article><div class="entry">
 <h1 class="date">
