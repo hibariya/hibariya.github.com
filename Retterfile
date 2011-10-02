@@ -19,22 +19,41 @@ after :commit do
   end
 
   if yes?("Bookmark now? [yes/no]")
-    STDOUT.sync = true
-
-    print 'Username: '
-    username = STDIN.gets.strip
-    print 'Password: '
-
-    system "stty -echo"
-    password =  STDIN.gets.strip
-    system "stty echo"
-
     a = Mechanize.new
-    a.get('https://www.hatena.ne.jp/login')
-    form = a.page.forms.first
-    form.field_with(name: 'name').value username
-    form.field_with(name: 'password').value password
-    form.click_button
+    login_hatena(a)
 
+    host = URI.parse(config.url).host
+    #entries = git.commits.first.diffs.select {|d| d.new_file && d.b_path =~ %r{entries/} }.map(&:b_path)
+    entries = git.commits.first.diffs.select {|d| d.b_path =~ %r{entries/} }.map(&:b_path)
+
+    entries.each do |entry|
+      a.get("http://b.hatena.ne.jp/entry/#{host}/#{entry}")
+      a.page.form_with(name: 'addBookmarkForm', &:click_buttom)
+    end
   end
+end
+
+def login_hatena(agent)
+  STDOUT.sync = true
+  agent.get('https://www.hatena.ne.jp/login')
+
+  form = agent.page.forms.first
+  form.field_with(name: 'name').value username_prompt
+  form.field_with(name: 'password').value password_prompt
+  form.click_button
+end
+
+def username_prompt
+  print 'Username: '
+  STDIN.gets.strip
+end
+
+def password_prompt
+  print 'Password: '
+
+  system "stty -echo"
+  password =  STDIN.gets.strip
+  system "stty echo"
+
+  password
 end
