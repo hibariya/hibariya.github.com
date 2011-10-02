@@ -18,12 +18,13 @@ after :commit do
     system 'git push origin master'
   end
 
-  if yes?("Selkma now [yes/no]")
+  if yes?("Bookmark now? [yes/no]")
     STDOUT.sync = true
 
     print 'Username: '
     username = STDIN.gets.strip
     print 'Password: '
+
     system "stty -echo"
     password =  STDIN.gets.strip
     system "stty echo"
