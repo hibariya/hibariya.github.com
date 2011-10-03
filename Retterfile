@@ -13,47 +13,65 @@ end
 after :rebind, :commit
 
 after :commit do
+  def login_hatena(agent)
+    STDOUT.sync = true
+    agent.get('https://www.hatena.ne.jp/login')
+
+    form = agent.page.forms.first
+    form.field_with(name: 'name').value = username_prompt
+    form.field_with(name: 'password').value = password_prompt
+    form.click_button
+  end
+
+  def username_prompt
+    print 'Username: '
+    STDIN.gets.strip
+  end
+
+  def password_prompt
+    print 'Password: '
+
+    system "stty -echo"
+    password =  STDIN.gets.strip
+    system "stty echo"
+
+    password
+  end
+
   if yes?("Deploy now? [yes/no]")
     system "cd #{config.retter_home}"
     system 'git push origin master'
   end
 
   if yes?("Bookmark now? [yes/no]")
+    require 'mechanize'
+
     a = Mechanize.new
+    a.user_agent_alias = 'Mac FireFox'
+    a.cookie_jar.clear!
+
     login_hatena(a)
 
-    host = URI.parse(config.url).host
+    git = Grit::Repo.new("#{config.retter_home}/.git")
+    git.working_dir = config.retter_home
+
     #entries = git.commits.first.diffs.select {|d| d.new_file && d.b_path =~ %r{entries/} }.map(&:b_path)
-    entries = git.commits.first.diffs.select {|d| d.b_path =~ %r{entries/} }.map(&:b_path)
+    entries = git.commits.first.diffs.select {|d| d.b_path =~ %r{entries/} }.map {|d| "#{config.url}/#{d.b_path}" }
 
     entries.each do |entry|
-      a.get("http://b.hatena.ne.jp/entry/#{host}/#{entry}")
-      a.page.form_with(name: 'addBookmarkForm', &:click_buttom)
+      begin
+        a.get('http://b.hatena.ne.jp')
+        a.page.links.detect {|l| l.text.strip == '追加' }.click
+
+        form = a.page.forms.detect {|f| f.action == '/hibariya/add.confirm' }
+        form.field_with(name: 'url').value = entry
+        form.click_button
+
+        form = a.page.forms.detect {|f| f.action == '/hibariya/add.edit' }
+        form.click_button
+      rescue Net::HTTP::Persistent::Error
+        retry
+      end
     end
   end
-end
-
-def login_hatena(agent)
-  STDOUT.sync = true
-  agent.get('https://www.hatena.ne.jp/login')
-
-  form = agent.page.forms.first
-  form.field_with(name: 'name').value username_prompt
-  form.field_with(name: 'password').value password_prompt
-  form.click_button
-end
-
-def username_prompt
-  print 'Username: '
-  STDIN.gets.strip
-end
-
-def password_prompt
-  print 'Password: '
-
-  system "stty -echo"
-  password =  STDIN.gets.strip
-  system "stty echo"
-
-  password
 end

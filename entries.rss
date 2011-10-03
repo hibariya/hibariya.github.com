@@ -14,19 +14,18 @@
   greet            <span style="color:#888"># =&gt; "fart"</span>
   <span style="color:#038;font-weight:bold">self</span>.greet       <span style="color:#888"># =&gt; "fart"</span>
 </pre></div>
-</div><p>でもこれはモジュール関数ではない。</p><p>るりまの説明をよく見てみると「モジュール関数とは、プライベートメソッドであると同時に モジュールの特異メソッドでもあるようなメソッドです。」と書いてあった。</p><p>Rubyでprivateメソッドと言えば、呼び出しのときにレシーバを指定できないメソッドのことを指す。試しに、よく例に使われる<code>Math.#sqrt</code>で確認してみる。</p><div class="CodeRay">
+</div><p>でもこれはモジュール関数じゃなかった。</p><p>るりまの説明をよく見てみると「モジュール関数とは、プライベートメソッドであると同時に モジュールの特異メソッドでもあるようなメソッドです。」と書いてある。ぎぎぎ何だか面倒くさいな。</p><p>Rubyでprivateメソッドと言えば、呼び出しのときにレシーバを指定できないメソッドのことを指す。試しに、よく例に使われる<code>Math.#sqrt</code>で確認してみる。</p><div class="CodeRay">
   <div class="code"><pre>  <span style="color:#036;font-weight:bold">Math</span>.sqrt(<span style="color:#00D;font-weight:bold">100</span>) <span style="color:#888"># =&gt; 10.0</span>
 
   include <span style="color:#036;font-weight:bold">Math</span>
   sqrt(<span style="color:#00D;font-weight:bold">100</span>)      <span style="color:#888"># =&gt; 10.0</span>
-  <span style="color:#038;font-weight:bold">self</span>.sqrt      <span style="color:#888"># =&gt; NoMethodError: private method `sqrt' called for ...</span>
+  <span style="color:#038;font-weight:bold">self</span>.sqrt(<span style="color:#00D;font-weight:bold">100</span>) <span style="color:#888"># =&gt; NoMethodError: private method `sqrt' called for ...</span>
 </pre></div>
 </div><p>うげげ、本当だ。今まで知らずに使っていたけれど、きみはprivateだったのか。なんで？</p><p>その後何日間もこのことで悩み続けてしまったのだけど、敗因は「モジュール関数がprivateメソッドとはどういうことだろう」と考えてしまっていたからだった。
-「<em>関数</em>にレシーバがないのはそれはそうですよね」と考えればよかったらしい。</p><p>Rubyには関数風メソッドやモジュール関数とよばれるものが存在するけど、厳密には関数は存在しない。
+「<em>関数</em>にレシーバがないのは自然だなあ」と思えたら何も悩むことはなかったのだけど。</p><p>モジュール関数は実際はメソッドだけど、あくまで関数のように使うためのものなのだった。</p><p>Rubyには関数風メソッドやモジュール関数とよばれるものが存在するけど、厳密には関数は存在しない。
 モジュール関数がprivateなのは、メソッドでありながら、レシーバを意識しない「関数」のようなものになるためだった。
-モジュール関数はprivateなので、レシーバは自動的にselfになるけど、その関数とselfの間にはなんの関わりもない（ものとして実装されるべきなのだった）。
-確かに「関数」と名前がついているものにレシーバがあるほうがよっぽどおかしい。
-モジュール関数はあくまでメソッドだけど、あくまで関数のように使うためのものなのだった。</p>]]></description><dc:date>2011-10-03</dc:date><link>http://hibariya.github.com/entries/20111003.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110919.html"><title>2011/09/19</title><description><![CDATA[<h1 id="a0">スタイルシートを追加してテーマを変えられるようにした</h1><p>Retter に <a href="https://github.com/hibariya/retter/commit/f00208e985a5cafd4bbe357f4153a247caf83ab4">Orange という テーマ</a> を作ってもらって、cssの切り替えだけで見た目が変わるようにしてもらった。餅は餅屋だなあ。</p>]]></description><dc:date>2011-09-19</dc:date><link>http://hibariya.github.com/entries/20110919.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110918.html"><title>2011/09/18</title><description><![CDATA[<h1 id="a0">ファイルを直接弄るような細かい作業</h1><p>作業ディレクトリを一旦クリーンに戻したいような場面。
+モジュール関数はprivateなので、レシーバは自動的にselfになるけど、その関数とselfの間にはなんの関わりもない（ものとして実装されるべき）。</p><p>確かに「関数」と名前がついているものにレシーバがあるほうがよっぽどおかしい。
+関数だと思って使ってたのに、突然<code>self.sqrt(pya)</code>とかやられた日にはびっくりしてしまう。ということを理解するのにかなり時間がかかったというお話でした。</p>]]></description><dc:date>2011-10-03</dc:date><link>http://hibariya.github.com/entries/20111003.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110919.html"><title>2011/09/19</title><description><![CDATA[<h1 id="a0">スタイルシートを追加してテーマを変えられるようにした</h1><p>Retter に <a href="https://github.com/hibariya/retter/commit/f00208e985a5cafd4bbe357f4153a247caf83ab4">Orange という テーマ</a> を作ってもらって、cssの切り替えだけで見た目が変わるようにしてもらった。餅は餅屋だなあ。</p>]]></description><dc:date>2011-09-19</dc:date><link>http://hibariya.github.com/entries/20110919.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110918.html"><title>2011/09/18</title><description><![CDATA[<h1 id="a0">ファイルを直接弄るような細かい作業</h1><p>作業ディレクトリを一旦クリーンに戻したいような場面。
 retterで生成するサイトはgitで管理することを前提にしているせいもあって、直にgitコマンドを実行したい場面がどうしても出てくるみたい。
 例えば、<code>git reset</code> したいときとか、<code>git commit --amend</code> したいときとか。</p><p>ファイルシステム上のどこに居ようが編集から公開までをできるというメリットはできるだけ殺したくなくて、いちいちリポジトリに移動してgitコマンドを実行するのはちょっと嫌だ。</p><p>そこで新たに <code>rette home</code> というコマンドを作ってみた。
 <code>home</code> サブコマンドは<code>$RETTER_HOME</code>に移動して新たなシェルを起動する。</p><div class="CodeRay">
