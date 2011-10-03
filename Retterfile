@@ -56,7 +56,7 @@ after :commit do
     git.working_dir = config.retter_home
 
     #entries = git.commits.first.diffs.select {|d| d.new_file && d.b_path =~ %r{entries/} }.map(&:b_path)
-    entries = git.commits.first.diffs.select {|d| d.b_path =~ %r{entries/} }.map {|d| "#{config.url}/#{d.b_path}" }
+    entries = git.commits.first.diffs.select {|d| d.b_path =~ %r{entries/} }.map {|d| config.url + d.b_path }
 
     entries.each do |entry|
       begin
@@ -71,6 +71,8 @@ after :commit do
         form.click_button
       rescue Net::HTTP::Persistent::Error
         retry
+      rescue
+        puts $!.class, $!.message
       end
     end
   end
