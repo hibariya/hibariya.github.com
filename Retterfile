@@ -55,8 +55,8 @@ after :commit do
     git = Grit::Repo.new("#{config.retter_home}/.git")
     git.working_dir = config.retter_home
 
-    #entries = git.commits.first.diffs.select {|d| d.new_file && d.b_path =~ %r{entries/} }.map(&:b_path)
-    entries = git.commits.first.diffs.select {|d| d.b_path =~ %r{entries/} }.map {|d| config.url + d.b_path }
+    # 選ぶようにしたい
+    entries = git.commits.first.diffs.select {|d| d.new_file && d.b_path =~ %r{entries/} }.map(&:b_path)
 
     entries.each do |entry|
       begin
