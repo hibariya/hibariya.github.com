@@ -47,9 +47,9 @@
 <p>fart</p>
 
 <h1 id="a2">
-<a href="./entries/20111012/a2.html">テスト</a>
+<a href="./entries/20111012/a2.html">retter 0.1.0</a>
 </h1>
-<p>てすてす。</p>
+<p><a href="http://hibariya.github.com/entries/20111012/a0.html">記事ごとにPermlinkがつくようにした</a>やつをマージしてバージョンを上げました。</p>
 </article><article><h1 class="date">
 <a href="./entries/20111010.html">2011/10/10</a>
 </h1>
@@ -62,31 +62,31 @@
 <div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Foo</span>
     <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">bar</span>
-      <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">bar</span><span style="color:#710">'</span></span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">bar</span><span style="color:#710">'</span></span>
     <span style="color:#080;font-weight:bold">end</span>
   <span style="color:#080;font-weight:bold">end</span>
 
-  <span style="color:#036;font-weight:bold">Foo</span>.new.bar <span style="color:#888"># =&gt; "bar"</span>
+  <span style="color:#036;font-weight:bold">Foo</span>.new.bar <span style="color:#777"># =&gt; "bar"</span>
 </pre></div>
 </div>
 <p>同じような方法でトップレベルにメソッドを定義すると、なぜかその場で使えるようになる。</p>
 <div class="CodeRay">
   <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">bar</span>
-  <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">bar</span><span style="color:#710">'</span></span>
+  <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">bar</span><span style="color:#710">'</span></span>
 <span style="color:#080;font-weight:bold">end</span>
 
-bar <span style="color:#888"># =&gt; "bar"</span>
+bar <span style="color:#777"># =&gt; "bar"</span>
 </pre></div>
 </div>
 <p>もちろん、同じようなことはクラス定義式内ではできない。</p>
 <div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Foo</span>
     <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">baz</span>
-      <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">baz</span><span style="color:#710">'</span></span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">baz</span><span style="color:#710">'</span></span>
     <span style="color:#080;font-weight:bold">end</span>
 
     baz
-  <span style="color:#080;font-weight:bold">end</span> <span style="color:#888"># =&gt; NameError: undefined local variable or method...</span>
+  <span style="color:#080;font-weight:bold">end</span> <span style="color:#777"># =&gt; NameError: undefined local variable or method...</span>
 </pre></div>
 </div>
 <p>どうやらクラス定義式の中とトップレベルでは、同じようにメソッド定義式を書いても少し動きが違ってくるらしい。</p>
@@ -97,8 +97,8 @@ bar <span style="color:#888"># =&gt; "bar"</span>
 <div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">carol</span>; <span style="color:#080;font-weight:bold">end</span>
 
-  <span style="color:#036;font-weight:bold">Object</span>.private_instance_methods.grep <span style="background-color:#fff0ff"><span style="color:#404">/</span><span style="color:#808">carol</span><span style="color:#404">/</span></span> <span style="color:#888"># =&gt; [:carol]</span>
-  <span style="color:#036;font-weight:bold">Object</span>.private_methods.grep <span style="background-color:#fff0ff"><span style="color:#404">/</span><span style="color:#808">carol</span><span style="color:#404">/</span></span>          <span style="color:#888"># =&gt; [:carol]</span>
+  <span style="color:#036;font-weight:bold">Object</span>.private_instance_methods.grep <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">carol</span><span style="color:#404">/</span></span> <span style="color:#777"># =&gt; [:carol]</span>
+  <span style="color:#036;font-weight:bold">Object</span>.private_methods.grep <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">carol</span><span style="color:#404">/</span></span>          <span style="color:#777"># =&gt; [:carol]</span>
 </pre></div>
 </div>
 <p>トップレベルで定義したメソッドがどうしてすぐに呼べるのか、言葉のうえでは結論が出た感じになってしまったけれど、話はもう少しだけ続く。</p>
@@ -108,50 +108,50 @@ bar <span style="color:#888"># =&gt; "bar"</span>
 <div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Object</span>
     <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">bob</span>
-      <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">ボブですよ</span><span style="color:#710">'</span></span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">ボブですよ</span><span style="color:#710">'</span></span>
     <span style="color:#080;font-weight:bold">end</span>
   <span style="color:#080;font-weight:bold">end</span>
 
-  <span style="color:#036;font-weight:bold">Object</span>.new.bob <span style="color:#888"># =&gt; "ボブですよ"</span>
-  <span style="color:#036;font-weight:bold">Object</span>.bob     <span style="color:#888"># =&gt; "ボブですよ"</span>
-  bob            <span style="color:#888"># =&gt; "ボブですよ"</span>
+  <span style="color:#036;font-weight:bold">Object</span>.new.bob <span style="color:#777"># =&gt; "ボブですよ"</span>
+  <span style="color:#036;font-weight:bold">Object</span>.bob     <span style="color:#777"># =&gt; "ボブですよ"</span>
+  bob            <span style="color:#777"># =&gt; "ボブですよ"</span>
 </pre></div>
 </div>
 <p>なぜだろう。なぜならObjectはClassのインスタンスだけど、同時にObject（のサブクラス）のインスタンスでもあるから、らしい。
 堂々巡りで混乱してくる。</p>
 <div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#036;font-weight:bold">Object</span>.class           <span style="color:#888"># =&gt; Class</span>
-  <span style="color:#036;font-weight:bold">Object</span>.class.ancestors <span style="color:#888"># =&gt; [Class, Module, Object, Kernel, BasicObject]</span>
-  <span style="color:#036;font-weight:bold">Object</span>.is_a?(<span style="color:#036;font-weight:bold">Object</span>)   <span style="color:#888"># =&gt; true</span>
+  <div class="code"><pre>  <span style="color:#036;font-weight:bold">Object</span>.class           <span style="color:#777"># =&gt; Class</span>
+  <span style="color:#036;font-weight:bold">Object</span>.class.ancestors <span style="color:#777"># =&gt; [Class, Module, Object, Kernel, BasicObject]</span>
+  <span style="color:#036;font-weight:bold">Object</span>.is_a?(<span style="color:#036;font-weight:bold">Object</span>)   <span style="color:#777"># =&gt; true</span>
 </pre></div>
 </div>
 <p>でもこの振舞いのおかげで、トップレベルに定義したメソッドはどこでも使えるようになる。何処に居ようがselfの祖先はObjectだから。</p>
 <p>こんなふうに。</p>
 <div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">alice</span>
-    puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">hi</span><span style="color:#710">'</span></span>
+    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">hi</span><span style="color:#710">'</span></span>
   <span style="color:#080;font-weight:bold">end</span>
 
   <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Bar</span>
-    alice <span style="color:#888"># "hi"と表示</span>
+    alice <span style="color:#777"># "hi"と表示</span>
 
     <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">foo</span>
       alice
     <span style="color:#080;font-weight:bold">end</span>
 
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#038;font-weight:bold">self</span>.<span style="color:#06B;font-weight:bold">foo</span>
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">foo</span>
       alice
     <span style="color:#080;font-weight:bold">end</span>
   <span style="color:#080;font-weight:bold">end</span>
 
   <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">BarBar</span>
-    alice <span style="color:#888"># "hi"と表示</span>
+    alice <span style="color:#777"># "hi"と表示</span>
   <span style="color:#080;font-weight:bold">end</span>
 
-  <span style="color:#036;font-weight:bold">Bar</span>.foo     <span style="color:#888"># "hi"と表示</span>
-  <span style="color:#036;font-weight:bold">Bar</span>.new.foo <span style="color:#888"># "hi"と表示</span>
+  <span style="color:#036;font-weight:bold">Bar</span>.foo     <span style="color:#777"># "hi"と表示</span>
+  <span style="color:#036;font-weight:bold">Bar</span>.new.foo <span style="color:#777"># "hi"と表示</span>
 
-  alice       <span style="color:#888"># "hi"と表示</span>
+  alice       <span style="color:#777"># "hi"と表示</span>
 </pre></div>
 </div>
 <p>もちろん、Object.#aliceはprivateメソッドなので、<code>self.alice</code>とか<code>Object.alice</code>と書くと例外NoMethodErrorが発生する。
@@ -167,29 +167,29 @@ bar <span style="color:#888"># =&gt; "bar"</span>
 <p>こういうふうに。</p>
 <div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">MyModule</span>
-    extend <span style="color:#038;font-weight:bold">self</span>
+    extend <span style="color:#069">self</span>
 
     <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">greet</span>
-      <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">fart</span><span style="color:#710">'</span></span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">fart</span><span style="color:#710">'</span></span>
     <span style="color:#080;font-weight:bold">end</span>
   <span style="color:#080;font-weight:bold">end</span>
 
-  <span style="color:#036;font-weight:bold">MyModule</span>.greet   <span style="color:#888"># =&gt; "fart"</span>
+  <span style="color:#036;font-weight:bold">MyModule</span>.greet   <span style="color:#777"># =&gt; "fart"</span>
 
   include <span style="color:#036;font-weight:bold">MyModule</span>
-  greet            <span style="color:#888"># =&gt; "fart"</span>
-  <span style="color:#038;font-weight:bold">self</span>.greet       <span style="color:#888"># =&gt; "fart"</span>
+  greet            <span style="color:#777"># =&gt; "fart"</span>
+  <span style="color:#069">self</span>.greet       <span style="color:#777"># =&gt; "fart"</span>
 </pre></div>
 </div>
 <p>でもこれはモジュール関数じゃなかった。</p>
 <p>るりまの説明をよく見てみると「モジュール関数とは、プライベートメソッドであると同時に モジュールの特異メソッドでもあるようなメソッドです。」と書いてある。ぎぎぎ何だか面倒くさいな。</p>
 <p>Rubyでprivateメソッドと言えば、呼び出しのときにレシーバを指定できないメソッドのことを指す。試しに、よく例に使われる<code>Math.#sqrt</code>で確認してみる。</p>
 <div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#036;font-weight:bold">Math</span>.sqrt(<span style="color:#00D;font-weight:bold">100</span>) <span style="color:#888"># =&gt; 10.0</span>
+  <div class="code"><pre>  <span style="color:#036;font-weight:bold">Math</span>.sqrt(<span style="color:#00D">100</span>) <span style="color:#777"># =&gt; 10.0</span>
 
   include <span style="color:#036;font-weight:bold">Math</span>
-  sqrt(<span style="color:#00D;font-weight:bold">100</span>)      <span style="color:#888"># =&gt; 10.0</span>
-  <span style="color:#038;font-weight:bold">self</span>.sqrt(<span style="color:#00D;font-weight:bold">100</span>) <span style="color:#888"># =&gt; NoMethodError: private method `sqrt' called for ...</span>
+  sqrt(<span style="color:#00D">100</span>)      <span style="color:#777"># =&gt; 10.0</span>
+  <span style="color:#069">self</span>.sqrt(<span style="color:#00D">100</span>) <span style="color:#777"># =&gt; NoMethodError: private method `sqrt' called for ...</span>
 </pre></div>
 </div>
 <p>うげげ、本当だ。今まで知らずに使っていたけれど、きみはprivateだったのか。なんで？</p>
