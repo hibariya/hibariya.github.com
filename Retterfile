@@ -39,8 +39,7 @@ after :commit do
   end
 
   if yes?("Deploy now? [yes/no]")
-    system "cd #{config.retter_home}"
-    system 'git push origin master'
+    system "cd #{config.retter_home} && git push origin master"
   end
 
   if yes?("Bookmark now? [yes/no]")
