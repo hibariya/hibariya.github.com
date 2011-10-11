@@ -31,11 +31,12 @@
 <div id="page">
 <div id="content">
 <div id="entries">
-<article><div class="entry">
-<h1 class="date">
+<article><h1 class="date">
 <a href="./entries/20111010.html">2011/10/10</a>
 </h1>
-<h1 id="a0">Rubyのトップレベルについて整理する</h1>
+<h1 id="a0">
+<a href="./entries/20111010/a0.html">Rubyのトップレベルについて整理する</a>
+</h1>
 <p>トップレベルでメソッドを定義したとき、なぜそれがいきなり使えるようになるのかを説明できなかったので調べたり人にきいたりした。</p>
 <h2>メソッドについての理解（インスタンスメソッド）</h2>
 <p>クラス定義式の中で（特異メソッドでない）メソッドを定義すると、メソッドはそのクラスのインスタンスメソッドメソッドになる。</p>
@@ -136,12 +137,12 @@ bar <span style="color:#888"># =&gt; "bar"</span>
 </div>
 <p>もちろん、Object.#aliceはprivateメソッドなので、<code>self.alice</code>とか<code>Object.alice</code>と書くと例外NoMethodErrorが発生する。
 レシーバを記述しない関数風の呼び方が強く奨められているのは、モジュール関数と同じく、関数っぽい使い方をすることが想定されているからなのでしょうね。</p>
-</div>
-</article><article><div class="entry">
-<h1 class="date">
+</article><article><h1 class="date">
 <a href="./entries/20111003.html">2011/10/03</a>
 </h1>
-<h1 id="a0">モジュール関数がprivateな理由</h1>
+<h1 id="a0">
+<a href="./entries/20111003/a0.html">モジュール関数がprivateな理由</a>
+</h1>
 <p><a href="http://rurema.clear-code.com/1.9.2/method/Module/i/module_function.html">モジュール関数</a>
 というものがあって、ぼくはこれまでモジュール関数を「モジュールをレシーバにしても呼び出せるしincludeして呼び出すこともできる何だか便利なもの」としか認識していなかった。</p>
 <p>こういうふうに。</p>
@@ -181,19 +182,19 @@ bar <span style="color:#888"># =&gt; "bar"</span>
 モジュール関数はprivateなので、レシーバは自動的にselfになるけど、その関数とselfの間にはなんの関わりもない（ものとして実装されるべき）。</p>
 <p>確かに「関数」と名前がついているものにレシーバがあるほうがよっぽどおかしい。
 関数だと思って使ってたのに、突然<code>self.sqrt(pya)</code>とかやられた日にはびっくりしてしまう。ということを理解するのにかなり時間がかかったというお話でした。</p>
-</div>
-</article><article><div class="entry">
-<h1 class="date">
+</article><article><h1 class="date">
 <a href="./entries/20110919.html">2011/09/19</a>
 </h1>
-<h1 id="a0">スタイルシートを追加してテーマを変えられるようにした</h1>
+<h1 id="a0">
+<a href="./entries/20110919/a0.html">スタイルシートを追加してテーマを変えられるようにした</a>
+</h1>
 <p>Retter に <a href="https://github.com/hibariya/retter/commit/f00208e985a5cafd4bbe357f4153a247caf83ab4">Orange という テーマ</a> を作ってもらって、cssの切り替えだけで見た目が変わるようにしてもらった。餅は餅屋だなあ。</p>
-</div>
-</article><article><div class="entry">
-<h1 class="date">
+</article><article><h1 class="date">
 <a href="./entries/20110918.html">2011/09/18</a>
 </h1>
-<h1 id="a0">ファイルを直接弄るような細かい作業</h1>
+<h1 id="a0">
+<a href="./entries/20110918/a0.html">ファイルを直接弄るような細かい作業</a>
+</h1>
 <p>作業ディレクトリを一旦クリーンに戻したいような場面。
 retterで生成するサイトはgitで管理することを前提にしているせいもあって、直にgitコマンドを実行したい場面がどうしても出てくるみたい。
 例えば、<code>git reset</code> したいときとか、<code>git commit --amend</code> したいときとか。</p>
@@ -209,17 +210,19 @@ retterで生成するサイトはgitで管理することを前提にしてい�
 </pre></div>
 </div>
 <p>これで、いくつものどうでもいい機能の実装を免れるきがする。</p>
-<h1 id="a1">直近でやること</h1>
+
+<h1 id="a1">
+<a href="./entries/20110918/a1.html">直近でやること</a>
+</h1>
 <ol>
 <li>書きかけの記事の有無とか、今まで何個記事を書いたかとか表示するサブコマンド（status）がほしい</li>
 <li>もっときれいなソースコードが読みたい（リファクタリング）</li>
-</ol>
-</div>
-</article><article><div class="entry">
-<h1 class="date">
+</ol></article><article><h1 class="date">
 <a href="./entries/20110916.html">2011/09/16</a>
 </h1>
-<h1 id="a0">記事公開までの手順を楽にしたい</h1>
+<h1 id="a0">
+<a href="./entries/20110916/a0.html">記事公開までの手順を楽にしたい</a>
+</h1>
 <p>今時点でretterを使うとこんな感じの5ステップくらいで記事が公開できるようになる。</p>
 <ol>
 <li>記事を編集する (retter)</li>
@@ -248,7 +251,10 @@ HTML生成以降の手順をショートカットした場合の手順を想像�
 <li>HTML生成にフックしていろいろできる機能を用意する</li>
 </ol>
 <p>デプロイ方法としてgitだけではなくてrsyncとかもあり得るなら2がいい。</p>
-<h1 id="a1">retter 0.0.3</h1>
+
+<h1 id="a1">
+<a href="./entries/20110916/a1.html">retter 0.0.3</a>
+</h1>
 <p>それで早速バージョンを上げた。</p>
 <p>やったこと:</p>
 <ol>
@@ -256,17 +262,16 @@ HTML生成以降の手順をショートカットした場合の手順を想像�
 <li>いくつかのコマンドにフックするコールバックを定義できるようにした</li>
 </ol>
 <p>コールバックを無効にする --silent オプションを入れるのを忘れていたので次のに入れる。</p>
-</div>
-</article><article><div class="entry">
-<h1 class="date">
+</article><article><h1 class="date">
 <a href="./entries/20110913.html">2011/09/13</a>
 </h1>
-<h1 id="a0">Pull requestがマージされた</h1>
+<h1 id="a0">
+<a href="./entries/20110913/a0.html">Pull requestがマージされた</a>
+</h1>
 <p>日曜くらいに送った初の Pull request が今日マージされた。
 1行削除するだけの簡単なパッチだったけど。会社のデスクの上で踊りだしそうになってやめた。</p>
 <p>今日は、日付は覚えてないけど出来事は覚えている類の特別な日になった。これでやっとひとつ進めるね。
 今日は<a href="http://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%83%BC%E3%81%AE%E6%97%A5">プログラマの日</a>らしいよ。</p>
-</div>
 </article>
 </div>
 </div>
