@@ -1,99 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2011-09-09</dc:date><description>歓喜 幸福 象さん</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20110909.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110911.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110913.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110916.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110918.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110919.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111003.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111010.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111012.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111018.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20110909.html"><title>2011/09/09</title><description><![CDATA[<h1 id="a0">hibariya.github.com</h1><p>test test</p><h1 id="a1">masterにpushでいいんでしたっけ</h1><p>反映されるかテスト</p>]]></description><dc:date>2011-09-09</dc:date><link>http://hibariya.github.com/entries/20110909.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110911.html"><title>2011/09/11</title><description><![CDATA[<h1 id="a0">Retterというgemをつくった</h1><p><a href="https://github.com/hibariya/retter">Retter</a></p><p>きちんと日記をつける習慣がないのでどうにかしたくて、出来る限り楽をするための日記生成ツールを作った。
-<a href="https://github.com/hibariya/retter">Retter</a> という名前の理由は、片手で打てるから。</p><p>日記をつける習慣がうまく根付かない理由のうち、どうにか解決できそうな問題は2つくらいあって、</p><ol>
-<li>書くことがない</li>
-<li>書き始めるまでの心理的な障壁</li>
-</ol>
-<p>で、1は日記生成ツールを育てるという暫く終わりそうにないテーマが追加されたので一旦解決。
-2もこのツールをきちんと育てることで解決できるんじゃないかなあと思った。</p><p>このツールの基本的な機能がだいたい出来上がる直前にJekilやOctopressの存在を知ったので、モチベーションが少し下がってきたとこ。</p><h1 id="a1">楽に日記を書くために解決できそうなこと</h1><p>最低限動くようなところまで開発して、<a href="https://rubygems.org/gems/retter">Gem</a>も公開するところまでの作業はひと通りできた。
-当初、楽をするために考えたありったけのわがままは、</p><ol>
-<li>エディタはターミナルで使い慣れてるやつ(vim)がいい</li>
-<li>一瞬で起動して欲しい</li>
-<li>どのファイルに書くかとか考えたくない</li>
-<li>下書きのままブラウザですぐ確認したい</li>
-<li>ローカルでも本番と同じように動いて欲しい</li>
-<li>RSSフィードは勝手に吐いて欲しい</li>
-<li>気が向いたらrackでも動いて欲しい</li>
-<li>サーバに反映するのめんどくさい</li>
-</ol>
-<p>ひとまず、ここ一週間でなんとなく対応できそうなものに対応してみた。</p><ul>
-<li>$EDITOR次第で使うエディタが選べるよ</li>
-<li>ファイルシステム上のどこに居ようがretterと打つだけで今日の記事を書くファイルが開くよ</li>
-<li>デフォルトブラウザですぐ（本番と遜色ない程度に）プレビューできる</li>
-<li>サーバ起動したりしなくてもサイト全体をオフラインでかくにんできる</li>
-<li>HTMLを生成するときにフィードも勝手に生成する</li>
-<li>rackupできるけど静的HTMLだからherokuかgithub pagesにpushするだけで反映できるよ</li>
-<li>たとえロリポップでも、ファイルの配置さえできてしまえばきっと動く</li>
-<li>gitで管理するから何だか楽しそう</li>
-<li>コマンド自体はruby1.9以降なら多分動く。でもWindowsでは多分動かない</li>
-</ul>
-<p>とりあえず暫く様子をみようかなあ。</p><p><a href="https://github.com/hibariya/retter/blob/master/README.md">README</a>の英語がひどいのは十分承知してるんだけど、日本語だけで書かないことで最低限の義務を果たした気分になっています。</p>]]></description><dc:date>2011-09-11</dc:date><link>http://hibariya.github.com/entries/20110911.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110913.html"><title>2011/09/13</title><description><![CDATA[<h1 id="a0">Pull requestがマージされた</h1><p>日曜くらいに送った初の Pull request が今日マージされた。
-1行削除するだけの簡単なパッチだったけど。会社のデスクの上で踊りだしそうになってやめた。</p><p>今日は、日付は覚えてないけど出来事は覚えている類の特別な日になった。これでやっとひとつ進めるね。
-今日は<a href="http://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%83%BC%E3%81%AE%E6%97%A5">プログラマの日</a>らしいよ。</p>]]></description><dc:date>2011-09-13</dc:date><link>http://hibariya.github.com/entries/20110913.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110916.html"><title>2011/09/16</title><description><![CDATA[<h1 id="a0">記事公開までの手順を楽にしたい</h1><p>今時点でretterを使うとこんな感じの5ステップくらいで記事が公開できるようになる。</p><ol>
-<li>記事を編集する (retter)</li>
-<li>記事を確認する (retter preview)</li>
-<li>記事を生成する (retter rebind)</li>
-<li>記事をコミットする (retter commit)</li>
-<li>記事をデプロイする (cd /path/to/foo &amp;&amp; git push origin master)</li>
-</ol>
-<p>手順のうち3-5（HTMLの生成から公開まで）は理不尽な手間で、本当は1つにまとめてしまいたい場合が多い。
-手順3はいいとして、4と5について説明すると、</p><p>手順4はgitを使っているからcommitが必要で、サイト全体をgitで扱えるのは便利なんだけど普段はあまり意識したくない。
-手順4を個別にやりたいときっていうのはとっても稀で、だから普段は、普通のソースコードのコミットと違って定期的に機械的にcommitされていれば十分。</p><p>手順5は、書く場所と公開する場所が違うせいでデプロイというかアップロードという作業が必要になってる。
-これは本当は機械が気をきかせてやってくれるべき気がする。プレビューとかオフラインでの確認機能は用意しているので手順4のHTML生成をしたとき、だいたいは公開する気満々な筈。
-ただ稀にだけど、これも個別にやりたいときがある気がする。</p><p>ということで、手順の細かさはこのままがいい、でも普段はショートカットしたい、という結論にたどり着いた。そうそう、ショートカット。
-HTML生成以降の手順をショートカットした場合の手順を想像してみる。</p><ol>
-<li>記事を編集する (retter)</li>
-<li>記事を確認する (retter preview)</li>
-<li>記事を生成・コミット・デプロイする (retter publish)</li>
-</ol>
-<p>うーん、すっきりした気がする。次はretter publishの実装を考えようかな。やり方を2つ考えてみた。</p><ol>
-<li>手順3-5を単純にまとめたサブコマンドをひとつ用意する</li>
-<li>HTML生成にフックしていろいろできる機能を用意する</li>
-</ol>
-<p>デプロイ方法としてgitだけではなくてrsyncとかもあり得るなら2がいい。</p><h1 id="a1">retter 0.0.3</h1><p>それで早速バージョンを上げた。</p><p>やったこと:</p><ol>
-<li>依存しているgemのバージョンを明記するようにした</li>
-<li>いくつかのコマンドにフックするコールバックを定義できるようにした</li>
-</ol>
-<p>コールバックを無効にする --silent オプションを入れるのを忘れていたので次のに入れる。</p>]]></description><dc:date>2011-09-16</dc:date><link>http://hibariya.github.com/entries/20110916.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110918.html"><title>2011/09/18</title><description><![CDATA[<h1 id="a0">ファイルを直接弄るような細かい作業</h1><p>作業ディレクトリを一旦クリーンに戻したいような場面。
-retterで生成するサイトはgitで管理することを前提にしているせいもあって、直にgitコマンドを実行したい場面がどうしても出てくるみたい。
-例えば、<code>git reset</code> したいときとか、<code>git commit --amend</code> したいときとか。</p><p>ファイルシステム上のどこに居ようが編集から公開までをできるというメリットはできるだけ殺したくなくて、いちいちリポジトリに移動してgitコマンドを実行するのはちょっと嫌だ。</p><p>そこで新たに <code>rette home</code> というコマンドを作ってみた。
-<code>home</code> サブコマンドは<code>$RETTER_HOME</code>に移動して新たなシェルを起動する。</p><div class="CodeRay">
-  <div class="code"><pre>  $ retter home
-  (retter) pwd
-  /path/to/retter_home
-  (retter) exit
-  bye
-</pre></div>
-</div><p>これで、いくつものどうでもいい機能の実装を免れるきがする。</p><h1 id="a1">直近でやること</h1><ol>
-<li>書きかけの記事の有無とか、今まで何個記事を書いたかとか表示するサブコマンド（status）がほしい</li>
-<li>もっときれいなソースコードが読みたい（リファクタリング）</li>
-</ol>]]></description><dc:date>2011-09-18</dc:date><link>http://hibariya.github.com/entries/20110918.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110919.html"><title>2011/09/19</title><description><![CDATA[<h1 id="a0">スタイルシートを追加してテーマを変えられるようにした</h1><p>Retter に <a href="https://github.com/hibariya/retter/commit/f00208e985a5cafd4bbe357f4153a247caf83ab4">Orange という テーマ</a> を作ってもらって、cssの切り替えだけで見た目が変わるようにしてもらった。餅は餅屋だなあ。</p>]]></description><dc:date>2011-09-19</dc:date><link>http://hibariya.github.com/entries/20110919.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111003.html"><title>2011/10/03</title><description><![CDATA[<h1 id="a0">モジュール関数がprivateな理由</h1><p><a href="http://rurema.clear-code.com/1.9.2/method/Module/i/module_function.html">モジュール関数</a>
-というものがあって、ぼくはこれまでモジュール関数を「モジュールをレシーバにしても呼び出せるしincludeして呼び出すこともできる何だか便利なもの」としか認識していなかった。</p><p>こういうふうに。</p><div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">MyModule</span>
-    extend <span style="color:#069">self</span>
-
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">greet</span>
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">fart</span><span style="color:#710">'</span></span>
-    <span style="color:#080;font-weight:bold">end</span>
-  <span style="color:#080;font-weight:bold">end</span>
-
-  <span style="color:#036;font-weight:bold">MyModule</span>.greet   <span style="color:#777"># =&gt; "fart"</span>
-
-  include <span style="color:#036;font-weight:bold">MyModule</span>
-  greet            <span style="color:#777"># =&gt; "fart"</span>
-  <span style="color:#069">self</span>.greet       <span style="color:#777"># =&gt; "fart"</span>
-</pre></div>
-</div><p>でもこれはモジュール関数じゃなかった。</p><p>るりまの説明をよく見てみると「モジュール関数とは、プライベートメソッドであると同時に モジュールの特異メソッドでもあるようなメソッドです。」と書いてある。ぎぎぎ何だか面倒くさいな。</p><p>Rubyでprivateメソッドと言えば、呼び出しのときにレシーバを指定できないメソッドのことを指す。試しに、よく例に使われる<code>Math.#sqrt</code>で確認してみる。</p><div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#036;font-weight:bold">Math</span>.sqrt(<span style="color:#00D">100</span>) <span style="color:#777"># =&gt; 10.0</span>
-
-  include <span style="color:#036;font-weight:bold">Math</span>
-  sqrt(<span style="color:#00D">100</span>)      <span style="color:#777"># =&gt; 10.0</span>
-  <span style="color:#069">self</span>.sqrt(<span style="color:#00D">100</span>) <span style="color:#777"># =&gt; NoMethodError: private method `sqrt' called for ...</span>
-</pre></div>
-</div><p>うげげ、本当だ。今まで知らずに使っていたけれど、きみはprivateだったのか。なんで？</p><p>その後何日間もこのことで悩み続けてしまったのだけど、敗因は「モジュール関数がprivateメソッドとはどういうことだろう」と考えてしまっていたからだった。
-「<em>関数</em>にレシーバがないのは自然だなあ」と思えたら何も悩むことはなかったのだけど。</p><p>モジュール関数は実際はメソッドだけど、あくまで関数のように使うためのものなのだった。</p><p>Rubyには関数風メソッドやモジュール関数とよばれるものが存在するけど、厳密には関数は存在しない。
-モジュール関数がprivateなのは、メソッドでありながら、レシーバを意識しない「関数」のようなものになるためだった。
-モジュール関数はprivateなので、レシーバは自動的にselfになるけど、その関数とselfの間にはなんの関わりもない（ものとして実装されるべき）。</p><p>確かに「関数」と名前がついているものにレシーバがあるほうがよっぽどおかしい。
-関数だと思って使ってたのに、突然<code>self.sqrt(pya)</code>とかやられた日にはびっくりしてしまう。ということを理解するのにかなり時間がかかったというお話でした。</p>]]></description><dc:date>2011-10-03</dc:date><link>http://hibariya.github.com/entries/20111003.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111010.html"><title>2011/10/10</title><description><![CDATA[<h1 id="a0">Rubyのトップレベルについて整理する</h1><p>トップレベルでメソッドを定義したとき、なぜそれがいきなり使えるようになるのかを説明できなかったので調べたり人にきいたりした。</p><h2>メソッドについての理解（インスタンスメソッド）</h2><p>クラス定義式の中で（特異メソッドでない）メソッドを定義すると、メソッドはそのクラスのインスタンスメソッドメソッドになる。</p><div class="CodeRay">
+<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2011-10-18</dc:date><description>歓喜 幸福 象さん</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20111018.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111012.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111010.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111003.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110919.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110918.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110916.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110913.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110911.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110909.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20111018.html"><title>2011/10/18</title><description><![CDATA[<h1 id="a0">hoge</h1><p>hogehoge</p>]]></description><dc:date>2011-10-18</dc:date><link>http://hibariya.github.com/entries/20111018.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111012.html"><title>2011/10/12</title><description><![CDATA[<h1 id="a0">記事ごとにPermlinkがつくようにした</h1><p><a href="https://github.com/hibariya/retter">retter</a> はh1をひとつの記事の区切りとして使ってるんですが、Permlinkは日付ごとにしか割り当てられておらず、あるとすればURLのフラグメントくらいでした。
+でも記事にPermlinkが無いのはとっても使いづらいということが実際に書いてみての率直な感想でした。SBMに登録しずらかったり、特定の記事をURLで指定するのが面倒だったり散々でした。</p><p>そこで<a href="https://github.com/hibariya/retter/compare/ef7b62c6da5e39d837db21362aa3f96896c37aed%5E...entry_permlink">このブランチ</a>で記事ごとにリンクがつくようにしてみました。</p><h1 id="a1">test</h1><p>fart</p><h1 id="a2">retter 0.1.0</h1><p><a href="http://hibariya.github.com/entries/20111012/a0.html">記事ごとにPermlinkがつくようにした</a>やつをマージしてバージョンを上げました。</p>]]></description><dc:date>2011-10-12</dc:date><link>http://hibariya.github.com/entries/20111012.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111010.html"><title>2011/10/10</title><description><![CDATA[<h1 id="a0">Rubyのトップレベルについて整理する</h1><p>トップレベルでメソッドを定義したとき、なぜそれがいきなり使えるようになるのかを説明できなかったので調べたり人にきいたりした。</p><h2>メソッドについての理解（インスタンスメソッド）</h2><p>クラス定義式の中で（特異メソッドでない）メソッドを定義すると、メソッドはそのクラスのインスタンスメソッドメソッドになる。</p><div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Foo</span>
     <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">bar</span>
       <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">bar</span><span style="color:#710">'</span></span>
@@ -170,5 +76,99 @@ bar <span style="color:#777"># =&gt; "bar"</span>
   alice       <span style="color:#777"># "hi"と表示</span>
 </pre></div>
 </div><p>もちろん、Object.#aliceはprivateメソッドなので、<code>self.alice</code>とか<code>Object.alice</code>と書くと例外NoMethodErrorが発生する。
-レシーバを記述しない関数風の呼び方が強く奨められているのは、モジュール関数と同じく、関数っぽい使い方をすることが想定されているからなのでしょうね。</p>]]></description><dc:date>2011-10-10</dc:date><link>http://hibariya.github.com/entries/20111010.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111012.html"><title>2011/10/12</title><description><![CDATA[<h1 id="a0">記事ごとにPermlinkがつくようにした</h1><p><a href="https://github.com/hibariya/retter">retter</a> はh1をひとつの記事の区切りとして使ってるんですが、Permlinkは日付ごとにしか割り当てられておらず、あるとすればURLのフラグメントくらいでした。
-でも記事にPermlinkが無いのはとっても使いづらいということが実際に書いてみての率直な感想でした。SBMに登録しずらかったり、特定の記事をURLで指定するのが面倒だったり散々でした。</p><p>そこで<a href="https://github.com/hibariya/retter/compare/ef7b62c6da5e39d837db21362aa3f96896c37aed%5E...entry_permlink">このブランチ</a>で記事ごとにリンクがつくようにしてみました。</p><h1 id="a1">test</h1><p>fart</p><h1 id="a2">retter 0.1.0</h1><p><a href="http://hibariya.github.com/entries/20111012/a0.html">記事ごとにPermlinkがつくようにした</a>やつをマージしてバージョンを上げました。</p>]]></description><dc:date>2011-10-12</dc:date><link>http://hibariya.github.com/entries/20111012.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111018.html"><title>2011/10/18</title><description><![CDATA[<h1 id="a0">hoge</h1><p>hogehoge</p>]]></description><dc:date>2011-10-18</dc:date><link>http://hibariya.github.com/entries/20111018.html</link><author>hibariya</author></item></rdf:RDF>
+レシーバを記述しない関数風の呼び方が強く奨められているのは、モジュール関数と同じく、関数っぽい使い方をすることが想定されているからなのでしょうね。</p>]]></description><dc:date>2011-10-10</dc:date><link>http://hibariya.github.com/entries/20111010.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111003.html"><title>2011/10/03</title><description><![CDATA[<h1 id="a0">モジュール関数がprivateな理由</h1><p><a href="http://rurema.clear-code.com/1.9.2/method/Module/i/module_function.html">モジュール関数</a>
+というものがあって、ぼくはこれまでモジュール関数を「モジュールをレシーバにしても呼び出せるしincludeして呼び出すこともできる何だか便利なもの」としか認識していなかった。</p><p>こういうふうに。</p><div class="CodeRay">
+  <div class="code"><pre>  <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">MyModule</span>
+    extend <span style="color:#069">self</span>
+
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">greet</span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">fart</span><span style="color:#710">'</span></span>
+    <span style="color:#080;font-weight:bold">end</span>
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="color:#036;font-weight:bold">MyModule</span>.greet   <span style="color:#777"># =&gt; "fart"</span>
+
+  include <span style="color:#036;font-weight:bold">MyModule</span>
+  greet            <span style="color:#777"># =&gt; "fart"</span>
+  <span style="color:#069">self</span>.greet       <span style="color:#777"># =&gt; "fart"</span>
+</pre></div>
+</div><p>でもこれはモジュール関数じゃなかった。</p><p>るりまの説明をよく見てみると「モジュール関数とは、プライベートメソッドであると同時に モジュールの特異メソッドでもあるようなメソッドです。」と書いてある。ぎぎぎ何だか面倒くさいな。</p><p>Rubyでprivateメソッドと言えば、呼び出しのときにレシーバを指定できないメソッドのことを指す。試しに、よく例に使われる<code>Math.#sqrt</code>で確認してみる。</p><div class="CodeRay">
+  <div class="code"><pre>  <span style="color:#036;font-weight:bold">Math</span>.sqrt(<span style="color:#00D">100</span>) <span style="color:#777"># =&gt; 10.0</span>
+
+  include <span style="color:#036;font-weight:bold">Math</span>
+  sqrt(<span style="color:#00D">100</span>)      <span style="color:#777"># =&gt; 10.0</span>
+  <span style="color:#069">self</span>.sqrt(<span style="color:#00D">100</span>) <span style="color:#777"># =&gt; NoMethodError: private method `sqrt' called for ...</span>
+</pre></div>
+</div><p>うげげ、本当だ。今まで知らずに使っていたけれど、きみはprivateだったのか。なんで？</p><p>その後何日間もこのことで悩み続けてしまったのだけど、敗因は「モジュール関数がprivateメソッドとはどういうことだろう」と考えてしまっていたからだった。
+「<em>関数</em>にレシーバがないのは自然だなあ」と思えたら何も悩むことはなかったのだけど。</p><p>モジュール関数は実際はメソッドだけど、あくまで関数のように使うためのものなのだった。</p><p>Rubyには関数風メソッドやモジュール関数とよばれるものが存在するけど、厳密には関数は存在しない。
+モジュール関数がprivateなのは、メソッドでありながら、レシーバを意識しない「関数」のようなものになるためだった。
+モジュール関数はprivateなので、レシーバは自動的にselfになるけど、その関数とselfの間にはなんの関わりもない（ものとして実装されるべき）。</p><p>確かに「関数」と名前がついているものにレシーバがあるほうがよっぽどおかしい。
+関数だと思って使ってたのに、突然<code>self.sqrt(pya)</code>とかやられた日にはびっくりしてしまう。ということを理解するのにかなり時間がかかったというお話でした。</p>]]></description><dc:date>2011-10-03</dc:date><link>http://hibariya.github.com/entries/20111003.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110919.html"><title>2011/09/19</title><description><![CDATA[<h1 id="a0">スタイルシートを追加してテーマを変えられるようにした</h1><p>Retter に <a href="https://github.com/hibariya/retter/commit/f00208e985a5cafd4bbe357f4153a247caf83ab4">Orange という テーマ</a> を作ってもらって、cssの切り替えだけで見た目が変わるようにしてもらった。餅は餅屋だなあ。</p>]]></description><dc:date>2011-09-19</dc:date><link>http://hibariya.github.com/entries/20110919.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110918.html"><title>2011/09/18</title><description><![CDATA[<h1 id="a0">ファイルを直接弄るような細かい作業</h1><p>作業ディレクトリを一旦クリーンに戻したいような場面。
+retterで生成するサイトはgitで管理することを前提にしているせいもあって、直にgitコマンドを実行したい場面がどうしても出てくるみたい。
+例えば、<code>git reset</code> したいときとか、<code>git commit --amend</code> したいときとか。</p><p>ファイルシステム上のどこに居ようが編集から公開までをできるというメリットはできるだけ殺したくなくて、いちいちリポジトリに移動してgitコマンドを実行するのはちょっと嫌だ。</p><p>そこで新たに <code>rette home</code> というコマンドを作ってみた。
+<code>home</code> サブコマンドは<code>$RETTER_HOME</code>に移動して新たなシェルを起動する。</p><div class="CodeRay">
+  <div class="code"><pre>  $ retter home
+  (retter) pwd
+  /path/to/retter_home
+  (retter) exit
+  bye
+</pre></div>
+</div><p>これで、いくつものどうでもいい機能の実装を免れるきがする。</p><h1 id="a1">直近でやること</h1><ol>
+<li>書きかけの記事の有無とか、今まで何個記事を書いたかとか表示するサブコマンド（status）がほしい</li>
+<li>もっときれいなソースコードが読みたい（リファクタリング）</li>
+</ol>]]></description><dc:date>2011-09-18</dc:date><link>http://hibariya.github.com/entries/20110918.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110916.html"><title>2011/09/16</title><description><![CDATA[<h1 id="a0">記事公開までの手順を楽にしたい</h1><p>今時点でretterを使うとこんな感じの5ステップくらいで記事が公開できるようになる。</p><ol>
+<li>記事を編集する (retter)</li>
+<li>記事を確認する (retter preview)</li>
+<li>記事を生成する (retter rebind)</li>
+<li>記事をコミットする (retter commit)</li>
+<li>記事をデプロイする (cd /path/to/foo &amp;&amp; git push origin master)</li>
+</ol>
+<p>手順のうち3-5（HTMLの生成から公開まで）は理不尽な手間で、本当は1つにまとめてしまいたい場合が多い。
+手順3はいいとして、4と5について説明すると、</p><p>手順4はgitを使っているからcommitが必要で、サイト全体をgitで扱えるのは便利なんだけど普段はあまり意識したくない。
+手順4を個別にやりたいときっていうのはとっても稀で、だから普段は、普通のソースコードのコミットと違って定期的に機械的にcommitされていれば十分。</p><p>手順5は、書く場所と公開する場所が違うせいでデプロイというかアップロードという作業が必要になってる。
+これは本当は機械が気をきかせてやってくれるべき気がする。プレビューとかオフラインでの確認機能は用意しているので手順4のHTML生成をしたとき、だいたいは公開する気満々な筈。
+ただ稀にだけど、これも個別にやりたいときがある気がする。</p><p>ということで、手順の細かさはこのままがいい、でも普段はショートカットしたい、という結論にたどり着いた。そうそう、ショートカット。
+HTML生成以降の手順をショートカットした場合の手順を想像してみる。</p><ol>
+<li>記事を編集する (retter)</li>
+<li>記事を確認する (retter preview)</li>
+<li>記事を生成・コミット・デプロイする (retter publish)</li>
+</ol>
+<p>うーん、すっきりした気がする。次はretter publishの実装を考えようかな。やり方を2つ考えてみた。</p><ol>
+<li>手順3-5を単純にまとめたサブコマンドをひとつ用意する</li>
+<li>HTML生成にフックしていろいろできる機能を用意する</li>
+</ol>
+<p>デプロイ方法としてgitだけではなくてrsyncとかもあり得るなら2がいい。</p><h1 id="a1">retter 0.0.3</h1><p>それで早速バージョンを上げた。</p><p>やったこと:</p><ol>
+<li>依存しているgemのバージョンを明記するようにした</li>
+<li>いくつかのコマンドにフックするコールバックを定義できるようにした</li>
+</ol>
+<p>コールバックを無効にする --silent オプションを入れるのを忘れていたので次のに入れる。</p>]]></description><dc:date>2011-09-16</dc:date><link>http://hibariya.github.com/entries/20110916.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110913.html"><title>2011/09/13</title><description><![CDATA[<h1 id="a0">Pull requestがマージされた</h1><p>日曜くらいに送った初の Pull request が今日マージされた。
+1行削除するだけの簡単なパッチだったけど。会社のデスクの上で踊りだしそうになってやめた。</p><p>今日は、日付は覚えてないけど出来事は覚えている類の特別な日になった。これでやっとひとつ進めるね。
+今日は<a href="http://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%83%BC%E3%81%AE%E6%97%A5">プログラマの日</a>らしいよ。</p>]]></description><dc:date>2011-09-13</dc:date><link>http://hibariya.github.com/entries/20110913.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110911.html"><title>2011/09/11</title><description><![CDATA[<h1 id="a0">Retterというgemをつくった</h1><p><a href="https://github.com/hibariya/retter">Retter</a></p><p>きちんと日記をつける習慣がないのでどうにかしたくて、出来る限り楽をするための日記生成ツールを作った。
+<a href="https://github.com/hibariya/retter">Retter</a> という名前の理由は、片手で打てるから。</p><p>日記をつける習慣がうまく根付かない理由のうち、どうにか解決できそうな問題は2つくらいあって、</p><ol>
+<li>書くことがない</li>
+<li>書き始めるまでの心理的な障壁</li>
+</ol>
+<p>で、1は日記生成ツールを育てるという暫く終わりそうにないテーマが追加されたので一旦解決。
+2もこのツールをきちんと育てることで解決できるんじゃないかなあと思った。</p><p>このツールの基本的な機能がだいたい出来上がる直前にJekilやOctopressの存在を知ったので、モチベーションが少し下がってきたとこ。</p><h1 id="a1">楽に日記を書くために解決できそうなこと</h1><p>最低限動くようなところまで開発して、<a href="https://rubygems.org/gems/retter">Gem</a>も公開するところまでの作業はひと通りできた。
+当初、楽をするために考えたありったけのわがままは、</p><ol>
+<li>エディタはターミナルで使い慣れてるやつ(vim)がいい</li>
+<li>一瞬で起動して欲しい</li>
+<li>どのファイルに書くかとか考えたくない</li>
+<li>下書きのままブラウザですぐ確認したい</li>
+<li>ローカルでも本番と同じように動いて欲しい</li>
+<li>RSSフィードは勝手に吐いて欲しい</li>
+<li>気が向いたらrackでも動いて欲しい</li>
+<li>サーバに反映するのめんどくさい</li>
+</ol>
+<p>ひとまず、ここ一週間でなんとなく対応できそうなものに対応してみた。</p><ul>
+<li>$EDITOR次第で使うエディタが選べるよ</li>
+<li>ファイルシステム上のどこに居ようがretterと打つだけで今日の記事を書くファイルが開くよ</li>
+<li>デフォルトブラウザですぐ（本番と遜色ない程度に）プレビューできる</li>
+<li>サーバ起動したりしなくてもサイト全体をオフラインでかくにんできる</li>
+<li>HTMLを生成するときにフィードも勝手に生成する</li>
+<li>rackupできるけど静的HTMLだからherokuかgithub pagesにpushするだけで反映できるよ</li>
+<li>たとえロリポップでも、ファイルの配置さえできてしまえばきっと動く</li>
+<li>gitで管理するから何だか楽しそう</li>
+<li>コマンド自体はruby1.9以降なら多分動く。でもWindowsでは多分動かない</li>
+</ul>
+<p>とりあえず暫く様子をみようかなあ。</p><p><a href="https://github.com/hibariya/retter/blob/master/README.md">README</a>の英語がひどいのは十分承知してるんだけど、日本語だけで書かないことで最低限の義務を果たした気分になっています。</p>]]></description><dc:date>2011-09-11</dc:date><link>http://hibariya.github.com/entries/20110911.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110909.html"><title>2011/09/09</title><description><![CDATA[<h1 id="a0">hibariya.github.com</h1><p>test test</p><h1 id="a1">masterにpushでいいんでしたっけ</h1><p>反映されるかテスト</p>]]></description><dc:date>2011-09-09</dc:date><link>http://hibariya.github.com/entries/20110909.html</link><author>hibariya</author></item></rdf:RDF>
