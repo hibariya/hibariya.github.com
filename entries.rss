@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2011-10-12</dc:date><description>歓喜 幸福 象さん</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20111012.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111010.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111003.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110919.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110918.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110916.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110913.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110911.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110909.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20111012.html"><title>2011/10/12</title><description><![CDATA[<h1 id="a0">記事ごとにPermlinkがつくようにした</h1><p><a href="https://github.com/hibariya/retter">retter</a> はh1をひとつの記事の区切りとして使ってるんですが、Permlinkは日付ごとにしか割り当てられておらず、あるとすればURLのフラグメントくらいでした。
+<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2011-10-22</dc:date><description>歓喜 幸福 象さん</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20111022.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111012.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111010.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111003.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110919.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110918.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110916.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110913.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110911.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110909.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20111022.html"><title>2011/10/22</title><description><![CDATA[<h1 id="a0">最近のRetterへの機能追加</h1><p>大きく分けて4つくらいの追加修正をしています。</p><ul>
+<li>相対的な日時の指定ができるようになった</li>
+<li>これまでに書いた記事の一覧を見られるコマンドを追加した</li>
+<li>ページング機能を強化できるようにした</li>
+<li>細かいバグ修正と、組込みデザインの細かい修正</li>
+</ul>
+<h2>相対的な日時の指定ができるようになった</h2><div class="CodeRay">
+  <div class="code"><pre>  retter edit yesterday    # 昨日
+  retter edit today        # 今日
+  retter edit tommorow     # 明日
+
+  retter edit '3 days ago' # 3日前
+  retter edit 3.days.ago   # 3日前
+  retter edit 3.days.since # 3日後
+  retter edit 1.week.ago   # 1週間前
+  retter edit 3.weeks.ago  # 3週間前
+  retter edit 3.months.ago # 3カ月前
+  retter edit 3.years.ago  # 3年前
+</pre></div>
+</div><h2>これまでに書いた記事の一覧を見られるコマンドを追加した</h2><div class="CodeRay">
+  <div class="code"><pre>  retter list
+  [e0] 2011-10-12
+    記事ごとにPermlinkがつくようにした, retter 0.1.0
+
+  [e1] 2011-10-10
+    Rubyのトップレベルについて整理する
+
+  [e2] 2011-10-03
+    モジュール関数がprivateな理由
+
+  [e3] 2011-09-19
+    スタイルシートを追加してテーマを変えられるようにした
+</pre></div>
+</div><h2>ページング機能を強化できるようにした</h2><p>HAMLテンプレート内の<code>entry</code>や<code>article</code>にページングのためのいくつかのメソッドを追加しました。
+これでページングをし易くなったり、 Autopagerize などへの対応ができるようになりました。</p><div class="CodeRay">
+  <div class="code"><pre>%nav
+  .prev
+    - if prev_entry = entry.prev
+      %link{href: entry_path(prev_entry), rel: :prev}
+
+  .next
+    - if next_entry = entry.next
+      %link{href: entry_path(next_entry), rel: :next}
+</pre></div>
+</div><h2>細かいバグ修正と、組込みデザインの細かい修正</h2><ul>
+<li>
+<code>retter -h</code> でヘルプが表示できない不具合を修正</li>
+<li>日付の表現方法を <code>2011/01/01</code> 形式から <code>2011-01-01</code> 形式に変更</li>
+<li>リンクやリストを見やすくなるよう修正</li>
+<li>ヘルパメソッドへの機能追加、テンプレートの簡略化</li>
+</ul>]]></description><dc:date>2011-10-22</dc:date><link>http://hibariya.github.com/entries/20111022.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111012.html"><title>2011/10/12</title><description><![CDATA[<h1 id="a0">記事ごとにPermlinkがつくようにした</h1><p><a href="https://github.com/hibariya/retter">retter</a> はh1をひとつの記事の区切りとして使ってるんですが、Permlinkは日付ごとにしか割り当てられておらず、あるとすればURLのフラグメントくらいでした。
 でも記事にPermlinkが無いのはとっても使いづらいということが実際に書いてみての率直な感想でした。SBMに登録しずらかったり、特定の記事をURLで指定するのが面倒だったり散々でした。</p><p>そこで<a href="https://github.com/hibariya/retter/compare/ef7b62c6da5e39d837db21362aa3f96896c37aed%5E...entry_permlink">このブランチ</a>で記事ごとにリンクがつくようにしてみました。</p><h1 id="a1">test</h1><p>fart</p><h1 id="a2">retter 0.1.0</h1><p><a href="http://hibariya.github.com/entries/20111012/a0.html">記事ごとにPermlinkがつくようにした</a>やつをマージしてバージョンを上げました。</p>]]></description><dc:date>2011-10-12</dc:date><link>http://hibariya.github.com/entries/20111012.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111010.html"><title>2011/10/10</title><description><![CDATA[<h1 id="a0">Rubyのトップレベルについて整理する</h1><p>トップレベルでメソッドを定義したとき、なぜそれがいきなり使えるようになるのかを説明できなかったので調べたり人にきいたりした。</p><h2>メソッドについての理解（インスタンスメソッド）</h2><p>クラス定義式の中で（特異メソッドでない）メソッドを定義すると、メソッドはそのクラスのインスタンスメソッドメソッドになる。</p><div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Foo</span>
     <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">bar</span>
