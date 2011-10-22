@@ -30,7 +30,7 @@
 </div>
 <div id="page">
 <div id="content">
-<div id="entries">
+<div class="autopagerize_page_element" id="entries">
 <article><h1 class="date">
 <a href="./entries/20111012.html">2011/10/12</a>
 </h1>
@@ -236,52 +236,12 @@ retterで生成するサイトはgitで管理することを前提にしてい�
 <ol>
 <li>書きかけの記事の有無とか、今まで何個記事を書いたかとか表示するサブコマンド（status）がほしい</li>
 <li>もっときれいなソースコードが読みたい（リファクタリング）</li>
-</ol></article><article><h1 class="date">
-<a href="./entries/20110916.html">2011/09/16</a>
-</h1>
-<h1 id="a0">
-<a href="./entries/20110916/a0.html">記事公開までの手順を楽にしたい</a>
-</h1>
-<p>今時点でretterを使うとこんな感じの5ステップくらいで記事が公開できるようになる。</p>
-<ol>
-<li>記事を編集する (retter)</li>
-<li>記事を確認する (retter preview)</li>
-<li>記事を生成する (retter rebind)</li>
-<li>記事をコミットする (retter commit)</li>
-<li>記事をデプロイする (cd /path/to/foo &amp;&amp; git push origin master)</li>
-</ol>
-<p>手順のうち3-5（HTMLの生成から公開まで）は理不尽な手間で、本当は1つにまとめてしまいたい場合が多い。
-手順3はいいとして、4と5について説明すると、</p>
-<p>手順4はgitを使っているからcommitが必要で、サイト全体をgitで扱えるのは便利なんだけど普段はあまり意識したくない。
-手順4を個別にやりたいときっていうのはとっても稀で、だから普段は、普通のソースコードのコミットと違って定期的に機械的にcommitされていれば十分。</p>
-<p>手順5は、書く場所と公開する場所が違うせいでデプロイというかアップロードという作業が必要になってる。
-これは本当は機械が気をきかせてやってくれるべき気がする。プレビューとかオフラインでの確認機能は用意しているので手順4のHTML生成をしたとき、だいたいは公開する気満々な筈。
-ただ稀にだけど、これも個別にやりたいときがある気がする。</p>
-<p>ということで、手順の細かさはこのままがいい、でも普段はショートカットしたい、という結論にたどり着いた。そうそう、ショートカット。
-HTML生成以降の手順をショートカットした場合の手順を想像してみる。</p>
-<ol>
-<li>記事を編集する (retter)</li>
-<li>記事を確認する (retter preview)</li>
-<li>記事を生成・コミット・デプロイする (retter publish)</li>
-</ol>
-<p>うーん、すっきりした気がする。次はretter publishの実装を考えようかな。やり方を2つ考えてみた。</p>
-<ol>
-<li>手順3-5を単純にまとめたサブコマンドをひとつ用意する</li>
-<li>HTML生成にフックしていろいろできる機能を用意する</li>
-</ol>
-<p>デプロイ方法としてgitだけではなくてrsyncとかもあり得るなら2がいい。</p>
-
-<h1 id="a1">
-<a href="./entries/20110916/a1.html">retter 0.0.3</a>
-</h1>
-<p>それで早速バージョンを上げた。</p>
-<p>やったこと:</p>
-<ol>
-<li>依存しているgemのバージョンを明記するようにした</li>
-<li>いくつかのコマンドにフックするコールバックを定義できるようにした</li>
-</ol>
-<p>コールバックを無効にする --silent オプションを入れるのを忘れていたので次のに入れる。</p>
-</article>
+</ol></article><div class="nav">
+<div class="next">
+<link href="./entries/20110916.html" rel="next">
+</div>
+</div>
+<div class="autopagerize_insert_before"></div>
 </div>
 </div>
 </div>
