@@ -1,4 +1,114 @@
-<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2011-10-22</dc:date><description>歓喜 幸福 象さん</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20111022.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111012.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111010.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111003.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110919.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110918.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110916.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110913.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110911.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110909.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20111022.html"><title>2011/10/22</title><description><![CDATA[<h1 id="a0">最近のRetterへの機能追加</h1><p>大きく分けて4つくらいの追加修正をしています。</p><ul>
+<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2011-10-25</dc:date><description>歓喜 幸福 象さん</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20111025.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111022.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111012.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111010.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111003.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110919.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110918.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110916.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110913.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110911.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110909.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20111025.html"><title>2011/10/25</title><description><![CDATA[<h1 id="a0">Thorで簡単にコマンドラインアプリをつくる</h1><p><a href="https://github.com/wycats/thor">Thor</a>をご存知の方は多いと思いますが、<a href="https://github.com/hibariya/retter">Retter</a>を作るにあたってとても便利に使えたので、手短に紹介したいと思います。
+といってもだいたいは<a href="https://github.com/wycats/thor/wiki">Wiki</a>に書いてあることしか書けないんですが、何しろ英語ですし、さわりだけでも伝えられたらなと思います。</p><p>Thor（トール、ソアー？）は便利なコマンドラインツールで、これを使うとコマンドラインオプションのパーズやサブコマンドごとのhelpをつくるなどの面倒な作業を簡単にこなせ、手早くビルドツールや実行可能なコマンドを作成できます。
+特殊なDSLを使わずメソッドを定義することで処理を記述するため、テストしやすいという特徴もあります。</p><h2>より便利なRakeとして使う</h2><p>便利なRakeというのは主に引数とオプションの扱い方のことです。
+Rakeは今も現役で便利に使っているんですが、例えば引数を渡したいときは環境変数として渡さないといけなくて、 これが割と面倒なのでした。</p><p>こんなふうに。</p><div class="CodeRay">
+  <div class="code"><pre>  $ TO=alice rake greeting:deliver
+</pre></div>
+</div><p>Thorだともう少し自然に書くことができるようになります。</p><h3>オプションを渡す</h3><div class="CodeRay">
+  <div class="code"><pre>  $ thor greeting:deiver --to alice
+</pre></div>
+</div><p><code>TO=alice</code>をコマンドの後ろに<code>--to alice</code>と書けて少し見やすくなりました。</p><p>実際のタスクの書き方は以下のようになります。ファイル名は<code>greeting.thor</code>のように<code>クラス名.thor</code>とし、タスク名と同名のメソッドを定義します。
+タスクがひとつのメソッドとして定義されていると、テストがとても書きやすそうです。</p><div class="CodeRay">
+  <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Greeting</span> &lt; <span style="color:#036;font-weight:bold">Thor</span>
+    desc <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver greeting message</span><span style="color:#710">'</span></span> <span style="color:#777"># タスクの説明</span>
+    method_options to: <span style="color:#A60">:string</span>                 <span style="color:#777"># 直後に定義するタスクのオプション</span>
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">deliver</span>                                <span style="color:#777"># タスクの定義</span>
+      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">sending greeting to </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>options[<span style="color:#A60">:to</span>]<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
+    <span style="color:#080;font-weight:bold">end</span>
+  <span style="color:#080;font-weight:bold">end</span>
+</pre></div>
+</div><p>method_options には、オプション名をキーにしたハッシュを渡すことができます。要素には型を表すシンボルを指定します。
+渡されたオプションは<code>options[:option_name]</code>のようにアクセスすることができます。</p><h3>引数を渡す</h3><div class="CodeRay">
+  <div class="code"><pre>  $ thor greeting:deliver alice
+</pre></div>
+</div><p>というふうに書けるようにもなります。</p><p>コマンドの引数は、以下のようにメソッドの引数で受け取ることができます。</p><div class="CodeRay">
+  <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Greeting</span> &lt; <span style="color:#036;font-weight:bold">Thor</span>
+    desc <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver greeting message</span><span style="color:#710">'</span></span>
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">deliver</span>(to)
+      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">sending greeting to </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>to<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
+    <span style="color:#080;font-weight:bold">end</span>
+  <span style="color:#080;font-weight:bold">end</span>
+</pre></div>
+</div><p>便利ですね。</p><p>そういえば<code>--help</code>をつけると、タスクの一覧を表示できます。<code>rake -T</code>相当のあれです。</p><div class="CodeRay">
+  <div class="code"><pre>  $ thor greeting --help
+  Tasks:
+    thor greeting:deliver      # deliver greeting message
+    thor greeting:help [TASK]  # Describe available tasks or one specific task
+</pre></div>
+</div><p>今更ですが、今回のサンプルコードのGreetingは割と適当なプロダクトなので、目的に応じて適宜読み替えてください。</p><h2>独立したコマンドとして使う</h2><p>Rakeのような使い方ではなく、単体で実行可能なコマンドをつくることもできます。</p><div class="CodeRay">
+  <div class="code"><pre>  <span style="color:#777">#!/usr/bin/env ruby</span>
+  <span style="color:#777"># coding: utf-8</span>
+
+  require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">thor</span><span style="color:#710">'</span></span>
+
+  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Greeting</span> &lt; <span style="color:#036;font-weight:bold">Thor</span>
+    desc <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver greeting message</span><span style="color:#710">'</span></span>
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">deliver</span>(to)
+      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">sending greeting to </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>to<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
+    <span style="color:#080;font-weight:bold">end</span>
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="color:#036;font-weight:bold">Greeting</span>.start
+</pre></div>
+</div><p>Thorを継承したクラスの書き方は、先程と同じです。このファイルを実行することになるのでshebangやthorのrequireが必要です。
+これを<code>greeting</code>とか適当な名前のファイルにして、実行属性をつければ独立したコマンドになります。ポイントは<code>Greeting.start</code>です。</p><div class="CodeRay">
+  <div class="code"><pre>  $ chmod +x greeting
+  $ ./greeting deiver alice
+</pre></div>
+</div><p>もちろんさきほどの<code>--help</code>も使えます。ヘルプが出ると一気にちゃんとしたコマンドっぽくなりますね。</p><h2>Railsのジェネレータのように使う</h2><p>Thor::Actionsで提供されている便利なメソッドたちを使うことで、Railsでよくみるファイルの自動生成と全く同じようなものがthorで簡単に実装できます。<code>rails new</code>したときのあれです。</p><div class="CodeRay">
+  <div class="code"><pre>  <span style="color:#777">#!/usr/bin/env ruby</span>
+  <span style="color:#777"># coding: utf-8</span>
+
+  require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">thor</span><span style="color:#710">'</span></span>
+  require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">thor/group</span><span style="color:#710">'</span></span>
+
+  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Newgreeting</span> &lt; <span style="color:#036;font-weight:bold">Thor</span>::<span style="color:#036;font-weight:bold">Group</span>
+    include <span style="color:#036;font-weight:bold">Thor</span>::<span style="color:#036;font-weight:bold">Actions</span>
+
+    argument <span style="color:#A60">:name</span>             <span style="color:#777"># タスク全体の引数</span>
+
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">source_root</span>       <span style="color:#777"># ファイルのコピー元のベースディレクトリ</span>
+      <span style="color:#036;font-weight:bold">File</span>.dirname(<span style="color:#069">__FILE__</span>)
+    <span style="color:#080;font-weight:bold">end</span>
+
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">create_templates</span>       <span style="color:#777"># 最初に実行される処理</span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">%w(</span><span style="color:#D20">title.txt body.txt</span><span style="color:#710">)</span></span>.each <span style="color:#080;font-weight:bold">do</span> |fname|
+        template <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">templates/</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>fname<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">/</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>fname<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
+       <span style="color:#080;font-weight:bold">end</span>
+    <span style="color:#080;font-weight:bold">end</span>
+
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">create_readme</span>          <span style="color:#777"># 次に実行される処理</span>
+      copy_file <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">templates/README</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">/README</span><span style="color:#710">"</span></span>
+    <span style="color:#080;font-weight:bold">end</span>
+
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">complete_message</span>       <span style="color:#777"># 最後に実行される処理</span>
+      say <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">greeting templates created.</span><span style="color:#710">'</span></span>, <span style="color:#A60">:green</span>
+    <span style="color:#080;font-weight:bold">end</span>
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="color:#036;font-weight:bold">Newgreeting</span>.start
+</pre></div>
+</div><p><code>Thor::Group</code>を継承した場合は、<code>Thor</code>を継承したときとは違い、そのクラス全体がひとつのタスクとして扱われます。
+タスク<code>newgreeting</code>が呼ばれたとき（↑のコマンドが実行されたとき）、クラスに定義したインスタンスメソッドが定義された順番に実行されるようになります。
+↑の場合は<code>create_templates</code>, <code>create_readme</code>, <code>complete_message</code> の順で実行されることになります。</p><p><code>argument :name</code>は引数です。この引数にはインスタンスメソッドから<code>name</code>で参照することができます。</p><p><code>template</code>や<code>copy_file</code>は<code>Thor::Actions</code>からincludeしたメソッドで、これがファイルジェネレータの役割を果たします。
+<code>template</code>はコピー元とコピー先のふたつの引数をとり、コピー元のファイルはERBとして評価されます。
+<code>copy_file</code>は単純にファイルをコピーします。</p><p><code>Newgreeting.source_root</code>には、<code>Thor::Actions#templates</code>や<code>Thor::Actions#copy_file</code>などのコピー元のファイルのベースとなるディレクトリ名を指定しています。</p><p>このコマンドを実行するとこんな感じになります。</p><div class="CodeRay">
+  <div class="code"><pre>  $ ./newgreeting foo
+        create  foo/title.txt
+        create  foo/body.txt
+        create  foo/README
+  greeting templates created.
+</pre></div>
+</div><p>ちなみに、<code>Newgreeting#complete_message</code>でさり気なく<code>:green</code>とか書いていますが、これで緑色の文字が標準出力に表示されます。手軽に色をつけられるのは便利です。</p><h3>コンフリクト時の動作</h3><p>このコマンドがファイルを生成するとき、すでに同名のファイルがある場合の動きはこんな感じになります。</p><div class="CodeRay">
+  <div class="code"><pre>  $ ./newgreeting foo
+        create  foo/title.txt
+     identical  foo/body.txt  # 同名で同じ内容
+      conflict  foo/README    # 同名で違う内容
+  Overwrite /path/to/foo/README? (enter "h" for help) [Ynaqdh]
+</pre></div>
+</div><p>identicalは既に同名のファイルがあるけど内容が同じなのでスキップされます。conflictは内容が違うから上書きするかどうかを訊いてきています。
+conflictしたときは差分を表示したりはできますが、マージはできないみたいですね。それにしても、ここまでの機能を数行で記述できてしまうthorは大変魅力的に見えるのではないでしょうか。</p><h2>さらに多くの情報</h2><p>よく使いそうな機能を中心にざっくりと紹介してみましたが、他にも便利で魅力的な機能がたくさんあります。
+より詳しくは<a href="https://github.com/wycats/thor">thor</a>とか<code>bundle open thor</code>などで。</p><h2>謝辞</h2><p>けっこう前にThorのことを教えてくれた<a href="http://ursm.jp">ursm</a>先生。</p>]]></description><dc:date>2011-10-25</dc:date><link>http://hibariya.github.com/entries/20111025.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111022.html"><title>2011/10/22</title><description><![CDATA[<h1 id="a0">最近のRetterへの機能追加</h1><p>大きく分けて4つくらいの追加修正をしています。</p><ul>
 <li>相対的な日時の指定ができるようになった</li>
 <li>これまでに書いた記事の一覧を見られるコマンドを追加した</li>
 <li>ページング機能を強化できるようにした</li>
