@@ -9,9 +9,10 @@ body {
   padding: 0;
   font-family: sans-serif;
   background: #EEE;
-  background-image:url("../images/orange/bg_body.jpg");
+  background-image: url("../images/orange/bg_body.jpg");
+  background-attachment: fixed;
   height: 100%;
-  line-height:1.4;
+  line-height: 1.4;
 }
 
 ul {
@@ -24,7 +25,7 @@ a {
 }
 
 code{
-	padding:0 5px;
+	padding: 0 5px;
 }
 
 #header {
@@ -36,13 +37,13 @@ code{
   margin: 0;
   padding: 0.2em 0 0.2em 1em;
   color: rgb(77,144,253);
-  height:40px;
-  background-image:url("../images/orange/bg_header.png");
-  background-repeat:repeat-x;
+  height: 40px;
+  background-image: url("../images/orange/bg_header.png");
+  background-repeat: repeat-x;
 }
 
 #header h1 a {
-  color:#FFF;
+  color: #FFF;
 }
 
 #header ul#menu {
@@ -56,16 +57,16 @@ code{
 #header ul#menu li {
   float: left;
   margin-right: 0.5em;
-  background:rgba(255,255,255,0.5);
-  padding:5px;
+  background: rgba(255,255,255,0.5);
+  padding: 5px;
 }
 
 #header ul#menu li a {
-  color:#336;
+  color: #336;
 }
 
 #header ul#menu li a:hover {
-  color:#09C;
+  color: #09C;
 }
 
 #page {
@@ -77,52 +78,52 @@ code{
 }
 
 article {
-  color:#603;
+  color: #603;
   border-radius: 10px;
   border: 3px #FFC solid;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   padding: 1em 1.5em 1em 1.5em;
   margin: 1em 0 1em 0;
-  width 100%;
-  background-image:url("../images/orange/bg_entry.jpg");
-  position:relative;
+  width: 100%;
+  background-image: url("../images/orange/bg_entry.jpg");
+  position: relative;
 }
 
 article ul li{	
-	list-style-image:url("../images/orange/ic_li01.gif");
+	list-style-image: url("../images/orange/ic_li01.gif");
 }
 
 article p a{
-  color:#F30;	
+  color: #F30;
 }
 
 article p a:hover{
-  color:#F93;	
+  color: #F93;
 }
 
 article .date {
   font-size: 1em;
   text-align: center;
-  background-color:#036;
-  padding:10px;
-  width:100px;
-  float:right;
-  position:absolute;
-  top:-24px;
-  left:650px;
+  background-color: #036;
+  padding: 10px;
+  width: 100px;
+  float: right;
+  position: absolute;
+  top: -24px;
+  left: 650px;
 }
 
 article .date a {
-  color:#FFF;
+  color: #FFF;
 }
 
 article .date a:visited {
-  color:#FFF;
+  color: #FFF;
 }
 
 article .date a:hover {
-  color:#669;
+  color: #669;
 }
 
 article ul#entries > li {
@@ -134,7 +135,7 @@ article ul#entries {
 }
 
 #entries {
-  width 100%;
+  width: 100%;
 }
 
 pre {
