@@ -32,6 +32,16 @@
 <div id="content">
 <div class="autopagerize_page_element" id="entries">
 <article><h1 class="date">
+<a href="./entries/20111108.html">2011-11-08</a>
+</h1>
+<h1 id="a0">
+<a href="./entries/20111108/a0.html">静的なパーマリンクにコメントをつける</a>
+</h1>
+<p><a href="http://disqus.com/">DISQUS</a>というサービスがあって、ここで提供されるJSをHTMLに埋め込むことでコメントシステムを導入できるらしい。
+実験的にこのサイトにもつけてみた。</p>
+<p>コメントをつけられるのは割と重要な要素だと思うので、デザイナさんの様子を伺いつつ<a href="https://github.com/hibariya/retter">retter</a>にも導入したい。
+そのときは設定ファイルにDISQUSの識別子を記述するだけで最低限の機能が提供できるようにしよう。</p>
+</article><article><h1 class="date">
 <a href="./entries/20111107.html">2011-11-07</a>
 </h1>
 <h1 id="a0">
@@ -302,115 +312,9 @@ conflictしたときは差分を表示したりはできますが、マージは
 <a href="./entries/20111012/a2.html">retter 0.1.0</a>
 </h1>
 <p><a href="http://hibariya.github.com/entries/20111012/a0.html">記事ごとにPermlinkがつくようにした</a>やつをマージしてバージョンを上げました。</p>
-</article><article><h1 class="date">
-<a href="./entries/20111010.html">2011-10-10</a>
-</h1>
-<h1 id="a0">
-<a href="./entries/20111010/a0.html">Rubyのトップレベルについて整理する</a>
-</h1>
-<p>トップレベルでメソッドを定義したとき、なぜそれがいきなり使えるようになるのかを説明できなかったので調べたり人にきいたりした。</p>
-<h2>メソッドについての理解（インスタンスメソッド）</h2>
-<p>クラス定義式の中で（特異メソッドでない）メソッドを定義すると、メソッドはそのクラスのインスタンスメソッドメソッドになる。</p>
-<div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Foo</span>
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">bar</span>
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">bar</span><span style="color:#710">'</span></span>
-    <span style="color:#080;font-weight:bold">end</span>
-  <span style="color:#080;font-weight:bold">end</span>
-
-  <span style="color:#036;font-weight:bold">Foo</span>.new.bar <span style="color:#777"># =&gt; "bar"</span>
-</pre></div>
-</div>
-<p>同じような方法でトップレベルにメソッドを定義すると、なぜかその場で使えるようになる。</p>
-<div class="CodeRay">
-  <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">bar</span>
-  <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">bar</span><span style="color:#710">'</span></span>
-<span style="color:#080;font-weight:bold">end</span>
-
-bar <span style="color:#777"># =&gt; "bar"</span>
-</pre></div>
-</div>
-<p>もちろん、同じようなことはクラス定義式内ではできない。</p>
-<div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Foo</span>
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">baz</span>
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">baz</span><span style="color:#710">'</span></span>
-    <span style="color:#080;font-weight:bold">end</span>
-
-    baz
-  <span style="color:#080;font-weight:bold">end</span> <span style="color:#777"># =&gt; NameError: undefined local variable or method...</span>
-</pre></div>
-</div>
-<p>どうやらクラス定義式の中とトップレベルでは、同じようにメソッド定義式を書いても少し動きが違ってくるらしい。</p>
-<h2>トップレベルで定義されたメソッドは何処へ</h2>
-<p>トップレベルで定義したメソッドについて色々と調べた結果をまとめて書きます。</p>
-<p>クラス定義式の中に書いたメソッドはそのクラスのインスタンスメソッドになった。じゃあトップレベルに定義されたメソッドは何処へ。
-実はObjectの（privateな）メソッドになっていた。そしてトップレベルはObjectのインスタンスなので、トップレベルにメソッドを定義すると即座に使えるようになるということらしい。</p>
-<div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">carol</span>; <span style="color:#080;font-weight:bold">end</span>
-
-  <span style="color:#036;font-weight:bold">Object</span>.private_instance_methods.grep <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">carol</span><span style="color:#404">/</span></span> <span style="color:#777"># =&gt; [:carol]</span>
-  <span style="color:#036;font-weight:bold">Object</span>.private_methods.grep <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">carol</span><span style="color:#404">/</span></span>          <span style="color:#777"># =&gt; [:carol]</span>
-</pre></div>
-</div>
-<p>トップレベルで定義したメソッドがどうしてすぐに呼べるのか、言葉のうえでは結論が出た感じになってしまったけれど、話はもう少しだけ続く。</p>
-<h2>Objectの不思議と関数っぽさ</h2>
-<p>Objectに定義されたメソッドは他のクラスに定義されたメソッドとは少し違う動きをする。
-なんと、Objectに定義されたメソッドはObjectのクラスメソッドとしても定義される。しかもクラスメソッドにはprivateとかの呼び出し制限もそのまま引き継がれる。</p>
-<div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Object</span>
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">bob</span>
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">ボブですよ</span><span style="color:#710">'</span></span>
-    <span style="color:#080;font-weight:bold">end</span>
-  <span style="color:#080;font-weight:bold">end</span>
-
-  <span style="color:#036;font-weight:bold">Object</span>.new.bob <span style="color:#777"># =&gt; "ボブですよ"</span>
-  <span style="color:#036;font-weight:bold">Object</span>.bob     <span style="color:#777"># =&gt; "ボブですよ"</span>
-  bob            <span style="color:#777"># =&gt; "ボブですよ"</span>
-</pre></div>
-</div>
-<p>なぜだろう。なぜならObjectはClassのインスタンスだけど、同時にObject（のサブクラス）のインスタンスでもあるから、らしい。
-堂々巡りで混乱してくる。</p>
-<div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#036;font-weight:bold">Object</span>.class           <span style="color:#777"># =&gt; Class</span>
-  <span style="color:#036;font-weight:bold">Object</span>.class.ancestors <span style="color:#777"># =&gt; [Class, Module, Object, Kernel, BasicObject]</span>
-  <span style="color:#036;font-weight:bold">Object</span>.is_a?(<span style="color:#036;font-weight:bold">Object</span>)   <span style="color:#777"># =&gt; true</span>
-</pre></div>
-</div>
-<p>でもこの振舞いのおかげで、トップレベルに定義したメソッドはどこでも使えるようになる。何処に居ようがselfの祖先はObjectだから。</p>
-<p>こんなふうに。</p>
-<div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">alice</span>
-    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">hi</span><span style="color:#710">'</span></span>
-  <span style="color:#080;font-weight:bold">end</span>
-
-  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Bar</span>
-    alice <span style="color:#777"># "hi"と表示</span>
-
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">foo</span>
-      alice
-    <span style="color:#080;font-weight:bold">end</span>
-
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">foo</span>
-      alice
-    <span style="color:#080;font-weight:bold">end</span>
-  <span style="color:#080;font-weight:bold">end</span>
-
-  <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">BarBar</span>
-    alice <span style="color:#777"># "hi"と表示</span>
-  <span style="color:#080;font-weight:bold">end</span>
-
-  <span style="color:#036;font-weight:bold">Bar</span>.foo     <span style="color:#777"># "hi"と表示</span>
-  <span style="color:#036;font-weight:bold">Bar</span>.new.foo <span style="color:#777"># "hi"と表示</span>
-
-  alice       <span style="color:#777"># "hi"と表示</span>
-</pre></div>
-</div>
-<p>もちろん、Object.#aliceはprivateメソッドなので、<code>self.alice</code>とか<code>Object.alice</code>と書くと例外NoMethodErrorが発生する。
-レシーバを記述しない関数風の呼び方が強く奨められているのは、モジュール関数と同じく、関数っぽい使い方をすることが想定されているからなのでしょうね。</p>
 </article><div class="nav">
 <div class="next">
-<link href="./entries/20111003.html" rel="next">
+<link href="./entries/20111010.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
