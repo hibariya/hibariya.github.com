@@ -7,7 +7,8 @@
 
   a[] <span style="color:#777"># =&gt; "hi"</span>
 </pre></div>
-</div><p>ブラケットをパーレンに読み替えると何かそれっぽい。くだらない。</p>]]></description><dc:date>2011-11-07</dc:date><link>http://hibariya.github.com/entries/20111107.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111025.html"><title>2011/10/25</title><description><![CDATA[<h1 id="a0">Thorで簡単にコマンドラインアプリをつくる</h1><p><a href="https://github.com/wycats/thor">Thor</a>をご存知の方は多いと思いますが、<a href="https://github.com/hibariya/retter">Retter</a>を作るにあたってとても便利に使えたので、手短に紹介したいと思います。
+</div><p>ブラケットをパーレンに読み替えると何かそれっぽい。くだらない。</p><p><strong>2011/11/08 追記</strong></p><p>ursm先生に教えてもらったのだけど、作らなくても <code>Proc#[]</code> は既にありました。
+もしかしてくだらなくなかったのか。実際に使ってる事例（こう使うといいよ的な）とかあるのか気になる。</p>]]></description><dc:date>2011-11-07</dc:date><link>http://hibariya.github.com/entries/20111107.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111025.html"><title>2011/10/25</title><description><![CDATA[<h1 id="a0">Thorで簡単にコマンドラインアプリをつくる</h1><p><a href="https://github.com/wycats/thor">Thor</a>をご存知の方は多いと思いますが、<a href="https://github.com/hibariya/retter">Retter</a>を作るにあたってとても便利に使えたので、手短に紹介したいと思います。
 といってもだいたいは<a href="https://github.com/wycats/thor/wiki">Wiki</a>に書いてあることしか書けないんですが、何しろ英語ですし、さわりだけでも伝えられたらなと思います。</p><p>Thor（トール、ソアー？）は便利なコマンドラインツールで、これを使うとコマンドラインオプションのパーズやサブコマンドごとのhelpをつくるなどの面倒な作業を簡単にこなせ、手早くビルドツールや実行可能なコマンドを作成できます。
 特殊なDSLを使わずメソッドを定義することで処理を記述するため、テストしやすいという特徴もあります。</p><h2>より便利なRakeとして使う</h2><p>便利なRakeというのは主に引数とオプションの扱い方のことです。
 Rakeは今も現役で便利に使っているんですが、例えば引数を渡したいときは環境変数として渡さないといけなくて、 これが割と面倒なのでした。</p><p>こんなふうに。</p><div class="CodeRay">
