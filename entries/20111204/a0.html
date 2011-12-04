@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>忙しくてフィードが読めないのでClineという通知用のツールを作った - Joy Luck Crab</title>
+<link href="../../favicon.png" rel="icon" type="image/png">
+<link href="../../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
+<link href="../../stylesheets/orange.css" media="screen" rel="stylesheet" type="text/css">
+<link href="../../entries.rss" rel="alternate" title="RSS" type="application/rss+xml">
+</head>
+<body>
+<div id="header">
+<h1>
+<a href="../../index.html">Joy Luck Crab</a>
+</h1>
+<ul id="menu">
+<li>
+<a href="../../index.html">Home</a>
+</li>
+<li>
+<a href="../../profile.html">Profile</a>
+</li>
+<li>
+<a href="../../entries.html">Archives</a>
+</li>
+<li>
+<a href="../../entries.rss" target="_blank">RSS</a>
+</li>
+</ul>
+</div>
+<div id="page">
+<div id="content">
+<article class="autopagerize_page_element"><h1 class="date">
+<a href="../../entries/20111204.html">2011-12-04</a>
+</h1>
+<h1 id="a0">
+<a href="../../entries/20111204/a0.html">忙しくてフィードが読めないのでClineという通知用のツールを作った</a>
+</h1>
+<p>たまに時間があるとフィードを読む習慣を復活させようとするんですが、結局は途中で仕事が忙しくなって放置してしまい数日後「全部読んだことにする」ボタンをクリックする繰り返しに疲れた。
+もうフィードアグリゲータで定期的に情報を集めるのは無理なんだなと最近は諦め始めていて、かといって最近の出来事がわからなくなるのはちょっと。。
+別に全部に目を通さなくていいから最近の情報は常に目の届くところで渦巻いていてほしい。</p>
+<p>一日のうちでいちばん眺めているのはディスプレイ（特にターミナル）で、そのターミナル上に新しめの情報が湧き水みたいに出てきては消えていく何かが欲しいと思ったので作ってみた。</p>
+<p><a href="https://github.com/hibariya/cline">Cline</a></p>
+<p>CUIをメインとした通知アプリのつもり。
+これを入れると↓のような通知を永遠に垂れ流すことができる（screenのbacktickとGrowlの部分）。</p>
+<p><img src="../../images/cline_sample.png" alt="Cline sample"></p>
+<p>Clineがやることは単純で、</p>
+<ol>
+<li>ネットで配信されているフィードやJSONから情報を集めてきて</li>
+<li>メッセージと公開時間とURLを一旦DBに保存して</li>
+<li>設定した場所へ出力する</li>
+</ol>
+<p>これだけ。
+フィードを集めてきてGrowl通知するだけならGrowlでやれるらしいけど、今回は集めた通知をターミナル上でこねくり回したりもしたいという欲求もあったのだった。</p>
+<p>ちなみにscreenのbacktickが複数あるのは<a href="http://shyouhei.tumblr.com/post/313410522/screenrc">ここ</a>で紹介されているやり方で設定したもの。
+ここにあるようにbacktickに日本語を表示するには git://git.savannah.gnu.org/screen.git から最新のソースを引っ張ってきてビルドしないとうまくいかなかった。</p>
+<p>普段screenか何かをお使いであれば役に立つかも。</p>
+<h2>インストール</h2>
+<p>gemで入れます。rubyが1.9以上でないと動きません。Windowsでの動作は未確認。</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ gem install cline
+</pre></div>
+</div>
+<p>初回だけ、<code>init</code> コマンドでDBをつくります。</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ cline init
+</pre></div>
+</div>
+<h2>設定</h2>
+<p>~/.cline/config に、幾つかの設定をします。例として、</p>
+<ul>
+<li>opmlに書いたフィードから集めてきたエントリを</li>
+<li>最新の2000個まで貯めて</li>
+<li>標準出力とGrowlに出力する</li>
+</ul>
+<p>ような設定にします。</p>
+<div class="CodeRay">
+  <div class="code"><pre>  <span style="color:#777"># coding: utf-8</span>
+
+  <span style="color:#036;font-weight:bold">Cline</span>.configure <span style="color:#080;font-weight:bold">do</span> |config|
+    config.append_collector <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">Collectors</span>::<span style="color:#036;font-weight:bold">Feed</span>
+    config.pool_size = <span style="color:#00D">2000</span>
+    config.out_stream = <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">OutStreams</span>::<span style="color:#036;font-weight:bold">WithGrowl</span>.new(<span style="color:#d70">$stdout</span>)
+  <span style="color:#080;font-weight:bold">end</span>
+</pre></div>
+</div>
+<p>べつにGrowlで出さなくてよければ、out_streamを設定する部分を</p>
+<div class="CodeRay">
+  <div class="code"><pre>  config.out_stream = <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">OutStreams</span>::<span style="color:#036;font-weight:bold">WithGrowl</span>.new(<span style="color:#d70">$stdout</span>)
+</pre></div>
+</div>
+<p>とします。</p>
+<h3>フィード一覧の登録</h3>
+<p>フィード一覧の記述されたopmlファイル（例えば、LDRなどのフィードアグリゲータからエクスポートしたもの）を ~/.cline/feeds.xml に配置します。</p>
+<p>OPMLといえばこんな感じのやつです。</p>
+<div class="CodeRay">
+  <div class="code"><pre><span style="color:#579">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span style="color:#070">&lt;opml</span> <span style="color:#b48">version</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">1.0</span><span style="color:#710">"</span></span><span style="color:#070">&gt;</span>
+  <span style="color:#070">&lt;head&gt;</span>
+    <span style="color:#070">&lt;title&gt;</span>livedoor Reader Subscriptions<span style="color:#070">&lt;/title&gt;</span>
+    <span style="color:#070">&lt;dateCreated&gt;</span>Sat, 29 Oct 2011 07:39:38 UTC<span style="color:#070">&lt;/dateCreated&gt;</span>
+    <span style="color:#070">&lt;ownerName&gt;</span>hibariya<span style="color:#070">&lt;/ownerName&gt;</span>
+  <span style="color:#070">&lt;/head&gt;</span>
+  <span style="color:#070">&lt;body&gt;</span>
+    <span style="color:#070">&lt;outline</span> <span style="color:#b48">title</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Subscriptions</span><span style="color:#710">"</span></span><span style="color:#070">&gt;</span>
+      <span style="color:#070">&lt;outline</span> <span style="color:#b48">title</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Pinboard (Popular items from Pinboard)</span><span style="color:#710">"</span></span> <span style="color:#b48">htmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://pinboard.in</span><span style="color:#710">"</span></span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">rss</span><span style="color:#710">"</span></span> <span style="color:#b48">xmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://feeds.pinboard.in/rss/popular/</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
+      <span style="color:#070">&lt;outline</span> <span style="color:#b48">title</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Strategic Choice</span><span style="color:#710">"</span></span> <span style="color:#b48">htmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://d.hatena.ne.jp/asakichy/</span><span style="color:#710">"</span></span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">rss</span><span style="color:#710">"</span></span> <span style="color:#b48">xmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://d.hatena.ne.jp/asakichy/rss</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
+      <span style="color:#070">&lt;outline</span> <span style="color:#b48">title</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">RubyKaigi AdventCalender 2011</span><span style="color:#710">"</span></span> <span style="color:#b48">htmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://rubykaigi.org/2011/ja/advent_calendar</span><span style="color:#710">"</span></span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">rss</span><span style="color:#710">"</span></span> <span style="color:#b48">xmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://rubykaigi.org/2011/ja/advent_calendar.rss</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
+      <span style="color:#777">&lt;!-- こんな感じでフィードの一覧が続く... --&gt;</span>
+    <span style="color:#070">&lt;/outline&gt;</span>
+  <span style="color:#070">&lt;/body&gt;</span>
+<span style="color:#070">&lt;/opml&gt;</span>
+</pre></div>
+</div>
+<p>設定はこれで終わりです。</p>
+<h2>通知の収集</h2>
+<p><code>collect</code> コマンドを使うとフィードなどを素直に取ってきます。
+cron的な何かで定期実行すればよいと思います。</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ cline collect
+</pre></div>
+</div>
+<h2>通知の出力</h2>
+<p><code>show [offset]</code> コマンドで、<em>最も表示された回数が少なく最も古い</em>通知を1件表示します。
+[offset]は何件かスキップしたいときに使います。</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ cline show
+  [2011-12-01 19:13:57 +0900][1] Gist: ursm create https://gist.github.com/1415569
+</pre></div>
+</div>
+<p><code>tick [offset] [interval]</code> コマンドで、[interval]で指定された秒感覚で新しい通知を1件ずつ出力していきます。
+これはtail -f っぽい出力になります。</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ cline tick 0 1
+  [2011-12-01 19:57:40 +0900][1] IssueComment: pokonski created https://github.com/twitter/bootstrap/issues/736
+  [2011-12-01 20:01:54 +0900][1] nkym:「おんなのこ」/「yui」[pixiv] http://hibariya.tumblr.com/post/13585938765
+  [2011-12-01 20:03:43 +0900][1] Photo http://hibariya.tumblr.com/post/13585964610
+  [2011-12-01 20:04:48 +0900][1] "猫の足音、女の髭、岩の根、熊の腱、魚の息、鳥の唾液から作られた。これらは、グレイプニルを作るのに使用されたため、この世に存在しなくなった といわれる。" http://hibariya.tumblr.com/post/13585980013
+  # 出力は続く...
+</pre></div>
+</div>
+<p>ちなみに[1]とか表示されているのは、今までに表示された回数です。</p>
+<h3>screen の backtick に垂れ流す</h3>
+<p>~/.screenrc の設定に以下のような backtick の設定をすれば15秒ごとに新しい通知を表示することができます。</p>
+<div class="CodeRay">
+  <div class="code"><pre>  backtick 0 0 0 cline tick 0 15
+</pre></div>
+</div>
+<p>backtickでの表示はこんな感じですね（これは3つ表示している例）。
+<img src="../../images/cline_backtick_sample.png" alt="cline backtick"></p>
+<p>ところで、1日に流れてくる情報の数には限りがあります。
+もし通知が収集に追いついてしまったらどうなるかというと、また最初から通知し直します。
+なので1度見逃しても安心。またいつか流れてきます。
+今回の設定例だと最新の2000件が常にぐるぐると回リ続けます。2000件を超した古い通知から削除されます。</p>
+<p>ひとつの通知が表示されている時間は短いものですので、目に止まったけど流れてしまったものを手早く見つけるコマンドも幾つか用意しました。</p>
+<h3>キーワードで通知を出力する</h3>
+<p>気になったけど流れていったタイトルとか、ドメインで絞り込んだりできます。</p>
+<p><code>search</code> コマンドでキーワード検索した結果を一覧できます。</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ cline search github.com
+  [2011-12-04 17:17:37 +0900][1] CommitComment: svenfuchs  https://github.com/travis-ci/travis-ci/commit/b496bc9c5e#commitcomment-766925
+  [2011-12-04 17:15:30 +0900][1] Push: svenfuchs  https://github.com/travis-ci/travis-ci
+  [2011-12-04 16:57:16 +0900][1] Create: banister  https://github.com/pry/pry
+  [2011-12-04 16:49:38 +0900][1] Watch: ursm started https://github.com/mgorny/portage-jobsmon
+  [2011-12-04 16:42:15 +0900][1] Push: ConradIrwin  https://github.com/pry/pry
+  # 出力は続く...
+</pre></div>
+</div>
+<p>ヒットしたものをすべて出力するので less などで見るとよいかもしれません。</p>
+<h3>最近表示した通知をいくつか出力する</h3>
+<p><code>recent [limit]</code> コマンドで、最近通知したものを（できるだけ）現在に近い順で一覧できます。
+[limit]を指定しなければ1件だけ出します。</p>
+<div class="CodeRay">
+  <div class="code"><pre>  $ cline recent 10
+  [2011-12-01 21:28:10 +0900][2] PullRequest: arunagw closed https://github.com/rails/rails/pull/2793
+  [2011-12-01 21:28:10 +0900][2] IssueComment: arunagw created https://github.com/rails/rails/issues/2793
+  [2011-12-01 21:24:25 +0900][2] Push: josevalim  https://github.com/rails/rails
+  [2011-12-01 21:22:23 +0900][2] IssueComment: rsim created https://github.com/rails/rails/issues/2793
+  # 出力は続く...
+</pre></div>
+</div>
+<h2>その他: GithubのActivity</h2>
+<p>ちなみにGithubのactivityも取得することもできます。
+~/.cline/config のブロック内で</p>
+<div class="CodeRay">
+  <div class="code"><pre>  config.append_collector <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">Collectors</span>::<span style="color:#036;font-weight:bold">Github</span>
+  <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">Collectors</span>::<span style="color:#036;font-weight:bold">Github</span>.login_name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">github username</span><span style="color:#710">'</span></span>
+</pre></div>
+</div>
+<p>と追記すると自分のfollowしている人のactivityを収集してくることができます。</p>
+<h2>もっと他の情報を収集して通知する</h2>
+<p>収集する対象や出力先は拡張できます。
+より具体的には<a href="https://github.com/hibariya/cline">Cline</a>のREADMEを参照してください。</p>
+</article><div id="comments">
+<div id="disqus_thread">
+  <script type="text/javascript">
+    //<![CDATA[
+      var disqus_shortname = 'joyluckcrab';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    //]]>
+  </script>
+</div>
+</div>
+<div class="nav">
+<div class="prev">
+</div>
+<div class="next">
+<link href="../../entries/20111109/a0.html" rel="next">
+</div>
+</div>
+<div class="autopagerize_insert_before"></div>
+</div>
+</div>
+<div id="footer">
+Joy Luck Crab (C) hibariya
+Generated by
+<a href="https://github.com/hibariya/retter" target="_blank">Retter</a>
+</div>
+</body>
+</html>
