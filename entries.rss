@@ -29,7 +29,7 @@
   <span style="color:#080;font-weight:bold">end</span>
 </pre></div>
 </div><p>べつにGrowlで出さなくてよければ、out_streamを設定する部分を</p><div class="CodeRay">
-  <div class="code"><pre>  config.out_stream = <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">OutStreams</span>::<span style="color:#036;font-weight:bold">WithGrowl</span>.new(<span style="color:#d70">$stdout</span>)
+  <div class="code"><pre>  config.out_stream = <span style="color:#d70">$stdout</span>
 </pre></div>
 </div><p>とします。</p><h3>フィード一覧の登録</h3><p>フィード一覧の記述されたopmlファイル（例えば、LDRなどのフィードアグリゲータからエクスポートしたもの）を ~/.cline/feeds.xml に配置します。</p><p>OPMLといえばこんな感じのやつです。</p><div class="CodeRay">
   <div class="code"><pre><span style="color:#579">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
