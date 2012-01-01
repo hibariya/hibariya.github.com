@@ -32,6 +32,14 @@
 <div id="content">
 <div class="autopagerize_page_element" id="entries">
 <article><h1 class="date">
+<a href="./entries/20120101.html">2012-01-01</a>
+</h1>
+<h1 id="a0">
+<a href="./entries/20120101/a0.html">年も明けたのでClojureを勉強し始めた</a>
+</h1>
+<p>結局さわりはじめたのはClojure。</p>
+<p>手始めに<a href="http://estore.ohmsha.co.jp/">オーム社eStore(β)</a>で<a href="http://estore.ohmsha.co.jp/titles/978427406789P">プログラミングClojure</a>を買ったよ。</p>
+</article><article><h1 class="date">
 <a href="./entries/20111208.html">2011-12-08</a>
 </h1>
 <h1 id="a0">
@@ -260,29 +268,9 @@ cron的な何かで定期実行すればよいと思います。</p>
 <li>スタイルの修正を少々</li>
 </ul>
 <p>次はコメントシステムを簡単に導入できるようにしておきたい。</p>
-</article><article><h1 class="date">
-<a href="./entries/20111107.html">2011-11-07</a>
-</h1>
-<h1 id="a0">
-<a href="./entries/20111107/a0.html">RubyのProc#callをjavascriptの関数みたいに呼び出す（引数なし）</a>
-</h1>
-<div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Proc</span>
-    alias_method <span style="color:#A60">:[]</span>, <span style="color:#A60">:call</span>
-  <span style="color:#080;font-weight:bold">end</span>
-
-  a = -&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">hi</span><span style="color:#710">'</span></span> }
-
-  a[] <span style="color:#777"># =&gt; "hi"</span>
-</pre></div>
-</div>
-<p>ブラケットをパーレンに読み替えると何かそれっぽい。くだらない。</p>
-<p><strong>2011/11/08 追記</strong></p>
-<p>ursm先生に教えてもらったのだけど、作らなくても <code>Proc#[]</code> は既にありました。
-もしかしてくだらなくなかったのか。実際に使ってる事例（こう使うといいよ的な）とかあるのか気になる。</p>
 </article><div class="nav">
 <div class="next">
-<link href="./entries/20111025.html" rel="next">
+<link href="./entries/20111107.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
