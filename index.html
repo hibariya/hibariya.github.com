@@ -32,6 +32,131 @@
 <div id="content">
 <div class="autopagerize_page_element" id="entries">
 <article><h1 class="date">
+<a href="./entries/20120313.html">2012-03-13</a>
+</h1>
+<h1 id="a0">
+<a href="./entries/20120313/a0.html">FiberとSemi-Coroutine</a>
+</h1>
+<h2>Fiber</h2>
+<p>Rubyの組込みライブラリとして提供されているFiber。
+ノンプリエンプティブな軽量スレッド。</p>
+<ul>
+<li>生成したファイバは勝手には走らない</li>
+<li>コンテキストの切り替えは自分で</li>
+<li>親から子へ、子から親へ切り替えることができる</li>
+<li>IO待ちでも切り替わらない</li>
+</ul>
+<p>コンテキストの切り替えは<code>Fiber#resume</code>と<code>Fiber.yield</code>で行う。</p>
+<div class="CodeRay">
+  <div class="code"><pre>fiber = <span style="color:#036;font-weight:bold">Fiber</span>.new {
+  puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Hello Alice.</span><span style="color:#710">'</span></span>
+
+  <span style="color:#036;font-weight:bold">Fiber</span>.yield
+
+  puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Hello Bob.</span><span style="color:#710">'</span></span>
+
+  <span style="color:#036;font-weight:bold">Fiber</span>.yield
+
+  puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Hello Carol.</span><span style="color:#710">'</span></span>
+}
+
+fiber.resume <span style="color:#888"># "Hello Alice." と表示</span>
+fiber.resume <span style="color:#888"># "Hello Bob." と表示</span>
+fiber.resume <span style="color:#888"># "Hello Carol." と表示</span>
+</pre></div>
+</div>
+<p>上の例ではトップレベルが親。ブロックの中が子。親と子でキャッチボールしてる感じ。
+<code>Fiber#resume</code>で親から子へコンテキストを切り替え、<code>Fiber.yield</code>で子から親へ切り替える。</p>
+<p>組込みライブラリとしてのFiberは、親から子、子から親へのみ切り替えられる（それ以外のコンテキストに切り替えることはできない）。</p>
+<h2>Fiberの引数と戻り値</h2>
+<h3>親からみたときの引数と戻り値</h3>
+<p>引数は常に<code>Fiber#resume</code>に渡す。
+戻り値は<code>Fiber#resume</code>の戻り値。</p>
+<h3>子からみたときの引数と戻り値</h3>
+<p>最初の引数はブロック引数として渡される。
+それ以降の引数は<code>Fiber.yield</code>の戻り値として与えられる。</p>
+<p>戻り値は<code>Fiber.yield</code>の引数として渡す。
+<code>Fiber.new</code>で渡したブロックが終了したときは、最後に評価された式の値が戻り値として返る。</p>
+<div class="CodeRay">
+  <div class="code"><pre>greet3 = <span style="color:#036;font-weight:bold">Fiber</span>.new {|name|
+  <span style="color:#00D;font-weight:bold">3</span>.times <span style="color:#080;font-weight:bold">do</span>
+    name = <span style="color:#036;font-weight:bold">Fiber</span>.yield(<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">Hi </span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>name<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>)
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Good night</span><span style="color:#710">'</span></span>
+}
+
+greet3.resume(<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Aron</span><span style="color:#710">'</span></span>)  <span style="color:#888"># =&gt; "Hi Aron"</span>
+greet3.resume(<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Billy</span><span style="color:#710">'</span></span>) <span style="color:#888"># =&gt; "Hi Billy"</span>
+greet3.resume(<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Colon</span><span style="color:#710">'</span></span>) <span style="color:#888"># =&gt; "Hi Colon"</span>
+greet3.resume          <span style="color:#888"># =&gt; "Good night"</span>
+</pre></div>
+</div>
+<h2>Coroutine</h2>
+<ul>
+<li>途中まで計算して、一旦値を返して、その後また続きから実行できる仕組み</li>
+<li>親と子（callerとcallee）という関係があるものをsemi-coroutineと呼ぶ</li>
+<li>組込みライブラリのFiberはsemi-coroutineの実装と言ってよいのかな</li>
+</ul>
+<h2>semi-coroutineさん何に使うの</h2>
+<p>ジェネレータや外部イテレータに使うらしい。
+無限リストにも使うらしい。
+外部イテレータとしてときどき使うかもしれないEnumeratorではFiberを使ってるようだ。</p>
+<p>永遠に終わらない数字のカウントアップを行うジェネレータ。</p>
+<div class="CodeRay">
+  <div class="code"><pre>endless = <span style="color:#036;font-weight:bold">Fiber</span>.new {
+  loop.with_index <span style="color:#080;font-weight:bold">do</span> |_, i|
+    <span style="color:#036;font-weight:bold">Fiber</span>.yield(i)
+  <span style="color:#080;font-weight:bold">end</span>
+}
+
+endless.resume <span style="color:#888"># =&gt; 0</span>
+endless.resume <span style="color:#888"># =&gt; 1</span>
+endless.resume <span style="color:#888"># =&gt; 2</span>
+endless.resume <span style="color:#888"># =&gt; 3</span>
+endless.resume <span style="color:#888"># =&gt; 4</span>
+endless.resume <span style="color:#888"># =&gt; 5</span>
+endless.resume <span style="color:#888"># =&gt; 6</span>
+<span style="color:#888"># endless...</span>
+</pre></div>
+</div>
+<p>FiberのAPIを隠して外部イテレータっぽく使ってみる。</p>
+<div class="CodeRay">
+  <div class="code"><pre><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">EndlessNumber</span>
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>
+    rewind
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">rewind</span>
+    <span style="color:#33B">@generator</span> = <span style="color:#036;font-weight:bold">Fiber</span>.new {
+      loop.with_index <span style="color:#080;font-weight:bold">do</span> |_, i|
+        <span style="color:#036;font-weight:bold">Fiber</span>.yield(i)
+      <span style="color:#080;font-weight:bold">end</span>
+    }
+
+    <span style="color:#038;font-weight:bold">self</span>
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">next</span>
+    <span style="color:#33B">@generator</span>.resume
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+en = <span style="color:#036;font-weight:bold">EndlessNumber</span>.new
+
+en.next <span style="color:#888"># =&gt; 0</span>
+en.next <span style="color:#888"># =&gt; 1</span>
+en.next <span style="color:#888"># =&gt; 2</span>
+en.rewind
+en.next <span style="color:#888"># =&gt; 0</span>
+
+<span style="color:#080;font-weight:bold">while</span> num = en.next
+  puts num
+<span style="color:#080;font-weight:bold">end</span> <span style="color:#888"># ウワーッ</span>
+</pre></div>
+</div>
+<p>　これに使おう、というのがとっさに思い浮かばない。</p>
+</article><article><h1 class="date">
 <a href="./entries/20120101.html">2012-01-01</a>
 </h1>
 <h1 id="a0">
@@ -103,18 +228,18 @@ Ioはかわいい。Scalaは書き方が難しいなあと思った。</p>
 </ul>
 <p>ような設定にします。</p>
 <div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#777"># coding: utf-8</span>
+  <div class="code"><pre>  <span style="color:#888"># coding: utf-8</span>
 
   <span style="color:#036;font-weight:bold">Cline</span>.configure <span style="color:#080;font-weight:bold">do</span> |config|
     config.append_collector <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">Collectors</span>::<span style="color:#036;font-weight:bold">Feed</span>
-    config.pool_size = <span style="color:#00D">2000</span>
-    config.out_stream = <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">OutStreams</span>::<span style="color:#036;font-weight:bold">WithGrowl</span>.new(<span style="color:#d70">$stdout</span>)
+    config.pool_size = <span style="color:#00D;font-weight:bold">2000</span>
+    config.out_stream = <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">OutStreams</span>::<span style="color:#036;font-weight:bold">WithGrowl</span>.new(<span style="color:#d70;font-weight:bold">$stdout</span>)
   <span style="color:#080;font-weight:bold">end</span>
 </pre></div>
 </div>
 <p>べつにGrowlで出さなくてよければ、out_streamを設定する部分を</p>
 <div class="CodeRay">
-  <div class="code"><pre>  config.out_stream = <span style="color:#d70">$stdout</span>
+  <div class="code"><pre>  config.out_stream = <span style="color:#d70;font-weight:bold">$stdout</span>
 </pre></div>
 </div>
 <p>とします。</p>
@@ -123,18 +248,18 @@ Ioはかわいい。Scalaは書き方が難しいなあと思った。</p>
 <p>OPMLといえばこんな感じのやつです。</p>
 <div class="CodeRay">
   <div class="code"><pre><span style="color:#579">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span style="color:#070">&lt;opml</span> <span style="color:#b48">version</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">1.0</span><span style="color:#710">"</span></span><span style="color:#070">&gt;</span>
+<span style="color:#070">&lt;opml</span> <span style="color:#007">version</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">1.0</span><span style="color:#710">"</span></span><span style="color:#070">&gt;</span>
   <span style="color:#070">&lt;head&gt;</span>
     <span style="color:#070">&lt;title&gt;</span>livedoor Reader Subscriptions<span style="color:#070">&lt;/title&gt;</span>
     <span style="color:#070">&lt;dateCreated&gt;</span>Sat, 29 Oct 2011 07:39:38 UTC<span style="color:#070">&lt;/dateCreated&gt;</span>
     <span style="color:#070">&lt;ownerName&gt;</span>hibariya<span style="color:#070">&lt;/ownerName&gt;</span>
   <span style="color:#070">&lt;/head&gt;</span>
   <span style="color:#070">&lt;body&gt;</span>
-    <span style="color:#070">&lt;outline</span> <span style="color:#b48">title</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Subscriptions</span><span style="color:#710">"</span></span><span style="color:#070">&gt;</span>
-      <span style="color:#070">&lt;outline</span> <span style="color:#b48">title</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Pinboard (Popular items from Pinboard)</span><span style="color:#710">"</span></span> <span style="color:#b48">htmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://pinboard.in</span><span style="color:#710">"</span></span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">rss</span><span style="color:#710">"</span></span> <span style="color:#b48">xmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://feeds.pinboard.in/rss/popular/</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
-      <span style="color:#070">&lt;outline</span> <span style="color:#b48">title</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Strategic Choice</span><span style="color:#710">"</span></span> <span style="color:#b48">htmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://d.hatena.ne.jp/asakichy/</span><span style="color:#710">"</span></span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">rss</span><span style="color:#710">"</span></span> <span style="color:#b48">xmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://d.hatena.ne.jp/asakichy/rss</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
-      <span style="color:#070">&lt;outline</span> <span style="color:#b48">title</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">RubyKaigi AdventCalender 2011</span><span style="color:#710">"</span></span> <span style="color:#b48">htmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://rubykaigi.org/2011/ja/advent_calendar</span><span style="color:#710">"</span></span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">rss</span><span style="color:#710">"</span></span> <span style="color:#b48">xmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://rubykaigi.org/2011/ja/advent_calendar.rss</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
-      <span style="color:#777">&lt;!-- こんな感じでフィードの一覧が続く... --&gt;</span>
+    <span style="color:#070">&lt;outline</span> <span style="color:#007">title</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">Subscriptions</span><span style="color:#710">"</span></span><span style="color:#070">&gt;</span>
+      <span style="color:#070">&lt;outline</span> <span style="color:#007">title</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">Pinboard (Popular items from Pinboard)</span><span style="color:#710">"</span></span> <span style="color:#007">htmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://pinboard.in</span><span style="color:#710">"</span></span> <span style="color:#007">type</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">rss</span><span style="color:#710">"</span></span> <span style="color:#007">xmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://feeds.pinboard.in/rss/popular/</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
+      <span style="color:#070">&lt;outline</span> <span style="color:#007">title</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">Strategic Choice</span><span style="color:#710">"</span></span> <span style="color:#007">htmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://d.hatena.ne.jp/asakichy/</span><span style="color:#710">"</span></span> <span style="color:#007">type</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">rss</span><span style="color:#710">"</span></span> <span style="color:#007">xmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://d.hatena.ne.jp/asakichy/rss</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
+      <span style="color:#070">&lt;outline</span> <span style="color:#007">title</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">RubyKaigi AdventCalender 2011</span><span style="color:#710">"</span></span> <span style="color:#007">htmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://rubykaigi.org/2011/ja/advent_calendar</span><span style="color:#710">"</span></span> <span style="color:#007">type</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">rss</span><span style="color:#710">"</span></span> <span style="color:#007">xmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://rubykaigi.org/2011/ja/advent_calendar.rss</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
+      <span style="color:#888">&lt;!-- こんな感じでフィードの一覧が続く... --&gt;</span>
     <span style="color:#070">&lt;/outline&gt;</span>
   <span style="color:#070">&lt;/body&gt;</span>
 <span style="color:#070">&lt;/opml&gt;</span>
@@ -212,7 +337,7 @@ cron的な何かで定期実行すればよいと思います。</p>
 ~/.cline/config のブロック内で</p>
 <div class="CodeRay">
   <div class="code"><pre>  config.append_collector <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">Collectors</span>::<span style="color:#036;font-weight:bold">Github</span>
-  <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">Collectors</span>::<span style="color:#036;font-weight:bold">Github</span>.login_name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">github username</span><span style="color:#710">'</span></span>
+  <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">Collectors</span>::<span style="color:#036;font-weight:bold">Github</span>.login_name = <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">github username</span><span style="color:#710">'</span></span>
 </pre></div>
 </div>
 <p>と追記すると自分のfollowしている人のactivityを収集してくることができます。</p>
@@ -235,42 +360,20 @@ cron的な何かで定期実行すればよいと思います。</p>
 <h2>インストール</h2>
 <p>まずはRetterfileに<code>disqus_shortname</code>という設定を追記します。</p>
 <div class="CodeRay">
-  <div class="code"><pre>disqus_shortname <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">your_disqus_shortname</span><span style="color:#710">'</span></span>
+  <div class="code"><pre>disqus_shortname <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">your_disqus_shortname</span><span style="color:#710">'</span></span>
 </pre></div>
 </div>
 <p>あとは任意の箇所でヘルパメソッド<code>render_disqus_comment_form</code>を呼ぶだけです。</p>
 <p>例えば<code>layouts/article.html.haml</code>などに。</p>
 <div class="CodeRay">
-  <div class="code"><pre>-<span style="color:#777"># 省略</span>
-<span style="color:#036;font-weight:bold">#comments</span>= render_disqus_comment_form
--<span style="color:#777"># 省略</span>
+  <div class="code"><pre>-# 省略
+#comments= render_disqus_comment_form
+-# 省略
 </pre></div>
 </div>
-</article><article><h1 class="date">
-<a href="./entries/20111108.html">2011-11-08</a>
-</h1>
-<h1 id="a0">
-<a href="./entries/20111108/a0.html">静的なパーマリンクにコメントをつける</a>
-</h1>
-<p><a href="http://disqus.com/">DISQUS</a>というサービスがあって、ここで提供されるJSをHTMLに埋め込むことでコメントシステムを導入できるらしい。
-実験的にこのサイトにもつけてみた。</p>
-<p>コメントをつけられるのは割と重要な要素だと思うので、デザイナさんの様子を伺いつつ<a href="https://github.com/hibariya/retter">retter</a>にも導入したい。
-そのときは設定ファイルにDISQUSの識別子を記述するだけで最低限の機能が提供できるようにしよう。</p>
-
-<h1 id="a1">
-<a href="./entries/20111108/a1.html">retter-0.1.2</a>
-</h1>
-<p><a href="https://rubygems.org/gems/retter">バージョンを上げた</a>。</p>
-<ul>
-<li>テンプレートでエラーが起きたときに正しいファイル名と行数が出るようになった</li>
-<li>
-<code>edit</code> <code>preview</code> コマンドに渡す引数としてファイル名（today.mdとか）が使えるようになった</li>
-<li>スタイルの修正を少々</li>
-</ul>
-<p>次はコメントシステムを簡単に導入できるようにしておきたい。</p>
 </article><div class="nav">
 <div class="next">
-<link href="./entries/20111107.html" rel="next">
+<link href="./entries/20111108.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>

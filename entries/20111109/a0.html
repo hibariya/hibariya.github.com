@@ -46,15 +46,15 @@
 <h2>インストール</h2>
 <p>まずはRetterfileに<code>disqus_shortname</code>という設定を追記します。</p>
 <div class="CodeRay">
-  <div class="code"><pre>disqus_shortname <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">your_disqus_shortname</span><span style="color:#710">'</span></span>
+  <div class="code"><pre>disqus_shortname <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">your_disqus_shortname</span><span style="color:#710">'</span></span>
 </pre></div>
 </div>
 <p>あとは任意の箇所でヘルパメソッド<code>render_disqus_comment_form</code>を呼ぶだけです。</p>
 <p>例えば<code>layouts/article.html.haml</code>などに。</p>
 <div class="CodeRay">
-  <div class="code"><pre>-<span style="color:#777"># 省略</span>
-<span style="color:#036;font-weight:bold">#comments</span>= render_disqus_comment_form
--<span style="color:#777"># 省略</span>
+  <div class="code"><pre>-# 省略
+#comments= render_disqus_comment_form
+-# 省略
 </pre></div>
 </div>
 </article><div id="comments">

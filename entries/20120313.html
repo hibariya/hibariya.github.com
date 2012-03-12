@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>2012-03-13 - Joy Luck Crab</title>
+<link href="../favicon.png" rel="icon" type="image/png">
+<link href="../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
+<link href="../stylesheets/orange.css" media="screen" rel="stylesheet" type="text/css">
+<link href="../entries.rss" rel="alternate" title="RSS" type="application/rss+xml">
+</head>
+<body>
+<div id="header">
+<h1>
+<a href="../index.html">Joy Luck Crab</a>
+</h1>
+<ul id="menu">
+<li>
+<a href="../index.html">Home</a>
+</li>
+<li>
+<a href="../profile.html">Profile</a>
+</li>
+<li>
+<a href="../entries.html">Archives</a>
+</li>
+<li>
+<a href="../entries.rss" target="_blank">RSS</a>
+</li>
+</ul>
+</div>
+<div id="page">
+<div id="content">
+<article class="autopagerize_page_element"><h1 class="date">
+<a href="../entries/20120313.html">2012-03-13</a>
+</h1>
+<h1 id="a0">
+<a href="../entries/20120313/a0.html">FiberとSemi-Coroutine</a>
+</h1>
+<h2>Fiber</h2>
+<p>Rubyの組込みライブラリとして提供されているFiber。
+ノンプリエンプティブな軽量スレッド。</p>
+<ul>
+<li>生成したファイバは勝手には走らない</li>
+<li>コンテキストの切り替えは自分で</li>
+<li>親から子へ、子から親へ切り替えることができる</li>
+<li>IO待ちでも切り替わらない</li>
+</ul>
+<p>コンテキストの切り替えは<code>Fiber#resume</code>と<code>Fiber.yield</code>で行う。</p>
+<div class="CodeRay">
+  <div class="code"><pre>fiber = <span style="color:#036;font-weight:bold">Fiber</span>.new {
+  puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Hello Alice.</span><span style="color:#710">'</span></span>
+
+  <span style="color:#036;font-weight:bold">Fiber</span>.yield
+
+  puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Hello Bob.</span><span style="color:#710">'</span></span>
+
+  <span style="color:#036;font-weight:bold">Fiber</span>.yield
+
+  puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Hello Carol.</span><span style="color:#710">'</span></span>
+}
+
+fiber.resume <span style="color:#888"># "Hello Alice." と表示</span>
+fiber.resume <span style="color:#888"># "Hello Bob." と表示</span>
+fiber.resume <span style="color:#888"># "Hello Carol." と表示</span>
+</pre></div>
+</div>
+<p>上の例ではトップレベルが親。ブロックの中が子。親と子でキャッチボールしてる感じ。
+<code>Fiber#resume</code>で親から子へコンテキストを切り替え、<code>Fiber.yield</code>で子から親へ切り替える。</p>
+<p>組込みライブラリとしてのFiberは、親から子、子から親へのみ切り替えられる（それ以外のコンテキストに切り替えることはできない）。</p>
+<h2>Fiberの引数と戻り値</h2>
+<h3>親からみたときの引数と戻り値</h3>
+<p>引数は常に<code>Fiber#resume</code>に渡す。
+戻り値は<code>Fiber#resume</code>の戻り値。</p>
+<h3>子からみたときの引数と戻り値</h3>
+<p>最初の引数はブロック引数として渡される。
+それ以降の引数は<code>Fiber.yield</code>の戻り値として与えられる。</p>
+<p>戻り値は<code>Fiber.yield</code>の引数として渡す。
+<code>Fiber.new</code>で渡したブロックが終了したときは、最後に評価された式の値が戻り値として返る。</p>
+<div class="CodeRay">
+  <div class="code"><pre>greet3 = <span style="color:#036;font-weight:bold">Fiber</span>.new {|name|
+  <span style="color:#00D;font-weight:bold">3</span>.times <span style="color:#080;font-weight:bold">do</span>
+    name = <span style="color:#036;font-weight:bold">Fiber</span>.yield(<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">Hi </span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>name<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>)
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Good night</span><span style="color:#710">'</span></span>
+}
+
+greet3.resume(<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Aron</span><span style="color:#710">'</span></span>)  <span style="color:#888"># =&gt; "Hi Aron"</span>
+greet3.resume(<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Billy</span><span style="color:#710">'</span></span>) <span style="color:#888"># =&gt; "Hi Billy"</span>
+greet3.resume(<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Colon</span><span style="color:#710">'</span></span>) <span style="color:#888"># =&gt; "Hi Colon"</span>
+greet3.resume          <span style="color:#888"># =&gt; "Good night"</span>
+</pre></div>
+</div>
+<h2>Coroutine</h2>
+<ul>
+<li>途中まで計算して、一旦値を返して、その後また続きから実行できる仕組み</li>
+<li>親と子（callerとcallee）という関係があるものをsemi-coroutineと呼ぶ</li>
+<li>組込みライブラリのFiberはsemi-coroutineの実装と言ってよいのかな</li>
+</ul>
+<h2>semi-coroutineさん何に使うの</h2>
+<p>ジェネレータや外部イテレータに使うらしい。
+無限リストにも使うらしい。
+外部イテレータとしてときどき使うかもしれないEnumeratorではFiberを使ってるようだ。</p>
+<p>永遠に終わらない数字のカウントアップを行うジェネレータ。</p>
+<div class="CodeRay">
+  <div class="code"><pre>endless = <span style="color:#036;font-weight:bold">Fiber</span>.new {
+  loop.with_index <span style="color:#080;font-weight:bold">do</span> |_, i|
+    <span style="color:#036;font-weight:bold">Fiber</span>.yield(i)
+  <span style="color:#080;font-weight:bold">end</span>
+}
+
+endless.resume <span style="color:#888"># =&gt; 0</span>
+endless.resume <span style="color:#888"># =&gt; 1</span>
+endless.resume <span style="color:#888"># =&gt; 2</span>
+endless.resume <span style="color:#888"># =&gt; 3</span>
+endless.resume <span style="color:#888"># =&gt; 4</span>
+endless.resume <span style="color:#888"># =&gt; 5</span>
+endless.resume <span style="color:#888"># =&gt; 6</span>
+<span style="color:#888"># endless...</span>
+</pre></div>
+</div>
+<p>FiberのAPIを隠して外部イテレータっぽく使ってみる。</p>
+<div class="CodeRay">
+  <div class="code"><pre><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">EndlessNumber</span>
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>
+    rewind
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">rewind</span>
+    <span style="color:#33B">@generator</span> = <span style="color:#036;font-weight:bold">Fiber</span>.new {
+      loop.with_index <span style="color:#080;font-weight:bold">do</span> |_, i|
+        <span style="color:#036;font-weight:bold">Fiber</span>.yield(i)
+      <span style="color:#080;font-weight:bold">end</span>
+    }
+
+    <span style="color:#038;font-weight:bold">self</span>
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">next</span>
+    <span style="color:#33B">@generator</span>.resume
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+en = <span style="color:#036;font-weight:bold">EndlessNumber</span>.new
+
+en.next <span style="color:#888"># =&gt; 0</span>
+en.next <span style="color:#888"># =&gt; 1</span>
+en.next <span style="color:#888"># =&gt; 2</span>
+en.rewind
+en.next <span style="color:#888"># =&gt; 0</span>
+
+<span style="color:#080;font-weight:bold">while</span> num = en.next
+  puts num
+<span style="color:#080;font-weight:bold">end</span> <span style="color:#888"># ウワーッ</span>
+</pre></div>
+</div>
+<p>　これに使おう、というのがとっさに思い浮かばない。</p>
+</article><div class="nav">
+<div class="prev">
+</div>
+<div class="next">
+<link href="../entries/20120101.html" rel="next">
+</div>
+</div>
+<div class="autopagerize_insert_before"></div>
+</div>
+</div>
+<div id="footer">
+Joy Luck Crab (C) hibariya
+Generated by
+<a href="https://github.com/hibariya/retter" target="_blank">Retter</a>
+</div>
+</body>
+</html>

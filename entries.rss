@@ -1,4 +1,102 @@
-<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2012-01-01</dc:date><description>hibariya.github.com</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20120101.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111208.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111204.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111109.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111108.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111107.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111025.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111022.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111012.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111010.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111003.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110919.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110918.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110916.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110913.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110911.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110909.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20120101.html"><title>2012/01/01</title><description><![CDATA[<h1 id="a0">年も明けたのでClojureを勉強し始めた</h1><p>結局さわりはじめたのはClojure。</p><p>手始めに<a href="http://estore.ohmsha.co.jp/">オーム社eStore(β)</a>で<a href="http://estore.ohmsha.co.jp/titles/978427406789P">プログラミングClojure</a>を買ったよ。</p>]]></description><dc:date>2012-01-01</dc:date><link>http://hibariya.github.com/entries/20120101.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111208.html"><title>2011/12/08</title><description><![CDATA[<h1 id="a0">7つの言語 7つの世界 を読み終わった</h1><p>今日はちょっと体調を崩していたので全休、内職もほったらかしにしつつ。
+<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2012-03-13</dc:date><description>hibariya.github.com</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20120313.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120101.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111208.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111204.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111109.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111108.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111107.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111025.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111022.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111012.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111010.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111003.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110919.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110918.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110916.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110913.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110911.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110909.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20120313.html"><title>2012/03/13</title><description><![CDATA[<h1 id="a0">FiberとSemi-Coroutine</h1><h2>Fiber</h2><p>Rubyの組込みライブラリとして提供されているFiber。
+ノンプリエンプティブな軽量スレッド。</p><ul>
+<li>生成したファイバは勝手には走らない</li>
+<li>コンテキストの切り替えは自分で</li>
+<li>親から子へ、子から親へ切り替えることができる</li>
+<li>IO待ちでも切り替わらない</li>
+</ul>
+<p>コンテキストの切り替えは<code>Fiber#resume</code>と<code>Fiber.yield</code>で行う。</p><div class="CodeRay">
+  <div class="code"><pre>fiber = <span style="color:#036;font-weight:bold">Fiber</span>.new {
+  puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Hello Alice.</span><span style="color:#710">'</span></span>
+
+  <span style="color:#036;font-weight:bold">Fiber</span>.yield
+
+  puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Hello Bob.</span><span style="color:#710">'</span></span>
+
+  <span style="color:#036;font-weight:bold">Fiber</span>.yield
+
+  puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Hello Carol.</span><span style="color:#710">'</span></span>
+}
+
+fiber.resume <span style="color:#888"># "Hello Alice." と表示</span>
+fiber.resume <span style="color:#888"># "Hello Bob." と表示</span>
+fiber.resume <span style="color:#888"># "Hello Carol." と表示</span>
+</pre></div>
+</div><p>上の例ではトップレベルが親。ブロックの中が子。親と子でキャッチボールしてる感じ。
+<code>Fiber#resume</code>で親から子へコンテキストを切り替え、<code>Fiber.yield</code>で子から親へ切り替える。</p><p>組込みライブラリとしてのFiberは、親から子、子から親へのみ切り替えられる（それ以外のコンテキストに切り替えることはできない）。</p><h2>Fiberの引数と戻り値</h2><h3>親からみたときの引数と戻り値</h3><p>引数は常に<code>Fiber#resume</code>に渡す。
+戻り値は<code>Fiber#resume</code>の戻り値。</p><h3>子からみたときの引数と戻り値</h3><p>最初の引数はブロック引数として渡される。
+それ以降の引数は<code>Fiber.yield</code>の戻り値として与えられる。</p><p>戻り値は<code>Fiber.yield</code>の引数として渡す。
+<code>Fiber.new</code>で渡したブロックが終了したときは、最後に評価された式の値が戻り値として返る。</p><div class="CodeRay">
+  <div class="code"><pre>greet3 = <span style="color:#036;font-weight:bold">Fiber</span>.new {|name|
+  <span style="color:#00D;font-weight:bold">3</span>.times <span style="color:#080;font-weight:bold">do</span>
+    name = <span style="color:#036;font-weight:bold">Fiber</span>.yield(<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">Hi </span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>name<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>)
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Good night</span><span style="color:#710">'</span></span>
+}
+
+greet3.resume(<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Aron</span><span style="color:#710">'</span></span>)  <span style="color:#888"># =&gt; "Hi Aron"</span>
+greet3.resume(<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Billy</span><span style="color:#710">'</span></span>) <span style="color:#888"># =&gt; "Hi Billy"</span>
+greet3.resume(<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Colon</span><span style="color:#710">'</span></span>) <span style="color:#888"># =&gt; "Hi Colon"</span>
+greet3.resume          <span style="color:#888"># =&gt; "Good night"</span>
+</pre></div>
+</div><h2>Coroutine</h2><ul>
+<li>途中まで計算して、一旦値を返して、その後また続きから実行できる仕組み</li>
+<li>親と子（callerとcallee）という関係があるものをsemi-coroutineと呼ぶ</li>
+<li>組込みライブラリのFiberはsemi-coroutineの実装と言ってよいのかな</li>
+</ul>
+<h2>semi-coroutineさん何に使うの</h2><p>ジェネレータや外部イテレータに使うらしい。
+無限リストにも使うらしい。
+外部イテレータとしてときどき使うかもしれないEnumeratorではFiberを使ってるようだ。</p><p>永遠に終わらない数字のカウントアップを行うジェネレータ。</p><div class="CodeRay">
+  <div class="code"><pre>endless = <span style="color:#036;font-weight:bold">Fiber</span>.new {
+  loop.with_index <span style="color:#080;font-weight:bold">do</span> |_, i|
+    <span style="color:#036;font-weight:bold">Fiber</span>.yield(i)
+  <span style="color:#080;font-weight:bold">end</span>
+}
+
+endless.resume <span style="color:#888"># =&gt; 0</span>
+endless.resume <span style="color:#888"># =&gt; 1</span>
+endless.resume <span style="color:#888"># =&gt; 2</span>
+endless.resume <span style="color:#888"># =&gt; 3</span>
+endless.resume <span style="color:#888"># =&gt; 4</span>
+endless.resume <span style="color:#888"># =&gt; 5</span>
+endless.resume <span style="color:#888"># =&gt; 6</span>
+<span style="color:#888"># endless...</span>
+</pre></div>
+</div><p>FiberのAPIを隠して外部イテレータっぽく使ってみる。</p><div class="CodeRay">
+  <div class="code"><pre><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">EndlessNumber</span>
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>
+    rewind
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">rewind</span>
+    <span style="color:#33B">@generator</span> = <span style="color:#036;font-weight:bold">Fiber</span>.new {
+      loop.with_index <span style="color:#080;font-weight:bold">do</span> |_, i|
+        <span style="color:#036;font-weight:bold">Fiber</span>.yield(i)
+      <span style="color:#080;font-weight:bold">end</span>
+    }
+
+    <span style="color:#038;font-weight:bold">self</span>
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">next</span>
+    <span style="color:#33B">@generator</span>.resume
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+en = <span style="color:#036;font-weight:bold">EndlessNumber</span>.new
+
+en.next <span style="color:#888"># =&gt; 0</span>
+en.next <span style="color:#888"># =&gt; 1</span>
+en.next <span style="color:#888"># =&gt; 2</span>
+en.rewind
+en.next <span style="color:#888"># =&gt; 0</span>
+
+<span style="color:#080;font-weight:bold">while</span> num = en.next
+  puts num
+<span style="color:#080;font-weight:bold">end</span> <span style="color:#888"># ウワーッ</span>
+</pre></div>
+</div><p>　これに使おう、というのがとっさに思い浮かばない。</p>]]></description><dc:date>2012-03-13</dc:date><link>http://hibariya.github.com/entries/20120313.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120101.html"><title>2012/01/01</title><description><![CDATA[<h1 id="a0">年も明けたのでClojureを勉強し始めた</h1><p>結局さわりはじめたのはClojure。</p><p>手始めに<a href="http://estore.ohmsha.co.jp/">オーム社eStore(β)</a>で<a href="http://estore.ohmsha.co.jp/titles/978427406789P">プログラミングClojure</a>を買ったよ。</p>]]></description><dc:date>2012-01-01</dc:date><link>http://hibariya.github.com/entries/20120101.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111208.html"><title>2011/12/08</title><description><![CDATA[<h1 id="a0">7つの言語 7つの世界 を読み終わった</h1><p>今日はちょっと体調を崩していたので全休、内職もほったらかしにしつつ。
 課題とかはこなしてないけど、ひと通り理解しようと努めながら読んで最後まで行った。</p><p>関数型言語のエッセンスに触れたり並列処理の色々なやりかたを知るきっかけをつくるのに役だったと思う。
 実際にやってみようかなと思った言語は上から順に、</p><ul>
 <li>Haskell</li>
@@ -30,31 +128,31 @@ Ioはかわいい。Scalaは書き方が難しいなあと思った。</p>]]></d
 <li>標準出力とGrowlに出力する</li>
 </ul>
 <p>ような設定にします。</p><div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#777"># coding: utf-8</span>
+  <div class="code"><pre>  <span style="color:#888"># coding: utf-8</span>
 
   <span style="color:#036;font-weight:bold">Cline</span>.configure <span style="color:#080;font-weight:bold">do</span> |config|
     config.append_collector <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">Collectors</span>::<span style="color:#036;font-weight:bold">Feed</span>
-    config.pool_size = <span style="color:#00D">2000</span>
-    config.out_stream = <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">OutStreams</span>::<span style="color:#036;font-weight:bold">WithGrowl</span>.new(<span style="color:#d70">$stdout</span>)
+    config.pool_size = <span style="color:#00D;font-weight:bold">2000</span>
+    config.out_stream = <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">OutStreams</span>::<span style="color:#036;font-weight:bold">WithGrowl</span>.new(<span style="color:#d70;font-weight:bold">$stdout</span>)
   <span style="color:#080;font-weight:bold">end</span>
 </pre></div>
 </div><p>べつにGrowlで出さなくてよければ、out_streamを設定する部分を</p><div class="CodeRay">
-  <div class="code"><pre>  config.out_stream = <span style="color:#d70">$stdout</span>
+  <div class="code"><pre>  config.out_stream = <span style="color:#d70;font-weight:bold">$stdout</span>
 </pre></div>
 </div><p>とします。</p><h3>フィード一覧の登録</h3><p>フィード一覧の記述されたopmlファイル（例えば、LDRなどのフィードアグリゲータからエクスポートしたもの）を ~/.cline/feeds.xml に配置します。</p><p>OPMLといえばこんな感じのやつです。</p><div class="CodeRay">
   <div class="code"><pre><span style="color:#579">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span style="color:#070">&lt;opml</span> <span style="color:#b48">version</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">1.0</span><span style="color:#710">"</span></span><span style="color:#070">&gt;</span>
+<span style="color:#070">&lt;opml</span> <span style="color:#007">version</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">1.0</span><span style="color:#710">"</span></span><span style="color:#070">&gt;</span>
   <span style="color:#070">&lt;head&gt;</span>
     <span style="color:#070">&lt;title&gt;</span>livedoor Reader Subscriptions<span style="color:#070">&lt;/title&gt;</span>
     <span style="color:#070">&lt;dateCreated&gt;</span>Sat, 29 Oct 2011 07:39:38 UTC<span style="color:#070">&lt;/dateCreated&gt;</span>
     <span style="color:#070">&lt;ownerName&gt;</span>hibariya<span style="color:#070">&lt;/ownerName&gt;</span>
   <span style="color:#070">&lt;/head&gt;</span>
   <span style="color:#070">&lt;body&gt;</span>
-    <span style="color:#070">&lt;outline</span> <span style="color:#b48">title</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Subscriptions</span><span style="color:#710">"</span></span><span style="color:#070">&gt;</span>
-      <span style="color:#070">&lt;outline</span> <span style="color:#b48">title</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Pinboard (Popular items from Pinboard)</span><span style="color:#710">"</span></span> <span style="color:#b48">htmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://pinboard.in</span><span style="color:#710">"</span></span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">rss</span><span style="color:#710">"</span></span> <span style="color:#b48">xmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://feeds.pinboard.in/rss/popular/</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
-      <span style="color:#070">&lt;outline</span> <span style="color:#b48">title</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Strategic Choice</span><span style="color:#710">"</span></span> <span style="color:#b48">htmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://d.hatena.ne.jp/asakichy/</span><span style="color:#710">"</span></span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">rss</span><span style="color:#710">"</span></span> <span style="color:#b48">xmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://d.hatena.ne.jp/asakichy/rss</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
-      <span style="color:#070">&lt;outline</span> <span style="color:#b48">title</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">RubyKaigi AdventCalender 2011</span><span style="color:#710">"</span></span> <span style="color:#b48">htmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://rubykaigi.org/2011/ja/advent_calendar</span><span style="color:#710">"</span></span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">rss</span><span style="color:#710">"</span></span> <span style="color:#b48">xmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://rubykaigi.org/2011/ja/advent_calendar.rss</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
-      <span style="color:#777">&lt;!-- こんな感じでフィードの一覧が続く... --&gt;</span>
+    <span style="color:#070">&lt;outline</span> <span style="color:#007">title</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">Subscriptions</span><span style="color:#710">"</span></span><span style="color:#070">&gt;</span>
+      <span style="color:#070">&lt;outline</span> <span style="color:#007">title</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">Pinboard (Popular items from Pinboard)</span><span style="color:#710">"</span></span> <span style="color:#007">htmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://pinboard.in</span><span style="color:#710">"</span></span> <span style="color:#007">type</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">rss</span><span style="color:#710">"</span></span> <span style="color:#007">xmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://feeds.pinboard.in/rss/popular/</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
+      <span style="color:#070">&lt;outline</span> <span style="color:#007">title</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">Strategic Choice</span><span style="color:#710">"</span></span> <span style="color:#007">htmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://d.hatena.ne.jp/asakichy/</span><span style="color:#710">"</span></span> <span style="color:#007">type</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">rss</span><span style="color:#710">"</span></span> <span style="color:#007">xmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://d.hatena.ne.jp/asakichy/rss</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
+      <span style="color:#070">&lt;outline</span> <span style="color:#007">title</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">RubyKaigi AdventCalender 2011</span><span style="color:#710">"</span></span> <span style="color:#007">htmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://rubykaigi.org/2011/ja/advent_calendar</span><span style="color:#710">"</span></span> <span style="color:#007">type</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">rss</span><span style="color:#710">"</span></span> <span style="color:#007">xmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://rubykaigi.org/2011/ja/advent_calendar.rss</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
+      <span style="color:#888">&lt;!-- こんな感じでフィードの一覧が続く... --&gt;</span>
     <span style="color:#070">&lt;/outline&gt;</span>
   <span style="color:#070">&lt;/body&gt;</span>
 <span style="color:#070">&lt;/opml&gt;</span>
@@ -105,7 +203,7 @@ cron的な何かで定期実行すればよいと思います。</p><div class="
 </div><h2>その他: GithubのActivity</h2><p>ちなみにGithubのactivityも取得することもできます。
 ~/.cline/config のブロック内で</p><div class="CodeRay">
   <div class="code"><pre>  config.append_collector <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">Collectors</span>::<span style="color:#036;font-weight:bold">Github</span>
-  <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">Collectors</span>::<span style="color:#036;font-weight:bold">Github</span>.login_name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">github username</span><span style="color:#710">'</span></span>
+  <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">Collectors</span>::<span style="color:#036;font-weight:bold">Github</span>.login_name = <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">github username</span><span style="color:#710">'</span></span>
 </pre></div>
 </div><p>と追記すると自分のfollowしている人のactivityを収集してくることができます。</p><h2>もっと他の情報を収集して通知する</h2><p>収集する対象や出力先は拡張できます。
 より具体的には<a href="https://github.com/hibariya/cline">Cline</a>のREADMEを参照してください。</p>]]></description><dc:date>2011-12-04</dc:date><link>http://hibariya.github.com/entries/20111204.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111109.html"><title>2011/11/09</title><description><![CDATA[<h1 id="a0">retter-0.1.3</h1><p><a href="https://github.com/hibariya/retter">1日おいてすぐのアップデートをしました</a>。</p><p>昨日言っていたDISQUSを簡単に導入できるようにしました。</p><h2>準備</h2><ol>
@@ -113,12 +211,12 @@ cron的な何かで定期実行すればよいと思います。</p><div class="
 <li>ログインして、Retterで使うための新しいサイトをつくります</li>
 </ol>
 <h2>インストール</h2><p>まずはRetterfileに<code>disqus_shortname</code>という設定を追記します。</p><div class="CodeRay">
-  <div class="code"><pre>disqus_shortname <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">your_disqus_shortname</span><span style="color:#710">'</span></span>
+  <div class="code"><pre>disqus_shortname <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">your_disqus_shortname</span><span style="color:#710">'</span></span>
 </pre></div>
 </div><p>あとは任意の箇所でヘルパメソッド<code>render_disqus_comment_form</code>を呼ぶだけです。</p><p>例えば<code>layouts/article.html.haml</code>などに。</p><div class="CodeRay">
-  <div class="code"><pre>-<span style="color:#777"># 省略</span>
-<span style="color:#036;font-weight:bold">#comments</span>= render_disqus_comment_form
--<span style="color:#777"># 省略</span>
+  <div class="code"><pre>-# 省略
+#comments= render_disqus_comment_form
+-# 省略
 </pre></div>
 </div>]]></description><dc:date>2011-11-09</dc:date><link>http://hibariya.github.com/entries/20111109.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111108.html"><title>2011/11/08</title><description><![CDATA[<h1 id="a0">静的なパーマリンクにコメントをつける</h1><p><a href="http://disqus.com/">DISQUS</a>というサービスがあって、ここで提供されるJSをHTMLに埋め込むことでコメントシステムを導入できるらしい。
 実験的にこのサイトにもつけてみた。</p><p>コメントをつけられるのは割と重要な要素だと思うので、デザイナさんの様子を伺いつつ<a href="https://github.com/hibariya/retter">retter</a>にも導入したい。
@@ -133,9 +231,9 @@ cron的な何かで定期実行すればよいと思います。</p><div class="
     alias_method <span style="color:#A60">:[]</span>, <span style="color:#A60">:call</span>
   <span style="color:#080;font-weight:bold">end</span>
 
-  a = -&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">hi</span><span style="color:#710">'</span></span> }
+  a = -&gt; { <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">hi</span><span style="color:#710">'</span></span> }
 
-  a[] <span style="color:#777"># =&gt; "hi"</span>
+  a[] <span style="color:#888"># =&gt; "hi"</span>
 </pre></div>
 </div><p>ブラケットをパーレンに読み替えると何かそれっぽい。くだらない。</p><p><strong>2011/11/08 追記</strong></p><p>ursm先生に教えてもらったのだけど、作らなくても <code>Proc#[]</code> は既にありました。
 もしかしてくだらなくなかったのか。実際に使ってる事例（こう使うといいよ的な）とかあるのか気になる。</p>]]></description><dc:date>2011-11-07</dc:date><link>http://hibariya.github.com/entries/20111107.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111025.html"><title>2011/10/25</title><description><![CDATA[<h1 id="a0">Thorで簡単にコマンドラインアプリをつくる</h1><p><a href="https://github.com/wycats/thor">Thor</a>をご存知の方は多いと思いますが、<a href="https://github.com/hibariya/retter">Retter</a>を作るにあたってとても便利に使えたので、手短に紹介したいと思います。
@@ -150,10 +248,10 @@ Rakeは今も現役で便利に使っているんですが、例えば引数を�
 </div><p><code>TO=alice</code>をコマンドの後ろに<code>--to alice</code>と書けて少し見やすくなりました。</p><p>実際のタスクの書き方は以下のようになります。ファイル名は<code>greeting.thor</code>のように<code>クラス名.thor</code>とし、タスク名と同名のメソッドを定義します。
 タスクがひとつのメソッドとして定義されていると、テストがとても書きやすそうです。</p><div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Greeting</span> &lt; <span style="color:#036;font-weight:bold">Thor</span>
-    desc <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver greeting message</span><span style="color:#710">'</span></span> <span style="color:#777"># タスクの説明</span>
-    method_options to: <span style="color:#A60">:string</span>                 <span style="color:#777"># 直後に定義するタスクのオプション</span>
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">deliver</span>                                <span style="color:#777"># タスクの定義</span>
-      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">sending greeting to </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>options[<span style="color:#A60">:to</span>]<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
+    desc <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">deliver</span><span style="color:#710">'</span></span>, <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">deliver greeting message</span><span style="color:#710">'</span></span> <span style="color:#888"># タスクの説明</span>
+    method_options <span style="color:#808">to</span>: <span style="color:#A60">:string</span>                 <span style="color:#888"># 直後に定義するタスクのオプション</span>
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">deliver</span>                                <span style="color:#888"># タスクの定義</span>
+      puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">sending greeting to </span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>options[<span style="color:#A60">:to</span>]<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
     <span style="color:#080;font-weight:bold">end</span>
   <span style="color:#080;font-weight:bold">end</span>
 </pre></div>
@@ -163,9 +261,9 @@ Rakeは今も現役で便利に使っているんですが、例えば引数を�
 </pre></div>
 </div><p>というふうに書けるようにもなります。</p><p>コマンドの引数は、以下のようにメソッドの引数で受け取ることができます。</p><div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Greeting</span> &lt; <span style="color:#036;font-weight:bold">Thor</span>
-    desc <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver greeting message</span><span style="color:#710">'</span></span>
+    desc <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">deliver</span><span style="color:#710">'</span></span>, <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">deliver greeting message</span><span style="color:#710">'</span></span>
     <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">deliver</span>(to)
-      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">sending greeting to </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>to<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
+      puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">sending greeting to </span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>to<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
     <span style="color:#080;font-weight:bold">end</span>
   <span style="color:#080;font-weight:bold">end</span>
 </pre></div>
@@ -176,15 +274,15 @@ Rakeは今も現役で便利に使っているんですが、例えば引数を�
     thor greeting:help [TASK]  # Describe available tasks or one specific task
 </pre></div>
 </div><p>今更ですが、今回のサンプルコードのGreetingは割と適当なプロダクトなので、目的に応じて適宜読み替えてください。</p><h2>独立したコマンドとして使う</h2><p>Rakeのような使い方ではなく、単体で実行可能なコマンドをつくることもできます。</p><div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#777">#!/usr/bin/env ruby</span>
-  <span style="color:#777"># coding: utf-8</span>
+  <div class="code"><pre>  <span style="color:#888">#!/usr/bin/env ruby</span>
+  <span style="color:#888"># coding: utf-8</span>
 
-  require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">thor</span><span style="color:#710">'</span></span>
+  require <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">thor</span><span style="color:#710">'</span></span>
 
   <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Greeting</span> &lt; <span style="color:#036;font-weight:bold">Thor</span>
-    desc <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver greeting message</span><span style="color:#710">'</span></span>
+    desc <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">deliver</span><span style="color:#710">'</span></span>, <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">deliver greeting message</span><span style="color:#710">'</span></span>
     <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">deliver</span>(to)
-      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">sending greeting to </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>to<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
+      puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">sending greeting to </span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>to<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
     <span style="color:#080;font-weight:bold">end</span>
   <span style="color:#080;font-weight:bold">end</span>
 
@@ -196,33 +294,33 @@ Rakeは今も現役で便利に使っているんですが、例えば引数を�
   $ ./greeting deiver alice
 </pre></div>
 </div><p>もちろんさきほどの<code>--help</code>も使えます。ヘルプが出ると一気にちゃんとしたコマンドっぽくなりますね。</p><h2>Railsのジェネレータのように使う</h2><p>Thor::Actionsで提供されている便利なメソッドたちを使うことで、Railsでよくみるファイルの自動生成と全く同じようなものがthorで簡単に実装できます。<code>rails new</code>したときのあれです。</p><div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#777">#!/usr/bin/env ruby</span>
-  <span style="color:#777"># coding: utf-8</span>
+  <div class="code"><pre>  <span style="color:#888">#!/usr/bin/env ruby</span>
+  <span style="color:#888"># coding: utf-8</span>
 
-  require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">thor</span><span style="color:#710">'</span></span>
-  require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">thor/group</span><span style="color:#710">'</span></span>
+  require <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">thor</span><span style="color:#710">'</span></span>
+  require <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">thor/group</span><span style="color:#710">'</span></span>
 
   <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Newgreeting</span> &lt; <span style="color:#036;font-weight:bold">Thor</span>::<span style="color:#036;font-weight:bold">Group</span>
     include <span style="color:#036;font-weight:bold">Thor</span>::<span style="color:#036;font-weight:bold">Actions</span>
 
-    argument <span style="color:#A60">:name</span>             <span style="color:#777"># タスク全体の引数</span>
+    argument <span style="color:#A60">:name</span>             <span style="color:#888"># タスク全体の引数</span>
 
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">source_root</span>       <span style="color:#777"># ファイルのコピー元のベースディレクトリ</span>
-      <span style="color:#036;font-weight:bold">File</span>.dirname(<span style="color:#069">__FILE__</span>)
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#038;font-weight:bold">self</span>.<span style="color:#06B;font-weight:bold">source_root</span>       <span style="color:#888"># ファイルのコピー元のベースディレクトリ</span>
+      <span style="color:#036;font-weight:bold">File</span>.dirname(<span style="color:#038;font-weight:bold">__FILE__</span>)
     <span style="color:#080;font-weight:bold">end</span>
 
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">create_templates</span>       <span style="color:#777"># 最初に実行される処理</span>
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">%w(</span><span style="color:#D20">title.txt body.txt</span><span style="color:#710">)</span></span>.each <span style="color:#080;font-weight:bold">do</span> |fname|
-        template <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">templates/</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>fname<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">/</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>fname<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">create_templates</span>       <span style="color:#888"># 最初に実行される処理</span>
+      <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">%w(</span><span style="">title.txt body.txt</span><span style="color:#710">)</span></span>.each <span style="color:#080;font-weight:bold">do</span> |fname|
+        template <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">templates/</span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>fname<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>, <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>name<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="">/</span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>fname<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
        <span style="color:#080;font-weight:bold">end</span>
     <span style="color:#080;font-weight:bold">end</span>
 
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">create_readme</span>          <span style="color:#777"># 次に実行される処理</span>
-      copy_file <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">templates/README</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">/README</span><span style="color:#710">"</span></span>
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">create_readme</span>          <span style="color:#888"># 次に実行される処理</span>
+      copy_file <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">templates/README</span><span style="color:#710">'</span></span>, <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>name<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="">/README</span><span style="color:#710">"</span></span>
     <span style="color:#080;font-weight:bold">end</span>
 
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">complete_message</span>       <span style="color:#777"># 最後に実行される処理</span>
-      say <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">greeting templates created.</span><span style="color:#710">'</span></span>, <span style="color:#A60">:green</span>
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">complete_message</span>       <span style="color:#888"># 最後に実行される処理</span>
+      say <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">greeting templates created.</span><span style="color:#710">'</span></span>, <span style="color:#A60">:green</span>
     <span style="color:#080;font-weight:bold">end</span>
   <span style="color:#080;font-weight:bold">end</span>
 
@@ -303,102 +401,102 @@ conflictしたときは差分を表示したりはできますが、マージは
 でも記事にPermlinkが無いのはとっても使いづらいということが実際に書いてみての率直な感想でした。SBMに登録しずらかったり、特定の記事をURLで指定するのが面倒だったり散々でした。</p><p>そこで<a href="https://github.com/hibariya/retter/compare/ef7b62c6da5e39d837db21362aa3f96896c37aed%5E...entry_permlink">このブランチ</a>で記事ごとにリンクがつくようにしてみました。</p><h1 id="a1">test</h1><p>fart</p><h1 id="a2">retter 0.1.0</h1><p><a href="http://hibariya.github.com/entries/20111012/a0.html">記事ごとにPermlinkがつくようにした</a>やつをマージしてバージョンを上げました。</p>]]></description><dc:date>2011-10-12</dc:date><link>http://hibariya.github.com/entries/20111012.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111010.html"><title>2011/10/10</title><description><![CDATA[<h1 id="a0">Rubyのトップレベルについて整理する</h1><p>トップレベルでメソッドを定義したとき、なぜそれがいきなり使えるようになるのかを説明できなかったので調べたり人にきいたりした。</p><h2>メソッドについての理解（インスタンスメソッド）</h2><p>クラス定義式の中で（特異メソッドでない）メソッドを定義すると、メソッドはそのクラスのインスタンスメソッドメソッドになる。</p><div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Foo</span>
     <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">bar</span>
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">bar</span><span style="color:#710">'</span></span>
+      <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">bar</span><span style="color:#710">'</span></span>
     <span style="color:#080;font-weight:bold">end</span>
   <span style="color:#080;font-weight:bold">end</span>
 
-  <span style="color:#036;font-weight:bold">Foo</span>.new.bar <span style="color:#777"># =&gt; "bar"</span>
+  <span style="color:#036;font-weight:bold">Foo</span>.new.bar <span style="color:#888"># =&gt; "bar"</span>
 </pre></div>
 </div><p>同じような方法でトップレベルにメソッドを定義すると、なぜかその場で使えるようになる。</p><div class="CodeRay">
   <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">bar</span>
-  <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">bar</span><span style="color:#710">'</span></span>
+  <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">bar</span><span style="color:#710">'</span></span>
 <span style="color:#080;font-weight:bold">end</span>
 
-bar <span style="color:#777"># =&gt; "bar"</span>
+bar <span style="color:#888"># =&gt; "bar"</span>
 </pre></div>
 </div><p>もちろん、同じようなことはクラス定義式内ではできない。</p><div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Foo</span>
     <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">baz</span>
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">baz</span><span style="color:#710">'</span></span>
+      <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">baz</span><span style="color:#710">'</span></span>
     <span style="color:#080;font-weight:bold">end</span>
 
     baz
-  <span style="color:#080;font-weight:bold">end</span> <span style="color:#777"># =&gt; NameError: undefined local variable or method...</span>
+  <span style="color:#080;font-weight:bold">end</span> <span style="color:#888"># =&gt; NameError: undefined local variable or method...</span>
 </pre></div>
 </div><p>どうやらクラス定義式の中とトップレベルでは、同じようにメソッド定義式を書いても少し動きが違ってくるらしい。</p><h2>トップレベルで定義されたメソッドは何処へ</h2><p>トップレベルで定義したメソッドについて色々と調べた結果をまとめて書きます。</p><p>クラス定義式の中に書いたメソッドはそのクラスのインスタンスメソッドになった。じゃあトップレベルに定義されたメソッドは何処へ。
 実はObjectの（privateな）メソッドになっていた。そしてトップレベルはObjectのインスタンスなので、トップレベルにメソッドを定義すると即座に使えるようになるということらしい。</p><div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">carol</span>; <span style="color:#080;font-weight:bold">end</span>
 
-  <span style="color:#036;font-weight:bold">Object</span>.private_instance_methods.grep <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">carol</span><span style="color:#404">/</span></span> <span style="color:#777"># =&gt; [:carol]</span>
-  <span style="color:#036;font-weight:bold">Object</span>.private_methods.grep <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">carol</span><span style="color:#404">/</span></span>          <span style="color:#777"># =&gt; [:carol]</span>
+  <span style="color:#036;font-weight:bold">Object</span>.private_instance_methods.grep <span style="background-color:#fff0ff"><span style="color:#404">/</span><span style="color:#808">carol</span><span style="color:#404">/</span></span> <span style="color:#888"># =&gt; [:carol]</span>
+  <span style="color:#036;font-weight:bold">Object</span>.private_methods.grep <span style="background-color:#fff0ff"><span style="color:#404">/</span><span style="color:#808">carol</span><span style="color:#404">/</span></span>          <span style="color:#888"># =&gt; [:carol]</span>
 </pre></div>
 </div><p>トップレベルで定義したメソッドがどうしてすぐに呼べるのか、言葉のうえでは結論が出た感じになってしまったけれど、話はもう少しだけ続く。</p><h2>Objectの不思議と関数っぽさ</h2><p>Objectに定義されたメソッドは他のクラスに定義されたメソッドとは少し違う動きをする。
 なんと、Objectに定義されたメソッドはObjectのクラスメソッドとしても定義される。しかもクラスメソッドにはprivateとかの呼び出し制限もそのまま引き継がれる。</p><div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Object</span>
     <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">bob</span>
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">ボブですよ</span><span style="color:#710">'</span></span>
+      <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">ボブですよ</span><span style="color:#710">'</span></span>
     <span style="color:#080;font-weight:bold">end</span>
   <span style="color:#080;font-weight:bold">end</span>
 
-  <span style="color:#036;font-weight:bold">Object</span>.new.bob <span style="color:#777"># =&gt; "ボブですよ"</span>
-  <span style="color:#036;font-weight:bold">Object</span>.bob     <span style="color:#777"># =&gt; "ボブですよ"</span>
-  bob            <span style="color:#777"># =&gt; "ボブですよ"</span>
+  <span style="color:#036;font-weight:bold">Object</span>.new.bob <span style="color:#888"># =&gt; "ボブですよ"</span>
+  <span style="color:#036;font-weight:bold">Object</span>.bob     <span style="color:#888"># =&gt; "ボブですよ"</span>
+  bob            <span style="color:#888"># =&gt; "ボブですよ"</span>
 </pre></div>
 </div><p>なぜだろう。なぜならObjectはClassのインスタンスだけど、同時にObject（のサブクラス）のインスタンスでもあるから、らしい。
 堂々巡りで混乱してくる。</p><div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#036;font-weight:bold">Object</span>.class           <span style="color:#777"># =&gt; Class</span>
-  <span style="color:#036;font-weight:bold">Object</span>.class.ancestors <span style="color:#777"># =&gt; [Class, Module, Object, Kernel, BasicObject]</span>
-  <span style="color:#036;font-weight:bold">Object</span>.is_a?(<span style="color:#036;font-weight:bold">Object</span>)   <span style="color:#777"># =&gt; true</span>
+  <div class="code"><pre>  <span style="color:#036;font-weight:bold">Object</span>.class           <span style="color:#888"># =&gt; Class</span>
+  <span style="color:#036;font-weight:bold">Object</span>.class.ancestors <span style="color:#888"># =&gt; [Class, Module, Object, Kernel, BasicObject]</span>
+  <span style="color:#036;font-weight:bold">Object</span>.is_a?(<span style="color:#036;font-weight:bold">Object</span>)   <span style="color:#888"># =&gt; true</span>
 </pre></div>
 </div><p>でもこの振舞いのおかげで、トップレベルに定義したメソッドはどこでも使えるようになる。何処に居ようがselfの祖先はObjectだから。</p><p>こんなふうに。</p><div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">alice</span>
-    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">hi</span><span style="color:#710">'</span></span>
+    puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">hi</span><span style="color:#710">'</span></span>
   <span style="color:#080;font-weight:bold">end</span>
 
   <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Bar</span>
-    alice <span style="color:#777"># "hi"と表示</span>
+    alice <span style="color:#888"># "hi"と表示</span>
 
     <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">foo</span>
       alice
     <span style="color:#080;font-weight:bold">end</span>
 
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">foo</span>
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#038;font-weight:bold">self</span>.<span style="color:#06B;font-weight:bold">foo</span>
       alice
     <span style="color:#080;font-weight:bold">end</span>
   <span style="color:#080;font-weight:bold">end</span>
 
   <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">BarBar</span>
-    alice <span style="color:#777"># "hi"と表示</span>
+    alice <span style="color:#888"># "hi"と表示</span>
   <span style="color:#080;font-weight:bold">end</span>
 
-  <span style="color:#036;font-weight:bold">Bar</span>.foo     <span style="color:#777"># "hi"と表示</span>
-  <span style="color:#036;font-weight:bold">Bar</span>.new.foo <span style="color:#777"># "hi"と表示</span>
+  <span style="color:#036;font-weight:bold">Bar</span>.foo     <span style="color:#888"># "hi"と表示</span>
+  <span style="color:#036;font-weight:bold">Bar</span>.new.foo <span style="color:#888"># "hi"と表示</span>
 
-  alice       <span style="color:#777"># "hi"と表示</span>
+  alice       <span style="color:#888"># "hi"と表示</span>
 </pre></div>
 </div><p>もちろん、Object.#aliceはprivateメソッドなので、<code>self.alice</code>とか<code>Object.alice</code>と書くと例外NoMethodErrorが発生する。
 レシーバを記述しない関数風の呼び方が強く奨められているのは、モジュール関数と同じく、関数っぽい使い方をすることが想定されているからなのでしょうね。</p>]]></description><dc:date>2011-10-10</dc:date><link>http://hibariya.github.com/entries/20111010.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111003.html"><title>2011/10/03</title><description><![CDATA[<h1 id="a0">モジュール関数がprivateな理由</h1><p><a href="http://rurema.clear-code.com/1.9.2/method/Module/i/module_function.html">モジュール関数</a>
 というものがあって、ぼくはこれまでモジュール関数を「モジュールをレシーバにしても呼び出せるしincludeして呼び出すこともできる何だか便利なもの」としか認識していなかった。</p><p>こういうふうに。</p><div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">MyModule</span>
-    extend <span style="color:#069">self</span>
+    extend <span style="color:#038;font-weight:bold">self</span>
 
     <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">greet</span>
-      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">fart</span><span style="color:#710">'</span></span>
+      <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">fart</span><span style="color:#710">'</span></span>
     <span style="color:#080;font-weight:bold">end</span>
   <span style="color:#080;font-weight:bold">end</span>
 
-  <span style="color:#036;font-weight:bold">MyModule</span>.greet   <span style="color:#777"># =&gt; "fart"</span>
+  <span style="color:#036;font-weight:bold">MyModule</span>.greet   <span style="color:#888"># =&gt; "fart"</span>
 
   include <span style="color:#036;font-weight:bold">MyModule</span>
-  greet            <span style="color:#777"># =&gt; "fart"</span>
-  <span style="color:#069">self</span>.greet       <span style="color:#777"># =&gt; "fart"</span>
+  greet            <span style="color:#888"># =&gt; "fart"</span>
+  <span style="color:#038;font-weight:bold">self</span>.greet       <span style="color:#888"># =&gt; "fart"</span>
 </pre></div>
 </div><p>でもこれはモジュール関数じゃなかった。</p><p>るりまの説明をよく見てみると「モジュール関数とは、プライベートメソッドであると同時に モジュールの特異メソッドでもあるようなメソッドです。」と書いてある。ぎぎぎ何だか面倒くさいな。</p><p>Rubyでprivateメソッドと言えば、呼び出しのときにレシーバを指定できないメソッドのことを指す。試しに、よく例に使われる<code>Math.#sqrt</code>で確認してみる。</p><div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#036;font-weight:bold">Math</span>.sqrt(<span style="color:#00D">100</span>) <span style="color:#777"># =&gt; 10.0</span>
+  <div class="code"><pre>  <span style="color:#036;font-weight:bold">Math</span>.sqrt(<span style="color:#00D;font-weight:bold">100</span>) <span style="color:#888"># =&gt; 10.0</span>
 
   include <span style="color:#036;font-weight:bold">Math</span>
-  sqrt(<span style="color:#00D">100</span>)      <span style="color:#777"># =&gt; 10.0</span>
-  <span style="color:#069">self</span>.sqrt(<span style="color:#00D">100</span>) <span style="color:#777"># =&gt; NoMethodError: private method `sqrt' called for ...</span>
+  sqrt(<span style="color:#00D;font-weight:bold">100</span>)      <span style="color:#888"># =&gt; 10.0</span>
+  <span style="color:#038;font-weight:bold">self</span>.sqrt(<span style="color:#00D;font-weight:bold">100</span>) <span style="color:#888"># =&gt; NoMethodError: private method `sqrt' called for ...</span>
 </pre></div>
 </div><p>うげげ、本当だ。今まで知らずに使っていたけれど、きみはprivateだったのか。なんで？</p><p>その後何日間もこのことで悩み続けてしまったのだけど、敗因は「モジュール関数がprivateメソッドとはどういうことだろう」と考えてしまっていたからだった。
 「<em>関数</em>にレシーバがないのは自然だなあ」と思えたら何も悩むことはなかったのだけど。</p><p>モジュール関数は実際はメソッドだけど、あくまで関数のように使うためのものなのだった。</p><p>Rubyには関数風メソッドやモジュール関数とよばれるものが存在するけど、厳密には関数は存在しない。
