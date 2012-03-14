@@ -49,20 +49,20 @@
 <p>コンテキストの切り替えは<code>Fiber#resume</code>と<code>Fiber.yield</code>で行う。</p>
 <div class="CodeRay">
   <div class="code"><pre>fiber = <span style="color:#036;font-weight:bold">Fiber</span>.new {
-  puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Hello Alice.</span><span style="color:#710">'</span></span>
+  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Hello Alice.</span><span style="color:#710">'</span></span>
 
   <span style="color:#036;font-weight:bold">Fiber</span>.yield
 
-  puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Hello Bob.</span><span style="color:#710">'</span></span>
+  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Hello Bob.</span><span style="color:#710">'</span></span>
 
   <span style="color:#036;font-weight:bold">Fiber</span>.yield
 
-  puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Hello Carol.</span><span style="color:#710">'</span></span>
+  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Hello Carol.</span><span style="color:#710">'</span></span>
 }
 
-fiber.resume <span style="color:#888"># "Hello Alice." と表示</span>
-fiber.resume <span style="color:#888"># "Hello Bob." と表示</span>
-fiber.resume <span style="color:#888"># "Hello Carol." と表示</span>
+fiber.resume <span style="color:#777"># "Hello Alice." と表示</span>
+fiber.resume <span style="color:#777"># "Hello Bob." と表示</span>
+fiber.resume <span style="color:#777"># "Hello Carol." と表示</span>
 </pre></div>
 </div>
 <p>上の例ではトップレベルが親。ブロックの中が子。親と子でキャッチボールしてる感じ。
@@ -79,17 +79,17 @@ fiber.resume <span style="color:#888"># "Hello Carol." と表示</span>
 <code>Fiber.new</code>で渡したブロックが終了したときは、最後に評価された式の値が戻り値として返る。</p>
 <div class="CodeRay">
   <div class="code"><pre>greet3 = <span style="color:#036;font-weight:bold">Fiber</span>.new {|name|
-  <span style="color:#00D;font-weight:bold">3</span>.times <span style="color:#080;font-weight:bold">do</span>
-    name = <span style="color:#036;font-weight:bold">Fiber</span>.yield(<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">Hi </span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>name<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>)
+  <span style="color:#00D">3</span>.times <span style="color:#080;font-weight:bold">do</span>
+    name = <span style="color:#036;font-weight:bold">Fiber</span>.yield(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Hi </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>)
   <span style="color:#080;font-weight:bold">end</span>
 
-  <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Good night</span><span style="color:#710">'</span></span>
+  <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Good night</span><span style="color:#710">'</span></span>
 }
 
-greet3.resume(<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Aron</span><span style="color:#710">'</span></span>)  <span style="color:#888"># =&gt; "Hi Aron"</span>
-greet3.resume(<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Billy</span><span style="color:#710">'</span></span>) <span style="color:#888"># =&gt; "Hi Billy"</span>
-greet3.resume(<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">Colon</span><span style="color:#710">'</span></span>) <span style="color:#888"># =&gt; "Hi Colon"</span>
-greet3.resume          <span style="color:#888"># =&gt; "Good night"</span>
+greet3.resume(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Aron</span><span style="color:#710">'</span></span>)  <span style="color:#777"># =&gt; "Hi Aron"</span>
+greet3.resume(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Billy</span><span style="color:#710">'</span></span>) <span style="color:#777"># =&gt; "Hi Billy"</span>
+greet3.resume(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Colon</span><span style="color:#710">'</span></span>) <span style="color:#777"># =&gt; "Hi Colon"</span>
+greet3.resume          <span style="color:#777"># =&gt; "Good night"</span>
 </pre></div>
 </div>
 <h2>Coroutine</h2>
@@ -110,14 +110,14 @@ greet3.resume          <span style="color:#888"># =&gt; "Good night"</span>
   <span style="color:#080;font-weight:bold">end</span>
 }
 
-endless.resume <span style="color:#888"># =&gt; 0</span>
-endless.resume <span style="color:#888"># =&gt; 1</span>
-endless.resume <span style="color:#888"># =&gt; 2</span>
-endless.resume <span style="color:#888"># =&gt; 3</span>
-endless.resume <span style="color:#888"># =&gt; 4</span>
-endless.resume <span style="color:#888"># =&gt; 5</span>
-endless.resume <span style="color:#888"># =&gt; 6</span>
-<span style="color:#888"># endless...</span>
+endless.resume <span style="color:#777"># =&gt; 0</span>
+endless.resume <span style="color:#777"># =&gt; 1</span>
+endless.resume <span style="color:#777"># =&gt; 2</span>
+endless.resume <span style="color:#777"># =&gt; 3</span>
+endless.resume <span style="color:#777"># =&gt; 4</span>
+endless.resume <span style="color:#777"># =&gt; 5</span>
+endless.resume <span style="color:#777"># =&gt; 6</span>
+<span style="color:#777"># endless...</span>
 </pre></div>
 </div>
 <p>FiberのAPIを隠して外部イテレータっぽく使ってみる。</p>
@@ -134,7 +134,7 @@ endless.resume <span style="color:#888"># =&gt; 6</span>
       <span style="color:#080;font-weight:bold">end</span>
     }
 
-    <span style="color:#038;font-weight:bold">self</span>
+    <span style="color:#069">self</span>
   <span style="color:#080;font-weight:bold">end</span>
 
   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">next</span>
@@ -144,15 +144,15 @@ endless.resume <span style="color:#888"># =&gt; 6</span>
 
 en = <span style="color:#036;font-weight:bold">EndlessNumber</span>.new
 
-en.next <span style="color:#888"># =&gt; 0</span>
-en.next <span style="color:#888"># =&gt; 1</span>
-en.next <span style="color:#888"># =&gt; 2</span>
+en.next <span style="color:#777"># =&gt; 0</span>
+en.next <span style="color:#777"># =&gt; 1</span>
+en.next <span style="color:#777"># =&gt; 2</span>
 en.rewind
-en.next <span style="color:#888"># =&gt; 0</span>
+en.next <span style="color:#777"># =&gt; 0</span>
 
 <span style="color:#080;font-weight:bold">while</span> num = en.next
   puts num
-<span style="color:#080;font-weight:bold">end</span> <span style="color:#888"># ウワーッ</span>
+<span style="color:#080;font-weight:bold">end</span> <span style="color:#777"># ウワーッ</span>
 </pre></div>
 </div>
 <p>　これに使おう、というのがとっさに思い浮かばない。</p>

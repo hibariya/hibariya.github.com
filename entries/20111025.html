@@ -59,10 +59,10 @@ Rakeは今も現役で便利に使っているんですが、例えば引数を�
 タスクがひとつのメソッドとして定義されていると、テストがとても書きやすそうです。</p>
 <div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Greeting</span> &lt; <span style="color:#036;font-weight:bold">Thor</span>
-    desc <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">deliver</span><span style="color:#710">'</span></span>, <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">deliver greeting message</span><span style="color:#710">'</span></span> <span style="color:#888"># タスクの説明</span>
-    method_options <span style="color:#808">to</span>: <span style="color:#A60">:string</span>                 <span style="color:#888"># 直後に定義するタスクのオプション</span>
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">deliver</span>                                <span style="color:#888"># タスクの定義</span>
-      puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">sending greeting to </span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>options[<span style="color:#A60">:to</span>]<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
+    desc <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver greeting message</span><span style="color:#710">'</span></span> <span style="color:#777"># タスクの説明</span>
+    method_options to: <span style="color:#A60">:string</span>                 <span style="color:#777"># 直後に定義するタスクのオプション</span>
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">deliver</span>                                <span style="color:#777"># タスクの定義</span>
+      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">sending greeting to </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>options[<span style="color:#A60">:to</span>]<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
     <span style="color:#080;font-weight:bold">end</span>
   <span style="color:#080;font-weight:bold">end</span>
 </pre></div>
@@ -78,9 +78,9 @@ Rakeは今も現役で便利に使っているんですが、例えば引数を�
 <p>コマンドの引数は、以下のようにメソッドの引数で受け取ることができます。</p>
 <div class="CodeRay">
   <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Greeting</span> &lt; <span style="color:#036;font-weight:bold">Thor</span>
-    desc <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">deliver</span><span style="color:#710">'</span></span>, <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">deliver greeting message</span><span style="color:#710">'</span></span>
+    desc <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver greeting message</span><span style="color:#710">'</span></span>
     <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">deliver</span>(to)
-      puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">sending greeting to </span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>to<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
+      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">sending greeting to </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>to<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
     <span style="color:#080;font-weight:bold">end</span>
   <span style="color:#080;font-weight:bold">end</span>
 </pre></div>
@@ -98,15 +98,15 @@ Rakeは今も現役で便利に使っているんですが、例えば引数を�
 <h2>独立したコマンドとして使う</h2>
 <p>Rakeのような使い方ではなく、単体で実行可能なコマンドをつくることもできます。</p>
 <div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#888">#!/usr/bin/env ruby</span>
-  <span style="color:#888"># coding: utf-8</span>
+  <div class="code"><pre>  <span style="color:#777">#!/usr/bin/env ruby</span>
+  <span style="color:#777"># coding: utf-8</span>
 
-  require <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">thor</span><span style="color:#710">'</span></span>
+  require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">thor</span><span style="color:#710">'</span></span>
 
   <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Greeting</span> &lt; <span style="color:#036;font-weight:bold">Thor</span>
-    desc <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">deliver</span><span style="color:#710">'</span></span>, <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">deliver greeting message</span><span style="color:#710">'</span></span>
+    desc <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">deliver greeting message</span><span style="color:#710">'</span></span>
     <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">deliver</span>(to)
-      puts <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">sending greeting to </span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>to<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
+      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">sending greeting to </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>to<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
     <span style="color:#080;font-weight:bold">end</span>
   <span style="color:#080;font-weight:bold">end</span>
 
@@ -124,33 +124,33 @@ Rakeは今も現役で便利に使っているんですが、例えば引数を�
 <h2>Railsのジェネレータのように使う</h2>
 <p>Thor::Actionsで提供されている便利なメソッドたちを使うことで、Railsでよくみるファイルの自動生成と全く同じようなものがthorで簡単に実装できます。<code>rails new</code>したときのあれです。</p>
 <div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#888">#!/usr/bin/env ruby</span>
-  <span style="color:#888"># coding: utf-8</span>
+  <div class="code"><pre>  <span style="color:#777">#!/usr/bin/env ruby</span>
+  <span style="color:#777"># coding: utf-8</span>
 
-  require <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">thor</span><span style="color:#710">'</span></span>
-  require <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">thor/group</span><span style="color:#710">'</span></span>
+  require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">thor</span><span style="color:#710">'</span></span>
+  require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">thor/group</span><span style="color:#710">'</span></span>
 
   <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Newgreeting</span> &lt; <span style="color:#036;font-weight:bold">Thor</span>::<span style="color:#036;font-weight:bold">Group</span>
     include <span style="color:#036;font-weight:bold">Thor</span>::<span style="color:#036;font-weight:bold">Actions</span>
 
-    argument <span style="color:#A60">:name</span>             <span style="color:#888"># タスク全体の引数</span>
+    argument <span style="color:#A60">:name</span>             <span style="color:#777"># タスク全体の引数</span>
 
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#038;font-weight:bold">self</span>.<span style="color:#06B;font-weight:bold">source_root</span>       <span style="color:#888"># ファイルのコピー元のベースディレクトリ</span>
-      <span style="color:#036;font-weight:bold">File</span>.dirname(<span style="color:#038;font-weight:bold">__FILE__</span>)
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">source_root</span>       <span style="color:#777"># ファイルのコピー元のベースディレクトリ</span>
+      <span style="color:#036;font-weight:bold">File</span>.dirname(<span style="color:#069">__FILE__</span>)
     <span style="color:#080;font-weight:bold">end</span>
 
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">create_templates</span>       <span style="color:#888"># 最初に実行される処理</span>
-      <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">%w(</span><span style="">title.txt body.txt</span><span style="color:#710">)</span></span>.each <span style="color:#080;font-weight:bold">do</span> |fname|
-        template <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">templates/</span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>fname<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>, <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>name<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="">/</span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>fname<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">create_templates</span>       <span style="color:#777"># 最初に実行される処理</span>
+      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">%w(</span><span style="color:#D20">title.txt body.txt</span><span style="color:#710">)</span></span>.each <span style="color:#080;font-weight:bold">do</span> |fname|
+        template <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">templates/</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>fname<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">/</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>fname<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>
        <span style="color:#080;font-weight:bold">end</span>
     <span style="color:#080;font-weight:bold">end</span>
 
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">create_readme</span>          <span style="color:#888"># 次に実行される処理</span>
-      copy_file <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">templates/README</span><span style="color:#710">'</span></span>, <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="background:#ddd;color:black"><span style="background:#ddd;font-weight:bold;color:#666">#{</span>name<span style="background:#ddd;font-weight:bold;color:#666">}</span></span><span style="">/README</span><span style="color:#710">"</span></span>
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">create_readme</span>          <span style="color:#777"># 次に実行される処理</span>
+      copy_file <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">templates/README</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">/README</span><span style="color:#710">"</span></span>
     <span style="color:#080;font-weight:bold">end</span>
 
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">complete_message</span>       <span style="color:#888"># 最後に実行される処理</span>
-      say <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">greeting templates created.</span><span style="color:#710">'</span></span>, <span style="color:#A60">:green</span>
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">complete_message</span>       <span style="color:#777"># 最後に実行される処理</span>
+      say <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">greeting templates created.</span><span style="color:#710">'</span></span>, <span style="color:#A60">:green</span>
     <span style="color:#080;font-weight:bold">end</span>
   <span style="color:#080;font-weight:bold">end</span>
 

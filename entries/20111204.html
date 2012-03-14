@@ -55,6 +55,7 @@
 <p>ちなみにscreenのbacktickが複数あるのは<a href="http://shyouhei.tumblr.com/post/313410522/screenrc">ここ</a>で紹介されているやり方で設定したもの。
 ここにあるようにbacktickに日本語を表示するには git://git.savannah.gnu.org/screen.git から最新のソースを引っ張ってきてビルドしないとうまくいかなかった。</p>
 <p>普段screenか何かをお使いであれば役に立つかも。</p>
+<p>※ 2012/3/14 追記: ターミナル上に表示されたURLは、例えばiTermならCommand+Click、MacのターミナルならCommand+DoubleClickで開けるみたいです。</p>
 <h2>インストール</h2>
 <p>gemで入れます。rubyが1.9以上でないと動きません。Windowsでの動作は未確認。</p>
 <div class="CodeRay">
@@ -75,18 +76,18 @@
 </ul>
 <p>ような設定にします。</p>
 <div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#888"># coding: utf-8</span>
+  <div class="code"><pre>  <span style="color:#777"># coding: utf-8</span>
 
   <span style="color:#036;font-weight:bold">Cline</span>.configure <span style="color:#080;font-weight:bold">do</span> |config|
     config.append_collector <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">Collectors</span>::<span style="color:#036;font-weight:bold">Feed</span>
-    config.pool_size = <span style="color:#00D;font-weight:bold">2000</span>
-    config.out_stream = <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">OutStreams</span>::<span style="color:#036;font-weight:bold">WithGrowl</span>.new(<span style="color:#d70;font-weight:bold">$stdout</span>)
+    config.pool_size = <span style="color:#00D">2000</span>
+    config.out_stream = <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">OutStreams</span>::<span style="color:#036;font-weight:bold">WithGrowl</span>.new(<span style="color:#d70">$stdout</span>)
   <span style="color:#080;font-weight:bold">end</span>
 </pre></div>
 </div>
 <p>べつにGrowlで出さなくてよければ、out_streamを設定する部分を</p>
 <div class="CodeRay">
-  <div class="code"><pre>  config.out_stream = <span style="color:#d70;font-weight:bold">$stdout</span>
+  <div class="code"><pre>  config.out_stream = <span style="color:#d70">$stdout</span>
 </pre></div>
 </div>
 <p>とします。</p>
@@ -95,18 +96,18 @@
 <p>OPMLといえばこんな感じのやつです。</p>
 <div class="CodeRay">
   <div class="code"><pre><span style="color:#579">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span style="color:#070">&lt;opml</span> <span style="color:#007">version</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">1.0</span><span style="color:#710">"</span></span><span style="color:#070">&gt;</span>
+<span style="color:#070">&lt;opml</span> <span style="color:#b48">version</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">1.0</span><span style="color:#710">"</span></span><span style="color:#070">&gt;</span>
   <span style="color:#070">&lt;head&gt;</span>
     <span style="color:#070">&lt;title&gt;</span>livedoor Reader Subscriptions<span style="color:#070">&lt;/title&gt;</span>
     <span style="color:#070">&lt;dateCreated&gt;</span>Sat, 29 Oct 2011 07:39:38 UTC<span style="color:#070">&lt;/dateCreated&gt;</span>
     <span style="color:#070">&lt;ownerName&gt;</span>hibariya<span style="color:#070">&lt;/ownerName&gt;</span>
   <span style="color:#070">&lt;/head&gt;</span>
   <span style="color:#070">&lt;body&gt;</span>
-    <span style="color:#070">&lt;outline</span> <span style="color:#007">title</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">Subscriptions</span><span style="color:#710">"</span></span><span style="color:#070">&gt;</span>
-      <span style="color:#070">&lt;outline</span> <span style="color:#007">title</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">Pinboard (Popular items from Pinboard)</span><span style="color:#710">"</span></span> <span style="color:#007">htmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://pinboard.in</span><span style="color:#710">"</span></span> <span style="color:#007">type</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">rss</span><span style="color:#710">"</span></span> <span style="color:#007">xmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://feeds.pinboard.in/rss/popular/</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
-      <span style="color:#070">&lt;outline</span> <span style="color:#007">title</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">Strategic Choice</span><span style="color:#710">"</span></span> <span style="color:#007">htmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://d.hatena.ne.jp/asakichy/</span><span style="color:#710">"</span></span> <span style="color:#007">type</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">rss</span><span style="color:#710">"</span></span> <span style="color:#007">xmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://d.hatena.ne.jp/asakichy/rss</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
-      <span style="color:#070">&lt;outline</span> <span style="color:#007">title</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">RubyKaigi AdventCalender 2011</span><span style="color:#710">"</span></span> <span style="color:#007">htmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://rubykaigi.org/2011/ja/advent_calendar</span><span style="color:#710">"</span></span> <span style="color:#007">type</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">rss</span><span style="color:#710">"</span></span> <span style="color:#007">xmlUrl</span>=<span style="background-color:#fff0f0;color:#D20"><span style="color:#710">"</span><span style="">http://rubykaigi.org/2011/ja/advent_calendar.rss</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
-      <span style="color:#888">&lt;!-- こんな感じでフィードの一覧が続く... --&gt;</span>
+    <span style="color:#070">&lt;outline</span> <span style="color:#b48">title</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Subscriptions</span><span style="color:#710">"</span></span><span style="color:#070">&gt;</span>
+      <span style="color:#070">&lt;outline</span> <span style="color:#b48">title</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Pinboard (Popular items from Pinboard)</span><span style="color:#710">"</span></span> <span style="color:#b48">htmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://pinboard.in</span><span style="color:#710">"</span></span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">rss</span><span style="color:#710">"</span></span> <span style="color:#b48">xmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://feeds.pinboard.in/rss/popular/</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
+      <span style="color:#070">&lt;outline</span> <span style="color:#b48">title</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Strategic Choice</span><span style="color:#710">"</span></span> <span style="color:#b48">htmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://d.hatena.ne.jp/asakichy/</span><span style="color:#710">"</span></span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">rss</span><span style="color:#710">"</span></span> <span style="color:#b48">xmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://d.hatena.ne.jp/asakichy/rss</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
+      <span style="color:#070">&lt;outline</span> <span style="color:#b48">title</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">RubyKaigi AdventCalender 2011</span><span style="color:#710">"</span></span> <span style="color:#b48">htmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://rubykaigi.org/2011/ja/advent_calendar</span><span style="color:#710">"</span></span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">rss</span><span style="color:#710">"</span></span> <span style="color:#b48">xmlUrl</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">http://rubykaigi.org/2011/ja/advent_calendar.rss</span><span style="color:#710">"</span></span> <span style="color:#070">/&gt;</span>
+      <span style="color:#777">&lt;!-- こんな感じでフィードの一覧が続く... --&gt;</span>
     <span style="color:#070">&lt;/outline&gt;</span>
   <span style="color:#070">&lt;/body&gt;</span>
 <span style="color:#070">&lt;/opml&gt;</span>
@@ -184,7 +185,7 @@ cron的な何かで定期実行すればよいと思います。</p>
 ~/.cline/config のブロック内で</p>
 <div class="CodeRay">
   <div class="code"><pre>  config.append_collector <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">Collectors</span>::<span style="color:#036;font-weight:bold">Github</span>
-  <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">Collectors</span>::<span style="color:#036;font-weight:bold">Github</span>.login_name = <span style="background-color:#fff0f0;color:#D20"><span style="color:#710">'</span><span style="">github username</span><span style="color:#710">'</span></span>
+  <span style="color:#036;font-weight:bold">Cline</span>::<span style="color:#036;font-weight:bold">Collectors</span>::<span style="color:#036;font-weight:bold">Github</span>.login_name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">github username</span><span style="color:#710">'</span></span>
 </pre></div>
 </div>
 <p>と追記すると自分のfollowしている人のactivityを収集してくることができます。</p>
