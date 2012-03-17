@@ -6,6 +6,7 @@
 <link href="../../favicon.png" rel="icon" type="image/png">
 <link href="../../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
 <link href="../../stylesheets/orange.css" media="screen" rel="stylesheet" type="text/css">
+<link href="../../stylesheets/pygments.css" media="screen" rel="stylesheet" type="text/css">
 <link href="../../entries.rss" rel="alternate" title="RSS" type="application/rss+xml">
 </head>
 <body>
@@ -47,23 +48,23 @@
 <li>IO待ちでも切り替わらない</li>
 </ul>
 <p>コンテキストの切り替えは<code>Fiber#resume</code>と<code>Fiber.yield</code>で行う。</p>
-<div class="CodeRay">
-  <div class="code"><pre>fiber = <span style="color:#036;font-weight:bold">Fiber</span>.new {
-  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Hello Alice.</span><span style="color:#710">'</span></span>
+<div class="highlight">
+<pre><span class="n">fiber</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span>
+  <span class="nb">puts</span> <span class="s1">'Hello Alice.'</span>
 
-  <span style="color:#036;font-weight:bold">Fiber</span>.yield
+  <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span>
 
-  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Hello Bob.</span><span style="color:#710">'</span></span>
+  <span class="nb">puts</span> <span class="s1">'Hello Bob.'</span>
 
-  <span style="color:#036;font-weight:bold">Fiber</span>.yield
+  <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span>
 
-  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Hello Carol.</span><span style="color:#710">'</span></span>
-}
+  <span class="nb">puts</span> <span class="s1">'Hello Carol.'</span>
+<span class="p">}</span>
 
-fiber.resume <span style="color:#777"># "Hello Alice." と表示</span>
-fiber.resume <span style="color:#777"># "Hello Bob." と表示</span>
-fiber.resume <span style="color:#777"># "Hello Carol." と表示</span>
-</pre></div>
+<span class="n">fiber</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># "Hello Alice." と表示</span>
+<span class="n">fiber</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># "Hello Bob." と表示</span>
+<span class="n">fiber</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># "Hello Carol." と表示</span>
+</pre>
 </div>
 <p>上の例ではトップレベルが親。ブロックの中が子。親と子でキャッチボールしてる感じ。
 <code>Fiber#resume</code>で親から子へコンテキストを切り替え、<code>Fiber.yield</code>で子から親へ切り替える。</p>
@@ -77,20 +78,20 @@ fiber.resume <span style="color:#777"># "Hello Carol." と表示</span>
 それ以降の引数は<code>Fiber.yield</code>の戻り値として与えられる。</p>
 <p>戻り値は<code>Fiber.yield</code>の引数として渡す。
 <code>Fiber.new</code>で渡したブロックが終了したときは、最後に評価された式の値が戻り値として返る。</p>
-<div class="CodeRay">
-  <div class="code"><pre>greet3 = <span style="color:#036;font-weight:bold">Fiber</span>.new {|name|
-  <span style="color:#00D">3</span>.times <span style="color:#080;font-weight:bold">do</span>
-    name = <span style="color:#036;font-weight:bold">Fiber</span>.yield(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Hi </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">"</span></span>)
-  <span style="color:#080;font-weight:bold">end</span>
+<div class="highlight">
+<pre><span class="n">greet3</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span><span class="o">|</span><span class="nb">name</span><span class="o">|</span>
+  <span class="mi">3</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
+    <span class="nb">name</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span><span class="p">(</span><span class="s2">"Hi </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+  <span class="k">end</span>
 
-  <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Good night</span><span style="color:#710">'</span></span>
-}
+  <span class="s1">'Good night'</span>
+<span class="p">}</span>
 
-greet3.resume(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Aron</span><span style="color:#710">'</span></span>)  <span style="color:#777"># =&gt; "Hi Aron"</span>
-greet3.resume(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Billy</span><span style="color:#710">'</span></span>) <span style="color:#777"># =&gt; "Hi Billy"</span>
-greet3.resume(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Colon</span><span style="color:#710">'</span></span>) <span style="color:#777"># =&gt; "Hi Colon"</span>
-greet3.resume          <span style="color:#777"># =&gt; "Good night"</span>
-</pre></div>
+<span class="n">greet3</span><span class="o">.</span><span class="n">resume</span><span class="p">(</span><span class="s1">'Aron'</span><span class="p">)</span>  <span class="c1"># =&gt; "Hi Aron"</span>
+<span class="n">greet3</span><span class="o">.</span><span class="n">resume</span><span class="p">(</span><span class="s1">'Billy'</span><span class="p">)</span> <span class="c1"># =&gt; "Hi Billy"</span>
+<span class="n">greet3</span><span class="o">.</span><span class="n">resume</span><span class="p">(</span><span class="s1">'Colon'</span><span class="p">)</span> <span class="c1"># =&gt; "Hi Colon"</span>
+<span class="n">greet3</span><span class="o">.</span><span class="n">resume</span>          <span class="c1"># =&gt; "Good night"</span>
+</pre>
 </div>
 <h2>Coroutine</h2>
 <ul>
@@ -103,57 +104,57 @@ greet3.resume          <span style="color:#777"># =&gt; "Good night"</span>
 無限リストにも使うらしい。
 外部イテレータとしてときどき使うかもしれないEnumeratorではFiberを使ってるようだ。</p>
 <p>永遠に終わらない数字のカウントアップを行うジェネレータ。</p>
-<div class="CodeRay">
-  <div class="code"><pre>endless = <span style="color:#036;font-weight:bold">Fiber</span>.new {
-  loop.with_index <span style="color:#080;font-weight:bold">do</span> |_, i|
-    <span style="color:#036;font-weight:bold">Fiber</span>.yield(i)
-  <span style="color:#080;font-weight:bold">end</span>
-}
+<div class="highlight">
+<pre><span class="n">endless</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span>
+  <span class="kp">loop</span><span class="o">.</span><span class="n">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
+    <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="p">}</span>
 
-endless.resume <span style="color:#777"># =&gt; 0</span>
-endless.resume <span style="color:#777"># =&gt; 1</span>
-endless.resume <span style="color:#777"># =&gt; 2</span>
-endless.resume <span style="color:#777"># =&gt; 3</span>
-endless.resume <span style="color:#777"># =&gt; 4</span>
-endless.resume <span style="color:#777"># =&gt; 5</span>
-endless.resume <span style="color:#777"># =&gt; 6</span>
-<span style="color:#777"># endless...</span>
-</pre></div>
+<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 0</span>
+<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 1</span>
+<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 2</span>
+<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 3</span>
+<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 4</span>
+<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 5</span>
+<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 6</span>
+<span class="c1"># endless...</span>
+</pre>
 </div>
 <p>FiberのAPIを隠して外部イテレータっぽく使ってみる。</p>
-<div class="CodeRay">
-  <div class="code"><pre><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">EndlessNumber</span>
-  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>
-    rewind
-  <span style="color:#080;font-weight:bold">end</span>
+<div class="highlight">
+<pre><span class="k">class</span> <span class="nc">EndlessNumber</span>
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="n">rewind</span>
+  <span class="k">end</span>
 
-  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">rewind</span>
-    <span style="color:#33B">@generator</span> = <span style="color:#036;font-weight:bold">Fiber</span>.new {
-      loop.with_index <span style="color:#080;font-weight:bold">do</span> |_, i|
-        <span style="color:#036;font-weight:bold">Fiber</span>.yield(i)
-      <span style="color:#080;font-weight:bold">end</span>
-    }
+  <span class="k">def</span> <span class="nf">rewind</span>
+    <span class="vi">@generator</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span>
+      <span class="kp">loop</span><span class="o">.</span><span class="n">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
+        <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="p">}</span>
 
-    <span style="color:#069">self</span>
-  <span style="color:#080;font-weight:bold">end</span>
+    <span class="nb">self</span>
+  <span class="k">end</span>
 
-  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">next</span>
-    <span style="color:#33B">@generator</span>.resume
-  <span style="color:#080;font-weight:bold">end</span>
-<span style="color:#080;font-weight:bold">end</span>
+  <span class="k">def</span> <span class="nf">next</span>
+    <span class="vi">@generator</span><span class="o">.</span><span class="n">resume</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 
-en = <span style="color:#036;font-weight:bold">EndlessNumber</span>.new
+<span class="n">en</span> <span class="o">=</span> <span class="no">EndlessNumber</span><span class="o">.</span><span class="n">new</span>
 
-en.next <span style="color:#777"># =&gt; 0</span>
-en.next <span style="color:#777"># =&gt; 1</span>
-en.next <span style="color:#777"># =&gt; 2</span>
-en.rewind
-en.next <span style="color:#777"># =&gt; 0</span>
+<span class="n">en</span><span class="o">.</span><span class="n">next</span> <span class="c1"># =&gt; 0</span>
+<span class="n">en</span><span class="o">.</span><span class="n">next</span> <span class="c1"># =&gt; 1</span>
+<span class="n">en</span><span class="o">.</span><span class="n">next</span> <span class="c1"># =&gt; 2</span>
+<span class="n">en</span><span class="o">.</span><span class="n">rewind</span>
+<span class="n">en</span><span class="o">.</span><span class="n">next</span> <span class="c1"># =&gt; 0</span>
 
-<span style="color:#080;font-weight:bold">while</span> num = en.next
-  puts num
-<span style="color:#080;font-weight:bold">end</span> <span style="color:#777"># ウワーッ</span>
-</pre></div>
+<span class="k">while</span> <span class="n">num</span> <span class="o">=</span> <span class="n">en</span><span class="o">.</span><span class="n">next</span>
+  <span class="nb">puts</span> <span class="n">num</span>
+<span class="k">end</span> <span class="c1"># ウワーッ</span>
+</pre>
 </div>
 <p>　これに使おう、というのがとっさに思い浮かばない。</p>
 </article><div id="comments">

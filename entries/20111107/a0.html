@@ -6,6 +6,7 @@
 <link href="../../favicon.png" rel="icon" type="image/png">
 <link href="../../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
 <link href="../../stylesheets/orange.css" media="screen" rel="stylesheet" type="text/css">
+<link href="../../stylesheets/pygments.css" media="screen" rel="stylesheet" type="text/css">
 <link href="../../entries.rss" rel="alternate" title="RSS" type="application/rss+xml">
 </head>
 <body>
@@ -36,15 +37,15 @@
 <h1 id="a0">
 <a href="../../entries/20111107/a0.html">RubyのProc#callをjavascriptの関数みたいに呼び出す（引数なし）</a>
 </h1>
-<div class="CodeRay">
-  <div class="code"><pre>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Proc</span>
-    alias_method <span style="color:#A60">:[]</span>, <span style="color:#A60">:call</span>
-  <span style="color:#080;font-weight:bold">end</span>
+<div class="highlight">
+<pre>  <span class="k">class</span> <span class="nc">Proc</span>
+    <span class="n">alias_method</span> <span class="ss">:[]</span><span class="p">,</span> <span class="ss">:call</span>
+  <span class="k">end</span>
 
-  a = -&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">hi</span><span style="color:#710">'</span></span> }
+  <span class="n">a</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="s1">'hi'</span> <span class="p">}</span>
 
-  a[] <span style="color:#777"># =&gt; "hi"</span>
-</pre></div>
+  <span class="n">a</span><span class="o">[]</span> <span class="c1"># =&gt; "hi"</span>
+</pre>
 </div>
 <p>ブラケットをパーレンに読み替えると何かそれっぽい。くだらない。</p>
 <p><strong>2011/11/08 追記</strong></p>

@@ -6,6 +6,7 @@
 <link href="../../favicon.png" rel="icon" type="image/png">
 <link href="../../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
 <link href="../../stylesheets/orange.css" media="screen" rel="stylesheet" type="text/css">
+<link href="../../stylesheets/pygments.css" media="screen" rel="stylesheet" type="text/css">
 <link href="../../entries.rss" rel="alternate" title="RSS" type="application/rss+xml">
 </head>
 <body>
@@ -44,8 +45,8 @@
 <li>細かいバグ修正と、組込みデザインの細かい修正</li>
 </ul>
 <h2>相対的な日時の指定ができるようになった</h2>
-<div class="CodeRay">
-  <div class="code"><pre>  retter edit yesterday    # 昨日
+<div class="highlight">
+<pre>  retter edit yesterday    # 昨日
   retter edit today        # 今日
   retter edit tommorow     # 明日
 
@@ -56,11 +57,11 @@
   retter edit 3.weeks.ago  # 3週間前
   retter edit 3.months.ago # 3カ月前
   retter edit 3.years.ago  # 3年前
-</pre></div>
+</pre>
 </div>
 <h2>これまでに書いた記事の一覧を見られるコマンドを追加した</h2>
-<div class="CodeRay">
-  <div class="code"><pre>  retter list
+<div class="highlight">
+<pre>  retter list
   [e0] 2011-10-12
     記事ごとにPermlinkがつくようにした, retter 0.1.0
 
@@ -72,13 +73,13 @@
 
   [e3] 2011-09-19
     スタイルシートを追加してテーマを変えられるようにした
-</pre></div>
+</pre>
 </div>
 <h2>ページング機能を強化できるようにした</h2>
 <p>HAMLテンプレート内の<code>entry</code>や<code>article</code>にページングのためのいくつかのメソッドを追加しました。
 これでページングをし易くなったり、 Autopagerize などへの対応ができるようになりました。</p>
-<div class="CodeRay">
-  <div class="code"><pre>%nav
+<div class="highlight">
+<pre>%nav
   .prev
     - if prev_entry = entry.prev
       %link{href: entry_path(prev_entry), rel: :prev}
@@ -86,7 +87,7 @@
   .next
     - if next_entry = entry.next
       %link{href: entry_path(next_entry), rel: :next}
-</pre></div>
+</pre>
 </div>
 <h2>細かいバグ修正と、組込みデザインの細かい修正</h2>
 <ul>
