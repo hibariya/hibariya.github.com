@@ -33,6 +33,36 @@
 <div id="content">
 <div class="autopagerize_page_element" id="entries">
 <article><h1 class="date">
+<a href="./entries/20120317.html">2012-03-17</a>
+</h1>
+<h1 id="a0">
+<a href="./entries/20120317/a0.html">Rubyでコードブロックに色を付けるときのこと</a>
+</h1>
+<p>覚え書き。</p>
+<p><a href="https://github.com/hibariya/retter">retter</a>で使っているSyntax HighlighterはCodeRayというやつだったけど、吐かれるHTMLがあまり綺麗ではない（style属性付きのdivとかが大量に吐かれる）のと、色合いのカスタマイズも難しいので他のもの（具体的にはPygments）を使うことにした。
+pygmentsはコード辺にcssのclassをつけてくれるので<a href="http://pygments.org/media/pygments_style.css">こんな</a>スタイルシートを用意して使う。スタイルシートを弄れば色分けを好きに変えられる。</p>
+<p>RubyからPygmentsを使うには知っている限りだと2つの方法があって、ひとつは<a href="https://github.com/github/albino">Albino</a>、もうひとつは<a href="https://github.com/tmm1/pygments.rb">pygments.rb</a>を使う。</p>
+<p>Albinoはdeprecatedらしくて、READMEにはpygments.rbへのリンクまで書いてある。
+最後にコミットされたのは4ヶ月前だし、今後Albinoはメンテされないらしい。</p>
+<h2>pygments.rb</h2>
+<p>FFIを使っているのでとても早い。
+だからこれを使えばいいんだけど、試しに使っていたらときどきSegmentation faultになる（しかもいつ発生するのかよくわからない）。
+いきなりセグフォとか困る人にはまだおすすめできない気がする。</p>
+<h2>Albino</h2>
+<p>albinoを動かすには、pygmentizeという別のgemも必要。</p>
+<p>deprecatedだけどセグフォはしなかった。ただしとっても遅い。
+どんなに小さなコードブロックだとしても、色付けするのに毎回1プロセス起動する。
+何十個もある場合は何十秒も待たされることになる。</p>
+<p>何らかの方法でキャッシュするようにして、いちど生成したコードは使いまわせるようにすると少しマシ。
+根本的な解決にはならないけど、用途によっては有効かも。</p>
+<p>もうひとつ、AlbinoにはAlbino::Multiっていうクラスがついていて、説明を読んでみるとどうやら1プロセスで複数のコードブロックを一気にやっつけられるらしい。
+これさえあればプロセス起動のオーバーヘッドが大幅に削減できそう。
+ただし動かなかった。
+Albino::Multiは裏でmultipygmentizeというpythonスクリプトを叩いてるのだけど、このpythonスクリプトが必要としているpygmentsモジュールは別のgemであるpygmentizeの方に入っていて、読み込みに失敗しているようだった。
+pythnの環境をちゃんと整えれば動くのかな。</p>
+<h2>結論</h2>
+<p>これをこう使えば安心、というのは見つけられなかった。</p>
+</article><article><h1 class="date">
 <a href="./entries/20120313.html">2012-03-13</a>
 </h1>
 <h1 id="a0">
@@ -347,36 +377,9 @@ cron的な何かで定期実行すればよいと思います。</p>
 <h2>もっと他の情報を収集して通知する</h2>
 <p>収集する対象や出力先は拡張できます。
 より具体的には<a href="https://github.com/hibariya/cline">Cline</a>のREADMEを参照してください。</p>
-</article><article><h1 class="date">
-<a href="./entries/20111109.html">2011-11-09</a>
-</h1>
-<h1 id="a0">
-<a href="./entries/20111109/a0.html">retter-0.1.3</a>
-</h1>
-<p><a href="https://github.com/hibariya/retter">1日おいてすぐのアップデートをしました</a>。</p>
-<p>昨日言っていたDISQUSを簡単に導入できるようにしました。</p>
-<h2>準備</h2>
-<ol>
-<li>DISQUSのアカウントをつくります</li>
-<li>ログインして、Retterで使うための新しいサイトをつくります</li>
-</ol>
-<h2>インストール</h2>
-<p>まずはRetterfileに<code>disqus_shortname</code>という設定を追記します。</p>
-<div class="highlight">
-<pre><span class="n">disqus_shortname</span> <span class="s1">'your_disqus_shortname'</span>
-</pre>
-</div>
-<p>あとは任意の箇所でヘルパメソッド<code>render_disqus_comment_form</code>を呼ぶだけです。</p>
-<p>例えば<code>layouts/article.html.haml</code>などに。</p>
-<div class="highlight">
-<pre><span class="cp">-# 省略</span>
-<span class="nf">#comments</span><span class="p">=</span> <span class="n">render_disqus_comment_form</span>
-<span class="cp">-# 省略</span>
-</pre>
-</div>
 </article><div class="nav">
 <div class="next">
-<link href="./entries/20111108.html" rel="next">
+<link href="./entries/20111109.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
