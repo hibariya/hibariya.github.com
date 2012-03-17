@@ -9,7 +9,7 @@ pygmentsはコード辺にcssのclassをつけてくれるので<a href="http://
 これさえあればプロセス起動のオーバーヘッドが大幅に削減できそう。
 ただし動かなかった。
 Albino::Multiは裏でmultipygmentizeというpythonスクリプトを叩いてるのだけど、このpythonスクリプトが必要としているpygmentsモジュールは別のgemであるpygmentizeの方に入っていて、読み込みに失敗しているようだった。
-pythnの環境をちゃんと整えれば動くのかな。</p><h2>結論</h2><p>これをこう使えば安心、というのは見つけられなかった。</p>]]></description><dc:date>2012-03-17</dc:date><link>http://hibariya.github.com/entries/20120317.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120313.html"><title>2012/03/13</title><description><![CDATA[<h1 id="a0">FiberとSemi-Coroutine</h1><p>やっと使い方を覚えたFiberについての覚書。組込みライブラリ編。</p><h2>Fiber</h2><p>Rubyの組込みライブラリとして提供されているFiber。
+pythonの環境をちゃんと整えれば動くのかな。</p><h2>結論</h2><p>これをこう使えば安心、というのは見つけられなかった。</p>]]></description><dc:date>2012-03-17</dc:date><link>http://hibariya.github.com/entries/20120317.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120313.html"><title>2012/03/13</title><description><![CDATA[<h1 id="a0">FiberとSemi-Coroutine</h1><p>やっと使い方を覚えたFiberについての覚書。組込みライブラリ編。</p><h2>Fiber</h2><p>Rubyの組込みライブラリとして提供されているFiber。
 ノンプリエンプティブな軽量スレッド。</p><ul>
 <li>生成したファイバは勝手には走らない</li>
 <li>コンテキストの切り替えは自分で</li>
