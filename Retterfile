@@ -10,7 +10,9 @@ renderer    Renderers::PygmentsRenderer
 disqus_shortname 'joyluckcrab'
 
 after :edit do
-  preview ARGV.pop if yes?("Preview now? [yes/no]")
+  Retter.reset!
+  ident = ARGV.pop || 'today'
+  preview ident if yes?("Preview now? [yes/no]")
 end
 
 after :rebind, :commit
