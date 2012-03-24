@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ファイルを直接弄るような細かい作業 - Joy Luck Crab</title>
+<title>複数のテンプレートエンジンへの対応 - Joy Luck Crab</title>
 <meta content="hibariya" name="author">
 <link href="../../favicon.png" rel="icon" type="image/png">
 <link href="../../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
@@ -32,26 +32,13 @@
 </ul></nav></header><div id="page">
 <div id="content">
 <article class="article autopagerize_page_element"><h1 class="date">
-<a href="../../entries/20110918.html">2011-09-18</a>
+<a href="../../entries/20120324.html">2012-03-24</a>
 </h1>
-<h1 id="a0">
-<a href="../../entries/20110918/a0.html">ファイルを直接弄るような細かい作業</a>
+<h1 id="a1">
+<a href="../../entries/20120324/a1.html">複数のテンプレートエンジンへの対応</a>
 </h1>
-<p>作業ディレクトリを一旦クリーンに戻したいような場面。
-retterで生成するサイトはgitで管理することを前提にしているせいもあって、直にgitコマンドを実行したい場面がどうしても出てくるみたい。
-例えば、<code>git reset</code> したいときとか、<code>git commit --amend</code> したいときとか。</p>
-<p>ファイルシステム上のどこに居ようが編集から公開までをできるというメリットはできるだけ殺したくなくて、いちいちリポジトリに移動してgitコマンドを実行するのはちょっと嫌だ。</p>
-<p>そこで新たに <code>rette home</code> というコマンドを作ってみた。
-<code>home</code> サブコマンドは<code>$RETTER_HOME</code>に移動して新たなシェルを起動する。</p>
-<div class="highlight">
-<pre>  $ retter home
-  (retter) pwd
-  /path/to/retter_home
-  (retter) exit
-  bye
-</pre>
-</div>
-<p>これで、いくつものどうでもいい機能の実装を免れるきがする。</p>
+<p><a href="https://github.com/rtomayko/tilt">Tilt</a>を使うことで複数のテンプレートエンジンに対応できるようになりました。
+ERBとかが使えるようになります。</p>
 
 </article><div id="comments">
 <div id="disqus_thread">
@@ -69,10 +56,10 @@ retterで生成するサイトはgitで管理することを前提にしてい�
 </div>
 <div class="nav">
 <div class="prev">
-<link href="../../entries/20110919/a0.html" rel="prev">
+<link href="../../entries/20120324/a0.html" rel="prev">
 </div>
 <div class="next">
-<link href="../../entries/20110918/a1.html" rel="next">
+<link href="../../entries/20120324/a2.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
