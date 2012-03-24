@@ -1,14 +1,41 @@
+%script{src: 'http://widgets.twimg.com/j/2/widget.js', charset: 'utf-8'}
 %article
   %h1 Profile
   %dl
     %dt Author
     %dd= config.author
-    %dt Image
+    %dt Github
     %dd
-      %img{src: 'https://secure.gravatar.com/avatar/de0df5acda15a9c7eeb6c28a5e5d4e8e.png?d=retro&r=PG&s=48', alt: 'gravatar image'}
-    %dt Recent Activities
+      %a{href: "https://github.com/#{config.author}"}= config.author
+    %dt Twitter
     %dd
-      %a{href: 'http://rsss.be/hibariya', target: '_blank', title: 'RSSS'} RSSS
+      :javascript
+        new TWTR.Widget({
+          version: 2,
+          type: 'profile',
+          rpp: 4,
+          interval: 30000,
+          width: 600,
+          height: 300,
+          theme: {
+            shell: {
+              background: '#333333',
+              color: '#ffffff'
+            },
+            tweets: {
+              background: '#000000',
+              color: '#ffffff',
+              links: '#4aed05'
+            }
+          },
+          features: {
+            scrollbar: false,
+            loop: false,
+            live: false,
+            behavior: 'all'
+          }
+        }).render().setUser('#{config.author}').start();
+
     %dt Site Generator
     %dd
       %a{href: 'https://github.com/hibariya/retter', target: '_blank', title: 'Retter'} Retter
