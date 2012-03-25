@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>プロセスをforkするときのこと - Joy Luck Crab</title>
+<meta content="hibariya" name="author">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<link href="../../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
+<link href="../../stylesheets/orange.css" media="screen" rel="stylesheet" type="text/css">
+<link href="../../stylesheets/pygments.css" media="screen" rel="stylesheet" type="text/css">
+<link href="../../entries.rss" rel="alternate" title="RSS" type="application/rss+xml">
+<link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
+<script src="../../javascripts/jquery.js"></script><script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+</head>
+<body>
+<header id="header"><h1>
+<a href="../../index.html">Joy Luck Crab</a>
+</h1>
+<nav><ul id="menu">
+<li>
+<a href="../../index.html">Home</a>
+</li>
+<li>
+<a href="../../profile.html">Profile</a>
+</li>
+<li>
+<a href="../../entries.html">Archives</a>
+</li>
+<li>
+<a href="../../entries.rss" target="_blank">RSS</a>
+</li>
+</ul></nav></header><div id="page">
+<div id="content">
+<article class="article autopagerize_page_element"><h1 class="date">
+<a href="../../entries/20120326.html">2012-03-26</a>
+</h1>
+<h1 id="a0">
+<a href="../../entries/20120326/a0.html">プロセスをforkするときのこと</a>
+</h1>
+<p>孤児プロセスとゾンビプロセスの違いがうまく理解できてなかったけど、ようやく違いを確認することができた。</p>
+<h2>孤児プロセス</h2>
+<p>孤児プロセスは、親プロセスがwaitせずに先に逝ってしまった後も走り続けている子プロセス。
+Orphan Process とも呼ばれる。
+親のいなくなった子プロセスはinitプロセスの子（孤児）になる。</p>
+<p>親プロセスが死んで、子プロセスの親が変化する様子を見るには以下のようなスクリプトを実行したあとでファイルをtailすると分かりやすそう。</p>
+<div class="highlight">
+<pre><span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="k">do</span>
+  <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'orphan'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+    <span class="kp">loop</span> <span class="k">do</span>
+      <span class="nb">sleep</span> <span class="mi">1</span>
+
+      <span class="c1"># 親プロセスのpidをファイルに書き出す</span>
+      <span class="n">f</span><span class="o">.</span><span class="n">puts</span> <span class="no">Process</span><span class="o">.</span><span class="n">ppid</span>
+      <span class="n">f</span><span class="o">.</span><span class="n">flush</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="nb">sleep</span> <span class="mi">5</span>
+</pre>
+</div>
+<p>このプログラムを実行して、<code>orphan</code>を<code>tail -f</code>で観察していると、5秒後に親プロセスが死んで、子プロセスの親プロセスがinitに変化していることを確認できる。</p>
+<div class="highlight">
+<pre>$ tailf orphan
+80361 # まだ親プロセスの子
+80361
+80361
+80361
+80361
+1     # ここでinitの養子になってる
+1
+1
+1
+</pre>
+</div>
+<p>initは孤児プロセスをwaitしてくれる。</p>
+<h2>ゾンビプロセス</h2>
+<p>ゾンビプロセスは、既に処理を終えて死んだ子プロセスが、まだ生きている親プロセスにwaitされるのを待っている状態のこと。</p>
+<p>子プロセスが死んでも親プロセスが生きている限り、いつ子プロセスの終了ステータスが参照されても（waitされても）いいように、その情報はプロセステーブルのエントリとして残る。
+プロセスとしては死んでいるけれど、waitされるかもしれないのでプロセステーブルに残っている状態がゾンビ。</p>
+<div class="highlight">
+<pre><span class="nb">puts</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span> <span class="nb">sleep</span> <span class="mi">1</span> <span class="p">}</span>
+
+<span class="nb">sleep</span> <span class="mi">10</span>
+</pre>
+</div>
+<p>上のプログラムを実行して、表示されたpidを元に、別の端末でプロセスの状態を確認すると、ゾンビ状態になっていることがわかる（10秒後には親プロセスが死ぬのでゾンビも消える）。</p>
+<div class="highlight">
+<pre>$ ps -ho pid,state 81793
+  PID STAT
+  82077 Z+
+</pre>
+</div>
+<p>ゾンビプロセスの発生を防ぐには、親プロセスで確実にwaitする必要がある。
+RubyならProcess.waitpidを使うといい。
+waitすると子プロセスが終了するまで親プロセスの処理がブロックされる。</p>
+<div class="highlight">
+<pre><span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span> <span class="nb">sleep</span> <span class="mi">1</span> <span class="p">}</span>
+
+<span class="no">Process</span><span class="o">.</span><span class="n">waitpid</span> <span class="n">pid</span>
+</pre>
+</div>
+<p>もしくは、Double Forkを行うと親プロセスで待たなくてもよくなる。
+生成した子プロセスに孫プロセスを生成させ、さらに子プロセスは即座に終了させることで、孫プロセスがinitの子プロセス（孤児プロセス）となってwaitはinitに任せることができるようになる。</p>
+<div class="highlight">
+<pre><span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span>
+  <span class="nb">puts</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span>
+    <span class="nb">sleep</span> <span class="mi">20</span> <span class="c1"># 何かしらの処理</span>
+  <span class="p">}</span>
+
+  <span class="nb">sleep</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="no">Process</span><span class="o">.</span><span class="n">waitpid</span> <span class="n">pid</span>
+</pre>
+</div>
+<h2>まとめ</h2>
+<ul>
+<li>親が死んだら子はinitが看取ってくれる</li>
+<li>親が死ぬまでゾンビは消えない</li>
+<li>ゾンビを増やさないためには、適宜waitするかDouble Forkしてinitに面倒をみてもらう</li>
+</ul></article><div id="comments">
+<div id="disqus_thread">
+  <script type="text/javascript">
+    //<![CDATA[
+      var disqus_shortname = 'joyluckcrab';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    //]]>
+  </script>
+</div>
+</div>
+<div class="nav">
+<div class="prev">
+</div>
+<div class="next">
+<link href="../../entries/20120324/a0.html" rel="next">
+</div>
+</div>
+<div class="autopagerize_insert_before"></div>
+</div>
+<aside id="sidebar"><h3>Author</h3>
+<div class="author">
+<a href="../../profile.html">hibariya</a>
+</div>
+<h3>Recent entries</h3>
+<div class="recent-entries">
+<ul>
+<li>
+<a href="../../entries/20120326/a0.html">プロセスをforkするときのこと</a>
+</li>
+<li>
+<a href="../../entries/20120324/a0.html">Retter 0.2.2</a>
+</li>
+<li>
+<a href="../../entries/20120324/a1.html">Retter 0.2.1</a>
+</li>
+<li>
+<a href="../../entries/20120323/a0.html">Retter 0.2.0</a>
+</li>
+<li>
+<a href="../../entries/20120321/a0.html">Rubyで日付っぽい文字列を日時や日付に変換するときのこと</a>
+</li>
+<li>
+<a href="../../entries/20120317/a0.html">Rubyでコードブロックに色を付けるときのこと</a>
+</li>
+<li>
+<a href="../../entries/20120313/a0.html">FiberとSemi-Coroutine</a>
+</li>
+</ul>
+<div class="archives">
+<a href="../../entries.html">Archives</a>
+</div>
+</div>
+<h3>Coderwall</h3>
+<section class="coderwall" data-coderwall-orientation="horizontal" data-coderwall-username="hibariya"></section></aside>
+</div>
+<footer id="footer">
+Joy Luck Crab (C) hibariya
+Generated by
+<a href="https://github.com/hibariya/retter" target="_blank">Retter</a>
+</footer>
+</body>
+</html>

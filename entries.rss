@@ -1,4 +1,67 @@
-<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2012-03-24</dc:date><description>hibariya.github.com</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120323.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120321.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120317.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120313.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120101.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111208.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111204.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111109.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111108.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111107.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111025.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111022.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111012.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111010.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111003.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110919.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110918.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110916.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110913.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110911.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110909.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20120324.html"><title>2012/03/24</title><description><![CDATA[<h1 id="a0">Retter 0.2.2</h1><p><a href="https://rubygems.org/gems/retter">built-inなテーマにサイドバーをつけました。</a></p><h1 id="a1">Retter 0.2.1</h1><p><a href="https://rubygems.org/gems/retter">間を開けずにもう少し変更しました。</a></p><h2>複数のテンプレートエンジンへの対応</h2><p><a href="https://github.com/rtomayko/tilt">Tilt</a>を使うことで複数のテンプレートエンジンに対応できるようになりました。
+<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2012-03-26</dc:date><description>hibariya.github.com</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20120326.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120323.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120321.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120317.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120313.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120101.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111208.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111204.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111109.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111108.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111107.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111025.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111022.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111012.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111010.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111003.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110919.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110918.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110916.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110913.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110911.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110909.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20120326.html"><title>2012/03/26</title><description><![CDATA[<h1 id="a0">プロセスをforkするときのこと</h1><p>孤児プロセスとゾンビプロセスの違いがうまく理解できてなかったけど、ようやく違いを確認することができた。</p><h2>孤児プロセス</h2><p>孤児プロセスは、親プロセスがwaitせずに先に逝ってしまった後も走り続けている子プロセス。
+Orphan Process とも呼ばれる。
+親のいなくなった子プロセスはinitプロセスの子（孤児）になる。</p><p>親プロセスが死んで、子プロセスの親が変化する様子を見るには以下のようなスクリプトを実行したあとでファイルをtailすると分かりやすそう。</p><div class="highlight">
+<pre><span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="k">do</span>
+  <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'orphan'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+    <span class="kp">loop</span> <span class="k">do</span>
+      <span class="nb">sleep</span> <span class="mi">1</span>
+
+      <span class="c1"># 親プロセスのpidをファイルに書き出す</span>
+      <span class="n">f</span><span class="o">.</span><span class="n">puts</span> <span class="no">Process</span><span class="o">.</span><span class="n">ppid</span>
+      <span class="n">f</span><span class="o">.</span><span class="n">flush</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="nb">sleep</span> <span class="mi">5</span>
+</pre>
+</div><p>このプログラムを実行して、<code>orphan</code>を<code>tail -f</code>で観察していると、5秒後に親プロセスが死んで、子プロセスの親プロセスがinitに変化していることを確認できる。</p><div class="highlight">
+<pre>$ tailf orphan
+80361 # まだ親プロセスの子
+80361
+80361
+80361
+80361
+1     # ここでinitの養子になってる
+1
+1
+1
+</pre>
+</div><p>initは孤児プロセスをwaitしてくれる。</p><h2>ゾンビプロセス</h2><p>ゾンビプロセスは、既に処理を終えて死んだ子プロセスが、まだ生きている親プロセスにwaitされるのを待っている状態のこと。</p><p>子プロセスが死んでも親プロセスが生きている限り、いつ子プロセスの終了ステータスが参照されても（waitされても）いいように、その情報はプロセステーブルのエントリとして残る。
+プロセスとしては死んでいるけれど、waitされるかもしれないのでプロセステーブルに残っている状態がゾンビ。</p><div class="highlight">
+<pre><span class="nb">puts</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span> <span class="nb">sleep</span> <span class="mi">1</span> <span class="p">}</span>
+
+<span class="nb">sleep</span> <span class="mi">10</span>
+</pre>
+</div><p>上のプログラムを実行して、表示されたpidを元に、別の端末でプロセスの状態を確認すると、ゾンビ状態になっていることがわかる（10秒後には親プロセスが死ぬのでゾンビも消える）。</p><div class="highlight">
+<pre>$ ps -ho pid,state 81793
+  PID STAT
+  82077 Z+
+</pre>
+</div><p>ゾンビプロセスの発生を防ぐには、親プロセスで確実にwaitする必要がある。
+RubyならProcess.waitpidを使うといい。
+waitすると子プロセスが終了するまで親プロセスの処理がブロックされる。</p><div class="highlight">
+<pre><span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span> <span class="nb">sleep</span> <span class="mi">1</span> <span class="p">}</span>
+
+<span class="no">Process</span><span class="o">.</span><span class="n">waitpid</span> <span class="n">pid</span>
+</pre>
+</div><p>もしくは、Double Forkを行うと親プロセスで待たなくてもよくなる。
+生成した子プロセスに孫プロセスを生成させ、さらに子プロセスは即座に終了させることで、孫プロセスがinitの子プロセス（孤児プロセス）となってwaitはinitに任せることができるようになる。</p><div class="highlight">
+<pre><span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span>
+  <span class="nb">puts</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span>
+    <span class="nb">sleep</span> <span class="mi">20</span> <span class="c1"># 何かしらの処理</span>
+  <span class="p">}</span>
+
+  <span class="nb">sleep</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="no">Process</span><span class="o">.</span><span class="n">waitpid</span> <span class="n">pid</span>
+</pre>
+</div><h2>まとめ</h2><ul>
+<li>親が死んだら子はinitが看取ってくれる</li>
+<li>親が死ぬまでゾンビは消えない</li>
+<li>ゾンビを増やさないためには、適宜waitするかDouble Forkしてinitに面倒をみてもらう</li>
+</ul>]]></description><dc:date>2012-03-26</dc:date><link>http://hibariya.github.com/entries/20120326.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120324.html"><title>2012/03/24</title><description><![CDATA[<h1 id="a0">Retter 0.2.2</h1><p><a href="https://rubygems.org/gems/retter">built-inなテーマにサイドバーをつけました。</a></p><h1 id="a1">Retter 0.2.1</h1><p><a href="https://rubygems.org/gems/retter">間を開けずにもう少し変更しました。</a></p><h2>複数のテンプレートエンジンへの対応</h2><p><a href="https://github.com/rtomayko/tilt">Tilt</a>を使うことで複数のテンプレートエンジンに対応できるようになりました。
 ERBとかが使えるようになります。</p><h2>固定ページの生成抑止</h2><p>以下のページは、使い方によっては必ずしも必要のないページなので、設定すれば生成されないようになりました。</p><ul>
 <li>profile.html</li>
 <li>entries.html</li>
@@ -615,6 +678,4 @@ HTML生成以降の手順をショートカットした場合の手順を想像�
 <li>依存しているgemのバージョンを明記するようにした</li>
 <li>いくつかのコマンドにフックするコールバックを定義できるようにした</li>
 </ol>
-<p>コールバックを無効にする --silent オプションを入れるのを忘れていたので次のに入れる。</p>]]></description><dc:date>2011-09-16</dc:date><link>http://hibariya.github.com/entries/20110916.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20110913.html"><title>2011/09/13</title><description><![CDATA[<h1 id="a0">Pull requestがマージされた</h1><p>日曜くらいに送った初の Pull request が今日マージされた。
-1行削除するだけの簡単なパッチだったけど。会社のデスクの上で踊りだしそうになってやめた。</p><p>今日は、日付は覚えてないけど出来事は覚えている類の特別な日になった。これでやっとひとつ進めるね。
-今日は<a href="http://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%83%BC%E3%81%AE%E6%97%A5">プログラマの日</a>らしいよ。</p>]]></description><dc:date>2011-09-13</dc:date><link>http://hibariya.github.com/entries/20110913.html</link><author>hibariya</author></item></rdf:RDF>
+<p>コールバックを無効にする --silent オプションを入れるのを忘れていたので次のに入れる。</p>]]></description><dc:date>2011-09-16</dc:date><link>http://hibariya.github.com/entries/20110916.html</link><author>hibariya</author></item></rdf:RDF>

@@ -33,6 +33,94 @@
 <div id="content">
 <div class="autopagerize_page_element" id="entries">
 <article class="article"><h1 class="date">
+<a href="./entries/20120326.html">2012-03-26</a>
+</h1>
+<h1 id="a0">
+<a href="./entries/20120326/a0.html">プロセスをforkするときのこと</a>
+</h1>
+<p>孤児プロセスとゾンビプロセスの違いがうまく理解できてなかったけど、ようやく違いを確認することができた。</p>
+<h2>孤児プロセス</h2>
+<p>孤児プロセスは、親プロセスがwaitせずに先に逝ってしまった後も走り続けている子プロセス。
+Orphan Process とも呼ばれる。
+親のいなくなった子プロセスはinitプロセスの子（孤児）になる。</p>
+<p>親プロセスが死んで、子プロセスの親が変化する様子を見るには以下のようなスクリプトを実行したあとでファイルをtailすると分かりやすそう。</p>
+<div class="highlight">
+<pre><span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="k">do</span>
+  <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'orphan'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+    <span class="kp">loop</span> <span class="k">do</span>
+      <span class="nb">sleep</span> <span class="mi">1</span>
+
+      <span class="c1"># 親プロセスのpidをファイルに書き出す</span>
+      <span class="n">f</span><span class="o">.</span><span class="n">puts</span> <span class="no">Process</span><span class="o">.</span><span class="n">ppid</span>
+      <span class="n">f</span><span class="o">.</span><span class="n">flush</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="nb">sleep</span> <span class="mi">5</span>
+</pre>
+</div>
+<p>このプログラムを実行して、<code>orphan</code>を<code>tail -f</code>で観察していると、5秒後に親プロセスが死んで、子プロセスの親プロセスがinitに変化していることを確認できる。</p>
+<div class="highlight">
+<pre>$ tailf orphan
+80361 # まだ親プロセスの子
+80361
+80361
+80361
+80361
+1     # ここでinitの養子になってる
+1
+1
+1
+</pre>
+</div>
+<p>initは孤児プロセスをwaitしてくれる。</p>
+<h2>ゾンビプロセス</h2>
+<p>ゾンビプロセスは、既に処理を終えて死んだ子プロセスが、まだ生きている親プロセスにwaitされるのを待っている状態のこと。</p>
+<p>子プロセスが死んでも親プロセスが生きている限り、いつ子プロセスの終了ステータスが参照されても（waitされても）いいように、その情報はプロセステーブルのエントリとして残る。
+プロセスとしては死んでいるけれど、waitされるかもしれないのでプロセステーブルに残っている状態がゾンビ。</p>
+<div class="highlight">
+<pre><span class="nb">puts</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span> <span class="nb">sleep</span> <span class="mi">1</span> <span class="p">}</span>
+
+<span class="nb">sleep</span> <span class="mi">10</span>
+</pre>
+</div>
+<p>上のプログラムを実行して、表示されたpidを元に、別の端末でプロセスの状態を確認すると、ゾンビ状態になっていることがわかる（10秒後には親プロセスが死ぬのでゾンビも消える）。</p>
+<div class="highlight">
+<pre>$ ps -ho pid,state 81793
+  PID STAT
+  82077 Z+
+</pre>
+</div>
+<p>ゾンビプロセスの発生を防ぐには、親プロセスで確実にwaitする必要がある。
+RubyならProcess.waitpidを使うといい。
+waitすると子プロセスが終了するまで親プロセスの処理がブロックされる。</p>
+<div class="highlight">
+<pre><span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span> <span class="nb">sleep</span> <span class="mi">1</span> <span class="p">}</span>
+
+<span class="no">Process</span><span class="o">.</span><span class="n">waitpid</span> <span class="n">pid</span>
+</pre>
+</div>
+<p>もしくは、Double Forkを行うと親プロセスで待たなくてもよくなる。
+生成した子プロセスに孫プロセスを生成させ、さらに子プロセスは即座に終了させることで、孫プロセスがinitの子プロセス（孤児プロセス）となってwaitはinitに任せることができるようになる。</p>
+<div class="highlight">
+<pre><span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span>
+  <span class="nb">puts</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span>
+    <span class="nb">sleep</span> <span class="mi">20</span> <span class="c1"># 何かしらの処理</span>
+  <span class="p">}</span>
+
+  <span class="nb">sleep</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="no">Process</span><span class="o">.</span><span class="n">waitpid</span> <span class="n">pid</span>
+</pre>
+</div>
+<h2>まとめ</h2>
+<ul>
+<li>親が死んだら子はinitが看取ってくれる</li>
+<li>親が死ぬまでゾンビは消えない</li>
+<li>ゾンビを増やさないためには、適宜waitするかDouble Forkしてinitに面倒をみてもらう</li>
+</ul></article><article class="article"><h1 class="date">
 <a href="./entries/20120324.html">2012-03-24</a>
 </h1>
 <h1 id="a0">
@@ -174,135 +262,9 @@ Albino::Multiは裏でmultipygmentizeというpythonスクリプトを叩いて�
 pythonの環境をちゃんと整えれば動くのかな。</p>
 <h2>結論</h2>
 <p>これをこう使えば安心、というのは見つけられなかった。</p>
-</article><article class="article"><h1 class="date">
-<a href="./entries/20120313.html">2012-03-13</a>
-</h1>
-<h1 id="a0">
-<a href="./entries/20120313/a0.html">FiberとSemi-Coroutine</a>
-</h1>
-<p>やっと使い方を覚えたFiberについての覚書。組込みライブラリ編。</p>
-<h2>Fiber</h2>
-<p>Rubyの組込みライブラリとして提供されているFiber。
-ノンプリエンプティブな軽量スレッド。</p>
-<ul>
-<li>生成したファイバは勝手には走らない</li>
-<li>コンテキストの切り替えは自分で</li>
-<li>親から子へ、子から親へ切り替えることができる</li>
-<li>IO待ちでも切り替わらない</li>
-</ul>
-<p>コンテキストの切り替えは<code>Fiber#resume</code>と<code>Fiber.yield</code>で行う。</p>
-<div class="highlight">
-<pre><span class="n">fiber</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span>
-  <span class="nb">puts</span> <span class="s1">'Hello Alice.'</span>
-
-  <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span>
-
-  <span class="nb">puts</span> <span class="s1">'Hello Bob.'</span>
-
-  <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span>
-
-  <span class="nb">puts</span> <span class="s1">'Hello Carol.'</span>
-<span class="p">}</span>
-
-<span class="n">fiber</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># "Hello Alice." と表示</span>
-<span class="n">fiber</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># "Hello Bob." と表示</span>
-<span class="n">fiber</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># "Hello Carol." と表示</span>
-</pre>
-</div>
-<p>上の例ではトップレベルが親。ブロックの中が子。親と子でキャッチボールしてる感じ。
-<code>Fiber#resume</code>で親から子へコンテキストを切り替え、<code>Fiber.yield</code>で子から親へ切り替える。</p>
-<p>組込みライブラリとしてのFiberは、親から子、子から親へのみ切り替えられる（それ以外のコンテキストに切り替えることはできない）。</p>
-<h2>Fiberの引数と戻り値</h2>
-<h3>親からみたときの引数と戻り値</h3>
-<p>引数は常に<code>Fiber#resume</code>に渡す。
-戻り値は<code>Fiber#resume</code>の戻り値。</p>
-<h3>子からみたときの引数と戻り値</h3>
-<p>最初の引数はブロック引数として渡される。
-それ以降の引数は<code>Fiber.yield</code>の戻り値として与えられる。</p>
-<p>戻り値は<code>Fiber.yield</code>の引数として渡す。
-<code>Fiber.new</code>で渡したブロックが終了したときは、最後に評価された式の値が戻り値として返る。</p>
-<div class="highlight">
-<pre><span class="n">greet3</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span><span class="o">|</span><span class="nb">name</span><span class="o">|</span>
-  <span class="mi">3</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
-    <span class="nb">name</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span><span class="p">(</span><span class="s2">"Hi </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-  <span class="k">end</span>
-
-  <span class="s1">'Good night'</span>
-<span class="p">}</span>
-
-<span class="n">greet3</span><span class="o">.</span><span class="n">resume</span><span class="p">(</span><span class="s1">'Aron'</span><span class="p">)</span>  <span class="c1"># =&gt; "Hi Aron"</span>
-<span class="n">greet3</span><span class="o">.</span><span class="n">resume</span><span class="p">(</span><span class="s1">'Billy'</span><span class="p">)</span> <span class="c1"># =&gt; "Hi Billy"</span>
-<span class="n">greet3</span><span class="o">.</span><span class="n">resume</span><span class="p">(</span><span class="s1">'Colon'</span><span class="p">)</span> <span class="c1"># =&gt; "Hi Colon"</span>
-<span class="n">greet3</span><span class="o">.</span><span class="n">resume</span>          <span class="c1"># =&gt; "Good night"</span>
-</pre>
-</div>
-<h2>Coroutine</h2>
-<ul>
-<li>途中まで計算して、一旦値を返して、その後また続きから実行できる仕組み</li>
-<li>親と子（callerとcallee）という関係があるものをsemi-coroutineと呼ぶ</li>
-<li>組込みライブラリのFiberはsemi-coroutineの実装と言ってよいのかな</li>
-</ul>
-<h2>semi-coroutineさん何に使うの</h2>
-<p>ジェネレータや外部イテレータに使うらしい。
-無限リストにも使うらしい。
-外部イテレータとしてときどき使うかもしれないEnumeratorではFiberを使ってるようだ。</p>
-<p>永遠に終わらない数字のカウントアップを行うジェネレータ。</p>
-<div class="highlight">
-<pre><span class="n">endless</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span>
-  <span class="kp">loop</span><span class="o">.</span><span class="n">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
-    <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-  <span class="k">end</span>
-<span class="p">}</span>
-
-<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 0</span>
-<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 1</span>
-<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 2</span>
-<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 3</span>
-<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 4</span>
-<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 5</span>
-<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 6</span>
-<span class="c1"># endless...</span>
-</pre>
-</div>
-<p>FiberのAPIを隠して外部イテレータっぽく使ってみる。</p>
-<div class="highlight">
-<pre><span class="k">class</span> <span class="nc">EndlessNumber</span>
-  <span class="k">def</span> <span class="nf">initialize</span>
-    <span class="n">rewind</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">rewind</span>
-    <span class="vi">@generator</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span>
-      <span class="kp">loop</span><span class="o">.</span><span class="n">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
-        <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-      <span class="k">end</span>
-    <span class="p">}</span>
-
-    <span class="nb">self</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">next</span>
-    <span class="vi">@generator</span><span class="o">.</span><span class="n">resume</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="n">en</span> <span class="o">=</span> <span class="no">EndlessNumber</span><span class="o">.</span><span class="n">new</span>
-
-<span class="n">en</span><span class="o">.</span><span class="n">next</span> <span class="c1"># =&gt; 0</span>
-<span class="n">en</span><span class="o">.</span><span class="n">next</span> <span class="c1"># =&gt; 1</span>
-<span class="n">en</span><span class="o">.</span><span class="n">next</span> <span class="c1"># =&gt; 2</span>
-<span class="n">en</span><span class="o">.</span><span class="n">rewind</span>
-<span class="n">en</span><span class="o">.</span><span class="n">next</span> <span class="c1"># =&gt; 0</span>
-
-<span class="k">while</span> <span class="n">num</span> <span class="o">=</span> <span class="n">en</span><span class="o">.</span><span class="n">next</span>
-  <span class="nb">puts</span> <span class="n">num</span>
-<span class="k">end</span> <span class="c1"># ウワーッ</span>
-</pre>
-</div>
-<p>　これに使おう、というのがとっさに思い浮かばない。</p>
 </article><div class="nav">
 <div class="next">
-<link href="./entries/20120101.html" rel="next">
+<link href="./entries/20120313.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
@@ -315,6 +277,9 @@ pythonの環境をちゃんと整えれば動くのかな。</p>
 <h3>Recent entries</h3>
 <div class="recent-entries">
 <ul>
+<li>
+<a href="./entries/20120326/a0.html">プロセスをforkするときのこと</a>
+</li>
 <li>
 <a href="./entries/20120324/a0.html">Retter 0.2.2</a>
 </li>
@@ -332,9 +297,6 @@ pythonの環境をちゃんと整えれば動くのかな。</p>
 </li>
 <li>
 <a href="./entries/20120313/a0.html">FiberとSemi-Coroutine</a>
-</li>
-<li>
-<a href="./entries/20120101/a0.html">年も明けたのでClojureを勉強し始めた</a>
 </li>
 </ul>
 <div class="archives">
