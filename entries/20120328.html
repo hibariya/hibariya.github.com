@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>2011-11-07 - Joy Luck Crab</title>
+<title>2012-03-28 - Joy Luck Crab</title>
 <meta content="hibariya" name="author">
 <link href="../favicon.png" rel="icon" type="image/png">
 <link href="../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
@@ -32,31 +32,19 @@
 </ul></nav></header><div id="page">
 <div id="content">
 <article class="article autopagerize_page_element"><h1 class="date">
-<a href="../entries/20111107.html">2011-11-07</a>
+<a href="../entries/20120328.html">2012-03-28</a>
 </h1>
 <h1 id="a0">
-<a href="../entries/20111107/a0.html">RubyのProc#callをjavascriptの関数みたいに呼び出す（引数なし）</a>
+<a href="../entries/20120328/a0.html">記号がうまく入力できない</a>
 </h1>
-<div class="highlight">
-<pre>  <span class="k">class</span> <span class="nc">Proc</span>
-    <span class="n">alias_method</span> <span class="ss">:[]</span><span class="p">,</span> <span class="ss">:call</span>
-  <span class="k">end</span>
-
-  <span class="n">a</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="s1">'hi'</span> <span class="p">}</span>
-
-  <span class="n">a</span><span class="o">[]</span> <span class="c1"># =&gt; "hi"</span>
-</pre>
-</div>
-<p>ブラケットをパーレンに読み替えると何かそれっぽい。くだらない。</p>
-<p><strong>2011/11/08 追記</strong></p>
-<p>ursm先生に教えてもらったのだけど、作らなくても <code>Proc#[]</code> は既にありました。
-もしかしてくだらなくなかったのか。実際に使ってる事例（こう使うといいよ的な）とかあるのか気になる。</p>
+<p>感覚でキーボードを使うという悪癖が抜けないので、特に苦手な記号の入力を克服するべくコンソールで練習するためのプログラムを書くことにした。</p>
+<p><a href="https://github.com/hibariya/kigou">kigou</a></p>
+<p>ついでに実装は男らしい感じのコードにしようと思ったけどあまりうまくいかなくて、ただの汚いコードになった。</p>
 </article><div class="nav">
 <div class="prev">
-<link href="../entries/20111108.html" rel="prev">
 </div>
 <div class="next">
-<link href="../entries/20111025.html" rel="next">
+<link href="../entries/20120326.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
