@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>2011-11-07 - Joy Luck Crab</title>
+<title>2012-03-29 - Joy Luck Crab</title>
 <meta content="hibariya" name="author">
 <link href="../favicon.png" rel="icon" type="image/png">
 <link href="../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
@@ -32,31 +32,25 @@
 </ul></nav></header><div id="page">
 <div id="content">
 <article class="article autopagerize_page_element"><h1 class="date">
-<a href="../entries/20111107.html">2011-11-07</a>
+<a href="../entries/20120329.html">2012-03-29</a>
 </h1>
 <h1 id="a0">
-<a href="../entries/20111107/a0.html">RubyのProc#callをjavascriptの関数みたいに呼び出す（引数なし）</a>
+<a href="../entries/20120329/a0.html">所在の分からないWARNINGが出力されるときのこと</a>
 </h1>
+<p>Railsを使ってるときとかにActiveSupport::MemoizableがDEPRECATEDだとかそんなWARNINGっぽいメッセージがどこからともなく出てくるときのこと。</p>
+<p>ひとまずraiseする。IOで出力する系のメソッドたちはだいたい最後にwriteを呼ぶ筈なので、writeを上書きしてる。</p>
 <div class="highlight">
-<pre>  <span class="k">class</span> <span class="nc">Proc</span>
-    <span class="n">alias_method</span> <span class="ss">:[]</span><span class="p">,</span> <span class="ss">:call</span>
-  <span class="k">end</span>
-
-  <span class="n">a</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="s1">'hi'</span> <span class="p">}</span>
-
-  <span class="n">a</span><span class="o">[]</span> <span class="c1"># =&gt; "hi"</span>
+<pre><span class="k">def</span> <span class="nc">STDERR</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">raise</span> <span class="k">end</span>
 </pre>
 </div>
-<p>ブラケットをパーレンに読み替えると何かそれっぽい。くだらない。</p>
-<p><strong>2011/11/08 追記</strong></p>
-<p>ursm先生に教えてもらったのだけど、作らなくても <code>Proc#[]</code> は既にありました。
-もしかしてくだらなくなかったのか。実際に使ってる事例（こう使うといいよ的な）とかあるのか気になる。</p>
+<p>Railsだと<code>config/application.rb</code>の頭あたりに書いておく。</p>
+<p>起動してstacktraceを見ればどのgemが問題かだいたい分かるので<code>bundle update [gem name]</code>で問題のgemをupdateしてみると直っていたりする。
+最新でも直ってなかったら自分で直してpull requestを送ったりする。</p>
 </article><div class="nav">
 <div class="prev">
-<link href="../entries/20111108.html" rel="prev">
 </div>
 <div class="next">
-<link href="../entries/20111025.html" rel="next">
+<link href="../entries/20120328.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>

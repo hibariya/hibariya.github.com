@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>スタイルシートを追加してテーマを変えられるようにした - Joy Luck Crab</title>
+<title>所在の分からないWARNINGが出力されるときのこと - Joy Luck Crab</title>
 <meta content="hibariya" name="author">
 <link href="../../favicon.png" rel="icon" type="image/png">
 <link href="../../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
@@ -32,12 +32,20 @@
 </ul></nav></header><div id="page">
 <div id="content">
 <article class="article autopagerize_page_element"><h1 class="date">
-<a href="../../entries/20110919.html">2011-09-19</a>
+<a href="../../entries/20120329.html">2012-03-29</a>
 </h1>
 <h1 id="a0">
-<a href="../../entries/20110919/a0.html">スタイルシートを追加してテーマを変えられるようにした</a>
+<a href="../../entries/20120329/a0.html">所在の分からないWARNINGが出力されるときのこと</a>
 </h1>
-<p>Retter に <a href="https://github.com/hibariya/retter/commit/f00208e985a5cafd4bbe357f4153a247caf83ab4">Orange という テーマ</a> を作ってもらって、cssの切り替えだけで見た目が変わるようにしてもらった。餅は餅屋だなあ。</p>
+<p>Railsを使ってるときとかにActiveSupport::MemoizableがDEPRECATEDだとかそんなWARNINGっぽいメッセージがどこからともなく出てくるときのこと。</p>
+<p>ひとまずraiseする。IOで出力する系のメソッドたちはだいたい最後にwriteを呼ぶ筈なので、writeを上書きしてる。</p>
+<div class="highlight">
+<pre><span class="k">def</span> <span class="nc">STDERR</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">raise</span> <span class="k">end</span>
+</pre>
+</div>
+<p>Railsだと<code>config/application.rb</code>の頭あたりに書いておく。</p>
+<p>起動してstacktraceを見ればどのgemが問題かだいたい分かるので<code>bundle update [gem name]</code>で問題のgemをupdateしてみると直っていたりする。
+最新でも直ってなかったら自分で直してpull requestを送ったりする。</p>
 </article><div id="comments">
 <div id="disqus_thread">
   <script type="text/javascript">
@@ -54,10 +62,9 @@
 </div>
 <div class="nav">
 <div class="prev">
-<link href="../../entries/20111003/a0.html" rel="prev">
 </div>
 <div class="next">
-<link href="../../entries/20110918/a0.html" rel="next">
+<link href="../../entries/20120328/a0.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
