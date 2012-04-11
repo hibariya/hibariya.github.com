@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Rubyでコードブロックに色を付けるときのこと - Joy Luck Crab</title>
+<title>標準添付ライブラリもエディタで開けるreditorを作った - Joy Luck Crab</title>
 <meta content="hibariya" name="author">
 <link href="../../favicon.png" rel="icon" type="image/png">
 <link href="../../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
@@ -32,35 +32,24 @@
 </ul></nav></header><div id="page">
 <div id="content">
 <article class="article autopagerize_page_element"><h1 class="date">
-<a href="../../entries/20120317.html">2012-03-17</a>
+<a href="../../entries/20120411.html">2012-04-11</a>
 </h1>
 <h1 id="a0">
-<a href="../../entries/20120317/a0.html">Rubyでコードブロックに色を付けるときのこと</a>
+<a href="../../entries/20120411/a0.html">標準添付ライブラリもエディタで開けるreditorを作った</a>
 </h1>
-<p>覚え書き。</p>
-<p><a href="https://github.com/hibariya/retter">retter</a>で使っているSyntax HighlighterはCodeRayというやつだったけど、吐かれるHTMLがあまり綺麗ではない（style属性付きのdivとかが大量に吐かれる）のと、色合いのカスタマイズも難しいので他のもの（具体的にはPygments）を使うことにした。
-pygmentsはコード辺にcssのclassをつけてくれるので<a href="http://pygments.org/media/pygments_style.css">こんな</a>スタイルシートを用意して使う。スタイルシートを弄れば色分けを好きに変えられる。</p>
-<p>RubyからPygmentsを使うには知っている限りだと2つの方法があって、ひとつは<a href="https://github.com/github/albino">Albino</a>、もうひとつは<a href="https://github.com/tmm1/pygments.rb">pygments.rb</a>を使う。</p>
-<p>Albinoはdeprecatedらしくて、READMEにはpygments.rbへのリンクまで書いてある。
-最後にコミットされたのは4ヶ月前だし、今後Albinoはメンテされないらしい。</p>
-<h2>pygments.rb</h2>
-<p>FFIを使っているのでとても早い。
-だからこれを使えばいいんだけど、試しに使っていたらときどきSegmentation faultになる（しかもいつ発生するのかよくわからない）。
-いきなりセグフォとか困る人にはまだおすすめできない気がする。</p>
-<h2>Albino</h2>
-<p>albinoを動かすには、pygmentizeという別のgemも必要。</p>
-<p>deprecatedだけどセグフォはしなかった。ただしとっても遅い。
-どんなに小さなコードブロックだとしても、色付けするのに毎回1プロセス起動する。
-何十個もある場合は何十秒も待たされることになる。</p>
-<p>何らかの方法でキャッシュするようにして、いちど生成したコードは使いまわせるようにすると少しマシ。
-根本的な解決にはならないけど、用途によっては有効かも。</p>
-<p>もうひとつ、AlbinoにはAlbino::Multiっていうクラスがついていて、説明を読んでみるとどうやら1プロセスで複数のコードブロックを一気にやっつけられるらしい。
-これさえあればプロセス起動のオーバーヘッドが大幅に削減できそう。
-ただし動かなかった。
-Albino::Multiは裏でmultipygmentizeというpythonスクリプトを叩いてるのだけど、このpythonスクリプトが必要としているpygmentsモジュールは別のgemであるpygmentizeの方に入っていて、読み込みに失敗しているようだった。
-pythonの環境をちゃんと整えれば動くのかな。</p>
-<h2>結論</h2>
-<p>これをこう使えば安心、というのは見つけられなかった。</p>
+<p>Rubyには<code>bundle open</code>やgemeditの<code>gem edit</code>みたいに、gemを自分のエディタで簡単に開くための方法があるのだけど、たまに標準添付ライブラリも開きたいことがあるのだった。
+そこで<a href="https://rubygems.org/gems/reditor">reditor</a>というgemを作ってみた。</p>
+<p>インストールすると<code>reditor</code>コマンドが使えるようになって、開きたいライブラリの名前を渡すと$LOAD_PATHやrubygemsの中からそれっぽいものを見つけてエディタで開いてくれる。</p>
+<div class="highlight">
+<pre>  $ reditor csv
+</pre>
+</div>
+<p>とか。</p>
+<div class="highlight">
+<pre>  $ reditor faraday
+</pre>
+</div>
+<p>とか。</p>
 </article><div id="comments">
 <div id="disqus_thread">
   <script type="text/javascript">
@@ -77,10 +66,9 @@ pythonの環境をちゃんと整えれば動くのかな。</p>
 </div>
 <div class="nav">
 <div class="prev">
-<link href="../../entries/20120321/a0.html" rel="prev">
 </div>
 <div class="next">
-<link href="../../entries/20120313/a0.html" rel="next">
+<link href="../../entries/20120329/a0.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>

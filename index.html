@@ -33,6 +33,25 @@
 <div id="content">
 <div class="autopagerize_page_element" id="entries">
 <article class="article"><h1 class="date">
+<a href="./entries/20120411.html">2012-04-11</a>
+</h1>
+<h1 id="a0">
+<a href="./entries/20120411/a0.html">標準添付ライブラリもエディタで開けるreditorを作った</a>
+</h1>
+<p>Rubyには<code>bundle open</code>やgemeditの<code>gem edit</code>みたいに、gemを自分のエディタで簡単に開くための方法があるのだけど、たまに標準添付ライブラリも開きたいことがあるのだった。
+そこで<a href="https://rubygems.org/gems/reditor">reditor</a>というgemを作ってみた。</p>
+<p>インストールすると<code>reditor</code>コマンドが使えるようになって、開きたいライブラリの名前を渡すと$LOAD_PATHやrubygemsの中からそれっぽいものを見つけてエディタで開いてくれる。</p>
+<div class="highlight">
+<pre>  $ reditor csv
+</pre>
+</div>
+<p>とか。</p>
+<div class="highlight">
+<pre>  $ reditor faraday
+</pre>
+</div>
+<p>とか。</p>
+</article><article class="article"><h1 class="date">
 <a href="./entries/20120329.html">2012-03-29</a>
 </h1>
 <h1 id="a0">
@@ -178,41 +197,9 @@ ERBとかが使えるようになります。</p>
 <h2>日付指定の方法</h2>
 <p><a href="https://github.com/mojombo/chronic">Chronic</a>を使うようになったので、今までより多くの方法で日付の指定ができるようになりました。
 <code>retter edit this\ wednesday</code>とか指定できます。</p>
-</article><article class="article"><h1 class="date">
-<a href="./entries/20120323.html">2012-03-23</a>
-</h1>
-<h1 id="a0">
-<a href="./entries/20120323/a0.html">Retter 0.2.0</a>
-</h1>
-<p><a href="https://rubygems.org/gems/retter">Retter</a>をアップデートしました。</p>
-<p>Pygmentsを利用できるようになりました。
-利用するにはRetterfileに以下の設定を追加します。</p>
-<div class="highlight">
-<pre><span class="n">renderer</span> <span class="no">Retter</span><span class="o">::</span><span class="no">Renderers</span><span class="o">::</span><span class="no">PygmentsRenderer</span>
-</pre>
-</div>
-<p>今度から<code>retter new</code>するとデフォルトでPygmentsを使用するようになって、そのためのCSSも生成するようになりました。</p>
-<p>現状の日記にCSSを追加するには、<a href="https://raw.github.com/hibariya/retter/master/lib/retter/generator/skel/stylesheets/pygments.css">ここ</a>から直接ダウンロードするとすぐに使えるかと思います。</p>
-<p>実は、上記の<code>renderer</code>にはRedcarpet::Render::HTMLを継承したクラスであれば何でも指定できます。
-Pygmentsを使いたいけどPygments.rbが落ちて困るという場合はAlbinoを使うrendererを作るといいかもしれません。
-以下はRedcarpetのREADMEから抜粋したもの。</p>
-<div class="highlight">
-<pre><span class="k">class</span> <span class="nc">HTMLwithAlbino</span> <span class="o">&lt;</span> <span class="no">Redcarpet</span><span class="o">::</span><span class="no">Render</span><span class="o">::</span><span class="no">HTML</span>
-  <span class="k">def</span> <span class="nf">block_code</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">language</span><span class="p">)</span>
-    <span class="no">Albino</span><span class="o">.</span><span class="n">safe_colorize</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">language</span><span class="p">)</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</pre>
-</div>
-<p>それから、Markdownのレンダリング結果をキャッシュするようになりました。
-途中でrendererを変更したりして、レンダリング結果が変わるような場合は以下のように<code>tmp/cache</code>以下のキャッシュを一度削除してください。</p>
-<div class="highlight">
-<pre>rm -rf tmp/cache/*
-</pre>
-</div>
 </article><div class="nav">
 <div class="next">
-<link href="./entries/20120321.html" rel="next">
+<link href="./entries/20120323.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
@@ -225,6 +212,9 @@ Pygmentsを使いたいけどPygments.rbが落ちて困るという場合はAlbi
 <h3>Recent entries</h3>
 <div class="recent-entries">
 <ul>
+<li>
+<a href="./entries/20120411/a0.html">標準添付ライブラリもエディタで開けるreditorを作った</a>
+</li>
 <li>
 <a href="./entries/20120329/a0.html">所在の分からないWARNINGが出力されるときのこと</a>
 </li>
@@ -242,9 +232,6 @@ Pygmentsを使いたいけどPygments.rbが落ちて困るという場合はAlbi
 </li>
 <li>
 <a href="./entries/20120323/a0.html">Retter 0.2.0</a>
-</li>
-<li>
-<a href="./entries/20120321/a0.html">Rubyで日付っぽい文字列を日時や日付に変換するときのこと</a>
 </li>
 </ul>
 <div class="archives">

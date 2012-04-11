@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>2011-09-13 - Joy Luck Crab</title>
+<title>2012-04-11 - Joy Luck Crab</title>
 <meta content="hibariya" name="author">
 <link href="../favicon.png" rel="icon" type="image/png">
 <link href="../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
@@ -32,21 +32,29 @@
 </ul></nav></header><div id="page">
 <div id="content">
 <article class="article autopagerize_page_element"><h1 class="date">
-<a href="../entries/20110913.html">2011-09-13</a>
+<a href="../entries/20120411.html">2012-04-11</a>
 </h1>
 <h1 id="a0">
-<a href="../entries/20110913/a0.html">Pull requestがマージされた</a>
+<a href="../entries/20120411/a0.html">標準添付ライブラリもエディタで開けるreditorを作った</a>
 </h1>
-<p>日曜くらいに送った初の Pull request が今日マージされた。
-1行削除するだけの簡単なパッチだったけど。会社のデスクの上で踊りだしそうになってやめた。</p>
-<p>今日は、日付は覚えてないけど出来事は覚えている類の特別な日になった。これでやっとひとつ進めるね。
-今日は<a href="http://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%83%BC%E3%81%AE%E6%97%A5">プログラマの日</a>らしいよ。</p>
+<p>Rubyには<code>bundle open</code>やgemeditの<code>gem edit</code>みたいに、gemを自分のエディタで簡単に開くための方法があるのだけど、たまに標準添付ライブラリも開きたいことがあるのだった。
+そこで<a href="https://rubygems.org/gems/reditor">reditor</a>というgemを作ってみた。</p>
+<p>インストールすると<code>reditor</code>コマンドが使えるようになって、開きたいライブラリの名前を渡すと$LOAD_PATHやrubygemsの中からそれっぽいものを見つけてエディタで開いてくれる。</p>
+<div class="highlight">
+<pre>  $ reditor csv
+</pre>
+</div>
+<p>とか。</p>
+<div class="highlight">
+<pre>  $ reditor faraday
+</pre>
+</div>
+<p>とか。</p>
 </article><div class="nav">
 <div class="prev">
-<link href="../entries/20110916.html" rel="prev">
 </div>
 <div class="next">
-<link href="../entries/20110911.html" rel="next">
+<link href="../entries/20120329.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
