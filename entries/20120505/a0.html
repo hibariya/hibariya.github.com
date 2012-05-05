@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>静的なパーマリンクにコメントをつける - Joy Luck Crab</title>
+<title>cline-0.3.0 - Joy Luck Crab</title>
 <meta content="hibariya" name="author">
 <link href="../../favicon.png" rel="icon" type="image/png">
 <link href="../../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
@@ -32,16 +32,50 @@
 </ul></nav></header><div id="page">
 <div id="content">
 <article class="article autopagerize_page_element"><h1 class="date">
-<a href="../../entries/20111108.html">2011-11-08</a>
+<a href="../../entries/20120505.html">2012-05-05</a>
 </h1>
 <h1 id="a0">
-<a href="../../entries/20111108/a0.html">静的なパーマリンクにコメントをつける</a>
+<a href="../../entries/20120505/a0.html">cline-0.3.0</a>
 </h1>
-<p><a href="http://disqus.com/">DISQUS</a>というサービスがあって、ここで提供されるJSをHTMLに埋め込むことでコメントシステムを導入できるらしい。
-実験的にこのサイトにもつけてみた。</p>
-<p>コメントをつけられるのは割と重要な要素だと思うので、デザイナさんの様子を伺いつつ<a href="https://github.com/hibariya/retter">retter</a>にも導入したい。
-そのときは設定ファイルにDISQUSの識別子を記述するだけで最低限の機能が提供できるようにしよう。</p>
+<p>いくつか便利そうな機能をつけて<a href="http://rubygems.org/gems/cline">アップデート</a>しました。</p>
+<ul>
+<li>簡単にURLを開く機能</li>
+<li>フィルタリングのためのインターフェース</li>
+</ul>
+<h2>簡単にURLを開く</h2>
+<p>表示するときにメッセージにエイリアスをつけるようにしました。
+その分、あまり必要なさそうな時間の秒とタイムゾーンを表示しないようにしました。</p>
+<div class="highlight">
+<pre>[2012/05/04 22:41][2][1f5] Delicious.com - Discover Yourself! http://delicious.com/help/quicktour/chrome
+                       ↑
+                      これ
+</pre>
+</div>
+<p>エイリアスを使うと簡単にメッセージの中のURLをブラウザで開くことができます。
+URLが途中で見切れてしまっても大丈夫。</p>
+<div class="highlight">
+<pre>  $ cline open 1f5
+</pre>
+</div>
+<p>打つのが面倒なので <code>alias co='cline open'</code> しておくとよさそう。</p>
+<h3>フィルタリング</h3>
+<p>フィルタリングのようなことを、ActiveRecordのvalidationを使って実現できるようにしておきました。
+invalidなメッセージは保存されなくなります。
+<code>~/.cline/config</code> あたりに書いておくとよさそう。</p>
+<div class="highlight">
+<pre><span class="nb">require</span> <span class="s1">'hiwai'</span>
 
+<span class="k">class</span> <span class="nc">Cline</span><span class="o">::</span><span class="no">Notification</span>
+  <span class="n">validate</span> <span class="ss">:message_should_not_be_hiwai</span>
+
+  <span class="k">def</span> <span class="nf">message_should_not_be_hiwai</span>
+    <span class="n">errors</span><span class="o">.</span><span class="n">add</span> <span class="ss">:message</span><span class="p">,</span> <span class="s1">'hiwai'</span> <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">hiwai?</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre>
+</div>
+<p>クラスを再オープンしているのだけど、もうちょっとスマートなAPIを用意したいなと思っているところ。
+ちなみに<a href="https://github.com/hibariya/hiwai">hiwai</a>はレシーバがひわいかどうかを確認するためのライブラリです。</p>
 </article><div id="comments">
 <div id="disqus_thread">
   <script type="text/javascript">
@@ -58,10 +92,9 @@
 </div>
 <div class="nav">
 <div class="prev">
-<link href="../../entries/20111109/a0.html" rel="prev">
 </div>
 <div class="next">
-<link href="../../entries/20111108/a1.html" rel="next">
+<link href="../../entries/20120411/a0.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
