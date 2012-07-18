@@ -1,20 +1,46 @@
-<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2012-06-02</dc:date><description>hibariya.github.com</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20120602.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120505.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120411.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120329.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120328.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120326.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120323.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120321.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120317.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120313.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120101.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111208.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111204.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111109.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111108.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111107.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111025.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111022.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111012.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111010.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111003.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110919.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110918.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110916.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110913.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110911.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20110909.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20120602.html"><title>2012/06/02</title><description><![CDATA[<h1 id="a0">社内で code についての発表をした</h1><p><a href="https://twitter.com/koic">@koic</a>先輩に「新卒向けにライブラリやツールを作ることについての話をしてよ」と言われたので二つ返事で受けさせてもらったのだった。</p><p><a href="https://speakerdeck.com/u/hibariya/p/code">自分のための code を書こう</a></p><p>永和に転職して暫く経ったある日、金曜の夜、飲み屋「ボヤキ」で<a href="https://twitter.com/koic">@koic</a>さんに言われた言葉がぼんやりと印象に残ってる。大体だけど↓のような感じ。</p><p>「hibariya は <a href="https://github.com/amatsuda/kaminari">Kaminari</a> の Contributors に入ってると思ってたけど違ったからびっくりした」</p><p>そう言われたからといっていきなり Kaminari にパッチを送れるほどの行動力はないのだけど、普段から code を読み書きしている人とそうでない人の間にある、防弾ガラスみたいな、見えないけどはっきりした差を意識し始めるきっかけになった。</p><p>発表は、自分の中でいい棚卸になった。</p>]]></description><dc:date>2012-06-02</dc:date><link>http://hibariya.github.com/entries/20120602.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120505.html"><title>2012/05/05</title><description><![CDATA[<h1 id="a0">cline-0.3.0</h1><p>いくつか便利そうな機能をつけて<a href="http://rubygems.org/gems/cline">アップデート</a>しました。</p><ul>
+<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="xmlns:content=&quot;http://purl.org/rss/1.0/modules/content/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2012-06-02</dc:date><description>hibariya.github.com</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20120602/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120505/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120411/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120329/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120328/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120326/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a1.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120323/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120321/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120317/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120313/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120101/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111208/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111204/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111109/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111108/a1.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111108/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111107/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111025/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111022/a1.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20120602/a0.html"><title>社内で code についての発表をした</title><description>@koic先輩に「新卒向けにライブラリやツールを作ることについての話をしてよ」と言われたので二つ返事で受けさせてもらったのだった。
+自分のための code を書こう
+永和に転職して暫く経ったある日、金曜の夜、飲み屋「ボヤキ」で@koicさんに言われた言葉がぼんやりと印象に残ってる。大体だけど↓のような感じ。
+「hibariya は Kaminari の Contributors に入ってると思って...</description><content:encoded><![CDATA[<p><a href="https://twitter.com/koic">@koic</a>先輩に「新卒向けにライブラリやツールを作ることについての話をしてよ」と言われたので二つ返事で受けさせてもらったのだった。</p>
+<p><a href="https://speakerdeck.com/u/hibariya/p/code">自分のための code を書こう</a></p>
+<p>永和に転職して暫く経ったある日、金曜の夜、飲み屋「ボヤキ」で<a href="https://twitter.com/koic">@koic</a>さんに言われた言葉がぼんやりと印象に残ってる。大体だけど↓のような感じ。</p>
+<p>「hibariya は <a href="https://github.com/amatsuda/kaminari">Kaminari</a> の Contributors に入ってると思ってたけど違ったからびっくりした」</p>
+<p>そう言われたからといっていきなり Kaminari にパッチを送れるほどの行動力はないのだけど、普段から code を読み書きしている人とそうでない人の間にある、防弾ガラスみたいな、見えないけどはっきりした差を意識し始めるきっかけになった。</p>
+<p>発表は、自分の中でいい棚卸になった。</p>]]></content:encoded><dc:date>2012-06-02</dc:date><link>http://hibariya.github.com/entries/20120602/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120505/a0.html"><title>cline-0.3.0</title><description>いくつか便利そうな機能をつけてアップデートしました。
+
+簡単にURLを開く機能
+フィルタリングのためのインターフェース
+
+簡単にURLを開く
+表示するときにメッセージにエイリアスをつけるようにしました。
+その分、あまり必要なさそうな時間の秒とタイムゾーンを表示しないようにしました。
+
+[2012/05/04 22:41][2][1f5] Delicious.com - Discover Yours...</description><content:encoded><![CDATA[<p>いくつか便利そうな機能をつけて<a href="http://rubygems.org/gems/cline">アップデート</a>しました。</p>
+<ul>
 <li>簡単にURLを開く機能</li>
 <li>フィルタリングのためのインターフェース</li>
 </ul>
-<h2>簡単にURLを開く</h2><p>表示するときにメッセージにエイリアスをつけるようにしました。
-その分、あまり必要なさそうな時間の秒とタイムゾーンを表示しないようにしました。</p><div class="highlight">
+<h2>簡単にURLを開く</h2>
+<p>表示するときにメッセージにエイリアスをつけるようにしました。
+その分、あまり必要なさそうな時間の秒とタイムゾーンを表示しないようにしました。</p>
+<div class="highlight">
 <pre>[2012/05/04 22:41][2][1f5] Delicious.com - Discover Yourself! http://delicious.com/help/quicktour/chrome
                        ↑
                       これ
 </pre>
-</div><p>エイリアスを使うと簡単にメッセージの中のURLをブラウザで開くことができます。
-URLが途中で見切れてしまっても大丈夫。</p><div class="highlight">
+</div>
+<p>エイリアスを使うと簡単にメッセージの中のURLをブラウザで開くことができます。
+URLが途中で見切れてしまっても大丈夫。</p>
+<div class="highlight">
 <pre>  $ cline open 1f5
 </pre>
-</div><p>打つのが面倒なので <code>alias co='cline open'</code> しておくとよさそう。</p><h3>フィルタリング</h3><p>フィルタリングのようなことを、ActiveRecordのvalidationを使って実現できるようにしておきました。
+</div>
+<p>打つのが面倒なので <code>alias co='cline open'</code> しておくとよさそう。</p>
+<h3>フィルタリング</h3>
+<p>フィルタリングのようなことを、ActiveRecordのvalidationを使って実現できるようにしておきました。
 invalidなメッセージは保存されなくなります。
-<code>~/.cline/config</code> あたりに書いておくとよさそう。</p><div class="highlight">
+<code>~/.cline/config</code> あたりに書いておくとよさそう。</p>
+<div class="highlight">
 <pre><span class="nb">require</span> <span class="s1">'hiwai'</span>
 
 <span class="k">class</span> <span class="nc">Cline</span><span class="o">::</span><span class="no">Notification</span>
@@ -25,21 +51,52 @@ invalidなメッセージは保存されなくなります。
   <span class="k">end</span>
 <span class="k">end</span>
 </pre>
-</div><p>クラスを再オープンしているのだけど、もうちょっとスマートなAPIを用意したいなと思っているところ。
-ちなみに<a href="https://github.com/hibariya/hiwai">hiwai</a>はレシーバがひわいかどうかを確認するためのライブラリです。</p>]]></description><dc:date>2012-05-05</dc:date><link>http://hibariya.github.com/entries/20120505.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120411.html"><title>2012/04/11</title><description><![CDATA[<h1 id="a0">標準添付ライブラリもエディタで開けるreditorを作った</h1><p>Rubyには<code>bundle open</code>やgemeditの<code>gem edit</code>みたいに、gemを自分のエディタで簡単に開くための方法があるのだけど、たまに標準添付ライブラリも開きたいことがあるのだった。
-そこで<a href="https://rubygems.org/gems/reditor">reditor</a>というgemを作ってみた。</p><p>インストールすると<code>reditor</code>コマンドが使えるようになって、開きたいライブラリの名前を渡すと$LOAD_PATHやrubygemsの中からそれっぽいものを見つけてエディタで開いてくれる。</p><div class="highlight">
+</div>
+<p>クラスを再オープンしているのだけど、もうちょっとスマートなAPIを用意したいなと思っているところ。
+ちなみに<a href="https://github.com/hibariya/hiwai">hiwai</a>はレシーバがひわいかどうかを確認するためのライブラリです。</p>]]></content:encoded><dc:date>2012-05-05</dc:date><link>http://hibariya.github.com/entries/20120505/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120411/a0.html"><title>標準添付ライブラリもエディタで開けるreditorを作った</title><description>Rubyにはbundle openやgemeditのgem editみたいに、gemを自分のエディタで簡単に開くための方法があるのだけど、たまに標準添付ライブラリも開きたいことがあるのだった。
+そこでreditorというgemを作ってみた。
+インストールするとreditorコマンドが使えるようになって、開きたいライブラリの名前を渡すと$LOAD_PATHやrubygemsの中からそれっぽいものを見...</description><content:encoded><![CDATA[<p>Rubyには<code>bundle open</code>やgemeditの<code>gem edit</code>みたいに、gemを自分のエディタで簡単に開くための方法があるのだけど、たまに標準添付ライブラリも開きたいことがあるのだった。
+そこで<a href="https://rubygems.org/gems/reditor">reditor</a>というgemを作ってみた。</p>
+<p>インストールすると<code>reditor</code>コマンドが使えるようになって、開きたいライブラリの名前を渡すと$LOAD_PATHやrubygemsの中からそれっぽいものを見つけてエディタで開いてくれる。</p>
+<div class="highlight">
 <pre>  $ reditor csv
 </pre>
-</div><p>とか。</p><div class="highlight">
+</div>
+<p>とか。</p>
+<div class="highlight">
 <pre>  $ reditor faraday
 </pre>
-</div><p>とか。</p>]]></description><dc:date>2012-04-11</dc:date><link>http://hibariya.github.com/entries/20120411.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120329.html"><title>2012/03/29</title><description><![CDATA[<h1 id="a0">所在の分からないWARNINGが出力されるときのこと</h1><p>Railsを使ってるときとかにActiveSupport::MemoizableがDEPRECATEDだとかそんなWARNINGっぽいメッセージがどこからともなく出てくるときのこと。</p><p>ひとまずraiseする。IOで出力する系のメソッドたちはだいたい最後にwriteを呼ぶ筈なので、writeを上書きしてる。</p><div class="highlight">
+</div>
+<p>とか。</p>]]></content:encoded><dc:date>2012-04-11</dc:date><link>http://hibariya.github.com/entries/20120411/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120329/a0.html"><title>所在の分からないWARNINGが出力されるときのこと</title><description>Railsを使ってるときとかにActiveSupport::MemoizableがDEPRECATEDだとかそんなWARNINGっぽいメッセージがどこからともなく出てくるときのこと。
+ひとまずraiseする。IOで出力する系のメソッドたちはだいたい最後にwriteを呼ぶ筈なので、writeを上書きしてる。
+
+def STDERR.write(*) raise end
+
+
+Railsだとconfig...</description><content:encoded><![CDATA[<p>Railsを使ってるときとかにActiveSupport::MemoizableがDEPRECATEDだとかそんなWARNINGっぽいメッセージがどこからともなく出てくるときのこと。</p>
+<p>ひとまずraiseする。IOで出力する系のメソッドたちはだいたい最後にwriteを呼ぶ筈なので、writeを上書きしてる。</p>
+<div class="highlight">
 <pre><span class="k">def</span> <span class="nc">STDERR</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">raise</span> <span class="k">end</span>
 </pre>
-</div><p>Railsだと<code>config/application.rb</code>の頭あたりに書いておく。</p><p>起動してstacktraceを見ればどのgemが問題かだいたい分かるので<code>bundle update [gem name]</code>で問題のgemをupdateしてみると直っていたりする。
-最新でも直ってなかったら自分で直してpull requestを送ったりする。</p>]]></description><dc:date>2012-03-29</dc:date><link>http://hibariya.github.com/entries/20120329.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120328.html"><title>2012/03/28</title><description><![CDATA[<h1 id="a0">記号がうまく入力できない</h1><p>感覚でキーボードを使うという悪癖が抜けないので、特に苦手な記号の入力を克服するべくコンソールで練習するためのプログラムを書くことにした。</p><p><a href="https://github.com/hibariya/kigou">kigou</a></p><p>ついでに実装は男らしい感じのコードにしようと思ったけどあまりうまくいかなくて、ただの汚いコードになった。</p>]]></description><dc:date>2012-03-28</dc:date><link>http://hibariya.github.com/entries/20120328.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120326.html"><title>2012/03/26</title><description><![CDATA[<h1 id="a0">プロセスをforkするときのこと</h1><p>孤児プロセスとゾンビプロセスの違いがうまく理解できてなかったけど、ようやく違いを確認することができた。</p><h2>孤児プロセス</h2><p>孤児プロセスは、親プロセスがwaitせずに先に逝ってしまった後も走り続けている子プロセス。
+</div>
+<p>Railsだと<code>config/application.rb</code>の頭あたりに書いておく。</p>
+<p>起動してstacktraceを見ればどのgemが問題かだいたい分かるので<code>bundle update [gem name]</code>で問題のgemをupdateしてみると直っていたりする。
+最新でも直ってなかったら自分で直してpull requestを送ったりする。</p>]]></content:encoded><dc:date>2012-03-29</dc:date><link>http://hibariya.github.com/entries/20120329/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120328/a0.html"><title>記号がうまく入力できない</title><description>感覚でキーボードを使うという悪癖が抜けないので、特に苦手な記号の入力を克服するべくコンソールで練習するためのプログラムを書くことにした。
+kigou
+ついでに実装は男らしい感じのコードにしようと思ったけどあまりうまくいかなくて、ただの汚いコードになった。</description><content:encoded><![CDATA[<p>感覚でキーボードを使うという悪癖が抜けないので、特に苦手な記号の入力を克服するべくコンソールで練習するためのプログラムを書くことにした。</p>
+<p><a href="https://github.com/hibariya/kigou">kigou</a></p>
+<p>ついでに実装は男らしい感じのコードにしようと思ったけどあまりうまくいかなくて、ただの汚いコードになった。</p>]]></content:encoded><dc:date>2012-03-28</dc:date><link>http://hibariya.github.com/entries/20120328/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120326/a0.html"><title>プロセスをforkするときのこと</title><description>孤児プロセスとゾンビプロセスの違いがうまく理解できてなかったけど、ようやく違いを確認することができた。
+孤児プロセス
+孤児プロセスは、親プロセスがwaitせずに先に逝ってしまった後も走り続けている子プロセス。
 Orphan Process とも呼ばれる。
-親のいなくなった子プロセスはinitプロセスの子（孤児）になる。</p><p>親プロセスが死んで、子プロセスの親が変化する様子を見るには以下のようなスクリプトを実行したあとでファイルをtailすると分かりやすそう。</p><div class="highlight">
+親のいなくなった子プロセスはinitプロセスの子（孤児）になる。
+親プロセスが死んで、子プロセスの親が変化する様子を見るには以下のようなスクリプ...</description><content:encoded><![CDATA[<p>孤児プロセスとゾンビプロセスの違いがうまく理解できてなかったけど、ようやく違いを確認することができた。</p>
+<h2>孤児プロセス</h2>
+<p>孤児プロセスは、親プロセスがwaitせずに先に逝ってしまった後も走り続けている子プロセス。
+Orphan Process とも呼ばれる。
+親のいなくなった子プロセスはinitプロセスの子（孤児）になる。</p>
+<p>親プロセスが死んで、子プロセスの親が変化する様子を見るには以下のようなスクリプトを実行したあとでファイルをtailすると分かりやすそう。</p>
+<div class="highlight">
 <pre><span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="k">do</span>
   <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'orphan'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
     <span class="kp">loop</span> <span class="k">do</span>
@@ -54,7 +111,9 @@ Orphan Process とも呼ばれる。
 
 <span class="nb">sleep</span> <span class="mi">5</span>
 </pre>
-</div><p>このプログラムを実行して、<code>orphan</code>を<code>tail -f</code>で観察していると、5秒後に親プロセスが死んで、子プロセスの親プロセスがinitに変化していることを確認できる。</p><div class="highlight">
+</div>
+<p>このプログラムを実行して、<code>orphan</code>を<code>tail -f</code>で観察していると、5秒後に親プロセスが死んで、子プロセスの親プロセスがinitに変化していることを確認できる。</p>
+<div class="highlight">
 <pre>$ tailf orphan
 80361 # まだ親プロセスの子
 80361
@@ -66,26 +125,37 @@ Orphan Process とも呼ばれる。
 1
 1
 </pre>
-</div><p>initは孤児プロセスをwaitしてくれる。</p><h2>ゾンビプロセス</h2><p>ゾンビプロセスは、既に処理を終えて死んだ子プロセスが、まだ生きている親プロセスにwaitされるのを待っている状態のこと。</p><p>子プロセスが死んでも親プロセスが生きている限り、いつ子プロセスの終了ステータスが参照されても（waitされても）いいように、その情報はプロセステーブルのエントリとして残る。
-プロセスとしては死んでいるけれど、waitされるかもしれないのでプロセステーブルに残っている状態がゾンビ。</p><div class="highlight">
+</div>
+<p>initは孤児プロセスをwaitしてくれる。</p>
+<h2>ゾンビプロセス</h2>
+<p>ゾンビプロセスは、既に処理を終えて死んだ子プロセスが、まだ生きている親プロセスにwaitされるのを待っている状態のこと。</p>
+<p>子プロセスが死んでも親プロセスが生きている限り、いつ子プロセスの終了ステータスが参照されても（waitされても）いいように、その情報はプロセステーブルのエントリとして残る。
+プロセスとしては死んでいるけれど、waitされるかもしれないのでプロセステーブルに残っている状態がゾンビ。</p>
+<div class="highlight">
 <pre><span class="nb">puts</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span> <span class="nb">sleep</span> <span class="mi">1</span> <span class="p">}</span>
 
 <span class="nb">sleep</span> <span class="mi">10</span>
 </pre>
-</div><p>上のプログラムを実行して、表示されたpidを元に、別の端末でプロセスの状態を確認すると、ゾンビ状態になっていることがわかる（10秒後には親プロセスが死ぬのでゾンビも消える）。</p><div class="highlight">
+</div>
+<p>上のプログラムを実行して、表示されたpidを元に、別の端末でプロセスの状態を確認すると、ゾンビ状態になっていることがわかる（10秒後には親プロセスが死ぬのでゾンビも消える）。</p>
+<div class="highlight">
 <pre>$ ps -ho pid,state 81793
   PID STAT
   82077 Z+
 </pre>
-</div><p>ゾンビプロセスの発生を防ぐには、親プロセスで確実にwaitする必要がある。
+</div>
+<p>ゾンビプロセスの発生を防ぐには、親プロセスで確実にwaitする必要がある。
 RubyならProcess.waitpidを使うといい。
-waitすると子プロセスが終了するまで親プロセスの処理がブロックされる。</p><div class="highlight">
+waitすると子プロセスが終了するまで親プロセスの処理がブロックされる。</p>
+<div class="highlight">
 <pre><span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span> <span class="nb">sleep</span> <span class="mi">1</span> <span class="p">}</span>
 
 <span class="no">Process</span><span class="o">.</span><span class="n">waitpid</span> <span class="n">pid</span>
 </pre>
-</div><p>もしくは、Double Forkを行うと親プロセスで待たなくてもよくなる。
-生成した子プロセスに孫プロセスを生成させ、さらに子プロセスは即座に終了させることで、孫プロセスがinitの子プロセス（孤児プロセス）となってwaitはinitに任せることができるようになる。</p><div class="highlight">
+</div>
+<p>もしくは、Double Forkを行うと親プロセスで待たなくてもよくなる。
+生成した子プロセスに孫プロセスを生成させ、さらに子プロセスは即座に終了させることで、孫プロセスがinitの子プロセス（孤児プロセス）となってwaitはinitに任せることができるようになる。</p>
+<div class="highlight">
 <pre><span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span>
   <span class="nb">puts</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span>
     <span class="nb">sleep</span> <span class="mi">20</span> <span class="c1"># 何かしらの処理</span>
@@ -96,42 +166,91 @@ waitすると子プロセスが終了するまで親プロセスの処理がブ�
 
 <span class="no">Process</span><span class="o">.</span><span class="n">waitpid</span> <span class="n">pid</span>
 </pre>
-</div><h2>まとめ</h2><ul>
+</div>
+<h2>まとめ</h2>
+<ul>
 <li>親が死んだら子はinitが看取ってくれる</li>
 <li>親が死ぬまでゾンビは消えない</li>
 <li>ゾンビを増やさないためには、適宜waitするかDouble Forkしてinitに面倒をみてもらう</li>
-</ul>]]></description><dc:date>2012-03-26</dc:date><link>http://hibariya.github.com/entries/20120326.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120324.html"><title>2012/03/24</title><description><![CDATA[<h1 id="a0">Retter 0.2.2</h1><p><a href="https://rubygems.org/gems/retter">built-inなテーマにサイドバーをつけました。</a></p><h1 id="a1">Retter 0.2.1</h1><p><a href="https://rubygems.org/gems/retter">間を開けずにもう少し変更しました。</a></p><h2>複数のテンプレートエンジンへの対応</h2><p><a href="https://github.com/rtomayko/tilt">Tilt</a>を使うことで複数のテンプレートエンジンに対応できるようになりました。
-ERBとかが使えるようになります。</p><h2>固定ページの生成抑止</h2><p>以下のページは、使い方によっては必ずしも必要のないページなので、設定すれば生成されないようになりました。</p><ul>
+</ul>]]></content:encoded><dc:date>2012-03-26</dc:date><link>http://hibariya.github.com/entries/20120326/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120324/a1.html"><title>Retter 0.2.1</title><description>間を開けずにもう少し変更しました。
+複数のテンプレートエンジンへの対応
+Tiltを使うことで複数のテンプレートエンジンに対応できるようになりました。
+ERBとかが使えるようになります。
+固定ページの生成抑止
+以下のページは、使い方によっては必ずしも必要のないページなので、設定すれば生成されないようになりました。
+
+profile.html
+entries.html
+feed.rss
+
+ページの生成...</description><content:encoded><![CDATA[<p><a href="https://rubygems.org/gems/retter">間を開けずにもう少し変更しました。</a></p>
+<h2>複数のテンプレートエンジンへの対応</h2>
+<p><a href="https://github.com/rtomayko/tilt">Tilt</a>を使うことで複数のテンプレートエンジンに対応できるようになりました。
+ERBとかが使えるようになります。</p>
+<h2>固定ページの生成抑止</h2>
+<p>以下のページは、使い方によっては必ずしも必要のないページなので、設定すれば生成されないようになりました。</p>
+<ul>
 <li>profile.html</li>
 <li>entries.html</li>
 <li>feed.rss</li>
 </ul>
-<p>ページの生成を抑止する例です。Retterfileに追記します。</p><div class="highlight">
+<p>ページの生成を抑止する例です。Retterfileに追記します。</p>
+<div class="highlight">
 <pre><span class="c1"># prfile, entries, feed すべてを生成しない</span>
 <span class="n">allow_binding</span> <span class="ss">:none</span>
 
 <span class="c1"># entries, feedは生成する</span>
 <span class="n">allow_binding</span> <span class="o">[</span><span class="ss">:entries</span><span class="p">,</span> <span class="ss">:feed</span><span class="o">]</span>
 </pre>
-</div><h2>日付指定の方法</h2><p><a href="https://github.com/mojombo/chronic">Chronic</a>を使うようになったので、今までより多くの方法で日付の指定ができるようになりました。
-<code>retter edit this\ wednesday</code>とか指定できます。</p>]]></description><dc:date>2012-03-24</dc:date><link>http://hibariya.github.com/entries/20120324.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120323.html"><title>2012/03/23</title><description><![CDATA[<h1 id="a0">Retter 0.2.0</h1><p><a href="https://rubygems.org/gems/retter">Retter</a>をアップデートしました。</p><p>Pygmentsを利用できるようになりました。
-利用するにはRetterfileに以下の設定を追加します。</p><div class="highlight">
+</div>
+<h2>日付指定の方法</h2>
+<p><a href="https://github.com/mojombo/chronic">Chronic</a>を使うようになったので、今までより多くの方法で日付の指定ができるようになりました。
+<code>retter edit this\ wednesday</code>とか指定できます。</p>]]></content:encoded><dc:date>2012-03-24</dc:date><link>http://hibariya.github.com/entries/20120324/a1.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120324/a0.html"><title>Retter 0.2.2</title><description>built-inなテーマにサイドバーをつけました。
+</description><content:encoded><![CDATA[<p><a href="https://rubygems.org/gems/retter">built-inなテーマにサイドバーをつけました。</a></p>
+]]></content:encoded><dc:date>2012-03-24</dc:date><link>http://hibariya.github.com/entries/20120324/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120323/a0.html"><title>Retter 0.2.0</title><description>Retterをアップデートしました。
+Pygmentsを利用できるようになりました。
+利用するにはRetterfileに以下の設定を追加します。
+
+renderer Retter::Renderers::PygmentsRenderer
+
+
+今度からretter newするとデフォルトでPygmentsを使用するようになって、そのためのCSSも生成するようになりました。
+現状の日記にCSSを追加す...</description><content:encoded><![CDATA[<p><a href="https://rubygems.org/gems/retter">Retter</a>をアップデートしました。</p>
+<p>Pygmentsを利用できるようになりました。
+利用するにはRetterfileに以下の設定を追加します。</p>
+<div class="highlight">
 <pre><span class="n">renderer</span> <span class="no">Retter</span><span class="o">::</span><span class="no">Renderers</span><span class="o">::</span><span class="no">PygmentsRenderer</span>
 </pre>
-</div><p>今度から<code>retter new</code>するとデフォルトでPygmentsを使用するようになって、そのためのCSSも生成するようになりました。</p><p>現状の日記にCSSを追加するには、<a href="https://raw.github.com/hibariya/retter/master/lib/retter/generator/skel/stylesheets/pygments.css">ここ</a>から直接ダウンロードするとすぐに使えるかと思います。</p><p>実は、上記の<code>renderer</code>にはRedcarpet::Render::HTMLを継承したクラスであれば何でも指定できます。
+</div>
+<p>今度から<code>retter new</code>するとデフォルトでPygmentsを使用するようになって、そのためのCSSも生成するようになりました。</p>
+<p>現状の日記にCSSを追加するには、<a href="https://raw.github.com/hibariya/retter/master/lib/retter/generator/skel/stylesheets/pygments.css">ここ</a>から直接ダウンロードするとすぐに使えるかと思います。</p>
+<p>実は、上記の<code>renderer</code>にはRedcarpet::Render::HTMLを継承したクラスであれば何でも指定できます。
 Pygmentsを使いたいけどPygments.rbが落ちて困るという場合はAlbinoを使うrendererを作るといいかもしれません。
-以下はRedcarpetのREADMEから抜粋したもの。</p><div class="highlight">
+以下はRedcarpetのREADMEから抜粋したもの。</p>
+<div class="highlight">
 <pre><span class="k">class</span> <span class="nc">HTMLwithAlbino</span> <span class="o">&lt;</span> <span class="no">Redcarpet</span><span class="o">::</span><span class="no">Render</span><span class="o">::</span><span class="no">HTML</span>
   <span class="k">def</span> <span class="nf">block_code</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">language</span><span class="p">)</span>
     <span class="no">Albino</span><span class="o">.</span><span class="n">safe_colorize</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">language</span><span class="p">)</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </pre>
-</div><p>それから、Markdownのレンダリング結果をキャッシュするようになりました。
-途中でrendererを変更したりして、レンダリング結果が変わるような場合は以下のように<code>tmp/cache</code>以下のキャッシュを一度削除してください。</p><div class="highlight">
+</div>
+<p>それから、Markdownのレンダリング結果をキャッシュするようになりました。
+途中でrendererを変更したりして、レンダリング結果が変わるような場合は以下のように<code>tmp/cache</code>以下のキャッシュを一度削除してください。</p>
+<div class="highlight">
 <pre>rm -rf tmp/cache/*
 </pre>
-</div>]]></description><dc:date>2012-03-23</dc:date><link>http://hibariya.github.com/entries/20120323.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120321.html"><title>2012/03/21</title><description><![CDATA[<h1 id="a0">Rubyで日付っぽい文字列を日時や日付に変換するときのこと</h1><p>　<a href="https://github.com/mojombo/chronic">Chronic</a>べんり。別に最近のものでもないのだけど、しらなかった。</p><p>　それまではActiveSupportで頑張っていた。</p><div class="highlight">
+</div>]]></content:encoded><dc:date>2012-03-23</dc:date><link>http://hibariya.github.com/entries/20120323/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120321/a0.html"><title>Rubyで日付っぽい文字列を日時や日付に変換するときのこと</title><description>　Chronicべんり。別に最近のものでもないのだけど、しらなかった。
+　それまではActiveSupportで頑張っていた。
+
+require 'active_support/core_ext/object'
+require 'date'
+
+def parse_date_str(date_str)
+  case date_str
+  when /^yesterday$/i then 1.day....</description><content:encoded><![CDATA[<p>　<a href="https://github.com/mojombo/chronic">Chronic</a>べんり。別に最近のものでもないのだけど、しらなかった。</p>
+<p>　それまではActiveSupportで頑張っていた。</p>
+<div class="highlight">
 <pre><span class="nb">require</span> <span class="s1">'active_support/core_ext/object'</span>
 <span class="nb">require</span> <span class="s1">'date'</span>
 
@@ -151,7 +270,9 @@ Pygmentsを使いたいけどPygments.rbが落ちて困るという場合はAlbi
 <span class="n">parse_date_str</span> <span class="s1">'yesterday'</span>  <span class="c1"># =&gt; Tue, 20 Mar 2012</span>
 <span class="n">parse_date_str</span> <span class="s1">'1 week ago'</span> <span class="c1"># =&gt; Wed, 14 Mar 2012</span>
 </pre>
-</div><p>　こんなコード書かなくてもよかったんだ！</p><div class="highlight">
+</div>
+<p>　こんなコード書かなくてもよかったんだ！</p>
+<div class="highlight">
 <pre><span class="nb">require</span> <span class="s1">'date'</span>
 <span class="nb">require</span> <span class="s1">'chronic'</span>
 
@@ -163,26 +284,56 @@ Pygmentsを使いたいけどPygments.rbが落ちて困るという場合はAlbi
 <span class="n">parse_date_str</span> <span class="s1">'yesterday'</span>  <span class="c1"># =&gt; #&lt;Date: 2012-03-20 ((2456007j,0s,0n),+0s,2299161j)&gt;</span>
 <span class="n">parse_date_str</span> <span class="s1">'1 week ago'</span> <span class="c1"># =&gt; #&lt;Date: 2012-03-14 ((2456001j,0s,0n),+0s,2299161j)&gt;</span>
 </pre>
-</div><p>　Chronicはparseできなかったときはnilを返す。
-Date.parseを残しているのは、YYYYMMDDみたいな形式も使いたかったからで、それを除けばだいたいChronicだけで充分だった。</p><p>　戻り値の見た目（Date#inspect）が違うのはActiveSupportの拡張っぽい。</p>]]></description><dc:date>2012-03-21</dc:date><link>http://hibariya.github.com/entries/20120321.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120317.html"><title>2012/03/17</title><description><![CDATA[<h1 id="a0">Rubyでコードブロックに色を付けるときのこと</h1><p>覚え書き。</p><p><a href="https://github.com/hibariya/retter">retter</a>で使っているSyntax HighlighterはCodeRayというやつだったけど、吐かれるHTMLがあまり綺麗ではない（style属性付きのdivとかが大量に吐かれる）のと、色合いのカスタマイズも難しいので他のもの（具体的にはPygments）を使うことにした。
-pygmentsはコード辺にcssのclassをつけてくれるので<a href="http://pygments.org/media/pygments_style.css">こんな</a>スタイルシートを用意して使う。スタイルシートを弄れば色分けを好きに変えられる。</p><p>RubyからPygmentsを使うには知っている限りだと2つの方法があって、ひとつは<a href="https://github.com/github/albino">Albino</a>、もうひとつは<a href="https://github.com/tmm1/pygments.rb">pygments.rb</a>を使う。</p><p>Albinoはdeprecatedらしくて、READMEにはpygments.rbへのリンクまで書いてある。
-最後にコミットされたのは4ヶ月前だし、今後Albinoはメンテされないらしい。</p><h2>pygments.rb</h2><p>FFIを使っているのでとても早い。
+</div>
+<p>　Chronicはparseできなかったときはnilを返す。
+Date.parseを残しているのは、YYYYMMDDみたいな形式も使いたかったからで、それを除けばだいたいChronicだけで充分だった。</p>
+<p>　戻り値の見た目（Date#inspect）が違うのはActiveSupportの拡張っぽい。</p>]]></content:encoded><dc:date>2012-03-21</dc:date><link>http://hibariya.github.com/entries/20120321/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120317/a0.html"><title>Rubyでコードブロックに色を付けるときのこと</title><description>覚え書き。
+retterで使っているSyntax HighlighterはCodeRayというやつだったけど、吐かれるHTMLがあまり綺麗ではない（style属性付きのdivとかが大量に吐かれる）のと、色合いのカスタマイズも難しいので他のもの（具体的にはPygments）を使うことにした。
+pygmentsはコード辺にcssのclassをつけてくれるのでこんなスタイルシートを用意して使う。スタイル...</description><content:encoded><![CDATA[<p>覚え書き。</p>
+<p><a href="https://github.com/hibariya/retter">retter</a>で使っているSyntax HighlighterはCodeRayというやつだったけど、吐かれるHTMLがあまり綺麗ではない（style属性付きのdivとかが大量に吐かれる）のと、色合いのカスタマイズも難しいので他のもの（具体的にはPygments）を使うことにした。
+pygmentsはコード辺にcssのclassをつけてくれるので<a href="http://pygments.org/media/pygments_style.css">こんな</a>スタイルシートを用意して使う。スタイルシートを弄れば色分けを好きに変えられる。</p>
+<p>RubyからPygmentsを使うには知っている限りだと2つの方法があって、ひとつは<a href="https://github.com/github/albino">Albino</a>、もうひとつは<a href="https://github.com/tmm1/pygments.rb">pygments.rb</a>を使う。</p>
+<p>Albinoはdeprecatedらしくて、READMEにはpygments.rbへのリンクまで書いてある。
+最後にコミットされたのは4ヶ月前だし、今後Albinoはメンテされないらしい。</p>
+<h2>pygments.rb</h2>
+<p>FFIを使っているのでとても早い。
 だからこれを使えばいいんだけど、試しに使っていたらときどきSegmentation faultになる（しかもいつ発生するのかよくわからない）。
-いきなりセグフォとか困る人にはまだおすすめできない気がする。</p><h2>Albino</h2><p>albinoを動かすには、pygmentizeという別のgemも必要。</p><p>deprecatedだけどセグフォはしなかった。ただしとっても遅い。
+いきなりセグフォとか困る人にはまだおすすめできない気がする。</p>
+<h2>Albino</h2>
+<p>albinoを動かすには、pygmentizeという別のgemも必要。</p>
+<p>deprecatedだけどセグフォはしなかった。ただしとっても遅い。
 どんなに小さなコードブロックだとしても、色付けするのに毎回1プロセス起動する。
-何十個もある場合は何十秒も待たされることになる。</p><p>何らかの方法でキャッシュするようにして、いちど生成したコードは使いまわせるようにすると少しマシ。
-根本的な解決にはならないけど、用途によっては有効かも。</p><p>もうひとつ、AlbinoにはAlbino::Multiっていうクラスがついていて、説明を読んでみるとどうやら1プロセスで複数のコードブロックを一気にやっつけられるらしい。
+何十個もある場合は何十秒も待たされることになる。</p>
+<p>何らかの方法でキャッシュするようにして、いちど生成したコードは使いまわせるようにすると少しマシ。
+根本的な解決にはならないけど、用途によっては有効かも。</p>
+<p>もうひとつ、AlbinoにはAlbino::Multiっていうクラスがついていて、説明を読んでみるとどうやら1プロセスで複数のコードブロックを一気にやっつけられるらしい。
 これさえあればプロセス起動のオーバーヘッドが大幅に削減できそう。
 ただし動かなかった。
 Albino::Multiは裏でmultipygmentizeというpythonスクリプトを叩いてるのだけど、このpythonスクリプトが必要としているpygmentsモジュールは別のgemであるpygmentizeの方に入っていて、読み込みに失敗しているようだった。
-pythonの環境をちゃんと整えれば動くのかな。</p><h2>結論</h2><p>これをこう使えば安心、というのは見つけられなかった。</p>]]></description><dc:date>2012-03-17</dc:date><link>http://hibariya.github.com/entries/20120317.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120313.html"><title>2012/03/13</title><description><![CDATA[<h1 id="a0">FiberとSemi-Coroutine</h1><p>やっと使い方を覚えたFiberについての覚書。組込みライブラリ編。</p><h2>Fiber</h2><p>Rubyの組込みライブラリとして提供されているFiber。
-ノンプリエンプティブな軽量スレッド。</p><ul>
+pythonの環境をちゃんと整えれば動くのかな。</p>
+<h2>結論</h2>
+<p>これをこう使えば安心、というのは見つけられなかった。</p>]]></content:encoded><dc:date>2012-03-17</dc:date><link>http://hibariya.github.com/entries/20120317/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120313/a0.html"><title>FiberとSemi-Coroutine</title><description>やっと使い方を覚えたFiberについての覚書。組込みライブラリ編。
+Fiber
+Rubyの組込みライブラリとして提供されているFiber。
+ノンプリエンプティブな軽量スレッド。
+
+生成したファイバは勝手には走らない
+コンテキストの切り替えは自分で
+親から子へ、子から親へ切り替えることができる
+IO待ちでも切り替わらない
+
+コンテキストの切り替えはFiber#resumeとFiber.yieldで行...</description><content:encoded><![CDATA[<p>やっと使い方を覚えたFiberについての覚書。組込みライブラリ編。</p>
+<h2>Fiber</h2>
+<p>Rubyの組込みライブラリとして提供されているFiber。
+ノンプリエンプティブな軽量スレッド。</p>
+<ul>
 <li>生成したファイバは勝手には走らない</li>
 <li>コンテキストの切り替えは自分で</li>
 <li>親から子へ、子から親へ切り替えることができる</li>
 <li>IO待ちでも切り替わらない</li>
 </ul>
-<p>コンテキストの切り替えは<code>Fiber#resume</code>と<code>Fiber.yield</code>で行う。</p><div class="highlight">
+<p>コンテキストの切り替えは<code>Fiber#resume</code>と<code>Fiber.yield</code>で行う。</p>
+<div class="highlight">
 <pre><span class="n">fiber</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span>
   <span class="nb">puts</span> <span class="s1">'Hello Alice.'</span>
 
@@ -199,11 +350,20 @@ pythonの環境をちゃんと整えれば動くのかな。</p><h2>結論</h2><
 <span class="n">fiber</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># "Hello Bob." と表示</span>
 <span class="n">fiber</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># "Hello Carol." と表示</span>
 </pre>
-</div><p>上の例ではトップレベルが親。ブロックの中が子。親と子でキャッチボールしてる感じ。
-<code>Fiber#resume</code>で親から子へコンテキストを切り替え、<code>Fiber.yield</code>で子から親へ切り替える。</p><p>組込みライブラリとしてのFiberは、親から子、子から親へのみ切り替えられる（それ以外のコンテキストに切り替えることはできない）。</p><h2>Fiberの引数と戻り値</h2><h3>親からみたときの引数と戻り値</h3><p>引数は常に<code>Fiber#resume</code>に渡す。
-戻り値は<code>Fiber#resume</code>の戻り値。</p><h3>子からみたときの引数と戻り値</h3><p>最初の引数はブロック引数として渡される。
-それ以降の引数は<code>Fiber.yield</code>の戻り値として与えられる。</p><p>戻り値は<code>Fiber.yield</code>の引数として渡す。
-<code>Fiber.new</code>で渡したブロックが終了したときは、最後に評価された式の値が戻り値として返る。</p><div class="highlight">
+</div>
+<p>上の例ではトップレベルが親。ブロックの中が子。親と子でキャッチボールしてる感じ。
+<code>Fiber#resume</code>で親から子へコンテキストを切り替え、<code>Fiber.yield</code>で子から親へ切り替える。</p>
+<p>組込みライブラリとしてのFiberは、親から子、子から親へのみ切り替えられる（それ以外のコンテキストに切り替えることはできない）。</p>
+<h2>Fiberの引数と戻り値</h2>
+<h3>親からみたときの引数と戻り値</h3>
+<p>引数は常に<code>Fiber#resume</code>に渡す。
+戻り値は<code>Fiber#resume</code>の戻り値。</p>
+<h3>子からみたときの引数と戻り値</h3>
+<p>最初の引数はブロック引数として渡される。
+それ以降の引数は<code>Fiber.yield</code>の戻り値として与えられる。</p>
+<p>戻り値は<code>Fiber.yield</code>の引数として渡す。
+<code>Fiber.new</code>で渡したブロックが終了したときは、最後に評価された式の値が戻り値として返る。</p>
+<div class="highlight">
 <pre><span class="n">greet3</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span><span class="o">|</span><span class="nb">name</span><span class="o">|</span>
   <span class="mi">3</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
     <span class="nb">name</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span><span class="p">(</span><span class="s2">"Hi </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
@@ -217,14 +377,19 @@ pythonの環境をちゃんと整えれば動くのかな。</p><h2>結論</h2><
 <span class="n">greet3</span><span class="o">.</span><span class="n">resume</span><span class="p">(</span><span class="s1">'Colon'</span><span class="p">)</span> <span class="c1"># =&gt; "Hi Colon"</span>
 <span class="n">greet3</span><span class="o">.</span><span class="n">resume</span>          <span class="c1"># =&gt; "Good night"</span>
 </pre>
-</div><h2>Coroutine</h2><ul>
+</div>
+<h2>Coroutine</h2>
+<ul>
 <li>途中まで計算して、一旦値を返して、その後また続きから実行できる仕組み</li>
 <li>親と子（callerとcallee）という関係があるものをsemi-coroutineと呼ぶ</li>
 <li>組込みライブラリのFiberはsemi-coroutineの実装と言ってよいのかな</li>
 </ul>
-<h2>semi-coroutineさん何に使うの</h2><p>ジェネレータや外部イテレータに使うらしい。
+<h2>semi-coroutineさん何に使うの</h2>
+<p>ジェネレータや外部イテレータに使うらしい。
 無限リストにも使うらしい。
-外部イテレータとしてときどき使うかもしれないEnumeratorではFiberを使ってるようだ。</p><p>永遠に終わらない数字のカウントアップを行うジェネレータ。</p><div class="highlight">
+外部イテレータとしてときどき使うかもしれないEnumeratorではFiberを使ってるようだ。</p>
+<p>永遠に終わらない数字のカウントアップを行うジェネレータ。</p>
+<div class="highlight">
 <pre><span class="n">endless</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span>
   <span class="kp">loop</span><span class="o">.</span><span class="n">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
     <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -240,7 +405,9 @@ pythonの環境をちゃんと整えれば動くのかな。</p><h2>結論</h2><
 <span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 6</span>
 <span class="c1"># endless...</span>
 </pre>
-</div><p>FiberのAPIを隠して外部イテレータっぽく使ってみる。</p><div class="highlight">
+</div>
+<p>FiberのAPIを隠して外部イテレータっぽく使ってみる。</p>
+<div class="highlight">
 <pre><span class="k">class</span> <span class="nc">EndlessNumber</span>
   <span class="k">def</span> <span class="nf">initialize</span>
     <span class="n">rewind</span>
@@ -273,9 +440,25 @@ pythonの環境をちゃんと整えれば動くのかな。</p><h2>結論</h2><
   <span class="nb">puts</span> <span class="n">num</span>
 <span class="k">end</span> <span class="c1"># ウワーッ</span>
 </pre>
-</div><p>　これに使おう、というのがとっさに思い浮かばない。</p>]]></description><dc:date>2012-03-13</dc:date><link>http://hibariya.github.com/entries/20120313.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120101.html"><title>2012/01/01</title><description><![CDATA[<h1 id="a0">年も明けたのでClojureを勉強し始めた</h1><p>結局さわりはじめたのはClojure。</p><p>手始めに<a href="http://estore.ohmsha.co.jp/">オーム社eStore(β)</a>で<a href="http://estore.ohmsha.co.jp/titles/978427406789P">プログラミングClojure</a>を買ったよ。</p>]]></description><dc:date>2012-01-01</dc:date><link>http://hibariya.github.com/entries/20120101.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111208.html"><title>2011/12/08</title><description><![CDATA[<h1 id="a0">7つの言語 7つの世界 を読み終わった</h1><p>今日はちょっと体調を崩していたので全休、内職もほったらかしにしつつ。
-課題とかはこなしてないけど、ひと通り理解しようと努めながら読んで最後まで行った。</p><p>関数型言語のエッセンスに触れたり並列処理の色々なやりかたを知るきっかけをつくるのに役だったと思う。
-実際にやってみようかなと思った言語は上から順に、</p><ul>
+</div>
+<p>　これに使おう、というのがとっさに思い浮かばない。</p>]]></content:encoded><dc:date>2012-03-13</dc:date><link>http://hibariya.github.com/entries/20120313/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120101/a0.html"><title>年も明けたのでClojureを勉強し始めた</title><description>結局さわりはじめたのはClojure。
+手始めにオーム社eStore(β)でプログラミングClojureを買ったよ。</description><content:encoded><![CDATA[<p>結局さわりはじめたのはClojure。</p>
+<p>手始めに<a href="http://estore.ohmsha.co.jp/">オーム社eStore(β)</a>で<a href="http://estore.ohmsha.co.jp/titles/978427406789P">プログラミングClojure</a>を買ったよ。</p>]]></content:encoded><dc:date>2012-01-01</dc:date><link>http://hibariya.github.com/entries/20120101/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111208/a0.html"><title>7つの言語 7つの世界 を読み終わった</title><description>今日はちょっと体調を崩していたので全休、内職もほったらかしにしつつ。
+課題とかはこなしてないけど、ひと通り理解しようと努めながら読んで最後まで行った。
+関数型言語のエッセンスに触れたり並列処理の色々なやりかたを知るきっかけをつくるのに役だったと思う。
+実際にやってみようかなと思った言語は上から順に、
+
+Haskell
+Clojure
+Erlang
+Prolog
+
+かなあ。
+Prologが一番下にき...</description><content:encoded><![CDATA[<p>今日はちょっと体調を崩していたので全休、内職もほったらかしにしつつ。
+課題とかはこなしてないけど、ひと通り理解しようと努めながら読んで最後まで行った。</p>
+<p>関数型言語のエッセンスに触れたり並列処理の色々なやりかたを知るきっかけをつくるのに役だったと思う。
+実際にやってみようかなと思った言語は上から順に、</p>
+<ul>
 <li>Haskell</li>
 <li>Clojure</li>
 <li>Erlang</li>
@@ -283,28 +466,48 @@ pythonの環境をちゃんと整えれば動くのかな。</p><h2>結論</h2><
 </ul>
 <p>かなあ。
 Prologが一番下にきたのは単に古めだからという理由なんですが、Prologの章はたいへん刺激的だった。
-Ioはかわいい。Scalaは書き方が難しいなあと思った。</p>]]></description><dc:date>2011-12-08</dc:date><link>http://hibariya.github.com/entries/20111208.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111204.html"><title>2011/12/04</title><description><![CDATA[<h1 id="a0">忙しくてフィードが読めないのでClineという通知用のツールを作った</h1><p>たまに時間があるとフィードを読む習慣を復活させようとするんですが、結局は途中で仕事が忙しくなって放置してしまい数日後「全部読んだことにする」ボタンをクリックする繰り返しに疲れた。
+Ioはかわいい。Scalaは書き方が難しいなあと思った。</p>]]></content:encoded><dc:date>2011-12-08</dc:date><link>http://hibariya.github.com/entries/20111208/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111204/a0.html"><title>忙しくてフィードが読めないのでClineという通知用のツールを作った</title><description>たまに時間があるとフィードを読む習慣を復活させようとするんですが、結局は途中で仕事が忙しくなって放置してしまい数日後「全部読んだことにする」ボタンをクリックする繰り返しに疲れた。
 もうフィードアグリゲータで定期的に情報を集めるのは無理なんだなと最近は諦め始めていて、かといって最近の出来事がわからなくなるのはちょっと。。
-別に全部に目を通さなくていいから最近の情報は常に目の届くところで渦巻いていてほしい。</p><p>一日のうちでいちばん眺めているのはディスプレイ（特にターミナル）で、そのターミナル上に新しめの情報が湧き水みたいに出てきては消えていく何かが欲しいと思ったので作ってみた。</p><p><a href="https://github.com/hibariya/cline">Cline</a></p><p>CUIをメインとした通知アプリのつもり。
-これを入れると↓のような通知を永遠に垂れ流すことができる（screenのbacktickとGrowlの部分）。</p><p><img src="/images/cline_sample.png" alt="Cline sample"></p><p>Clineがやることは単純で、</p><ol>
+別に全部に目を通さなくていいから最近の情報は常に目の届くところで渦巻いていてほ...</description><content:encoded><![CDATA[<p>たまに時間があるとフィードを読む習慣を復活させようとするんですが、結局は途中で仕事が忙しくなって放置してしまい数日後「全部読んだことにする」ボタンをクリックする繰り返しに疲れた。
+もうフィードアグリゲータで定期的に情報を集めるのは無理なんだなと最近は諦め始めていて、かといって最近の出来事がわからなくなるのはちょっと。。
+別に全部に目を通さなくていいから最近の情報は常に目の届くところで渦巻いていてほしい。</p>
+<p>一日のうちでいちばん眺めているのはディスプレイ（特にターミナル）で、そのターミナル上に新しめの情報が湧き水みたいに出てきては消えていく何かが欲しいと思ったので作ってみた。</p>
+<p><a href="https://github.com/hibariya/cline">Cline</a></p>
+<p>CUIをメインとした通知アプリのつもり。
+これを入れると↓のような通知を永遠に垂れ流すことができる（screenのbacktickとGrowlの部分）。</p>
+<p><img src="/images/cline_sample.png" alt="Cline sample"></p>
+<p>Clineがやることは単純で、</p>
+<ol>
 <li>ネットで配信されているフィードやJSONから情報を集めてきて</li>
 <li>メッセージと公開時間とURLを一旦DBに保存して</li>
 <li>設定した場所へ出力する</li>
 </ol>
 <p>これだけ。
-フィードを集めてきてGrowl通知するだけならGrowlでやれるらしいけど、今回は集めた通知をターミナル上でこねくり回したりもしたいという欲求もあったのだった。</p><p>ちなみにscreenのbacktickが複数あるのは<a href="http://shyouhei.tumblr.com/post/313410522/screenrc">ここ</a>で紹介されているやり方で設定したもの。
-ここにあるようにbacktickに日本語を表示するには git://git.savannah.gnu.org/screen.git から最新のソースを引っ張ってきてビルドしないとうまくいかなかった。</p><p>普段screenか何かをお使いであれば役に立つかも。</p><p>※ 2012/3/14 追記: ターミナル上に表示されたURLは、例えばiTermならCommand+Click、MacのターミナルならCommand+DoubleClickで開けるみたいです。</p><h2>インストール</h2><p>gemで入れます。rubyが1.9以上でないと動きません。Windowsでの動作は未確認。</p><div class="highlight">
+フィードを集めてきてGrowl通知するだけならGrowlでやれるらしいけど、今回は集めた通知をターミナル上でこねくり回したりもしたいという欲求もあったのだった。</p>
+<p>ちなみにscreenのbacktickが複数あるのは<a href="http://shyouhei.tumblr.com/post/313410522/screenrc">ここ</a>で紹介されているやり方で設定したもの。
+ここにあるようにbacktickに日本語を表示するには git://git.savannah.gnu.org/screen.git から最新のソースを引っ張ってきてビルドしないとうまくいかなかった。</p>
+<p>普段screenか何かをお使いであれば役に立つかも。</p>
+<p>※ 2012/3/14 追記: ターミナル上に表示されたURLは、例えばiTermならCommand+Click、MacのターミナルならCommand+DoubleClickで開けるみたいです。</p>
+<h2>インストール</h2>
+<p>gemで入れます。rubyが1.9以上でないと動きません。Windowsでの動作は未確認。</p>
+<div class="highlight">
 <pre>  $ gem install cline
 </pre>
-</div><p>初回だけ、<code>init</code> コマンドでDBをつくります。</p><div class="highlight">
+</div>
+<p>初回だけ、<code>init</code> コマンドでDBをつくります。</p>
+<div class="highlight">
 <pre>  $ cline init
 </pre>
-</div><h2>設定</h2><p>~/.cline/config に、幾つかの設定をします。例として、</p><ul>
+</div>
+<h2>設定</h2>
+<p>~/.cline/config に、幾つかの設定をします。例として、</p>
+<ul>
 <li>opmlに書いたフィードから集めてきたエントリを</li>
 <li>最新の2000個まで貯めて</li>
 <li>標準出力とGrowlに出力する</li>
 </ul>
-<p>ような設定にします。</p><div class="highlight">
+<p>ような設定にします。</p>
+<div class="highlight">
 <pre>  <span class="c1"># coding: utf-8</span>
 
   <span class="no">Cline</span><span class="o">.</span><span class="n">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
@@ -313,10 +516,17 @@ Ioはかわいい。Scalaは書き方が難しいなあと思った。</p>]]></d
     <span class="n">config</span><span class="o">.</span><span class="n">out_stream</span> <span class="o">=</span> <span class="no">Cline</span><span class="o">::</span><span class="no">OutStreams</span><span class="o">::</span><span class="no">WithGrowl</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="vg">$stdout</span><span class="p">)</span>
   <span class="k">end</span>
 </pre>
-</div><p>べつにGrowlで出さなくてよければ、out_streamを設定する部分を</p><div class="highlight">
+</div>
+<p>べつにGrowlで出さなくてよければ、out_streamを設定する部分を</p>
+<div class="highlight">
 <pre>  <span class="n">config</span><span class="o">.</span><span class="n">out_stream</span> <span class="o">=</span> <span class="vg">$stdout</span>
 </pre>
-</div><p>とします。</p><h3>フィード一覧の登録</h3><p>フィード一覧の記述されたopmlファイル（例えば、LDRなどのフィードアグリゲータからエクスポートしたもの）を ~/.cline/feeds.xml に配置します。</p><p>OPMLといえばこんな感じのやつです。</p><div class="highlight">
+</div>
+<p>とします。</p>
+<h3>フィード一覧の登録</h3>
+<p>フィード一覧の記述されたopmlファイル（例えば、LDRなどのフィードアグリゲータからエクスポートしたもの）を ~/.cline/feeds.xml に配置します。</p>
+<p>OPMLといえばこんな感じのやつです。</p>
+<div class="highlight">
 <pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="nt">&lt;opml</span> <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;head&gt;</span>
@@ -334,17 +544,26 @@ Ioはかわいい。Scalaは書き方が難しいなあと思った。</p>]]></d
   <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/opml&gt;</span>
 </pre>
-</div><p>設定はこれで終わりです。</p><h2>通知の収集</h2><p><code>collect</code> コマンドを使うとフィードなどを素直に取ってきます。
-cron的な何かで定期実行すればよいと思います。</p><div class="highlight">
+</div>
+<p>設定はこれで終わりです。</p>
+<h2>通知の収集</h2>
+<p><code>collect</code> コマンドを使うとフィードなどを素直に取ってきます。
+cron的な何かで定期実行すればよいと思います。</p>
+<div class="highlight">
 <pre>  $ cline collect
 </pre>
-</div><h2>通知の出力</h2><p><code>show [offset]</code> コマンドで、<em>最も表示された回数が少なく最も古い</em>通知を1件表示します。
-[offset]は何件かスキップしたいときに使います。</p><div class="highlight">
+</div>
+<h2>通知の出力</h2>
+<p><code>show [offset]</code> コマンドで、<em>最も表示された回数が少なく最も古い</em>通知を1件表示します。
+[offset]は何件かスキップしたいときに使います。</p>
+<div class="highlight">
 <pre>  $ cline show
   [2011-12-01 19:13:57 +0900][1] Gist: ursm create https://gist.github.com/1415569
 </pre>
-</div><p><code>tick [offset] [interval]</code> コマンドで、[interval]で指定された秒感覚で新しい通知を1件ずつ出力していきます。
-これはtail -f っぽい出力になります。</p><div class="highlight">
+</div>
+<p><code>tick [offset] [interval]</code> コマンドで、[interval]で指定された秒感覚で新しい通知を1件ずつ出力していきます。
+これはtail -f っぽい出力になります。</p>
+<div class="highlight">
 <pre>  $ cline tick 0 1
   [2011-12-01 19:57:40 +0900][1] IssueComment: pokonski created https://github.com/twitter/bootstrap/issues/736
   [2011-12-01 20:01:54 +0900][1] nkym:「おんなのこ」/「yui」[pixiv] http://hibariya.tumblr.com/post/13585938765
@@ -352,14 +571,25 @@ cron的な何かで定期実行すればよいと思います。</p><div class="
   [2011-12-01 20:04:48 +0900][1] "猫の足音、女の髭、岩の根、熊の腱、魚の息、鳥の唾液から作られた。これらは、グレイプニルを作るのに使用されたため、この世に存在しなくなった といわれる。" http://hibariya.tumblr.com/post/13585980013
   # 出力は続く...
 </pre>
-</div><p>ちなみに[1]とか表示されているのは、今までに表示された回数です。</p><h3>screen の backtick に垂れ流す</h3><p>~/.screenrc の設定に以下のような backtick の設定をすれば15秒ごとに新しい通知を表示することができます。</p><div class="highlight">
+</div>
+<p>ちなみに[1]とか表示されているのは、今までに表示された回数です。</p>
+<h3>screen の backtick に垂れ流す</h3>
+<p>~/.screenrc の設定に以下のような backtick の設定をすれば15秒ごとに新しい通知を表示することができます。</p>
+<div class="highlight">
 <pre>  backtick 0 0 0 cline tick 0 15
 </pre>
-</div><p>backtickでの表示はこんな感じですね（これは3つ表示している例）。
-<img src="/images/cline_backtick_sample.png" alt="cline backtick"></p><p>ところで、1日に流れてくる情報の数には限りがあります。
+</div>
+<p>backtickでの表示はこんな感じですね（これは3つ表示している例）。
+<img src="/images/cline_backtick_sample.png" alt="cline backtick"></p>
+<p>ところで、1日に流れてくる情報の数には限りがあります。
 もし通知が収集に追いついてしまったらどうなるかというと、また最初から通知し直します。
 なので1度見逃しても安心。またいつか流れてきます。
-今回の設定例だと最新の2000件が常にぐるぐると回リ続けます。2000件を超した古い通知から削除されます。</p><p>ひとつの通知が表示されている時間は短いものですので、目に止まったけど流れてしまったものを手早く見つけるコマンドも幾つか用意しました。</p><h3>キーワードで通知を出力する</h3><p>気になったけど流れていったタイトルとか、ドメインで絞り込んだりできます。</p><p><code>search</code> コマンドでキーワード検索した結果を一覧できます。</p><div class="highlight">
+今回の設定例だと最新の2000件が常にぐるぐると回リ続けます。2000件を超した古い通知から削除されます。</p>
+<p>ひとつの通知が表示されている時間は短いものですので、目に止まったけど流れてしまったものを手早く見つけるコマンドも幾つか用意しました。</p>
+<h3>キーワードで通知を出力する</h3>
+<p>気になったけど流れていったタイトルとか、ドメインで絞り込んだりできます。</p>
+<p><code>search</code> コマンドでキーワード検索した結果を一覧できます。</p>
+<div class="highlight">
 <pre>  $ cline search github.com
   [2011-12-04 17:17:37 +0900][1] CommitComment: svenfuchs  https://github.com/travis-ci/travis-ci/commit/b496bc9c5e#commitcomment-766925
   [2011-12-04 17:15:30 +0900][1] Push: svenfuchs  https://github.com/travis-ci/travis-ci
@@ -368,8 +598,12 @@ cron的な何かで定期実行すればよいと思います。</p><div class="
   [2011-12-04 16:42:15 +0900][1] Push: ConradIrwin  https://github.com/pry/pry
   # 出力は続く...
 </pre>
-</div><p>ヒットしたものをすべて出力するので less などで見るとよいかもしれません。</p><h3>最近表示した通知をいくつか出力する</h3><p><code>recent [limit]</code> コマンドで、最近通知したものを（できるだけ）現在に近い順で一覧できます。
-[limit]を指定しなければ1件だけ出します。</p><div class="highlight">
+</div>
+<p>ヒットしたものをすべて出力するので less などで見るとよいかもしれません。</p>
+<h3>最近表示した通知をいくつか出力する</h3>
+<p><code>recent [limit]</code> コマンドで、最近通知したものを（できるだけ）現在に近い順で一覧できます。
+[limit]を指定しなければ1件だけ出します。</p>
+<div class="highlight">
 <pre>  $ cline recent 10
   [2011-12-01 21:28:10 +0900][2] PullRequest: arunagw closed https://github.com/rails/rails/pull/2793
   [2011-12-01 21:28:10 +0900][2] IssueComment: arunagw created https://github.com/rails/rails/issues/2793
@@ -377,33 +611,85 @@ cron的な何かで定期実行すればよいと思います。</p><div class="
   [2011-12-01 21:22:23 +0900][2] IssueComment: rsim created https://github.com/rails/rails/issues/2793
   # 出力は続く...
 </pre>
-</div><h2>その他: GithubのActivity</h2><p>ちなみにGithubのactivityも取得することもできます。
-~/.cline/config のブロック内で</p><div class="highlight">
+</div>
+<h2>その他: GithubのActivity</h2>
+<p>ちなみにGithubのactivityも取得することもできます。
+~/.cline/config のブロック内で</p>
+<div class="highlight">
 <pre>  <span class="n">config</span><span class="o">.</span><span class="n">append_collector</span> <span class="no">Cline</span><span class="o">::</span><span class="no">Collectors</span><span class="o">::</span><span class="no">Github</span>
   <span class="no">Cline</span><span class="o">::</span><span class="no">Collectors</span><span class="o">::</span><span class="no">Github</span><span class="o">.</span><span class="n">login_name</span> <span class="o">=</span> <span class="s1">'github username'</span>
 </pre>
-</div><p>と追記すると自分のfollowしている人のactivityを収集してくることができます。</p><h2>もっと他の情報を収集して通知する</h2><p>収集する対象や出力先は拡張できます。
-より具体的には<a href="https://github.com/hibariya/cline">Cline</a>のREADMEを参照してください。</p>]]></description><dc:date>2011-12-04</dc:date><link>http://hibariya.github.com/entries/20111204.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111109.html"><title>2011/11/09</title><description><![CDATA[<h1 id="a0">retter-0.1.3</h1><p><a href="https://github.com/hibariya/retter">1日おいてすぐのアップデートをしました</a>。</p><p>昨日言っていたDISQUSを簡単に導入できるようにしました。</p><h2>準備</h2><ol>
+</div>
+<p>と追記すると自分のfollowしている人のactivityを収集してくることができます。</p>
+<h2>もっと他の情報を収集して通知する</h2>
+<p>収集する対象や出力先は拡張できます。
+より具体的には<a href="https://github.com/hibariya/cline">Cline</a>のREADMEを参照してください。</p>]]></content:encoded><dc:date>2011-12-04</dc:date><link>http://hibariya.github.com/entries/20111204/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111109/a0.html"><title>retter-0.1.3</title><description>1日おいてすぐのアップデートをしました。
+昨日言っていたDISQUSを簡単に導入できるようにしました。
+準備
+
+DISQUSのアカウントをつくります
+ログインして、Retterで使うための新しいサイトをつくります
+
+インストール
+まずはRetterfileにdisqus_shortnameという設定を追記します。
+
+disqus_shortname 'your_disqus_shortname'
+...</description><content:encoded><![CDATA[<p><a href="https://github.com/hibariya/retter">1日おいてすぐのアップデートをしました</a>。</p>
+<p>昨日言っていたDISQUSを簡単に導入できるようにしました。</p>
+<h2>準備</h2>
+<ol>
 <li>DISQUSのアカウントをつくります</li>
 <li>ログインして、Retterで使うための新しいサイトをつくります</li>
 </ol>
-<h2>インストール</h2><p>まずはRetterfileに<code>disqus_shortname</code>という設定を追記します。</p><div class="highlight">
+<h2>インストール</h2>
+<p>まずはRetterfileに<code>disqus_shortname</code>という設定を追記します。</p>
+<div class="highlight">
 <pre><span class="n">disqus_shortname</span> <span class="s1">'your_disqus_shortname'</span>
 </pre>
-</div><p>あとは任意の箇所でヘルパメソッド<code>render_disqus_comment_form</code>を呼ぶだけです。</p><p>例えば<code>layouts/article.html.haml</code>などに。</p><div class="highlight">
+</div>
+<p>あとは任意の箇所でヘルパメソッド<code>render_disqus_comment_form</code>を呼ぶだけです。</p>
+<p>例えば<code>layouts/article.html.haml</code>などに。</p>
+<div class="highlight">
 <pre><span class="cp">-# 省略</span>
 <span class="nf">#comments</span><span class="p">=</span> <span class="n">render_disqus_comment_form</span>
 <span class="cp">-# 省略</span>
 </pre>
-</div>]]></description><dc:date>2011-11-09</dc:date><link>http://hibariya.github.com/entries/20111109.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111108.html"><title>2011/11/08</title><description><![CDATA[<h1 id="a0">静的なパーマリンクにコメントをつける</h1><p><a href="http://disqus.com/">DISQUS</a>というサービスがあって、ここで提供されるJSをHTMLに埋め込むことでコメントシステムを導入できるらしい。
-実験的にこのサイトにもつけてみた。</p><p>コメントをつけられるのは割と重要な要素だと思うので、デザイナさんの様子を伺いつつ<a href="https://github.com/hibariya/retter">retter</a>にも導入したい。
-そのときは設定ファイルにDISQUSの識別子を記述するだけで最低限の機能が提供できるようにしよう。</p><h1 id="a1">retter-0.1.2</h1><p><a href="https://rubygems.org/gems/retter">バージョンを上げた</a>。</p><ul>
+</div>]]></content:encoded><dc:date>2011-11-09</dc:date><link>http://hibariya.github.com/entries/20111109/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111108/a1.html"><title>retter-0.1.2</title><description>バージョンを上げた。
+
+テンプレートでエラーが起きたときに正しいファイル名と行数が出るようになった
+
+edit preview コマンドに渡す引数としてファイル名（today.mdとか）が使えるようになった
+スタイルの修正を少々
+
+次はコメントシステムを簡単に導入できるようにしておきたい。</description><content:encoded><![CDATA[<p><a href="https://rubygems.org/gems/retter">バージョンを上げた</a>。</p>
+<ul>
 <li>テンプレートでエラーが起きたときに正しいファイル名と行数が出るようになった</li>
 <li>
 <code>edit</code> <code>preview</code> コマンドに渡す引数としてファイル名（today.mdとか）が使えるようになった</li>
 <li>スタイルの修正を少々</li>
 </ul>
-<p>次はコメントシステムを簡単に導入できるようにしておきたい。</p>]]></description><dc:date>2011-11-08</dc:date><link>http://hibariya.github.com/entries/20111108.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111107.html"><title>2011/11/07</title><description><![CDATA[<h1 id="a0">RubyのProc#callをjavascriptの関数みたいに呼び出す（引数なし）</h1><div class="highlight">
+<p>次はコメントシステムを簡単に導入できるようにしておきたい。</p>]]></content:encoded><dc:date>2011-11-08</dc:date><link>http://hibariya.github.com/entries/20111108/a1.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111108/a0.html"><title>静的なパーマリンクにコメントをつける</title><description>DISQUSというサービスがあって、ここで提供されるJSをHTMLに埋め込むことでコメントシステムを導入できるらしい。
+実験的にこのサイトにもつけてみた。
+コメントをつけられるのは割と重要な要素だと思うので、デザイナさんの様子を伺いつつretterにも導入したい。
+そのときは設定ファイルにDISQUSの識別子を記述するだけで最低限の機能が提供できるようにしよう。
+</description><content:encoded><![CDATA[<p><a href="http://disqus.com/">DISQUS</a>というサービスがあって、ここで提供されるJSをHTMLに埋め込むことでコメントシステムを導入できるらしい。
+実験的にこのサイトにもつけてみた。</p>
+<p>コメントをつけられるのは割と重要な要素だと思うので、デザイナさんの様子を伺いつつ<a href="https://github.com/hibariya/retter">retter</a>にも導入したい。
+そのときは設定ファイルにDISQUSの識別子を記述するだけで最低限の機能が提供できるようにしよう。</p>
+]]></content:encoded><dc:date>2011-11-08</dc:date><link>http://hibariya.github.com/entries/20111108/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111107/a0.html"><title>RubyのProc#callをjavascriptの関数みたいに呼び出す（引数なし）</title><description>
+  class Proc
+    alias_method :[], :call
+  end
+
+  a = -&amp;gt; { 'hi' }
+
+  a[] # =&amp;gt; "hi"
+
+
+ブラケットをパーレンに読み替えると何かそれっぽい。くだらない。
+2011/11/08 追記
+ursm先生に教えてもらったのだけど、作らなくても Proc#[] は既にありました。
+もしかしてくだらなくなかったのか。実...</description><content:encoded><![CDATA[<div class="highlight">
 <pre>  <span class="k">class</span> <span class="nc">Proc</span>
     <span class="n">alias_method</span> <span class="ss">:[]</span><span class="p">,</span> <span class="ss">:call</span>
   <span class="k">end</span>
@@ -412,18 +698,34 @@ cron的な何かで定期実行すればよいと思います。</p><div class="
 
   <span class="n">a</span><span class="o">[]</span> <span class="c1"># =&gt; "hi"</span>
 </pre>
-</div><p>ブラケットをパーレンに読み替えると何かそれっぽい。くだらない。</p><p><strong>2011/11/08 追記</strong></p><p>ursm先生に教えてもらったのだけど、作らなくても <code>Proc#[]</code> は既にありました。
-もしかしてくだらなくなかったのか。実際に使ってる事例（こう使うといいよ的な）とかあるのか気になる。</p>]]></description><dc:date>2011-11-07</dc:date><link>http://hibariya.github.com/entries/20111107.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111025.html"><title>2011/10/25</title><description><![CDATA[<h1 id="a0">Thorで簡単にコマンドラインアプリをつくる</h1><p><a href="https://github.com/wycats/thor">Thor</a>をご存知の方は多いと思いますが、<a href="https://github.com/hibariya/retter">Retter</a>を作るにあたってとても便利に使えたので、手短に紹介したいと思います。
-といってもだいたいは<a href="https://github.com/wycats/thor/wiki">Wiki</a>に書いてあることしか書けないんですが、何しろ英語ですし、さわりだけでも伝えられたらなと思います。</p><p>Thor（トール、ソアー？）は便利なコマンドラインツールで、これを使うとコマンドラインオプションのパーズやサブコマンドごとのhelpをつくるなどの面倒な作業を簡単にこなせ、手早くビルドツールや実行可能なコマンドを作成できます。
-特殊なDSLを使わずメソッドを定義することで処理を記述するため、テストしやすいという特徴もあります。</p><h2>より便利なRakeとして使う</h2><p>便利なRakeというのは主に引数とオプションの扱い方のことです。
-Rakeは今も現役で便利に使っているんですが、例えば引数を渡したいときは環境変数として渡さないといけなくて、 これが割と面倒なのでした。</p><p>こんなふうに。</p><div class="highlight">
+</div>
+<p>ブラケットをパーレンに読み替えると何かそれっぽい。くだらない。</p>
+<p><strong>2011/11/08 追記</strong></p>
+<p>ursm先生に教えてもらったのだけど、作らなくても <code>Proc#[]</code> は既にありました。
+もしかしてくだらなくなかったのか。実際に使ってる事例（こう使うといいよ的な）とかあるのか気になる。</p>]]></content:encoded><dc:date>2011-11-07</dc:date><link>http://hibariya.github.com/entries/20111107/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111025/a0.html"><title>Thorで簡単にコマンドラインアプリをつくる</title><description>Thorをご存知の方は多いと思いますが、Retterを作るにあたってとても便利に使えたので、手短に紹介したいと思います。
+といってもだいたいはWikiに書いてあることしか書けないんですが、何しろ英語ですし、さわりだけでも伝えられたらなと思います。
+Thor（トール、ソアー？）は便利なコマンドラインツールで、これを使うとコマンドラインオプションのパーズやサブコマンドごとのhelpをつくるなどの面倒な...</description><content:encoded><![CDATA[<p><a href="https://github.com/wycats/thor">Thor</a>をご存知の方は多いと思いますが、<a href="https://github.com/hibariya/retter">Retter</a>を作るにあたってとても便利に使えたので、手短に紹介したいと思います。
+といってもだいたいは<a href="https://github.com/wycats/thor/wiki">Wiki</a>に書いてあることしか書けないんですが、何しろ英語ですし、さわりだけでも伝えられたらなと思います。</p>
+<p>Thor（トール、ソアー？）は便利なコマンドラインツールで、これを使うとコマンドラインオプションのパーズやサブコマンドごとのhelpをつくるなどの面倒な作業を簡単にこなせ、手早くビルドツールや実行可能なコマンドを作成できます。
+特殊なDSLを使わずメソッドを定義することで処理を記述するため、テストしやすいという特徴もあります。</p>
+<h2>より便利なRakeとして使う</h2>
+<p>便利なRakeというのは主に引数とオプションの扱い方のことです。
+Rakeは今も現役で便利に使っているんですが、例えば引数を渡したいときは環境変数として渡さないといけなくて、 これが割と面倒なのでした。</p>
+<p>こんなふうに。</p>
+<div class="highlight">
 <pre>  $ TO=alice rake greeting:deliver
 </pre>
-</div><p>Thorだともう少し自然に書くことができるようになります。</p><h3>オプションを渡す</h3><div class="highlight">
+</div>
+<p>Thorだともう少し自然に書くことができるようになります。</p>
+<h3>オプションを渡す</h3>
+<div class="highlight">
 <pre>  $ thor greeting:deiver --to alice
 </pre>
-</div><p><code>TO=alice</code>をコマンドの後ろに<code>--to alice</code>と書けて少し見やすくなりました。</p><p>実際のタスクの書き方は以下のようになります。ファイル名は<code>greeting.thor</code>のように<code>クラス名.thor</code>とし、タスク名と同名のメソッドを定義します。
-タスクがひとつのメソッドとして定義されていると、テストがとても書きやすそうです。</p><div class="highlight">
+</div>
+<p><code>TO=alice</code>をコマンドの後ろに<code>--to alice</code>と書けて少し見やすくなりました。</p>
+<p>実際のタスクの書き方は以下のようになります。ファイル名は<code>greeting.thor</code>のように<code>クラス名.thor</code>とし、タスク名と同名のメソッドを定義します。
+タスクがひとつのメソッドとして定義されていると、テストがとても書きやすそうです。</p>
+<div class="highlight">
 <pre>  <span class="k">class</span> <span class="nc">Greeting</span> <span class="o">&lt;</span> <span class="no">Thor</span>
     <span class="n">desc</span> <span class="s1">'deliver'</span><span class="p">,</span> <span class="s1">'deliver greeting message'</span> <span class="c1"># タスクの説明</span>
     <span class="n">method_options</span> <span class="n">to</span><span class="p">:</span> <span class="ss">:string</span>                 <span class="c1"># 直後に定義するタスクのオプション</span>
@@ -432,11 +734,17 @@ Rakeは今も現役で便利に使っているんですが、例えば引数を�
     <span class="k">end</span>
   <span class="k">end</span>
 </pre>
-</div><p>method_options には、オプション名をキーにしたハッシュを渡すことができます。要素には型を表すシンボルを指定します。
-渡されたオプションは<code>options[:option_name]</code>のようにアクセスすることができます。</p><h3>引数を渡す</h3><div class="highlight">
+</div>
+<p>method_options には、オプション名をキーにしたハッシュを渡すことができます。要素には型を表すシンボルを指定します。
+渡されたオプションは<code>options[:option_name]</code>のようにアクセスすることができます。</p>
+<h3>引数を渡す</h3>
+<div class="highlight">
 <pre>  $ thor greeting:deliver alice
 </pre>
-</div><p>というふうに書けるようにもなります。</p><p>コマンドの引数は、以下のようにメソッドの引数で受け取ることができます。</p><div class="highlight">
+</div>
+<p>というふうに書けるようにもなります。</p>
+<p>コマンドの引数は、以下のようにメソッドの引数で受け取ることができます。</p>
+<div class="highlight">
 <pre>  <span class="k">class</span> <span class="nc">Greeting</span> <span class="o">&lt;</span> <span class="no">Thor</span>
     <span class="n">desc</span> <span class="s1">'deliver'</span><span class="p">,</span> <span class="s1">'deliver greeting message'</span>
     <span class="k">def</span> <span class="nf">deliver</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
@@ -444,13 +752,20 @@ Rakeは今も現役で便利に使っているんですが、例えば引数を�
     <span class="k">end</span>
   <span class="k">end</span>
 </pre>
-</div><p>便利ですね。</p><p>そういえば<code>--help</code>をつけると、タスクの一覧を表示できます。<code>rake -T</code>相当のあれです。</p><div class="highlight">
+</div>
+<p>便利ですね。</p>
+<p>そういえば<code>--help</code>をつけると、タスクの一覧を表示できます。<code>rake -T</code>相当のあれです。</p>
+<div class="highlight">
 <pre>  $ thor greeting --help
   Tasks:
     thor greeting:deliver      # deliver greeting message
     thor greeting:help [TASK]  # Describe available tasks or one specific task
 </pre>
-</div><p>今更ですが、今回のサンプルコードのGreetingは割と適当なプロダクトなので、目的に応じて適宜読み替えてください。</p><h2>独立したコマンドとして使う</h2><p>Rakeのような使い方ではなく、単体で実行可能なコマンドをつくることもできます。</p><div class="highlight">
+</div>
+<p>今更ですが、今回のサンプルコードのGreetingは割と適当なプロダクトなので、目的に応じて適宜読み替えてください。</p>
+<h2>独立したコマンドとして使う</h2>
+<p>Rakeのような使い方ではなく、単体で実行可能なコマンドをつくることもできます。</p>
+<div class="highlight">
 <pre>  <span class="c1">#!/usr/bin/env ruby</span>
   <span class="c1"># coding: utf-8</span>
 
@@ -465,12 +780,18 @@ Rakeは今も現役で便利に使っているんですが、例えば引数を�
 
   <span class="no">Greeting</span><span class="o">.</span><span class="n">start</span>
 </pre>
-</div><p>Thorを継承したクラスの書き方は、先程と同じです。このファイルを実行することになるのでshebangやthorのrequireが必要です。
-これを<code>greeting</code>とか適当な名前のファイルにして、実行属性をつければ独立したコマンドになります。ポイントは<code>Greeting.start</code>です。</p><div class="highlight">
+</div>
+<p>Thorを継承したクラスの書き方は、先程と同じです。このファイルを実行することになるのでshebangやthorのrequireが必要です。
+これを<code>greeting</code>とか適当な名前のファイルにして、実行属性をつければ独立したコマンドになります。ポイントは<code>Greeting.start</code>です。</p>
+<div class="highlight">
 <pre>  $ chmod +x greeting
   $ ./greeting deiver alice
 </pre>
-</div><p>もちろんさきほどの<code>--help</code>も使えます。ヘルプが出ると一気にちゃんとしたコマンドっぽくなりますね。</p><h2>Railsのジェネレータのように使う</h2><p>Thor::Actionsで提供されている便利なメソッドたちを使うことで、Railsでよくみるファイルの自動生成と全く同じようなものがthorで簡単に実装できます。<code>rails new</code>したときのあれです。</p><div class="highlight">
+</div>
+<p>もちろんさきほどの<code>--help</code>も使えます。ヘルプが出ると一気にちゃんとしたコマンドっぽくなりますね。</p>
+<h2>Railsのジェネレータのように使う</h2>
+<p>Thor::Actionsで提供されている便利なメソッドたちを使うことで、Railsでよくみるファイルの自動生成と全く同じようなものがthorで簡単に実装できます。<code>rails new</code>したときのあれです。</p>
+<div class="highlight">
 <pre>  <span class="c1">#!/usr/bin/env ruby</span>
   <span class="c1"># coding: utf-8</span>
 
@@ -503,76 +824,39 @@ Rakeは今も現役で便利に使っているんですが、例えば引数を�
 
   <span class="no">Newgreeting</span><span class="o">.</span><span class="n">start</span>
 </pre>
-</div><p><code>Thor::Group</code>を継承した場合は、<code>Thor</code>を継承したときとは違い、そのクラス全体がひとつのタスクとして扱われます。
+</div>
+<p><code>Thor::Group</code>を継承した場合は、<code>Thor</code>を継承したときとは違い、そのクラス全体がひとつのタスクとして扱われます。
 タスク<code>newgreeting</code>が呼ばれたとき（↑のコマンドが実行されたとき）、クラスに定義したインスタンスメソッドが定義された順番に実行されるようになります。
-↑の場合は<code>create_templates</code>, <code>create_readme</code>, <code>complete_message</code> の順で実行されることになります。</p><p><code>argument :name</code>は引数です。この引数にはインスタンスメソッドから<code>name</code>で参照することができます。</p><p><code>template</code>や<code>copy_file</code>は<code>Thor::Actions</code>からincludeしたメソッドで、これがファイルジェネレータの役割を果たします。
+↑の場合は<code>create_templates</code>, <code>create_readme</code>, <code>complete_message</code> の順で実行されることになります。</p>
+<p><code>argument :name</code>は引数です。この引数にはインスタンスメソッドから<code>name</code>で参照することができます。</p>
+<p><code>template</code>や<code>copy_file</code>は<code>Thor::Actions</code>からincludeしたメソッドで、これがファイルジェネレータの役割を果たします。
 <code>template</code>はコピー元とコピー先のふたつの引数をとり、コピー元のファイルはERBとして評価されます。
-<code>copy_file</code>は単純にファイルをコピーします。</p><p><code>Newgreeting.source_root</code>には、<code>Thor::Actions#templates</code>や<code>Thor::Actions#copy_file</code>などのコピー元のファイルのベースとなるディレクトリ名を指定しています。</p><p>このコマンドを実行するとこんな感じになります。</p><div class="highlight">
+<code>copy_file</code>は単純にファイルをコピーします。</p>
+<p><code>Newgreeting.source_root</code>には、<code>Thor::Actions#templates</code>や<code>Thor::Actions#copy_file</code>などのコピー元のファイルのベースとなるディレクトリ名を指定しています。</p>
+<p>このコマンドを実行するとこんな感じになります。</p>
+<div class="highlight">
 <pre>  $ ./newgreeting foo
         create  foo/title.txt
         create  foo/body.txt
         create  foo/README
   greeting templates created.
 </pre>
-</div><p>ちなみに、<code>Newgreeting#complete_message</code>でさり気なく<code>:green</code>とか書いていますが、これで緑色の文字が標準出力に表示されます。手軽に色をつけられるのは便利です。</p><h3>コンフリクト時の動作</h3><p>このコマンドがファイルを生成するとき、すでに同名のファイルがある場合の動きはこんな感じになります。</p><div class="highlight">
+</div>
+<p>ちなみに、<code>Newgreeting#complete_message</code>でさり気なく<code>:green</code>とか書いていますが、これで緑色の文字が標準出力に表示されます。手軽に色をつけられるのは便利です。</p>
+<h3>コンフリクト時の動作</h3>
+<p>このコマンドがファイルを生成するとき、すでに同名のファイルがある場合の動きはこんな感じになります。</p>
+<div class="highlight">
 <pre>  $ ./newgreeting foo
         create  foo/title.txt
      identical  foo/body.txt  # 同名で同じ内容
       conflict  foo/README    # 同名で違う内容
   Overwrite /path/to/foo/README? (enter "h" for help) [Ynaqdh]
 </pre>
-</div><p>identicalは既に同名のファイルがあるけど内容が同じなのでスキップされます。conflictは内容が違うから上書きするかどうかを訊いてきています。
-conflictしたときは差分を表示したりはできますが、マージはできないみたいですね。それにしても、ここまでの機能を数行で記述できてしまうthorは大変魅力的に見えるのではないでしょうか。</p><h2>さらに多くの情報</h2><p>よく使いそうな機能を中心にざっくりと紹介してみましたが、他にも便利で魅力的な機能がたくさんあります。
-より詳しくは<a href="https://github.com/wycats/thor">thor</a>とか<code>bundle open thor</code>などで。</p><h2>謝辞</h2><p>けっこう前にThorのことを教えてくれた<a href="http://ursm.jp">ursm</a>先生。</p>]]></description><dc:date>2011-10-25</dc:date><link>http://hibariya.github.com/entries/20111025.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111022.html"><title>2011/10/22</title><description><![CDATA[<h1 id="a0">最近のRetterへの機能追加</h1><p>大きく分けて4つくらいの追加修正をしています。</p><ul>
-<li>相対的な日時の指定ができるようになった</li>
-<li>これまでに書いた記事の一覧を見られるコマンドを追加した</li>
-<li>ページング機能を強化できるようにした</li>
-<li>細かいバグ修正と、組込みデザインの細かい修正</li>
-</ul>
-<h2>相対的な日時の指定ができるようになった</h2><div class="highlight">
-<pre>  retter edit yesterday    # 昨日
-  retter edit today        # 今日
-  retter edit tommorow     # 明日
-
-  retter edit '3 days ago' # 3日前
-  retter edit 3.days.ago   # 3日前
-  retter edit 3.days.since # 3日後
-  retter edit 1.week.ago   # 1週間前
-  retter edit 3.weeks.ago  # 3週間前
-  retter edit 3.months.ago # 3カ月前
-  retter edit 3.years.ago  # 3年前
-</pre>
-</div><h2>これまでに書いた記事の一覧を見られるコマンドを追加した</h2><div class="highlight">
-<pre>  retter list
-  [e0] 2011-10-12
-    記事ごとにPermlinkがつくようにした, retter 0.1.0
-
-  [e1] 2011-10-10
-    Rubyのトップレベルについて整理する
-
-  [e2] 2011-10-03
-    モジュール関数がprivateな理由
-
-  [e3] 2011-09-19
-    スタイルシートを追加してテーマを変えられるようにした
-</pre>
-</div><h2>ページング機能を強化できるようにした</h2><p>HAMLテンプレート内の<code>entry</code>や<code>article</code>にページングのためのいくつかのメソッドを追加しました。
-これでページングをし易くなったり、 Autopagerize などへの対応ができるようになりました。</p><div class="highlight">
-<pre>%nav
-  .prev
-    - if prev_entry = entry.prev
-      %link{href: entry_path(prev_entry), rel: :prev}
-
-  .next
-    - if next_entry = entry.next
-      %link{href: entry_path(next_entry), rel: :next}
-</pre>
-</div><h2>細かいバグ修正と、組込みデザインの細かい修正</h2><ul>
-<li>
-<code>retter -h</code> でヘルプが表示できない不具合を修正</li>
-<li>日付の表現方法を <code>2011/01/01</code> 形式から <code>2011-01-01</code> 形式に変更</li>
-<li>リンクやリストを見やすくなるよう修正</li>
-<li>ヘルパメソッドへの機能追加、テンプレートの簡略化</li>
-</ul>
-<h1 id="a1">retter-0.1.1</h1><p><a href="http://hibariya.github.com/entries/20111022/a0.html">最近のRetterへの機能追加</a>の変更を version 0.1.1 として公開しました。</p>]]></description><dc:date>2011-10-22</dc:date><link>http://hibariya.github.com/entries/20111022.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111012.html"><title>2011/10/12</title><description><![CDATA[<h1 id="a0">記事ごとにPermlinkがつくようにした</h1><p><a href="https://github.com/hibariya/retter">retter</a> はh1をひとつの記事の区切りとして使ってるんですが、Permlinkは日付ごとにしか割り当てられておらず、あるとすればURLのフラグメントくらいでした。
-でも記事にPermlinkが無いのはとっても使いづらいということが実際に書いてみての率直な感想でした。SBMに登録しずらかったり、特定の記事をURLで指定するのが面倒だったり散々でした。</p><p>そこで<a href="https://github.com/hibariya/retter/compare/ef7b62c6da5e39d837db21362aa3f96896c37aed%5E...entry_permlink">このブランチ</a>で記事ごとにリンクがつくようにしてみました。</p><h1 id="a1">test</h1><p>fart</p><h1 id="a2">retter 0.1.0</h1><p><a href="http://hibariya.github.com/entries/20111012/a0.html">記事ごとにPermlinkがつくようにした</a>やつをマージしてバージョンを上げました。</p>]]></description><dc:date>2011-10-12</dc:date><link>http://hibariya.github.com/entries/20111012.html</link><author>hibariya</author></item></rdf:RDF>
+</div>
+<p>identicalは既に同名のファイルがあるけど内容が同じなのでスキップされます。conflictは内容が違うから上書きするかどうかを訊いてきています。
+conflictしたときは差分を表示したりはできますが、マージはできないみたいですね。それにしても、ここまでの機能を数行で記述できてしまうthorは大変魅力的に見えるのではないでしょうか。</p>
+<h2>さらに多くの情報</h2>
+<p>よく使いそうな機能を中心にざっくりと紹介してみましたが、他にも便利で魅力的な機能がたくさんあります。
+より詳しくは<a href="https://github.com/wycats/thor">thor</a>とか<code>bundle open thor</code>などで。</p>
+<h2>謝辞</h2>
+<p>けっこう前にThorのことを教えてくれた<a href="http://ursm.jp">ursm</a>先生。</p>]]></content:encoded><dc:date>2011-10-25</dc:date><link>http://hibariya.github.com/entries/20111025/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111022/a1.html"><title>retter-0.1.1</title><description>最近のRetterへの機能追加の変更を version 0.1.1 として公開しました。</description><content:encoded><![CDATA[<p><a href="http://hibariya.github.com/entries/20111022/a0.html">最近のRetterへの機能追加</a>の変更を version 0.1.1 として公開しました。</p>]]></content:encoded><dc:date>2011-10-22</dc:date><link>http://hibariya.github.com/entries/20111022/a1.html</link><author>hibariya</author></item></rdf:RDF>
