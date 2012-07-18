@@ -5,7 +5,7 @@ url         'http://hibariya.github.com/'
 title       'Joy Luck Crab'
 description 'hibariya.github.com'
 author      'hibariya'
-renderer    Renderers::PygmentsRenderer
+renderer    Retter::Markdown::PygmentsRenderer
 
 disqus_shortname 'joyluckcrab'
 
