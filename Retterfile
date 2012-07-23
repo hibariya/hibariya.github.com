@@ -10,7 +10,7 @@ renderer    Retter::Markdown::PygmentsRenderer
 disqus_shortname 'joyluckcrab'
 
 after :edit do
-  Retter.reset!
+  Retter::Site.reset!
   ident = ARGV.pop
   preview ident if yes?("Preview now? [yes/no]")
 end

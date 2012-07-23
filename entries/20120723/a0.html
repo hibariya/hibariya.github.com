@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>静的なパーマリンクにコメントをつける - Joy Luck Crab</title>
+<title>簡単に Ruby のリファレンス・マニュアルを開く ruremai をつくった - Joy Luck Crab</title>
 <meta content="hibariya" name="author">
 <link href="../../favicon.png" rel="icon" type="image/png">
 <link href="../../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
@@ -32,16 +32,20 @@
 </ul></nav></header><div id="page">
 <div id="content">
 <article class="article autopagerize_page_element"><h1 class="date">
-<a href="../../entries/20111108.html">2011-11-08</a>
+<a href="../../entries/20120723.html">2012-07-23</a>
 </h1>
 <h1 id="a0">
-<a href="../../entries/20111108/a0.html">静的なパーマリンクにコメントをつける</a>
+<a href="../../entries/20120723/a0.html">簡単に Ruby のリファレンス・マニュアルを開く ruremai をつくった</a>
 </h1>
-<p><a href="http://disqus.com/">DISQUS</a>というサービスがあって、ここで提供されるJSをHTMLに埋め込むことでコメントシステムを導入できるらしい。
-実験的にこのサイトにもつけてみた。</p>
-<p>コメントをつけられるのは割と重要な要素だと思うので、デザイナさんの様子を伺いつつ<a href="https://github.com/hibariya/retter">retter</a>にも導入したい。
-そのときは設定ファイルにDISQUSの識別子を記述するだけで最低限の機能が提供できるようにしよう。</p>
-
+<p>Ruby リファレンスマニュアル、通称るりまを開くのが日頃から割と面倒だったので、irb からさっと開けるようなものを作った。</p>
+<p><a href="https://github.com/hibariya/ruremai">ruremai</a></p>
+<p>require すると Method#rurema! が追加される。これを呼び出すと、るりまの該当メソッドのページをブラウザで開く。</p>
+<div class="highlight">
+<pre>  <span class="no">Object</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="ss">:name</span><span class="p">)</span><span class="o">.</span><span class="n">rurema!</span>
+</pre>
+</div>
+<p>APIDock とかも見るようにできるといいのかな。</p>
+<p><code>~/.irbrc</code> あたりで <code>require 'ruremai'</code> しておくとよさそう。勉強などのお供に。</p>
 </article><div id="comments">
 <div id="disqus_thread">
   <script type="text/javascript">
@@ -58,10 +62,9 @@
 </div>
 <div class="nav">
 <div class="prev">
-<link href="../../entries/20111109/a0.html" rel="prev">
 </div>
 <div class="next">
-<link href="../../entries/20111108/a1.html" rel="next">
+<link href="../../entries/20120602/a0.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>

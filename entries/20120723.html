@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>2012-03-28 - Joy Luck Crab</title>
+<title>2012-07-23 - Joy Luck Crab</title>
 <meta content="hibariya" name="author">
 <link href="../favicon.png" rel="icon" type="image/png">
 <link href="../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
@@ -32,20 +32,25 @@
 </ul></nav></header><div id="page">
 <div id="content">
 <article class="article autopagerize_page_element"><h1 class="date">
-<a href="../entries/20120328.html">2012-03-28</a>
+<a href="../entries/20120723.html">2012-07-23</a>
 </h1>
 <h1 id="a0">
-<a href="../entries/20120328/a0.html">記号がうまく入力できない</a>
+<a href="../entries/20120723/a0.html">簡単に Ruby のリファレンス・マニュアルを開く ruremai をつくった</a>
 </h1>
-<p>感覚でキーボードを使うという悪癖が抜けないので、特に苦手な記号の入力を克服するべくコンソールで練習するためのプログラムを書くことにした。</p>
-<p><a href="https://github.com/hibariya/kigou">kigou</a></p>
-<p>ついでに実装は男らしい感じのコードにしようと思ったけどあまりうまくいかなくて、ただの汚いコードになった。</p>
+<p>Ruby リファレンスマニュアル、通称るりまを開くのが日頃から割と面倒だったので、irb からさっと開けるようなものを作った。</p>
+<p><a href="https://github.com/hibariya/ruremai">ruremai</a></p>
+<p>require すると Method#rurema! が追加される。これを呼び出すと、るりまの該当メソッドのページをブラウザで開く。</p>
+<div class="highlight">
+<pre>  <span class="no">Object</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="ss">:name</span><span class="p">)</span><span class="o">.</span><span class="n">rurema!</span>
+</pre>
+</div>
+<p>APIDock とかも見るようにできるといいのかな。</p>
+<p><code>~/.irbrc</code> あたりで <code>require 'ruremai'</code> しておくとよさそう。勉強などのお供に。</p>
 </article><div class="nav">
 <div class="prev">
-<link href="../entries/20120329.html" rel="prev">
 </div>
 <div class="next">
-<link href="../entries/20120326.html" rel="next">
+<link href="../entries/20120602.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
