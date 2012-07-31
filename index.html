@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Joy Luck Crab</title>
+<meta charset="utf-8" content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <meta content="hibariya" name="author">
 <link href="./favicon.png" rel="icon" type="image/png">
 <link href="./stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
@@ -33,6 +33,32 @@
 <div id="content">
 <div class="autopagerize_page_element" id="entries">
 <article class="article"><h1 class="date">
+<a href="./entries/20120731.html">2012-07-31</a>
+</h1>
+<h1 id="a0">
+<a href="./entries/20120731/a0.html">簡単に Ruby のリファレンス・マニュアルを開く ruremai を色々直した</a>
+</h1>
+<p>気がついたら色々な人から良い感じのパッチをもらったので取り込んで <a href="https://rubygems.org/gems/ruremai">0.0.3</a> をリリースしました。</p>
+<p><a href="https://github.com/hibariya/ruremai">Ruremai</a> はirbなどを使っている際に、メソッドのリファレンス・マニュアルをお手軽にブラウザで開くためのツールです。
+<code>require 'ruremai'</code> すると、Method#rurema! が追加されます。</p>
+<p>例えば、「何かそれっぽいメソッドが記憶の片隅にあるんだけど、使い方がイマイチ思い出せない」ようなときに便利。</p>
+<div class="highlight">
+<pre>hibariya@ ;-) irb
+&gt;&gt; require 'ruremai'
+=&gt; false
+&gt;&gt; ary = %w(alice bob carol)
+=&gt; ["alice", "bob", "carol"]
+&gt;&gt; ary.method(:any?).rurema! # ここで唐突にブラウザが開く!
+</pre>
+</div>
+<p>今回はいくつかの修正や機能追加があったのでした。</p>
+<ul>
+<li><a href="https://github.com/hibariya/ruremai/pull/1">ショートカット Object#mean? の追加</a></li>
+<li><a href="https://github.com/hibariya/ruremai/pull/2">大文字を含むメソッド名に対応できていなかったバグの修正</a></li>
+<li><a href="https://github.com/hibariya/ruremai/pull/4">名前空間や特定のメソッドに対応できていなかったバグの修正と高速化</a></li>
+</ul>
+<p>自分では気づかないようなバグへのパッチとか、あったら良さそうな機能がどんどん送られくる GitHub とっても便利。</p>
+</article><article class="article"><h1 class="date">
 <a href="./entries/20120723.html">2012-07-23</a>
 </h1>
 <h1 id="a0">
@@ -123,24 +149,9 @@ invalidなメッセージは保存されなくなります。
 </pre>
 </div>
 <p>とか。</p>
-</article><article class="article"><h1 class="date">
-<a href="./entries/20120329.html">2012-03-29</a>
-</h1>
-<h1 id="a0">
-<a href="./entries/20120329/a0.html">所在の分からないWARNINGが出力されるときのこと</a>
-</h1>
-<p>Railsを使ってるときとかにActiveSupport::MemoizableがDEPRECATEDだとかそんなWARNINGっぽいメッセージがどこからともなく出てくるときのこと。</p>
-<p>ひとまずraiseする。IOで出力する系のメソッドたちはだいたい最後にwriteを呼ぶ筈なので、writeを上書きしてる。</p>
-<div class="highlight">
-<pre><span class="k">def</span> <span class="nc">STDERR</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">raise</span> <span class="k">end</span>
-</pre>
-</div>
-<p>Railsだと<code>config/application.rb</code>の頭あたりに書いておく。</p>
-<p>起動してstacktraceを見ればどのgemが問題かだいたい分かるので<code>bundle update [gem name]</code>で問題のgemをupdateしてみると直っていたりする。
-最新でも直ってなかったら自分で直してpull requestを送ったりする。</p>
 </article><div class="nav">
 <div class="next">
-<link href="./entries/20120328.html" rel="next">
+<link href="./entries/20120329.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
@@ -153,6 +164,9 @@ invalidなメッセージは保存されなくなります。
 <h3>Recent entries</h3>
 <div class="recent-entries">
 <ul>
+<li>
+<a href="./entries/20120731/a0.html">簡単に Ruby のリファレンス・マニュアルを開く ruremai を色々直した</a>
+</li>
 <li>
 <a href="./entries/20120723/a0.html">簡単に Ruby のリファレンス・マニュアルを開く ruremai をつくった</a>
 </li>
@@ -167,9 +181,6 @@ invalidなメッセージは保存されなくなります。
 </li>
 <li>
 <a href="./entries/20120329/a0.html">所在の分からないWARNINGが出力されるときのこと</a>
-</li>
-<li>
-<a href="./entries/20120328/a0.html">記号がうまく入力できない</a>
 </li>
 </ul>
 <div class="archives">

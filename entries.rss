@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="xmlns:content=&quot;http://purl.org/rss/1.0/modules/content/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2012-07-23</dc:date><description>hibariya.github.com</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20120723/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120602/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120505/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120411/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120329/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120328/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120326/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a1.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120323/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120321/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120317/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120313/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120101/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111208/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111204/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111109/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111108/a1.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111108/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111107/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111025/a0.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20120723/a0.html"><title>簡単に Ruby のリファレンス・マニュアルを開く ruremai をつくった</title><description>Ruby リファレンスマニュアル、通称るりまを開くのが日頃から割と面倒だったので、irb からさっと開けるようなものを作った。
+<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="xmlns:content=&quot;http://purl.org/rss/1.0/modules/content/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2012-07-31</dc:date><description>hibariya.github.com</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20120731/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120723/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120602/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120505/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120411/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120329/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120328/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120326/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a1.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120323/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120321/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120317/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120313/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120101/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111208/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111204/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111109/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111108/a1.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111108/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111107/a0.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20120731/a0.html"><title>簡単に Ruby のリファレンス・マニュアルを開く ruremai を色々直した</title><description>気がついたら色々な人から良い感じのパッチをもらったので取り込んで 0.0.3 をリリースしました。
+Ruremai はirbなどを使っている際に、メソッドのリファレンス・マニュアルをお手軽にブラウザで開くためのツールです。
+require 'ruremai' すると、Method#rurema! が追加されます。
+例えば、「何かそれっぽいメソッドが記憶の片隅にあるんだけど、使い方がイマイチ思い出せ...</description><content:encoded><![CDATA[<p>気がついたら色々な人から良い感じのパッチをもらったので取り込んで <a href="https://rubygems.org/gems/ruremai">0.0.3</a> をリリースしました。</p>
+<p><a href="https://github.com/hibariya/ruremai">Ruremai</a> はirbなどを使っている際に、メソッドのリファレンス・マニュアルをお手軽にブラウザで開くためのツールです。
+<code>require 'ruremai'</code> すると、Method#rurema! が追加されます。</p>
+<p>例えば、「何かそれっぽいメソッドが記憶の片隅にあるんだけど、使い方がイマイチ思い出せない」ようなときに便利。</p>
+<div class="highlight">
+<pre>hibariya@ ;-) irb
+&gt;&gt; require 'ruremai'
+=&gt; false
+&gt;&gt; ary = %w(alice bob carol)
+=&gt; ["alice", "bob", "carol"]
+&gt;&gt; ary.method(:any?).rurema! # ここで唐突にブラウザが開く!
+</pre>
+</div>
+<p>今回はいくつかの修正や機能追加があったのでした。</p>
+<ul>
+<li><a href="https://github.com/hibariya/ruremai/pull/1">ショートカット Object#mean? の追加</a></li>
+<li><a href="https://github.com/hibariya/ruremai/pull/2">大文字を含むメソッド名に対応できていなかったバグの修正</a></li>
+<li><a href="https://github.com/hibariya/ruremai/pull/4">名前空間や特定のメソッドに対応できていなかったバグの修正と高速化</a></li>
+</ul>
+<p>自分では気づかないようなバグへのパッチとか、あったら良さそうな機能がどんどん送られくる GitHub とっても便利。</p>]]></content:encoded><dc:date>2012-07-31</dc:date><link>http://hibariya.github.com/entries/20120731/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120723/a0.html"><title>簡単に Ruby のリファレンス・マニュアルを開く ruremai をつくった</title><description>Ruby リファレンスマニュアル、通称るりまを開くのが日頃から割と面倒だったので、irb からさっと開けるようなものを作った。
 ruremai
 require すると Method#rurema! が追加される。これを呼び出すと、るりまの該当メソッドのページをブラウザで開く。
 
@@ -718,161 +740,4 @@ ursm先生に教えてもらったのだけど、作らなくても Proc#[] は�
 <p>ブラケットをパーレンに読み替えると何かそれっぽい。くだらない。</p>
 <p><strong>2011/11/08 追記</strong></p>
 <p>ursm先生に教えてもらったのだけど、作らなくても <code>Proc#[]</code> は既にありました。
-もしかしてくだらなくなかったのか。実際に使ってる事例（こう使うといいよ的な）とかあるのか気になる。</p>]]></content:encoded><dc:date>2011-11-07</dc:date><link>http://hibariya.github.com/entries/20111107/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111025/a0.html"><title>Thorで簡単にコマンドラインアプリをつくる</title><description>Thorをご存知の方は多いと思いますが、Retterを作るにあたってとても便利に使えたので、手短に紹介したいと思います。
-といってもだいたいはWikiに書いてあることしか書けないんですが、何しろ英語ですし、さわりだけでも伝えられたらなと思います。
-Thor（トール、ソアー？）は便利なコマンドラインツールで、これを使うとコマンドラインオプションのパーズやサブコマンドごとのhelpをつくるなどの面倒な...</description><content:encoded><![CDATA[<p><a href="https://github.com/wycats/thor">Thor</a>をご存知の方は多いと思いますが、<a href="https://github.com/hibariya/retter">Retter</a>を作るにあたってとても便利に使えたので、手短に紹介したいと思います。
-といってもだいたいは<a href="https://github.com/wycats/thor/wiki">Wiki</a>に書いてあることしか書けないんですが、何しろ英語ですし、さわりだけでも伝えられたらなと思います。</p>
-<p>Thor（トール、ソアー？）は便利なコマンドラインツールで、これを使うとコマンドラインオプションのパーズやサブコマンドごとのhelpをつくるなどの面倒な作業を簡単にこなせ、手早くビルドツールや実行可能なコマンドを作成できます。
-特殊なDSLを使わずメソッドを定義することで処理を記述するため、テストしやすいという特徴もあります。</p>
-<h2>より便利なRakeとして使う</h2>
-<p>便利なRakeというのは主に引数とオプションの扱い方のことです。
-Rakeは今も現役で便利に使っているんですが、例えば引数を渡したいときは環境変数として渡さないといけなくて、 これが割と面倒なのでした。</p>
-<p>こんなふうに。</p>
-<div class="highlight">
-<pre>  $ TO=alice rake greeting:deliver
-</pre>
-</div>
-<p>Thorだともう少し自然に書くことができるようになります。</p>
-<h3>オプションを渡す</h3>
-<div class="highlight">
-<pre>  $ thor greeting:deiver --to alice
-</pre>
-</div>
-<p><code>TO=alice</code>をコマンドの後ろに<code>--to alice</code>と書けて少し見やすくなりました。</p>
-<p>実際のタスクの書き方は以下のようになります。ファイル名は<code>greeting.thor</code>のように<code>クラス名.thor</code>とし、タスク名と同名のメソッドを定義します。
-タスクがひとつのメソッドとして定義されていると、テストがとても書きやすそうです。</p>
-<div class="highlight">
-<pre>  <span class="k">class</span> <span class="nc">Greeting</span> <span class="o">&lt;</span> <span class="no">Thor</span>
-    <span class="n">desc</span> <span class="s1">'deliver'</span><span class="p">,</span> <span class="s1">'deliver greeting message'</span> <span class="c1"># タスクの説明</span>
-    <span class="n">method_options</span> <span class="n">to</span><span class="p">:</span> <span class="ss">:string</span>                 <span class="c1"># 直後に定義するタスクのオプション</span>
-    <span class="k">def</span> <span class="nf">deliver</span>                                <span class="c1"># タスクの定義</span>
-      <span class="nb">puts</span> <span class="s2">"sending greeting to </span><span class="si">#{</span><span class="n">options</span><span class="o">[</span><span class="ss">:to</span><span class="o">]</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-</pre>
-</div>
-<p>method_options には、オプション名をキーにしたハッシュを渡すことができます。要素には型を表すシンボルを指定します。
-渡されたオプションは<code>options[:option_name]</code>のようにアクセスすることができます。</p>
-<h3>引数を渡す</h3>
-<div class="highlight">
-<pre>  $ thor greeting:deliver alice
-</pre>
-</div>
-<p>というふうに書けるようにもなります。</p>
-<p>コマンドの引数は、以下のようにメソッドの引数で受け取ることができます。</p>
-<div class="highlight">
-<pre>  <span class="k">class</span> <span class="nc">Greeting</span> <span class="o">&lt;</span> <span class="no">Thor</span>
-    <span class="n">desc</span> <span class="s1">'deliver'</span><span class="p">,</span> <span class="s1">'deliver greeting message'</span>
-    <span class="k">def</span> <span class="nf">deliver</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
-      <span class="nb">puts</span> <span class="s2">"sending greeting to </span><span class="si">#{</span><span class="n">to</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-</pre>
-</div>
-<p>便利ですね。</p>
-<p>そういえば<code>--help</code>をつけると、タスクの一覧を表示できます。<code>rake -T</code>相当のあれです。</p>
-<div class="highlight">
-<pre>  $ thor greeting --help
-  Tasks:
-    thor greeting:deliver      # deliver greeting message
-    thor greeting:help [TASK]  # Describe available tasks or one specific task
-</pre>
-</div>
-<p>今更ですが、今回のサンプルコードのGreetingは割と適当なプロダクトなので、目的に応じて適宜読み替えてください。</p>
-<h2>独立したコマンドとして使う</h2>
-<p>Rakeのような使い方ではなく、単体で実行可能なコマンドをつくることもできます。</p>
-<div class="highlight">
-<pre>  <span class="c1">#!/usr/bin/env ruby</span>
-  <span class="c1"># coding: utf-8</span>
-
-  <span class="nb">require</span> <span class="s1">'thor'</span>
-
-  <span class="k">class</span> <span class="nc">Greeting</span> <span class="o">&lt;</span> <span class="no">Thor</span>
-    <span class="n">desc</span> <span class="s1">'deliver'</span><span class="p">,</span> <span class="s1">'deliver greeting message'</span>
-    <span class="k">def</span> <span class="nf">deliver</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
-      <span class="nb">puts</span> <span class="s2">"sending greeting to </span><span class="si">#{</span><span class="n">to</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="no">Greeting</span><span class="o">.</span><span class="n">start</span>
-</pre>
-</div>
-<p>Thorを継承したクラスの書き方は、先程と同じです。このファイルを実行することになるのでshebangやthorのrequireが必要です。
-これを<code>greeting</code>とか適当な名前のファイルにして、実行属性をつければ独立したコマンドになります。ポイントは<code>Greeting.start</code>です。</p>
-<div class="highlight">
-<pre>  $ chmod +x greeting
-  $ ./greeting deiver alice
-</pre>
-</div>
-<p>もちろんさきほどの<code>--help</code>も使えます。ヘルプが出ると一気にちゃんとしたコマンドっぽくなりますね。</p>
-<h2>Railsのジェネレータのように使う</h2>
-<p>Thor::Actionsで提供されている便利なメソッドたちを使うことで、Railsでよくみるファイルの自動生成と全く同じようなものがthorで簡単に実装できます。<code>rails new</code>したときのあれです。</p>
-<div class="highlight">
-<pre>  <span class="c1">#!/usr/bin/env ruby</span>
-  <span class="c1"># coding: utf-8</span>
-
-  <span class="nb">require</span> <span class="s1">'thor'</span>
-  <span class="nb">require</span> <span class="s1">'thor/group'</span>
-
-  <span class="k">class</span> <span class="nc">Newgreeting</span> <span class="o">&lt;</span> <span class="no">Thor</span><span class="o">::</span><span class="no">Group</span>
-    <span class="kp">include</span> <span class="no">Thor</span><span class="o">::</span><span class="no">Actions</span>
-
-    <span class="n">argument</span> <span class="ss">:name</span>             <span class="c1"># タスク全体の引数</span>
-
-    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">source_root</span>       <span class="c1"># ファイルのコピー元のベースディレクトリ</span>
-      <span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="bp">__FILE__</span><span class="p">)</span>
-    <span class="k">end</span>
-
-    <span class="k">def</span> <span class="nf">create_templates</span>       <span class="c1"># 最初に実行される処理</span>
-      <span class="sx">%w(title.txt body.txt)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">fname</span><span class="o">|</span>
-        <span class="n">template</span> <span class="s2">"templates/</span><span class="si">#{</span><span class="n">fname</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">fname</span><span class="si">}</span><span class="s2">"</span>
-       <span class="k">end</span>
-    <span class="k">end</span>
-
-    <span class="k">def</span> <span class="nf">create_readme</span>          <span class="c1"># 次に実行される処理</span>
-      <span class="n">copy_file</span> <span class="s1">'templates/README'</span><span class="p">,</span> <span class="s2">"</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">/README"</span>
-    <span class="k">end</span>
-
-    <span class="k">def</span> <span class="nf">complete_message</span>       <span class="c1"># 最後に実行される処理</span>
-      <span class="n">say</span> <span class="s1">'greeting templates created.'</span><span class="p">,</span> <span class="ss">:green</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="no">Newgreeting</span><span class="o">.</span><span class="n">start</span>
-</pre>
-</div>
-<p><code>Thor::Group</code>を継承した場合は、<code>Thor</code>を継承したときとは違い、そのクラス全体がひとつのタスクとして扱われます。
-タスク<code>newgreeting</code>が呼ばれたとき（↑のコマンドが実行されたとき）、クラスに定義したインスタンスメソッドが定義された順番に実行されるようになります。
-↑の場合は<code>create_templates</code>, <code>create_readme</code>, <code>complete_message</code> の順で実行されることになります。</p>
-<p><code>argument :name</code>は引数です。この引数にはインスタンスメソッドから<code>name</code>で参照することができます。</p>
-<p><code>template</code>や<code>copy_file</code>は<code>Thor::Actions</code>からincludeしたメソッドで、これがファイルジェネレータの役割を果たします。
-<code>template</code>はコピー元とコピー先のふたつの引数をとり、コピー元のファイルはERBとして評価されます。
-<code>copy_file</code>は単純にファイルをコピーします。</p>
-<p><code>Newgreeting.source_root</code>には、<code>Thor::Actions#templates</code>や<code>Thor::Actions#copy_file</code>などのコピー元のファイルのベースとなるディレクトリ名を指定しています。</p>
-<p>このコマンドを実行するとこんな感じになります。</p>
-<div class="highlight">
-<pre>  $ ./newgreeting foo
-        create  foo/title.txt
-        create  foo/body.txt
-        create  foo/README
-  greeting templates created.
-</pre>
-</div>
-<p>ちなみに、<code>Newgreeting#complete_message</code>でさり気なく<code>:green</code>とか書いていますが、これで緑色の文字が標準出力に表示されます。手軽に色をつけられるのは便利です。</p>
-<h3>コンフリクト時の動作</h3>
-<p>このコマンドがファイルを生成するとき、すでに同名のファイルがある場合の動きはこんな感じになります。</p>
-<div class="highlight">
-<pre>  $ ./newgreeting foo
-        create  foo/title.txt
-     identical  foo/body.txt  # 同名で同じ内容
-      conflict  foo/README    # 同名で違う内容
-  Overwrite /path/to/foo/README? (enter "h" for help) [Ynaqdh]
-</pre>
-</div>
-<p>identicalは既に同名のファイルがあるけど内容が同じなのでスキップされます。conflictは内容が違うから上書きするかどうかを訊いてきています。
-conflictしたときは差分を表示したりはできますが、マージはできないみたいですね。それにしても、ここまでの機能を数行で記述できてしまうthorは大変魅力的に見えるのではないでしょうか。</p>
-<h2>さらに多くの情報</h2>
-<p>よく使いそうな機能を中心にざっくりと紹介してみましたが、他にも便利で魅力的な機能がたくさんあります。
-より詳しくは<a href="https://github.com/wycats/thor">thor</a>とか<code>bundle open thor</code>などで。</p>
-<h2>謝辞</h2>
-<p>けっこう前にThorのことを教えてくれた<a href="http://ursm.jp">ursm</a>先生。</p>]]></content:encoded><dc:date>2011-10-25</dc:date><link>http://hibariya.github.com/entries/20111025/a0.html</link><author>hibariya</author></item></rdf:RDF>
+もしかしてくだらなくなかったのか。実際に使ってる事例（こう使うといいよ的な）とかあるのか気になる。</p>]]></content:encoded><dc:date>2011-11-07</dc:date><link>http://hibariya.github.com/entries/20111107/a0.html</link><author>hibariya</author></item></rdf:RDF>
