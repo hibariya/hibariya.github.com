@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-<title>RubyのProc#callをjavascriptの関数みたいに呼び出す（引数なし） - Joy Luck Crab</title>
+<title>map が返す Enumerator のこと - Joy Luck Crab</title>
 <meta charset="utf-8" content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <meta content="hibariya" name="author">
 <link href="../../favicon.png" rel="icon" type="image/png">
@@ -32,25 +32,50 @@
 </ul></nav></header><div id="page">
 <div id="content">
 <article class="article autopagerize_page_element"><h1 class="date">
-<a href="../../entries/20111107.html">2011-11-07</a>
+<a href="../../entries/20120830.html">2012-08-30</a>
 </h1>
 <h1 id="a0">
-<a href="../../entries/20111107/a0.html">RubyのProc#callをjavascriptの関数みたいに呼び出す（引数なし）</a>
+<a href="../../entries/20120830/a0.html">map が返す Enumerator のこと</a>
 </h1>
+<p>Enumerable が提供する色々なメソッドは、受け取る筈のブロックが与えられなかった場合 Enumerator オブジェクトを返す。
+Enumerator オブジェクトは、<code>each.with_index.with_object</code>みたいに each にブロックを渡さずに使うとかいうのにたまに使う。
+あとは、外部イテレータのために使ったり、each 以外のメソッドを使って Enumerable のメソッドを使ったりするのに使える。</p>
+<p>each 以外の繰り返しを行うメソッドも、ブロックを受け取らなかったときは Enumerator オブジェクトを返したりする。Enumerable#map とか。</p>
 <div class="highlight">
-<pre>  <span class="k">class</span> <span class="nc">Proc</span>
-    <span class="n">alias_method</span> <span class="ss">:[]</span><span class="p">,</span> <span class="ss">:call</span>
-  <span class="k">end</span>
-
-  <span class="n">a</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="s1">'hi'</span> <span class="p">}</span>
-
-  <span class="n">a</span><span class="o">[]</span> <span class="c1"># =&gt; "hi"</span>
+<pre><span class="sx">%w(a b c)</span><span class="o">.</span><span class="n">map</span> <span class="c1"># =&gt; #&lt;Enumerator: ["a", "b", "c"]:map&gt;</span>
 </pre>
 </div>
-<p>ブラケットをパーレンに読み替えると何かそれっぽい。くだらない。</p>
-<p><strong>2011/11/08 追記</strong></p>
-<p>ursm先生に教えてもらったのだけど、作らなくても <code>Proc#[]</code> は既にありました。
-もしかしてくだらなくなかったのか。実際に使ってる事例（こう使うといいよ的な）とかあるのか気になる。</p>
+<p>それを使う機会は今のところないし、どういう場面で嬉しいのかもよく知らない。
+使う場面は無くてもせめて使い方くらいは知っておきたいなあと思って Asakusa.rb で人に聞いたりソースに書かれたコメントを読んだりしたら何となく使い方が分かってきた。</p>
+<p>疑問はふたつあった。</p>
+<ul>
+<li>ブロックの戻り値にあたる値はどこにどうやって渡せばいいのか</li>
+<li>どうすればメソッドの戻り値を得られるのか</li>
+</ul>
+<p>それぞれ以下のような感じ。</p>
+<ul>
+<li>ブロックの戻り値（つまりyieldの戻り値になる値）は Enumerator#feed に渡す</li>
+<li>メソッドの戻り値は StopIteration#result から得られる</li>
+</ul>
+<p>もっとも、↓だけでは何だかありがたみが分からないけど。</p>
+<div class="highlight">
+<pre><span class="n">ary</span>  <span class="o">=</span> <span class="sx">%w(alice bob carol)</span>
+<span class="n">enum</span> <span class="o">=</span> <span class="n">ary</span><span class="o">.</span><span class="n">map</span>
+
+<span class="k">while</span> <span class="kp">true</span>
+  <span class="k">begin</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">enum</span><span class="o">.</span><span class="n">next</span> <span class="c1"># ブロック引数的なもの</span>
+
+    <span class="n">enum</span><span class="o">.</span><span class="n">feed</span> <span class="n">val</span><span class="o">.</span><span class="n">upcase</span> <span class="c1"># ブロックの戻り値的なもの</span>
+  <span class="k">rescue</span> <span class="no">StopIteration</span> <span class="o">=&gt;</span> <span class="n">e</span>
+    <span class="nb">p</span> <span class="n">e</span><span class="o">.</span><span class="n">result</span> <span class="c1"># ["ALICE", "BOB", "CAROL"] と表示</span>
+
+    <span class="k">break</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre>
+</div>
+<p>while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてループから脱出してくれたりする。</p>
 </article><div id="comments">
 <div id="disqus_thread">
   <script type="text/javascript">
@@ -67,10 +92,9 @@
 </div>
 <div class="nav">
 <div class="prev">
-<link href="../../entries/20111108/a1.html" rel="prev">
 </div>
 <div class="next">
-<link href="../../entries/20111025/a0.html" rel="next">
+<link href="../../entries/20120731/a0.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>

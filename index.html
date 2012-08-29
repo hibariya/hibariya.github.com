@@ -33,6 +33,51 @@
 <div id="content">
 <div class="autopagerize_page_element" id="entries">
 <article class="article"><h1 class="date">
+<a href="./entries/20120830.html">2012-08-30</a>
+</h1>
+<h1 id="a0">
+<a href="./entries/20120830/a0.html">map が返す Enumerator のこと</a>
+</h1>
+<p>Enumerable が提供する色々なメソッドは、受け取る筈のブロックが与えられなかった場合 Enumerator オブジェクトを返す。
+Enumerator オブジェクトは、<code>each.with_index.with_object</code>みたいに each にブロックを渡さずに使うとかいうのにたまに使う。
+あとは、外部イテレータのために使ったり、each 以外のメソッドを使って Enumerable のメソッドを使ったりするのに使える。</p>
+<p>each 以外の繰り返しを行うメソッドも、ブロックを受け取らなかったときは Enumerator オブジェクトを返したりする。Enumerable#map とか。</p>
+<div class="highlight">
+<pre><span class="sx">%w(a b c)</span><span class="o">.</span><span class="n">map</span> <span class="c1"># =&gt; #&lt;Enumerator: ["a", "b", "c"]:map&gt;</span>
+</pre>
+</div>
+<p>それを使う機会は今のところないし、どういう場面で嬉しいのかもよく知らない。
+使う場面は無くてもせめて使い方くらいは知っておきたいなあと思って Asakusa.rb で人に聞いたりソースに書かれたコメントを読んだりしたら何となく使い方が分かってきた。</p>
+<p>疑問はふたつあった。</p>
+<ul>
+<li>ブロックの戻り値にあたる値はどこにどうやって渡せばいいのか</li>
+<li>どうすればメソッドの戻り値を得られるのか</li>
+</ul>
+<p>それぞれ以下のような感じ。</p>
+<ul>
+<li>ブロックの戻り値（つまりyieldの戻り値になる値）は Enumerator#feed に渡す</li>
+<li>メソッドの戻り値は StopIteration#result から得られる</li>
+</ul>
+<p>もっとも、↓だけでは何だかありがたみが分からないけど。</p>
+<div class="highlight">
+<pre><span class="n">ary</span>  <span class="o">=</span> <span class="sx">%w(alice bob carol)</span>
+<span class="n">enum</span> <span class="o">=</span> <span class="n">ary</span><span class="o">.</span><span class="n">map</span>
+
+<span class="k">while</span> <span class="kp">true</span>
+  <span class="k">begin</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">enum</span><span class="o">.</span><span class="n">next</span> <span class="c1"># ブロック引数的なもの</span>
+
+    <span class="n">enum</span><span class="o">.</span><span class="n">feed</span> <span class="n">val</span><span class="o">.</span><span class="n">upcase</span> <span class="c1"># ブロックの戻り値的なもの</span>
+  <span class="k">rescue</span> <span class="no">StopIteration</span> <span class="o">=&gt;</span> <span class="n">e</span>
+    <span class="nb">p</span> <span class="n">e</span><span class="o">.</span><span class="n">result</span> <span class="c1"># ["ALICE", "BOB", "CAROL"] と表示</span>
+
+    <span class="k">break</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre>
+</div>
+<p>while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてループから脱出してくれたりする。</p>
+</article><article class="article"><h1 class="date">
 <a href="./entries/20120731.html">2012-07-31</a>
 </h1>
 <h1 id="a0">
@@ -130,28 +175,9 @@ invalidなメッセージは保存されなくなります。
 </div>
 <p>クラスを再オープンしているのだけど、もうちょっとスマートなAPIを用意したいなと思っているところ。
 ちなみに<a href="https://github.com/hibariya/hiwai">hiwai</a>はレシーバがひわいかどうかを確認するためのライブラリです。</p>
-</article><article class="article"><h1 class="date">
-<a href="./entries/20120411.html">2012-04-11</a>
-</h1>
-<h1 id="a0">
-<a href="./entries/20120411/a0.html">標準添付ライブラリもエディタで開けるreditorを作った</a>
-</h1>
-<p>Rubyには<code>bundle open</code>やgemeditの<code>gem edit</code>みたいに、gemを自分のエディタで簡単に開くための方法があるのだけど、たまに標準添付ライブラリも開きたいことがあるのだった。
-そこで<a href="https://rubygems.org/gems/reditor">reditor</a>というgemを作ってみた。</p>
-<p>インストールすると<code>reditor</code>コマンドが使えるようになって、開きたいライブラリの名前を渡すと$LOAD_PATHやrubygemsの中からそれっぽいものを見つけてエディタで開いてくれる。</p>
-<div class="highlight">
-<pre>  $ reditor csv
-</pre>
-</div>
-<p>とか。</p>
-<div class="highlight">
-<pre>  $ reditor faraday
-</pre>
-</div>
-<p>とか。</p>
 </article><div class="nav">
 <div class="next">
-<link href="./entries/20120329.html" rel="next">
+<link href="./entries/20120411.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
@@ -164,6 +190,9 @@ invalidなメッセージは保存されなくなります。
 <h3>Recent entries</h3>
 <div class="recent-entries">
 <ul>
+<li>
+<a href="./entries/20120830/a0.html">map が返す Enumerator のこと</a>
+</li>
 <li>
 <a href="./entries/20120731/a0.html">簡単に Ruby のリファレンス・マニュアルを開く ruremai を色々直した</a>
 </li>
@@ -178,9 +207,6 @@ invalidなメッセージは保存されなくなります。
 </li>
 <li>
 <a href="./entries/20120411/a0.html">標準添付ライブラリもエディタで開けるreditorを作った</a>
-</li>
-<li>
-<a href="./entries/20120329/a0.html">所在の分からないWARNINGが出力されるときのこと</a>
 </li>
 </ul>
 <div class="archives">
