@@ -8,8 +8,9 @@ Enumerator オブジェクトは、<code>each.with_index.with_object</code>み�
 <pre><span class="sx">%w(a b c)</span><span class="o">.</span><span class="n">map</span> <span class="c1"># =&gt; #&lt;Enumerator: ["a", "b", "c"]:map&gt;</span>
 </pre>
 </div>
-<p>それを使う機会は今のところないし、どういう場面で嬉しいのかもよく知らない。
-使う場面は無くてもせめて使い方くらいは知っておきたいなあと思って Asakusa.rb で人に聞いたりソースに書かれたコメントを読んだりしたら何となく使い方が分かってきた。</p>
+<p>これを外部イテレータとして使う機会は今のところない。
+（※元々「何に使うの」くらいに書いてたけど、<code>map.with_index</code>はやるよねというツッコミが。たしかに）</p>
+<p>使う場面は無くてもせめて使い方くらいは知っておきたいなあと思って Asakusa.rb で人に聞いたりソースに書かれたコメントを読んだりしたら何となく使い方が分かってきた。</p>
 <p>疑問はふたつあった。</p>
 <ul>
 <li>ブロックの戻り値にあたる値はどこにどうやって渡せばいいのか</li>
