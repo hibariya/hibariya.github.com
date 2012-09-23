@@ -33,6 +33,25 @@
 <div id="content">
 <div class="autopagerize_page_element" id="entries">
 <article class="article"><h1 class="date">
+<a href="./entries/20120923.html">2012-09-23</a>
+</h1>
+<h1 id="a0">
+<a href="./entries/20120923/a0.html">札幌RubyKaigi2012でLTしてきたこと #sprk2012</a>
+</h1>
+<p>先週は SapporoRubyKaigi2012 で北海道に行ってきた。
+快適な Kaigi を提供してくださった実行委員・スタッフの方々に感謝。
+2日目の15日に LT 枠で、<a href="https://speakerdeck.com/u/hibariya/p/coding-for-yourself">Coding for yourself</a> というタイトルで5分間話してきた。</p>
+<div style="width: 500px;"><script src="http://speakerdeck.com/embed/505556424a7779000200e6b0.js"></script></div>
+<p>Ruby を使って自分や身の回りの人の生活を便利にしたいという漠然とした希望はあるけれど、漠然としているから何をすればいいかわからないし、何もできなかった。
+でもせめて、自分のコードで自分の望みを叶えることくらいはできるようでありたくて、まずは黙々と欲しいものをつくって公開することにした。
+その結果、自分の望みを叶えることさえ難しいということが分かった。
+それは確かに残念なお知らせだったけど、思わぬ収穫として、つくったものを使ってくれるひとが現れたり、新たなフィードバックが得られたりもした。
+欲しいものを自分のために用意してそれを公開することは、どうやら無駄ではなさそう。</p>
+<p>SapporoRubyKaigi2012 の全部のセッションを見終わってはいないので、いろいろ落ち着いたら動画を見なおしたい（10月中旬までは身内でいろいろやっているので落ち着かない）。</p>
+<p>会期中は RubyKaigi2011 以前に知り合ったひとたちとまた会えたし、万葉方面とペパボ方面で今まで知り合っていなかったひとたちに挨拶できた。
+それから、自給自足プログラミングという発表にとてもシンパシーを感じた。
+うまく言えないけど、コードを書いてるひとに惹かれるのだと思う。</p>
+</article><article class="article"><h1 class="date">
 <a href="./entries/20120830.html">2012-08-30</a>
 </h1>
 <h1 id="a0">
@@ -131,54 +150,9 @@ Enumerator オブジェクトは、<code>each.with_index.with_object</code>み�
 <p>「hibariya は <a href="https://github.com/amatsuda/kaminari">Kaminari</a> の Contributors に入ってると思ってたけど違ったからびっくりした」</p>
 <p>そう言われたからといっていきなり Kaminari にパッチを送れるほどの行動力はないのだけど、普段から code を読み書きしている人とそうでない人の間にある、防弾ガラスみたいな、見えないけどはっきりした差を意識し始めるきっかけになった。</p>
 <p>発表は、自分の中でいい棚卸になった。</p>
-</article><article class="article"><h1 class="date">
-<a href="./entries/20120505.html">2012-05-05</a>
-</h1>
-<h1 id="a0">
-<a href="./entries/20120505/a0.html">cline-0.3.0</a>
-</h1>
-<p>いくつか便利そうな機能をつけて<a href="http://rubygems.org/gems/cline">アップデート</a>しました。</p>
-<ul>
-<li>簡単にURLを開く機能</li>
-<li>フィルタリングのためのインターフェース</li>
-</ul>
-<h2>簡単にURLを開く</h2>
-<p>表示するときにメッセージにエイリアスをつけるようにしました。
-その分、あまり必要なさそうな時間の秒とタイムゾーンを表示しないようにしました。</p>
-<div class="highlight">
-<pre>[2012/05/04 22:41][2][1f5] Delicious.com - Discover Yourself! http://delicious.com/help/quicktour/chrome
-                       ↑
-                      これ
-</pre>
-</div>
-<p>エイリアスを使うと簡単にメッセージの中のURLをブラウザで開くことができます。
-URLが途中で見切れてしまっても大丈夫。</p>
-<div class="highlight">
-<pre>  $ cline open 1f5
-</pre>
-</div>
-<p>打つのが面倒なので <code>alias co='cline open'</code> しておくとよさそう。</p>
-<h3>フィルタリング</h3>
-<p>フィルタリングのようなことを、ActiveRecordのvalidationを使って実現できるようにしておきました。
-invalidなメッセージは保存されなくなります。
-<code>~/.cline/config</code> あたりに書いておくとよさそう。</p>
-<div class="highlight">
-<pre><span class="nb">require</span> <span class="s1">'hiwai'</span>
-
-<span class="k">class</span> <span class="nc">Cline</span><span class="o">::</span><span class="no">Notification</span>
-  <span class="n">validate</span> <span class="ss">:message_should_not_be_hiwai</span>
-
-  <span class="k">def</span> <span class="nf">message_should_not_be_hiwai</span>
-    <span class="n">errors</span><span class="o">.</span><span class="n">add</span> <span class="ss">:message</span><span class="p">,</span> <span class="s1">'hiwai'</span> <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">hiwai?</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</pre>
-</div>
-<p>クラスを再オープンしているのだけど、もうちょっとスマートなAPIを用意したいなと思っているところ。
-ちなみに<a href="https://github.com/hibariya/hiwai">hiwai</a>はレシーバがひわいかどうかを確認するためのライブラリです。</p>
 </article><div class="nav">
 <div class="next">
-<link href="./entries/20120411.html" rel="next">
+<link href="./entries/20120505.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
@@ -191,6 +165,9 @@ invalidなメッセージは保存されなくなります。
 <h3>Recent entries</h3>
 <div class="recent-entries">
 <ul>
+<li>
+<a href="./entries/20120923/a0.html">札幌RubyKaigi2012でLTしてきたこと #sprk2012</a>
+</li>
 <li>
 <a href="./entries/20120830/a0.html">map が返す Enumerator のこと</a>
 </li>
@@ -205,9 +182,6 @@ invalidなメッセージは保存されなくなります。
 </li>
 <li>
 <a href="./entries/20120505/a0.html">cline-0.3.0</a>
-</li>
-<li>
-<a href="./entries/20120411/a0.html">標準添付ライブラリもエディタで開けるreditorを作った</a>
 </li>
 </ul>
 <div class="archives">
