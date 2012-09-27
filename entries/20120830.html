@@ -41,10 +41,8 @@
 Enumerator オブジェクトは、<code>each.with_index.with_object</code>みたいに each にブロックを渡さずに使うとかいうのにたまに使う。
 あとは、外部イテレータのために使ったり、each 以外のメソッドを使って Enumerable のメソッドを使ったりするのに使える。</p>
 <p>each 以外の繰り返しを行うメソッドも、ブロックを受け取らなかったときは Enumerator オブジェクトを返したりする。Enumerable#map とか。</p>
-<div class="highlight">
-<pre><span class="sx">%w(a b c)</span><span class="o">.</span><span class="n">map</span> <span class="c1"># =&gt; #&lt;Enumerator: ["a", "b", "c"]:map&gt;</span>
-</pre>
-</div>
+<div class="highlight"><pre><span class="sx">%w(a b c)</span><span class="o">.</span><span class="n">map</span> <span class="c1"># =&gt; #&lt;Enumerator: ["a", "b", "c"]:map&gt;</span>
+</pre></div>
 <p>これを外部イテレータとして使う機会は今のところない。
 （※元々「何に使うの」くらいに書いてたけど、<code>map.with_index</code>はやるよねというツッコミが。たしかに）</p>
 <p>使う場面は無くてもせめて使い方くらいは知っておきたいなあと思って Asakusa.rb で人に聞いたりソースに書かれたコメントを読んだりしたら何となく使い方が分かってきた。</p>
@@ -59,8 +57,7 @@ Enumerator オブジェクトは、<code>each.with_index.with_object</code>み�
 <li>メソッドの戻り値は StopIteration#result から得られる</li>
 </ul>
 <p>もっとも、↓だけでは何だかありがたみが分からないけど。</p>
-<div class="highlight">
-<pre><span class="n">ary</span>  <span class="o">=</span> <span class="sx">%w(alice bob carol)</span>
+<div class="highlight"><pre><span class="n">ary</span>  <span class="o">=</span> <span class="sx">%w(alice bob carol)</span>
 <span class="n">enum</span> <span class="o">=</span> <span class="n">ary</span><span class="o">.</span><span class="n">map</span>
 
 <span class="k">while</span> <span class="kp">true</span>
@@ -74,8 +71,7 @@ Enumerator オブジェクトは、<code>each.with_index.with_object</code>み�
     <span class="k">break</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</pre>
-</div>
+</pre></div>
 <p>while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてループから脱出してくれたりする。</p>
 </article><div class="nav">
 <div class="prev">

@@ -48,8 +48,7 @@
 <li>IO待ちでも切り替わらない</li>
 </ul>
 <p>コンテキストの切り替えは<code>Fiber#resume</code>と<code>Fiber.yield</code>で行う。</p>
-<div class="highlight">
-<pre><span class="n">fiber</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span>
+<div class="highlight"><pre><span class="n">fiber</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span>
   <span class="nb">puts</span> <span class="s1">'Hello Alice.'</span>
 
   <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span>
@@ -64,8 +63,7 @@
 <span class="n">fiber</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># "Hello Alice." と表示</span>
 <span class="n">fiber</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># "Hello Bob." と表示</span>
 <span class="n">fiber</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># "Hello Carol." と表示</span>
-</pre>
-</div>
+</pre></div>
 <p>上の例ではトップレベルが親。ブロックの中が子。親と子でキャッチボールしてる感じ。
 <code>Fiber#resume</code>で親から子へコンテキストを切り替え、<code>Fiber.yield</code>で子から親へ切り替える。</p>
 <p>組込みライブラリとしてのFiberは、親から子、子から親へのみ切り替えられる（それ以外のコンテキストに切り替えることはできない）。</p>
@@ -78,8 +76,7 @@
 それ以降の引数は<code>Fiber.yield</code>の戻り値として与えられる。</p>
 <p>戻り値は<code>Fiber.yield</code>の引数として渡す。
 <code>Fiber.new</code>で渡したブロックが終了したときは、最後に評価された式の値が戻り値として返る。</p>
-<div class="highlight">
-<pre><span class="n">greet3</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span><span class="o">|</span><span class="nb">name</span><span class="o">|</span>
+<div class="highlight"><pre><span class="n">greet3</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span><span class="o">|</span><span class="nb">name</span><span class="o">|</span>
   <span class="mi">3</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
     <span class="nb">name</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span><span class="p">(</span><span class="s2">"Hi </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
   <span class="k">end</span>
@@ -91,8 +88,7 @@
 <span class="n">greet3</span><span class="o">.</span><span class="n">resume</span><span class="p">(</span><span class="s1">'Billy'</span><span class="p">)</span> <span class="c1"># =&gt; "Hi Billy"</span>
 <span class="n">greet3</span><span class="o">.</span><span class="n">resume</span><span class="p">(</span><span class="s1">'Colon'</span><span class="p">)</span> <span class="c1"># =&gt; "Hi Colon"</span>
 <span class="n">greet3</span><span class="o">.</span><span class="n">resume</span>          <span class="c1"># =&gt; "Good night"</span>
-</pre>
-</div>
+</pre></div>
 <h2>Coroutine</h2>
 <ul>
 <li>途中まで計算して、一旦値を返して、その後また続きから実行できる仕組み</li>
@@ -104,8 +100,7 @@
 無限リストにも使うらしい。
 外部イテレータとしてときどき使うかもしれないEnumeratorではFiberを使ってるようだ。</p>
 <p>永遠に終わらない数字のカウントアップを行うジェネレータ。</p>
-<div class="highlight">
-<pre><span class="n">endless</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span>
+<div class="highlight"><pre><span class="n">endless</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span>
   <span class="kp">loop</span><span class="o">.</span><span class="n">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
     <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
   <span class="k">end</span>
@@ -119,11 +114,9 @@
 <span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 5</span>
 <span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 6</span>
 <span class="c1"># endless...</span>
-</pre>
-</div>
+</pre></div>
 <p>FiberのAPIを隠して外部イテレータっぽく使ってみる。</p>
-<div class="highlight">
-<pre><span class="k">class</span> <span class="nc">EndlessNumber</span>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">EndlessNumber</span>
   <span class="k">def</span> <span class="nf">initialize</span>
     <span class="n">rewind</span>
   <span class="k">end</span>
@@ -154,8 +147,7 @@
 <span class="k">while</span> <span class="n">num</span> <span class="o">=</span> <span class="n">en</span><span class="o">.</span><span class="n">next</span>
   <span class="nb">puts</span> <span class="n">num</span>
 <span class="k">end</span> <span class="c1"># ウワーッ</span>
-</pre>
-</div>
+</pre></div>
 <p>　これに使おう、というのがとっさに思い浮かばない。</p>
 </article><div id="comments">
 <div id="disqus_thread">

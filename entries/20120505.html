@@ -45,25 +45,20 @@
 <h2>簡単にURLを開く</h2>
 <p>表示するときにメッセージにエイリアスをつけるようにしました。
 その分、あまり必要なさそうな時間の秒とタイムゾーンを表示しないようにしました。</p>
-<div class="highlight">
-<pre>[2012/05/04 22:41][2][1f5] Delicious.com - Discover Yourself! http://delicious.com/help/quicktour/chrome
+<div class="highlight"><pre>[2012/05/04 22:41][2][1f5] Delicious.com - Discover Yourself! http://delicious.com/help/quicktour/chrome
                        ↑
                       これ
-</pre>
-</div>
+</pre></div>
 <p>エイリアスを使うと簡単にメッセージの中のURLをブラウザで開くことができます。
 URLが途中で見切れてしまっても大丈夫。</p>
-<div class="highlight">
-<pre>  $ cline open 1f5
-</pre>
-</div>
+<div class="highlight"><pre>  $ cline open 1f5
+</pre></div>
 <p>打つのが面倒なので <code>alias co='cline open'</code> しておくとよさそう。</p>
 <h3>フィルタリング</h3>
 <p>フィルタリングのようなことを、ActiveRecordのvalidationを使って実現できるようにしておきました。
 invalidなメッセージは保存されなくなります。
 <code>~/.cline/config</code> あたりに書いておくとよさそう。</p>
-<div class="highlight">
-<pre><span class="nb">require</span> <span class="s1">'hiwai'</span>
+<div class="highlight"><pre><span class="nb">require</span> <span class="s1">'hiwai'</span>
 
 <span class="k">class</span> <span class="nc">Cline</span><span class="o">::</span><span class="no">Notification</span>
   <span class="n">validate</span> <span class="ss">:message_should_not_be_hiwai</span>
@@ -72,8 +67,7 @@ invalidなメッセージは保存されなくなります。
     <span class="n">errors</span><span class="o">.</span><span class="n">add</span> <span class="ss">:message</span><span class="p">,</span> <span class="s1">'hiwai'</span> <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">hiwai?</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</pre>
-</div>
+</pre></div>
 <p>クラスを再オープンしているのだけど、もうちょっとスマートなAPIを用意したいなと思っているところ。
 ちなみに<a href="https://github.com/hibariya/hiwai">hiwai</a>はレシーバがひわいかどうかを確認するためのライブラリです。</p>
 </article><div class="nav">

@@ -39,8 +39,7 @@
 </h1>
 <p>　<a href="https://github.com/mojombo/chronic">Chronic</a>べんり。別に最近のものでもないのだけど、しらなかった。</p>
 <p>　それまではActiveSupportで頑張っていた。</p>
-<div class="highlight">
-<pre><span class="nb">require</span> <span class="s1">'active_support/core_ext/object'</span>
+<div class="highlight"><pre><span class="nb">require</span> <span class="s1">'active_support/core_ext/object'</span>
 <span class="nb">require</span> <span class="s1">'date'</span>
 
 <span class="k">def</span> <span class="nf">parse_date_str</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
@@ -58,11 +57,9 @@
 <span class="n">parse_date_str</span> <span class="s1">'20110101'</span>   <span class="c1"># =&gt; Sat, 01 Jan 2011</span>
 <span class="n">parse_date_str</span> <span class="s1">'yesterday'</span>  <span class="c1"># =&gt; Tue, 20 Mar 2012</span>
 <span class="n">parse_date_str</span> <span class="s1">'1 week ago'</span> <span class="c1"># =&gt; Wed, 14 Mar 2012</span>
-</pre>
-</div>
+</pre></div>
 <p>　こんなコード書かなくてもよかったんだ！</p>
-<div class="highlight">
-<pre><span class="nb">require</span> <span class="s1">'date'</span>
+<div class="highlight"><pre><span class="nb">require</span> <span class="s1">'date'</span>
 <span class="nb">require</span> <span class="s1">'chronic'</span>
 
 <span class="k">def</span> <span class="nf">parse_date_str</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
@@ -72,8 +69,7 @@
 <span class="n">parse_date_str</span> <span class="s1">'20110101'</span>   <span class="c1"># =&gt; #&lt;Date: 2011-01-01 ((2455563j,0s,0n),+0s,2299161j)&gt;</span>
 <span class="n">parse_date_str</span> <span class="s1">'yesterday'</span>  <span class="c1"># =&gt; #&lt;Date: 2012-03-20 ((2456007j,0s,0n),+0s,2299161j)&gt;</span>
 <span class="n">parse_date_str</span> <span class="s1">'1 week ago'</span> <span class="c1"># =&gt; #&lt;Date: 2012-03-14 ((2456001j,0s,0n),+0s,2299161j)&gt;</span>
-</pre>
-</div>
+</pre></div>
 <p>　Chronicはparseできなかったときはnilを返す。
 Date.parseを残しているのは、YYYYMMDDみたいな形式も使いたかったからで、それを除けばだいたいChronicだけで充分だった。</p>
 <p>　戻り値の見た目（Date#inspect）が違うのはActiveSupportの拡張っぽい。</p>

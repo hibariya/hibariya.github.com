@@ -41,15 +41,13 @@
 <p><a href="https://github.com/hibariya/ruremai">Ruremai</a> はirbなどを使っている際に、メソッドのリファレンス・マニュアルをお手軽にブラウザで開くためのツールです。
 <code>require 'ruremai'</code> すると、Method#rurema! が追加されます。</p>
 <p>例えば、「何かそれっぽいメソッドが記憶の片隅にあるんだけど、使い方がイマイチ思い出せない」ようなときに便利。</p>
-<div class="highlight">
-<pre>hibariya@ ;-) irb
+<div class="highlight"><pre>hibariya@ ;-) irb
 &gt;&gt; require 'ruremai'
 =&gt; false
 &gt;&gt; ary = %w(alice bob carol)
 =&gt; ["alice", "bob", "carol"]
 &gt;&gt; ary.method(:any?).rurema! # ここで唐突にブラウザが開く!
-</pre>
-</div>
+</pre></div>
 <p>今回はいくつかの修正や機能追加があったのでした。</p>
 <ul>
 <li><a href="https://github.com/hibariya/ruremai/pull/1">ショートカット Object#mean? の追加</a></li>

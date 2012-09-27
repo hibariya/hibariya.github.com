@@ -43,14 +43,12 @@ retterで生成するサイトはgitで管理することを前提にしてい�
 <p>ファイルシステム上のどこに居ようが編集から公開までをできるというメリットはできるだけ殺したくなくて、いちいちリポジトリに移動してgitコマンドを実行するのはちょっと嫌だ。</p>
 <p>そこで新たに <code>rette home</code> というコマンドを作ってみた。
 <code>home</code> サブコマンドは<code>$RETTER_HOME</code>に移動して新たなシェルを起動する。</p>
-<div class="highlight">
-<pre>  $ retter home
+<div class="highlight"><pre>  $ retter home
   (retter) pwd
   /path/to/retter_home
   (retter) exit
   bye
-</pre>
-</div>
+</pre></div>
 <p>これで、いくつものどうでもいい機能の実装を免れるきがする。</p>
 
 </article><div id="comments">

@@ -43,8 +43,7 @@
 Orphan Process とも呼ばれる。
 親のいなくなった子プロセスはinitプロセスの子（孤児）になる。</p>
 <p>親プロセスが死んで、子プロセスの親が変化する様子を見るには以下のようなスクリプトを実行したあとでファイルをtailすると分かりやすそう。</p>
-<div class="highlight">
-<pre><span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="k">do</span>
+<div class="highlight"><pre><span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="k">do</span>
   <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'orphan'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
     <span class="kp">loop</span> <span class="k">do</span>
       <span class="nb">sleep</span> <span class="mi">1</span>
@@ -57,11 +56,9 @@ Orphan Process とも呼ばれる。
 <span class="k">end</span>
 
 <span class="nb">sleep</span> <span class="mi">5</span>
-</pre>
-</div>
+</pre></div>
 <p>このプログラムを実行して、<code>orphan</code>を<code>tail -f</code>で観察していると、5秒後に親プロセスが死んで、子プロセスの親プロセスがinitに変化していることを確認できる。</p>
-<div class="highlight">
-<pre>$ tailf orphan
+<div class="highlight"><pre>$ tailf orphan
 80361 # まだ親プロセスの子
 80361
 80361
@@ -71,39 +68,31 @@ Orphan Process とも呼ばれる。
 1
 1
 1
-</pre>
-</div>
+</pre></div>
 <p>initは孤児プロセスをwaitしてくれる。</p>
 <h2>ゾンビプロセス</h2>
 <p>ゾンビプロセスは、既に処理を終えて死んだ子プロセスが、まだ生きている親プロセスにwaitされるのを待っている状態のこと。</p>
 <p>子プロセスが死んでも親プロセスが生きている限り、いつ子プロセスの終了ステータスが参照されても（waitされても）いいように、その情報はプロセステーブルのエントリとして残る。
 プロセスとしては死んでいるけれど、waitされるかもしれないのでプロセステーブルに残っている状態がゾンビ。</p>
-<div class="highlight">
-<pre><span class="nb">puts</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span> <span class="nb">sleep</span> <span class="mi">1</span> <span class="p">}</span>
+<div class="highlight"><pre><span class="nb">puts</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span> <span class="nb">sleep</span> <span class="mi">1</span> <span class="p">}</span>
 
 <span class="nb">sleep</span> <span class="mi">10</span>
-</pre>
-</div>
+</pre></div>
 <p>上のプログラムを実行して、表示されたpidを元に、別の端末でプロセスの状態を確認すると、ゾンビ状態になっていることがわかる（10秒後には親プロセスが死ぬのでゾンビも消える）。</p>
-<div class="highlight">
-<pre>$ ps -ho pid,state 81793
+<div class="highlight"><pre>$ ps -ho pid,state 81793
   PID STAT
   82077 Z+
-</pre>
-</div>
+</pre></div>
 <p>ゾンビプロセスの発生を防ぐには、親プロセスで確実にwaitする必要がある。
 RubyならProcess.waitpidを使うといい。
 waitすると子プロセスが終了するまで親プロセスの処理がブロックされる。</p>
-<div class="highlight">
-<pre><span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span> <span class="nb">sleep</span> <span class="mi">1</span> <span class="p">}</span>
+<div class="highlight"><pre><span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span> <span class="nb">sleep</span> <span class="mi">1</span> <span class="p">}</span>
 
 <span class="no">Process</span><span class="o">.</span><span class="n">waitpid</span> <span class="n">pid</span>
-</pre>
-</div>
+</pre></div>
 <p>もしくは、Double Forkを行うと親プロセスで待たなくてもよくなる。
 生成した子プロセスに孫プロセスを生成させ、さらに子プロセスは即座に終了させることで、孫プロセスがinitの子プロセス（孤児プロセス）となってwaitはinitに任せることができるようになる。</p>
-<div class="highlight">
-<pre><span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span>
+<div class="highlight"><pre><span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span>
   <span class="nb">puts</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span>
     <span class="nb">sleep</span> <span class="mi">20</span> <span class="c1"># 何かしらの処理</span>
   <span class="p">}</span>
@@ -112,8 +101,7 @@ waitすると子プロセスが終了するまで親プロセスの処理がブ�
 <span class="p">}</span>
 
 <span class="no">Process</span><span class="o">.</span><span class="n">waitpid</span> <span class="n">pid</span>
-</pre>
-</div>
+</pre></div>
 <h2>まとめ</h2>
 <ul>
 <li>親が死んだら子はinitが看取ってくれる</li>

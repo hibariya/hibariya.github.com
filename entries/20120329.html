@@ -39,10 +39,8 @@
 </h1>
 <p>Railsを使ってるときとかにActiveSupport::MemoizableがDEPRECATEDだとかそんなWARNINGっぽいメッセージがどこからともなく出てくるときのこと。</p>
 <p>ひとまずraiseする。IOで出力する系のメソッドたちはだいたい最後にwriteを呼ぶ筈なので、writeを上書きしてる。</p>
-<div class="highlight">
-<pre><span class="k">def</span> <span class="nc">STDERR</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">raise</span> <span class="k">end</span>
-</pre>
-</div>
+<div class="highlight"><pre><span class="k">def</span> <span class="nc">STDERR</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">raise</span> <span class="k">end</span>
+</pre></div>
 <p>Railsだと<code>config/application.rb</code>の頭あたりに書いておく。</p>
 <p>起動してstacktraceを見ればどのgemが問題かだいたい分かるので<code>bundle update [gem name]</code>で問題のgemをupdateしてみると直っていたりする。
 最新でも直ってなかったら自分で直してpull requestを送ったりする。</p>

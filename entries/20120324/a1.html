@@ -49,14 +49,12 @@ ERBとかが使えるようになります。</p>
 <li>feed.rss</li>
 </ul>
 <p>ページの生成を抑止する例です。Retterfileに追記します。</p>
-<div class="highlight">
-<pre><span class="c1"># prfile, entries, feed すべてを生成しない</span>
+<div class="highlight"><pre><span class="c1"># prfile, entries, feed すべてを生成しない</span>
 <span class="n">allow_binding</span> <span class="ss">:none</span>
 
 <span class="c1"># entries, feedは生成する</span>
 <span class="n">allow_binding</span> <span class="o">[</span><span class="ss">:entries</span><span class="p">,</span> <span class="ss">:feed</span><span class="o">]</span>
-</pre>
-</div>
+</pre></div>
 <h2>日付指定の方法</h2>
 <p><a href="https://github.com/mojombo/chronic">Chronic</a>を使うようになったので、今までより多くの方法で日付の指定ができるようになりました。
 <code>retter edit this\ wednesday</code>とか指定できます。</p>
