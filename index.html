@@ -33,6 +33,29 @@
 <div id="content">
 <div class="autopagerize_page_element" id="entries">
 <article class="article"><h1 class="date">
+<a href="./entries/20120928.html">2012-09-28</a>
+</h1>
+<h1 id="a0">
+<a href="./entries/20120928/a0.html">Gentoo 環境を手に入れてた</a>
+</h1>
+<p>この前 30% 割引をやっているのを同僚に教えてもらって Thinkpad の X230 を購入。
+半月くらいかけてねんがんの Gentoo (Funtoo) + Awesome WM 環境を手に入れた。
+細かいところはまだ設定が足りないけど、毎日問題なく使えている感じ。しいて言えばもっと大きな机を買えばよかった。</p>
+<p><img src="http://distilleryimage3.instagram.com/1da383da056111e2b70422000a1e8867_7.jpg" alt="大きな机がほしい"></p>
+<p>参考にしたのは、</p>
+<ul>
+<li><a href="http://lab.ursm.jp/blog/2011/08/28/funtoo-on-thinkpad-x220/">http://lab.ursm.jp/blog/2011/08/28/funtoo-on-thinkpad-x220/</a></li>
+<li><a href="http://www.thinkwiki.org/wiki/Installing_Gentoo_on_a_ThinkPad_X220">http://www.thinkwiki.org/wiki/Installing_Gentoo_on_a_ThinkPad_X220</a></li>
+<li><a href="http://www.funtoo.org/wiki/Funtoo_Linux_Installation">http://www.funtoo.org/wiki/Funtoo_Linux_Installation</a></li>
+</ul>
+<p>あたり。
+3つ目の画面は USB でつなぐ DisplayLink のアダプタをつかっていて、<a href="http://wiki.gentoo.org/wiki/DisplayLink">ここ</a>とかを参考にしたら一応表示はできた（自分の設定に不備があるのか、使い勝手は最悪だけど）。</p>
+<p>それから、画面のミラーリングが解除できなかったり、ImageMagick が依存で入ってきたらいつの間にか壁紙が ImageMagick のおっさんの画像がすり替えられたり意味不明な現象が多発したので頭を抱えながらいろいろ手間取った結果、結局 <a href="https://twitter.com/ursm">ursm</a> 先生の make.conf とかの設定を参考にさせてもらったら治った。
+このへんのセットアップはまだまだ素振りが必要そうで全然まとめられてない。</p>
+<p>環境を変えてよかったことは、タイル型WMがだいぶいい感じなのと、これまで自分が作った gem が何かしらうまく動かなかったりすることを発見できたことくらい。
+でもタイル型WMっぽいことは実は Mac でもできるらしい。
+なのでよかったことはまだあんまりない。気分転換なのでは。</p>
+</article><article class="article"><h1 class="date">
 <a href="./entries/20120923.html">2012-09-23</a>
 </h1>
 <h1 id="a0">
@@ -49,7 +72,7 @@
 欲しいものを自分のために用意してそれを公開することは、どうやら無駄ではなさそう。</p>
 <p>SapporoRubyKaigi2012 の全部のセッションを見終わってはいないので、いろいろ落ち着いたら動画を見なおしたい（10月中旬までは身内でいろいろやっているので落ち着かない）。</p>
 <p>会期中は RubyKaigi2011 以前に知り合ったひとたちとまた会えたし、万葉方面とペパボ方面で今まで知り合っていなかったひとたちに挨拶できた。
-それから、自給自足プログラミングという発表にとてもシンパシーを感じた。
+それから、<a href="http://route477.net/files/sprk2012/">自給自足プログラミング</a>、という発表にとてもシンパシーを感じた。
 うまく言えないけど、コードを書いてるひとに惹かれるのだと思う。</p>
 </article><article class="article"><h1 class="date">
 <a href="./entries/20120830.html">2012-08-30</a>
@@ -138,21 +161,9 @@ Enumerator オブジェクトは、<code>each.with_index.with_object</code>み�
 </div>
 <p>APIDock とかも見るようにできるといいのかな。</p>
 <p><code>~/.irbrc</code> あたりで <code>require 'ruremai'</code> しておくとよさそう。勉強などのお供に。</p>
-</article><article class="article"><h1 class="date">
-<a href="./entries/20120602.html">2012-06-02</a>
-</h1>
-<h1 id="a0">
-<a href="./entries/20120602/a0.html">社内で code についての発表をした</a>
-</h1>
-<p><a href="https://twitter.com/koic">@koic</a>先輩に「新卒向けにライブラリやツールを作ることについての話をしてよ」と言われたので二つ返事で受けさせてもらったのだった。</p>
-<p><a href="https://speakerdeck.com/u/hibariya/p/code">自分のための code を書こう</a></p>
-<p>永和に転職して暫く経ったある日、金曜の夜、飲み屋「ボヤキ」で<a href="https://twitter.com/koic">@koic</a>さんに言われた言葉がぼんやりと印象に残ってる。大体だけど↓のような感じ。</p>
-<p>「hibariya は <a href="https://github.com/amatsuda/kaminari">Kaminari</a> の Contributors に入ってると思ってたけど違ったからびっくりした」</p>
-<p>そう言われたからといっていきなり Kaminari にパッチを送れるほどの行動力はないのだけど、普段から code を読み書きしている人とそうでない人の間にある、防弾ガラスみたいな、見えないけどはっきりした差を意識し始めるきっかけになった。</p>
-<p>発表は、自分の中でいい棚卸になった。</p>
 </article><div class="nav">
 <div class="next">
-<link href="./entries/20120505.html" rel="next">
+<link href="./entries/20120602.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
@@ -165,6 +176,9 @@ Enumerator オブジェクトは、<code>each.with_index.with_object</code>み�
 <h3>Recent entries</h3>
 <div class="recent-entries">
 <ul>
+<li>
+<a href="./entries/20120928/a0.html">Gentoo 環境を手に入れてた</a>
+</li>
 <li>
 <a href="./entries/20120923/a0.html">札幌RubyKaigi2012でLTしてきたこと #sprk2012</a>
 </li>
@@ -179,9 +193,6 @@ Enumerator オブジェクトは、<code>each.with_index.with_object</code>み�
 </li>
 <li>
 <a href="./entries/20120602/a0.html">社内で code についての発表をした</a>
-</li>
-<li>
-<a href="./entries/20120505/a0.html">cline-0.3.0</a>
 </li>
 </ul>
 <div class="archives">

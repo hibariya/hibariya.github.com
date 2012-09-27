@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2012-09-23</dc:date><description>hibariya.github.com</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20120923/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120830/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120731/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120723/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120602/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120505/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120411/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120329/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120328/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120326/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a1.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120323/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120321/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120317/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120313/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120101/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111208/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111204/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111109/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111108/a1.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20120923/a0.html"><title>札幌RubyKaigi2012でLTしてきたこと #sprk2012</title><description>先週は SapporoRubyKaigi2012 で北海道に行ってきた。
+<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2012-09-28</dc:date><description>hibariya.github.com</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20120928/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120923/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120830/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120731/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120723/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120602/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120505/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120411/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120329/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120328/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120326/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a1.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120323/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120321/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120317/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120313/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120101/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111208/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111204/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20111109/a0.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20120928/a0.html"><title>Gentoo 環境を手に入れてた</title><description>この前 30% 割引をやっているのを同僚に教えてもらって Thinkpad の X230 を購入。
+半月くらいかけてねんがんの Gentoo (Funtoo) + Awesome WM 環境を手に入れた。
+細かいところはまだ設定が足りないけど、毎日問題なく使えている感じ。しいて言えばもっと大きな机を買えばよかった。
+
+参考にしたのは、
+
+http://lab.ursm.jp/blog/2011/0...</description><content:encoded><![CDATA[<p>この前 30% 割引をやっているのを同僚に教えてもらって Thinkpad の X230 を購入。
+半月くらいかけてねんがんの Gentoo (Funtoo) + Awesome WM 環境を手に入れた。
+細かいところはまだ設定が足りないけど、毎日問題なく使えている感じ。しいて言えばもっと大きな机を買えばよかった。</p>
+<p><img src="http://distilleryimage3.instagram.com/1da383da056111e2b70422000a1e8867_7.jpg" alt="大きな机がほしい"></p>
+<p>参考にしたのは、</p>
+<ul>
+<li><a href="http://lab.ursm.jp/blog/2011/08/28/funtoo-on-thinkpad-x220/">http://lab.ursm.jp/blog/2011/08/28/funtoo-on-thinkpad-x220/</a></li>
+<li><a href="http://www.thinkwiki.org/wiki/Installing_Gentoo_on_a_ThinkPad_X220">http://www.thinkwiki.org/wiki/Installing_Gentoo_on_a_ThinkPad_X220</a></li>
+<li><a href="http://www.funtoo.org/wiki/Funtoo_Linux_Installation">http://www.funtoo.org/wiki/Funtoo_Linux_Installation</a></li>
+</ul>
+<p>あたり。
+3つ目の画面は USB でつなぐ DisplayLink のアダプタをつかっていて、<a href="http://wiki.gentoo.org/wiki/DisplayLink">ここ</a>とかを参考にしたら一応表示はできた（自分の設定に不備があるのか、使い勝手は最悪だけど）。</p>
+<p>それから、画面のミラーリングが解除できなかったり、ImageMagick が依存で入ってきたらいつの間にか壁紙が ImageMagick のおっさんの画像がすり替えられたり意味不明な現象が多発したので頭を抱えながらいろいろ手間取った結果、結局 <a href="https://twitter.com/ursm">ursm</a> 先生の make.conf とかの設定を参考にさせてもらったら治った。
+このへんのセットアップはまだまだ素振りが必要そうで全然まとめられてない。</p>
+<p>環境を変えてよかったことは、タイル型WMがだいぶいい感じなのと、これまで自分が作った gem が何かしらうまく動かなかったりすることを発見できたことくらい。
+でもタイル型WMっぽいことは実は Mac でもできるらしい。
+なのでよかったことはまだあんまりない。気分転換なのでは。</p>]]></content:encoded><dc:date>2012-09-28</dc:date><link>http://hibariya.github.com/entries/20120928/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120923/a0.html"><title>札幌RubyKaigi2012でLTしてきたこと #sprk2012</title><description>先週は SapporoRubyKaigi2012 で北海道に行ってきた。
 快適な Kaigi を提供してくださった実行委員・スタッフの方々に感謝。
 2日目の15日に LT 枠で、Coding for yourself というタイトルで5分間話してきた。
 
@@ -13,7 +35,7 @@ Ruby を使って自分や身の回りの人の生活を便利にしたいとい
 欲しいものを自分のために用意してそれを公開することは、どうやら無駄ではなさそう。</p>
 <p>SapporoRubyKaigi2012 の全部のセッションを見終わってはいないので、いろいろ落ち着いたら動画を見なおしたい（10月中旬までは身内でいろいろやっているので落ち着かない）。</p>
 <p>会期中は RubyKaigi2011 以前に知り合ったひとたちとまた会えたし、万葉方面とペパボ方面で今まで知り合っていなかったひとたちに挨拶できた。
-それから、自給自足プログラミングという発表にとてもシンパシーを感じた。
+それから、<a href="http://route477.net/files/sprk2012/">自給自足プログラミング</a>、という発表にとてもシンパシーを感じた。
 うまく言えないけど、コードを書いてるひとに惹かれるのだと思う。</p>]]></content:encoded><dc:date>2012-09-23</dc:date><link>http://hibariya.github.com/entries/20120923/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120830/a0.html"><title>map が返す Enumerator のこと</title><description>Enumerable が提供する色々なメソッドは、受け取る筈のブロックが与えられなかった場合 Enumerator オブジェクトを返す。
 Enumerator オブジェクトは、each.with_index.with_objectみたいに each にブロックを渡さずに使うとかいうのにたまに使う。
 あとは、外部イテレータのために使ったり、each 以外のメソッドを使って Enumerable のメ...</description><content:encoded><![CDATA[<p>Enumerable が提供する色々なメソッドは、受け取る筈のブロックが与えられなかった場合 Enumerator オブジェクトを返す。
@@ -749,18 +771,4 @@ disqus_shortname 'your_disqus_shortname'
 <span class="nf">#comments</span><span class="p">=</span> <span class="n">render_disqus_comment_form</span>
 <span class="cp">-# 省略</span>
 </pre>
-</div>]]></content:encoded><dc:date>2011-11-09</dc:date><link>http://hibariya.github.com/entries/20111109/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20111108/a1.html"><title>retter-0.1.2</title><description>バージョンを上げた。
-
-テンプレートでエラーが起きたときに正しいファイル名と行数が出るようになった
-
-edit preview コマンドに渡す引数としてファイル名（today.mdとか）が使えるようになった
-スタイルの修正を少々
-
-次はコメントシステムを簡単に導入できるようにしておきたい。</description><content:encoded><![CDATA[<p><a href="https://rubygems.org/gems/retter">バージョンを上げた</a>。</p>
-<ul>
-<li>テンプレートでエラーが起きたときに正しいファイル名と行数が出るようになった</li>
-<li>
-<code>edit</code> <code>preview</code> コマンドに渡す引数としてファイル名（today.mdとか）が使えるようになった</li>
-<li>スタイルの修正を少々</li>
-</ul>
-<p>次はコメントシステムを簡単に導入できるようにしておきたい。</p>]]></content:encoded><dc:date>2011-11-08</dc:date><link>http://hibariya.github.com/entries/20111108/a1.html</link><author>hibariya</author></item></rdf:RDF>
+</div>]]></content:encoded><dc:date>2011-11-09</dc:date><link>http://hibariya.github.com/entries/20111109/a0.html</link><author>hibariya</author></item></rdf:RDF>
