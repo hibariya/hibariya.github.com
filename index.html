@@ -33,6 +33,15 @@
 <div id="content">
 <div class="autopagerize_page_element" id="entries">
 <article class="article"><h1 class="date">
+<a href="./entries/20121206.html">2012-12-06</a>
+</h1>
+<h1 id="a0">
+<a href="./entries/20121206/a0.html">自宅用に Kinesis を買った</a>
+</h1>
+<p>慣れたら使い心地良さそうだなーと思っていた Kinesis さん、いきなり仕事で使うと全然仕事が進まなくなるのでまずは自宅用に購入。
+以前同僚から貸し出してもらって挫折したこともあり、今回は少しは使える状態からスタート。
+奥さんが仕事から帰ってきたときに早速自慢したのだけど、金額を白状したら蹴られた。</p>
+</article><article class="article"><h1 class="date">
 <a href="./entries/20121125.html">2012-11-25</a>
 </h1>
 <h1 id="a0">
@@ -172,33 +181,9 @@ Enumerator オブジェクトは、<code>each.with_index.with_object</code>み�
 <span class="k">end</span>
 </pre></div>
 <p>while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてループから脱出してくれたりする。</p>
-</article><article class="article"><h1 class="date">
-<a href="./entries/20120731.html">2012-07-31</a>
-</h1>
-<h1 id="a0">
-<a href="./entries/20120731/a0.html">簡単に Ruby のリファレンス・マニュアルを開く ruremai を色々直した</a>
-</h1>
-<p>気がついたら色々な人から良い感じのパッチをもらったので取り込んで <a href="https://rubygems.org/gems/ruremai">0.0.3</a> をリリースしました。</p>
-<p><a href="https://github.com/hibariya/ruremai">Ruremai</a> はirbなどを使っている際に、メソッドのリファレンス・マニュアルをお手軽にブラウザで開くためのツールです。
-<code>require 'ruremai'</code> すると、Method#rurema! が追加されます。</p>
-<p>例えば、「何かそれっぽいメソッドが記憶の片隅にあるんだけど、使い方がイマイチ思い出せない」ようなときに便利。</p>
-<div class="highlight"><pre>hibariya@ ;-) irb
-&gt;&gt; require 'ruremai'
-=&gt; false
-&gt;&gt; ary = %w(alice bob carol)
-=&gt; ["alice", "bob", "carol"]
-&gt;&gt; ary.method(:any?).rurema! # ここで唐突にブラウザが開く!
-</pre></div>
-<p>今回はいくつかの修正や機能追加があったのでした。</p>
-<ul>
-<li><a href="https://github.com/hibariya/ruremai/pull/1">ショートカット Object#mean? の追加</a></li>
-<li><a href="https://github.com/hibariya/ruremai/pull/2">大文字を含むメソッド名に対応できていなかったバグの修正</a></li>
-<li><a href="https://github.com/hibariya/ruremai/pull/4">名前空間や特定のメソッドに対応できていなかったバグの修正と高速化</a></li>
-</ul>
-<p>自分では気づかないようなバグへのパッチとか、あったら良さそうな機能がどんどん送られくる GitHub とっても便利。</p>
 </article><div class="nav">
 <div class="next">
-<link href="./entries/20120723.html" rel="next">
+<link href="./entries/20120731.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
@@ -211,6 +196,9 @@ Enumerator オブジェクトは、<code>each.with_index.with_object</code>み�
 <h3>Recent entries</h3>
 <div class="recent-entries">
 <ul>
+<li>
+<a href="./entries/20121206/a0.html">自宅用に Kinesis を買った</a>
+</li>
 <li>
 <a href="./entries/20121125/a0.html">RubyConf 2012</a>
 </li>
@@ -225,9 +213,6 @@ Enumerator オブジェクトは、<code>each.with_index.with_object</code>み�
 </li>
 <li>
 <a href="./entries/20120731/a0.html">簡単に Ruby のリファレンス・マニュアルを開く ruremai を色々直した</a>
-</li>
-<li>
-<a href="./entries/20120723/a0.html">簡単に Ruby のリファレンス・マニュアルを開く ruremai をつくった</a>
 </li>
 </ul>
 <div class="archives">
