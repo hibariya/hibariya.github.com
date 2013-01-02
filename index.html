@@ -10,13 +10,16 @@
 <link href="./stylesheets/pygments.css" media="screen" rel="stylesheet" type="text/css">
 <link href="./entries.rss" rel="alternate" title="RSS" type="application/rss+xml">
 <link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
-<script src="./javascripts/jquery.js"></script><script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+<script src="./javascripts/jquery.js"></script>
+<script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
 </head>
 <body>
-<header id="header"><h1>
+<header id="header">
+<h1>
 <a href="./index.html">Joy Luck Crab</a>
 </h1>
-<nav><ul id="menu">
+<nav>
+<ul id="menu">
 <li>
 <a href="./index.html">Home</a>
 </li>
@@ -29,10 +32,37 @@
 <li>
 <a href="./entries.rss" target="_blank">RSS</a>
 </li>
-</ul></nav></header><div id="page">
+</ul>
+</nav>
+</header>
+<div id="page">
 <div id="content">
 <div class="autopagerize_page_element" id="entries">
-<article class="article"><h1 class="date">
+<article class="article">
+<h1 class="date">
+<a href="./entries/20130102.html">2013-01-02</a>
+</h1>
+<h1 id="a0">
+<a href="./entries/20130102/a0.html">PROMPTを2階建てにした</a>
+</h1>
+<p>結構前からだったのだけど、oh-my-zsh が割と良くて乗り換えたはいいが気に入ったテーマだけは見つからなかったので自分で適当に変えたのだった。
+いままでは雑多な情報はRPROMPTに出すようにしていたのだけど、同僚から影響を受けて二階建てに。
+(Kinesis といい Funtoo といい、去年は何かと影響を受けまくり)</p>
+<p><img src="./images/prompt_2013_1.png" alt="prompt_2013_1"></p>
+<p>カスタマイズしているうちにごちゃごちゃしてしまった <a href="https://github.com/hibariya/config/blob/master/_zsh/oh-my-zsh#L56">PROMPT</a> が出しているのはこんなの。</p>
+<ul>
+<li>ユーザ@ホスト:今居る場所</li>
+<li>時刻</li>
+<li>直前のコマンドの戻り値</li>
+<li>Ruby のバージョン</li>
+<li>git リポジトリの状態・ハッシュの先頭数文字・ブランチ</li>
+<li>$SHLVL</li>
+</ul>
+<p>いろいろ表示している情報はたまに便利に思うこともあるけど、割と自己満足なので<code>PROMPT="%% "</code>とかにしてもたぶん生活には困らない。</p>
+<p>今年もよろしくお願いします。</p>
+</article>
+<article class="article">
+<h1 class="date">
 <a href="./entries/20121206.html">2012-12-06</a>
 </h1>
 <h1 id="a0">
@@ -41,7 +71,9 @@
 <p>慣れたら使い心地良さそうだなーと思っていた Kinesis さん、いきなり仕事で使うと全然仕事が進まなくなるのでまずは自宅用に購入。
 以前同僚から貸し出してもらって挫折したこともあり、今回は少しは使える状態からスタート。
 奥さんが仕事から帰ってきたときに早速自慢したのだけど、金額を白状したら蹴られた。</p>
-</article><article class="article"><h1 class="date">
+</article>
+<article class="article">
+<h1 class="date">
 <a href="./entries/20121125.html">2012-11-25</a>
 </h1>
 <h1 id="a0">
@@ -97,7 +129,9 @@ Proc も 継続も、なんでも保存できるってすごい。
 <p>RubyConf は自分の中で大きな出来事だったこともあって、いろいろと記憶を巡っていたら、転職して 2 年以上経っているということに気づく。
 今でさえ何もかも途中だけど、思い返せばコードの書き方や考え方はだいぶ変わってしまった。
 今回 RubyConf に行けたことはもちろん、自分の望む方向に進もうとしたときに惜しみなく良い影響を与えてもらえたことに感謝。</p>
-</article><article class="article"><h1 class="date">
+</article>
+<article class="article">
+<h1 class="date">
 <a href="./entries/20120928.html">2012-09-28</a>
 </h1>
 <h1 id="a0">
@@ -120,7 +154,9 @@ Proc も 継続も、なんでも保存できるってすごい。
 <p>環境を変えてよかったことは、タイル型WMがだいぶいい感じなのと、これまで自分が作った gem が何かしらうまく動かなかったりすることを発見できたことくらい。
 でもタイル型WMっぽいことは実は Mac でもできるらしい。
 なのでよかったことはまだあんまりない。気分転換なのでは。</p>
-</article><article class="article"><h1 class="date">
+</article>
+<article class="article">
+<h1 class="date">
 <a href="./entries/20120923.html">2012-09-23</a>
 </h1>
 <h1 id="a0">
@@ -139,63 +175,26 @@ Proc も 継続も、なんでも保存できるってすごい。
 <p>会期中は RubyKaigi2011 以前に知り合ったひとたちとまた会えたし、万葉方面とペパボ方面で今まで知り合っていなかったひとたちに挨拶できた。
 それから、<a href="http://route477.net/files/sprk2012/">自給自足プログラミング</a>、という発表にとてもシンパシーを感じた。
 うまく言えないけど、コードを書いてるひとに惹かれるのだと思う。</p>
-</article><article class="article"><h1 class="date">
-<a href="./entries/20120830.html">2012-08-30</a>
-</h1>
-<h1 id="a0">
-<a href="./entries/20120830/a0.html">map が返す Enumerator のこと</a>
-</h1>
-<p>Enumerable が提供する色々なメソッドは、受け取る筈のブロックが与えられなかった場合 Enumerator オブジェクトを返す。
-Enumerator オブジェクトは、<code>each.with_index.with_object</code>みたいに each にブロックを渡さずに使うとかいうのにたまに使う。
-あとは、外部イテレータのために使ったり、each 以外のメソッドを使って Enumerable のメソッドを使ったりするのに使える。</p>
-<p>each 以外の繰り返しを行うメソッドも、ブロックを受け取らなかったときは Enumerator オブジェクトを返したりする。Enumerable#map とか。</p>
-<div class="highlight"><pre><span class="sx">%w(a b c)</span><span class="o">.</span><span class="n">map</span> <span class="c1"># =&gt; #&lt;Enumerator: ["a", "b", "c"]:map&gt;</span>
-</pre></div>
-<p>これを外部イテレータとして使う機会は今のところない。
-（※元々「何に使うの」くらいに書いてたけど、<code>map.with_index</code>はやるよねというツッコミが。たしかに）</p>
-<p>使う場面は無くてもせめて使い方くらいは知っておきたいなあと思って Asakusa.rb で人に聞いたりソースに書かれたコメントを読んだりしたら何となく使い方が分かってきた。</p>
-<p>疑問はふたつあった。</p>
-<ul>
-<li>ブロックの戻り値にあたる値はどこにどうやって渡せばいいのか</li>
-<li>どうすればメソッドの戻り値を得られるのか</li>
-</ul>
-<p>それぞれ以下のような感じ。</p>
-<ul>
-<li>ブロックの戻り値（つまりyieldの戻り値になる値）は Enumerator#feed に渡す</li>
-<li>メソッドの戻り値は StopIteration#result から得られる</li>
-</ul>
-<p>もっとも、↓だけでは何だかありがたみが分からないけど。</p>
-<div class="highlight"><pre><span class="n">ary</span>  <span class="o">=</span> <span class="sx">%w(alice bob carol)</span>
-<span class="n">enum</span> <span class="o">=</span> <span class="n">ary</span><span class="o">.</span><span class="n">map</span>
-
-<span class="k">while</span> <span class="kp">true</span>
-  <span class="k">begin</span>
-    <span class="n">val</span> <span class="o">=</span> <span class="n">enum</span><span class="o">.</span><span class="n">next</span> <span class="c1"># ブロック引数的なもの</span>
-
-    <span class="n">enum</span><span class="o">.</span><span class="n">feed</span> <span class="n">val</span><span class="o">.</span><span class="n">upcase</span> <span class="c1"># ブロックの戻り値的なもの</span>
-  <span class="k">rescue</span> <span class="no">StopIteration</span> <span class="o">=&gt;</span> <span class="n">e</span>
-    <span class="nb">p</span> <span class="n">e</span><span class="o">.</span><span class="n">result</span> <span class="c1"># ["ALICE", "BOB", "CAROL"] と表示</span>
-
-    <span class="k">break</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</pre></div>
-<p>while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてループから脱出してくれたりする。</p>
-</article><div class="nav">
+</article>
+<div class="nav">
 <div class="next">
-<link href="./entries/20120731.html" rel="next">
+<link href="./entries/20120830.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
 </div>
 </div>
-<aside id="sidebar"><h3>Author</h3>
+<aside id="sidebar">
+<h3>Author</h3>
 <div class="author">
 <a href="./profile.html">hibariya</a>
 </div>
 <h3>Recent entries</h3>
 <div class="recent-entries">
 <ul>
+<li>
+<a href="./entries/20130102/a0.html">PROMPTを2階建てにした</a>
+</li>
 <li>
 <a href="./entries/20121206/a0.html">自宅用に Kinesis を買った</a>
 </li>
@@ -211,16 +210,14 @@ Enumerator オブジェクトは、<code>each.with_index.with_object</code>み�
 <li>
 <a href="./entries/20120830/a0.html">map が返す Enumerator のこと</a>
 </li>
-<li>
-<a href="./entries/20120731/a0.html">簡単に Ruby のリファレンス・マニュアルを開く ruremai を色々直した</a>
-</li>
 </ul>
 <div class="archives">
 <a href="./entries.html">Archives</a>
 </div>
 </div>
 <h3>Coderwall</h3>
-<section class="coderwall" data-coderwall-orientation="horizontal" data-coderwall-username="hibariya"></section></aside>
+<section class="coderwall" data-coderwall-orientation="horizontal" data-coderwall-username="hibariya"></section>
+</aside>
 </div>
 <footer id="footer">
 Joy Luck Crab (C) hibariya

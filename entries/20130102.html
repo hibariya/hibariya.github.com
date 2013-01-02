@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-<title>2011-09-13 - Joy Luck Crab</title>
+<title>2013-01-02 - Joy Luck Crab</title>
 <meta charset="utf-8" content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <meta content="hibariya" name="author">
 <link href="../favicon.png" rel="icon" type="image/png">
@@ -39,22 +39,32 @@
 <div id="content">
 <article class="article autopagerize_page_element">
 <h1 class="date">
-<a href="../entries/20110913.html">2011-09-13</a>
+<a href="../entries/20130102.html">2013-01-02</a>
 </h1>
 <h1 id="a0">
-<a href="../entries/20110913/a0.html">Pull requestがマージされた</a>
+<a href="../entries/20130102/a0.html">PROMPTを2階建てにした</a>
 </h1>
-<p>日曜くらいに送った初の Pull request が今日マージされた。
-1行削除するだけの簡単なパッチだったけど。会社のデスクの上で踊りだしそうになってやめた。</p>
-<p>今日は、日付は覚えてないけど出来事は覚えている類の特別な日になった。これでやっとひとつ進めるね。
-今日は<a href="http://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%83%BC%E3%81%AE%E6%97%A5">プログラマの日</a>らしいよ。</p>
+<p>結構前からだったのだけど、oh-my-zsh が割と良くて乗り換えたはいいが気に入ったテーマだけは見つからなかったので自分で適当に変えたのだった。
+いままでは雑多な情報はRPROMPTに出すようにしていたのだけど、同僚から影響を受けて二階建てに。
+(Kinesis といい Funtoo といい、去年は何かと影響を受けまくり)</p>
+<p><img src="../images/prompt_2013_1.png" alt="prompt_2013_1"></p>
+<p>カスタマイズしているうちにごちゃごちゃしてしまった <a href="https://github.com/hibariya/config/blob/master/_zsh/oh-my-zsh#L56">PROMPT</a> が出しているのはこんなの。</p>
+<ul>
+<li>ユーザ@ホスト:今居る場所</li>
+<li>時刻</li>
+<li>直前のコマンドの戻り値</li>
+<li>Ruby のバージョン</li>
+<li>git リポジトリの状態・ハッシュの先頭数文字・ブランチ</li>
+<li>$SHLVL</li>
+</ul>
+<p>いろいろ表示している情報はたまに便利に思うこともあるけど、割と自己満足なので<code>PROMPT="%% "</code>とかにしてもたぶん生活には困らない。</p>
+<p>今年もよろしくお願いします。</p>
 </article>
 <div class="nav">
 <div class="prev">
-<link href="../entries/20110916.html" rel="prev">
 </div>
 <div class="next">
-<link href="../entries/20110911.html" rel="next">
+<link href="../entries/20121206.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
