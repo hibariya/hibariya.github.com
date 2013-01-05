@@ -1,4 +1,57 @@
-<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2013-01-02</dc:date><description>hibariya.github.com</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20130102/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20121206/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20121125/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120928/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120923/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120830/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120731/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120723/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120602/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120505/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120411/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120329/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120328/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120326/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a1.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120323/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120321/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120317/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120313/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120101/a0.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20130102/a0.html"><title>PROMPTを2階建てにした</title><description>結構前からだったのだけど、oh-my-zsh が割と良くて乗り換えたはいいが気に入ったテーマだけは見つからなかったので自分で適当に変えたのだった。
+<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2013-01-05</dc:date><description>hibariya.github.com</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20130105/a1.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20130105/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20130102/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20121206/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20121125/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120928/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120923/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120830/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120731/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120723/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120602/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120505/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120411/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120329/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120328/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120326/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a1.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120323/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120321/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120317/a0.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20130105/a1.html"><title>cline gem を更新した</title><description>Cline は、フィードとか GitHub の Activity を収集(一定周期でポーリング)してきて、terminal で簡単に垂れ流し表示するためにつくったやつ。
+コミットログを見る感じだと数カ月ぶりのバージョンアップ。
+cline をリリースした。
+サブコマンドの使い方が変わってしまったのでメジャーバージョンをひとつインクリメント。
+デーモン化できるようにした
+今の使い方だと screen...</description><content:encoded><![CDATA[<p><a href="https://github.com/hibariya/cline">Cline</a> は、フィードとか GitHub の Activity を収集(一定周期でポーリング)してきて、terminal で簡単に垂れ流し表示するためにつくったやつ。</p>
+<p>コミットログを見る感じだと数カ月ぶりのバージョンアップ。
+<a href="https://rubygems.org/gems/cline/">cline</a> をリリースした。
+サブコマンドの使い方が変わってしまったのでメジャーバージョンをひとつインクリメント。</p>
+<h3>デーモン化できるようにした</h3>
+<p>今の使い方だと screen を起動すると 3 つの cline プロセスが起動するようになっていて、ひとつあたりのメモリ使用量が割と多めなのだった。
+この更新で、cline のサーバを起動できるようにして、サーバが起動していたらそれ以降に起動したプロセスは socket 越しにいろいろ取りに行くようにした。</p>
+<p>起動とか停止とか:</p>
+<div class="highlight"><pre>  <span class="nv">$ </span>cline server start   <span class="c"># 起動</span>
+  <span class="nv">$ </span>cline server stop    <span class="c"># 停止</span>
+  <span class="nv">$ </span>cline server reload  <span class="c"># ~/.cline/config の再読み込み</span>
+</pre></div>
+<p>.zshrc などにこういうのを貼り付けておいて勝手に起動してくれるようにすると良さそう。</p>
+<div class="highlight"><pre><span class="k">if</span> ! <span class="o">[</span> -e ~/.cline/cline.sock <span class="o">]</span> ; <span class="k">then</span>
+<span class="k">  </span>cline server start
+<span class="k">fi</span>
+</pre></div>
+<h3>tick コマンドの使い方が変わった</h3>
+<div class="highlight"><pre>  <span class="nv">$ </span>cline tick OFFSET INTERVAL
+</pre></div>
+<p>から</p>
+<div class="highlight"><pre>  <span class="nv">$ </span>cline tick INTERVAL OFFSET
+</pre></div>
+<p>に変更。
+どちらも省略できるのだけど、offset よりは interval だけを指定することの方が多そうなので入れ替え。</p>]]></content:encoded><dc:date>2013-01-05</dc:date><link>http://hibariya.github.com/entries/20130105/a1.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20130105/a0.html"><title>reditor gem を更新した</title><description>Reditor は、gem や pure ruby な Ruby 標準添付ライブラリを $EDITOR で開くためのコマンドラインツールで、インストールすると bundle open や gem edit に似たコマンド reditor を使えるようになる。
+今回はライブラリが見つからなかったときに候補を出す機能を追加したのだった。
+require するときは active_support なのに...</description><content:encoded><![CDATA[<p><a href="https://github.com/hibariya/reditor">Reditor</a> は、gem や pure ruby な Ruby 標準添付ライブラリを $EDITOR で開くためのコマンドラインツールで、インストールすると bundle open や gem edit に似たコマンド reditor を使えるようになる。
+今回はライブラリが見つからなかったときに候補を出す機能を追加したのだった。</p>
+<p>require するときは active_support なのに gem の名前は activesupport みたいな gem が結構あって、じゃあ reditor で開くときは今までどんな感じだったかというと、</p>
+<div class="highlight"><pre>  <span class="nv">$ </span>reditor activesupport  <span class="c"># 開ける</span>
+  <span class="nv">$ </span>reditor active_support <span class="c"># 開けない</span>
+</pre></div>
+<p>という感じ。
+gem によって "アンダースコアが入るか入らないか" とか、他にも "名前が単数形か複数形か" とか忘れてしまうことは割とある。
+開きたい gem を普段使っていなかったり gem の名前がキラキラしていれば尚更忘れやすい。
+だけどこういう、名前を曖昧にしか思い出せないときにあっけなく失敗してしまうのは悲しい。
+そこで、与えられた名前でライブラリを見つけられなかったときには候補っぽいものを出して選べるようにした。</p>
+<div class="highlight"><pre><span class="nv">$ </span>reditor active_support
+<span class="o">[</span>0<span class="o">]</span> actionmailer
+<span class="o">[</span>1<span class="o">]</span> actionpack
+<span class="o">[</span>2<span class="o">]</span> activemodel
+<span class="o">[</span>3<span class="o">]</span> activerecord
+<span class="o">[</span>4<span class="o">]</span> activeresource
+<span class="o">[</span>5<span class="o">]</span> activesupport
+Choose number of library <span class="o">[</span>0<span class="o">]</span>&gt; 5 <span class="c"># activesupport を開ける</span>
+</pre></div>
+<p>一覧は単純にソートしているだけで、本来なら activesupport が一番上に来て欲しいところだけど、それは追々。
+gem の名前をある程度適当に与えても候補から選べるようになったので、思い出すための面倒な手間が減りそう。</p>
+]]></content:encoded><dc:date>2013-01-05</dc:date><link>http://hibariya.github.com/entries/20130105/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20130102/a0.html"><title>PROMPTを2階建てにした</title><description>結構前からだったのだけど、oh-my-zsh が割と良くて乗り換えたはいいが気に入ったテーマだけは見つからなかったので自分で適当に変えたのだった。
 いままでは雑多な情報はRPROMPTに出すようにしていたのだけど、同僚から影響を受けて二階建てに。
 (Kinesis といい Funtoo といい、去年は何かと影響を受けまくり)
 
@@ -452,127 +505,4 @@ pygmentsはコード辺にcssのclassをつけてくれるので<a href="http://
 Albino::Multiは裏でmultipygmentizeというpythonスクリプトを叩いてるのだけど、このpythonスクリプトが必要としているpygmentsモジュールは別のgemであるpygmentizeの方に入っていて、読み込みに失敗しているようだった。
 pythonの環境をちゃんと整えれば動くのかな。</p>
 <h2>結論</h2>
-<p>これをこう使えば安心、というのは見つけられなかった。</p>]]></content:encoded><dc:date>2012-03-17</dc:date><link>http://hibariya.github.com/entries/20120317/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120313/a0.html"><title>FiberとSemi-Coroutine</title><description>やっと使い方を覚えたFiberについての覚書。組込みライブラリ編。
-Fiber
-Rubyの組込みライブラリとして提供されているFiber。
-ノンプリエンプティブな軽量スレッド。
-
-生成したファイバは勝手には走らない
-コンテキストの切り替えは自分で
-親から子へ、子から親へ切り替えることができる
-IO待ちでも切り替わらない
-
-コンテキストの切り替えはFiber#resumeとFiber.yieldで行...</description><content:encoded><![CDATA[<p>やっと使い方を覚えたFiberについての覚書。組込みライブラリ編。</p>
-<h2>Fiber</h2>
-<p>Rubyの組込みライブラリとして提供されているFiber。
-ノンプリエンプティブな軽量スレッド。</p>
-<ul>
-<li>生成したファイバは勝手には走らない</li>
-<li>コンテキストの切り替えは自分で</li>
-<li>親から子へ、子から親へ切り替えることができる</li>
-<li>IO待ちでも切り替わらない</li>
-</ul>
-<p>コンテキストの切り替えは<code>Fiber#resume</code>と<code>Fiber.yield</code>で行う。</p>
-<div class="highlight"><pre><span class="n">fiber</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span>
-  <span class="nb">puts</span> <span class="s1">'Hello Alice.'</span>
-
-  <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span>
-
-  <span class="nb">puts</span> <span class="s1">'Hello Bob.'</span>
-
-  <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span>
-
-  <span class="nb">puts</span> <span class="s1">'Hello Carol.'</span>
-<span class="p">}</span>
-
-<span class="n">fiber</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># "Hello Alice." と表示</span>
-<span class="n">fiber</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># "Hello Bob." と表示</span>
-<span class="n">fiber</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># "Hello Carol." と表示</span>
-</pre></div>
-<p>上の例ではトップレベルが親。ブロックの中が子。親と子でキャッチボールしてる感じ。
-<code>Fiber#resume</code>で親から子へコンテキストを切り替え、<code>Fiber.yield</code>で子から親へ切り替える。</p>
-<p>組込みライブラリとしてのFiberは、親から子、子から親へのみ切り替えられる（それ以外のコンテキストに切り替えることはできない）。</p>
-<h2>Fiberの引数と戻り値</h2>
-<h3>親からみたときの引数と戻り値</h3>
-<p>引数は常に<code>Fiber#resume</code>に渡す。
-戻り値は<code>Fiber#resume</code>の戻り値。</p>
-<h3>子からみたときの引数と戻り値</h3>
-<p>最初の引数はブロック引数として渡される。
-それ以降の引数は<code>Fiber.yield</code>の戻り値として与えられる。</p>
-<p>戻り値は<code>Fiber.yield</code>の引数として渡す。
-<code>Fiber.new</code>で渡したブロックが終了したときは、最後に評価された式の値が戻り値として返る。</p>
-<div class="highlight"><pre><span class="n">greet3</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span><span class="o">|</span><span class="nb">name</span><span class="o">|</span>
-  <span class="mi">3</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
-    <span class="nb">name</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span><span class="p">(</span><span class="s2">"Hi </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-  <span class="k">end</span>
-
-  <span class="s1">'Good night'</span>
-<span class="p">}</span>
-
-<span class="n">greet3</span><span class="o">.</span><span class="n">resume</span><span class="p">(</span><span class="s1">'Aron'</span><span class="p">)</span>  <span class="c1"># =&gt; "Hi Aron"</span>
-<span class="n">greet3</span><span class="o">.</span><span class="n">resume</span><span class="p">(</span><span class="s1">'Billy'</span><span class="p">)</span> <span class="c1"># =&gt; "Hi Billy"</span>
-<span class="n">greet3</span><span class="o">.</span><span class="n">resume</span><span class="p">(</span><span class="s1">'Colon'</span><span class="p">)</span> <span class="c1"># =&gt; "Hi Colon"</span>
-<span class="n">greet3</span><span class="o">.</span><span class="n">resume</span>          <span class="c1"># =&gt; "Good night"</span>
-</pre></div>
-<h2>Coroutine</h2>
-<ul>
-<li>途中まで計算して、一旦値を返して、その後また続きから実行できる仕組み</li>
-<li>親と子（callerとcallee）という関係があるものをsemi-coroutineと呼ぶ</li>
-<li>組込みライブラリのFiberはsemi-coroutineの実装と言ってよいのかな</li>
-</ul>
-<h2>semi-coroutineさん何に使うの</h2>
-<p>ジェネレータや外部イテレータに使うらしい。
-無限リストにも使うらしい。
-外部イテレータとしてときどき使うかもしれないEnumeratorではFiberを使ってるようだ。</p>
-<p>永遠に終わらない数字のカウントアップを行うジェネレータ。</p>
-<div class="highlight"><pre><span class="n">endless</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span>
-  <span class="kp">loop</span><span class="o">.</span><span class="n">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
-    <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-  <span class="k">end</span>
-<span class="p">}</span>
-
-<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 0</span>
-<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 1</span>
-<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 2</span>
-<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 3</span>
-<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 4</span>
-<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 5</span>
-<span class="n">endless</span><span class="o">.</span><span class="n">resume</span> <span class="c1"># =&gt; 6</span>
-<span class="c1"># endless...</span>
-</pre></div>
-<p>FiberのAPIを隠して外部イテレータっぽく使ってみる。</p>
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">EndlessNumber</span>
-  <span class="k">def</span> <span class="nf">initialize</span>
-    <span class="n">rewind</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">rewind</span>
-    <span class="vi">@generator</span> <span class="o">=</span> <span class="no">Fiber</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span>
-      <span class="kp">loop</span><span class="o">.</span><span class="n">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
-        <span class="no">Fiber</span><span class="o">.</span><span class="n">yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-      <span class="k">end</span>
-    <span class="p">}</span>
-
-    <span class="nb">self</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">next</span>
-    <span class="vi">@generator</span><span class="o">.</span><span class="n">resume</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="n">en</span> <span class="o">=</span> <span class="no">EndlessNumber</span><span class="o">.</span><span class="n">new</span>
-
-<span class="n">en</span><span class="o">.</span><span class="n">next</span> <span class="c1"># =&gt; 0</span>
-<span class="n">en</span><span class="o">.</span><span class="n">next</span> <span class="c1"># =&gt; 1</span>
-<span class="n">en</span><span class="o">.</span><span class="n">next</span> <span class="c1"># =&gt; 2</span>
-<span class="n">en</span><span class="o">.</span><span class="n">rewind</span>
-<span class="n">en</span><span class="o">.</span><span class="n">next</span> <span class="c1"># =&gt; 0</span>
-
-<span class="k">while</span> <span class="n">num</span> <span class="o">=</span> <span class="n">en</span><span class="o">.</span><span class="n">next</span>
-  <span class="nb">puts</span> <span class="n">num</span>
-<span class="k">end</span> <span class="c1"># ウワーッ</span>
-</pre></div>
-<p>　これに使おう、というのがとっさに思い浮かばない。</p>]]></content:encoded><dc:date>2012-03-13</dc:date><link>http://hibariya.github.com/entries/20120313/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120101/a0.html"><title>年も明けたのでClojureを勉強し始めた</title><description>結局さわりはじめたのはClojure。
-手始めにオーム社eStore(β)でプログラミングClojureを買ったよ。</description><content:encoded><![CDATA[<p>結局さわりはじめたのはClojure。</p>
-<p>手始めに<a href="http://estore.ohmsha.co.jp/">オーム社eStore(β)</a>で<a href="http://estore.ohmsha.co.jp/titles/978427406789P">プログラミングClojure</a>を買ったよ。</p>]]></content:encoded><dc:date>2012-01-01</dc:date><link>http://hibariya.github.com/entries/20120101/a0.html</link><author>hibariya</author></item></rdf:RDF>
+<p>これをこう使えば安心、というのは見つけられなかった。</p>]]></content:encoded><dc:date>2012-03-17</dc:date><link>http://hibariya.github.com/entries/20120317/a0.html</link><author>hibariya</author></item></rdf:RDF>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-<title>最近のRetterへの機能追加 - Joy Luck Crab</title>
+<title>cline gem を更新した - Joy Luck Crab</title>
 <meta charset="utf-8" content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <meta content="hibariya" name="author">
 <link href="../../favicon.png" rel="icon" type="image/png">
@@ -39,66 +39,36 @@
 <div id="content">
 <article class="article autopagerize_page_element">
 <h1 class="date">
-<a href="../../entries/20111022.html">2011-10-22</a>
+<a href="../../entries/20130105.html">2013-01-05</a>
 </h1>
-<h1 id="a0">
-<a href="../../entries/20111022/a0.html">最近のRetterへの機能追加</a>
+<h1 id="a1">
+<a href="../../entries/20130105/a1.html">cline gem を更新した</a>
 </h1>
-<p>大きく分けて4つくらいの追加修正をしています。</p>
-<ul>
-<li>相対的な日時の指定ができるようになった</li>
-<li>これまでに書いた記事の一覧を見られるコマンドを追加した</li>
-<li>ページング機能を強化できるようにした</li>
-<li>細かいバグ修正と、組込みデザインの細かい修正</li>
-</ul>
-<h2>相対的な日時の指定ができるようになった</h2>
-<div class="highlight"><pre>  retter edit yesterday    # 昨日
-  retter edit today        # 今日
-  retter edit tommorow     # 明日
-
-  retter edit '3 days ago' # 3日前
-  retter edit 3.days.ago   # 3日前
-  retter edit 3.days.since # 3日後
-  retter edit 1.week.ago   # 1週間前
-  retter edit 3.weeks.ago  # 3週間前
-  retter edit 3.months.ago # 3カ月前
-  retter edit 3.years.ago  # 3年前
+<p><a href="https://github.com/hibariya/cline">Cline</a> は、フィードとか GitHub の Activity を収集(一定周期でポーリング)してきて、terminal で簡単に垂れ流し表示するためにつくったやつ。</p>
+<p>コミットログを見る感じだと数カ月ぶりのバージョンアップ。
+<a href="https://rubygems.org/gems/cline/">cline</a> をリリースした。
+サブコマンドの使い方が変わってしまったのでメジャーバージョンをひとつインクリメント。</p>
+<h3>デーモン化できるようにした</h3>
+<p>今の使い方だと screen を起動すると 3 つの cline プロセスが起動するようになっていて、ひとつあたりのメモリ使用量が割と多めなのだった。
+この更新で、cline のサーバを起動できるようにして、サーバが起動していたらそれ以降に起動したプロセスは socket 越しにいろいろ取りに行くようにした。</p>
+<p>起動とか停止とか:</p>
+<div class="highlight"><pre>  <span class="nv">$ </span>cline server start   <span class="c"># 起動</span>
+  <span class="nv">$ </span>cline server stop    <span class="c"># 停止</span>
+  <span class="nv">$ </span>cline server reload  <span class="c"># ~/.cline/config の再読み込み</span>
 </pre></div>
-<h2>これまでに書いた記事の一覧を見られるコマンドを追加した</h2>
-<div class="highlight"><pre>  retter list
-  [e0] 2011-10-12
-    記事ごとにPermlinkがつくようにした, retter 0.1.0
-
-  [e1] 2011-10-10
-    Rubyのトップレベルについて整理する
-
-  [e2] 2011-10-03
-    モジュール関数がprivateな理由
-
-  [e3] 2011-09-19
-    スタイルシートを追加してテーマを変えられるようにした
+<p>.zshrc などにこういうのを貼り付けておいて勝手に起動してくれるようにすると良さそう。</p>
+<div class="highlight"><pre><span class="k">if</span> ! <span class="o">[</span> -e ~/.cline/cline.sock <span class="o">]</span> ; <span class="k">then</span>
+<span class="k">  </span>cline server start
+<span class="k">fi</span>
 </pre></div>
-<h2>ページング機能を強化できるようにした</h2>
-<p>HAMLテンプレート内の<code>entry</code>や<code>article</code>にページングのためのいくつかのメソッドを追加しました。
-これでページングをし易くなったり、 Autopagerize などへの対応ができるようになりました。</p>
-<div class="highlight"><pre>%nav
-  .prev
-    - if prev_entry = entry.prev
-      %link{href: entry_path(prev_entry), rel: :prev}
-
-  .next
-    - if next_entry = entry.next
-      %link{href: entry_path(next_entry), rel: :next}
+<h3>tick コマンドの使い方が変わった</h3>
+<div class="highlight"><pre>  <span class="nv">$ </span>cline tick OFFSET INTERVAL
 </pre></div>
-<h2>細かいバグ修正と、組込みデザインの細かい修正</h2>
-<ul>
-<li>
-<code>retter -h</code> でヘルプが表示できない不具合を修正</li>
-<li>日付の表現方法を <code>2011/01/01</code> 形式から <code>2011-01-01</code> 形式に変更</li>
-<li>リンクやリストを見やすくなるよう修正</li>
-<li>ヘルパメソッドへの機能追加、テンプレートの簡略化</li>
-</ul>
-
+<p>から</p>
+<div class="highlight"><pre>  <span class="nv">$ </span>cline tick INTERVAL OFFSET
+</pre></div>
+<p>に変更。
+どちらも省略できるのだけど、offset よりは interval だけを指定することの方が多そうなので入れ替え。</p>
 </article>
 <div id="comments">
 <div id="disqus_thread">
@@ -116,10 +86,10 @@
 </div>
 <div class="nav">
 <div class="prev">
-<link href="../../entries/20111025/a0.html" rel="prev">
+<link href="../../entries/20130105/a0.html" rel="prev">
 </div>
 <div class="next">
-<link href="../../entries/20111022/a1.html" rel="next">
+<link href="../../entries/20130102/a0.html" rel="next">
 </div>
 </div>
 <div class="autopagerize_insert_before"></div>
