@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2013-02-18</dc:date><description>hibariya.github.com</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20130218/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20130105/a1.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20130105/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20130102/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20121206/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20121125/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120928/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120923/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120830/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120731/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120723/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120602/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120505/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120411/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120329/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120328/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120326/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a1.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120323/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120321/a0.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20130218/a0.html"><title>東京競馬場へ馬をみにいった</title><description>前の2日間ほとんど自宅にこもって作業していたらとうとう集中できなくなったので、日曜日は奥さんと馬を見に行くことになった。
+<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2013-04-18</dc:date><description>hibariya.github.com</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20130418/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20130218/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20130105/a1.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20130105/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20130102/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20121206/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20121125/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120928/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120923/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120830/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120731/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120723/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120602/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120505/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120411/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120329/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120328/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120326/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a1.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120323/a0.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20130418/a0.html"><title>春から学生になった</title><description>4月に、帝京大学理工学部情報科学科に入学した。通信教育課程なので、お仕事は継続。
+大学は mizzy さんのエントリ のおかげで知った。
+今年で28歳になった。
+10年前、本に関わる仕事をしようと思って編集の専門学校に進んだ。
+それはそれなりにためになったけど、途中でもっと楽しいことを見つけて、まもなく小さな出版社を後にした。
+コードを書くのは楽しい。
+このまま30年後もコードを書いていられるとい...</description><content:encoded><![CDATA[<p>4月に、帝京大学理工学部情報科学科に入学した。通信教育課程なので、お仕事は継続。
+大学は <a href="http://mizzy.org/blog/2012/04/14/1/" target="_blank">mizzy さんのエントリ</a> のおかげで知った。</p>
+<p>今年で28歳になった。
+10年前、本に関わる仕事をしようと思って編集の専門学校に進んだ。
+それはそれなりにためになったけど、途中でもっと楽しいことを見つけて、まもなく小さな出版社を後にした。</p>
+<p>コードを書くのは楽しい。
+このまま30年後もコードを書いていられるといいな。
+ずっとコードを書くなら、もっと上手になるための努力は惜しまなくて良さそう。
+だからちゃんと学ぼうと思う。</p>]]></content:encoded><dc:date>2013-04-18</dc:date><link>http://hibariya.github.com/entries/20130418/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20130218/a0.html"><title>東京競馬場へ馬をみにいった</title><description>前の2日間ほとんど自宅にこもって作業していたらとうとう集中できなくなったので、日曜日は奥さんと馬を見に行くことになった。
 競馬について何も知らないまま府中にある東京競馬場に行ったら、フェブラリーステークスといわれる割と大事そうなレースをやっていた。
 天気の良い日に目の前を全力で走っている馬を見るのはとっても刺激的で良い気分転換になるのでおすすめ。
 馬が走るのはだいたい30分に1回なので、その間次の...</description><content:encoded><![CDATA[<p>前の2日間ほとんど自宅にこもって作業していたらとうとう集中できなくなったので、日曜日は奥さんと馬を見に行くことになった。
@@ -448,46 +462,4 @@ Pygmentsを使いたいけどPygments.rbが落ちて困るという場合はAlbi
 <p>それから、Markdownのレンダリング結果をキャッシュするようになりました。
 途中でrendererを変更したりして、レンダリング結果が変わるような場合は以下のように<code>tmp/cache</code>以下のキャッシュを一度削除してください。</p>
 <div class="highlight"><pre>rm -rf tmp/cache/*
-</pre></div>]]></content:encoded><dc:date>2012-03-23</dc:date><link>http://hibariya.github.com/entries/20120323/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120321/a0.html"><title>Rubyで日付っぽい文字列を日時や日付に変換するときのこと</title><description>　Chronicべんり。別に最近のものでもないのだけど、しらなかった。
-　それまではActiveSupportで頑張っていた。
-require 'active_support/core_ext/object'
-require 'date'
-
-def parse_date_str(date_str)
-  case date_str
-  when /^yesterday$/i then 1.day.a...</description><content:encoded><![CDATA[<p>　<a href="https://github.com/mojombo/chronic">Chronic</a>べんり。別に最近のものでもないのだけど、しらなかった。</p>
-<p>　それまではActiveSupportで頑張っていた。</p>
-<div class="highlight"><pre><span class="nb">require</span> <span class="s1">'active_support/core_ext/object'</span>
-<span class="nb">require</span> <span class="s1">'date'</span>
-
-<span class="k">def</span> <span class="nf">parse_date_str</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
-  <span class="k">case</span> <span class="n">date_str</span>
-  <span class="k">when</span> <span class="sr">/^yesterday$/i</span> <span class="k">then</span> <span class="mi">1</span><span class="o">.</span><span class="n">day</span><span class="o">.</span><span class="n">ago</span>
-  <span class="k">when</span> <span class="sr">/^today$/i</span>     <span class="k">then</span> <span class="mi">0</span><span class="o">.</span><span class="n">day</span><span class="o">.</span><span class="n">ago</span>
-  <span class="k">when</span> <span class="sr">/^tomorrow$/i</span>  <span class="k">then</span> <span class="mi">1</span><span class="o">.</span><span class="n">day</span><span class="o">.</span><span class="n">since</span>
-  <span class="k">when</span> <span class="sr">/^[0-9]+[\.\s](?:days?|weeks?|months?|years?)[\.\s](?:ago|since)$/i</span>
-    <span class="nb">eval</span><span class="p">(</span><span class="n">date_str</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/\s+/</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">))</span>
-  <span class="k">else</span>
-    <span class="no">Date</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
-  <span class="k">end</span><span class="o">.</span><span class="n">to_date</span>
-<span class="k">end</span>
-
-<span class="n">parse_date_str</span> <span class="s1">'20110101'</span>   <span class="c1"># =&gt; Sat, 01 Jan 2011</span>
-<span class="n">parse_date_str</span> <span class="s1">'yesterday'</span>  <span class="c1"># =&gt; Tue, 20 Mar 2012</span>
-<span class="n">parse_date_str</span> <span class="s1">'1 week ago'</span> <span class="c1"># =&gt; Wed, 14 Mar 2012</span>
-</pre></div>
-<p>　こんなコード書かなくてもよかったんだ！</p>
-<div class="highlight"><pre><span class="nb">require</span> <span class="s1">'date'</span>
-<span class="nb">require</span> <span class="s1">'chronic'</span>
-
-<span class="k">def</span> <span class="nf">parse_date_str</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
-  <span class="p">(</span><span class="no">Chronic</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span> <span class="o">||</span> <span class="no">Date</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">date_str</span><span class="p">))</span><span class="o">.</span><span class="n">to_date</span>
-<span class="k">end</span>
-
-<span class="n">parse_date_str</span> <span class="s1">'20110101'</span>   <span class="c1"># =&gt; #&lt;Date: 2011-01-01 ((2455563j,0s,0n),+0s,2299161j)&gt;</span>
-<span class="n">parse_date_str</span> <span class="s1">'yesterday'</span>  <span class="c1"># =&gt; #&lt;Date: 2012-03-20 ((2456007j,0s,0n),+0s,2299161j)&gt;</span>
-<span class="n">parse_date_str</span> <span class="s1">'1 week ago'</span> <span class="c1"># =&gt; #&lt;Date: 2012-03-14 ((2456001j,0s,0n),+0s,2299161j)&gt;</span>
-</pre></div>
-<p>　Chronicはparseできなかったときはnilを返す。
-Date.parseを残しているのは、YYYYMMDDみたいな形式も使いたかったからで、それを除けばだいたいChronicだけで充分だった。</p>
-<p>　戻り値の見た目（Date#inspect）が違うのはActiveSupportの拡張っぽい。</p>]]></content:encoded><dc:date>2012-03-21</dc:date><link>http://hibariya.github.com/entries/20120321/a0.html</link><author>hibariya</author></item></rdf:RDF>
+</pre></div>]]></content:encoded><dc:date>2012-03-23</dc:date><link>http://hibariya.github.com/entries/20120323/a0.html</link><author>hibariya</author></item></rdf:RDF>
