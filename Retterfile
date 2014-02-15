@@ -12,7 +12,6 @@ configure api_revision: 1 do |config|
   config.disqus_shortname = 'joyluckcrab'
 
   config.after :edit do
-    Retter::Site.reset!
     ident = ARGV.pop
     preview ident if yes?("Preview now? [yes/no]")
   end
