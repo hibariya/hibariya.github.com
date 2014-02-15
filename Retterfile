@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 # coding: utf-8
 
+after :rebind, :commit
+
 configure api_revision: 1 do |config|
   config.url              = 'http://hibariya.github.com/'
   config.title            = 'Joy Luck Crab'
@@ -15,7 +17,7 @@ configure api_revision: 1 do |config|
     preview ident if yes?("Preview now? [yes/no]")
   end
 
-  config.after :rebind, :commit
+  #config.after :rebind, :commit
 
   config.after :commit do
     if yes?("Deploy now? [yes/no]")
