@@ -1,4 +1,4 @@
-!!!
+!!! 5
 %html
   %head
     %title= title
@@ -28,7 +28,7 @@
           %li
             %a{href: '/entries.rss', target: '_blank'} RSS
     #page
-      #content= content
+      #content= yield
       %aside#sidebar
         %h3 Author
         .author

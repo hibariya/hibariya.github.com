@@ -22,3 +22,6 @@ after :commit do
     system "cd #{config.retter_home} && git push origin master"
   end
 end
+configure api_revision: 1 do |config|
+  # How to configure: https://github.com/hibariya/retter
+end
