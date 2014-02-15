@@ -43,45 +43,45 @@
 <h1 id='20111010a0'>
 <a href='/entries/20111010/a0.html'>Rubyのトップレベルについて整理する</a>
 </h1>
-<p>トップレベルでメソッドを定義したとき、なぜそれがいきなり使えるようになるのかを説明できなかったので調べたり人にきいたりした。</p><h2>メソッドについての理解（インスタンスメソッド）</h2><p>クラス定義式の中で（特異メソッドでない）メソッドを定義すると、メソッドはそのクラスのインスタンスメソッドメソッドになる。</p><div class="highlight"><pre>  <span class="k">class</span> <span class="nc">Foo</span>
+<p>トップレベルでメソッドを定義したとき、なぜそれがいきなり使えるようになるのかを説明できなかったので調べたり人にきいたりした。</p><h2>メソッドについての理解（インスタンスメソッド）</h2><p>クラス定義式の中で（特異メソッドでない）メソッドを定義すると、メソッドはそのクラスのインスタンスメソッドメソッドになる。</p><pre class="highlight ruby">  <span class="k">class</span> <span class="nc">Foo</span>
     <span class="k">def</span> <span class="nf">bar</span>
       <span class="s1">'bar'</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
-  <span class="no">Foo</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">bar</span> <span class="c1"># =&gt; "bar"</span>
-</pre></div><p>同じような方法でトップレベルにメソッドを定義すると、なぜかその場で使えるようになる。</p><div class="highlight"><pre><span class="k">def</span> <span class="nf">bar</span>
+  <span class="no">Foo</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">bar</span> <span class="c1"># =&gt; "bar"</span>
+</pre><p>同じような方法でトップレベルにメソッドを定義すると、なぜかその場で使えるようになる。</p><pre class="highlight ruby"><span class="k">def</span> <span class="nf">bar</span>
   <span class="s1">'bar'</span>
 <span class="k">end</span>
 
 <span class="n">bar</span> <span class="c1"># =&gt; "bar"</span>
-</pre></div><p>もちろん、同じようなことはクラス定義式内ではできない。</p><div class="highlight"><pre>  <span class="k">class</span> <span class="nc">Foo</span>
+</pre><p>もちろん、同じようなことはクラス定義式内ではできない。</p><pre class="highlight ruby">  <span class="k">class</span> <span class="nc">Foo</span>
     <span class="k">def</span> <span class="nf">baz</span>
       <span class="s1">'baz'</span>
     <span class="k">end</span>
 
     <span class="n">baz</span>
   <span class="k">end</span> <span class="c1"># =&gt; NameError: undefined local variable or method...</span>
-</pre></div><p>どうやらクラス定義式の中とトップレベルでは、同じようにメソッド定義式を書いても少し動きが違ってくるらしい。</p><h2>トップレベルで定義されたメソッドは何処へ</h2><p>トップレベルで定義したメソッドについて色々と調べた結果をまとめて書きます。</p><p>クラス定義式の中に書いたメソッドはそのクラスのインスタンスメソッドになった。じゃあトップレベルに定義されたメソッドは何処へ。
-実はObjectの（privateな）メソッドになっていた。そしてトップレベルはObjectのインスタンスなので、トップレベルにメソッドを定義すると即座に使えるようになるということらしい。</p><div class="highlight"><pre>  <span class="k">def</span> <span class="nf">carol</span><span class="p">;</span> <span class="k">end</span>
+</pre><p>どうやらクラス定義式の中とトップレベルでは、同じようにメソッド定義式を書いても少し動きが違ってくるらしい。</p><h2>トップレベルで定義されたメソッドは何処へ</h2><p>トップレベルで定義したメソッドについて色々と調べた結果をまとめて書きます。</p><p>クラス定義式の中に書いたメソッドはそのクラスのインスタンスメソッドになった。じゃあトップレベルに定義されたメソッドは何処へ。
+実はObjectの（privateな）メソッドになっていた。そしてトップレベルはObjectのインスタンスなので、トップレベルにメソッドを定義すると即座に使えるようになるということらしい。</p><pre class="highlight ruby">  <span class="k">def</span> <span class="nf">carol</span><span class="p">;</span> <span class="k">end</span>
 
-  <span class="no">Object</span><span class="o">.</span><span class="n">private_instance_methods</span><span class="o">.</span><span class="n">grep</span> <span class="sr">/carol/</span> <span class="c1"># =&gt; [:carol]</span>
-  <span class="no">Object</span><span class="o">.</span><span class="n">private_methods</span><span class="o">.</span><span class="n">grep</span> <span class="sr">/carol/</span>          <span class="c1"># =&gt; [:carol]</span>
-</pre></div><p>トップレベルで定義したメソッドがどうしてすぐに呼べるのか、言葉のうえでは結論が出た感じになってしまったけれど、話はもう少しだけ続く。</p><h2>Objectの不思議と関数っぽさ</h2><p>Objectに定義されたメソッドは他のクラスに定義されたメソッドとは少し違う動きをする。
-なんと、Objectに定義されたメソッドはObjectのクラスメソッドとしても定義される。しかもクラスメソッドにはprivateとかの呼び出し制限もそのまま引き継がれる。</p><div class="highlight"><pre>  <span class="k">class</span> <span class="nc">Object</span>
+  <span class="no">Object</span><span class="p">.</span><span class="nf">private_instance_methods</span><span class="p">.</span><span class="nf">grep</span> <span class="sr">/carol/</span> <span class="c1"># =&gt; [:carol]</span>
+  <span class="no">Object</span><span class="p">.</span><span class="nf">private_methods</span><span class="p">.</span><span class="nf">grep</span> <span class="sr">/carol/</span>          <span class="c1"># =&gt; [:carol]</span>
+</pre><p>トップレベルで定義したメソッドがどうしてすぐに呼べるのか、言葉のうえでは結論が出た感じになってしまったけれど、話はもう少しだけ続く。</p><h2>Objectの不思議と関数っぽさ</h2><p>Objectに定義されたメソッドは他のクラスに定義されたメソッドとは少し違う動きをする。
+なんと、Objectに定義されたメソッドはObjectのクラスメソッドとしても定義される。しかもクラスメソッドにはprivateとかの呼び出し制限もそのまま引き継がれる。</p><pre class="highlight ruby">  <span class="k">class</span> <span class="nc">Object</span>
     <span class="k">def</span> <span class="nf">bob</span>
       <span class="s1">'ボブですよ'</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
-  <span class="no">Object</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">bob</span> <span class="c1"># =&gt; "ボブですよ"</span>
-  <span class="no">Object</span><span class="o">.</span><span class="n">bob</span>     <span class="c1"># =&gt; "ボブですよ"</span>
+  <span class="no">Object</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">bob</span> <span class="c1"># =&gt; "ボブですよ"</span>
+  <span class="no">Object</span><span class="p">.</span><span class="nf">bob</span>     <span class="c1"># =&gt; "ボブですよ"</span>
   <span class="n">bob</span>            <span class="c1"># =&gt; "ボブですよ"</span>
-</pre></div><p>なぜだろう。なぜならObjectはClassのインスタンスだけど、同時にObject（のサブクラス）のインスタンスでもあるから、らしい。
-堂々巡りで混乱してくる。</p><div class="highlight"><pre>  <span class="no">Object</span><span class="o">.</span><span class="n">class</span>           <span class="c1"># =&gt; Class</span>
-  <span class="no">Object</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">ancestors</span> <span class="c1"># =&gt; [Class, Module, Object, Kernel, BasicObject]</span>
-  <span class="no">Object</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="no">Object</span><span class="p">)</span>   <span class="c1"># =&gt; true</span>
-</pre></div><p>でもこの振舞いのおかげで、トップレベルに定義したメソッドはどこでも使えるようになる。何処に居ようがselfの祖先はObjectだから。</p><p>こんなふうに。</p><div class="highlight"><pre>  <span class="k">def</span> <span class="nf">alice</span>
+</pre><p>なぜだろう。なぜならObjectはClassのインスタンスだけど、同時にObject（のサブクラス）のインスタンスでもあるから、らしい。
+堂々巡りで混乱してくる。</p><pre class="highlight ruby">  <span class="no">Object</span><span class="p">.</span><span class="nf">class</span>           <span class="c1"># =&gt; Class</span>
+  <span class="no">Object</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">ancestors</span> <span class="c1"># =&gt; [Class, Module, Object, Kernel, BasicObject]</span>
+  <span class="no">Object</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">Object</span><span class="p">)</span>   <span class="c1"># =&gt; true</span>
+</pre><p>でもこの振舞いのおかげで、トップレベルに定義したメソッドはどこでも使えるようになる。何処に居ようがselfの祖先はObjectだから。</p><p>こんなふうに。</p><pre class="highlight ruby">  <span class="k">def</span> <span class="nf">alice</span>
     <span class="nb">puts</span> <span class="s1">'hi'</span>
   <span class="k">end</span>
 
@@ -101,11 +101,11 @@
     <span class="n">alice</span> <span class="c1"># "hi"と表示</span>
   <span class="k">end</span>
 
-  <span class="no">Bar</span><span class="o">.</span><span class="n">foo</span>     <span class="c1"># "hi"と表示</span>
-  <span class="no">Bar</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">foo</span> <span class="c1"># "hi"と表示</span>
+  <span class="no">Bar</span><span class="p">.</span><span class="nf">foo</span>     <span class="c1"># "hi"と表示</span>
+  <span class="no">Bar</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">foo</span> <span class="c1"># "hi"と表示</span>
 
   <span class="n">alice</span>       <span class="c1"># "hi"と表示</span>
-</pre></div><p>もちろん、Object.#aliceはprivateメソッドなので、<code>self.alice</code>とか<code>Object.alice</code>と書くと例外NoMethodErrorが発生する。
+</pre><p>もちろん、Object.#aliceはprivateメソッドなので、<code>self.alice</code>とか<code>Object.alice</code>と書くと例外NoMethodErrorが発生する。
 レシーバを記述しない関数風の呼び方が強く奨められているのは、モジュール関数と同じく、関数っぽい使い方をすることが想定されているからなのでしょうね。</p>
 </article>
 <div class='nav'>

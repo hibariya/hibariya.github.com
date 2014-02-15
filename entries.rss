@@ -109,21 +109,21 @@ gem の名前をある程度適当に与えても候補から選べるように�
 <content:encoded>
 <![CDATA[
     &lt;p&gt;&lt;a href=&quot;https://github.com/hibariya/reditor&quot;&gt;Reditor&lt;/a&gt; は、gem や pure ruby な Ruby 標準添付ライブラリを $EDITOR で開くためのコマンドラインツールで、インストールすると bundle open や gem edit に似たコマンド reditor を使えるようになる。
-    今回はライブラリが見つからなかったときに候補を出す機能を追加したのだった。&lt;/p&gt;&lt;p&gt;require するときは active_support なのに gem の名前は activesupport みたいな gem が結構あって、じゃあ reditor で開くときは今までどんな感じだったかというと、&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;reditor activesupport  &lt;span class=&quot;c&quot;&gt;# 開ける&lt;/span&gt;
+    今回はライブラリが見つからなかったときに候補を出す機能を追加したのだった。&lt;/p&gt;&lt;p&gt;require するときは active_support なのに gem の名前は activesupport みたいな gem が結構あって、じゃあ reditor で開くときは今までどんな感じだったかというと、&lt;/p&gt;&lt;pre class=&quot;highlight shell&quot;&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;reditor activesupport  &lt;span class=&quot;c&quot;&gt;# 開ける&lt;/span&gt;
       &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;reditor active_support &lt;span class=&quot;c&quot;&gt;# 開けない&lt;/span&gt;
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;という感じ。
+    &lt;/pre&gt;&lt;p&gt;という感じ。
     gem によって &quot;アンダースコアが入るか入らないか&quot; とか、他にも &quot;名前が単数形か複数形か&quot; とか忘れてしまうことは割とある。
     開きたい gem を普段使っていなかったり gem の名前がキラキラしていれば尚更忘れやすい。
     だけどこういう、名前を曖昧にしか思い出せないときにあっけなく失敗してしまうのは悲しい。
-    そこで、与えられた名前でライブラリを見つけられなかったときには候補っぽいものを出して選べるようにした。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;reditor active_support
-    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; actionmailer
-    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; actionpack
-    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; activemodel
-    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;3&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; activerecord
-    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;4&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; activeresource
-    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;5&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; activesupport
-    Choose number of library &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&amp;gt; 5 &lt;span class=&quot;c&quot;&gt;# activesupport を開ける&lt;/span&gt;
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;一覧は単純にソートしているだけで、本来なら activesupport が一番上に来て欲しいところだけど、それは追々。
+    そこで、与えられた名前でライブラリを見つけられなかったときには候補っぽいものを出して選べるようにした。&lt;/p&gt;&lt;pre class=&quot;highlight shell&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;reditor active_support
+    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;0] actionmailer
+    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1] actionpack
+    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2] activemodel
+    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;3] activerecord
+    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;4] activeresource
+    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;5] activesupport
+    Choose number of library &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;0]&amp;gt; 5 &lt;span class=&quot;c&quot;&gt;# activesupport を開ける&lt;/span&gt;
+    &lt;/pre&gt;&lt;p&gt;一覧は単純にソートしているだけで、本来なら activesupport が一番上に来て欲しいところだけど、それは追々。
     gem の名前をある程度適当に与えても候補から選べるようになったので、思い出すための面倒な手間が減りそう。&lt;/p&gt;
 ]]>
 </content:encoded>
@@ -150,15 +150,15 @@ tick コマンドの使い方が変わった  $ cline tick OFFSET INTERVAL
     &lt;p&gt;&lt;a href=&quot;https://github.com/hibariya/cline&quot;&gt;Cline&lt;/a&gt; は、フィードとか GitHub の Activity を収集(一定周期でポーリング)してきて、terminal で簡単に垂れ流し表示するためにつくったやつ。&lt;/p&gt;&lt;p&gt;コミットログを見る感じだと数カ月ぶりのバージョンアップ。
     &lt;a href=&quot;https://rubygems.org/gems/cline/&quot;&gt;cline&lt;/a&gt; をリリースした。
     サブコマンドの使い方が変わってしまったのでメジャーバージョンをひとつインクリメント。&lt;/p&gt;&lt;h3&gt;デーモン化できるようにした&lt;/h3&gt;&lt;p&gt;今の使い方だと screen を起動すると 3 つの cline プロセスが起動するようになっていて、ひとつあたりのメモリ使用量が割と多めなのだった。
-    この更新で、cline のサーバを起動できるようにして、サーバが起動していたらそれ以降に起動したプロセスは socket 越しにいろいろ取りに行くようにした。&lt;/p&gt;&lt;p&gt;起動とか停止とか:&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cline server start   &lt;span class=&quot;c&quot;&gt;# 起動&lt;/span&gt;
+    この更新で、cline のサーバを起動できるようにして、サーバが起動していたらそれ以降に起動したプロセスは socket 越しにいろいろ取りに行くようにした。&lt;/p&gt;&lt;p&gt;起動とか停止とか:&lt;/p&gt;&lt;pre class=&quot;highlight shell&quot;&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cline server start   &lt;span class=&quot;c&quot;&gt;# 起動&lt;/span&gt;
       &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cline server stop    &lt;span class=&quot;c&quot;&gt;# 停止&lt;/span&gt;
       &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cline server reload  &lt;span class=&quot;c&quot;&gt;# ~/.cline/config の再読み込み&lt;/span&gt;
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;.zshrc などにこういうのを貼り付けておいて勝手に起動してくれるようにすると良さそう。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; ! &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -e ~/.cline/cline.sock &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;  &lt;/span&gt;cline server start
+    &lt;/pre&gt;&lt;p&gt;.zshrc などにこういうのを貼り付けておいて勝手に起動してくれるようにすると良さそう。&lt;/p&gt;&lt;pre class=&quot;highlight shell&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; ! &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -e ~/.cline/cline.sock &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; ; &lt;span class=&quot;k&quot;&gt;then
+      &lt;/span&gt;cline server start
     &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-    &lt;/pre&gt;&lt;/div&gt;&lt;h3&gt;tick コマンドの使い方が変わった&lt;/h3&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cline tick OFFSET INTERVAL
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;から&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cline tick INTERVAL OFFSET
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;に変更。
+    &lt;/pre&gt;&lt;h3&gt;tick コマンドの使い方が変わった&lt;/h3&gt;&lt;pre class=&quot;highlight shell&quot;&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cline tick OFFSET INTERVAL
+    &lt;/pre&gt;&lt;p&gt;から&lt;/p&gt;&lt;pre class=&quot;highlight shell&quot;&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cline tick INTERVAL OFFSET
+    &lt;/pre&gt;&lt;p&gt;に変更。
     どちらも省略できるのだけど、offset よりは interval だけを指定することの方が多そうなので入れ替え。&lt;/p&gt;
 ]]>
 </content:encoded>
@@ -363,8 +363,8 @@ while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてル
 <![CDATA[
     &lt;p&gt;Enumerable が提供する色々なメソッドは、受け取る筈のブロックが与えられなかった場合 Enumerator オブジェクトを返す。
     Enumerator オブジェクトは、&lt;code&gt;each.with_index.with_object&lt;/code&gt;みたいに each にブロックを渡さずに使うとかいうのにたまに使う。
-    あとは、外部イテレータのために使ったり、each 以外のメソッドを使って Enumerable のメソッドを使ったりするのに使える。&lt;/p&gt;&lt;p&gt;each 以外の繰り返しを行うメソッドも、ブロックを受け取らなかったときは Enumerator オブジェクトを返したりする。Enumerable#map とか。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;sx&quot;&gt;%w(a b c)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# =&amp;gt; #&amp;lt;Enumerator: [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]:map&amp;gt;&lt;/span&gt;
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;これを外部イテレータとして使う機会は今のところない。
+    あとは、外部イテレータのために使ったり、each 以外のメソッドを使って Enumerable のメソッドを使ったりするのに使える。&lt;/p&gt;&lt;p&gt;each 以外の繰り返しを行うメソッドも、ブロックを受け取らなかったときは Enumerator オブジェクトを返したりする。Enumerable#map とか。&lt;/p&gt;&lt;pre class=&quot;highlight ruby&quot;&gt;&lt;span class=&quot;sx&quot;&gt;%w(a b c)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# =&amp;gt; #&amp;lt;Enumerator: [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]:map&amp;gt;&lt;/span&gt;
+    &lt;/pre&gt;&lt;p&gt;これを外部イテレータとして使う機会は今のところない。
     （※元々「何に使うの」くらいに書いてたけど、&lt;code&gt;map.with_index&lt;/code&gt;はやるよねというツッコミが。たしかに）&lt;/p&gt;&lt;p&gt;使う場面は無くてもせめて使い方くらいは知っておきたいなあと思って Asakusa.rb で人に聞いたりソースに書かれたコメントを読んだりしたら何となく使い方が分かってきた。&lt;/p&gt;&lt;p&gt;疑問はふたつあった。&lt;/p&gt;&lt;ul&gt;
     &lt;li&gt;ブロックの戻り値にあたる値はどこにどうやって渡せばいいのか&lt;/li&gt;
     &lt;li&gt;どうすればメソッドの戻り値を得られるのか&lt;/li&gt;
@@ -373,21 +373,21 @@ while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてル
     &lt;li&gt;ブロックの戻り値（つまりyieldの戻り値になる値）は Enumerator#feed に渡す&lt;/li&gt;
     &lt;li&gt;メソッドの戻り値は StopIteration#result から得られる&lt;/li&gt;
     &lt;/ul&gt;
-    &lt;p&gt;もっとも、↓だけでは何だかありがたみが分からないけど。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;ary&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%w(alice bob carol)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;
+    &lt;p&gt;もっとも、↓だけでは何だかありがたみが分からないけど。&lt;/p&gt;&lt;pre class=&quot;highlight ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;ary&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%w(alice bob carol)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;map&lt;/span&gt;
     
     &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;begin&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# ブロック引数的なもの&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# ブロック引数的なもの&lt;/span&gt;
     
-        &lt;span class=&quot;n&quot;&gt;enum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feed&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;upcase&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# ブロックの戻り値的なもの&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;enum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;feed&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;upcase&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# ブロックの戻り値的なもの&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;rescue&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;StopIteration&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# [&quot;ALICE&quot;, &quot;BOB&quot;, &quot;CAROL&quot;] と表示&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# [&quot;ALICE&quot;, &quot;BOB&quot;, &quot;CAROL&quot;] と表示&lt;/span&gt;
     
         &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてループから脱出してくれたりする。&lt;/p&gt;
+    &lt;/pre&gt;&lt;p&gt;while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてループから脱出してくれたりする。&lt;/p&gt;
 ]]>
 </content:encoded>
 </item>
@@ -411,13 +411,13 @@ require 'ruremai' すると、Method#rurema! が追加されます。例えば�
 <content:encoded>
 <![CDATA[
     &lt;p&gt;気がついたら色々な人から良い感じのパッチをもらったので取り込んで &lt;a href=&quot;https://rubygems.org/gems/ruremai&quot;&gt;0.0.3&lt;/a&gt; をリリースしました。&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/hibariya/ruremai&quot;&gt;Ruremai&lt;/a&gt; はirbなどを使っている際に、メソッドのリファレンス・マニュアルをお手軽にブラウザで開くためのツールです。
-    &lt;code&gt;require &#39;ruremai&#39;&lt;/code&gt; すると、Method#rurema! が追加されます。&lt;/p&gt;&lt;p&gt;例えば、「何かそれっぽいメソッドが記憶の片隅にあるんだけど、使い方がイマイチ思い出せない」ようなときに便利。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;hibariya@ ;-) irb
+    &lt;code&gt;require &#39;ruremai&#39;&lt;/code&gt; すると、Method#rurema! が追加されます。&lt;/p&gt;&lt;p&gt;例えば、「何かそれっぽいメソッドが記憶の片隅にあるんだけど、使い方がイマイチ思い出せない」ようなときに便利。&lt;/p&gt;&lt;pre class=&quot;highlight plaintext&quot;&gt;hibariya@ ;-) irb
     &amp;gt;&amp;gt; require &#39;ruremai&#39;
     =&amp;gt; false
     &amp;gt;&amp;gt; ary = %w(alice bob carol)
     =&amp;gt; [&quot;alice&quot;, &quot;bob&quot;, &quot;carol&quot;]
     &amp;gt;&amp;gt; ary.method(:any?).rurema! # ここで唐突にブラウザが開く!
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;今回はいくつかの修正や機能追加があったのでした。&lt;/p&gt;&lt;ul&gt;
+    &lt;/pre&gt;&lt;p&gt;今回はいくつかの修正や機能追加があったのでした。&lt;/p&gt;&lt;ul&gt;
     &lt;li&gt;&lt;a href=&quot;https://github.com/hibariya/ruremai/pull/1&quot;&gt;ショートカット Object#mean? の追加&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://github.com/hibariya/ruremai/pull/2&quot;&gt;大文字を含むメソッド名に対応できていなかったバグの修正&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://github.com/hibariya/ruremai/pull/4&quot;&gt;名前空間や特定のメソッドに対応できていなかったバグの修正と高速化&lt;/a&gt;&lt;/li&gt;
@@ -434,8 +434,8 @@ require 'ruremai' すると、Method#rurema! が追加されます。例えば�
 APIDock とかも見るようにできるといいのかな。~/.irbrc あたりで require 'ruremai' しておくとよさそう。勉強などのお供に。</description>
 <content:encoded>
 <![CDATA[
-    &lt;p&gt;Ruby リファレンスマニュアル、通称るりまを開くのが日頃から割と面倒だったので、irb からさっと開けるようなものを作った。&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/hibariya/ruremai&quot;&gt;ruremai&lt;/a&gt;&lt;/p&gt;&lt;p&gt;require すると Method#rurema! が追加される。これを呼び出すと、るりまの該当メソッドのページをブラウザで開く。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;no&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rurema!&lt;/span&gt;
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;APIDock とかも見るようにできるといいのかな。&lt;/p&gt;&lt;p&gt;&lt;code&gt;~/.irbrc&lt;/code&gt; あたりで &lt;code&gt;require &#39;ruremai&#39;&lt;/code&gt; しておくとよさそう。勉強などのお供に。&lt;/p&gt;
+    &lt;p&gt;Ruby リファレンスマニュアル、通称るりまを開くのが日頃から割と面倒だったので、irb からさっと開けるようなものを作った。&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/hibariya/ruremai&quot;&gt;ruremai&lt;/a&gt;&lt;/p&gt;&lt;p&gt;require すると Method#rurema! が追加される。これを呼び出すと、るりまの該当メソッドのページをブラウザで開く。&lt;/p&gt;&lt;pre class=&quot;highlight ruby&quot;&gt;  &lt;span class=&quot;no&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rurema!&lt;/span&gt;
+    &lt;/pre&gt;&lt;p&gt;APIDock とかも見るようにできるといいのかな。&lt;/p&gt;&lt;p&gt;&lt;code&gt;~/.irbrc&lt;/code&gt; あたりで &lt;code&gt;require &#39;ruremai&#39;&lt;/code&gt; しておくとよさそう。勉強などのお供に。&lt;/p&gt;
 ]]>
 </content:encoded>
 </item>
@@ -484,23 +484,23 @@ end
     &lt;li&gt;フィルタリングのためのインターフェース&lt;/li&gt;
     &lt;/ul&gt;
     &lt;h2&gt;簡単にURLを開く&lt;/h2&gt;&lt;p&gt;表示するときにメッセージにエイリアスをつけるようにしました。
-    その分、あまり必要なさそうな時間の秒とタイムゾーンを表示しないようにしました。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;[2012/05/04 22:41][2][1f5] Delicious.com - Discover Yourself! http://delicious.com/help/quicktour/chrome
+    その分、あまり必要なさそうな時間の秒とタイムゾーンを表示しないようにしました。&lt;/p&gt;&lt;pre class=&quot;highlight plaintext&quot;&gt;[2012/05/04 22:41][2][1f5] Delicious.com - Discover Yourself! http://delicious.com/help/quicktour/chrome
                            ↑
                           これ
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;エイリアスを使うと簡単にメッセージの中のURLをブラウザで開くことができます。
-    URLが途中で見切れてしまっても大丈夫。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  $ cline open 1f5
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;打つのが面倒なので &lt;code&gt;alias co=&#39;cline open&#39;&lt;/code&gt; しておくとよさそう。&lt;/p&gt;&lt;h3&gt;フィルタリング&lt;/h3&gt;&lt;p&gt;フィルタリングのようなことを、ActiveRecordのvalidationを使って実現できるようにしておきました。
+    &lt;/pre&gt;&lt;p&gt;エイリアスを使うと簡単にメッセージの中のURLをブラウザで開くことができます。
+    URLが途中で見切れてしまっても大丈夫。&lt;/p&gt;&lt;pre class=&quot;highlight plaintext&quot;&gt;  $ cline open 1f5
+    &lt;/pre&gt;&lt;p&gt;打つのが面倒なので &lt;code&gt;alias co=&#39;cline open&#39;&lt;/code&gt; しておくとよさそう。&lt;/p&gt;&lt;h3&gt;フィルタリング&lt;/h3&gt;&lt;p&gt;フィルタリングのようなことを、ActiveRecordのvalidationを使って実現できるようにしておきました。
     invalidなメッセージは保存されなくなります。
-    &lt;code&gt;~/.cline/config&lt;/code&gt; あたりに書いておくとよさそう。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;hiwai&#39;&lt;/span&gt;
+    &lt;code&gt;~/.cline/config&lt;/code&gt; あたりに書いておくとよさそう。&lt;/p&gt;&lt;pre class=&quot;highlight ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;hiwai&#39;&lt;/span&gt;
     
     &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Cline&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Notification&lt;/span&gt;
       &lt;span class=&quot;n&quot;&gt;validate&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:message_should_not_be_hiwai&lt;/span&gt;
     
       &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;message_should_not_be_hiwai&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;hiwai&#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hiwai?&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;hiwai&#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hiwai?&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;クラスを再オープンしているのだけど、もうちょっとスマートなAPIを用意したいなと思っているところ。
+    &lt;/pre&gt;&lt;p&gt;クラスを再オープンしているのだけど、もうちょっとスマートなAPIを用意したいなと思っているところ。
     ちなみに&lt;a href=&quot;https://github.com/hibariya/hiwai&quot;&gt;hiwai&lt;/a&gt;はレシーバがひわいかどうかを確認するためのライブラリです。&lt;/p&gt;
 ]]>
 </content:encoded>
@@ -516,9 +516,9 @@ end
 <content:encoded>
 <![CDATA[
     &lt;p&gt;Rubyには&lt;code&gt;bundle open&lt;/code&gt;やgemeditの&lt;code&gt;gem edit&lt;/code&gt;みたいに、gemを自分のエディタで簡単に開くための方法があるのだけど、たまに標準添付ライブラリも開きたいことがあるのだった。
-    そこで&lt;a href=&quot;https://rubygems.org/gems/reditor&quot;&gt;reditor&lt;/a&gt;というgemを作ってみた。&lt;/p&gt;&lt;p&gt;インストールすると&lt;code&gt;reditor&lt;/code&gt;コマンドが使えるようになって、開きたいライブラリの名前を渡すと$LOAD_PATHやrubygemsの中からそれっぽいものを見つけてエディタで開いてくれる。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  $ reditor csv
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;とか。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  $ reditor faraday
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;とか。&lt;/p&gt;
+    そこで&lt;a href=&quot;https://rubygems.org/gems/reditor&quot;&gt;reditor&lt;/a&gt;というgemを作ってみた。&lt;/p&gt;&lt;p&gt;インストールすると&lt;code&gt;reditor&lt;/code&gt;コマンドが使えるようになって、開きたいライブラリの名前を渡すと$LOAD_PATHやrubygemsの中からそれっぽいものを見つけてエディタで開いてくれる。&lt;/p&gt;&lt;pre class=&quot;highlight plaintext&quot;&gt;  $ reditor csv
+    &lt;/pre&gt;&lt;p&gt;とか。&lt;/p&gt;&lt;pre class=&quot;highlight plaintext&quot;&gt;  $ reditor faraday
+    &lt;/pre&gt;&lt;p&gt;とか。&lt;/p&gt;
 ]]>
 </content:encoded>
 </item>
@@ -531,8 +531,8 @@ Railsだとconfig/application.rbの頭あたりに書いておく。起動して
 最新でも直ってなかったら自分で直してpull requestを送ったりする。</description>
 <content:encoded>
 <![CDATA[
-    &lt;p&gt;Railsを使ってるときとかにActiveSupport::MemoizableがDEPRECATEDだとかそんなWARNINGっぽいメッセージがどこからともなく出てくるときのこと。&lt;/p&gt;&lt;p&gt;ひとまずraiseする。IOで出力する系のメソッドたちはだいたい最後にwriteを呼ぶ筈なので、writeを上書きしてる。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;STDERR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;raise&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Railsだと&lt;code&gt;config/application.rb&lt;/code&gt;の頭あたりに書いておく。&lt;/p&gt;&lt;p&gt;起動してstacktraceを見ればどのgemが問題かだいたい分かるので&lt;code&gt;bundle update [gem name]&lt;/code&gt;で問題のgemをupdateしてみると直っていたりする。
+    &lt;p&gt;Railsを使ってるときとかにActiveSupport::MemoizableがDEPRECATEDだとかそんなWARNINGっぽいメッセージがどこからともなく出てくるときのこと。&lt;/p&gt;&lt;p&gt;ひとまずraiseする。IOで出力する系のメソッドたちはだいたい最後にwriteを呼ぶ筈なので、writeを上書きしてる。&lt;/p&gt;&lt;pre class=&quot;highlight ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;STDERR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;raise&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;/pre&gt;&lt;p&gt;Railsだと&lt;code&gt;config/application.rb&lt;/code&gt;の頭あたりに書いておく。&lt;/p&gt;&lt;p&gt;起動してstacktraceを見ればどのgemが問題かだいたい分かるので&lt;code&gt;bundle update [gem name]&lt;/code&gt;で問題のgemをupdateしてみると直っていたりする。
     最新でも直ってなかったら自分で直してpull requestを送ったりする。&lt;/p&gt;
 ]]>
 </content:encoded>
@@ -608,20 +608,20 @@ Process.waitpid pid
 <![CDATA[
     &lt;p&gt;孤児プロセスとゾンビプロセスの違いがうまく理解できてなかったけど、ようやく違いを確認することができた。&lt;/p&gt;&lt;h2&gt;孤児プロセス&lt;/h2&gt;&lt;p&gt;孤児プロセスは、親プロセスがwaitせずに先に逝ってしまった後も走り続けている子プロセス。
     Orphan Process とも呼ばれる。
-    親のいなくなった子プロセスはinitプロセスの子（孤児）になる。&lt;/p&gt;&lt;p&gt;親プロセスが死んで、子プロセスの親が変化する様子を見るには以下のようなスクリプトを実行したあとでファイルをtailすると分かりやすそう。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-      &lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;orphan&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;a&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    親のいなくなった子プロセスはinitプロセスの子（孤児）になる。&lt;/p&gt;&lt;p&gt;親プロセスが死んで、子プロセスの親が変化する様子を見るには以下のようなスクリプトを実行したあとでファイルをtailすると分かりやすそう。&lt;/p&gt;&lt;pre class=&quot;highlight ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;orphan&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;a&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
         &lt;span class=&quot;kp&quot;&gt;loop&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
           &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
     
           &lt;span class=&quot;c1&quot;&gt;# 親プロセスのpidをファイルに書き出す&lt;/span&gt;
-          &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ppid&lt;/span&gt;
-          &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flush&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;ppid&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;flush&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
     
     &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;このプログラムを実行して、&lt;code&gt;orphan&lt;/code&gt;を&lt;code&gt;tail -f&lt;/code&gt;で観察していると、5秒後に親プロセスが死んで、子プロセスの親プロセスがinitに変化していることを確認できる。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;$ tailf orphan
+    &lt;/pre&gt;&lt;p&gt;このプログラムを実行して、&lt;code&gt;orphan&lt;/code&gt;を&lt;code&gt;tail -f&lt;/code&gt;で観察していると、5秒後に親プロセスが死んで、子プロセスの親プロセスがinitに変化していることを確認できる。&lt;/p&gt;&lt;pre class=&quot;highlight plaintext&quot;&gt;$ tailf orphan
     80361 # まだ親プロセスの子
     80361
     80361
@@ -631,29 +631,29 @@ Process.waitpid pid
     1
     1
     1
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;initは孤児プロセスをwaitしてくれる。&lt;/p&gt;&lt;h2&gt;ゾンビプロセス&lt;/h2&gt;&lt;p&gt;ゾンビプロセスは、既に処理を終えて死んだ子プロセスが、まだ生きている親プロセスにwaitされるのを待っている状態のこと。&lt;/p&gt;&lt;p&gt;子プロセスが死んでも親プロセスが生きている限り、いつ子プロセスの終了ステータスが参照されても（waitされても）いいように、その情報はプロセステーブルのエントリとして残る。
-    プロセスとしては死んでいるけれど、waitされるかもしれないのでプロセステーブルに残っている状態がゾンビ。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;/pre&gt;&lt;p&gt;initは孤児プロセスをwaitしてくれる。&lt;/p&gt;&lt;h2&gt;ゾンビプロセス&lt;/h2&gt;&lt;p&gt;ゾンビプロセスは、既に処理を終えて死んだ子プロセスが、まだ生きている親プロセスにwaitされるのを待っている状態のこと。&lt;/p&gt;&lt;p&gt;子プロセスが死んでも親プロセスが生きている限り、いつ子プロセスの終了ステータスが参照されても（waitされても）いいように、その情報はプロセステーブルのエントリとして残る。
+    プロセスとしては死んでいるけれど、waitされるかもしれないのでプロセステーブルに残っている状態がゾンビ。&lt;/p&gt;&lt;pre class=&quot;highlight ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     
     &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上のプログラムを実行して、表示されたpidを元に、別の端末でプロセスの状態を確認すると、ゾンビ状態になっていることがわかる（10秒後には親プロセスが死ぬのでゾンビも消える）。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;$ ps -ho pid,state 81793
+    &lt;/pre&gt;&lt;p&gt;上のプログラムを実行して、表示されたpidを元に、別の端末でプロセスの状態を確認すると、ゾンビ状態になっていることがわかる（10秒後には親プロセスが死ぬのでゾンビも消える）。&lt;/p&gt;&lt;pre class=&quot;highlight plaintext&quot;&gt;$ ps -ho pid,state 81793
       PID STAT
       82077 Z+
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ゾンビプロセスの発生を防ぐには、親プロセスで確実にwaitする必要がある。
+    &lt;/pre&gt;&lt;p&gt;ゾンビプロセスの発生を防ぐには、親プロセスで確実にwaitする必要がある。
     RubyならProcess.waitpidを使うといい。
-    waitすると子プロセスが終了するまで親プロセスの処理がブロックされる。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    waitすると子プロセスが終了するまで親プロセスの処理がブロックされる。&lt;/p&gt;&lt;pre class=&quot;highlight ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     
-    &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;waitpid&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt;
-    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;もしくは、Double Forkを行うと親プロセスで待たなくてもよくなる。
-    生成した子プロセスに孫プロセスを生成させ、さらに子プロセスは即座に終了させることで、孫プロセスがinitの子プロセス（孤児プロセス）となってwaitはinitに任せることができるようになる。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;waitpid&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt;
+    &lt;/pre&gt;&lt;p&gt;もしくは、Double Forkを行うと親プロセスで待たなくてもよくなる。
+    生成した子プロセスに孫プロセスを生成させ、さらに子プロセスは即座に終了させることで、孫プロセスがinitの子プロセス（孤児プロセス）となってwaitはinitに任せることができるようになる。&lt;/p&gt;&lt;pre class=&quot;highlight ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 何かしらの処理&lt;/span&gt;
       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     
       &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     
-    &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;waitpid&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt;
-    &lt;/pre&gt;&lt;/div&gt;&lt;h2&gt;まとめ&lt;/h2&gt;&lt;ul&gt;
+    &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;waitpid&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt;
+    &lt;/pre&gt;&lt;h2&gt;まとめ&lt;/h2&gt;&lt;ul&gt;
     &lt;li&gt;親が死んだら子はinitが看取ってくれる&lt;/li&gt;
     &lt;li&gt;親が死ぬまでゾンビは消えない&lt;/li&gt;
     &lt;li&gt;ゾンビを増やさないためには、適宜waitするかDouble Forkしてinitに面倒をみてもらう&lt;/li&gt;

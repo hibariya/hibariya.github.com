@@ -43,14 +43,14 @@
 <h1 id='20111107a0'>
 <a href='/entries/20111107/a0.html'>RubyのProc#callをjavascriptの関数みたいに呼び出す（引数なし）</a>
 </h1>
-<div class="highlight"><pre>  <span class="k">class</span> <span class="nc">Proc</span>
+<pre class="highlight ruby">  <span class="k">class</span> <span class="nc">Proc</span>
     <span class="n">alias_method</span> <span class="ss">:[]</span><span class="p">,</span> <span class="ss">:call</span>
   <span class="k">end</span>
 
   <span class="n">a</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="s1">'hi'</span> <span class="p">}</span>
 
   <span class="n">a</span><span class="o">[]</span> <span class="c1"># =&gt; "hi"</span>
-</pre></div><p>ブラケットをパーレンに読み替えると何かそれっぽい。くだらない。</p><p><strong>2011/11/08 追記</strong></p><p>ursm先生に教えてもらったのだけど、作らなくても <code>Proc#[]</code> は既にありました。
+</pre><p>ブラケットをパーレンに読み替えると何かそれっぽい。くだらない。</p><p><strong>2011/11/08 追記</strong></p><p>ursm先生に教えてもらったのだけど、作らなくても <code>Proc#[]</code> は既にありました。
 もしかしてくだらなくなかったのか。実際に使ってる事例（こう使うといいよ的な）とかあるのか気になる。</p>
 </article>
 <div id='comments'><div id='disqus_thread'>

@@ -47,11 +47,11 @@
 <li>DISQUSのアカウントをつくります</li>
 <li>ログインして、Retterで使うための新しいサイトをつくります</li>
 </ol>
-<h2>インストール</h2><p>まずはRetterfileに<code>disqus_shortname</code>という設定を追記します。</p><div class="highlight"><pre><span class="n">disqus_shortname</span> <span class="s1">'your_disqus_shortname'</span>
-</pre></div><p>あとは任意の箇所でヘルパメソッド<code>render_disqus_comment_form</code>を呼ぶだけです。</p><p>例えば<code>layouts/article.html.haml</code>などに。</p><div class="highlight"><pre><span class="cp">-# 省略</span>
-<span class="nf">#comments</span><span class="p">=</span> <span class="n">render_disqus_comment_form</span>
-<span class="cp">-# 省略</span>
-</pre></div>
+<h2>インストール</h2><p>まずはRetterfileに<code>disqus_shortname</code>という設定を追記します。</p><pre class="highlight ruby"><span class="n">disqus_shortname</span> <span class="s1">'your_disqus_shortname'</span>
+</pre><p>あとは任意の箇所でヘルパメソッド<code>render_disqus_comment_form</code>を呼ぶだけです。</p><p>例えば<code>layouts/article.html.haml</code>などに。</p><pre class="highlight haml"><span class="c">-# 省略
+</span><span class="nf">#comments</span><span class="p">=</span> <span class="n">render_disqus_comment_form</span>
+<span class="c">-# 省略
+</span></pre>
 </article>
 <div id='comments'><div id='disqus_thread'>
   <script>

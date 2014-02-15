@@ -44,21 +44,21 @@
 <a href='/entries/20130105/a0.html'>reditor gem を更新した</a>
 </h1>
 <p><a href="https://github.com/hibariya/reditor">Reditor</a> は、gem や pure ruby な Ruby 標準添付ライブラリを $EDITOR で開くためのコマンドラインツールで、インストールすると bundle open や gem edit に似たコマンド reditor を使えるようになる。
-今回はライブラリが見つからなかったときに候補を出す機能を追加したのだった。</p><p>require するときは active_support なのに gem の名前は activesupport みたいな gem が結構あって、じゃあ reditor で開くときは今までどんな感じだったかというと、</p><div class="highlight"><pre>  <span class="nv">$ </span>reditor activesupport  <span class="c"># 開ける</span>
+今回はライブラリが見つからなかったときに候補を出す機能を追加したのだった。</p><p>require するときは active_support なのに gem の名前は activesupport みたいな gem が結構あって、じゃあ reditor で開くときは今までどんな感じだったかというと、</p><pre class="highlight shell">  <span class="nv">$ </span>reditor activesupport  <span class="c"># 開ける</span>
   <span class="nv">$ </span>reditor active_support <span class="c"># 開けない</span>
-</pre></div><p>という感じ。
+</pre><p>という感じ。
 gem によって "アンダースコアが入るか入らないか" とか、他にも "名前が単数形か複数形か" とか忘れてしまうことは割とある。
 開きたい gem を普段使っていなかったり gem の名前がキラキラしていれば尚更忘れやすい。
 だけどこういう、名前を曖昧にしか思い出せないときにあっけなく失敗してしまうのは悲しい。
-そこで、与えられた名前でライブラリを見つけられなかったときには候補っぽいものを出して選べるようにした。</p><div class="highlight"><pre><span class="nv">$ </span>reditor active_support
-<span class="o">[</span>0<span class="o">]</span> actionmailer
-<span class="o">[</span>1<span class="o">]</span> actionpack
-<span class="o">[</span>2<span class="o">]</span> activemodel
-<span class="o">[</span>3<span class="o">]</span> activerecord
-<span class="o">[</span>4<span class="o">]</span> activeresource
-<span class="o">[</span>5<span class="o">]</span> activesupport
-Choose number of library <span class="o">[</span>0<span class="o">]</span>&gt; 5 <span class="c"># activesupport を開ける</span>
-</pre></div><p>一覧は単純にソートしているだけで、本来なら activesupport が一番上に来て欲しいところだけど、それは追々。
+そこで、与えられた名前でライブラリを見つけられなかったときには候補っぽいものを出して選べるようにした。</p><pre class="highlight shell"><span class="gp">$ </span>reditor active_support
+<span class="o">[</span>0] actionmailer
+<span class="o">[</span>1] actionpack
+<span class="o">[</span>2] activemodel
+<span class="o">[</span>3] activerecord
+<span class="o">[</span>4] activeresource
+<span class="o">[</span>5] activesupport
+Choose number of library <span class="o">[</span>0]&gt; 5 <span class="c"># activesupport を開ける</span>
+</pre><p>一覧は単純にソートしているだけで、本来なら activesupport が一番上に来て欲しいところだけど、それは追々。
 gem の名前をある程度適当に与えても候補から選べるようになったので、思い出すための面倒な手間が減りそう。</p>
 </article>
 <div id='comments'><div id='disqus_thread'>

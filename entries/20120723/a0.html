@@ -43,8 +43,8 @@
 <h1 id='20120723a0'>
 <a href='/entries/20120723/a0.html'>簡単に Ruby のリファレンス・マニュアルを開く ruremai をつくった</a>
 </h1>
-<p>Ruby リファレンスマニュアル、通称るりまを開くのが日頃から割と面倒だったので、irb からさっと開けるようなものを作った。</p><p><a href="https://github.com/hibariya/ruremai">ruremai</a></p><p>require すると Method#rurema! が追加される。これを呼び出すと、るりまの該当メソッドのページをブラウザで開く。</p><div class="highlight"><pre>  <span class="no">Object</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="ss">:name</span><span class="p">)</span><span class="o">.</span><span class="n">rurema!</span>
-</pre></div><p>APIDock とかも見るようにできるといいのかな。</p><p><code>~/.irbrc</code> あたりで <code>require 'ruremai'</code> しておくとよさそう。勉強などのお供に。</p>
+<p>Ruby リファレンスマニュアル、通称るりまを開くのが日頃から割と面倒だったので、irb からさっと開けるようなものを作った。</p><p><a href="https://github.com/hibariya/ruremai">ruremai</a></p><p>require すると Method#rurema! が追加される。これを呼び出すと、るりまの該当メソッドのページをブラウザで開く。</p><pre class="highlight ruby">  <span class="no">Object</span><span class="p">.</span><span class="nf">method</span><span class="p">(</span><span class="ss">:name</span><span class="p">).</span><span class="nf">rurema!</span>
+</pre><p>APIDock とかも見るようにできるといいのかな。</p><p><code>~/.irbrc</code> あたりで <code>require 'ruremai'</code> しておくとよさそう。勉強などのお供に。</p>
 </article>
 <div id='comments'><div id='disqus_thread'>
   <script>

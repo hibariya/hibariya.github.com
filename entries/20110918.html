@@ -46,12 +46,12 @@
 <p>作業ディレクトリを一旦クリーンに戻したいような場面。
 retterで生成するサイトはgitで管理することを前提にしているせいもあって、直にgitコマンドを実行したい場面がどうしても出てくるみたい。
 例えば、<code>git reset</code> したいときとか、<code>git commit --amend</code> したいときとか。</p><p>ファイルシステム上のどこに居ようが編集から公開までをできるというメリットはできるだけ殺したくなくて、いちいちリポジトリに移動してgitコマンドを実行するのはちょっと嫌だ。</p><p>そこで新たに <code>rette home</code> というコマンドを作ってみた。
-<code>home</code> サブコマンドは<code>$RETTER_HOME</code>に移動して新たなシェルを起動する。</p><div class="highlight"><pre>  $ retter home
+<code>home</code> サブコマンドは<code>$RETTER_HOME</code>に移動して新たなシェルを起動する。</p><pre class="highlight plaintext">  $ retter home
   (retter) pwd
   /path/to/retter_home
   (retter) exit
   bye
-</pre></div><p>これで、いくつものどうでもいい機能の実装を免れるきがする。</p>
+</pre><p>これで、いくつものどうでもいい機能の実装を免れるきがする。</p>
 <h1 id='20110918a1'>
 <a href='/entries/20110918/a1.html'>直近でやること</a>
 </h1>

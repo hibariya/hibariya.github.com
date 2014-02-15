@@ -44,21 +44,21 @@
 <a href='/entries/20130105/a0.html'>reditor gem を更新した</a>
 </h1>
 <p><a href="https://github.com/hibariya/reditor">Reditor</a> は、gem や pure ruby な Ruby 標準添付ライブラリを $EDITOR で開くためのコマンドラインツールで、インストールすると bundle open や gem edit に似たコマンド reditor を使えるようになる。
-今回はライブラリが見つからなかったときに候補を出す機能を追加したのだった。</p><p>require するときは active_support なのに gem の名前は activesupport みたいな gem が結構あって、じゃあ reditor で開くときは今までどんな感じだったかというと、</p><div class="highlight"><pre>  <span class="nv">$ </span>reditor activesupport  <span class="c"># 開ける</span>
+今回はライブラリが見つからなかったときに候補を出す機能を追加したのだった。</p><p>require するときは active_support なのに gem の名前は activesupport みたいな gem が結構あって、じゃあ reditor で開くときは今までどんな感じだったかというと、</p><pre class="highlight shell">  <span class="nv">$ </span>reditor activesupport  <span class="c"># 開ける</span>
   <span class="nv">$ </span>reditor active_support <span class="c"># 開けない</span>
-</pre></div><p>という感じ。
+</pre><p>という感じ。
 gem によって "アンダースコアが入るか入らないか" とか、他にも "名前が単数形か複数形か" とか忘れてしまうことは割とある。
 開きたい gem を普段使っていなかったり gem の名前がキラキラしていれば尚更忘れやすい。
 だけどこういう、名前を曖昧にしか思い出せないときにあっけなく失敗してしまうのは悲しい。
-そこで、与えられた名前でライブラリを見つけられなかったときには候補っぽいものを出して選べるようにした。</p><div class="highlight"><pre><span class="nv">$ </span>reditor active_support
-<span class="o">[</span>0<span class="o">]</span> actionmailer
-<span class="o">[</span>1<span class="o">]</span> actionpack
-<span class="o">[</span>2<span class="o">]</span> activemodel
-<span class="o">[</span>3<span class="o">]</span> activerecord
-<span class="o">[</span>4<span class="o">]</span> activeresource
-<span class="o">[</span>5<span class="o">]</span> activesupport
-Choose number of library <span class="o">[</span>0<span class="o">]</span>&gt; 5 <span class="c"># activesupport を開ける</span>
-</pre></div><p>一覧は単純にソートしているだけで、本来なら activesupport が一番上に来て欲しいところだけど、それは追々。
+そこで、与えられた名前でライブラリを見つけられなかったときには候補っぽいものを出して選べるようにした。</p><pre class="highlight shell"><span class="gp">$ </span>reditor active_support
+<span class="o">[</span>0] actionmailer
+<span class="o">[</span>1] actionpack
+<span class="o">[</span>2] activemodel
+<span class="o">[</span>3] activerecord
+<span class="o">[</span>4] activeresource
+<span class="o">[</span>5] activesupport
+Choose number of library <span class="o">[</span>0]&gt; 5 <span class="c"># activesupport を開ける</span>
+</pre><p>一覧は単純にソートしているだけで、本来なら activesupport が一番上に来て欲しいところだけど、それは追々。
 gem の名前をある程度適当に与えても候補から選べるようになったので、思い出すための面倒な手間が減りそう。</p>
 <h1 id='20130105a1'>
 <a href='/entries/20130105/a1.html'>cline gem を更新した</a>
@@ -66,15 +66,15 @@ gem の名前をある程度適当に与えても候補から選べるように�
 <p><a href="https://github.com/hibariya/cline">Cline</a> は、フィードとか GitHub の Activity を収集(一定周期でポーリング)してきて、terminal で簡単に垂れ流し表示するためにつくったやつ。</p><p>コミットログを見る感じだと数カ月ぶりのバージョンアップ。
 <a href="https://rubygems.org/gems/cline/">cline</a> をリリースした。
 サブコマンドの使い方が変わってしまったのでメジャーバージョンをひとつインクリメント。</p><h3>デーモン化できるようにした</h3><p>今の使い方だと screen を起動すると 3 つの cline プロセスが起動するようになっていて、ひとつあたりのメモリ使用量が割と多めなのだった。
-この更新で、cline のサーバを起動できるようにして、サーバが起動していたらそれ以降に起動したプロセスは socket 越しにいろいろ取りに行くようにした。</p><p>起動とか停止とか:</p><div class="highlight"><pre>  <span class="nv">$ </span>cline server start   <span class="c"># 起動</span>
+この更新で、cline のサーバを起動できるようにして、サーバが起動していたらそれ以降に起動したプロセスは socket 越しにいろいろ取りに行くようにした。</p><p>起動とか停止とか:</p><pre class="highlight shell">  <span class="nv">$ </span>cline server start   <span class="c"># 起動</span>
   <span class="nv">$ </span>cline server stop    <span class="c"># 停止</span>
   <span class="nv">$ </span>cline server reload  <span class="c"># ~/.cline/config の再読み込み</span>
-</pre></div><p>.zshrc などにこういうのを貼り付けておいて勝手に起動してくれるようにすると良さそう。</p><div class="highlight"><pre><span class="k">if</span> ! <span class="o">[</span> -e ~/.cline/cline.sock <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
-<span class="k">  </span>cline server start
+</pre><p>.zshrc などにこういうのを貼り付けておいて勝手に起動してくれるようにすると良さそう。</p><pre class="highlight shell"><span class="k">if</span> ! <span class="o">[</span> -e ~/.cline/cline.sock <span class="o">]</span> ; <span class="k">then
+  </span>cline server start
 <span class="k">fi</span>
-</pre></div><h3>tick コマンドの使い方が変わった</h3><div class="highlight"><pre>  <span class="nv">$ </span>cline tick OFFSET INTERVAL
-</pre></div><p>から</p><div class="highlight"><pre>  <span class="nv">$ </span>cline tick INTERVAL OFFSET
-</pre></div><p>に変更。
+</pre><h3>tick コマンドの使い方が変わった</h3><pre class="highlight shell">  <span class="nv">$ </span>cline tick OFFSET INTERVAL
+</pre><p>から</p><pre class="highlight shell">  <span class="nv">$ </span>cline tick INTERVAL OFFSET
+</pre><p>に変更。
 どちらも省略できるのだけど、offset よりは interval だけを指定することの方が多そうなので入れ替え。</p>
 </article>
 <div class='nav'>

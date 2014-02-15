@@ -43,35 +43,35 @@
 <h1 id='20120321a0'>
 <a href='/entries/20120321/a0.html'>Rubyで日付っぽい文字列を日時や日付に変換するときのこと</a>
 </h1>
-<p>　<a href="https://github.com/mojombo/chronic">Chronic</a>べんり。別に最近のものでもないのだけど、しらなかった。</p><p>　それまではActiveSupportで頑張っていた。</p><div class="highlight"><pre><span class="nb">require</span> <span class="s1">'active_support/core_ext/object'</span>
+<p>　<a href="https://github.com/mojombo/chronic">Chronic</a>べんり。別に最近のものでもないのだけど、しらなかった。</p><p>　それまではActiveSupportで頑張っていた。</p><pre class="highlight ruby"><span class="nb">require</span> <span class="s1">'active_support/core_ext/object'</span>
 <span class="nb">require</span> <span class="s1">'date'</span>
 
 <span class="k">def</span> <span class="nf">parse_date_str</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
   <span class="k">case</span> <span class="n">date_str</span>
-  <span class="k">when</span> <span class="sr">/^yesterday$/i</span> <span class="k">then</span> <span class="mi">1</span><span class="o">.</span><span class="n">day</span><span class="o">.</span><span class="n">ago</span>
-  <span class="k">when</span> <span class="sr">/^today$/i</span>     <span class="k">then</span> <span class="mi">0</span><span class="o">.</span><span class="n">day</span><span class="o">.</span><span class="n">ago</span>
-  <span class="k">when</span> <span class="sr">/^tomorrow$/i</span>  <span class="k">then</span> <span class="mi">1</span><span class="o">.</span><span class="n">day</span><span class="o">.</span><span class="n">since</span>
+  <span class="k">when</span> <span class="sr">/^yesterday$/i</span> <span class="k">then</span> <span class="mi">1</span><span class="p">.</span><span class="nf">day</span><span class="p">.</span><span class="nf">ago</span>
+  <span class="k">when</span> <span class="sr">/^today$/i</span>     <span class="k">then</span> <span class="mi">0</span><span class="p">.</span><span class="nf">day</span><span class="p">.</span><span class="nf">ago</span>
+  <span class="k">when</span> <span class="sr">/^tomorrow$/i</span>  <span class="k">then</span> <span class="mi">1</span><span class="p">.</span><span class="nf">day</span><span class="p">.</span><span class="nf">since</span>
   <span class="k">when</span> <span class="sr">/^[0-9]+[\.\s](?:days?|weeks?|months?|years?)[\.\s](?:ago|since)$/i</span>
-    <span class="nb">eval</span><span class="p">(</span><span class="n">date_str</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/\s+/</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">))</span>
+    <span class="nb">eval</span><span class="p">(</span><span class="n">date_str</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/\s+/</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">))</span>
   <span class="k">else</span>
-    <span class="no">Date</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
-  <span class="k">end</span><span class="o">.</span><span class="n">to_date</span>
+    <span class="no">Date</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
+  <span class="k">end</span><span class="p">.</span><span class="nf">to_date</span>
 <span class="k">end</span>
 
 <span class="n">parse_date_str</span> <span class="s1">'20110101'</span>   <span class="c1"># =&gt; Sat, 01 Jan 2011</span>
 <span class="n">parse_date_str</span> <span class="s1">'yesterday'</span>  <span class="c1"># =&gt; Tue, 20 Mar 2012</span>
 <span class="n">parse_date_str</span> <span class="s1">'1 week ago'</span> <span class="c1"># =&gt; Wed, 14 Mar 2012</span>
-</pre></div><p>　こんなコード書かなくてもよかったんだ！</p><div class="highlight"><pre><span class="nb">require</span> <span class="s1">'date'</span>
+</pre><p>　こんなコード書かなくてもよかったんだ！</p><pre class="highlight ruby"><span class="nb">require</span> <span class="s1">'date'</span>
 <span class="nb">require</span> <span class="s1">'chronic'</span>
 
 <span class="k">def</span> <span class="nf">parse_date_str</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
-  <span class="p">(</span><span class="no">Chronic</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span> <span class="o">||</span> <span class="no">Date</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">date_str</span><span class="p">))</span><span class="o">.</span><span class="n">to_date</span>
+  <span class="p">(</span><span class="no">Chronic</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span> <span class="o">||</span> <span class="no">Date</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">date_str</span><span class="p">)).</span><span class="nf">to_date</span>
 <span class="k">end</span>
 
 <span class="n">parse_date_str</span> <span class="s1">'20110101'</span>   <span class="c1"># =&gt; #&lt;Date: 2011-01-01 ((2455563j,0s,0n),+0s,2299161j)&gt;</span>
 <span class="n">parse_date_str</span> <span class="s1">'yesterday'</span>  <span class="c1"># =&gt; #&lt;Date: 2012-03-20 ((2456007j,0s,0n),+0s,2299161j)&gt;</span>
 <span class="n">parse_date_str</span> <span class="s1">'1 week ago'</span> <span class="c1"># =&gt; #&lt;Date: 2012-03-14 ((2456001j,0s,0n),+0s,2299161j)&gt;</span>
-</pre></div><p>　Chronicはparseできなかったときはnilを返す。
+</pre><p>　Chronicはparseできなかったときはnilを返す。
 Date.parseを残しているのは、YYYYMMDDみたいな形式も使いたかったからで、それを除けばだいたいChronicだけで充分だった。</p><p>　戻り値の見た目（Date#inspect）が違うのはActiveSupportの拡張っぽい。</p>
 </article>
 <div class='nav'>

@@ -45,8 +45,8 @@
 </h1>
 <p>Enumerable が提供する色々なメソッドは、受け取る筈のブロックが与えられなかった場合 Enumerator オブジェクトを返す。
 Enumerator オブジェクトは、<code>each.with_index.with_object</code>みたいに each にブロックを渡さずに使うとかいうのにたまに使う。
-あとは、外部イテレータのために使ったり、each 以外のメソッドを使って Enumerable のメソッドを使ったりするのに使える。</p><p>each 以外の繰り返しを行うメソッドも、ブロックを受け取らなかったときは Enumerator オブジェクトを返したりする。Enumerable#map とか。</p><div class="highlight"><pre><span class="sx">%w(a b c)</span><span class="o">.</span><span class="n">map</span> <span class="c1"># =&gt; #&lt;Enumerator: ["a", "b", "c"]:map&gt;</span>
-</pre></div><p>これを外部イテレータとして使う機会は今のところない。
+あとは、外部イテレータのために使ったり、each 以外のメソッドを使って Enumerable のメソッドを使ったりするのに使える。</p><p>each 以外の繰り返しを行うメソッドも、ブロックを受け取らなかったときは Enumerator オブジェクトを返したりする。Enumerable#map とか。</p><pre class="highlight ruby"><span class="sx">%w(a b c)</span><span class="p">.</span><span class="nf">map</span> <span class="c1"># =&gt; #&lt;Enumerator: ["a", "b", "c"]:map&gt;</span>
+</pre><p>これを外部イテレータとして使う機会は今のところない。
 （※元々「何に使うの」くらいに書いてたけど、<code>map.with_index</code>はやるよねというツッコミが。たしかに）</p><p>使う場面は無くてもせめて使い方くらいは知っておきたいなあと思って Asakusa.rb で人に聞いたりソースに書かれたコメントを読んだりしたら何となく使い方が分かってきた。</p><p>疑問はふたつあった。</p><ul>
 <li>ブロックの戻り値にあたる値はどこにどうやって渡せばいいのか</li>
 <li>どうすればメソッドの戻り値を得られるのか</li>
@@ -55,21 +55,21 @@ Enumerator オブジェクトは、<code>each.with_index.with_object</code>み�
 <li>ブロックの戻り値（つまりyieldの戻り値になる値）は Enumerator#feed に渡す</li>
 <li>メソッドの戻り値は StopIteration#result から得られる</li>
 </ul>
-<p>もっとも、↓だけでは何だかありがたみが分からないけど。</p><div class="highlight"><pre><span class="n">ary</span>  <span class="o">=</span> <span class="sx">%w(alice bob carol)</span>
-<span class="n">enum</span> <span class="o">=</span> <span class="n">ary</span><span class="o">.</span><span class="n">map</span>
+<p>もっとも、↓だけでは何だかありがたみが分からないけど。</p><pre class="highlight ruby"><span class="n">ary</span>  <span class="o">=</span> <span class="sx">%w(alice bob carol)</span>
+<span class="n">enum</span> <span class="o">=</span> <span class="n">ary</span><span class="p">.</span><span class="nf">map</span>
 
 <span class="k">while</span> <span class="kp">true</span>
   <span class="k">begin</span>
-    <span class="n">val</span> <span class="o">=</span> <span class="n">enum</span><span class="o">.</span><span class="n">next</span> <span class="c1"># ブロック引数的なもの</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">enum</span><span class="p">.</span><span class="nf">next</span> <span class="c1"># ブロック引数的なもの</span>
 
-    <span class="n">enum</span><span class="o">.</span><span class="n">feed</span> <span class="n">val</span><span class="o">.</span><span class="n">upcase</span> <span class="c1"># ブロックの戻り値的なもの</span>
+    <span class="n">enum</span><span class="p">.</span><span class="nf">feed</span> <span class="n">val</span><span class="p">.</span><span class="nf">upcase</span> <span class="c1"># ブロックの戻り値的なもの</span>
   <span class="k">rescue</span> <span class="no">StopIteration</span> <span class="o">=&gt;</span> <span class="n">e</span>
-    <span class="nb">p</span> <span class="n">e</span><span class="o">.</span><span class="n">result</span> <span class="c1"># ["ALICE", "BOB", "CAROL"] と表示</span>
+    <span class="nb">p</span> <span class="n">e</span><span class="p">.</span><span class="nf">result</span> <span class="c1"># ["ALICE", "BOB", "CAROL"] と表示</span>
 
     <span class="k">break</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</pre></div><p>while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてループから脱出してくれたりする。</p>
+</pre><p>while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてループから脱出してくれたりする。</p>
 </article>
 <div id='comments'><div id='disqus_thread'>
   <script>

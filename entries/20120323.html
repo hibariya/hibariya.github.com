@@ -44,17 +44,17 @@
 <a href='/entries/20120323/a0.html'>Retter 0.2.0</a>
 </h1>
 <p><a href="https://rubygems.org/gems/retter">Retter</a>をアップデートしました。</p><p>Pygmentsを利用できるようになりました。
-利用するにはRetterfileに以下の設定を追加します。</p><div class="highlight"><pre><span class="n">renderer</span> <span class="no">Retter</span><span class="o">::</span><span class="no">Renderers</span><span class="o">::</span><span class="no">PygmentsRenderer</span>
-</pre></div><p>今度から<code>retter new</code>するとデフォルトでPygmentsを使用するようになって、そのためのCSSも生成するようになりました。</p><p>現状の日記にCSSを追加するには、<a href="https://raw.github.com/hibariya/retter/master/lib/retter/generator/skel/stylesheets/pygments.css">ここ</a>から直接ダウンロードするとすぐに使えるかと思います。</p><p>実は、上記の<code>renderer</code>にはRedcarpet::Render::HTMLを継承したクラスであれば何でも指定できます。
+利用するにはRetterfileに以下の設定を追加します。</p><pre class="highlight ruby"><span class="n">renderer</span> <span class="no">Retter</span><span class="o">::</span><span class="no">Renderers</span><span class="o">::</span><span class="no">PygmentsRenderer</span>
+</pre><p>今度から<code>retter new</code>するとデフォルトでPygmentsを使用するようになって、そのためのCSSも生成するようになりました。</p><p>現状の日記にCSSを追加するには、<a href="https://raw.github.com/hibariya/retter/master/lib/retter/generator/skel/stylesheets/pygments.css">ここ</a>から直接ダウンロードするとすぐに使えるかと思います。</p><p>実は、上記の<code>renderer</code>にはRedcarpet::Render::HTMLを継承したクラスであれば何でも指定できます。
 Pygmentsを使いたいけどPygments.rbが落ちて困るという場合はAlbinoを使うrendererを作るといいかもしれません。
-以下はRedcarpetのREADMEから抜粋したもの。</p><div class="highlight"><pre><span class="k">class</span> <span class="nc">HTMLwithAlbino</span> <span class="o">&lt;</span> <span class="no">Redcarpet</span><span class="o">::</span><span class="no">Render</span><span class="o">::</span><span class="no">HTML</span>
+以下はRedcarpetのREADMEから抜粋したもの。</p><pre class="highlight ruby"><span class="k">class</span> <span class="nc">HTMLwithAlbino</span> <span class="o">&lt;</span> <span class="no">Redcarpet</span><span class="o">::</span><span class="no">Render</span><span class="o">::</span><span class="no">HTML</span>
   <span class="k">def</span> <span class="nf">block_code</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">language</span><span class="p">)</span>
-    <span class="no">Albino</span><span class="o">.</span><span class="n">safe_colorize</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">language</span><span class="p">)</span>
+    <span class="no">Albino</span><span class="p">.</span><span class="nf">safe_colorize</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">language</span><span class="p">)</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</pre></div><p>それから、Markdownのレンダリング結果をキャッシュするようになりました。
-途中でrendererを変更したりして、レンダリング結果が変わるような場合は以下のように<code>tmp/cache</code>以下のキャッシュを一度削除してください。</p><div class="highlight"><pre>rm -rf tmp/cache/*
-</pre></div>
+</pre><p>それから、Markdownのレンダリング結果をキャッシュするようになりました。
+途中でrendererを変更したりして、レンダリング結果が変わるような場合は以下のように<code>tmp/cache</code>以下のキャッシュを一度削除してください。</p><pre class="highlight plaintext">rm -rf tmp/cache/*
+</pre>
 </article>
 <div class='nav'>
 <div class='prev'>
