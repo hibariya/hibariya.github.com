@@ -8,7 +8,9 @@ configure api_revision: 1 do |config|
   config.author           = 'hibariya'
   config.disqus_shortname = 'joyluckcrab'
 
-  config.after :build, :publish
+  config.after :build do
+    publish if yes?('Publish now?')
+  end
 
   config.publisher do
     run 'git push origin master'
