@@ -8,18 +8,16 @@ configure api_revision: 1 do |config|
   config.title            = 'Joy Luck Crab'
   config.description      = 'hibariya.github.com'
   config.author           = 'hibariya'
-  config.renderer         = Retter::StaticSite::Markdown::PygmentsRenderer
   config.disqus_shortname = 'joyluckcrab'
 
   config.after :edit do
-    ident = ARGV.pop
-    preview ident if yes?("Preview now? [yes/no]")
+    preview if yes?('Preview now? [yes/no]')
   end
 
   #config.after :rebind, :commit
 
   config.after :commit do
-    if yes?("Deploy now? [yes/no]")
+    if yes?('Deploy now? [yes/no]')
       # system "cd #{config.retter_home} && git push origin master"
     end
   end
