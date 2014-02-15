@@ -2,11 +2,10 @@
   %h1.date
     %a{href: entry_path(entry)}= entry.date
 
-  - if article.actual?
-    %h1{id: article.id}
-      %a{href: article_path(article)}= article.title
+  %h1{id: article.id}
+    %a{href: article_path(article)}= article.title
 
-  = article
+  = article.body.html_safe
 
 #comments= render_disqus_comment_form
 

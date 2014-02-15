@@ -9,11 +9,10 @@
         = entry.lede
 
       - entry.articles.each do |article|
-        - if article.actual?
-          %h1{id: article.id}
-            %a{href: article_path(article)}= article.title
+        %h1{id: article.id}
+          %a{href: article_path(article)}= article.title
 
-        = article
+        = article.body.html_safe
 
   .nav
     .next
