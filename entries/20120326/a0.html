@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>プロセスをforkするときのこと - Joy Luck Crab</title>
+<meta charset='utf-8' />
+<meta content='hibariya' name='author' />
+<link href='/favicon.png' rel='icon' type='image/png' />
+<link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+<link href="/assets/application-a673872ce4e037479417b087073422d2.css" media="all" rel="stylesheet" />
+<link href="http://hibariya.github.com/entries.rss" rel="alternate" title="RSS" type="application/rss+xml" />
+</head>
+<body>
+<header id='header'>
+<h1>
+<a href="/index.html">Joy Luck Crab</a>
+</h1>
+<nav>
+<ul id='menu'>
+<li><a href="/index.html">Home</a></li>
+<li><a href="/about.html">About</a></li>
+<li><a href="/entries.html">Archives</a></li>
+<li><a href="/entries.rss" target="_blank">Feed</a></li>
+</ul>
+</nav>
+</header>
+<div id='page'>
+<div id='content'><article class='article'>
+<h1 class='date'><a href="/entries/20120326.html">2012-03-26</a></h1>
+<h1 class='retter_entry_article' id='retter_entry_article_20120326a0'>
+<a href="/entries/20120326/a0.html">プロセスをforkするときのこと</a>
+</h1>
+<p>孤児プロセスとゾンビプロセスの違いがうまく理解できてなかったけど、ようやく違いを確認することができた。</p><h2>孤児プロセス</h2><p>孤児プロセスは、親プロセスがwaitせずに先に逝ってしまった後も走り続けている子プロセス。
+Orphan Process とも呼ばれる。
+親のいなくなった子プロセスはinitプロセスの子（孤児）になる。</p><p>親プロセスが死んで、子プロセスの親が変化する様子を見るには以下のようなスクリプトを実行したあとでファイルをtailすると分かりやすそう。</p><pre class="highlight ruby"><span class="no">Process</span><span class="p">.</span><span class="nf">fork</span> <span class="k">do</span>
+  <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s1">'orphan'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+    <span class="kp">loop</span> <span class="k">do</span>
+      <span class="nb">sleep</span> <span class="mi">1</span>
+
+      <span class="c1"># 親プロセスのpidをファイルに書き出す</span>
+      <span class="n">f</span><span class="p">.</span><span class="nf">puts</span> <span class="no">Process</span><span class="p">.</span><span class="nf">ppid</span>
+      <span class="n">f</span><span class="p">.</span><span class="nf">flush</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="nb">sleep</span> <span class="mi">5</span>
+</pre><p>このプログラムを実行して、<code>orphan</code>を<code>tail -f</code>で観察していると、5秒後に親プロセスが死んで、子プロセスの親プロセスがinitに変化していることを確認できる。</p><pre class="highlight plaintext">$ tailf orphan
+80361 # まだ親プロセスの子
+80361
+80361
+80361
+80361
+1     # ここでinitの養子になってる
+1
+1
+1
+</pre><p>initは孤児プロセスをwaitしてくれる。</p><h2>ゾンビプロセス</h2><p>ゾンビプロセスは、既に処理を終えて死んだ子プロセスが、まだ生きている親プロセスにwaitされるのを待っている状態のこと。</p><p>子プロセスが死んでも親プロセスが生きている限り、いつ子プロセスの終了ステータスが参照されても（waitされても）いいように、その情報はプロセステーブルのエントリとして残る。
+プロセスとしては死んでいるけれど、waitされるかもしれないのでプロセステーブルに残っている状態がゾンビ。</p><pre class="highlight ruby"><span class="nb">puts</span> <span class="no">Process</span><span class="p">.</span><span class="nf">fork</span> <span class="p">{</span> <span class="nb">sleep</span> <span class="mi">1</span> <span class="p">}</span>
+
+<span class="nb">sleep</span> <span class="mi">10</span>
+</pre><p>上のプログラムを実行して、表示されたpidを元に、別の端末でプロセスの状態を確認すると、ゾンビ状態になっていることがわかる（10秒後には親プロセスが死ぬのでゾンビも消える）。</p><pre class="highlight plaintext">$ ps -ho pid,state 81793
+  PID STAT
+  82077 Z+
+</pre><p>ゾンビプロセスの発生を防ぐには、親プロセスで確実にwaitする必要がある。
+RubyならProcess.waitpidを使うといい。
+waitすると子プロセスが終了するまで親プロセスの処理がブロックされる。</p><pre class="highlight ruby"><span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="p">.</span><span class="nf">fork</span> <span class="p">{</span> <span class="nb">sleep</span> <span class="mi">1</span> <span class="p">}</span>
+
+<span class="no">Process</span><span class="p">.</span><span class="nf">waitpid</span> <span class="n">pid</span>
+</pre><p>もしくは、Double Forkを行うと親プロセスで待たなくてもよくなる。
+生成した子プロセスに孫プロセスを生成させ、さらに子プロセスは即座に終了させることで、孫プロセスがinitの子プロセス（孤児プロセス）となってwaitはinitに任せることができるようになる。</p><pre class="highlight ruby"><span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="p">.</span><span class="nf">fork</span> <span class="p">{</span>
+  <span class="nb">puts</span> <span class="no">Process</span><span class="p">.</span><span class="nf">fork</span> <span class="p">{</span>
+    <span class="nb">sleep</span> <span class="mi">20</span> <span class="c1"># 何かしらの処理</span>
+  <span class="p">}</span>
+
+  <span class="nb">sleep</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="no">Process</span><span class="p">.</span><span class="nf">waitpid</span> <span class="n">pid</span>
+</pre><h2>まとめ</h2><ul>
+<li>親が死んだら子はinitが看取ってくれる</li>
+<li>親が死ぬまでゾンビは消えない</li>
+<li>ゾンビを増やさないためには、適宜waitするかDouble Forkしてinitに面倒をみてもらう</li>
+</ul>
+</article>
+</div>
+<aside id='sidebar'>
+<h3>Author</h3>
+<div class='author'><a href="/about.html">hibariya</a></div>
+<h3>Recent entries</h3>
+<div class='recent-entries'>
+<ul>
+<li>
+<a href="/entries/20130418/a0.html">春から学生になった</a>
+</li>
+<li>
+<a href="/entries/20130218/a0.html">東京競馬場へ馬をみにいった</a>
+</li>
+<li>
+<a href="/entries/20130105/a0.html">reditor gem を更新した</a>
+</li>
+<li>
+<a href="/entries/20130105/a1.html">cline gem を更新した</a>
+</li>
+<li>
+<a href="/entries/20130102/a0.html">PROMPTを2階建てにした</a>
+</li>
+<li>
+<a href="/entries/20121206/a0.html">自宅用に Kinesis を買った</a>
+</li>
+</ul>
+<div class='archives'><a href="/entries.html">Archives</a></div>
+</div>
+</aside>
+</div>
+<footer id='footer'>
+Joy Luck Crab (C) hibariya
+</footer>
+</body>
+</html>

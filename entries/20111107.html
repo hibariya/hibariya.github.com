@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2011-11-07 - Joy Luck Crab</title>
+<meta charset='utf-8' />
+<meta content='hibariya' name='author' />
+<link href='/favicon.png' rel='icon' type='image/png' />
+<link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+<link href="/assets/application-a673872ce4e037479417b087073422d2.css" media="all" rel="stylesheet" />
+<link href="http://hibariya.github.com/entries.rss" rel="alternate" title="RSS" type="application/rss+xml" />
+</head>
+<body>
+<header id='header'>
+<h1>
+<a href="/index.html">Joy Luck Crab</a>
+</h1>
+<nav>
+<ul id='menu'>
+<li><a href="/index.html">Home</a></li>
+<li><a href="/about.html">About</a></li>
+<li><a href="/entries.html">Archives</a></li>
+<li><a href="/entries.rss" target="_blank">Feed</a></li>
+</ul>
+</nav>
+</header>
+<div id='page'>
+<div id='content'><article class='article'>
+<h1 class='date'><a href="/entries/20111107.html">2011-11-07</a></h1>
+<h1 class='retter_entry_article' id='retter_entry_article_20111107a0'>
+<a href="/entries/20111107/a0.html">RubyのProc#callをjavascriptの関数みたいに呼び出す（引数なし）</a>
+</h1>
+<pre class="highlight ruby">  <span class="k">class</span> <span class="nc">Proc</span>
+    <span class="n">alias_method</span> <span class="ss">:[]</span><span class="p">,</span> <span class="ss">:call</span>
+  <span class="k">end</span>
+
+  <span class="n">a</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="s1">'hi'</span> <span class="p">}</span>
+
+  <span class="n">a</span><span class="o">[]</span> <span class="c1"># =&gt; "hi"</span>
+</pre><p>ブラケットをパーレンに読み替えると何かそれっぽい。くだらない。</p><p><strong>2011/11/08 追記</strong></p><p>ursm先生に教えてもらったのだけど、作らなくても <code>Proc#[]</code> は既にありました。
+もしかしてくだらなくなかったのか。実際に使ってる事例（こう使うといいよ的な）とかあるのか気になる。</p>
+</article>
+</div>
+<aside id='sidebar'>
+<h3>Author</h3>
+<div class='author'><a href="/about.html">hibariya</a></div>
+<h3>Recent entries</h3>
+<div class='recent-entries'>
+<ul>
+<li>
+<a href="/entries/20130418/a0.html">春から学生になった</a>
+</li>
+<li>
+<a href="/entries/20130218/a0.html">東京競馬場へ馬をみにいった</a>
+</li>
+<li>
+<a href="/entries/20130105/a0.html">reditor gem を更新した</a>
+</li>
+<li>
+<a href="/entries/20130105/a1.html">cline gem を更新した</a>
+</li>
+<li>
+<a href="/entries/20130102/a0.html">PROMPTを2階建てにした</a>
+</li>
+<li>
+<a href="/entries/20121206/a0.html">自宅用に Kinesis を買った</a>
+</li>
+</ul>
+<div class='archives'><a href="/entries.html">Archives</a></div>
+</div>
+</aside>
+</div>
+<footer id='footer'>
+Joy Luck Crab (C) hibariya
+</footer>
+</body>
+</html>

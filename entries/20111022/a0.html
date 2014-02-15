@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>最近のRetterへの機能追加 - Joy Luck Crab</title>
+<meta charset='utf-8' />
+<meta content='hibariya' name='author' />
+<link href='/favicon.png' rel='icon' type='image/png' />
+<link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+<link href="/assets/application-a673872ce4e037479417b087073422d2.css" media="all" rel="stylesheet" />
+<link href="http://hibariya.github.com/entries.rss" rel="alternate" title="RSS" type="application/rss+xml" />
+</head>
+<body>
+<header id='header'>
+<h1>
+<a href="/index.html">Joy Luck Crab</a>
+</h1>
+<nav>
+<ul id='menu'>
+<li><a href="/index.html">Home</a></li>
+<li><a href="/about.html">About</a></li>
+<li><a href="/entries.html">Archives</a></li>
+<li><a href="/entries.rss" target="_blank">Feed</a></li>
+</ul>
+</nav>
+</header>
+<div id='page'>
+<div id='content'><article class='article'>
+<h1 class='date'><a href="/entries/20111022.html">2011-10-22</a></h1>
+<h1 class='retter_entry_article' id='retter_entry_article_20111022a0'>
+<a href="/entries/20111022/a0.html">最近のRetterへの機能追加</a>
+</h1>
+<p>大きく分けて4つくらいの追加修正をしています。</p><ul>
+<li>相対的な日時の指定ができるようになった</li>
+<li>これまでに書いた記事の一覧を見られるコマンドを追加した</li>
+<li>ページング機能を強化できるようにした</li>
+<li>細かいバグ修正と、組込みデザインの細かい修正</li>
+</ul>
+<h2>相対的な日時の指定ができるようになった</h2><pre class="highlight plaintext">  retter edit yesterday    # 昨日
+  retter edit today        # 今日
+  retter edit tommorow     # 明日
+
+  retter edit '3 days ago' # 3日前
+  retter edit 3.days.ago   # 3日前
+  retter edit 3.days.since # 3日後
+  retter edit 1.week.ago   # 1週間前
+  retter edit 3.weeks.ago  # 3週間前
+  retter edit 3.months.ago # 3カ月前
+  retter edit 3.years.ago  # 3年前
+</pre><h2>これまでに書いた記事の一覧を見られるコマンドを追加した</h2><pre class="highlight plaintext">  retter list
+  [e0] 2011-10-12
+    記事ごとにPermlinkがつくようにした, retter 0.1.0
+
+  [e1] 2011-10-10
+    Rubyのトップレベルについて整理する
+
+  [e2] 2011-10-03
+    モジュール関数がprivateな理由
+
+  [e3] 2011-09-19
+    スタイルシートを追加してテーマを変えられるようにした
+</pre><h2>ページング機能を強化できるようにした</h2><p>HAMLテンプレート内の<code>entry</code>や<code>article</code>にページングのためのいくつかのメソッドを追加しました。
+これでページングをし易くなったり、 Autopagerize などへの対応ができるようになりました。</p><pre class="highlight html">%nav
+  .prev
+    - if prev_entry = entry.prev
+      %link{href: entry_path(prev_entry), rel: :prev}
+
+  .next
+    - if next_entry = entry.next
+      %link{href: entry_path(next_entry), rel: :next}
+</pre><h2>細かいバグ修正と、組込みデザインの細かい修正</h2><ul>
+<li>
+<code>retter -h</code> でヘルプが表示できない不具合を修正</li>
+<li>日付の表現方法を <code>2011/01/01</code> 形式から <code>2011-01-01</code> 形式に変更</li>
+<li>リンクやリストを見やすくなるよう修正</li>
+<li>ヘルパメソッドへの機能追加、テンプレートの簡略化</li>
+</ul>
+
+</article>
+</div>
+<aside id='sidebar'>
+<h3>Author</h3>
+<div class='author'><a href="/about.html">hibariya</a></div>
+<h3>Recent entries</h3>
+<div class='recent-entries'>
+<ul>
+<li>
+<a href="/entries/20130418/a0.html">春から学生になった</a>
+</li>
+<li>
+<a href="/entries/20130218/a0.html">東京競馬場へ馬をみにいった</a>
+</li>
+<li>
+<a href="/entries/20130105/a0.html">reditor gem を更新した</a>
+</li>
+<li>
+<a href="/entries/20130105/a1.html">cline gem を更新した</a>
+</li>
+<li>
+<a href="/entries/20130102/a0.html">PROMPTを2階建てにした</a>
+</li>
+<li>
+<a href="/entries/20121206/a0.html">自宅用に Kinesis を買った</a>
+</li>
+</ul>
+<div class='archives'><a href="/entries.html">Archives</a></div>
+</div>
+</aside>
+</div>
+<footer id='footer'>
+Joy Luck Crab (C) hibariya
+</footer>
+</body>
+</html>
