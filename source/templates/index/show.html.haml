@@ -6,7 +6,7 @@
         %a{href: entry_path(entry)}= entry.date
 
       - unless entry.lede.empty?
-        = entry.lede
+        = entry.lede.html_safe
 
       - entry.articles.each do |article|
         %h1{id: article.id}
