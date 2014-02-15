@@ -1,52 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <title>2012-03-21 - Joy Luck Crab</title>
-<meta charset="utf-8" content="text/html; charset=UTF-8" http-equiv="Content-Type">
-<meta content="hibariya" name="author">
-<link href="../favicon.png" rel="icon" type="image/png">
-<link href="../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../stylesheets/orange.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../stylesheets/pygments.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../entries.rss" rel="alternate" title="RSS" type="application/rss+xml">
-<link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
-<script src="../javascripts/jquery.js"></script>
-<script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+<meta charset='utf-8' content='text/html' http-equiv='Content-Type' />
+<meta content='hibariya' name='author' />
+<link href='/favicon.png' rel='icon' type='image/png' />
+<link href='/stylesheets/base.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/orange.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/pygments.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/entries.rss' rel='alternate' title='RSS' type='application/rss+xml' />
+<link href='http://coderwall.com/stylesheets/jquery.coderwall.css' media='all' rel='stylesheet' type='text/css' />
+<script src='/javascripts/jquery.js'></script>
+<script src='http://coderwall.com/javascripts/jquery.coderwall.js'></script>
 </head>
 <body>
-<header id="header">
+<header id='header'>
 <h1>
-<a href="../index.html">Joy Luck Crab</a>
+<a href='/'>Joy Luck Crab</a>
 </h1>
 <nav>
-<ul id="menu">
+<ul id='menu'>
 <li>
-<a href="../index.html">Home</a>
+<a href='/'>Home</a>
 </li>
 <li>
-<a href="../profile.html">Profile</a>
+<a href='/profile.html'>Profile</a>
 </li>
 <li>
-<a href="../entries.html">Archives</a>
+<a href='/entries.html'>Archives</a>
 </li>
 <li>
-<a href="../entries.rss" target="_blank">RSS</a>
+<a href='/entries.rss' target='_blank'>RSS</a>
 </li>
 </ul>
 </nav>
 </header>
-<div id="page">
-<div id="content">
-<article class="article autopagerize_page_element">
-<h1 class="date">
-<a href="../entries/20120321.html">2012-03-21</a>
+<div id='page'>
+<div id='content'><article class='article autopagerize_page_element'>
+<h1 class='date'>
+<a href='/entries/20120321.html'>2012-03-21</a>
 </h1>
-<h1 id="a0">
-<a href="../entries/20120321/a0.html">Rubyで日付っぽい文字列を日時や日付に変換するときのこと</a>
+<h1 id='20120321a0'>
+<a href='/entries/20120321/a0.html'>Rubyで日付っぽい文字列を日時や日付に変換するときのこと</a>
 </h1>
-<p>　<a href="https://github.com/mojombo/chronic">Chronic</a>べんり。別に最近のものでもないのだけど、しらなかった。</p>
-<p>　それまではActiveSupportで頑張っていた。</p>
-<div class="highlight"><pre><span class="nb">require</span> <span class="s1">'active_support/core_ext/object'</span>
+<p>　<a href="https://github.com/mojombo/chronic">Chronic</a>べんり。別に最近のものでもないのだけど、しらなかった。</p><p>　それまではActiveSupportで頑張っていた。</p><div class="highlight"><pre><span class="nb">require</span> <span class="s1">'active_support/core_ext/object'</span>
 <span class="nb">require</span> <span class="s1">'date'</span>
 
 <span class="k">def</span> <span class="nf">parse_date_str</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
@@ -64,9 +61,7 @@
 <span class="n">parse_date_str</span> <span class="s1">'20110101'</span>   <span class="c1"># =&gt; Sat, 01 Jan 2011</span>
 <span class="n">parse_date_str</span> <span class="s1">'yesterday'</span>  <span class="c1"># =&gt; Tue, 20 Mar 2012</span>
 <span class="n">parse_date_str</span> <span class="s1">'1 week ago'</span> <span class="c1"># =&gt; Wed, 14 Mar 2012</span>
-</pre></div>
-<p>　こんなコード書かなくてもよかったんだ！</p>
-<div class="highlight"><pre><span class="nb">require</span> <span class="s1">'date'</span>
+</pre></div><p>　こんなコード書かなくてもよかったんだ！</p><div class="highlight"><pre><span class="nb">require</span> <span class="s1">'date'</span>
 <span class="nb">require</span> <span class="s1">'chronic'</span>
 
 <span class="k">def</span> <span class="nf">parse_date_str</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
@@ -76,63 +71,60 @@
 <span class="n">parse_date_str</span> <span class="s1">'20110101'</span>   <span class="c1"># =&gt; #&lt;Date: 2011-01-01 ((2455563j,0s,0n),+0s,2299161j)&gt;</span>
 <span class="n">parse_date_str</span> <span class="s1">'yesterday'</span>  <span class="c1"># =&gt; #&lt;Date: 2012-03-20 ((2456007j,0s,0n),+0s,2299161j)&gt;</span>
 <span class="n">parse_date_str</span> <span class="s1">'1 week ago'</span> <span class="c1"># =&gt; #&lt;Date: 2012-03-14 ((2456001j,0s,0n),+0s,2299161j)&gt;</span>
-</pre></div>
-<p>　Chronicはparseできなかったときはnilを返す。
-Date.parseを残しているのは、YYYYMMDDみたいな形式も使いたかったからで、それを除けばだいたいChronicだけで充分だった。</p>
-<p>　戻り値の見た目（Date#inspect）が違うのはActiveSupportの拡張っぽい。</p>
+</pre></div><p>　Chronicはparseできなかったときはnilを返す。
+Date.parseを残しているのは、YYYYMMDDみたいな形式も使いたかったからで、それを除けばだいたいChronicだけで充分だった。</p><p>　戻り値の見た目（Date#inspect）が違うのはActiveSupportの拡張っぽい。</p>
 </article>
-<div class="nav">
-<div class="prev">
-<link href="../entries/20120323.html" rel="prev">
+<div class='nav'>
+<div class='prev'>
 </div>
-<div class="next">
-<link href="../entries/20120317.html" rel="next">
+<div class='next'>
+<link href='/entries/20120323.html' rel='next' />
 </div>
 </div>
-<div class="autopagerize_insert_before"></div>
+<div class='autopagerize_insert_before'></div>
 </div>
-<aside id="sidebar">
+<aside id='sidebar'>
 <h3>Author</h3>
-<div class="author">
-<a href="../profile.html">hibariya</a>
+<div class='author'>
+<a href='/profile.html'>hibariya</a>
 </div>
 <h3>Recent entries</h3>
-<div class="recent-entries">
+<div class='recent-entries'>
 <ul>
 <li>
-<a href="../entries/20130418/a0.html">春から学生になった</a>
+<a href='/entries/20130418/a0.html'>春から学生になった</a>
 </li>
 <li>
-<a href="../entries/20130218/a0.html">東京競馬場へ馬をみにいった</a>
+<a href='/entries/20130218/a0.html'>東京競馬場へ馬をみにいった</a>
 </li>
 <li>
-<a href="../entries/20130105/a0.html">reditor gem を更新した</a>
+<a href='/entries/20130105/a0.html'>reditor gem を更新した</a>
 </li>
 <li>
-<a href="../entries/20130105/a1.html">cline gem を更新した</a>
+<a href='/entries/20130105/a1.html'>cline gem を更新した</a>
 </li>
 <li>
-<a href="../entries/20130102/a0.html">PROMPTを2階建てにした</a>
+<a href='/entries/20130102/a0.html'>PROMPTを2階建てにした</a>
 </li>
 <li>
-<a href="../entries/20121206/a0.html">自宅用に Kinesis を買った</a>
+<a href='/entries/20121206/a0.html'>自宅用に Kinesis を買った</a>
 </li>
 <li>
-<a href="../entries/20121125/a0.html">RubyConf 2012</a>
+<a href='/entries/20121125/a0.html'>RubyConf 2012</a>
 </li>
 </ul>
-<div class="archives">
-<a href="../entries.html">Archives</a>
+<div class='archives'>
+<a href='/entries.html'>Archives</a>
 </div>
 </div>
 <h3>Coderwall</h3>
-<section class="coderwall" data-coderwall-orientation="horizontal" data-coderwall-username="hibariya"></section>
+<section class='coderwall' data-coderwall-orientation='horizontal' data-coderwall-username='hibariya'></section>
 </aside>
 </div>
-<footer id="footer">
+<footer id='footer'>
 Joy Luck Crab (C) hibariya
 Generated by
-<a href="https://github.com/hibariya/retter" target="_blank">Retter</a>
+<a href='https://github.com/hibariya/retter' target='_blank'>Retter</a>
 </footer>
 </body>
 </html>

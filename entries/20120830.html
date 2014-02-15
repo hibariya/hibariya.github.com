@@ -1,70 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <title>2012-08-30 - Joy Luck Crab</title>
-<meta charset="utf-8" content="text/html; charset=UTF-8" http-equiv="Content-Type">
-<meta content="hibariya" name="author">
-<link href="../favicon.png" rel="icon" type="image/png">
-<link href="../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../stylesheets/orange.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../stylesheets/pygments.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../entries.rss" rel="alternate" title="RSS" type="application/rss+xml">
-<link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
-<script src="../javascripts/jquery.js"></script>
-<script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+<meta charset='utf-8' content='text/html' http-equiv='Content-Type' />
+<meta content='hibariya' name='author' />
+<link href='/favicon.png' rel='icon' type='image/png' />
+<link href='/stylesheets/base.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/orange.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/pygments.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/entries.rss' rel='alternate' title='RSS' type='application/rss+xml' />
+<link href='http://coderwall.com/stylesheets/jquery.coderwall.css' media='all' rel='stylesheet' type='text/css' />
+<script src='/javascripts/jquery.js'></script>
+<script src='http://coderwall.com/javascripts/jquery.coderwall.js'></script>
 </head>
 <body>
-<header id="header">
+<header id='header'>
 <h1>
-<a href="../index.html">Joy Luck Crab</a>
+<a href='/'>Joy Luck Crab</a>
 </h1>
 <nav>
-<ul id="menu">
+<ul id='menu'>
 <li>
-<a href="../index.html">Home</a>
+<a href='/'>Home</a>
 </li>
 <li>
-<a href="../profile.html">Profile</a>
+<a href='/profile.html'>Profile</a>
 </li>
 <li>
-<a href="../entries.html">Archives</a>
+<a href='/entries.html'>Archives</a>
 </li>
 <li>
-<a href="../entries.rss" target="_blank">RSS</a>
+<a href='/entries.rss' target='_blank'>RSS</a>
 </li>
 </ul>
 </nav>
 </header>
-<div id="page">
-<div id="content">
-<article class="article autopagerize_page_element">
-<h1 class="date">
-<a href="../entries/20120830.html">2012-08-30</a>
+<div id='page'>
+<div id='content'><article class='article autopagerize_page_element'>
+<h1 class='date'>
+<a href='/entries/20120830.html'>2012-08-30</a>
 </h1>
-<h1 id="a0">
-<a href="../entries/20120830/a0.html">map が返す Enumerator のこと</a>
+<h1 id='20120830a0'>
+<a href='/entries/20120830/a0.html'>map が返す Enumerator のこと</a>
 </h1>
 <p>Enumerable が提供する色々なメソッドは、受け取る筈のブロックが与えられなかった場合 Enumerator オブジェクトを返す。
 Enumerator オブジェクトは、<code>each.with_index.with_object</code>みたいに each にブロックを渡さずに使うとかいうのにたまに使う。
-あとは、外部イテレータのために使ったり、each 以外のメソッドを使って Enumerable のメソッドを使ったりするのに使える。</p>
-<p>each 以外の繰り返しを行うメソッドも、ブロックを受け取らなかったときは Enumerator オブジェクトを返したりする。Enumerable#map とか。</p>
-<div class="highlight"><pre><span class="sx">%w(a b c)</span><span class="o">.</span><span class="n">map</span> <span class="c1"># =&gt; #&lt;Enumerator: ["a", "b", "c"]:map&gt;</span>
-</pre></div>
-<p>これを外部イテレータとして使う機会は今のところない。
-（※元々「何に使うの」くらいに書いてたけど、<code>map.with_index</code>はやるよねというツッコミが。たしかに）</p>
-<p>使う場面は無くてもせめて使い方くらいは知っておきたいなあと思って Asakusa.rb で人に聞いたりソースに書かれたコメントを読んだりしたら何となく使い方が分かってきた。</p>
-<p>疑問はふたつあった。</p>
-<ul>
+あとは、外部イテレータのために使ったり、each 以外のメソッドを使って Enumerable のメソッドを使ったりするのに使える。</p><p>each 以外の繰り返しを行うメソッドも、ブロックを受け取らなかったときは Enumerator オブジェクトを返したりする。Enumerable#map とか。</p><div class="highlight"><pre><span class="sx">%w(a b c)</span><span class="o">.</span><span class="n">map</span> <span class="c1"># =&gt; #&lt;Enumerator: ["a", "b", "c"]:map&gt;</span>
+</pre></div><p>これを外部イテレータとして使う機会は今のところない。
+（※元々「何に使うの」くらいに書いてたけど、<code>map.with_index</code>はやるよねというツッコミが。たしかに）</p><p>使う場面は無くてもせめて使い方くらいは知っておきたいなあと思って Asakusa.rb で人に聞いたりソースに書かれたコメントを読んだりしたら何となく使い方が分かってきた。</p><p>疑問はふたつあった。</p><ul>
 <li>ブロックの戻り値にあたる値はどこにどうやって渡せばいいのか</li>
 <li>どうすればメソッドの戻り値を得られるのか</li>
 </ul>
-<p>それぞれ以下のような感じ。</p>
-<ul>
+<p>それぞれ以下のような感じ。</p><ul>
 <li>ブロックの戻り値（つまりyieldの戻り値になる値）は Enumerator#feed に渡す</li>
 <li>メソッドの戻り値は StopIteration#result から得られる</li>
 </ul>
-<p>もっとも、↓だけでは何だかありがたみが分からないけど。</p>
-<div class="highlight"><pre><span class="n">ary</span>  <span class="o">=</span> <span class="sx">%w(alice bob carol)</span>
+<p>もっとも、↓だけでは何だかありがたみが分からないけど。</p><div class="highlight"><pre><span class="n">ary</span>  <span class="o">=</span> <span class="sx">%w(alice bob carol)</span>
 <span class="n">enum</span> <span class="o">=</span> <span class="n">ary</span><span class="o">.</span><span class="n">map</span>
 
 <span class="k">while</span> <span class="kp">true</span>
@@ -78,61 +69,59 @@ Enumerator オブジェクトは、<code>each.with_index.with_object</code>み�
     <span class="k">break</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</pre></div>
-<p>while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてループから脱出してくれたりする。</p>
+</pre></div><p>while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてループから脱出してくれたりする。</p>
 </article>
-<div class="nav">
-<div class="prev">
-<link href="../entries/20120923.html" rel="prev">
+<div class='nav'>
+<div class='prev'>
 </div>
-<div class="next">
-<link href="../entries/20120731.html" rel="next">
+<div class='next'>
+<link href='/entries/20120923.html' rel='next' />
 </div>
 </div>
-<div class="autopagerize_insert_before"></div>
+<div class='autopagerize_insert_before'></div>
 </div>
-<aside id="sidebar">
+<aside id='sidebar'>
 <h3>Author</h3>
-<div class="author">
-<a href="../profile.html">hibariya</a>
+<div class='author'>
+<a href='/profile.html'>hibariya</a>
 </div>
 <h3>Recent entries</h3>
-<div class="recent-entries">
+<div class='recent-entries'>
 <ul>
 <li>
-<a href="../entries/20130418/a0.html">春から学生になった</a>
+<a href='/entries/20130418/a0.html'>春から学生になった</a>
 </li>
 <li>
-<a href="../entries/20130218/a0.html">東京競馬場へ馬をみにいった</a>
+<a href='/entries/20130218/a0.html'>東京競馬場へ馬をみにいった</a>
 </li>
 <li>
-<a href="../entries/20130105/a0.html">reditor gem を更新した</a>
+<a href='/entries/20130105/a0.html'>reditor gem を更新した</a>
 </li>
 <li>
-<a href="../entries/20130105/a1.html">cline gem を更新した</a>
+<a href='/entries/20130105/a1.html'>cline gem を更新した</a>
 </li>
 <li>
-<a href="../entries/20130102/a0.html">PROMPTを2階建てにした</a>
+<a href='/entries/20130102/a0.html'>PROMPTを2階建てにした</a>
 </li>
 <li>
-<a href="../entries/20121206/a0.html">自宅用に Kinesis を買った</a>
+<a href='/entries/20121206/a0.html'>自宅用に Kinesis を買った</a>
 </li>
 <li>
-<a href="../entries/20121125/a0.html">RubyConf 2012</a>
+<a href='/entries/20121125/a0.html'>RubyConf 2012</a>
 </li>
 </ul>
-<div class="archives">
-<a href="../entries.html">Archives</a>
+<div class='archives'>
+<a href='/entries.html'>Archives</a>
 </div>
 </div>
 <h3>Coderwall</h3>
-<section class="coderwall" data-coderwall-orientation="horizontal" data-coderwall-username="hibariya"></section>
+<section class='coderwall' data-coderwall-orientation='horizontal' data-coderwall-username='hibariya'></section>
 </aside>
 </div>
-<footer id="footer">
+<footer id='footer'>
 Joy Luck Crab (C) hibariya
 Generated by
-<a href="https://github.com/hibariya/retter" target="_blank">Retter</a>
+<a href='https://github.com/hibariya/retter' target='_blank'>Retter</a>
 </footer>
 </body>
 </html>

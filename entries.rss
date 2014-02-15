@@ -1,361 +1,562 @@
-<?xml version="1.0" encoding="UTF-8"?><rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xml:lang="ja"><channel rdf:about="http://hibariya.github.com/"><title>Joy Luck Crab</title><link>http://hibariya.github.com/</link><dc:date>2013-04-18</dc:date><description>hibariya.github.com</description><items><rdf:Seq><rdf:li rdf:resource="http://hibariya.github.com/entries/20130418/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20130218/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20130105/a1.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20130105/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20130102/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20121206/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20121125/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120928/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120923/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120830/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120731/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120723/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120602/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120505/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120411/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120329/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120328/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120326/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a1.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120324/a0.html"/><rdf:li rdf:resource="http://hibariya.github.com/entries/20120323/a0.html"/></rdf:Seq></items></channel><item about="http://hibariya.github.com/entries/20130418/a0.html"><title>春から学生になった</title><description>4月に、帝京大学理工学部情報科学科に入学した。通信教育課程なので、お仕事は継続。
-大学は mizzy さんのエントリ のおかげで知った。
-今年で28歳になった。
+<?xml version='1.0' encoding='utf-8' ?>
+<rdf:RDF xmlns:content='http://purl.org/rss/1.0/modules/content/' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns='http://purl.org/rss/1.0/'>
+<channel rdf:about='http://hibariya.github.com/'>
+<title>Joy Luck Crab</title>
+<link>http://hibariya.github.com/</link>
+<dc:date>2013-04-18</dc:date>
+<description>hibariya.github.com</description>
+<items>
+<rdf:Seq>
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20130418/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20130218/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20130105/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20130105/a1.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20130102/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20121206/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20121125/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120928/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120923/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120830/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120731/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120723/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120602/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120505/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120411/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120329/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120328/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120326/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120324/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120324/a1.html.html' />
+</rdf:Seq>
+</items>
+</channel>
+<item rdf:about='http://hibariya.github.com/entries/20130418/a0.html.html'>
+<title>春から学生になった</title>
+<link>http://hibariya.github.com/entries/20130418/a0.html.html</link>
+<dc:date>2013-04-18</dc:date>
+<description>4月に、帝京大学理工学部情報科学科に入学した。通信教育課程なので、お仕事は継続。
+大学は mizzy さんのエントリ のおかげで知った。今年で28歳になった。
 10年前、本に関わる仕事をしようと思って編集の専門学校に進んだ。
-それはそれなりにためになったけど、途中でもっと楽しいことを見つけて、まもなく小さな出版社を後にした。
-コードを書くのは楽しい。
-このまま30年後もコードを書いていられるとい...</description><content:encoded><![CDATA[<p>4月に、帝京大学理工学部情報科学科に入学した。通信教育課程なので、お仕事は継続。
-大学は <a href="http://mizzy.org/blog/2012/04/14/1/" target="_blank">mizzy さんのエントリ</a> のおかげで知った。</p>
-<p>今年で28歳になった。
-10年前、本に関わる仕事をしようと思って編集の専門学校に進んだ。
-それはそれなりにためになったけど、途中でもっと楽しいことを見つけて、まもなく小さな出版社を後にした。</p>
-<p>コードを書くのは楽しい。
+それはそれなりにためになったけど、途中でもっと楽しいことを見つけて、まもなく小さな出版社を後にした。コードを書くのは楽しい。
 このまま30年後もコードを書いていられるといいな。
 ずっとコードを書くなら、もっと上手になるための努力は惜しまなくて良さそう。
-だからちゃんと学ぼうと思う。</p>]]></content:encoded><dc:date>2013-04-18</dc:date><link>http://hibariya.github.com/entries/20130418/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20130218/a0.html"><title>東京競馬場へ馬をみにいった</title><description>前の2日間ほとんど自宅にこもって作業していたらとうとう集中できなくなったので、日曜日は奥さんと馬を見に行くことになった。
-競馬について何も知らないまま府中にある東京競馬場に行ったら、フェブラリーステークスといわれる割と大事そうなレースをやっていた。
-天気の良い日に目の前を全力で走っている馬を見るのはとっても刺激的で良い気分転換になるのでおすすめ。
-馬が走るのはだいたい30分に1回なので、その間次の...</description><content:encoded><![CDATA[<p>前の2日間ほとんど自宅にこもって作業していたらとうとう集中できなくなったので、日曜日は奥さんと馬を見に行くことになった。
-競馬について何も知らないまま府中にある東京競馬場に行ったら、フェブラリーステークスといわれる割と大事そうなレースをやっていた。</p>
-<p>天気の良い日に目の前を全力で走っている馬を見るのはとっても刺激的で良い気分転換になるのでおすすめ。
+だからちゃんと学ぼうと思う。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;4月に、帝京大学理工学部情報科学科に入学した。通信教育課程なので、お仕事は継続。
+    大学は &lt;a href=&quot;http://mizzy.org/blog/2012/04/14/1/&quot; target=&quot;_blank&quot;&gt;mizzy さんのエントリ&lt;/a&gt; のおかげで知った。&lt;/p&gt;&lt;p&gt;今年で28歳になった。
+    10年前、本に関わる仕事をしようと思って編集の専門学校に進んだ。
+    それはそれなりにためになったけど、途中でもっと楽しいことを見つけて、まもなく小さな出版社を後にした。&lt;/p&gt;&lt;p&gt;コードを書くのは楽しい。
+    このまま30年後もコードを書いていられるといいな。
+    ずっとコードを書くなら、もっと上手になるための努力は惜しまなくて良さそう。
+    だからちゃんと学ぼうと思う。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20130218/a0.html.html'>
+<title>東京競馬場へ馬をみにいった</title>
+<link>http://hibariya.github.com/entries/20130218/a0.html.html</link>
+<dc:date>2013-02-18</dc:date>
+<description>前の2日間ほとんど自宅にこもって作業していたらとうとう集中できなくなったので、日曜日は奥さんと馬を見に行くことになった。
+競馬について何も知らないまま府中にある東京競馬場に行ったら、フェブラリーステークスといわれる割と大事そうなレースをやっていた。天気の良い日に目の前を全力で走っている馬を見るのはとっても刺激的で良い気分転換になるのでおすすめ。
 馬が走るのはだいたい30分に1回なので、その間次のレースの予想をしてごく少額(100円とか)で適当に投票すると多少エキサイティングかもしれない。
-あとは、次のレースに出る馬のお披露目をする場所みたいなのもあって、よく手入れされた馬は綺麗なのでいちど見ておくと良さそう。</p>
-<p>東京競馬場は広くて比較的キレイで過ごしやすかった。
+あとは、次のレースに出る馬のお披露目をする場所みたいなのもあって、よく手入れされた馬は綺麗なのでいちど見ておくと良さそう。東京競馬場は広くて比較的キレイで過ごしやすかった。
 馬をみる席からは富士山も眺められる。
-JRAのサイトは使いづらいのでどうにかしてほしい。</p>]]></content:encoded><dc:date>2013-02-18</dc:date><link>http://hibariya.github.com/entries/20130218/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20130105/a1.html"><title>cline gem を更新した</title><description>Cline は、フィードとか GitHub の Activity を収集(一定周期でポーリング)してきて、terminal で簡単に垂れ流し表示するためにつくったやつ。
-コミットログを見る感じだと数カ月ぶりのバージョンアップ。
-cline をリリースした。
-サブコマンドの使い方が変わってしまったのでメジャーバージョンをひとつインクリメント。
-デーモン化できるようにした
-今の使い方だと screen...</description><content:encoded><![CDATA[<p><a href="https://github.com/hibariya/cline">Cline</a> は、フィードとか GitHub の Activity を収集(一定周期でポーリング)してきて、terminal で簡単に垂れ流し表示するためにつくったやつ。</p>
-<p>コミットログを見る感じだと数カ月ぶりのバージョンアップ。
-<a href="https://rubygems.org/gems/cline/">cline</a> をリリースした。
-サブコマンドの使い方が変わってしまったのでメジャーバージョンをひとつインクリメント。</p>
-<h3>デーモン化できるようにした</h3>
-<p>今の使い方だと screen を起動すると 3 つの cline プロセスが起動するようになっていて、ひとつあたりのメモリ使用量が割と多めなのだった。
-この更新で、cline のサーバを起動できるようにして、サーバが起動していたらそれ以降に起動したプロセスは socket 越しにいろいろ取りに行くようにした。</p>
-<p>起動とか停止とか:</p>
-<div class="highlight"><pre>  <span class="nv">$ </span>cline server start   <span class="c"># 起動</span>
-  <span class="nv">$ </span>cline server stop    <span class="c"># 停止</span>
-  <span class="nv">$ </span>cline server reload  <span class="c"># ~/.cline/config の再読み込み</span>
-</pre></div>
-<p>.zshrc などにこういうのを貼り付けておいて勝手に起動してくれるようにすると良さそう。</p>
-<div class="highlight"><pre><span class="k">if</span> ! <span class="o">[</span> -e ~/.cline/cline.sock <span class="o">]</span> ; <span class="k">then</span>
-<span class="k">  </span>cline server start
-<span class="k">fi</span>
-</pre></div>
-<h3>tick コマンドの使い方が変わった</h3>
-<div class="highlight"><pre>  <span class="nv">$ </span>cline tick OFFSET INTERVAL
-</pre></div>
-<p>から</p>
-<div class="highlight"><pre>  <span class="nv">$ </span>cline tick INTERVAL OFFSET
-</pre></div>
-<p>に変更。
-どちらも省略できるのだけど、offset よりは interval だけを指定することの方が多そうなので入れ替え。</p>]]></content:encoded><dc:date>2013-01-05</dc:date><link>http://hibariya.github.com/entries/20130105/a1.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20130105/a0.html"><title>reditor gem を更新した</title><description>Reditor は、gem や pure ruby な Ruby 標準添付ライブラリを $EDITOR で開くためのコマンドラインツールで、インストールすると bundle open や gem edit に似たコマンド reditor を使えるようになる。
-今回はライブラリが見つからなかったときに候補を出す機能を追加したのだった。
-require するときは active_support なのに...</description><content:encoded><![CDATA[<p><a href="https://github.com/hibariya/reditor">Reditor</a> は、gem や pure ruby な Ruby 標準添付ライブラリを $EDITOR で開くためのコマンドラインツールで、インストールすると bundle open や gem edit に似たコマンド reditor を使えるようになる。
-今回はライブラリが見つからなかったときに候補を出す機能を追加したのだった。</p>
-<p>require するときは active_support なのに gem の名前は activesupport みたいな gem が結構あって、じゃあ reditor で開くときは今までどんな感じだったかというと、</p>
-<div class="highlight"><pre>  <span class="nv">$ </span>reditor activesupport  <span class="c"># 開ける</span>
-  <span class="nv">$ </span>reditor active_support <span class="c"># 開けない</span>
-</pre></div>
-<p>という感じ。
-gem によって "アンダースコアが入るか入らないか" とか、他にも "名前が単数形か複数形か" とか忘れてしまうことは割とある。
+JRAのサイトは使いづらいのでどうにかしてほしい。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;前の2日間ほとんど自宅にこもって作業していたらとうとう集中できなくなったので、日曜日は奥さんと馬を見に行くことになった。
+    競馬について何も知らないまま府中にある東京競馬場に行ったら、フェブラリーステークスといわれる割と大事そうなレースをやっていた。&lt;/p&gt;&lt;p&gt;天気の良い日に目の前を全力で走っている馬を見るのはとっても刺激的で良い気分転換になるのでおすすめ。
+    馬が走るのはだいたい30分に1回なので、その間次のレースの予想をしてごく少額(100円とか)で適当に投票すると多少エキサイティングかもしれない。
+    あとは、次のレースに出る馬のお披露目をする場所みたいなのもあって、よく手入れされた馬は綺麗なのでいちど見ておくと良さそう。&lt;/p&gt;&lt;p&gt;東京競馬場は広くて比較的キレイで過ごしやすかった。
+    馬をみる席からは富士山も眺められる。
+    JRAのサイトは使いづらいのでどうにかしてほしい。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20130105/a0.html.html'>
+<title>reditor gem を更新した</title>
+<link>http://hibariya.github.com/entries/20130105/a0.html.html</link>
+<dc:date>2013-01-05</dc:date>
+<description>Reditor は、gem や pure ruby な Ruby 標準添付ライブラリを $EDITOR で開くためのコマンドラインツールで、インストールすると bundle open や gem edit に似たコマンド reditor を使えるようになる。
+今回はライブラリが見つからなかったときに候補を出す機能を追加したのだった。require するときは active_support なのに gem の名前は activesupport みたいな gem が結構あって、じゃあ reditor で開くときは今までどんな感じだったかというと、  $ reditor activesupport  # 開ける
+  $ reditor active_support # 開けない
+という感じ。
+gem によって &quot;アンダースコアが入るか入らないか&quot; とか、他にも &quot;名前が単数形か複数形か&quot; とか忘れてしまうことは割とある。
 開きたい gem を普段使っていなかったり gem の名前がキラキラしていれば尚更忘れやすい。
 だけどこういう、名前を曖昧にしか思い出せないときにあっけなく失敗してしまうのは悲しい。
-そこで、与えられた名前でライブラリを見つけられなかったときには候補っぽいものを出して選べるようにした。</p>
-<div class="highlight"><pre><span class="nv">$ </span>reditor active_support
-<span class="o">[</span>0<span class="o">]</span> actionmailer
-<span class="o">[</span>1<span class="o">]</span> actionpack
-<span class="o">[</span>2<span class="o">]</span> activemodel
-<span class="o">[</span>3<span class="o">]</span> activerecord
-<span class="o">[</span>4<span class="o">]</span> activeresource
-<span class="o">[</span>5<span class="o">]</span> activesupport
-Choose number of library <span class="o">[</span>0<span class="o">]</span>&gt; 5 <span class="c"># activesupport を開ける</span>
-</pre></div>
-<p>一覧は単純にソートしているだけで、本来なら activesupport が一番上に来て欲しいところだけど、それは追々。
-gem の名前をある程度適当に与えても候補から選べるようになったので、思い出すための面倒な手間が減りそう。</p>
-]]></content:encoded><dc:date>2013-01-05</dc:date><link>http://hibariya.github.com/entries/20130105/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20130102/a0.html"><title>PROMPTを2階建てにした</title><description>結構前からだったのだけど、oh-my-zsh が割と良くて乗り換えたはいいが気に入ったテーマだけは見つからなかったので自分で適当に変えたのだった。
+そこで、与えられた名前でライブラリを見つけられなかったときには候補っぽいものを出して選べるようにした。$ reditor active_support
+[0] actionmailer
+[1] actionpack
+[2] activemodel
+[3] activerecord
+[4] activeresource
+[5] activesupport
+Choose number of library [0]&amp;gt; 5 # activesupport を開ける
+一覧は単純にソートしているだけで、本来なら activesupport が一番上に来て欲しいところだけど、それは追々。
+gem の名前をある程度適当に与えても候補から選べるようになったので、思い出すための面倒な手間が減りそう。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;&lt;a href=&quot;https://github.com/hibariya/reditor&quot;&gt;Reditor&lt;/a&gt; は、gem や pure ruby な Ruby 標準添付ライブラリを $EDITOR で開くためのコマンドラインツールで、インストールすると bundle open や gem edit に似たコマンド reditor を使えるようになる。
+    今回はライブラリが見つからなかったときに候補を出す機能を追加したのだった。&lt;/p&gt;&lt;p&gt;require するときは active_support なのに gem の名前は activesupport みたいな gem が結構あって、じゃあ reditor で開くときは今までどんな感じだったかというと、&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;reditor activesupport  &lt;span class=&quot;c&quot;&gt;# 開ける&lt;/span&gt;
+      &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;reditor active_support &lt;span class=&quot;c&quot;&gt;# 開けない&lt;/span&gt;
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;という感じ。
+    gem によって &quot;アンダースコアが入るか入らないか&quot; とか、他にも &quot;名前が単数形か複数形か&quot; とか忘れてしまうことは割とある。
+    開きたい gem を普段使っていなかったり gem の名前がキラキラしていれば尚更忘れやすい。
+    だけどこういう、名前を曖昧にしか思い出せないときにあっけなく失敗してしまうのは悲しい。
+    そこで、与えられた名前でライブラリを見つけられなかったときには候補っぽいものを出して選べるようにした。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;reditor active_support
+    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; actionmailer
+    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; actionpack
+    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; activemodel
+    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;3&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; activerecord
+    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;4&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; activeresource
+    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;5&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; activesupport
+    Choose number of library &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&amp;gt; 5 &lt;span class=&quot;c&quot;&gt;# activesupport を開ける&lt;/span&gt;
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;一覧は単純にソートしているだけで、本来なら activesupport が一番上に来て欲しいところだけど、それは追々。
+    gem の名前をある程度適当に与えても候補から選べるようになったので、思い出すための面倒な手間が減りそう。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20130105/a1.html.html'>
+<title>cline gem を更新した</title>
+<link>http://hibariya.github.com/entries/20130105/a1.html.html</link>
+<dc:date>2013-01-05</dc:date>
+<description>Cline は、フィードとか GitHub の Activity を収集(一定周期でポーリング)してきて、terminal で簡単に垂れ流し表示するためにつくったやつ。コミットログを見る感じだと数カ月ぶりのバージョンアップ。
+cline をリリースした。
+サブコマンドの使い方が変わってしまったのでメジャーバージョンをひとつインクリメント。デーモン化できるようにした今の使い方だと screen を起動すると 3 つの cline プロセスが起動するようになっていて、ひとつあたりのメモリ使用量が割と多めなのだった。
+この更新で、cline のサーバを起動できるようにして、サーバが起動していたらそれ以降に起動したプロセスは socket 越しにいろいろ取りに行くようにした。起動とか停止とか:  $ cline server start   # 起動
+  $ cline server stop    # 停止
+  $ cline server reload  # ~/.cline/config の再読み込み
+.zshrc などにこういうのを貼り付けておいて勝手に起動してくれるようにすると良さそう。if ! [ -e ~/.cline/cline.sock ] ; then
+  cline server start
+fi
+tick コマンドの使い方が変わった  $ cline tick OFFSET INTERVAL
+から  $ cline tick INTERVAL OFFSET
+に変更。
+どちらも省略できるのだけど、offset よりは interval だけを指定することの方が多そうなので入れ替え。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;&lt;a href=&quot;https://github.com/hibariya/cline&quot;&gt;Cline&lt;/a&gt; は、フィードとか GitHub の Activity を収集(一定周期でポーリング)してきて、terminal で簡単に垂れ流し表示するためにつくったやつ。&lt;/p&gt;&lt;p&gt;コミットログを見る感じだと数カ月ぶりのバージョンアップ。
+    &lt;a href=&quot;https://rubygems.org/gems/cline/&quot;&gt;cline&lt;/a&gt; をリリースした。
+    サブコマンドの使い方が変わってしまったのでメジャーバージョンをひとつインクリメント。&lt;/p&gt;&lt;h3&gt;デーモン化できるようにした&lt;/h3&gt;&lt;p&gt;今の使い方だと screen を起動すると 3 つの cline プロセスが起動するようになっていて、ひとつあたりのメモリ使用量が割と多めなのだった。
+    この更新で、cline のサーバを起動できるようにして、サーバが起動していたらそれ以降に起動したプロセスは socket 越しにいろいろ取りに行くようにした。&lt;/p&gt;&lt;p&gt;起動とか停止とか:&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cline server start   &lt;span class=&quot;c&quot;&gt;# 起動&lt;/span&gt;
+      &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cline server stop    &lt;span class=&quot;c&quot;&gt;# 停止&lt;/span&gt;
+      &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cline server reload  &lt;span class=&quot;c&quot;&gt;# ~/.cline/config の再読み込み&lt;/span&gt;
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;.zshrc などにこういうのを貼り付けておいて勝手に起動してくれるようにすると良さそう。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; ! &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -e ~/.cline/cline.sock &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;  &lt;/span&gt;cline server start
+    &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+    &lt;/pre&gt;&lt;/div&gt;&lt;h3&gt;tick コマンドの使い方が変わった&lt;/h3&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cline tick OFFSET INTERVAL
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;から&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cline tick INTERVAL OFFSET
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;に変更。
+    どちらも省略できるのだけど、offset よりは interval だけを指定することの方が多そうなので入れ替え。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20130102/a0.html.html'>
+<title>PROMPTを2階建てにした</title>
+<link>http://hibariya.github.com/entries/20130102/a0.html.html</link>
+<dc:date>2013-01-02</dc:date>
+<description>結構前からだったのだけど、oh-my-zsh が割と良くて乗り換えたはいいが気に入ったテーマだけは見つからなかったので自分で適当に変えたのだった。
 いままでは雑多な情報はRPROMPTに出すようにしていたのだけど、同僚から影響を受けて二階建てに。
-(Kinesis といい Funtoo といい、去年は何かと影響を受けまくり)
+(Kinesis といい Funtoo といい、去年は何かと影響を受けまくり)カスタマイズしているうちにごちゃごちゃしてしまった PROMPT が出しているのはこんなの。
+ユーザ@ホスト:今居る場所
+時刻
+直前のコマンドの戻り値
+Ruby のバージョン
+git リポジトリの状態・ハッシュの先頭数文字・ブランチ
+$SHLVL
 
-カスタマイズしているうちにごちゃごちゃしてしまった PROMPT が出...</description><content:encoded><![CDATA[<p>結構前からだったのだけど、oh-my-zsh が割と良くて乗り換えたはいいが気に入ったテーマだけは見つからなかったので自分で適当に変えたのだった。
-いままでは雑多な情報はRPROMPTに出すようにしていたのだけど、同僚から影響を受けて二階建てに。
-(Kinesis といい Funtoo といい、去年は何かと影響を受けまくり)</p>
-<p><img src="/images/prompt_2013_1.png" alt="prompt_2013_1"></p>
-<p>カスタマイズしているうちにごちゃごちゃしてしまった <a href="https://github.com/hibariya/config/blob/a7368884c6b39dff628ef9fc75ce595a5a96d878/_zsh/oh-my-zsh#L56">PROMPT</a> が出しているのはこんなの。</p>
-<ul>
-<li>ユーザ@ホスト:今居る場所</li>
-<li>時刻</li>
-<li>直前のコマンドの戻り値</li>
-<li>Ruby のバージョン</li>
-<li>git リポジトリの状態・ハッシュの先頭数文字・ブランチ</li>
-<li>$SHLVL</li>
-</ul>
-<p>いろいろ表示している情報はたまに便利に思うこともあるけど、割と自己満足なので<code>PROMPT="%% "</code>とかにしてもたぶん生活には困らない。</p>
-<p>今年もよろしくお願いします。</p>]]></content:encoded><dc:date>2013-01-02</dc:date><link>http://hibariya.github.com/entries/20130102/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20121206/a0.html"><title>自宅用に Kinesis を買った</title><description>慣れたら使い心地良さそうだなーと思っていた Kinesis さん、いきなり仕事で使うと全然仕事が進まなくなるのでまずは自宅用に購入。
+いろいろ表示している情報はたまに便利に思うこともあるけど、割と自己満足なのでPROMPT=&quot;%% &quot;とかにしてもたぶん生活には困らない。今年もよろしくお願いします。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;結構前からだったのだけど、oh-my-zsh が割と良くて乗り換えたはいいが気に入ったテーマだけは見つからなかったので自分で適当に変えたのだった。
+    いままでは雑多な情報はRPROMPTに出すようにしていたのだけど、同僚から影響を受けて二階建てに。
+    (Kinesis といい Funtoo といい、去年は何かと影響を受けまくり)&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/images/prompt_2013_1.png&quot; alt=&quot;prompt_2013_1&quot;&gt;&lt;/p&gt;&lt;p&gt;カスタマイズしているうちにごちゃごちゃしてしまった &lt;a href=&quot;https://github.com/hibariya/config/blob/a7368884c6b39dff628ef9fc75ce595a5a96d878/_zsh/oh-my-zsh#L56&quot;&gt;PROMPT&lt;/a&gt; が出しているのはこんなの。&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;ユーザ@ホスト:今居る場所&lt;/li&gt;
+    &lt;li&gt;時刻&lt;/li&gt;
+    &lt;li&gt;直前のコマンドの戻り値&lt;/li&gt;
+    &lt;li&gt;Ruby のバージョン&lt;/li&gt;
+    &lt;li&gt;git リポジトリの状態・ハッシュの先頭数文字・ブランチ&lt;/li&gt;
+    &lt;li&gt;$SHLVL&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;いろいろ表示している情報はたまに便利に思うこともあるけど、割と自己満足なので&lt;code&gt;PROMPT=&quot;%% &quot;&lt;/code&gt;とかにしてもたぶん生活には困らない。&lt;/p&gt;&lt;p&gt;今年もよろしくお願いします。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20121206/a0.html.html'>
+<title>自宅用に Kinesis を買った</title>
+<link>http://hibariya.github.com/entries/20121206/a0.html.html</link>
+<dc:date>2012-12-06</dc:date>
+<description>慣れたら使い心地良さそうだなーと思っていた Kinesis さん、いきなり仕事で使うと全然仕事が進まなくなるのでまずは自宅用に購入。
 以前同僚から貸し出してもらって挫折したこともあり、今回は少しは使える状態からスタート。
-奥さんが仕事から帰ってきたときに早速自慢したのだけど、金額を白状したら蹴られた。</description><content:encoded><![CDATA[<p>慣れたら使い心地良さそうだなーと思っていた Kinesis さん、いきなり仕事で使うと全然仕事が進まなくなるのでまずは自宅用に購入。
-以前同僚から貸し出してもらって挫折したこともあり、今回は少しは使える状態からスタート。
-奥さんが仕事から帰ってきたときに早速自慢したのだけど、金額を白状したら蹴られた。</p>]]></content:encoded><dc:date>2012-12-06</dc:date><link>http://hibariya.github.com/entries/20121206/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20121125/a0.html"><title>RubyConf 2012</title><description>
-先月末から今月の頭は角谷さんと RubyConf 2012 に行っていた。
-行きで寄ったロサンゼルスの気候は、勝手に想像していたカリフォルニアとだいたい一緒で、乾燥していたけどいい天気で過ごしやすかった。
-コロラド州デンバーは、空港からダウンタウンまでのタクシー窓からの景色が大自然すぎて、本当に屋根のあるところで開催されるのだろうかと心配になるほど。
-もちろんダウンタウンはちゃんとあったし、会場...</description><content:encoded><![CDATA[<p><img src="http://distilleryimage1.s3.amazonaws.com/ead618f6256211e290cd22000a1f90d7_7.jpg" alt=""></p>
-<p>先月末から今月の頭は角谷さんと RubyConf 2012 に行っていた。</p>
-<p>行きで寄ったロサンゼルスの気候は、勝手に想像していたカリフォルニアとだいたい一緒で、乾燥していたけどいい天気で過ごしやすかった。
+奥さんが仕事から帰ってきたときに早速自慢したのだけど、金額を白状したら蹴られた。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;慣れたら使い心地良さそうだなーと思っていた Kinesis さん、いきなり仕事で使うと全然仕事が進まなくなるのでまずは自宅用に購入。
+    以前同僚から貸し出してもらって挫折したこともあり、今回は少しは使える状態からスタート。
+    奥さんが仕事から帰ってきたときに早速自慢したのだけど、金額を白状したら蹴られた。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20121125/a0.html.html'>
+<title>RubyConf 2012</title>
+<link>http://hibariya.github.com/entries/20121125/a0.html.html</link>
+<dc:date>2012-11-25</dc:date>
+<description>先月末から今月の頭は角谷さんと RubyConf 2012 に行っていた。行きで寄ったロサンゼルスの気候は、勝手に想像していたカリフォルニアとだいたい一緒で、乾燥していたけどいい天気で過ごしやすかった。
 コロラド州デンバーは、空港からダウンタウンまでのタクシー窓からの景色が大自然すぎて、本当に屋根のあるところで開催されるのだろうかと心配になるほど。
 もちろんダウンタウンはちゃんとあったし、会場は想像以上に立派だった。
-デンバーのマンホールは蒸気を吐いていて、何も知らずに興味本位で湯気らしきものに触ったらひどい目にあった。</p>
-<p>会期中に見た発表のスライドを <a href="https://pinboard.in/u:hibariya/t:rubyconf/">pinboard</a> にまとめているところだけど、まだ全部集められてない。
-ビデオは <a href="http://confreaks.com/events/rubyconf2012">Confreaks</a> のサイトから見られるけど、すべての発表分あるわけじゃないみたい。</p>
-<p>RubyConf に行く半年くらい前から少しずつ英語の勉強をしたりオンライン英会話したりといろいろやって来てはいた。
-ただ、どうにも英語力の低さは無視できなくて、聞き取りやすい発表はついていくのに精一杯、それ以外はだいたい振り切られてスライドを眺めていた。復習が必要そう。</p>
-<p>RubyConf 2日目は Engine Yard のパーティーに行って joshk や tenderlove に挨拶して、ステッカーをもらうなどした。
-それから拙い英語で何人かの Rubyists と話したりしたのだけど、最近 Ruby 始めたんだーという人が思ったよりも多かったのが印象的だった。</p>
-<h2>実用的だった話</h2>
-<p>松田さんの <a href="http://confreaks.com/videos/1275-rubyconf2012-ruby-2-0-on-rails">Ruby 2.0 on Rails</a> は分かりやすかったし、新しい機能をどう使えるか、というのに大変参考になった。
-特にprepend、キーワード引数の動きを理解するのに助けになった。</p>
-<p>Ben Orenstein の Refactoring from Good to Great は、ライブコーディングで Ruby でのリファクタリングについて説明していた。
-（もう一回見たいのだけど、ライブコーディングでスライドが無いうえにまだ動画は見つからなかった。）</p>
-<p><a href="http://confreaks.com/videos/1296-rubyconf2012-rails-is-a-follower-what-we-can-learn-from-druby-s-metaprogramming-magic">咳さんと井上さんの dRuby の話</a> は、はじめはデモをまじえて dRuby の動きを丁寧に解説。
+デンバーのマンホールは蒸気を吐いていて、何も知らずに興味本位で湯気らしきものに触ったらひどい目にあった。会期中に見た発表のスライドを pinboard にまとめているところだけど、まだ全部集められてない。
+ビデオは Confreaks のサイトから見られるけど、すべての発表分あるわけじゃないみたい。RubyConf に行く半年くらい前から少しずつ英語の勉強をしたりオンライン英会話したりといろいろやって来てはいた。
+ただ、どうにも英語力の低さは無視できなくて、聞き取りやすい発表はついていくのに精一杯、それ以外はだいたい振り切られてスライドを眺めていた。復習が必要そう。RubyConf 2日目は Engine Yard のパーティーに行って joshk や tenderlove に挨拶して、ステッカーをもらうなどした。
+それから拙い英語で何人かの Rubyists と話したりしたのだけど、最近 Ruby 始めたんだーという人が思ったよりも多かったのが印象的だった。実用的だった話松田さんの Ruby 2.0 on Rails は分かりやすかったし、新しい機能をどう使えるか、というのに大変参考になった。
+特にprepend、キーワード引数の動きを理解するのに助けになった。Ben Orenstein の Refactoring from Good to Great は、ライブコーディングで Ruby でのリファクタリングについて説明していた。
+（もう一回見たいのだけど、ライブコーディングでスライドが無いうえにまだ動画は見つからなかった。）咳さんと井上さんの dRuby の話 は、はじめはデモをまじえて dRuby の動きを丁寧に解説。
 それから dRuby でのオブジェクトのやりとりをどうやって実現しているのかを、デモとコードで説明していた。
 スライドに出てくるコード片が面白くて（興味深くて）、じっくりソースコードを読んでみたくなる発表だった。
-drb のコードを読むには <a href="http://rubygems.org/gems/reditor">reditor</a> が便利。</p>
-<h2>刺激的な話</h2>
-<p>OODB や GemStone というものについて全く知識がなかったので終始ポカーンと口を開けて聞いていたのが Jesse Cooke の <a href="http://maglev.github.com/">MagLev</a> の発表だった。
+drb のコードを読むには reditor が便利。刺激的な話OODB や GemStone というものについて全く知識がなかったので終始ポカーンと口を開けて聞いていたのが Jesse Cooke の MagLev の発表だった。
 Proc も 継続も、なんでも保存できるってすごい。
-まだ用途が思い浮かばないけど、これはちょっと触ってみたい。</p>
-<p><a href="http://confreaks.com/videos/1269-rubyconf2012-allow-me-to-reintroduce-myself-my-name-is-maglev">Allow me to reintroduce myself. My name is MagLev.</a></p>
-<p>もうひとつは Xiki (executable wiki) の発表で、これはエディタを使ったWikiのような新しいシェルということらしい（結構前からあるらしいけど知らなかった）。
+まだ用途が思い浮かばないけど、これはちょっと触ってみたい。Allow me to reintroduce myself. My name is MagLev.もうひとつは Xiki (executable wiki) の発表で、これはエディタを使ったWikiのような新しいシェルということらしい（結構前からあるらしいけど知らなかった）。
 エディタからDBを更新できたり、ブラウザのインスペクタみたいにDOMを辿ってHTMLを編集できたり、それがすぐブラウザに反映されたり、オルガンを弾いたり、尋常じゃない動きをしていた。
 カスタマイズは ruby でできるらしい。でもまずは Emacs を使えるようになる必要がありそう。
-驚きと笑いで会場はだいぶ盛り上がっていた気がする。初見のひとは動画を見てるだけで面白いと思う。</p>
-<p><a href="http://confreaks.com/videos/1297-rubyconf2012-xiki-the-rubyfied-next-generation-shell-console">Xiki: the Rubyfied Next-Generation Shell Console</a></p>
-<h2>Fix shoe strings</h2>
-<p>1日目のキーノート <a href="http://confreaks.com/videos/1268-rubyconf2012-keynote-reinventing-wheels-of-the-future">Reinventing Wheels of the Future</a>。
-プログラミング言語はすでにあるけど Ruby をつくった話。</p>
-<p>もしも車輪の再発明だと言われても、動機があるなら進めばいいし、それは多様性につながる。
-多様性は貴重な時間を消費するかもしれないけど、それは革新につながるためのコストだ。</p>
-<p>今は21世紀だけど、世界中には靴紐みたいなくだらない設計がたくさんある。
+驚きと笑いで会場はだいぶ盛り上がっていた気がする。初見のひとは動画を見てるだけで面白いと思う。Xiki: the Rubyfied Next-Generation Shell ConsoleFix shoe strings1日目のキーノート Reinventing Wheels of the Future。
+プログラミング言語はすでにあるけど Ruby をつくった話。もしも車輪の再発明だと言われても、動機があるなら進めばいいし、それは多様性につながる。
+多様性は貴重な時間を消費するかもしれないけど、それは革新につながるためのコストだ。今は21世紀だけど、世界中には靴紐みたいなくだらない設計がたくさんある。
 新しいプロジェクトをスタートしたり、すでにあるプロジェクトに参加したりすることによって、それを解決しよう。
-(Ruby 2.0 にバグレポートとパッチを!)</p>
-<p>(より良い)車輪を再発明しよう。</p>
-<p>というような話だったと理解してて、いちばん頭に残ってる。</p>
-<h2>来年はマイアミらしい</h2>
-<p>フロリダの空は黄色いって聞いたんだけど本当なのかしら。</p>
-<p>今回のことで、英語については本当にこたえたので、当分は真面目にやることになりそう。
+(Ruby 2.0 にバグレポートとパッチを!)(より良い)車輪を再発明しよう。というような話だったと理解してて、いちばん頭に残ってる。来年はマイアミらしいフロリダの空は黄色いって聞いたんだけど本当なのかしら。今回のことで、英語については本当にこたえたので、当分は真面目にやることになりそう。
 あとは、これまで独学でカバーしてきた部分について、きちんと勉強しなおすのは避けられないという確かな結論を得られた。
-だいぶ遠回りをしたけど、来年から忙しくなりそう。</p>
-<h2>永和に転職して 800 日以上経っていた</h2>
-<p>RubyConf は自分の中で大きな出来事だったこともあって、いろいろと記憶を巡っていたら、転職して 2 年以上経っているということに気づく。
+だいぶ遠回りをしたけど、来年から忙しくなりそう。永和に転職して 800 日以上経っていたRubyConf は自分の中で大きな出来事だったこともあって、いろいろと記憶を巡っていたら、転職して 2 年以上経っているということに気づく。
 今でさえ何もかも途中だけど、思い返せばコードの書き方や考え方はだいぶ変わってしまった。
-今回 RubyConf に行けたことはもちろん、自分の望む方向に進もうとしたときに惜しみなく良い影響を与えてもらえたことに感謝。</p>]]></content:encoded><dc:date>2012-11-25</dc:date><link>http://hibariya.github.com/entries/20121125/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120928/a0.html"><title>Gentoo 環境を手に入れてた</title><description>この前 30% 割引をやっているのを同僚に教えてもらって Thinkpad の X230 を購入。
+今回 RubyConf に行けたことはもちろん、自分の望む方向に進もうとしたときに惜しみなく良い影響を与えてもらえたことに感謝。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;&lt;img src=&quot;http://distilleryimage1.s3.amazonaws.com/ead618f6256211e290cd22000a1f90d7_7.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;p&gt;先月末から今月の頭は角谷さんと RubyConf 2012 に行っていた。&lt;/p&gt;&lt;p&gt;行きで寄ったロサンゼルスの気候は、勝手に想像していたカリフォルニアとだいたい一緒で、乾燥していたけどいい天気で過ごしやすかった。
+    コロラド州デンバーは、空港からダウンタウンまでのタクシー窓からの景色が大自然すぎて、本当に屋根のあるところで開催されるのだろうかと心配になるほど。
+    もちろんダウンタウンはちゃんとあったし、会場は想像以上に立派だった。
+    デンバーのマンホールは蒸気を吐いていて、何も知らずに興味本位で湯気らしきものに触ったらひどい目にあった。&lt;/p&gt;&lt;p&gt;会期中に見た発表のスライドを &lt;a href=&quot;https://pinboard.in/u:hibariya/t:rubyconf/&quot;&gt;pinboard&lt;/a&gt; にまとめているところだけど、まだ全部集められてない。
+    ビデオは &lt;a href=&quot;http://confreaks.com/events/rubyconf2012&quot;&gt;Confreaks&lt;/a&gt; のサイトから見られるけど、すべての発表分あるわけじゃないみたい。&lt;/p&gt;&lt;p&gt;RubyConf に行く半年くらい前から少しずつ英語の勉強をしたりオンライン英会話したりといろいろやって来てはいた。
+    ただ、どうにも英語力の低さは無視できなくて、聞き取りやすい発表はついていくのに精一杯、それ以外はだいたい振り切られてスライドを眺めていた。復習が必要そう。&lt;/p&gt;&lt;p&gt;RubyConf 2日目は Engine Yard のパーティーに行って joshk や tenderlove に挨拶して、ステッカーをもらうなどした。
+    それから拙い英語で何人かの Rubyists と話したりしたのだけど、最近 Ruby 始めたんだーという人が思ったよりも多かったのが印象的だった。&lt;/p&gt;&lt;h2&gt;実用的だった話&lt;/h2&gt;&lt;p&gt;松田さんの &lt;a href=&quot;http://confreaks.com/videos/1275-rubyconf2012-ruby-2-0-on-rails&quot;&gt;Ruby 2.0 on Rails&lt;/a&gt; は分かりやすかったし、新しい機能をどう使えるか、というのに大変参考になった。
+    特にprepend、キーワード引数の動きを理解するのに助けになった。&lt;/p&gt;&lt;p&gt;Ben Orenstein の Refactoring from Good to Great は、ライブコーディングで Ruby でのリファクタリングについて説明していた。
+    （もう一回見たいのだけど、ライブコーディングでスライドが無いうえにまだ動画は見つからなかった。）&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://confreaks.com/videos/1296-rubyconf2012-rails-is-a-follower-what-we-can-learn-from-druby-s-metaprogramming-magic&quot;&gt;咳さんと井上さんの dRuby の話&lt;/a&gt; は、はじめはデモをまじえて dRuby の動きを丁寧に解説。
+    それから dRuby でのオブジェクトのやりとりをどうやって実現しているのかを、デモとコードで説明していた。
+    スライドに出てくるコード片が面白くて（興味深くて）、じっくりソースコードを読んでみたくなる発表だった。
+    drb のコードを読むには &lt;a href=&quot;http://rubygems.org/gems/reditor&quot;&gt;reditor&lt;/a&gt; が便利。&lt;/p&gt;&lt;h2&gt;刺激的な話&lt;/h2&gt;&lt;p&gt;OODB や GemStone というものについて全く知識がなかったので終始ポカーンと口を開けて聞いていたのが Jesse Cooke の &lt;a href=&quot;http://maglev.github.com/&quot;&gt;MagLev&lt;/a&gt; の発表だった。
+    Proc も 継続も、なんでも保存できるってすごい。
+    まだ用途が思い浮かばないけど、これはちょっと触ってみたい。&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://confreaks.com/videos/1269-rubyconf2012-allow-me-to-reintroduce-myself-my-name-is-maglev&quot;&gt;Allow me to reintroduce myself. My name is MagLev.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;もうひとつは Xiki (executable wiki) の発表で、これはエディタを使ったWikiのような新しいシェルということらしい（結構前からあるらしいけど知らなかった）。
+    エディタからDBを更新できたり、ブラウザのインスペクタみたいにDOMを辿ってHTMLを編集できたり、それがすぐブラウザに反映されたり、オルガンを弾いたり、尋常じゃない動きをしていた。
+    カスタマイズは ruby でできるらしい。でもまずは Emacs を使えるようになる必要がありそう。
+    驚きと笑いで会場はだいぶ盛り上がっていた気がする。初見のひとは動画を見てるだけで面白いと思う。&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://confreaks.com/videos/1297-rubyconf2012-xiki-the-rubyfied-next-generation-shell-console&quot;&gt;Xiki: the Rubyfied Next-Generation Shell Console&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;Fix shoe strings&lt;/h2&gt;&lt;p&gt;1日目のキーノート &lt;a href=&quot;http://confreaks.com/videos/1268-rubyconf2012-keynote-reinventing-wheels-of-the-future&quot;&gt;Reinventing Wheels of the Future&lt;/a&gt;。
+    プログラミング言語はすでにあるけど Ruby をつくった話。&lt;/p&gt;&lt;p&gt;もしも車輪の再発明だと言われても、動機があるなら進めばいいし、それは多様性につながる。
+    多様性は貴重な時間を消費するかもしれないけど、それは革新につながるためのコストだ。&lt;/p&gt;&lt;p&gt;今は21世紀だけど、世界中には靴紐みたいなくだらない設計がたくさんある。
+    新しいプロジェクトをスタートしたり、すでにあるプロジェクトに参加したりすることによって、それを解決しよう。
+    (Ruby 2.0 にバグレポートとパッチを!)&lt;/p&gt;&lt;p&gt;(より良い)車輪を再発明しよう。&lt;/p&gt;&lt;p&gt;というような話だったと理解してて、いちばん頭に残ってる。&lt;/p&gt;&lt;h2&gt;来年はマイアミらしい&lt;/h2&gt;&lt;p&gt;フロリダの空は黄色いって聞いたんだけど本当なのかしら。&lt;/p&gt;&lt;p&gt;今回のことで、英語については本当にこたえたので、当分は真面目にやることになりそう。
+    あとは、これまで独学でカバーしてきた部分について、きちんと勉強しなおすのは避けられないという確かな結論を得られた。
+    だいぶ遠回りをしたけど、来年から忙しくなりそう。&lt;/p&gt;&lt;h2&gt;永和に転職して 800 日以上経っていた&lt;/h2&gt;&lt;p&gt;RubyConf は自分の中で大きな出来事だったこともあって、いろいろと記憶を巡っていたら、転職して 2 年以上経っているということに気づく。
+    今でさえ何もかも途中だけど、思い返せばコードの書き方や考え方はだいぶ変わってしまった。
+    今回 RubyConf に行けたことはもちろん、自分の望む方向に進もうとしたときに惜しみなく良い影響を与えてもらえたことに感謝。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20120928/a0.html.html'>
+<title>Gentoo 環境を手に入れてた</title>
+<link>http://hibariya.github.com/entries/20120928/a0.html.html</link>
+<dc:date>2012-09-28</dc:date>
+<description>この前 30% 割引をやっているのを同僚に教えてもらって Thinkpad の X230 を購入。
 半月くらいかけてねんがんの Gentoo (Funtoo) + Awesome WM 環境を手に入れた。
-細かいところはまだ設定が足りないけど、毎日問題なく使えている感じ。しいて言えばもっと大きな机を買えばよかった。
+細かいところはまだ設定が足りないけど、毎日問題なく使えている感じ。しいて言えばもっと大きな机を買えばよかった。参考にしたのは、
+http://lab.ursm.jp/blog/2011/08/28/funtoo-on-thinkpad-x220/
+http://www.thinkwiki.org/wiki/Installing_Gentoo_on_a_ThinkPad_X220
+http://www.funtoo.org/wiki/Funtoo_Linux_Installation
 
-参考にしたのは、
-
-http://lab.ursm.jp/blog/2011/0...</description><content:encoded><![CDATA[<p>この前 30% 割引をやっているのを同僚に教えてもらって Thinkpad の X230 を購入。
-半月くらいかけてねんがんの Gentoo (Funtoo) + Awesome WM 環境を手に入れた。
-細かいところはまだ設定が足りないけど、毎日問題なく使えている感じ。しいて言えばもっと大きな机を買えばよかった。</p>
-<p><img src="http://distilleryimage3.instagram.com/1da383da056111e2b70422000a1e8867_7.jpg" alt="大きな机がほしい"></p>
-<p>参考にしたのは、</p>
-<ul>
-<li><a href="http://lab.ursm.jp/blog/2011/08/28/funtoo-on-thinkpad-x220/">http://lab.ursm.jp/blog/2011/08/28/funtoo-on-thinkpad-x220/</a></li>
-<li><a href="http://www.thinkwiki.org/wiki/Installing_Gentoo_on_a_ThinkPad_X220">http://www.thinkwiki.org/wiki/Installing_Gentoo_on_a_ThinkPad_X220</a></li>
-<li><a href="http://www.funtoo.org/wiki/Funtoo_Linux_Installation">http://www.funtoo.org/wiki/Funtoo_Linux_Installation</a></li>
-</ul>
-<p>あたり。
-3つ目の画面は USB でつなぐ DisplayLink のアダプタをつかっていて、<a href="http://wiki.gentoo.org/wiki/DisplayLink">ここ</a>とかを参考にしたら一応表示はできた（自分の設定に不備があるのか、使い勝手は最悪だけど）。</p>
-<p>それから、画面のミラーリングが解除できなかったり、ImageMagick が依存で入ってきたらいつの間にか壁紙が ImageMagick のおっさんの画像がすり替えられたり意味不明な現象が多発したので頭を抱えながらいろいろ手間取った結果、結局 <a href="https://twitter.com/ursm">ursm</a> 先生の make.conf とかの設定を参考にさせてもらったら治った。
-このへんのセットアップはまだまだ素振りが必要そうで全然まとめられてない。</p>
-<p>環境を変えてよかったことは、タイル型WMがだいぶいい感じなのと、これまで自分が作った gem が何かしらうまく動かなかったりすることを発見できたことくらい。
+あたり。
+3つ目の画面は USB でつなぐ DisplayLink のアダプタをつかっていて、こことかを参考にしたら一応表示はできた（自分の設定に不備があるのか、使い勝手は最悪だけど）。それから、画面のミラーリングが解除できなかったり、ImageMagick が依存で入ってきたらいつの間にか壁紙が ImageMagick のおっさんの画像がすり替えられたり意味不明な現象が多発したので頭を抱えながらいろいろ手間取った結果、結局 ursm 先生の make.conf とかの設定を参考にさせてもらったら治った。
+このへんのセットアップはまだまだ素振りが必要そうで全然まとめられてない。環境を変えてよかったことは、タイル型WMがだいぶいい感じなのと、これまで自分が作った gem が何かしらうまく動かなかったりすることを発見できたことくらい。
 でもタイル型WMっぽいことは実は Mac でもできるらしい。
-なのでよかったことはまだあんまりない。気分転換なのでは。</p>]]></content:encoded><dc:date>2012-09-28</dc:date><link>http://hibariya.github.com/entries/20120928/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120923/a0.html"><title>札幌RubyKaigi2012でLTしてきたこと #sprk2012</title><description>先週は SapporoRubyKaigi2012 で北海道に行ってきた。
+なのでよかったことはまだあんまりない。気分転換なのでは。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;この前 30% 割引をやっているのを同僚に教えてもらって Thinkpad の X230 を購入。
+    半月くらいかけてねんがんの Gentoo (Funtoo) + Awesome WM 環境を手に入れた。
+    細かいところはまだ設定が足りないけど、毎日問題なく使えている感じ。しいて言えばもっと大きな机を買えばよかった。&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;http://distilleryimage3.instagram.com/1da383da056111e2b70422000a1e8867_7.jpg&quot; alt=&quot;大きな机がほしい&quot;&gt;&lt;/p&gt;&lt;p&gt;参考にしたのは、&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;http://lab.ursm.jp/blog/2011/08/28/funtoo-on-thinkpad-x220/&quot;&gt;http://lab.ursm.jp/blog/2011/08/28/funtoo-on-thinkpad-x220/&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.thinkwiki.org/wiki/Installing_Gentoo_on_a_ThinkPad_X220&quot;&gt;http://www.thinkwiki.org/wiki/Installing_Gentoo_on_a_ThinkPad_X220&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.funtoo.org/wiki/Funtoo_Linux_Installation&quot;&gt;http://www.funtoo.org/wiki/Funtoo_Linux_Installation&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;あたり。
+    3つ目の画面は USB でつなぐ DisplayLink のアダプタをつかっていて、&lt;a href=&quot;http://wiki.gentoo.org/wiki/DisplayLink&quot;&gt;ここ&lt;/a&gt;とかを参考にしたら一応表示はできた（自分の設定に不備があるのか、使い勝手は最悪だけど）。&lt;/p&gt;&lt;p&gt;それから、画面のミラーリングが解除できなかったり、ImageMagick が依存で入ってきたらいつの間にか壁紙が ImageMagick のおっさんの画像がすり替えられたり意味不明な現象が多発したので頭を抱えながらいろいろ手間取った結果、結局 &lt;a href=&quot;https://twitter.com/ursm&quot;&gt;ursm&lt;/a&gt; 先生の make.conf とかの設定を参考にさせてもらったら治った。
+    このへんのセットアップはまだまだ素振りが必要そうで全然まとめられてない。&lt;/p&gt;&lt;p&gt;環境を変えてよかったことは、タイル型WMがだいぶいい感じなのと、これまで自分が作った gem が何かしらうまく動かなかったりすることを発見できたことくらい。
+    でもタイル型WMっぽいことは実は Mac でもできるらしい。
+    なのでよかったことはまだあんまりない。気分転換なのでは。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20120923/a0.html.html'>
+<title>札幌RubyKaigi2012でLTしてきたこと #sprk2012</title>
+<link>http://hibariya.github.com/entries/20120923/a0.html.html</link>
+<dc:date>2012-09-23</dc:date>
+<description>先週は SapporoRubyKaigi2012 で北海道に行ってきた。
 快適な Kaigi を提供してくださった実行委員・スタッフの方々に感謝。
-2日目の15日に LT 枠で、Coding for yourself というタイトルで5分間話してきた。
-
-Ruby を使って自分や身の回りの人の生活を便利にしたいという漠然とした希望はあるけれど、漠然としているから何をすればいいかわからないし、何もで...</description><content:encoded><![CDATA[<p>先週は SapporoRubyKaigi2012 で北海道に行ってきた。
-快適な Kaigi を提供してくださった実行委員・スタッフの方々に感謝。
-2日目の15日に LT 枠で、<a href="https://speakerdeck.com/u/hibariya/p/coding-for-yourself">Coding for yourself</a> というタイトルで5分間話してきた。</p>
-<div style="width: 500px;"><script src="http://speakerdeck.com/embed/505556424a7779000200e6b0.js"></script></div>
-<p>Ruby を使って自分や身の回りの人の生活を便利にしたいという漠然とした希望はあるけれど、漠然としているから何をすればいいかわからないし、何もできなかった。
+2日目の15日に LT 枠で、Coding for yourself というタイトルで5分間話してきた。Ruby を使って自分や身の回りの人の生活を便利にしたいという漠然とした希望はあるけれど、漠然としているから何をすればいいかわからないし、何もできなかった。
 でもせめて、自分のコードで自分の望みを叶えることくらいはできるようでありたくて、まずは黙々と欲しいものをつくって公開することにした。
 その結果、自分の望みを叶えることさえ難しいということが分かった。
 それは確かに残念なお知らせだったけど、思わぬ収穫として、つくったものを使ってくれるひとが現れたり、新たなフィードバックが得られたりもした。
-欲しいものを自分のために用意してそれを公開することは、どうやら無駄ではなさそう。</p>
-<p>SapporoRubyKaigi2012 の全部のセッションを見終わってはいないので、いろいろ落ち着いたら動画を見なおしたい（10月中旬までは身内でいろいろやっているので落ち着かない）。</p>
-<p>会期中は RubyKaigi2011 以前に知り合ったひとたちとまた会えたし、万葉方面とペパボ方面で今まで知り合っていなかったひとたちに挨拶できた。
-それから、<a href="http://route477.net/files/sprk2012/">自給自足プログラミング</a>、という発表にとてもシンパシーを感じた。
-うまく言えないけど、コードを書いてるひとに惹かれるのだと思う。</p>]]></content:encoded><dc:date>2012-09-23</dc:date><link>http://hibariya.github.com/entries/20120923/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120830/a0.html"><title>map が返す Enumerator のこと</title><description>Enumerable が提供する色々なメソッドは、受け取る筈のブロックが与えられなかった場合 Enumerator オブジェクトを返す。
+欲しいものを自分のために用意してそれを公開することは、どうやら無駄ではなさそう。SapporoRubyKaigi2012 の全部のセッションを見終わってはいないので、いろいろ落ち着いたら動画を見なおしたい（10月中旬までは身内でいろいろやっているので落ち着かない）。会期中は RubyKaigi2011 以前に知り合ったひとたちとまた会えたし、万葉方面とペパボ方面で今まで知り合っていなかったひとたちに挨拶できた。
+それから、自給自足プログラミング、という発表にとてもシンパシーを感じた。
+うまく言えないけど、コードを書いてるひとに惹かれるのだと思う。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;先週は SapporoRubyKaigi2012 で北海道に行ってきた。
+    快適な Kaigi を提供してくださった実行委員・スタッフの方々に感謝。
+    2日目の15日に LT 枠で、&lt;a href=&quot;https://speakerdeck.com/u/hibariya/p/coding-for-yourself&quot;&gt;Coding for yourself&lt;/a&gt; というタイトルで5分間話してきた。&lt;/p&gt;&lt;div style=&quot;width: 500px;&quot;&gt;&lt;script src=&quot;http://speakerdeck.com/embed/505556424a7779000200e6b0.js&quot;&gt;&lt;/script&gt;&lt;/div&gt;&lt;p&gt;Ruby を使って自分や身の回りの人の生活を便利にしたいという漠然とした希望はあるけれど、漠然としているから何をすればいいかわからないし、何もできなかった。
+    でもせめて、自分のコードで自分の望みを叶えることくらいはできるようでありたくて、まずは黙々と欲しいものをつくって公開することにした。
+    その結果、自分の望みを叶えることさえ難しいということが分かった。
+    それは確かに残念なお知らせだったけど、思わぬ収穫として、つくったものを使ってくれるひとが現れたり、新たなフィードバックが得られたりもした。
+    欲しいものを自分のために用意してそれを公開することは、どうやら無駄ではなさそう。&lt;/p&gt;&lt;p&gt;SapporoRubyKaigi2012 の全部のセッションを見終わってはいないので、いろいろ落ち着いたら動画を見なおしたい（10月中旬までは身内でいろいろやっているので落ち着かない）。&lt;/p&gt;&lt;p&gt;会期中は RubyKaigi2011 以前に知り合ったひとたちとまた会えたし、万葉方面とペパボ方面で今まで知り合っていなかったひとたちに挨拶できた。
+    それから、&lt;a href=&quot;http://route477.net/files/sprk2012/&quot;&gt;自給自足プログラミング&lt;/a&gt;、という発表にとてもシンパシーを感じた。
+    うまく言えないけど、コードを書いてるひとに惹かれるのだと思う。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20120830/a0.html.html'>
+<title>map が返す Enumerator のこと</title>
+<link>http://hibariya.github.com/entries/20120830/a0.html.html</link>
+<dc:date>2012-08-30</dc:date>
+<description>Enumerable が提供する色々なメソッドは、受け取る筈のブロックが与えられなかった場合 Enumerator オブジェクトを返す。
 Enumerator オブジェクトは、each.with_index.with_objectみたいに each にブロックを渡さずに使うとかいうのにたまに使う。
-あとは、外部イテレータのために使ったり、each 以外のメソッドを使って Enumerable のメ...</description><content:encoded><![CDATA[<p>Enumerable が提供する色々なメソッドは、受け取る筈のブロックが与えられなかった場合 Enumerator オブジェクトを返す。
-Enumerator オブジェクトは、<code>each.with_index.with_object</code>みたいに each にブロックを渡さずに使うとかいうのにたまに使う。
-あとは、外部イテレータのために使ったり、each 以外のメソッドを使って Enumerable のメソッドを使ったりするのに使える。</p>
-<p>each 以外の繰り返しを行うメソッドも、ブロックを受け取らなかったときは Enumerator オブジェクトを返したりする。Enumerable#map とか。</p>
-<div class="highlight"><pre><span class="sx">%w(a b c)</span><span class="o">.</span><span class="n">map</span> <span class="c1"># =&gt; #&lt;Enumerator: ["a", "b", "c"]:map&gt;</span>
-</pre></div>
-<p>これを外部イテレータとして使う機会は今のところない。
-（※元々「何に使うの」くらいに書いてたけど、<code>map.with_index</code>はやるよねというツッコミが。たしかに）</p>
-<p>使う場面は無くてもせめて使い方くらいは知っておきたいなあと思って Asakusa.rb で人に聞いたりソースに書かれたコメントを読んだりしたら何となく使い方が分かってきた。</p>
-<p>疑問はふたつあった。</p>
-<ul>
-<li>ブロックの戻り値にあたる値はどこにどうやって渡せばいいのか</li>
-<li>どうすればメソッドの戻り値を得られるのか</li>
-</ul>
-<p>それぞれ以下のような感じ。</p>
-<ul>
-<li>ブロックの戻り値（つまりyieldの戻り値になる値）は Enumerator#feed に渡す</li>
-<li>メソッドの戻り値は StopIteration#result から得られる</li>
-</ul>
-<p>もっとも、↓だけでは何だかありがたみが分からないけど。</p>
-<div class="highlight"><pre><span class="n">ary</span>  <span class="o">=</span> <span class="sx">%w(alice bob carol)</span>
-<span class="n">enum</span> <span class="o">=</span> <span class="n">ary</span><span class="o">.</span><span class="n">map</span>
+あとは、外部イテレータのために使ったり、each 以外のメソッドを使って Enumerable のメソッドを使ったりするのに使える。each 以外の繰り返しを行うメソッドも、ブロックを受け取らなかったときは Enumerator オブジェクトを返したりする。Enumerable#map とか。%w(a b c).map # =&amp;gt; #&amp;lt;Enumerator: [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]:map&amp;gt;
+これを外部イテレータとして使う機会は今のところない。
+（※元々「何に使うの」くらいに書いてたけど、map.with_indexはやるよねというツッコミが。たしかに）使う場面は無くてもせめて使い方くらいは知っておきたいなあと思って Asakusa.rb で人に聞いたりソースに書かれたコメントを読んだりしたら何となく使い方が分かってきた。疑問はふたつあった。
+ブロックの戻り値にあたる値はどこにどうやって渡せばいいのか
+どうすればメソッドの戻り値を得られるのか
 
-<span class="k">while</span> <span class="kp">true</span>
-  <span class="k">begin</span>
-    <span class="n">val</span> <span class="o">=</span> <span class="n">enum</span><span class="o">.</span><span class="n">next</span> <span class="c1"># ブロック引数的なもの</span>
+それぞれ以下のような感じ。
+ブロックの戻り値（つまりyieldの戻り値になる値）は Enumerator#feed に渡す
+メソッドの戻り値は StopIteration#result から得られる
 
-    <span class="n">enum</span><span class="o">.</span><span class="n">feed</span> <span class="n">val</span><span class="o">.</span><span class="n">upcase</span> <span class="c1"># ブロックの戻り値的なもの</span>
-  <span class="k">rescue</span> <span class="no">StopIteration</span> <span class="o">=&gt;</span> <span class="n">e</span>
-    <span class="nb">p</span> <span class="n">e</span><span class="o">.</span><span class="n">result</span> <span class="c1"># ["ALICE", "BOB", "CAROL"] と表示</span>
+もっとも、↓だけでは何だかありがたみが分からないけど。ary  = %w(alice bob carol)
+enum = ary.map
 
-    <span class="k">break</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</pre></div>
-<p>while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてループから脱出してくれたりする。</p>]]></content:encoded><dc:date>2012-08-30</dc:date><link>http://hibariya.github.com/entries/20120830/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120731/a0.html"><title>簡単に Ruby のリファレンス・マニュアルを開く ruremai を色々直した</title><description>気がついたら色々な人から良い感じのパッチをもらったので取り込んで 0.0.3 をリリースしました。
-Ruremai はirbなどを使っている際に、メソッドのリファレンス・マニュアルをお手軽にブラウザで開くためのツールです。
-require 'ruremai' すると、Method#rurema! が追加されます。
-例えば、「何かそれっぽいメソッドが記憶の片隅にあるんだけど、使い方がイマイチ思い出せ...</description><content:encoded><![CDATA[<p>気がついたら色々な人から良い感じのパッチをもらったので取り込んで <a href="https://rubygems.org/gems/ruremai">0.0.3</a> をリリースしました。</p>
-<p><a href="https://github.com/hibariya/ruremai">Ruremai</a> はirbなどを使っている際に、メソッドのリファレンス・マニュアルをお手軽にブラウザで開くためのツールです。
-<code>require 'ruremai'</code> すると、Method#rurema! が追加されます。</p>
-<p>例えば、「何かそれっぽいメソッドが記憶の片隅にあるんだけど、使い方がイマイチ思い出せない」ようなときに便利。</p>
-<div class="highlight"><pre>hibariya@ ;-) irb
-&gt;&gt; require 'ruremai'
-=&gt; false
-&gt;&gt; ary = %w(alice bob carol)
-=&gt; ["alice", "bob", "carol"]
-&gt;&gt; ary.method(:any?).rurema! # ここで唐突にブラウザが開く!
-</pre></div>
-<p>今回はいくつかの修正や機能追加があったのでした。</p>
-<ul>
-<li><a href="https://github.com/hibariya/ruremai/pull/1">ショートカット Object#mean? の追加</a></li>
-<li><a href="https://github.com/hibariya/ruremai/pull/2">大文字を含むメソッド名に対応できていなかったバグの修正</a></li>
-<li><a href="https://github.com/hibariya/ruremai/pull/4">名前空間や特定のメソッドに対応できていなかったバグの修正と高速化</a></li>
-</ul>
-<p>自分では気づかないようなバグへのパッチとか、あったら良さそうな機能がどんどん送られくる GitHub とっても便利。</p>]]></content:encoded><dc:date>2012-07-31</dc:date><link>http://hibariya.github.com/entries/20120731/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120723/a0.html"><title>簡単に Ruby のリファレンス・マニュアルを開く ruremai をつくった</title><description>Ruby リファレンスマニュアル、通称るりまを開くのが日頃から割と面倒だったので、irb からさっと開けるようなものを作った。
-ruremai
-require すると Method#rurema! が追加される。これを呼び出すと、るりまの該当メソッドのページをブラウザで開く。
-  Object.method(:name).rurema!
+while true
+  begin
+    val = enum.next # ブロック引数的なもの
 
-APIDock とかも見るようにできるといいのかな。
-~/...</description><content:encoded><![CDATA[<p>Ruby リファレンスマニュアル、通称るりまを開くのが日頃から割と面倒だったので、irb からさっと開けるようなものを作った。</p>
-<p><a href="https://github.com/hibariya/ruremai">ruremai</a></p>
-<p>require すると Method#rurema! が追加される。これを呼び出すと、るりまの該当メソッドのページをブラウザで開く。</p>
-<div class="highlight"><pre>  <span class="no">Object</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="ss">:name</span><span class="p">)</span><span class="o">.</span><span class="n">rurema!</span>
-</pre></div>
-<p>APIDock とかも見るようにできるといいのかな。</p>
-<p><code>~/.irbrc</code> あたりで <code>require 'ruremai'</code> しておくとよさそう。勉強などのお供に。</p>]]></content:encoded><dc:date>2012-07-23</dc:date><link>http://hibariya.github.com/entries/20120723/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120602/a0.html"><title>社内で code についての発表をした</title><description>@koic先輩に「新卒向けにライブラリやツールを作ることについての話をしてよ」と言われたので二つ返事で受けさせてもらったのだった。
-自分のための code を書こう
-永和に転職して暫く経ったある日、金曜の夜、飲み屋「ボヤキ」で@koicさんに言われた言葉がぼんやりと印象に残ってる。大体だけど↓のような感じ。
-「hibariya は Kaminari の Contributors に入ってると思って...</description><content:encoded><![CDATA[<p><a href="https://twitter.com/koic">@koic</a>先輩に「新卒向けにライブラリやツールを作ることについての話をしてよ」と言われたので二つ返事で受けさせてもらったのだった。</p>
-<p><a href="https://speakerdeck.com/u/hibariya/p/code">自分のための code を書こう</a></p>
-<p>永和に転職して暫く経ったある日、金曜の夜、飲み屋「ボヤキ」で<a href="https://twitter.com/koic">@koic</a>さんに言われた言葉がぼんやりと印象に残ってる。大体だけど↓のような感じ。</p>
-<p>「hibariya は <a href="https://github.com/amatsuda/kaminari">Kaminari</a> の Contributors に入ってると思ってたけど違ったからびっくりした」</p>
-<p>そう言われたからといっていきなり Kaminari にパッチを送れるほどの行動力はないのだけど、普段から code を読み書きしている人とそうでない人の間にある、防弾ガラスみたいな、見えないけどはっきりした差を意識し始めるきっかけになった。</p>
-<p>発表は、自分の中でいい棚卸になった。</p>]]></content:encoded><dc:date>2012-06-02</dc:date><link>http://hibariya.github.com/entries/20120602/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120505/a0.html"><title>cline-0.3.0</title><description>いくつか便利そうな機能をつけてアップデートしました。
+    enum.feed val.upcase # ブロックの戻り値的なもの
+  rescue StopIteration =&amp;gt; e
+    p e.result # [&quot;ALICE&quot;, &quot;BOB&quot;, &quot;CAROL&quot;] と表示
 
+    break
+  end
+end
+while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてループから脱出してくれたりする。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;Enumerable が提供する色々なメソッドは、受け取る筈のブロックが与えられなかった場合 Enumerator オブジェクトを返す。
+    Enumerator オブジェクトは、&lt;code&gt;each.with_index.with_object&lt;/code&gt;みたいに each にブロックを渡さずに使うとかいうのにたまに使う。
+    あとは、外部イテレータのために使ったり、each 以外のメソッドを使って Enumerable のメソッドを使ったりするのに使える。&lt;/p&gt;&lt;p&gt;each 以外の繰り返しを行うメソッドも、ブロックを受け取らなかったときは Enumerator オブジェクトを返したりする。Enumerable#map とか。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;sx&quot;&gt;%w(a b c)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# =&amp;gt; #&amp;lt;Enumerator: [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]:map&amp;gt;&lt;/span&gt;
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;これを外部イテレータとして使う機会は今のところない。
+    （※元々「何に使うの」くらいに書いてたけど、&lt;code&gt;map.with_index&lt;/code&gt;はやるよねというツッコミが。たしかに）&lt;/p&gt;&lt;p&gt;使う場面は無くてもせめて使い方くらいは知っておきたいなあと思って Asakusa.rb で人に聞いたりソースに書かれたコメントを読んだりしたら何となく使い方が分かってきた。&lt;/p&gt;&lt;p&gt;疑問はふたつあった。&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;ブロックの戻り値にあたる値はどこにどうやって渡せばいいのか&lt;/li&gt;
+    &lt;li&gt;どうすればメソッドの戻り値を得られるのか&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;それぞれ以下のような感じ。&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;ブロックの戻り値（つまりyieldの戻り値になる値）は Enumerator#feed に渡す&lt;/li&gt;
+    &lt;li&gt;メソッドの戻り値は StopIteration#result から得られる&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;もっとも、↓だけでは何だかありがたみが分からないけど。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;ary&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%w(alice bob carol)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;begin&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# ブロック引数的なもの&lt;/span&gt;
+    
+        &lt;span class=&quot;n&quot;&gt;enum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feed&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;upcase&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# ブロックの戻り値的なもの&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;rescue&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;StopIteration&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# [&quot;ALICE&quot;, &quot;BOB&quot;, &quot;CAROL&quot;] と表示&lt;/span&gt;
+    
+        &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてループから脱出してくれたりする。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20120731/a0.html.html'>
+<title>簡単に Ruby のリファレンス・マニュアルを開く ruremai を色々直した</title>
+<link>http://hibariya.github.com/entries/20120731/a0.html.html</link>
+<dc:date>2012-07-31</dc:date>
+<description>気がついたら色々な人から良い感じのパッチをもらったので取り込んで 0.0.3 をリリースしました。Ruremai はirbなどを使っている際に、メソッドのリファレンス・マニュアルをお手軽にブラウザで開くためのツールです。
+require 'ruremai' すると、Method#rurema! が追加されます。例えば、「何かそれっぽいメソッドが記憶の片隅にあるんだけど、使い方がイマイチ思い出せない」ようなときに便利。hibariya@ ;-) irb
+&amp;gt;&amp;gt; require 'ruremai'
+=&amp;gt; false
+&amp;gt;&amp;gt; ary = %w(alice bob carol)
+=&amp;gt; [&quot;alice&quot;, &quot;bob&quot;, &quot;carol&quot;]
+&amp;gt;&amp;gt; ary.method(:any?).rurema! # ここで唐突にブラウザが開く!
+今回はいくつかの修正や機能追加があったのでした。
+ショートカット Object#mean? の追加
+大文字を含むメソッド名に対応できていなかったバグの修正
+名前空間や特定のメソッドに対応できていなかったバグの修正と高速化
+
+自分では気づかないようなバグへのパッチとか、あったら良さそうな機能がどんどん送られくる GitHub とっても便利。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;気がついたら色々な人から良い感じのパッチをもらったので取り込んで &lt;a href=&quot;https://rubygems.org/gems/ruremai&quot;&gt;0.0.3&lt;/a&gt; をリリースしました。&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/hibariya/ruremai&quot;&gt;Ruremai&lt;/a&gt; はirbなどを使っている際に、メソッドのリファレンス・マニュアルをお手軽にブラウザで開くためのツールです。
+    &lt;code&gt;require &#39;ruremai&#39;&lt;/code&gt; すると、Method#rurema! が追加されます。&lt;/p&gt;&lt;p&gt;例えば、「何かそれっぽいメソッドが記憶の片隅にあるんだけど、使い方がイマイチ思い出せない」ようなときに便利。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;hibariya@ ;-) irb
+    &amp;gt;&amp;gt; require &#39;ruremai&#39;
+    =&amp;gt; false
+    &amp;gt;&amp;gt; ary = %w(alice bob carol)
+    =&amp;gt; [&quot;alice&quot;, &quot;bob&quot;, &quot;carol&quot;]
+    &amp;gt;&amp;gt; ary.method(:any?).rurema! # ここで唐突にブラウザが開く!
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;今回はいくつかの修正や機能追加があったのでした。&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/hibariya/ruremai/pull/1&quot;&gt;ショートカット Object#mean? の追加&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/hibariya/ruremai/pull/2&quot;&gt;大文字を含むメソッド名に対応できていなかったバグの修正&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/hibariya/ruremai/pull/4&quot;&gt;名前空間や特定のメソッドに対応できていなかったバグの修正と高速化&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;自分では気づかないようなバグへのパッチとか、あったら良さそうな機能がどんどん送られくる GitHub とっても便利。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20120723/a0.html.html'>
+<title>簡単に Ruby のリファレンス・マニュアルを開く ruremai をつくった</title>
+<link>http://hibariya.github.com/entries/20120723/a0.html.html</link>
+<dc:date>2012-07-23</dc:date>
+<description>Ruby リファレンスマニュアル、通称るりまを開くのが日頃から割と面倒だったので、irb からさっと開けるようなものを作った。ruremairequire すると Method#rurema! が追加される。これを呼び出すと、るりまの該当メソッドのページをブラウザで開く。  Object.method(:name).rurema!
+APIDock とかも見るようにできるといいのかな。~/.irbrc あたりで require 'ruremai' しておくとよさそう。勉強などのお供に。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;Ruby リファレンスマニュアル、通称るりまを開くのが日頃から割と面倒だったので、irb からさっと開けるようなものを作った。&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/hibariya/ruremai&quot;&gt;ruremai&lt;/a&gt;&lt;/p&gt;&lt;p&gt;require すると Method#rurema! が追加される。これを呼び出すと、るりまの該当メソッドのページをブラウザで開く。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;no&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rurema!&lt;/span&gt;
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;APIDock とかも見るようにできるといいのかな。&lt;/p&gt;&lt;p&gt;&lt;code&gt;~/.irbrc&lt;/code&gt; あたりで &lt;code&gt;require &#39;ruremai&#39;&lt;/code&gt; しておくとよさそう。勉強などのお供に。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20120602/a0.html.html'>
+<title>社内で code についての発表をした</title>
+<link>http://hibariya.github.com/entries/20120602/a0.html.html</link>
+<dc:date>2012-06-02</dc:date>
+<description>@koic先輩に「新卒向けにライブラリやツールを作ることについての話をしてよ」と言われたので二つ返事で受けさせてもらったのだった。自分のための code を書こう永和に転職して暫く経ったある日、金曜の夜、飲み屋「ボヤキ」で@koicさんに言われた言葉がぼんやりと印象に残ってる。大体だけど↓のような感じ。「hibariya は Kaminari の Contributors に入ってると思ってたけど違ったからびっくりした」そう言われたからといっていきなり Kaminari にパッチを送れるほどの行動力はないのだけど、普段から code を読み書きしている人とそうでない人の間にある、防弾ガラスみたいな、見えないけどはっきりした差を意識し始めるきっかけになった。発表は、自分の中でいい棚卸になった。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;&lt;a href=&quot;https://twitter.com/koic&quot;&gt;@koic&lt;/a&gt;先輩に「新卒向けにライブラリやツールを作ることについての話をしてよ」と言われたので二つ返事で受けさせてもらったのだった。&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/u/hibariya/p/code&quot;&gt;自分のための code を書こう&lt;/a&gt;&lt;/p&gt;&lt;p&gt;永和に転職して暫く経ったある日、金曜の夜、飲み屋「ボヤキ」で&lt;a href=&quot;https://twitter.com/koic&quot;&gt;@koic&lt;/a&gt;さんに言われた言葉がぼんやりと印象に残ってる。大体だけど↓のような感じ。&lt;/p&gt;&lt;p&gt;「hibariya は &lt;a href=&quot;https://github.com/amatsuda/kaminari&quot;&gt;Kaminari&lt;/a&gt; の Contributors に入ってると思ってたけど違ったからびっくりした」&lt;/p&gt;&lt;p&gt;そう言われたからといっていきなり Kaminari にパッチを送れるほどの行動力はないのだけど、普段から code を読み書きしている人とそうでない人の間にある、防弾ガラスみたいな、見えないけどはっきりした差を意識し始めるきっかけになった。&lt;/p&gt;&lt;p&gt;発表は、自分の中でいい棚卸になった。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20120505/a0.html.html'>
+<title>cline-0.3.0</title>
+<link>http://hibariya.github.com/entries/20120505/a0.html.html</link>
+<dc:date>2012-05-05</dc:date>
+<description>いくつか便利そうな機能をつけてアップデートしました。
 簡単にURLを開く機能
 フィルタリングのためのインターフェース
 
-簡単にURLを開く
-表示するときにメッセージにエイリアスをつけるようにしました。
-その分、あまり必要なさそうな時間の秒とタイムゾーンを表示しないようにしました。
-[2012/05/04 22:41][2][1f5] Delicious.com - Discover Yourse...</description><content:encoded><![CDATA[<p>いくつか便利そうな機能をつけて<a href="http://rubygems.org/gems/cline">アップデート</a>しました。</p>
-<ul>
-<li>簡単にURLを開く機能</li>
-<li>フィルタリングのためのインターフェース</li>
-</ul>
-<h2>簡単にURLを開く</h2>
-<p>表示するときにメッセージにエイリアスをつけるようにしました。
-その分、あまり必要なさそうな時間の秒とタイムゾーンを表示しないようにしました。</p>
-<div class="highlight"><pre>[2012/05/04 22:41][2][1f5] Delicious.com - Discover Yourself! http://delicious.com/help/quicktour/chrome
+簡単にURLを開く表示するときにメッセージにエイリアスをつけるようにしました。
+その分、あまり必要なさそうな時間の秒とタイムゾーンを表示しないようにしました。[2012/05/04 22:41][2][1f5] Delicious.com - Discover Yourself! http://delicious.com/help/quicktour/chrome
                        ↑
                       これ
-</pre></div>
-<p>エイリアスを使うと簡単にメッセージの中のURLをブラウザで開くことができます。
-URLが途中で見切れてしまっても大丈夫。</p>
-<div class="highlight"><pre>  $ cline open 1f5
-</pre></div>
-<p>打つのが面倒なので <code>alias co='cline open'</code> しておくとよさそう。</p>
-<h3>フィルタリング</h3>
-<p>フィルタリングのようなことを、ActiveRecordのvalidationを使って実現できるようにしておきました。
+エイリアスを使うと簡単にメッセージの中のURLをブラウザで開くことができます。
+URLが途中で見切れてしまっても大丈夫。  $ cline open 1f5
+打つのが面倒なので alias co='cline open' しておくとよさそう。フィルタリングフィルタリングのようなことを、ActiveRecordのvalidationを使って実現できるようにしておきました。
 invalidなメッセージは保存されなくなります。
-<code>~/.cline/config</code> あたりに書いておくとよさそう。</p>
-<div class="highlight"><pre><span class="nb">require</span> <span class="s1">'hiwai'</span>
+~/.cline/config あたりに書いておくとよさそう。require 'hiwai'
 
-<span class="k">class</span> <span class="nc">Cline</span><span class="o">::</span><span class="no">Notification</span>
-  <span class="n">validate</span> <span class="ss">:message_should_not_be_hiwai</span>
+class Cline::Notification
+  validate :message_should_not_be_hiwai
 
-  <span class="k">def</span> <span class="nf">message_should_not_be_hiwai</span>
-    <span class="n">errors</span><span class="o">.</span><span class="n">add</span> <span class="ss">:message</span><span class="p">,</span> <span class="s1">'hiwai'</span> <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">hiwai?</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</pre></div>
-<p>クラスを再オープンしているのだけど、もうちょっとスマートなAPIを用意したいなと思っているところ。
-ちなみに<a href="https://github.com/hibariya/hiwai">hiwai</a>はレシーバがひわいかどうかを確認するためのライブラリです。</p>]]></content:encoded><dc:date>2012-05-05</dc:date><link>http://hibariya.github.com/entries/20120505/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120411/a0.html"><title>標準添付ライブラリもエディタで開けるreditorを作った</title><description>Rubyにはbundle openやgemeditのgem editみたいに、gemを自分のエディタで簡単に開くための方法があるのだけど、たまに標準添付ライブラリも開きたいことがあるのだった。
-そこでreditorというgemを作ってみた。
-インストールするとreditorコマンドが使えるようになって、開きたいライブラリの名前を渡すと$LOAD_PATHやrubygemsの中からそれっぽいものを見...</description><content:encoded><![CDATA[<p>Rubyには<code>bundle open</code>やgemeditの<code>gem edit</code>みたいに、gemを自分のエディタで簡単に開くための方法があるのだけど、たまに標準添付ライブラリも開きたいことがあるのだった。
-そこで<a href="https://rubygems.org/gems/reditor">reditor</a>というgemを作ってみた。</p>
-<p>インストールすると<code>reditor</code>コマンドが使えるようになって、開きたいライブラリの名前を渡すと$LOAD_PATHやrubygemsの中からそれっぽいものを見つけてエディタで開いてくれる。</p>
-<div class="highlight"><pre>  $ reditor csv
-</pre></div>
-<p>とか。</p>
-<div class="highlight"><pre>  $ reditor faraday
-</pre></div>
-<p>とか。</p>]]></content:encoded><dc:date>2012-04-11</dc:date><link>http://hibariya.github.com/entries/20120411/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120329/a0.html"><title>所在の分からないWARNINGが出力されるときのこと</title><description>Railsを使ってるときとかにActiveSupport::MemoizableがDEPRECATEDだとかそんなWARNINGっぽいメッセージがどこからともなく出てくるときのこと。
-ひとまずraiseする。IOで出力する系のメソッドたちはだいたい最後にwriteを呼ぶ筈なので、writeを上書きしてる。
-def STDERR.write(*) raise end
-
-Railsだとconfig/a...</description><content:encoded><![CDATA[<p>Railsを使ってるときとかにActiveSupport::MemoizableがDEPRECATEDだとかそんなWARNINGっぽいメッセージがどこからともなく出てくるときのこと。</p>
-<p>ひとまずraiseする。IOで出力する系のメソッドたちはだいたい最後にwriteを呼ぶ筈なので、writeを上書きしてる。</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nc">STDERR</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">raise</span> <span class="k">end</span>
-</pre></div>
-<p>Railsだと<code>config/application.rb</code>の頭あたりに書いておく。</p>
-<p>起動してstacktraceを見ればどのgemが問題かだいたい分かるので<code>bundle update [gem name]</code>で問題のgemをupdateしてみると直っていたりする。
-最新でも直ってなかったら自分で直してpull requestを送ったりする。</p>]]></content:encoded><dc:date>2012-03-29</dc:date><link>http://hibariya.github.com/entries/20120329/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120328/a0.html"><title>記号がうまく入力できない</title><description>感覚でキーボードを使うという悪癖が抜けないので、特に苦手な記号の入力を克服するべくコンソールで練習するためのプログラムを書くことにした。
-kigou
-ついでに実装は男らしい感じのコードにしようと思ったけどあまりうまくいかなくて、ただの汚いコードになった。</description><content:encoded><![CDATA[<p>感覚でキーボードを使うという悪癖が抜けないので、特に苦手な記号の入力を克服するべくコンソールで練習するためのプログラムを書くことにした。</p>
-<p><a href="https://github.com/hibariya/kigou">kigou</a></p>
-<p>ついでに実装は男らしい感じのコードにしようと思ったけどあまりうまくいかなくて、ただの汚いコードになった。</p>]]></content:encoded><dc:date>2012-03-28</dc:date><link>http://hibariya.github.com/entries/20120328/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120326/a0.html"><title>プロセスをforkするときのこと</title><description>孤児プロセスとゾンビプロセスの違いがうまく理解できてなかったけど、ようやく違いを確認することができた。
-孤児プロセス
-孤児プロセスは、親プロセスがwaitせずに先に逝ってしまった後も走り続けている子プロセス。
+  def message_should_not_be_hiwai
+    errors.add :message, 'hiwai' if message.hiwai?
+  end
+end
+クラスを再オープンしているのだけど、もうちょっとスマートなAPIを用意したいなと思っているところ。
+ちなみにhiwaiはレシーバがひわいかどうかを確認するためのライブラリです。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;いくつか便利そうな機能をつけて&lt;a href=&quot;http://rubygems.org/gems/cline&quot;&gt;アップデート&lt;/a&gt;しました。&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;簡単にURLを開く機能&lt;/li&gt;
+    &lt;li&gt;フィルタリングのためのインターフェース&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;h2&gt;簡単にURLを開く&lt;/h2&gt;&lt;p&gt;表示するときにメッセージにエイリアスをつけるようにしました。
+    その分、あまり必要なさそうな時間の秒とタイムゾーンを表示しないようにしました。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;[2012/05/04 22:41][2][1f5] Delicious.com - Discover Yourself! http://delicious.com/help/quicktour/chrome
+                           ↑
+                          これ
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;エイリアスを使うと簡単にメッセージの中のURLをブラウザで開くことができます。
+    URLが途中で見切れてしまっても大丈夫。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  $ cline open 1f5
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;打つのが面倒なので &lt;code&gt;alias co=&#39;cline open&#39;&lt;/code&gt; しておくとよさそう。&lt;/p&gt;&lt;h3&gt;フィルタリング&lt;/h3&gt;&lt;p&gt;フィルタリングのようなことを、ActiveRecordのvalidationを使って実現できるようにしておきました。
+    invalidなメッセージは保存されなくなります。
+    &lt;code&gt;~/.cline/config&lt;/code&gt; あたりに書いておくとよさそう。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;hiwai&#39;&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Cline&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Notification&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;validate&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:message_should_not_be_hiwai&lt;/span&gt;
+    
+      &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;message_should_not_be_hiwai&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;hiwai&#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hiwai?&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;クラスを再オープンしているのだけど、もうちょっとスマートなAPIを用意したいなと思っているところ。
+    ちなみに&lt;a href=&quot;https://github.com/hibariya/hiwai&quot;&gt;hiwai&lt;/a&gt;はレシーバがひわいかどうかを確認するためのライブラリです。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20120411/a0.html.html'>
+<title>標準添付ライブラリもエディタで開けるreditorを作った</title>
+<link>http://hibariya.github.com/entries/20120411/a0.html.html</link>
+<dc:date>2012-04-11</dc:date>
+<description>Rubyにはbundle openやgemeditのgem editみたいに、gemを自分のエディタで簡単に開くための方法があるのだけど、たまに標準添付ライブラリも開きたいことがあるのだった。
+そこでreditorというgemを作ってみた。インストールするとreditorコマンドが使えるようになって、開きたいライブラリの名前を渡すと$LOAD_PATHやrubygemsの中からそれっぽいものを見つけてエディタで開いてくれる。  $ reditor csv
+とか。  $ reditor faraday
+とか。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;Rubyには&lt;code&gt;bundle open&lt;/code&gt;やgemeditの&lt;code&gt;gem edit&lt;/code&gt;みたいに、gemを自分のエディタで簡単に開くための方法があるのだけど、たまに標準添付ライブラリも開きたいことがあるのだった。
+    そこで&lt;a href=&quot;https://rubygems.org/gems/reditor&quot;&gt;reditor&lt;/a&gt;というgemを作ってみた。&lt;/p&gt;&lt;p&gt;インストールすると&lt;code&gt;reditor&lt;/code&gt;コマンドが使えるようになって、開きたいライブラリの名前を渡すと$LOAD_PATHやrubygemsの中からそれっぽいものを見つけてエディタで開いてくれる。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  $ reditor csv
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;とか。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  $ reditor faraday
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;とか。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20120329/a0.html.html'>
+<title>所在の分からないWARNINGが出力されるときのこと</title>
+<link>http://hibariya.github.com/entries/20120329/a0.html.html</link>
+<dc:date>2012-03-29</dc:date>
+<description>Railsを使ってるときとかにActiveSupport::MemoizableがDEPRECATEDだとかそんなWARNINGっぽいメッセージがどこからともなく出てくるときのこと。ひとまずraiseする。IOで出力する系のメソッドたちはだいたい最後にwriteを呼ぶ筈なので、writeを上書きしてる。def STDERR.write(*) raise end
+Railsだとconfig/application.rbの頭あたりに書いておく。起動してstacktraceを見ればどのgemが問題かだいたい分かるのでbundle update [gem name]で問題のgemをupdateしてみると直っていたりする。
+最新でも直ってなかったら自分で直してpull requestを送ったりする。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;Railsを使ってるときとかにActiveSupport::MemoizableがDEPRECATEDだとかそんなWARNINGっぽいメッセージがどこからともなく出てくるときのこと。&lt;/p&gt;&lt;p&gt;ひとまずraiseする。IOで出力する系のメソッドたちはだいたい最後にwriteを呼ぶ筈なので、writeを上書きしてる。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;STDERR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;raise&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Railsだと&lt;code&gt;config/application.rb&lt;/code&gt;の頭あたりに書いておく。&lt;/p&gt;&lt;p&gt;起動してstacktraceを見ればどのgemが問題かだいたい分かるので&lt;code&gt;bundle update [gem name]&lt;/code&gt;で問題のgemをupdateしてみると直っていたりする。
+    最新でも直ってなかったら自分で直してpull requestを送ったりする。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20120328/a0.html.html'>
+<title>記号がうまく入力できない</title>
+<link>http://hibariya.github.com/entries/20120328/a0.html.html</link>
+<dc:date>2012-03-28</dc:date>
+<description>感覚でキーボードを使うという悪癖が抜けないので、特に苦手な記号の入力を克服するべくコンソールで練習するためのプログラムを書くことにした。kigouついでに実装は男らしい感じのコードにしようと思ったけどあまりうまくいかなくて、ただの汚いコードになった。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;感覚でキーボードを使うという悪癖が抜けないので、特に苦手な記号の入力を克服するべくコンソールで練習するためのプログラムを書くことにした。&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/hibariya/kigou&quot;&gt;kigou&lt;/a&gt;&lt;/p&gt;&lt;p&gt;ついでに実装は男らしい感じのコードにしようと思ったけどあまりうまくいかなくて、ただの汚いコードになった。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20120326/a0.html.html'>
+<title>プロセスをforkするときのこと</title>
+<link>http://hibariya.github.com/entries/20120326/a0.html.html</link>
+<dc:date>2012-03-26</dc:date>
+<description>孤児プロセスとゾンビプロセスの違いがうまく理解できてなかったけど、ようやく違いを確認することができた。孤児プロセス孤児プロセスは、親プロセスがwaitせずに先に逝ってしまった後も走り続けている子プロセス。
 Orphan Process とも呼ばれる。
-親のいなくなった子プロセスはinitプロセスの子（孤児）になる。
-親プロセスが死んで、子プロセスの親が変化する様子を見るには以下のようなスクリプ...</description><content:encoded><![CDATA[<p>孤児プロセスとゾンビプロセスの違いがうまく理解できてなかったけど、ようやく違いを確認することができた。</p>
-<h2>孤児プロセス</h2>
-<p>孤児プロセスは、親プロセスがwaitせずに先に逝ってしまった後も走り続けている子プロセス。
-Orphan Process とも呼ばれる。
-親のいなくなった子プロセスはinitプロセスの子（孤児）になる。</p>
-<p>親プロセスが死んで、子プロセスの親が変化する様子を見るには以下のようなスクリプトを実行したあとでファイルをtailすると分かりやすそう。</p>
-<div class="highlight"><pre><span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="k">do</span>
-  <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'orphan'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
-    <span class="kp">loop</span> <span class="k">do</span>
-      <span class="nb">sleep</span> <span class="mi">1</span>
+親のいなくなった子プロセスはinitプロセスの子（孤児）になる。親プロセスが死んで、子プロセスの親が変化する様子を見るには以下のようなスクリプトを実行したあとでファイルをtailすると分かりやすそう。Process.fork do
+  File.open('orphan', 'a') do |f|
+    loop do
+      sleep 1
 
-      <span class="c1"># 親プロセスのpidをファイルに書き出す</span>
-      <span class="n">f</span><span class="o">.</span><span class="n">puts</span> <span class="no">Process</span><span class="o">.</span><span class="n">ppid</span>
-      <span class="n">f</span><span class="o">.</span><span class="n">flush</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+      # 親プロセスのpidをファイルに書き出す
+      f.puts Process.ppid
+      f.flush
+    end
+  end
+end
 
-<span class="nb">sleep</span> <span class="mi">5</span>
-</pre></div>
-<p>このプログラムを実行して、<code>orphan</code>を<code>tail -f</code>で観察していると、5秒後に親プロセスが死んで、子プロセスの親プロセスがinitに変化していることを確認できる。</p>
-<div class="highlight"><pre>$ tailf orphan
+sleep 5
+このプログラムを実行して、orphanをtail -fで観察していると、5秒後に親プロセスが死んで、子プロセスの親プロセスがinitに変化していることを確認できる。$ tailf orphan
 80361 # まだ親プロセスの子
 80361
 80361
@@ -365,101 +566,134 @@ Orphan Process とも呼ばれる。
 1
 1
 1
-</pre></div>
-<p>initは孤児プロセスをwaitしてくれる。</p>
-<h2>ゾンビプロセス</h2>
-<p>ゾンビプロセスは、既に処理を終えて死んだ子プロセスが、まだ生きている親プロセスにwaitされるのを待っている状態のこと。</p>
-<p>子プロセスが死んでも親プロセスが生きている限り、いつ子プロセスの終了ステータスが参照されても（waitされても）いいように、その情報はプロセステーブルのエントリとして残る。
-プロセスとしては死んでいるけれど、waitされるかもしれないのでプロセステーブルに残っている状態がゾンビ。</p>
-<div class="highlight"><pre><span class="nb">puts</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span> <span class="nb">sleep</span> <span class="mi">1</span> <span class="p">}</span>
+initは孤児プロセスをwaitしてくれる。ゾンビプロセスゾンビプロセスは、既に処理を終えて死んだ子プロセスが、まだ生きている親プロセスにwaitされるのを待っている状態のこと。子プロセスが死んでも親プロセスが生きている限り、いつ子プロセスの終了ステータスが参照されても（waitされても）いいように、その情報はプロセステーブルのエントリとして残る。
+プロセスとしては死んでいるけれど、waitされるかもしれないのでプロセステーブルに残っている状態がゾンビ。puts Process.fork { sleep 1 }
 
-<span class="nb">sleep</span> <span class="mi">10</span>
-</pre></div>
-<p>上のプログラムを実行して、表示されたpidを元に、別の端末でプロセスの状態を確認すると、ゾンビ状態になっていることがわかる（10秒後には親プロセスが死ぬのでゾンビも消える）。</p>
-<div class="highlight"><pre>$ ps -ho pid,state 81793
+sleep 10
+上のプログラムを実行して、表示されたpidを元に、別の端末でプロセスの状態を確認すると、ゾンビ状態になっていることがわかる（10秒後には親プロセスが死ぬのでゾンビも消える）。$ ps -ho pid,state 81793
   PID STAT
   82077 Z+
-</pre></div>
-<p>ゾンビプロセスの発生を防ぐには、親プロセスで確実にwaitする必要がある。
+ゾンビプロセスの発生を防ぐには、親プロセスで確実にwaitする必要がある。
 RubyならProcess.waitpidを使うといい。
-waitすると子プロセスが終了するまで親プロセスの処理がブロックされる。</p>
-<div class="highlight"><pre><span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span> <span class="nb">sleep</span> <span class="mi">1</span> <span class="p">}</span>
+waitすると子プロセスが終了するまで親プロセスの処理がブロックされる。pid = Process.fork { sleep 1 }
 
-<span class="no">Process</span><span class="o">.</span><span class="n">waitpid</span> <span class="n">pid</span>
-</pre></div>
-<p>もしくは、Double Forkを行うと親プロセスで待たなくてもよくなる。
-生成した子プロセスに孫プロセスを生成させ、さらに子プロセスは即座に終了させることで、孫プロセスがinitの子プロセス（孤児プロセス）となってwaitはinitに任せることができるようになる。</p>
-<div class="highlight"><pre><span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span>
-  <span class="nb">puts</span> <span class="no">Process</span><span class="o">.</span><span class="n">fork</span> <span class="p">{</span>
-    <span class="nb">sleep</span> <span class="mi">20</span> <span class="c1"># 何かしらの処理</span>
-  <span class="p">}</span>
+Process.waitpid pid
+もしくは、Double Forkを行うと親プロセスで待たなくてもよくなる。
+生成した子プロセスに孫プロセスを生成させ、さらに子プロセスは即座に終了させることで、孫プロセスがinitの子プロセス（孤児プロセス）となってwaitはinitに任せることができるようになる。pid = Process.fork {
+  puts Process.fork {
+    sleep 20 # 何かしらの処理
+  }
 
-  <span class="nb">sleep</span> <span class="mi">1</span>
-<span class="p">}</span>
+  sleep 1
+}
 
-<span class="no">Process</span><span class="o">.</span><span class="n">waitpid</span> <span class="n">pid</span>
-</pre></div>
-<h2>まとめ</h2>
-<ul>
-<li>親が死んだら子はinitが看取ってくれる</li>
-<li>親が死ぬまでゾンビは消えない</li>
-<li>ゾンビを増やさないためには、適宜waitするかDouble Forkしてinitに面倒をみてもらう</li>
-</ul>]]></content:encoded><dc:date>2012-03-26</dc:date><link>http://hibariya.github.com/entries/20120326/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120324/a1.html"><title>Retter 0.2.1</title><description>間を開けずにもう少し変更しました。
-複数のテンプレートエンジンへの対応
-Tiltを使うことで複数のテンプレートエンジンに対応できるようになりました。
-ERBとかが使えるようになります。
-固定ページの生成抑止
-以下のページは、使い方によっては必ずしも必要のないページなので、設定すれば生成されないようになりました。
-
+Process.waitpid pid
+まとめ
+親が死んだら子はinitが看取ってくれる
+親が死ぬまでゾンビは消えない
+ゾンビを増やさないためには、適宜waitするかDouble Forkしてinitに面倒をみてもらう
+</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;孤児プロセスとゾンビプロセスの違いがうまく理解できてなかったけど、ようやく違いを確認することができた。&lt;/p&gt;&lt;h2&gt;孤児プロセス&lt;/h2&gt;&lt;p&gt;孤児プロセスは、親プロセスがwaitせずに先に逝ってしまった後も走り続けている子プロセス。
+    Orphan Process とも呼ばれる。
+    親のいなくなった子プロセスはinitプロセスの子（孤児）になる。&lt;/p&gt;&lt;p&gt;親プロセスが死んで、子プロセスの親が変化する様子を見るには以下のようなスクリプトを実行したあとでファイルをtailすると分かりやすそう。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;orphan&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;a&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+        &lt;span class=&quot;kp&quot;&gt;loop&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+          &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    
+          &lt;span class=&quot;c1&quot;&gt;# 親プロセスのpidをファイルに書き出す&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ppid&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flush&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    
+    &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;このプログラムを実行して、&lt;code&gt;orphan&lt;/code&gt;を&lt;code&gt;tail -f&lt;/code&gt;で観察していると、5秒後に親プロセスが死んで、子プロセスの親プロセスがinitに変化していることを確認できる。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;$ tailf orphan
+    80361 # まだ親プロセスの子
+    80361
+    80361
+    80361
+    80361
+    1     # ここでinitの養子になってる
+    1
+    1
+    1
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;initは孤児プロセスをwaitしてくれる。&lt;/p&gt;&lt;h2&gt;ゾンビプロセス&lt;/h2&gt;&lt;p&gt;ゾンビプロセスは、既に処理を終えて死んだ子プロセスが、まだ生きている親プロセスにwaitされるのを待っている状態のこと。&lt;/p&gt;&lt;p&gt;子プロセスが死んでも親プロセスが生きている限り、いつ子プロセスの終了ステータスが参照されても（waitされても）いいように、その情報はプロセステーブルのエントリとして残る。
+    プロセスとしては死んでいるけれど、waitされるかもしれないのでプロセステーブルに残っている状態がゾンビ。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上のプログラムを実行して、表示されたpidを元に、別の端末でプロセスの状態を確認すると、ゾンビ状態になっていることがわかる（10秒後には親プロセスが死ぬのでゾンビも消える）。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;$ ps -ho pid,state 81793
+      PID STAT
+      82077 Z+
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ゾンビプロセスの発生を防ぐには、親プロセスで確実にwaitする必要がある。
+    RubyならProcess.waitpidを使うといい。
+    waitすると子プロセスが終了するまで親プロセスの処理がブロックされる。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;waitpid&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt;
+    &lt;/pre&gt;&lt;/div&gt;&lt;p&gt;もしくは、Double Forkを行うと親プロセスで待たなくてもよくなる。
+    生成した子プロセスに孫プロセスを生成させ、さらに子プロセスは即座に終了させることで、孫プロセスがinitの子プロセス（孤児プロセス）となってwaitはinitに任せることができるようになる。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 何かしらの処理&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+      &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;no&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;waitpid&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt;
+    &lt;/pre&gt;&lt;/div&gt;&lt;h2&gt;まとめ&lt;/h2&gt;&lt;ul&gt;
+    &lt;li&gt;親が死んだら子はinitが看取ってくれる&lt;/li&gt;
+    &lt;li&gt;親が死ぬまでゾンビは消えない&lt;/li&gt;
+    &lt;li&gt;ゾンビを増やさないためには、適宜waitするかDouble Forkしてinitに面倒をみてもらう&lt;/li&gt;
+    &lt;/ul&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20120324/a0.html.html'>
+<title>Retter 0.2.2</title>
+<link>http://hibariya.github.com/entries/20120324/a0.html.html</link>
+<dc:date>2012-03-24</dc:date>
+<description>built-inなテーマにサイドバーをつけました。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;&lt;a href=&quot;https://rubygems.org/gems/retter&quot;&gt;built-inなテーマにサイドバーをつけました。&lt;/a&gt;&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+<item rdf:about='http://hibariya.github.com/entries/20120324/a1.html.html'>
+<title>Retter 0.2.1</title>
+<link>http://hibariya.github.com/entries/20120324/a1.html.html</link>
+<dc:date>2012-03-24</dc:date>
+<description>間を開けずにもう少し変更しました。複数のテンプレートエンジンへの対応Tiltを使うことで複数のテンプレートエンジンに対応できるようになりました。
+ERBとかが使えるようになります。固定ページの生成抑止以下のページは、使い方によっては必ずしも必要のないページなので、設定すれば生成されないようになりました。
 profile.html
 entries.html
 feed.rss
 
-ページの生成...</description><content:encoded><![CDATA[<p><a href="https://rubygems.org/gems/retter">間を開けずにもう少し変更しました。</a></p>
-<h2>複数のテンプレートエンジンへの対応</h2>
-<p><a href="https://github.com/rtomayko/tilt">Tilt</a>を使うことで複数のテンプレートエンジンに対応できるようになりました。
-ERBとかが使えるようになります。</p>
-<h2>固定ページの生成抑止</h2>
-<p>以下のページは、使い方によっては必ずしも必要のないページなので、設定すれば生成されないようになりました。</p>
-<ul>
-<li>profile.html</li>
-<li>entries.html</li>
-<li>feed.rss</li>
-</ul>
-<p>ページの生成を抑止する例です。Retterfileに追記します。</p>
-<div class="highlight"><pre><span class="c1"># prfile, entries, feed すべてを生成しない</span>
-<span class="n">allow_binding</span> <span class="ss">:none</span>
+ページの生成を抑止する例です。Retterfileに追記します。# prfile, entries, feed すべてを生成しない
+allow_binding :none
 
-<span class="c1"># entries, feedは生成する</span>
-<span class="n">allow_binding</span> <span class="o">[</span><span class="ss">:entries</span><span class="p">,</span> <span class="ss">:feed</span><span class="o">]</span>
-</pre></div>
-<h2>日付指定の方法</h2>
-<p><a href="https://github.com/mojombo/chronic">Chronic</a>を使うようになったので、今までより多くの方法で日付の指定ができるようになりました。
-<code>retter edit this\ wednesday</code>とか指定できます。</p>]]></content:encoded><dc:date>2012-03-24</dc:date><link>http://hibariya.github.com/entries/20120324/a1.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120324/a0.html"><title>Retter 0.2.2</title><description>built-inなテーマにサイドバーをつけました。
-</description><content:encoded><![CDATA[<p><a href="https://rubygems.org/gems/retter">built-inなテーマにサイドバーをつけました。</a></p>
-]]></content:encoded><dc:date>2012-03-24</dc:date><link>http://hibariya.github.com/entries/20120324/a0.html</link><author>hibariya</author></item><item about="http://hibariya.github.com/entries/20120323/a0.html"><title>Retter 0.2.0</title><description>Retterをアップデートしました。
-Pygmentsを利用できるようになりました。
-利用するにはRetterfileに以下の設定を追加します。
-renderer Retter::Renderers::PygmentsRenderer
-
-今度からretter newするとデフォルトでPygmentsを使用するようになって、そのためのCSSも生成するようになりました。
-現状の日記にCSSを追加するに...</description><content:encoded><![CDATA[<p><a href="https://rubygems.org/gems/retter">Retter</a>をアップデートしました。</p>
-<p>Pygmentsを利用できるようになりました。
-利用するにはRetterfileに以下の設定を追加します。</p>
-<div class="highlight"><pre><span class="n">renderer</span> <span class="no">Retter</span><span class="o">::</span><span class="no">Renderers</span><span class="o">::</span><span class="no">PygmentsRenderer</span>
-</pre></div>
-<p>今度から<code>retter new</code>するとデフォルトでPygmentsを使用するようになって、そのためのCSSも生成するようになりました。</p>
-<p>現状の日記にCSSを追加するには、<a href="https://raw.github.com/hibariya/retter/master/lib/retter/generator/skel/stylesheets/pygments.css">ここ</a>から直接ダウンロードするとすぐに使えるかと思います。</p>
-<p>実は、上記の<code>renderer</code>にはRedcarpet::Render::HTMLを継承したクラスであれば何でも指定できます。
-Pygmentsを使いたいけどPygments.rbが落ちて困るという場合はAlbinoを使うrendererを作るといいかもしれません。
-以下はRedcarpetのREADMEから抜粋したもの。</p>
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">HTMLwithAlbino</span> <span class="o">&lt;</span> <span class="no">Redcarpet</span><span class="o">::</span><span class="no">Render</span><span class="o">::</span><span class="no">HTML</span>
-  <span class="k">def</span> <span class="nf">block_code</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">language</span><span class="p">)</span>
-    <span class="no">Albino</span><span class="o">.</span><span class="n">safe_colorize</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">language</span><span class="p">)</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</pre></div>
-<p>それから、Markdownのレンダリング結果をキャッシュするようになりました。
-途中でrendererを変更したりして、レンダリング結果が変わるような場合は以下のように<code>tmp/cache</code>以下のキャッシュを一度削除してください。</p>
-<div class="highlight"><pre>rm -rf tmp/cache/*
-</pre></div>]]></content:encoded><dc:date>2012-03-23</dc:date><link>http://hibariya.github.com/entries/20120323/a0.html</link><author>hibariya</author></item></rdf:RDF>
+# entries, feedは生成する
+allow_binding [:entries, :feed]
+日付指定の方法Chronicを使うようになったので、今までより多くの方法で日付の指定ができるようになりました。
+retter edit this\ wednesdayとか指定できます。</description>
+<content:encoded>
+<![CDATA[
+    &lt;p&gt;&lt;a href=&quot;https://rubygems.org/gems/retter&quot;&gt;間を開けずにもう少し変更しました。&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;複数のテンプレートエンジンへの対応&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/rtomayko/tilt&quot;&gt;Tilt&lt;/a&gt;を使うことで複数のテンプレートエンジンに対応できるようになりました。
+    ERBとかが使えるようになります。&lt;/p&gt;&lt;h2&gt;固定ページの生成抑止&lt;/h2&gt;&lt;p&gt;以下のページは、使い方によっては必ずしも必要のないページなので、設定すれば生成されないようになりました。&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;profile.html&lt;/li&gt;
+    &lt;li&gt;entries.html&lt;/li&gt;
+    &lt;li&gt;feed.rss&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;ページの生成を抑止する例です。Retterfileに追記します。&lt;/p&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;# prfile, entries, feed すべてを生成しない&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;allow_binding&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:none&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;# entries, feedは生成する&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;allow_binding&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:entries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:feed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+    &lt;/pre&gt;&lt;/div&gt;&lt;h2&gt;日付指定の方法&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/mojombo/chronic&quot;&gt;Chronic&lt;/a&gt;を使うようになったので、今までより多くの方法で日付の指定ができるようになりました。
+    &lt;code&gt;retter edit this\ wednesday&lt;/code&gt;とか指定できます。&lt;/p&gt;
+]]>
+</content:encoded>
+</item>
+</rdf:RDF>

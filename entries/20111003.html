@@ -1,53 +1,50 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <title>2011-10-03 - Joy Luck Crab</title>
-<meta charset="utf-8" content="text/html; charset=UTF-8" http-equiv="Content-Type">
-<meta content="hibariya" name="author">
-<link href="../favicon.png" rel="icon" type="image/png">
-<link href="../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../stylesheets/orange.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../stylesheets/pygments.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../entries.rss" rel="alternate" title="RSS" type="application/rss+xml">
-<link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
-<script src="../javascripts/jquery.js"></script>
-<script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+<meta charset='utf-8' content='text/html' http-equiv='Content-Type' />
+<meta content='hibariya' name='author' />
+<link href='/favicon.png' rel='icon' type='image/png' />
+<link href='/stylesheets/base.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/orange.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/pygments.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/entries.rss' rel='alternate' title='RSS' type='application/rss+xml' />
+<link href='http://coderwall.com/stylesheets/jquery.coderwall.css' media='all' rel='stylesheet' type='text/css' />
+<script src='/javascripts/jquery.js'></script>
+<script src='http://coderwall.com/javascripts/jquery.coderwall.js'></script>
 </head>
 <body>
-<header id="header">
+<header id='header'>
 <h1>
-<a href="../index.html">Joy Luck Crab</a>
+<a href='/'>Joy Luck Crab</a>
 </h1>
 <nav>
-<ul id="menu">
+<ul id='menu'>
 <li>
-<a href="../index.html">Home</a>
+<a href='/'>Home</a>
 </li>
 <li>
-<a href="../profile.html">Profile</a>
+<a href='/profile.html'>Profile</a>
 </li>
 <li>
-<a href="../entries.html">Archives</a>
+<a href='/entries.html'>Archives</a>
 </li>
 <li>
-<a href="../entries.rss" target="_blank">RSS</a>
+<a href='/entries.rss' target='_blank'>RSS</a>
 </li>
 </ul>
 </nav>
 </header>
-<div id="page">
-<div id="content">
-<article class="article autopagerize_page_element">
-<h1 class="date">
-<a href="../entries/20111003.html">2011-10-03</a>
+<div id='page'>
+<div id='content'><article class='article autopagerize_page_element'>
+<h1 class='date'>
+<a href='/entries/20111003.html'>2011-10-03</a>
 </h1>
-<h1 id="a0">
-<a href="../entries/20111003/a0.html">モジュール関数がprivateな理由</a>
+<h1 id='20111003a0'>
+<a href='/entries/20111003/a0.html'>モジュール関数がprivateな理由</a>
 </h1>
 <p><a href="http://rurema.clear-code.com/1.9.2/method/Module/i/module_function.html">モジュール関数</a>
-というものがあって、ぼくはこれまでモジュール関数を「モジュールをレシーバにしても呼び出せるしincludeして呼び出すこともできる何だか便利なもの」としか認識していなかった。</p>
-<p>こういうふうに。</p>
-<div class="highlight"><pre>  <span class="k">module</span> <span class="nn">MyModule</span>
+というものがあって、ぼくはこれまでモジュール関数を「モジュールをレシーバにしても呼び出せるしincludeして呼び出すこともできる何だか便利なもの」としか認識していなかった。</p><p>こういうふうに。</p><div class="highlight"><pre>  <span class="k">module</span> <span class="nn">MyModule</span>
     <span class="kp">extend</span> <span class="nb">self</span>
 
     <span class="k">def</span> <span class="nf">greet</span>
@@ -60,78 +57,68 @@
   <span class="kp">include</span> <span class="no">MyModule</span>
   <span class="n">greet</span>            <span class="c1"># =&gt; "fart"</span>
   <span class="nb">self</span><span class="o">.</span><span class="n">greet</span>       <span class="c1"># =&gt; "fart"</span>
-</pre></div>
-<p>でもこれはモジュール関数じゃなかった。</p>
-<p>るりまの説明をよく見てみると「モジュール関数とは、プライベートメソッドであると同時に モジュールの特異メソッドでもあるようなメソッドです。」と書いてある。ぎぎぎ何だか面倒くさいな。</p>
-<p>Rubyでprivateメソッドと言えば、呼び出しのときにレシーバを指定できないメソッドのことを指す。試しに、よく例に使われる<code>Math.#sqrt</code>で確認してみる。</p>
-<div class="highlight"><pre>  <span class="no">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># =&gt; 10.0</span>
+</pre></div><p>でもこれはモジュール関数じゃなかった。</p><p>るりまの説明をよく見てみると「モジュール関数とは、プライベートメソッドであると同時に モジュールの特異メソッドでもあるようなメソッドです。」と書いてある。ぎぎぎ何だか面倒くさいな。</p><p>Rubyでprivateメソッドと言えば、呼び出しのときにレシーバを指定できないメソッドのことを指す。試しに、よく例に使われる<code>Math.#sqrt</code>で確認してみる。</p><div class="highlight"><pre>  <span class="no">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># =&gt; 10.0</span>
 
   <span class="kp">include</span> <span class="no">Math</span>
   <span class="n">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>      <span class="c1"># =&gt; 10.0</span>
   <span class="nb">self</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># =&gt; NoMethodError: private method `sqrt' called for ...</span>
-</pre></div>
-<p>うげげ、本当だ。今まで知らずに使っていたけれど、きみはprivateだったのか。なんで？</p>
-<p>その後何日間もこのことで悩み続けてしまったのだけど、敗因は「モジュール関数がprivateメソッドとはどういうことだろう」と考えてしまっていたからだった。
-「<em>関数</em>にレシーバがないのは自然だなあ」と思えたら何も悩むことはなかったのだけど。</p>
-<p>モジュール関数は実際はメソッドだけど、あくまで関数のように使うためのものなのだった。</p>
-<p>Rubyには関数風メソッドやモジュール関数とよばれるものが存在するけど、厳密には関数は存在しない。
+</pre></div><p>うげげ、本当だ。今まで知らずに使っていたけれど、きみはprivateだったのか。なんで？</p><p>その後何日間もこのことで悩み続けてしまったのだけど、敗因は「モジュール関数がprivateメソッドとはどういうことだろう」と考えてしまっていたからだった。
+「<em>関数</em>にレシーバがないのは自然だなあ」と思えたら何も悩むことはなかったのだけど。</p><p>モジュール関数は実際はメソッドだけど、あくまで関数のように使うためのものなのだった。</p><p>Rubyには関数風メソッドやモジュール関数とよばれるものが存在するけど、厳密には関数は存在しない。
 モジュール関数がprivateなのは、メソッドでありながら、レシーバを意識しない「関数」のようなものになるためだった。
-モジュール関数はprivateなので、レシーバは自動的にselfになるけど、その関数とselfの間にはなんの関わりもない（ものとして実装されるべき）。</p>
-<p>確かに「関数」と名前がついているものにレシーバがあるほうがよっぽどおかしい。
+モジュール関数はprivateなので、レシーバは自動的にselfになるけど、その関数とselfの間にはなんの関わりもない（ものとして実装されるべき）。</p><p>確かに「関数」と名前がついているものにレシーバがあるほうがよっぽどおかしい。
 関数だと思って使ってたのに、突然<code>self.sqrt(pya)</code>とかやられた日にはびっくりしてしまう。ということを理解するのにかなり時間がかかったというお話でした。</p>
 </article>
-<div class="nav">
-<div class="prev">
-<link href="../entries/20111010.html" rel="prev">
+<div class='nav'>
+<div class='prev'>
 </div>
-<div class="next">
-<link href="../entries/20110919.html" rel="next">
+<div class='next'>
+<link href='/entries/20111010.html' rel='next' />
 </div>
 </div>
-<div class="autopagerize_insert_before"></div>
+<div class='autopagerize_insert_before'></div>
 </div>
-<aside id="sidebar">
+<aside id='sidebar'>
 <h3>Author</h3>
-<div class="author">
-<a href="../profile.html">hibariya</a>
+<div class='author'>
+<a href='/profile.html'>hibariya</a>
 </div>
 <h3>Recent entries</h3>
-<div class="recent-entries">
+<div class='recent-entries'>
 <ul>
 <li>
-<a href="../entries/20130418/a0.html">春から学生になった</a>
+<a href='/entries/20130418/a0.html'>春から学生になった</a>
 </li>
 <li>
-<a href="../entries/20130218/a0.html">東京競馬場へ馬をみにいった</a>
+<a href='/entries/20130218/a0.html'>東京競馬場へ馬をみにいった</a>
 </li>
 <li>
-<a href="../entries/20130105/a0.html">reditor gem を更新した</a>
+<a href='/entries/20130105/a0.html'>reditor gem を更新した</a>
 </li>
 <li>
-<a href="../entries/20130105/a1.html">cline gem を更新した</a>
+<a href='/entries/20130105/a1.html'>cline gem を更新した</a>
 </li>
 <li>
-<a href="../entries/20130102/a0.html">PROMPTを2階建てにした</a>
+<a href='/entries/20130102/a0.html'>PROMPTを2階建てにした</a>
 </li>
 <li>
-<a href="../entries/20121206/a0.html">自宅用に Kinesis を買った</a>
+<a href='/entries/20121206/a0.html'>自宅用に Kinesis を買った</a>
 </li>
 <li>
-<a href="../entries/20121125/a0.html">RubyConf 2012</a>
+<a href='/entries/20121125/a0.html'>RubyConf 2012</a>
 </li>
 </ul>
-<div class="archives">
-<a href="../entries.html">Archives</a>
+<div class='archives'>
+<a href='/entries.html'>Archives</a>
 </div>
 </div>
 <h3>Coderwall</h3>
-<section class="coderwall" data-coderwall-orientation="horizontal" data-coderwall-username="hibariya"></section>
+<section class='coderwall' data-coderwall-orientation='horizontal' data-coderwall-username='hibariya'></section>
 </aside>
 </div>
-<footer id="footer">
+<footer id='footer'>
 Joy Luck Crab (C) hibariya
 Generated by
-<a href="https://github.com/hibariya/retter" target="_blank">Retter</a>
+<a href='https://github.com/hibariya/retter' target='_blank'>Retter</a>
 </footer>
 </body>
 </html>

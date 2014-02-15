@@ -1,99 +1,74 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <title>Thorで簡単にコマンドラインアプリをつくる - Joy Luck Crab</title>
-<meta charset="utf-8" content="text/html; charset=UTF-8" http-equiv="Content-Type">
-<meta content="hibariya" name="author">
-<link href="../../favicon.png" rel="icon" type="image/png">
-<link href="../../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../../stylesheets/orange.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../../stylesheets/pygments.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../../entries.rss" rel="alternate" title="RSS" type="application/rss+xml">
-<link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
-<script src="../../javascripts/jquery.js"></script>
-<script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+<meta charset='utf-8' content='text/html' http-equiv='Content-Type' />
+<meta content='hibariya' name='author' />
+<link href='/favicon.png' rel='icon' type='image/png' />
+<link href='/stylesheets/base.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/orange.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/pygments.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/entries.rss' rel='alternate' title='RSS' type='application/rss+xml' />
+<link href='http://coderwall.com/stylesheets/jquery.coderwall.css' media='all' rel='stylesheet' type='text/css' />
+<script src='/javascripts/jquery.js'></script>
+<script src='http://coderwall.com/javascripts/jquery.coderwall.js'></script>
 </head>
 <body>
-<header id="header">
+<header id='header'>
 <h1>
-<a href="../../index.html">Joy Luck Crab</a>
+<a href='/'>Joy Luck Crab</a>
 </h1>
 <nav>
-<ul id="menu">
+<ul id='menu'>
 <li>
-<a href="../../index.html">Home</a>
+<a href='/'>Home</a>
 </li>
 <li>
-<a href="../../profile.html">Profile</a>
+<a href='/profile.html'>Profile</a>
 </li>
 <li>
-<a href="../../entries.html">Archives</a>
+<a href='/entries.html'>Archives</a>
 </li>
 <li>
-<a href="../../entries.rss" target="_blank">RSS</a>
+<a href='/entries.rss' target='_blank'>RSS</a>
 </li>
 </ul>
 </nav>
 </header>
-<div id="page">
-<div id="content">
-<article class="article autopagerize_page_element">
-<h1 class="date">
-<a href="../../entries/20111025.html">2011-10-25</a>
+<div id='page'>
+<div id='content'><article class='article autopagerize_page_element'>
+<h1 class='date'>
+<a href='/entries/20111025.html'>2011-10-25</a>
 </h1>
-<h1 id="a0">
-<a href="../../entries/20111025/a0.html">Thorで簡単にコマンドラインアプリをつくる</a>
+<h1 id='20111025a0'>
+<a href='/entries/20111025/a0.html'>Thorで簡単にコマンドラインアプリをつくる</a>
 </h1>
 <p><a href="https://github.com/wycats/thor">Thor</a>をご存知の方は多いと思いますが、<a href="https://github.com/hibariya/retter">Retter</a>を作るにあたってとても便利に使えたので、手短に紹介したいと思います。
-といってもだいたいは<a href="https://github.com/wycats/thor/wiki">Wiki</a>に書いてあることしか書けないんですが、何しろ英語ですし、さわりだけでも伝えられたらなと思います。</p>
-<p>Thor（トール、ソアー？）は便利なコマンドラインツールで、これを使うとコマンドラインオプションのパーズやサブコマンドごとのhelpをつくるなどの面倒な作業を簡単にこなせ、手早くビルドツールや実行可能なコマンドを作成できます。
-特殊なDSLを使わずメソッドを定義することで処理を記述するため、テストしやすいという特徴もあります。</p>
-<h2>より便利なRakeとして使う</h2>
-<p>便利なRakeというのは主に引数とオプションの扱い方のことです。
-Rakeは今も現役で便利に使っているんですが、例えば引数を渡したいときは環境変数として渡さないといけなくて、 これが割と面倒なのでした。</p>
-<p>こんなふうに。</p>
-<div class="highlight"><pre>  $ TO=alice rake greeting:deliver
-</pre></div>
-<p>Thorだともう少し自然に書くことができるようになります。</p>
-<h3>オプションを渡す</h3>
-<div class="highlight"><pre>  $ thor greeting:deiver --to alice
-</pre></div>
-<p><code>TO=alice</code>をコマンドの後ろに<code>--to alice</code>と書けて少し見やすくなりました。</p>
-<p>実際のタスクの書き方は以下のようになります。ファイル名は<code>greeting.thor</code>のように<code>クラス名.thor</code>とし、タスク名と同名のメソッドを定義します。
-タスクがひとつのメソッドとして定義されていると、テストがとても書きやすそうです。</p>
-<div class="highlight"><pre>  <span class="k">class</span> <span class="nc">Greeting</span> <span class="o">&lt;</span> <span class="no">Thor</span>
+といってもだいたいは<a href="https://github.com/wycats/thor/wiki">Wiki</a>に書いてあることしか書けないんですが、何しろ英語ですし、さわりだけでも伝えられたらなと思います。</p><p>Thor（トール、ソアー？）は便利なコマンドラインツールで、これを使うとコマンドラインオプションのパーズやサブコマンドごとのhelpをつくるなどの面倒な作業を簡単にこなせ、手早くビルドツールや実行可能なコマンドを作成できます。
+特殊なDSLを使わずメソッドを定義することで処理を記述するため、テストしやすいという特徴もあります。</p><h2>より便利なRakeとして使う</h2><p>便利なRakeというのは主に引数とオプションの扱い方のことです。
+Rakeは今も現役で便利に使っているんですが、例えば引数を渡したいときは環境変数として渡さないといけなくて、 これが割と面倒なのでした。</p><p>こんなふうに。</p><div class="highlight"><pre>  $ TO=alice rake greeting:deliver
+</pre></div><p>Thorだともう少し自然に書くことができるようになります。</p><h3>オプションを渡す</h3><div class="highlight"><pre>  $ thor greeting:deiver --to alice
+</pre></div><p><code>TO=alice</code>をコマンドの後ろに<code>--to alice</code>と書けて少し見やすくなりました。</p><p>実際のタスクの書き方は以下のようになります。ファイル名は<code>greeting.thor</code>のように<code>クラス名.thor</code>とし、タスク名と同名のメソッドを定義します。
+タスクがひとつのメソッドとして定義されていると、テストがとても書きやすそうです。</p><div class="highlight"><pre>  <span class="k">class</span> <span class="nc">Greeting</span> <span class="o">&lt;</span> <span class="no">Thor</span>
     <span class="n">desc</span> <span class="s1">'deliver'</span><span class="p">,</span> <span class="s1">'deliver greeting message'</span> <span class="c1"># タスクの説明</span>
-    <span class="n">method_options</span> <span class="n">to</span><span class="p">:</span> <span class="ss">:string</span>                 <span class="c1"># 直後に定義するタスクのオプション</span>
+    <span class="n">method_options</span> <span class="ss">to</span><span class="p">:</span> <span class="ss">:string</span>                 <span class="c1"># 直後に定義するタスクのオプション</span>
     <span class="k">def</span> <span class="nf">deliver</span>                                <span class="c1"># タスクの定義</span>
       <span class="nb">puts</span> <span class="s2">"sending greeting to </span><span class="si">#{</span><span class="n">options</span><span class="o">[</span><span class="ss">:to</span><span class="o">]</span><span class="si">}</span><span class="s2">"</span>
     <span class="k">end</span>
   <span class="k">end</span>
-</pre></div>
-<p>method_options には、オプション名をキーにしたハッシュを渡すことができます。要素には型を表すシンボルを指定します。
-渡されたオプションは<code>options[:option_name]</code>のようにアクセスすることができます。</p>
-<h3>引数を渡す</h3>
-<div class="highlight"><pre>  $ thor greeting:deliver alice
-</pre></div>
-<p>というふうに書けるようにもなります。</p>
-<p>コマンドの引数は、以下のようにメソッドの引数で受け取ることができます。</p>
-<div class="highlight"><pre>  <span class="k">class</span> <span class="nc">Greeting</span> <span class="o">&lt;</span> <span class="no">Thor</span>
+</pre></div><p>method<em>options には、オプション名をキーにしたハッシュを渡すことができます。要素には型を表すシンボルを指定します。
+渡されたオプションは`options[:option</em>name]`のようにアクセスすることができます。</p><h3>引数を渡す</h3><div class="highlight"><pre>  $ thor greeting:deliver alice
+</pre></div><p>というふうに書けるようにもなります。</p><p>コマンドの引数は、以下のようにメソッドの引数で受け取ることができます。</p><div class="highlight"><pre>  <span class="k">class</span> <span class="nc">Greeting</span> <span class="o">&lt;</span> <span class="no">Thor</span>
     <span class="n">desc</span> <span class="s1">'deliver'</span><span class="p">,</span> <span class="s1">'deliver greeting message'</span>
     <span class="k">def</span> <span class="nf">deliver</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
       <span class="nb">puts</span> <span class="s2">"sending greeting to </span><span class="si">#{</span><span class="n">to</span><span class="si">}</span><span class="s2">"</span>
     <span class="k">end</span>
   <span class="k">end</span>
-</pre></div>
-<p>便利ですね。</p>
-<p>そういえば<code>--help</code>をつけると、タスクの一覧を表示できます。<code>rake -T</code>相当のあれです。</p>
-<div class="highlight"><pre>  $ thor greeting --help
+</pre></div><p>便利ですね。</p><p>そういえば<code>--help</code>をつけると、タスクの一覧を表示できます。<code>rake -T</code>相当のあれです。</p><div class="highlight"><pre>  $ thor greeting --help
   Tasks:
     thor greeting:deliver      # deliver greeting message
     thor greeting:help [TASK]  # Describe available tasks or one specific task
-</pre></div>
-<p>今更ですが、今回のサンプルコードのGreetingは割と適当なプロダクトなので、目的に応じて適宜読み替えてください。</p>
-<h2>独立したコマンドとして使う</h2>
-<p>Rakeのような使い方ではなく、単体で実行可能なコマンドをつくることもできます。</p>
-<div class="highlight"><pre>  <span class="c1">#!/usr/bin/env ruby</span>
+</pre></div><p>今更ですが、今回のサンプルコードのGreetingは割と適当なプロダクトなので、目的に応じて適宜読み替えてください。</p><h2>独立したコマンドとして使う</h2><p>Rakeのような使い方ではなく、単体で実行可能なコマンドをつくることもできます。</p><div class="highlight"><pre>  <span class="c1">#!/usr/bin/env ruby</span>
   <span class="c1"># coding: utf-8</span>
 
   <span class="nb">require</span> <span class="s1">'thor'</span>
@@ -106,16 +81,10 @@ Rakeは今も現役で便利に使っているんですが、例えば引数を�
   <span class="k">end</span>
 
   <span class="no">Greeting</span><span class="o">.</span><span class="n">start</span>
-</pre></div>
-<p>Thorを継承したクラスの書き方は、先程と同じです。このファイルを実行することになるのでshebangやthorのrequireが必要です。
-これを<code>greeting</code>とか適当な名前のファイルにして、実行属性をつければ独立したコマンドになります。ポイントは<code>Greeting.start</code>です。</p>
-<div class="highlight"><pre>  $ chmod +x greeting
+</pre></div><p>Thorを継承したクラスの書き方は、先程と同じです。このファイルを実行することになるのでshebangやthorのrequireが必要です。
+これを<code>greeting</code>とか適当な名前のファイルにして、実行属性をつければ独立したコマンドになります。ポイントは<code>Greeting.start</code>です。</p><div class="highlight"><pre>  $ chmod +x greeting
   $ ./greeting deiver alice
-</pre></div>
-<p>もちろんさきほどの<code>--help</code>も使えます。ヘルプが出ると一気にちゃんとしたコマンドっぽくなりますね。</p>
-<h2>Railsのジェネレータのように使う</h2>
-<p>Thor::Actionsで提供されている便利なメソッドたちを使うことで、Railsでよくみるファイルの自動生成と全く同じようなものがthorで簡単に実装できます。<code>rails new</code>したときのあれです。</p>
-<div class="highlight"><pre>  <span class="c1">#!/usr/bin/env ruby</span>
+</pre></div><p>もちろんさきほどの<code>--help</code>も使えます。ヘルプが出ると一気にちゃんとしたコマンドっぽくなりますね。</p><h2>Railsのジェネレータのように使う</h2><p>Thor::Actionsで提供されている便利なメソッドたちを使うことで、Railsでよくみるファイルの自動生成と全く同じようなものがthorで簡単に実装できます。<code>rails new</code>したときのあれです。</p><div class="highlight"><pre>  <span class="c1">#!/usr/bin/env ruby</span>
   <span class="c1"># coding: utf-8</span>
 
   <span class="nb">require</span> <span class="s1">'thor'</span>
@@ -146,105 +115,87 @@ Rakeは今も現役で便利に使っているんですが、例えば引数を�
   <span class="k">end</span>
 
   <span class="no">Newgreeting</span><span class="o">.</span><span class="n">start</span>
-</pre></div>
-<p><code>Thor::Group</code>を継承した場合は、<code>Thor</code>を継承したときとは違い、そのクラス全体がひとつのタスクとして扱われます。
+</pre></div><p><code>Thor::Group</code>を継承した場合は、<code>Thor</code>を継承したときとは違い、そのクラス全体がひとつのタスクとして扱われます。
 タスク<code>newgreeting</code>が呼ばれたとき（↑のコマンドが実行されたとき）、クラスに定義したインスタンスメソッドが定義された順番に実行されるようになります。
-↑の場合は<code>create_templates</code>, <code>create_readme</code>, <code>complete_message</code> の順で実行されることになります。</p>
-<p><code>argument :name</code>は引数です。この引数にはインスタンスメソッドから<code>name</code>で参照することができます。</p>
-<p><code>template</code>や<code>copy_file</code>は<code>Thor::Actions</code>からincludeしたメソッドで、これがファイルジェネレータの役割を果たします。
+↑の場合は<code>create_templates</code>, <code>create_readme</code>, <code>complete_message</code> の順で実行されることになります。</p><p><code>argument :name</code>は引数です。この引数にはインスタンスメソッドから<code>name</code>で参照することができます。</p><p><code>template</code>や<code>copy_file</code>は<code>Thor::Actions</code>からincludeしたメソッドで、これがファイルジェネレータの役割を果たします。
 <code>template</code>はコピー元とコピー先のふたつの引数をとり、コピー元のファイルはERBとして評価されます。
-<code>copy_file</code>は単純にファイルをコピーします。</p>
-<p><code>Newgreeting.source_root</code>には、<code>Thor::Actions#templates</code>や<code>Thor::Actions#copy_file</code>などのコピー元のファイルのベースとなるディレクトリ名を指定しています。</p>
-<p>このコマンドを実行するとこんな感じになります。</p>
-<div class="highlight"><pre>  $ ./newgreeting foo
+<code>copy_file</code>は単純にファイルをコピーします。</p><p><code>Newgreeting.source_root</code>には、<code>Thor::Actions#templates</code>や<code>Thor::Actions#copy_file</code>などのコピー元のファイルのベースとなるディレクトリ名を指定しています。</p><p>このコマンドを実行するとこんな感じになります。</p><div class="highlight"><pre>  $ ./newgreeting foo
         create  foo/title.txt
         create  foo/body.txt
         create  foo/README
   greeting templates created.
-</pre></div>
-<p>ちなみに、<code>Newgreeting#complete_message</code>でさり気なく<code>:green</code>とか書いていますが、これで緑色の文字が標準出力に表示されます。手軽に色をつけられるのは便利です。</p>
-<h3>コンフリクト時の動作</h3>
-<p>このコマンドがファイルを生成するとき、すでに同名のファイルがある場合の動きはこんな感じになります。</p>
-<div class="highlight"><pre>  $ ./newgreeting foo
+</pre></div><p>ちなみに、<code>Newgreeting#complete_message</code>でさり気なく<code>:green</code>とか書いていますが、これで緑色の文字が標準出力に表示されます。手軽に色をつけられるのは便利です。</p><h3>コンフリクト時の動作</h3><p>このコマンドがファイルを生成するとき、すでに同名のファイルがある場合の動きはこんな感じになります。</p><div class="highlight"><pre>  $ ./newgreeting foo
         create  foo/title.txt
      identical  foo/body.txt  # 同名で同じ内容
       conflict  foo/README    # 同名で違う内容
   Overwrite /path/to/foo/README? (enter "h" for help) [Ynaqdh]
-</pre></div>
-<p>identicalは既に同名のファイルがあるけど内容が同じなのでスキップされます。conflictは内容が違うから上書きするかどうかを訊いてきています。
-conflictしたときは差分を表示したりはできますが、マージはできないみたいですね。それにしても、ここまでの機能を数行で記述できてしまうthorは大変魅力的に見えるのではないでしょうか。</p>
-<h2>さらに多くの情報</h2>
-<p>よく使いそうな機能を中心にざっくりと紹介してみましたが、他にも便利で魅力的な機能がたくさんあります。
-より詳しくは<a href="https://github.com/wycats/thor">thor</a>とか<code>bundle open thor</code>などで。</p>
-<h2>謝辞</h2>
-<p>けっこう前にThorのことを教えてくれた<a href="http://ursm.jp">ursm</a>先生。</p>
+</pre></div><p>identicalは既に同名のファイルがあるけど内容が同じなのでスキップされます。conflictは内容が違うから上書きするかどうかを訊いてきています。
+conflictしたときは差分を表示したりはできますが、マージはできないみたいですね。それにしても、ここまでの機能を数行で記述できてしまうthorは大変魅力的に見えるのではないでしょうか。</p><h2>さらに多くの情報</h2><p>よく使いそうな機能を中心にざっくりと紹介してみましたが、他にも便利で魅力的な機能がたくさんあります。
+より詳しくは<a href="https://github.com/wycats/thor">thor</a>とか<code>bundle open thor</code>などで。</p><h2>謝辞</h2><p>けっこう前にThorのことを教えてくれた<a href="http://ursm.jp">ursm</a>先生。</p>
 </article>
-<div id="comments">
-<div id="disqus_thread">
-  <script type="text/javascript">
-    //<![CDATA[
-      var disqus_shortname = 'joyluckcrab';
-      (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    //]]>
+<div id='comments'><div id='disqus_thread'>
+  <script>
+    var disqus_shortname = 'joyluckcrab';
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
   </script>
 </div>
 </div>
-<div class="nav">
-<div class="prev">
-<link href="../../entries/20111107/a0.html" rel="prev">
+<div class='nav'>
+<div class='prev'>
+<link href='/entries/20130418/a0.html' rel='prev' />
 </div>
-<div class="next">
-<link href="../../entries/20111022/a0.html" rel="next">
+<div class='next'>
+<link href='/entries/20110909/a1.html' rel='next' />
 </div>
 </div>
-<div class="autopagerize_insert_before"></div>
+<div class='autopagerize_insert_before'></div>
 </div>
-<aside id="sidebar">
+<aside id='sidebar'>
 <h3>Author</h3>
-<div class="author">
-<a href="../../profile.html">hibariya</a>
+<div class='author'>
+<a href='/profile.html'>hibariya</a>
 </div>
 <h3>Recent entries</h3>
-<div class="recent-entries">
+<div class='recent-entries'>
 <ul>
 <li>
-<a href="../../entries/20130418/a0.html">春から学生になった</a>
+<a href='/entries/20130418/a0.html'>春から学生になった</a>
 </li>
 <li>
-<a href="../../entries/20130218/a0.html">東京競馬場へ馬をみにいった</a>
+<a href='/entries/20130218/a0.html'>東京競馬場へ馬をみにいった</a>
 </li>
 <li>
-<a href="../../entries/20130105/a0.html">reditor gem を更新した</a>
+<a href='/entries/20130105/a0.html'>reditor gem を更新した</a>
 </li>
 <li>
-<a href="../../entries/20130105/a1.html">cline gem を更新した</a>
+<a href='/entries/20130105/a1.html'>cline gem を更新した</a>
 </li>
 <li>
-<a href="../../entries/20130102/a0.html">PROMPTを2階建てにした</a>
+<a href='/entries/20130102/a0.html'>PROMPTを2階建てにした</a>
 </li>
 <li>
-<a href="../../entries/20121206/a0.html">自宅用に Kinesis を買った</a>
+<a href='/entries/20121206/a0.html'>自宅用に Kinesis を買った</a>
 </li>
 <li>
-<a href="../../entries/20121125/a0.html">RubyConf 2012</a>
+<a href='/entries/20121125/a0.html'>RubyConf 2012</a>
 </li>
 </ul>
-<div class="archives">
-<a href="../../entries.html">Archives</a>
+<div class='archives'>
+<a href='/entries.html'>Archives</a>
 </div>
 </div>
 <h3>Coderwall</h3>
-<section class="coderwall" data-coderwall-orientation="horizontal" data-coderwall-username="hibariya"></section>
+<section class='coderwall' data-coderwall-orientation='horizontal' data-coderwall-username='hibariya'></section>
 </aside>
 </div>
-<footer id="footer">
+<footer id='footer'>
 Joy Luck Crab (C) hibariya
 Generated by
-<a href="https://github.com/hibariya/retter" target="_blank">Retter</a>
+<a href='https://github.com/hibariya/retter' target='_blank'>Retter</a>
 </footer>
 </body>
 </html>

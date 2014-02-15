@@ -1,134 +1,125 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <title>簡単に Ruby のリファレンス・マニュアルを開く ruremai を色々直した - Joy Luck Crab</title>
-<meta charset="utf-8" content="text/html; charset=UTF-8" http-equiv="Content-Type">
-<meta content="hibariya" name="author">
-<link href="../../favicon.png" rel="icon" type="image/png">
-<link href="../../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../../stylesheets/orange.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../../stylesheets/pygments.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../../entries.rss" rel="alternate" title="RSS" type="application/rss+xml">
-<link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
-<script src="../../javascripts/jquery.js"></script>
-<script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+<meta charset='utf-8' content='text/html' http-equiv='Content-Type' />
+<meta content='hibariya' name='author' />
+<link href='/favicon.png' rel='icon' type='image/png' />
+<link href='/stylesheets/base.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/orange.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/pygments.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/entries.rss' rel='alternate' title='RSS' type='application/rss+xml' />
+<link href='http://coderwall.com/stylesheets/jquery.coderwall.css' media='all' rel='stylesheet' type='text/css' />
+<script src='/javascripts/jquery.js'></script>
+<script src='http://coderwall.com/javascripts/jquery.coderwall.js'></script>
 </head>
 <body>
-<header id="header">
+<header id='header'>
 <h1>
-<a href="../../index.html">Joy Luck Crab</a>
+<a href='/'>Joy Luck Crab</a>
 </h1>
 <nav>
-<ul id="menu">
+<ul id='menu'>
 <li>
-<a href="../../index.html">Home</a>
+<a href='/'>Home</a>
 </li>
 <li>
-<a href="../../profile.html">Profile</a>
+<a href='/profile.html'>Profile</a>
 </li>
 <li>
-<a href="../../entries.html">Archives</a>
+<a href='/entries.html'>Archives</a>
 </li>
 <li>
-<a href="../../entries.rss" target="_blank">RSS</a>
+<a href='/entries.rss' target='_blank'>RSS</a>
 </li>
 </ul>
 </nav>
 </header>
-<div id="page">
-<div id="content">
-<article class="article autopagerize_page_element">
-<h1 class="date">
-<a href="../../entries/20120731.html">2012-07-31</a>
+<div id='page'>
+<div id='content'><article class='article autopagerize_page_element'>
+<h1 class='date'>
+<a href='/entries/20120731.html'>2012-07-31</a>
 </h1>
-<h1 id="a0">
-<a href="../../entries/20120731/a0.html">簡単に Ruby のリファレンス・マニュアルを開く ruremai を色々直した</a>
+<h1 id='20120731a0'>
+<a href='/entries/20120731/a0.html'>簡単に Ruby のリファレンス・マニュアルを開く ruremai を色々直した</a>
 </h1>
-<p>気がついたら色々な人から良い感じのパッチをもらったので取り込んで <a href="https://rubygems.org/gems/ruremai">0.0.3</a> をリリースしました。</p>
-<p><a href="https://github.com/hibariya/ruremai">Ruremai</a> はirbなどを使っている際に、メソッドのリファレンス・マニュアルをお手軽にブラウザで開くためのツールです。
-<code>require 'ruremai'</code> すると、Method#rurema! が追加されます。</p>
-<p>例えば、「何かそれっぽいメソッドが記憶の片隅にあるんだけど、使い方がイマイチ思い出せない」ようなときに便利。</p>
-<div class="highlight"><pre>hibariya@ ;-) irb
+<p>気がついたら色々な人から良い感じのパッチをもらったので取り込んで <a href="https://rubygems.org/gems/ruremai">0.0.3</a> をリリースしました。</p><p><a href="https://github.com/hibariya/ruremai">Ruremai</a> はirbなどを使っている際に、メソッドのリファレンス・マニュアルをお手軽にブラウザで開くためのツールです。
+<code>require 'ruremai'</code> すると、Method#rurema! が追加されます。</p><p>例えば、「何かそれっぽいメソッドが記憶の片隅にあるんだけど、使い方がイマイチ思い出せない」ようなときに便利。</p><div class="highlight"><pre>hibariya@ ;-) irb
 &gt;&gt; require 'ruremai'
 =&gt; false
 &gt;&gt; ary = %w(alice bob carol)
 =&gt; ["alice", "bob", "carol"]
 &gt;&gt; ary.method(:any?).rurema! # ここで唐突にブラウザが開く!
-</pre></div>
-<p>今回はいくつかの修正や機能追加があったのでした。</p>
-<ul>
+</pre></div><p>今回はいくつかの修正や機能追加があったのでした。</p><ul>
 <li><a href="https://github.com/hibariya/ruremai/pull/1">ショートカット Object#mean? の追加</a></li>
 <li><a href="https://github.com/hibariya/ruremai/pull/2">大文字を含むメソッド名に対応できていなかったバグの修正</a></li>
 <li><a href="https://github.com/hibariya/ruremai/pull/4">名前空間や特定のメソッドに対応できていなかったバグの修正と高速化</a></li>
 </ul>
 <p>自分では気づかないようなバグへのパッチとか、あったら良さそうな機能がどんどん送られくる GitHub とっても便利。</p>
 </article>
-<div id="comments">
-<div id="disqus_thread">
-  <script type="text/javascript">
-    //<![CDATA[
-      var disqus_shortname = 'joyluckcrab';
-      (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    //]]>
+<div id='comments'><div id='disqus_thread'>
+  <script>
+    var disqus_shortname = 'joyluckcrab';
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
   </script>
 </div>
 </div>
-<div class="nav">
-<div class="prev">
-<link href="../../entries/20120830/a0.html" rel="prev">
+<div class='nav'>
+<div class='prev'>
+<link href='/entries/20130418/a0.html' rel='prev' />
 </div>
-<div class="next">
-<link href="../../entries/20120723/a0.html" rel="next">
+<div class='next'>
+<link href='/entries/20110909/a1.html' rel='next' />
 </div>
 </div>
-<div class="autopagerize_insert_before"></div>
+<div class='autopagerize_insert_before'></div>
 </div>
-<aside id="sidebar">
+<aside id='sidebar'>
 <h3>Author</h3>
-<div class="author">
-<a href="../../profile.html">hibariya</a>
+<div class='author'>
+<a href='/profile.html'>hibariya</a>
 </div>
 <h3>Recent entries</h3>
-<div class="recent-entries">
+<div class='recent-entries'>
 <ul>
 <li>
-<a href="../../entries/20130418/a0.html">春から学生になった</a>
+<a href='/entries/20130418/a0.html'>春から学生になった</a>
 </li>
 <li>
-<a href="../../entries/20130218/a0.html">東京競馬場へ馬をみにいった</a>
+<a href='/entries/20130218/a0.html'>東京競馬場へ馬をみにいった</a>
 </li>
 <li>
-<a href="../../entries/20130105/a0.html">reditor gem を更新した</a>
+<a href='/entries/20130105/a0.html'>reditor gem を更新した</a>
 </li>
 <li>
-<a href="../../entries/20130105/a1.html">cline gem を更新した</a>
+<a href='/entries/20130105/a1.html'>cline gem を更新した</a>
 </li>
 <li>
-<a href="../../entries/20130102/a0.html">PROMPTを2階建てにした</a>
+<a href='/entries/20130102/a0.html'>PROMPTを2階建てにした</a>
 </li>
 <li>
-<a href="../../entries/20121206/a0.html">自宅用に Kinesis を買った</a>
+<a href='/entries/20121206/a0.html'>自宅用に Kinesis を買った</a>
 </li>
 <li>
-<a href="../../entries/20121125/a0.html">RubyConf 2012</a>
+<a href='/entries/20121125/a0.html'>RubyConf 2012</a>
 </li>
 </ul>
-<div class="archives">
-<a href="../../entries.html">Archives</a>
+<div class='archives'>
+<a href='/entries.html'>Archives</a>
 </div>
 </div>
 <h3>Coderwall</h3>
-<section class="coderwall" data-coderwall-orientation="horizontal" data-coderwall-username="hibariya"></section>
+<section class='coderwall' data-coderwall-orientation='horizontal' data-coderwall-username='hibariya'></section>
 </aside>
 </div>
-<footer id="footer">
+<footer id='footer'>
 Joy Luck Crab (C) hibariya
 Generated by
-<a href="https://github.com/hibariya/retter" target="_blank">Retter</a>
+<a href='https://github.com/hibariya/retter' target='_blank'>Retter</a>
 </footer>
 </body>
 </html>

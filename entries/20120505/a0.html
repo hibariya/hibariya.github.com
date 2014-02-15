@@ -1,71 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <title>cline-0.3.0 - Joy Luck Crab</title>
-<meta charset="utf-8" content="text/html; charset=UTF-8" http-equiv="Content-Type">
-<meta content="hibariya" name="author">
-<link href="../../favicon.png" rel="icon" type="image/png">
-<link href="../../stylesheets/base.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../../stylesheets/orange.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../../stylesheets/pygments.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../../entries.rss" rel="alternate" title="RSS" type="application/rss+xml">
-<link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
-<script src="../../javascripts/jquery.js"></script>
-<script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+<meta charset='utf-8' content='text/html' http-equiv='Content-Type' />
+<meta content='hibariya' name='author' />
+<link href='/favicon.png' rel='icon' type='image/png' />
+<link href='/stylesheets/base.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/orange.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/pygments.css' media='screen' rel='stylesheet' type='text/css' />
+<link href='/entries.rss' rel='alternate' title='RSS' type='application/rss+xml' />
+<link href='http://coderwall.com/stylesheets/jquery.coderwall.css' media='all' rel='stylesheet' type='text/css' />
+<script src='/javascripts/jquery.js'></script>
+<script src='http://coderwall.com/javascripts/jquery.coderwall.js'></script>
 </head>
 <body>
-<header id="header">
+<header id='header'>
 <h1>
-<a href="../../index.html">Joy Luck Crab</a>
+<a href='/'>Joy Luck Crab</a>
 </h1>
 <nav>
-<ul id="menu">
+<ul id='menu'>
 <li>
-<a href="../../index.html">Home</a>
+<a href='/'>Home</a>
 </li>
 <li>
-<a href="../../profile.html">Profile</a>
+<a href='/profile.html'>Profile</a>
 </li>
 <li>
-<a href="../../entries.html">Archives</a>
+<a href='/entries.html'>Archives</a>
 </li>
 <li>
-<a href="../../entries.rss" target="_blank">RSS</a>
+<a href='/entries.rss' target='_blank'>RSS</a>
 </li>
 </ul>
 </nav>
 </header>
-<div id="page">
-<div id="content">
-<article class="article autopagerize_page_element">
-<h1 class="date">
-<a href="../../entries/20120505.html">2012-05-05</a>
+<div id='page'>
+<div id='content'><article class='article autopagerize_page_element'>
+<h1 class='date'>
+<a href='/entries/20120505.html'>2012-05-05</a>
 </h1>
-<h1 id="a0">
-<a href="../../entries/20120505/a0.html">cline-0.3.0</a>
+<h1 id='20120505a0'>
+<a href='/entries/20120505/a0.html'>cline-0.3.0</a>
 </h1>
-<p>いくつか便利そうな機能をつけて<a href="http://rubygems.org/gems/cline">アップデート</a>しました。</p>
-<ul>
+<p>いくつか便利そうな機能をつけて<a href="http://rubygems.org/gems/cline">アップデート</a>しました。</p><ul>
 <li>簡単にURLを開く機能</li>
 <li>フィルタリングのためのインターフェース</li>
 </ul>
-<h2>簡単にURLを開く</h2>
-<p>表示するときにメッセージにエイリアスをつけるようにしました。
-その分、あまり必要なさそうな時間の秒とタイムゾーンを表示しないようにしました。</p>
-<div class="highlight"><pre>[2012/05/04 22:41][2][1f5] Delicious.com - Discover Yourself! http://delicious.com/help/quicktour/chrome
+<h2>簡単にURLを開く</h2><p>表示するときにメッセージにエイリアスをつけるようにしました。
+その分、あまり必要なさそうな時間の秒とタイムゾーンを表示しないようにしました。</p><div class="highlight"><pre>[2012/05/04 22:41][2][1f5] Delicious.com - Discover Yourself! http://delicious.com/help/quicktour/chrome
                        ↑
                       これ
-</pre></div>
-<p>エイリアスを使うと簡単にメッセージの中のURLをブラウザで開くことができます。
-URLが途中で見切れてしまっても大丈夫。</p>
-<div class="highlight"><pre>  $ cline open 1f5
-</pre></div>
-<p>打つのが面倒なので <code>alias co='cline open'</code> しておくとよさそう。</p>
-<h3>フィルタリング</h3>
-<p>フィルタリングのようなことを、ActiveRecordのvalidationを使って実現できるようにしておきました。
+</pre></div><p>エイリアスを使うと簡単にメッセージの中のURLをブラウザで開くことができます。
+URLが途中で見切れてしまっても大丈夫。</p><div class="highlight"><pre>  $ cline open 1f5
+</pre></div><p>打つのが面倒なので <code>alias co='cline open'</code> しておくとよさそう。</p><h3>フィルタリング</h3><p>フィルタリングのようなことを、ActiveRecordのvalidationを使って実現できるようにしておきました。
 invalidなメッセージは保存されなくなります。
-<code>~/.cline/config</code> あたりに書いておくとよさそう。</p>
-<div class="highlight"><pre><span class="nb">require</span> <span class="s1">'hiwai'</span>
+<code>~/.cline/config</code> あたりに書いておくとよさそう。</p><div class="highlight"><pre><span class="nb">require</span> <span class="s1">'hiwai'</span>
 
 <span class="k">class</span> <span class="nc">Cline</span><span class="o">::</span><span class="no">Notification</span>
   <span class="n">validate</span> <span class="ss">:message_should_not_be_hiwai</span>
@@ -74,76 +64,72 @@ invalidなメッセージは保存されなくなります。
     <span class="n">errors</span><span class="o">.</span><span class="n">add</span> <span class="ss">:message</span><span class="p">,</span> <span class="s1">'hiwai'</span> <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">hiwai?</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</pre></div>
-<p>クラスを再オープンしているのだけど、もうちょっとスマートなAPIを用意したいなと思っているところ。
+</pre></div><p>クラスを再オープンしているのだけど、もうちょっとスマートなAPIを用意したいなと思っているところ。
 ちなみに<a href="https://github.com/hibariya/hiwai">hiwai</a>はレシーバがひわいかどうかを確認するためのライブラリです。</p>
 </article>
-<div id="comments">
-<div id="disqus_thread">
-  <script type="text/javascript">
-    //<![CDATA[
-      var disqus_shortname = 'joyluckcrab';
-      (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    //]]>
+<div id='comments'><div id='disqus_thread'>
+  <script>
+    var disqus_shortname = 'joyluckcrab';
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
   </script>
 </div>
 </div>
-<div class="nav">
-<div class="prev">
-<link href="../../entries/20120602/a0.html" rel="prev">
+<div class='nav'>
+<div class='prev'>
+<link href='/entries/20130418/a0.html' rel='prev' />
 </div>
-<div class="next">
-<link href="../../entries/20120411/a0.html" rel="next">
+<div class='next'>
+<link href='/entries/20110909/a1.html' rel='next' />
 </div>
 </div>
-<div class="autopagerize_insert_before"></div>
+<div class='autopagerize_insert_before'></div>
 </div>
-<aside id="sidebar">
+<aside id='sidebar'>
 <h3>Author</h3>
-<div class="author">
-<a href="../../profile.html">hibariya</a>
+<div class='author'>
+<a href='/profile.html'>hibariya</a>
 </div>
 <h3>Recent entries</h3>
-<div class="recent-entries">
+<div class='recent-entries'>
 <ul>
 <li>
-<a href="../../entries/20130418/a0.html">春から学生になった</a>
+<a href='/entries/20130418/a0.html'>春から学生になった</a>
 </li>
 <li>
-<a href="../../entries/20130218/a0.html">東京競馬場へ馬をみにいった</a>
+<a href='/entries/20130218/a0.html'>東京競馬場へ馬をみにいった</a>
 </li>
 <li>
-<a href="../../entries/20130105/a0.html">reditor gem を更新した</a>
+<a href='/entries/20130105/a0.html'>reditor gem を更新した</a>
 </li>
 <li>
-<a href="../../entries/20130105/a1.html">cline gem を更新した</a>
+<a href='/entries/20130105/a1.html'>cline gem を更新した</a>
 </li>
 <li>
-<a href="../../entries/20130102/a0.html">PROMPTを2階建てにした</a>
+<a href='/entries/20130102/a0.html'>PROMPTを2階建てにした</a>
 </li>
 <li>
-<a href="../../entries/20121206/a0.html">自宅用に Kinesis を買った</a>
+<a href='/entries/20121206/a0.html'>自宅用に Kinesis を買った</a>
 </li>
 <li>
-<a href="../../entries/20121125/a0.html">RubyConf 2012</a>
+<a href='/entries/20121125/a0.html'>RubyConf 2012</a>
 </li>
 </ul>
-<div class="archives">
-<a href="../../entries.html">Archives</a>
+<div class='archives'>
+<a href='/entries.html'>Archives</a>
 </div>
 </div>
 <h3>Coderwall</h3>
-<section class="coderwall" data-coderwall-orientation="horizontal" data-coderwall-username="hibariya"></section>
+<section class='coderwall' data-coderwall-orientation='horizontal' data-coderwall-username='hibariya'></section>
 </aside>
 </div>
-<footer id="footer">
+<footer id='footer'>
 Joy Luck Crab (C) hibariya
 Generated by
-<a href="https://github.com/hibariya/retter" target="_blank">Retter</a>
+<a href='https://github.com/hibariya/retter' target='_blank'>Retter</a>
 </footer>
 </body>
 </html>
