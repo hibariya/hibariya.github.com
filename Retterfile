@@ -1,27 +1,25 @@
 #!/usr/bin/env ruby
 # coding: utf-8
 
-url         'http://hibariya.github.com/'
-title       'Joy Luck Crab'
-description 'hibariya.github.com'
-author      'hibariya'
-renderer    Retter::StaticSite::Markdown::PygmentsRenderer
-
-disqus_shortname 'joyluckcrab'
-
-after :edit do
-  Retter::Site.reset!
-  ident = ARGV.pop
-  preview ident if yes?("Preview now? [yes/no]")
-end
-
-after :rebind, :commit
-
-after :commit do
-  if yes?("Deploy now? [yes/no]")
-    system "cd #{config.retter_home} && git push origin master"
-  end
-end
 configure api_revision: 1 do |config|
-  # How to configure: https://github.com/hibariya/retter
+  config.url              = 'http://hibariya.github.com/'
+  config.title            = 'Joy Luck Crab'
+  config.description      = 'hibariya.github.com'
+  config.author           = 'hibariya'
+  config.renderer         = Retter::StaticSite::Markdown::PygmentsRenderer
+  config.disqus_shortname = 'joyluckcrab'
+
+  config.after :edit do
+    Retter::Site.reset!
+    ident = ARGV.pop
+    preview ident if yes?("Preview now? [yes/no]")
+  end
+
+  config.after :rebind, :commit
+
+  config.after :commit do
+    if yes?("Deploy now? [yes/no]")
+      # system "cd #{config.retter_home} && git push origin master"
+    end
+  end
 end
