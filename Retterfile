@@ -12,6 +12,6 @@ configure api_revision: 1 do |config|
   # Processing for `retter publish` command.
   config.publisher do
     # Uncomment it if you want to do `cd $RETTER_ROOT && git push origin master` via `retter publish`.
-    # run 'git push origin master'
+    run 'git push origin master'
   end
 end
