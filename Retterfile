@@ -2,16 +2,15 @@
 # vi: set ft=ruby :
 
 configure api_revision: 1 do |config|
-  # Website's root URL, title, description and author. URL is needed by feed generator.
   config.url              = 'http://hibariya.github.com/'
   config.title            = 'Joy Luck Crab'
   config.description      = 'hibariya.github.com'
   config.author           = 'hibariya'
   config.disqus_shortname = 'joyluckcrab'
 
-  # Processing for `retter publish` command.
+  config.after :build, :publish
+
   config.publisher do
-    # Uncomment it if you want to do `cd $RETTER_ROOT && git push origin master` via `retter publish`.
     run 'git push origin master'
   end
 end
