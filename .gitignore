@@ -1,4 +1,2 @@
-.preview.html
-tmp/*
-.rbenv-version
+tmp/
 assets/manifest-*.json
