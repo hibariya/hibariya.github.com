@@ -37,23 +37,10 @@
 <li>フィルタリングのためのインターフェース</li>
 </ul>
 <h2>簡単にURLを開く</h2><p>表示するときにメッセージにエイリアスをつけるようにしました。
-その分、あまり必要なさそうな時間の秒とタイムゾーンを表示しないようにしました。</p><pre class="highlight plaintext">[2012/05/04 22:41][2][1f5] Delicious.com - Discover Yourself! http://delicious.com/help/quicktour/chrome
-                       ↑
-                      これ
-</pre><p>エイリアスを使うと簡単にメッセージの中のURLをブラウザで開くことができます。
-URLが途中で見切れてしまっても大丈夫。</p><pre class="highlight plaintext">  $ cline open 1f5
-</pre><p>打つのが面倒なので <code>alias co='cline open'</code> しておくとよさそう。</p><h3>フィルタリング</h3><p>フィルタリングのようなことを、ActiveRecordのvalidationを使って実現できるようにしておきました。
+その分、あまり必要なさそうな時間の秒とタイムゾーンを表示しないようにしました。</p><pre class="highlight plaintext">[2012/05/04 22:41][2][1f5] Delicious.com - Discover Yourself! http://delicious.com/help/quicktour/chrome&#x000A;                       ↑&#x000A;                      これ</pre><p>エイリアスを使うと簡単にメッセージの中のURLをブラウザで開くことができます。
+URLが途中で見切れてしまっても大丈夫。</p><pre class="highlight plaintext">  $ cline open 1f5</pre><p>打つのが面倒なので <code>alias co='cline open'</code> しておくとよさそう。</p><h3>フィルタリング</h3><p>フィルタリングのようなことを、ActiveRecordのvalidationを使って実現できるようにしておきました。
 invalidなメッセージは保存されなくなります。
-<code>~/.cline/config</code> あたりに書いておくとよさそう。</p><pre class="highlight ruby"><span class="nb">require</span> <span class="s1">'hiwai'</span>
-
-<span class="k">class</span> <span class="nc">Cline</span><span class="o">::</span><span class="no">Notification</span>
-  <span class="n">validate</span> <span class="ss">:message_should_not_be_hiwai</span>
-
-  <span class="k">def</span> <span class="nf">message_should_not_be_hiwai</span>
-    <span class="n">errors</span><span class="p">.</span><span class="nf">add</span> <span class="ss">:message</span><span class="p">,</span> <span class="s1">'hiwai'</span> <span class="k">if</span> <span class="n">message</span><span class="p">.</span><span class="nf">hiwai?</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</pre><p>クラスを再オープンしているのだけど、もうちょっとスマートなAPIを用意したいなと思っているところ。
+<code>~/.cline/config</code> あたりに書いておくとよさそう。</p><pre class="highlight ruby"><span class="nb">require</span> <span class="s1">'hiwai'</span>&#x000A;&#x000A;<span class="k">class</span> <span class="nc">Cline</span><span class="o">::</span><span class="no">Notification</span>&#x000A;  <span class="n">validate</span> <span class="ss">:message_should_not_be_hiwai</span>&#x000A;&#x000A;  <span class="k">def</span> <span class="nf">message_should_not_be_hiwai</span>&#x000A;    <span class="n">errors</span><span class="p">.</span><span class="nf">add</span> <span class="ss">:message</span><span class="p">,</span> <span class="s1">'hiwai'</span> <span class="k">if</span> <span class="n">message</span><span class="p">.</span><span class="nf">hiwai?</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span></pre><p>クラスを再オープンしているのだけど、もうちょっとスマートなAPIを用意したいなと思っているところ。
 ちなみに<a href="https://github.com/hibariya/hiwai">hiwai</a>はレシーバがひわいかどうかを確認するためのライブラリです。</p>
 </article>
 </div>
@@ -64,7 +51,10 @@ invalidなメッセージは保存されなくなります。
 <div class='recent-entries'>
 <ul>
 <li>
-<a href="/entries/20140216/a0.html">Rewriting Retter gem</a>
+<a href="/entries/20140216/a0.html">Installing Gentoo linux with UEFI boot</a>
+</li>
+<li>
+<a href="/entries/20140215/a0.html">Rewriting Retter gem</a>
 </li>
 <li>
 <a href="/entries/20130418/a0.html">春から学生になった</a>
@@ -77,9 +67,6 @@ invalidなメッセージは保存されなくなります。
 </li>
 <li>
 <a href="/entries/20130105/a1.html">cline gem を更新した</a>
-</li>
-<li>
-<a href="/entries/20130102/a0.html">PROMPTを2階建てにした</a>
 </li>
 </ul>
 <div class='archives'><a href="/entries.html">Archives</a></div>

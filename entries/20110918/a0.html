@@ -35,12 +35,7 @@
 <p>作業ディレクトリを一旦クリーンに戻したいような場面。
 retterで生成するサイトはgitで管理することを前提にしているせいもあって、直にgitコマンドを実行したい場面がどうしても出てくるみたい。
 例えば、<code>git reset</code> したいときとか、<code>git commit --amend</code> したいときとか。</p><p>ファイルシステム上のどこに居ようが編集から公開までをできるというメリットはできるだけ殺したくなくて、いちいちリポジトリに移動してgitコマンドを実行するのはちょっと嫌だ。</p><p>そこで新たに <code>rette home</code> というコマンドを作ってみた。
-<code>home</code> サブコマンドは<code>$RETTER_HOME</code>に移動して新たなシェルを起動する。</p><pre class="highlight plaintext">  $ retter home
-  (retter) pwd
-  /path/to/retter_home
-  (retter) exit
-  bye
-</pre><p>これで、いくつものどうでもいい機能の実装を免れるきがする。</p>
+<code>home</code> サブコマンドは<code>$RETTER_HOME</code>に移動して新たなシェルを起動する。</p><pre class="highlight plaintext">  $ retter home&#x000A;  (retter) pwd&#x000A;  /path/to/retter_home&#x000A;  (retter) exit&#x000A;  bye</pre><p>これで、いくつものどうでもいい機能の実装を免れるきがする。</p>
 </article>
 <div id='comments'><div id='disqus_thread'>
   <script>
@@ -61,7 +56,10 @@ retterで生成するサイトはgitで管理することを前提にしてい�
 <div class='recent-entries'>
 <ul>
 <li>
-<a href="/entries/20140216/a0.html">Rewriting Retter gem</a>
+<a href="/entries/20140216/a0.html">Installing Gentoo linux with UEFI boot</a>
+</li>
+<li>
+<a href="/entries/20140215/a0.html">Rewriting Retter gem</a>
 </li>
 <li>
 <a href="/entries/20130418/a0.html">春から学生になった</a>
@@ -74,9 +72,6 @@ retterで生成するサイトはgitで管理することを前提にしてい�
 </li>
 <li>
 <a href="/entries/20130105/a1.html">cline gem を更新した</a>
-</li>
-<li>
-<a href="/entries/20130102/a0.html">PROMPTを2階建てにした</a>
 </li>
 </ul>
 <div class='archives'><a href="/entries.html">Archives</a></div>

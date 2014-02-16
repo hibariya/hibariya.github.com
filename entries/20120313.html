@@ -39,90 +39,18 @@
 <li>親から子へ、子から親へ切り替えることができる</li>
 <li>IO待ちでも切り替わらない</li>
 </ul>
-<p>コンテキストの切り替えは<code>Fiber#resume</code>と<code>Fiber.yield</code>で行う。</p><pre class="highlight ruby"><span class="n">fiber</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span>
-  <span class="nb">puts</span> <span class="s1">'Hello Alice.'</span>
-
-  <span class="no">Fiber</span><span class="p">.</span><span class="nf">yield</span>
-
-  <span class="nb">puts</span> <span class="s1">'Hello Bob.'</span>
-
-  <span class="no">Fiber</span><span class="p">.</span><span class="nf">yield</span>
-
-  <span class="nb">puts</span> <span class="s1">'Hello Carol.'</span>
-<span class="p">}</span>
-
-<span class="n">fiber</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># "Hello Alice." と表示</span>
-<span class="n">fiber</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># "Hello Bob." と表示</span>
-<span class="n">fiber</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># "Hello Carol." と表示</span>
-</pre><p>上の例ではトップレベルが親。ブロックの中が子。親と子でキャッチボールしてる感じ。
+<p>コンテキストの切り替えは<code>Fiber#resume</code>と<code>Fiber.yield</code>で行う。</p><pre class="highlight ruby"><span class="n">fiber</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span>&#x000A;  <span class="nb">puts</span> <span class="s1">'Hello Alice.'</span>&#x000A;&#x000A;  <span class="no">Fiber</span><span class="p">.</span><span class="nf">yield</span>&#x000A;&#x000A;  <span class="nb">puts</span> <span class="s1">'Hello Bob.'</span>&#x000A;&#x000A;  <span class="no">Fiber</span><span class="p">.</span><span class="nf">yield</span>&#x000A;&#x000A;  <span class="nb">puts</span> <span class="s1">'Hello Carol.'</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="n">fiber</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># "Hello Alice." と表示</span>&#x000A;<span class="n">fiber</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># "Hello Bob." と表示</span>&#x000A;<span class="n">fiber</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># "Hello Carol." と表示</span></pre><p>上の例ではトップレベルが親。ブロックの中が子。親と子でキャッチボールしてる感じ。
 <code>Fiber#resume</code>で親から子へコンテキストを切り替え、<code>Fiber.yield</code>で子から親へ切り替える。</p><p>組込みライブラリとしてのFiberは、親から子、子から親へのみ切り替えられる（それ以外のコンテキストに切り替えることはできない）。</p><h2>Fiberの引数と戻り値</h2><h3>親からみたときの引数と戻り値</h3><p>引数は常に<code>Fiber#resume</code>に渡す。
 戻り値は<code>Fiber#resume</code>の戻り値。</p><h3>子からみたときの引数と戻り値</h3><p>最初の引数はブロック引数として渡される。
 それ以降の引数は<code>Fiber.yield</code>の戻り値として与えられる。</p><p>戻り値は<code>Fiber.yield</code>の引数として渡す。
-<code>Fiber.new</code>で渡したブロックが終了したときは、最後に評価された式の値が戻り値として返る。</p><pre class="highlight ruby"><span class="n">greet3</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span><span class="o">|</span><span class="nb">name</span><span class="o">|</span>
-  <span class="mi">3</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
-    <span class="nb">name</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">yield</span><span class="p">(</span><span class="s2">"Hi </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-  <span class="k">end</span>
-
-  <span class="s1">'Good night'</span>
-<span class="p">}</span>
-
-<span class="n">greet3</span><span class="p">.</span><span class="nf">resume</span><span class="p">(</span><span class="s1">'Aron'</span><span class="p">)</span>  <span class="c1"># =&gt; "Hi Aron"</span>
-<span class="n">greet3</span><span class="p">.</span><span class="nf">resume</span><span class="p">(</span><span class="s1">'Billy'</span><span class="p">)</span> <span class="c1"># =&gt; "Hi Billy"</span>
-<span class="n">greet3</span><span class="p">.</span><span class="nf">resume</span><span class="p">(</span><span class="s1">'Colon'</span><span class="p">)</span> <span class="c1"># =&gt; "Hi Colon"</span>
-<span class="n">greet3</span><span class="p">.</span><span class="nf">resume</span>          <span class="c1"># =&gt; "Good night"</span>
-</pre><h2>Coroutine</h2><ul>
+<code>Fiber.new</code>で渡したブロックが終了したときは、最後に評価された式の値が戻り値として返る。</p><pre class="highlight ruby"><span class="n">greet3</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span><span class="o">|</span><span class="nb">name</span><span class="o">|</span>&#x000A;  <span class="mi">3</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>&#x000A;    <span class="nb">name</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">yield</span><span class="p">(</span><span class="s2">"Hi </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>&#x000A;  <span class="k">end</span>&#x000A;&#x000A;  <span class="s1">'Good night'</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="n">greet3</span><span class="p">.</span><span class="nf">resume</span><span class="p">(</span><span class="s1">'Aron'</span><span class="p">)</span>  <span class="c1"># =&gt; "Hi Aron"</span>&#x000A;<span class="n">greet3</span><span class="p">.</span><span class="nf">resume</span><span class="p">(</span><span class="s1">'Billy'</span><span class="p">)</span> <span class="c1"># =&gt; "Hi Billy"</span>&#x000A;<span class="n">greet3</span><span class="p">.</span><span class="nf">resume</span><span class="p">(</span><span class="s1">'Colon'</span><span class="p">)</span> <span class="c1"># =&gt; "Hi Colon"</span>&#x000A;<span class="n">greet3</span><span class="p">.</span><span class="nf">resume</span>          <span class="c1"># =&gt; "Good night"</span></pre><h2>Coroutine</h2><ul>
 <li>途中まで計算して、一旦値を返して、その後また続きから実行できる仕組み</li>
 <li>親と子（callerとcallee）という関係があるものをsemi-coroutineと呼ぶ</li>
 <li>組込みライブラリのFiberはsemi-coroutineの実装と言ってよいのかな</li>
 </ul>
 <h2>semi-coroutineさん何に使うの</h2><p>ジェネレータや外部イテレータに使うらしい。
 無限リストにも使うらしい。
-外部イテレータとしてときどき使うかもしれないEnumeratorではFiberを使ってるようだ。</p><p>永遠に終わらない数字のカウントアップを行うジェネレータ。</p><pre class="highlight ruby"><span class="n">endless</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span>
-  <span class="kp">loop</span><span class="p">.</span><span class="nf">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
-    <span class="no">Fiber</span><span class="p">.</span><span class="nf">yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-  <span class="k">end</span>
-<span class="p">}</span>
-
-<span class="n">endless</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># =&gt; 0</span>
-<span class="n">endless</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># =&gt; 1</span>
-<span class="n">endless</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># =&gt; 2</span>
-<span class="n">endless</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># =&gt; 3</span>
-<span class="n">endless</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># =&gt; 4</span>
-<span class="n">endless</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># =&gt; 5</span>
-<span class="n">endless</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># =&gt; 6</span>
-<span class="c1"># endless...</span>
-</pre><p>FiberのAPIを隠して外部イテレータっぽく使ってみる。</p><pre class="highlight ruby"><span class="k">class</span> <span class="nc">EndlessNumber</span>
-  <span class="k">def</span> <span class="nf">initialize</span>
-    <span class="n">rewind</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">rewind</span>
-    <span class="vi">@generator</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span>
-      <span class="kp">loop</span><span class="p">.</span><span class="nf">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
-        <span class="no">Fiber</span><span class="p">.</span><span class="nf">yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-      <span class="k">end</span>
-    <span class="p">}</span>
-
-    <span class="nb">self</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">next</span>
-    <span class="vi">@generator</span><span class="p">.</span><span class="nf">resume</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="n">en</span> <span class="o">=</span> <span class="no">EndlessNumber</span><span class="p">.</span><span class="nf">new</span>
-
-<span class="n">en</span><span class="p">.</span><span class="nf">next</span> <span class="c1"># =&gt; 0</span>
-<span class="n">en</span><span class="p">.</span><span class="nf">next</span> <span class="c1"># =&gt; 1</span>
-<span class="n">en</span><span class="p">.</span><span class="nf">next</span> <span class="c1"># =&gt; 2</span>
-<span class="n">en</span><span class="p">.</span><span class="nf">rewind</span>
-<span class="n">en</span><span class="p">.</span><span class="nf">next</span> <span class="c1"># =&gt; 0</span>
-
-<span class="k">while</span> <span class="n">num</span> <span class="o">=</span> <span class="n">en</span><span class="p">.</span><span class="nf">next</span>
-  <span class="nb">puts</span> <span class="n">num</span>
-<span class="k">end</span> <span class="c1"># ウワーッ</span>
-</pre><p>　これに使おう、というのがとっさに思い浮かばない。</p>
+外部イテレータとしてときどき使うかもしれないEnumeratorではFiberを使ってるようだ。</p><p>永遠に終わらない数字のカウントアップを行うジェネレータ。</p><pre class="highlight ruby"><span class="n">endless</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span>&#x000A;  <span class="kp">loop</span><span class="p">.</span><span class="nf">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>&#x000A;    <span class="no">Fiber</span><span class="p">.</span><span class="nf">yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="n">endless</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># =&gt; 0</span>&#x000A;<span class="n">endless</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># =&gt; 1</span>&#x000A;<span class="n">endless</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># =&gt; 2</span>&#x000A;<span class="n">endless</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># =&gt; 3</span>&#x000A;<span class="n">endless</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># =&gt; 4</span>&#x000A;<span class="n">endless</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># =&gt; 5</span>&#x000A;<span class="n">endless</span><span class="p">.</span><span class="nf">resume</span> <span class="c1"># =&gt; 6</span>&#x000A;<span class="c1"># endless...</span></pre><p>FiberのAPIを隠して外部イテレータっぽく使ってみる。</p><pre class="highlight ruby"><span class="k">class</span> <span class="nc">EndlessNumber</span>&#x000A;  <span class="k">def</span> <span class="nf">initialize</span>&#x000A;    <span class="n">rewind</span>&#x000A;  <span class="k">end</span>&#x000A;&#x000A;  <span class="k">def</span> <span class="nf">rewind</span>&#x000A;    <span class="vi">@generator</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span>&#x000A;      <span class="kp">loop</span><span class="p">.</span><span class="nf">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>&#x000A;        <span class="no">Fiber</span><span class="p">.</span><span class="nf">yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>&#x000A;      <span class="k">end</span>&#x000A;    <span class="p">}</span>&#x000A;&#x000A;    <span class="nb">self</span>&#x000A;  <span class="k">end</span>&#x000A;&#x000A;  <span class="k">def</span> <span class="nf">next</span>&#x000A;    <span class="vi">@generator</span><span class="p">.</span><span class="nf">resume</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">en</span> <span class="o">=</span> <span class="no">EndlessNumber</span><span class="p">.</span><span class="nf">new</span>&#x000A;&#x000A;<span class="n">en</span><span class="p">.</span><span class="nf">next</span> <span class="c1"># =&gt; 0</span>&#x000A;<span class="n">en</span><span class="p">.</span><span class="nf">next</span> <span class="c1"># =&gt; 1</span>&#x000A;<span class="n">en</span><span class="p">.</span><span class="nf">next</span> <span class="c1"># =&gt; 2</span>&#x000A;<span class="n">en</span><span class="p">.</span><span class="nf">rewind</span>&#x000A;<span class="n">en</span><span class="p">.</span><span class="nf">next</span> <span class="c1"># =&gt; 0</span>&#x000A;&#x000A;<span class="k">while</span> <span class="n">num</span> <span class="o">=</span> <span class="n">en</span><span class="p">.</span><span class="nf">next</span>&#x000A;  <span class="nb">puts</span> <span class="n">num</span>&#x000A;<span class="k">end</span> <span class="c1"># ウワーッ</span></pre><p>　これに使おう、というのがとっさに思い浮かばない。</p>
 </article>
 </div>
 <aside id='sidebar'>
@@ -132,7 +60,10 @@
 <div class='recent-entries'>
 <ul>
 <li>
-<a href="/entries/20140216/a0.html">Rewriting Retter gem</a>
+<a href="/entries/20140216/a0.html">Installing Gentoo linux with UEFI boot</a>
+</li>
+<li>
+<a href="/entries/20140215/a0.html">Rewriting Retter gem</a>
 </li>
 <li>
 <a href="/entries/20130418/a0.html">春から学生になった</a>
@@ -145,9 +76,6 @@
 </li>
 <li>
 <a href="/entries/20130105/a1.html">cline gem を更新した</a>
-</li>
-<li>
-<a href="/entries/20130102/a0.html">PROMPTを2階建てにした</a>
 </li>
 </ul>
 <div class='archives'><a href="/entries.html">Archives</a></div>

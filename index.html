@@ -31,7 +31,30 @@
 <article class='article'>
 <h1 class='date'><a href="/entries/20140216.html">2014-02-16</a></h1>
 <h1 class='retter_entry_article' id='retter_entry_article_20140216a0'>
-<a href="/entries/20140216/a0.html">Rewriting Retter gem</a>
+<a href="/entries/20140216/a0.html">Installing Gentoo linux with UEFI boot</a>
+</h1>
+<p>年末に Funtoo でアップデートに失敗して、依存関係を何だかよくわからないちぐはぐな状態にしてしまったので、一旦環境を捨てて Gentoo を試してみることにした。
+その頃ちょうど Funtoo で <a href="http://bugs.funtoo.org/browse/FL-948">GNOME の入れ直しが難しい</a> 状態になっていて、どうせ入れ直すなら Gentoo の方が楽そうという理由から。</p><p>そのときの記録を (断片的だけどだいたい順番に) 残しておく。
+足りない分はだいたい <a href="http://www.gentoo.org/doc/ja/handbook/handbook-amd64.xml?full=1">Gentoo Linux AMD64 ハンドブック</a> と同じ。</p><pre class="highlight plaintext">$ # パーティションの作成&#x000A;$ parted&#x000A;(parted) mklabel gpt&#x000A;(parted) mkpart primary fat32 0% 512m&#x000A;(parted) set 1 boot on&#x000A;(parted) mkpart primary linux-swap 512m 1024m&#x000A;(parted) mkpart pimrary ext4 1024m -1s&#x000A;&#x000A;$ # ファイルシステムの作成&#x000A;$ mkfs.vfat -F 32 /dev/sda1&#x000A;$ mkswap /dev/sda2&#x000A;$ swapon /dev/sda2&#x000A;$ mkfs.ext4 /dev/sda3&#x000A;&#x000A;$ # ファイルシステムのマウント、chroot&#x000A;$ mount /dev/sda3 /mnt/gentoo&#x000A;$ mkdir -p /mnt/gentoo/boot/efi&#x000A;$ mount /dev/sda1 /mnt/gentoo/boot/efi&#x000A;$ cd /mnt/gentoo&#x000A;$ # (stage3 と portage を落としてきて展開)&#x000A;$ mount -t proc none proc&#x000A;$ mount --rbind /dev dev&#x000A;$ cp /etc/resolv.conf /mnt/gentoo/etc/&#x000A;$ chroot /mnt/gentoo /bin/bash&#x000A;$ env-update&#x000A;$ source /etc/profile&#x000A;$ export PS1="(chroot) $PS1"&#x000A;&#x000A;$ # タイムゾーンの設定&#x000A;$ # (BIOS の設定に応じて /etc/conf.d/hwclock で clock="local" にする必要があるかも。うまいことやって)&#x000A;$ cp -p /usr/share/zoneinfo/Asia/Tokyo /etc/localtime&#x000A;&#x000A;$ # make.conf の設定とか&#x000A;$ nano -w /etc/portage/make.conf&#x000A;$ mirrorselect -i -o &gt;&gt; /mnt/gentoo/etc/make.conf&#x000A;$ emerge --sync&#x000A;&#x000A;$ # /usr/src/linux の symlink を常に最新にしてくれるように、カーネルに symlink フラグを設定&#x000A;$ echo 'sys-kernel/gentoo-sources symlink' &gt;&gt; /etc/portage/package.use&#x000A;&#x000A;$ # システムの profile を変更 (default/linux/amd64/13.0/desktop/gnome/systemd にした)&#x000A;$ eselect profile list&#x000A;$ eselect profile set NUM&#x000A;&#x000A;$ # カーネルをビルドするための準備 (ついでに vim と eix も入れておく)&#x000A;$ emerge -av -j5 gentoo-sources vim eix&#x000A;$ # (/usr/src/linux/.config をうまいこと生成する)&#x000A;&#x000A;$ # このひとが起動してくるとインターネットに支障があるので切る&#x000A;$ systemctl disable dhcpcd</pre><h2>Kernel の設定</h2><p>Systemd を使う場合、推奨されている設定があるので必要なものは有効にしておく。
+<a href="https://wiki.gentoo.org/wiki/Systemd" target="_blank"></a><a href="https://wiki.gentoo.org/wiki/Systemd">https://wiki.gentoo.org/wiki/Systemd</a> を参考に。</p><p>加えて <code>CONFIG_CMDLINE</code> の設定も必要。<a href="http://hrysd.hatenablog.com/entry/2013/10/02/231108" target="_blank">この記事</a>を参考に。</p><pre class="highlight plaintext">CONFIG_CMDLINE="root=/dev/sda3 init=/usr/lib/systemd/systemd"</pre><p>それから、<code>EFI</code> のつく設定はだいたい y にした。</p><p><a href="https://gist.github.com/ursm/3972978" target="_blank"> このスクリプト</a> を <code>/etc/kernel/postinst.d/efi</code> に配置しておくと、カーネルのビルド後に適切な場所へイメージを配置してくれる。</p><h2>rc-update -&gt; systemctl</h2><p><a href="https://wiki.gentoo.org/wiki/Systemd" target="_blank"></a><a href="https://wiki.gentoo.org/wiki/Systemd">https://wiki.gentoo.org/wiki/Systemd</a> を参考に。</p><h2>次のインストールで</h2><ul>
+<li>まず時刻を正しくするんだ。<a href="http://www.gentoo.org/doc/ja/handbook/handbook-amd64.xml?full=1#book_part1_chap5__chap1_sect1" target="_blank">Gentoo ハンドブック</a>にもそう書いてる</li>
+<li>Systemd で NetworkManager を有効にするの、最後あたりがいいかも</li>
+</ul>
+<p>時刻を適当なままにしておいたおかげで、必要な Perl パッケージがインストールできなくなる悲しい時間の浪費があった。
+設定は Systemd の <code>timedatectl</code> でやれる。
+<code>RTC in local TZ</code> を設定しようとしたら、完全にサポートしてないみたいなことを言われたので BIOS の時刻を UTC にした。</p><p>NetworkManager がうまく起動しない問題があって、権限に絡む問題みたいだけど、結局原因はよくわからなかった。
+<code>/etc/dbus-1/system.d/org.freedesktop.NetworkManager.conf</code> の <code>&lt;policy context="default"&gt;</code> 下を弄って無理矢理解決したけど別の問題がありそうで心配。
+<code>systemctl enable NetworkManager.service</code> するのが早すぎたりしたのかなと想像してるけどよくわからない。</p><h2>See also</h2><ul>
+<li><a href="http://www.gentoo.org/doc/ja/handbook/handbook-amd64.xml?full=1" target="_blank">Gentoo Linux AMD64 ハンドブック</a></li>
+<li><a href="http://hrysd.hatenablog.com/entry/2013/10/02/231108" target="_blank">UEFI Boot な Gentoo をインストール - :soy_milk:</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/Systemd" target="_blank">systemd - Gentoo Wiki</a></li>
+<li><a href="https://gist.github.com/ursm/3972978" target="_blank">/etc/kernel/postinst.d/efi</a></li>
+</ul>
+</article>
+<article class='article'>
+<h1 class='date'><a href="/entries/20140215.html">2014-02-15</a></h1>
+<h1 class='retter_entry_article' id='retter_entry_article_20140215a0'>
+<a href="/entries/20140215/a0.html">Rewriting Retter gem</a>
 </h1>
 <p>Next version will be 1.0.0 (<a href="https://github.com/hibariya/retter/compare/eccee81600d16eadba15e55e80e7fcf6200d83e2...3a2d73b3afd3b54d62425dc2fea7ff881767dd28" target="_blank">Current changes</a>).</p>
 </article>
@@ -66,21 +89,11 @@ JRAのサイトは使いづらいのでどうにかしてほしい。</p>
 <a href="/entries/20130105/a0.html">reditor gem を更新した</a>
 </h1>
 <p><a href="https://github.com/hibariya/reditor">Reditor</a> は、gem や pure ruby な Ruby 標準添付ライブラリを $EDITOR で開くためのコマンドラインツールで、インストールすると bundle open や gem edit に似たコマンド reditor を使えるようになる。
-今回はライブラリが見つからなかったときに候補を出す機能を追加したのだった。</p><p>require するときは active_support なのに gem の名前は activesupport みたいな gem が結構あって、じゃあ reditor で開くときは今までどんな感じだったかというと、</p><pre class="highlight shell">  <span class="nv">$ </span>reditor activesupport  <span class="c"># 開ける</span>
-  <span class="nv">$ </span>reditor active_support <span class="c"># 開けない</span>
-</pre><p>という感じ。
+今回はライブラリが見つからなかったときに候補を出す機能を追加したのだった。</p><p>require するときは active_support なのに gem の名前は activesupport みたいな gem が結構あって、じゃあ reditor で開くときは今までどんな感じだったかというと、</p><pre class="highlight shell">  <span class="nv">$ </span>reditor activesupport  <span class="c"># 開ける</span>&#x000A;  <span class="nv">$ </span>reditor active_support <span class="c"># 開けない</span></pre><p>という感じ。
 gem によって "アンダースコアが入るか入らないか" とか、他にも "名前が単数形か複数形か" とか忘れてしまうことは割とある。
 開きたい gem を普段使っていなかったり gem の名前がキラキラしていれば尚更忘れやすい。
 だけどこういう、名前を曖昧にしか思い出せないときにあっけなく失敗してしまうのは悲しい。
-そこで、与えられた名前でライブラリを見つけられなかったときには候補っぽいものを出して選べるようにした。</p><pre class="highlight shell"><span class="gp">$ </span>reditor active_support
-<span class="o">[</span>0] actionmailer
-<span class="o">[</span>1] actionpack
-<span class="o">[</span>2] activemodel
-<span class="o">[</span>3] activerecord
-<span class="o">[</span>4] activeresource
-<span class="o">[</span>5] activesupport
-Choose number of library <span class="o">[</span>0]&gt; 5 <span class="c"># activesupport を開ける</span>
-</pre><p>一覧は単純にソートしているだけで、本来なら activesupport が一番上に来て欲しいところだけど、それは追々。
+そこで、与えられた名前でライブラリを見つけられなかったときには候補っぽいものを出して選べるようにした。</p><pre class="highlight shell"><span class="gp">$ </span>reditor active_support&#x000A;<span class="o">[</span>0] actionmailer&#x000A;<span class="o">[</span>1] actionpack&#x000A;<span class="o">[</span>2] activemodel&#x000A;<span class="o">[</span>3] activerecord&#x000A;<span class="o">[</span>4] activeresource&#x000A;<span class="o">[</span>5] activesupport&#x000A;Choose number of library <span class="o">[</span>0]&gt; 5 <span class="c"># activesupport を開ける</span></pre><p>一覧は単純にソートしているだけで、本来なら activesupport が一番上に来て欲しいところだけど、それは追々。
 gem の名前をある程度適当に与えても候補から選べるようになったので、思い出すための面倒な手間が減りそう。</p>
 <h1 class='retter_entry_article' id='retter_entry_article_20130105a1'>
 <a href="/entries/20130105/a1.html">cline gem を更新した</a>
@@ -88,33 +101,8 @@ gem の名前をある程度適当に与えても候補から選べるように�
 <p><a href="https://github.com/hibariya/cline">Cline</a> は、フィードとか GitHub の Activity を収集(一定周期でポーリング)してきて、terminal で簡単に垂れ流し表示するためにつくったやつ。</p><p>コミットログを見る感じだと数カ月ぶりのバージョンアップ。
 <a href="https://rubygems.org/gems/cline/">cline</a> をリリースした。
 サブコマンドの使い方が変わってしまったのでメジャーバージョンをひとつインクリメント。</p><h3>デーモン化できるようにした</h3><p>今の使い方だと screen を起動すると 3 つの cline プロセスが起動するようになっていて、ひとつあたりのメモリ使用量が割と多めなのだった。
-この更新で、cline のサーバを起動できるようにして、サーバが起動していたらそれ以降に起動したプロセスは socket 越しにいろいろ取りに行くようにした。</p><p>起動とか停止とか:</p><pre class="highlight shell">  <span class="nv">$ </span>cline server start   <span class="c"># 起動</span>
-  <span class="nv">$ </span>cline server stop    <span class="c"># 停止</span>
-  <span class="nv">$ </span>cline server reload  <span class="c"># ~/.cline/config の再読み込み</span>
-</pre><p>.zshrc などにこういうのを貼り付けておいて勝手に起動してくれるようにすると良さそう。</p><pre class="highlight shell"><span class="k">if</span> ! <span class="o">[</span> -e ~/.cline/cline.sock <span class="o">]</span> ; <span class="k">then
-  </span>cline server start
-<span class="k">fi</span>
-</pre><h3>tick コマンドの使い方が変わった</h3><pre class="highlight shell">  <span class="nv">$ </span>cline tick OFFSET INTERVAL
-</pre><p>から</p><pre class="highlight shell">  <span class="nv">$ </span>cline tick INTERVAL OFFSET
-</pre><p>に変更。
+この更新で、cline のサーバを起動できるようにして、サーバが起動していたらそれ以降に起動したプロセスは socket 越しにいろいろ取りに行くようにした。</p><p>起動とか停止とか:</p><pre class="highlight shell">  <span class="nv">$ </span>cline server start   <span class="c"># 起動</span>&#x000A;  <span class="nv">$ </span>cline server stop    <span class="c"># 停止</span>&#x000A;  <span class="nv">$ </span>cline server reload  <span class="c"># ~/.cline/config の再読み込み</span></pre><p>.zshrc などにこういうのを貼り付けておいて勝手に起動してくれるようにすると良さそう。</p><pre class="highlight shell"><span class="k">if</span> ! <span class="o">[</span> -e ~/.cline/cline.sock <span class="o">]</span> ; <span class="k">then&#x000A;  </span>cline server start&#x000A;<span class="k">fi</span></pre><h3>tick コマンドの使い方が変わった</h3><pre class="highlight shell">  <span class="nv">$ </span>cline tick OFFSET INTERVAL</pre><p>から</p><pre class="highlight shell">  <span class="nv">$ </span>cline tick INTERVAL OFFSET</pre><p>に変更。
 どちらも省略できるのだけど、offset よりは interval だけを指定することの方が多そうなので入れ替え。</p>
-</article>
-<article class='article'>
-<h1 class='date'><a href="/entries/20130102.html">2013-01-02</a></h1>
-<h1 class='retter_entry_article' id='retter_entry_article_20130102a0'>
-<a href="/entries/20130102/a0.html">PROMPTを2階建てにした</a>
-</h1>
-<p>結構前からだったのだけど、oh-my-zsh が割と良くて乗り換えたはいいが気に入ったテーマだけは見つからなかったので自分で適当に変えたのだった。
-いままでは雑多な情報はRPROMPTに出すようにしていたのだけど、同僚から影響を受けて二階建てに。
-(Kinesis といい Funtoo といい、去年は何かと影響を受けまくり)</p><p><img src="/images/prompt_2013_1.png" alt="prompt_2013_1"></p><p>カスタマイズしているうちにごちゃごちゃしてしまった <a href="https://github.com/hibariya/config/blob/a7368884c6b39dff628ef9fc75ce595a5a96d878/_zsh/oh-my-zsh#L56">PROMPT</a> が出しているのはこんなの。</p><ul>
-<li>ユーザ@ホスト:今居る場所</li>
-<li>時刻</li>
-<li>直前のコマンドの戻り値</li>
-<li>Ruby のバージョン</li>
-<li>git リポジトリの状態・ハッシュの先頭数文字・ブランチ</li>
-<li>$SHLVL</li>
-</ul>
-<p>いろいろ表示している情報はたまに便利に思うこともあるけど、割と自己満足なので<code>PROMPT="%% "</code>とかにしてもたぶん生活には困らない。</p><p>今年もよろしくお願いします。</p>
 </article>
 </div>
 </div>
@@ -125,7 +113,10 @@ gem の名前をある程度適当に与えても候補から選べるように�
 <div class='recent-entries'>
 <ul>
 <li>
-<a href="/entries/20140216/a0.html">Rewriting Retter gem</a>
+<a href="/entries/20140216/a0.html">Installing Gentoo linux with UEFI boot</a>
+</li>
+<li>
+<a href="/entries/20140215/a0.html">Rewriting Retter gem</a>
 </li>
 <li>
 <a href="/entries/20130418/a0.html">春から学生になった</a>
@@ -138,9 +129,6 @@ gem の名前をある程度適当に与えても候補から選べるように�
 </li>
 <li>
 <a href="/entries/20130105/a1.html">cline gem を更新した</a>
-</li>
-<li>
-<a href="/entries/20130102/a0.html">PROMPTを2階建てにした</a>
 </li>
 </ul>
 <div class='archives'><a href="/entries.html">Archives</a></div>

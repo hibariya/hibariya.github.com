@@ -33,25 +33,7 @@
 <a href="/entries/20111003/a0.html">モジュール関数がprivateな理由</a>
 </h1>
 <p><a href="http://rurema.clear-code.com/1.9.2/method/Module/i/module_function.html">モジュール関数</a>
-というものがあって、ぼくはこれまでモジュール関数を「モジュールをレシーバにしても呼び出せるしincludeして呼び出すこともできる何だか便利なもの」としか認識していなかった。</p><p>こういうふうに。</p><pre class="highlight ruby">  <span class="k">module</span> <span class="nn">MyModule</span>
-    <span class="kp">extend</span> <span class="nb">self</span>
-
-    <span class="k">def</span> <span class="nf">greet</span>
-      <span class="s1">'fart'</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="no">MyModule</span><span class="p">.</span><span class="nf">greet</span>   <span class="c1"># =&gt; "fart"</span>
-
-  <span class="kp">include</span> <span class="no">MyModule</span>
-  <span class="n">greet</span>            <span class="c1"># =&gt; "fart"</span>
-  <span class="nb">self</span><span class="p">.</span><span class="nf">greet</span>       <span class="c1"># =&gt; "fart"</span>
-</pre><p>でもこれはモジュール関数じゃなかった。</p><p>るりまの説明をよく見てみると「モジュール関数とは、プライベートメソッドであると同時に モジュールの特異メソッドでもあるようなメソッドです。」と書いてある。ぎぎぎ何だか面倒くさいな。</p><p>Rubyでprivateメソッドと言えば、呼び出しのときにレシーバを指定できないメソッドのことを指す。試しに、よく例に使われる<code>Math.#sqrt</code>で確認してみる。</p><pre class="highlight ruby">  <span class="no">Math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># =&gt; 10.0</span>
-
-  <span class="kp">include</span> <span class="no">Math</span>
-  <span class="n">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>      <span class="c1"># =&gt; 10.0</span>
-  <span class="nb">self</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># =&gt; NoMethodError: private method `sqrt' called for ...</span>
-</pre><p>うげげ、本当だ。今まで知らずに使っていたけれど、きみはprivateだったのか。なんで？</p><p>その後何日間もこのことで悩み続けてしまったのだけど、敗因は「モジュール関数がprivateメソッドとはどういうことだろう」と考えてしまっていたからだった。
+というものがあって、ぼくはこれまでモジュール関数を「モジュールをレシーバにしても呼び出せるしincludeして呼び出すこともできる何だか便利なもの」としか認識していなかった。</p><p>こういうふうに。</p><pre class="highlight ruby">  <span class="k">module</span> <span class="nn">MyModule</span>&#x000A;    <span class="kp">extend</span> <span class="nb">self</span>&#x000A;&#x000A;    <span class="k">def</span> <span class="nf">greet</span>&#x000A;      <span class="s1">'fart'</span>&#x000A;    <span class="k">end</span>&#x000A;  <span class="k">end</span>&#x000A;&#x000A;  <span class="no">MyModule</span><span class="p">.</span><span class="nf">greet</span>   <span class="c1"># =&gt; "fart"</span>&#x000A;&#x000A;  <span class="kp">include</span> <span class="no">MyModule</span>&#x000A;  <span class="n">greet</span>            <span class="c1"># =&gt; "fart"</span>&#x000A;  <span class="nb">self</span><span class="p">.</span><span class="nf">greet</span>       <span class="c1"># =&gt; "fart"</span></pre><p>でもこれはモジュール関数じゃなかった。</p><p>るりまの説明をよく見てみると「モジュール関数とは、プライベートメソッドであると同時に モジュールの特異メソッドでもあるようなメソッドです。」と書いてある。ぎぎぎ何だか面倒くさいな。</p><p>Rubyでprivateメソッドと言えば、呼び出しのときにレシーバを指定できないメソッドのことを指す。試しに、よく例に使われる<code>Math.#sqrt</code>で確認してみる。</p><pre class="highlight ruby">  <span class="no">Math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># =&gt; 10.0</span>&#x000A;&#x000A;  <span class="kp">include</span> <span class="no">Math</span>&#x000A;  <span class="n">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>      <span class="c1"># =&gt; 10.0</span>&#x000A;  <span class="nb">self</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># =&gt; NoMethodError: private method `sqrt' called for ...</span></pre><p>うげげ、本当だ。今まで知らずに使っていたけれど、きみはprivateだったのか。なんで？</p><p>その後何日間もこのことで悩み続けてしまったのだけど、敗因は「モジュール関数がprivateメソッドとはどういうことだろう」と考えてしまっていたからだった。
 「<em>関数</em>にレシーバがないのは自然だなあ」と思えたら何も悩むことはなかったのだけど。</p><p>モジュール関数は実際はメソッドだけど、あくまで関数のように使うためのものなのだった。</p><p>Rubyには関数風メソッドやモジュール関数とよばれるものが存在するけど、厳密には関数は存在しない。
 モジュール関数がprivateなのは、メソッドでありながら、レシーバを意識しない「関数」のようなものになるためだった。
 モジュール関数はprivateなので、レシーバは自動的にselfになるけど、その関数とselfの間にはなんの関わりもない（ものとして実装されるべき）。</p><p>確かに「関数」と名前がついているものにレシーバがあるほうがよっぽどおかしい。
@@ -65,7 +47,10 @@
 <div class='recent-entries'>
 <ul>
 <li>
-<a href="/entries/20140216/a0.html">Rewriting Retter gem</a>
+<a href="/entries/20140216/a0.html">Installing Gentoo linux with UEFI boot</a>
+</li>
+<li>
+<a href="/entries/20140215/a0.html">Rewriting Retter gem</a>
 </li>
 <li>
 <a href="/entries/20130418/a0.html">春から学生になった</a>
@@ -78,9 +63,6 @@
 </li>
 <li>
 <a href="/entries/20130105/a1.html">cline gem を更新した</a>
-</li>
-<li>
-<a href="/entries/20130102/a0.html">PROMPTを2階建てにした</a>
 </li>
 </ul>
 <div class='archives'><a href="/entries.html">Archives</a></div>

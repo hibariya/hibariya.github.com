@@ -33,13 +33,7 @@
 <a href="/entries/20120731/a0.html">簡単に Ruby のリファレンス・マニュアルを開く ruremai を色々直した</a>
 </h1>
 <p>気がついたら色々な人から良い感じのパッチをもらったので取り込んで <a href="https://rubygems.org/gems/ruremai">0.0.3</a> をリリースしました。</p><p><a href="https://github.com/hibariya/ruremai">Ruremai</a> はirbなどを使っている際に、メソッドのリファレンス・マニュアルをお手軽にブラウザで開くためのツールです。
-<code>require 'ruremai'</code> すると、Method#rurema! が追加されます。</p><p>例えば、「何かそれっぽいメソッドが記憶の片隅にあるんだけど、使い方がイマイチ思い出せない」ようなときに便利。</p><pre class="highlight plaintext">hibariya@ ;-) irb
-&gt;&gt; require 'ruremai'
-=&gt; false
-&gt;&gt; ary = %w(alice bob carol)
-=&gt; ["alice", "bob", "carol"]
-&gt;&gt; ary.method(:any?).rurema! # ここで唐突にブラウザが開く!
-</pre><p>今回はいくつかの修正や機能追加があったのでした。</p><ul>
+<code>require 'ruremai'</code> すると、Method#rurema! が追加されます。</p><p>例えば、「何かそれっぽいメソッドが記憶の片隅にあるんだけど、使い方がイマイチ思い出せない」ようなときに便利。</p><pre class="highlight plaintext">hibariya@ ;-) irb&#x000A;&gt;&gt; require 'ruremai'&#x000A;=&gt; false&#x000A;&gt;&gt; ary = %w(alice bob carol)&#x000A;=&gt; ["alice", "bob", "carol"]&#x000A;&gt;&gt; ary.method(:any?).rurema! # ここで唐突にブラウザが開く!</pre><p>今回はいくつかの修正や機能追加があったのでした。</p><ul>
 <li><a href="https://github.com/hibariya/ruremai/pull/1">ショートカット Object#mean? の追加</a></li>
 <li><a href="https://github.com/hibariya/ruremai/pull/2">大文字を含むメソッド名に対応できていなかったバグの修正</a></li>
 <li><a href="https://github.com/hibariya/ruremai/pull/4">名前空間や特定のメソッドに対応できていなかったバグの修正と高速化</a></li>
@@ -54,7 +48,10 @@
 <div class='recent-entries'>
 <ul>
 <li>
-<a href="/entries/20140216/a0.html">Rewriting Retter gem</a>
+<a href="/entries/20140216/a0.html">Installing Gentoo linux with UEFI boot</a>
+</li>
+<li>
+<a href="/entries/20140215/a0.html">Rewriting Retter gem</a>
 </li>
 <li>
 <a href="/entries/20130418/a0.html">春から学生になった</a>
@@ -67,9 +64,6 @@
 </li>
 <li>
 <a href="/entries/20130105/a1.html">cline gem を更新した</a>
-</li>
-<li>
-<a href="/entries/20130102/a0.html">PROMPTを2階建てにした</a>
 </li>
 </ul>
 <div class='archives'><a href="/entries.html">Archives</a></div>

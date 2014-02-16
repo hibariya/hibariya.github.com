@@ -32,14 +32,7 @@
 <h1 class='retter_entry_article' id='retter_entry_article_20111107a0'>
 <a href="/entries/20111107/a0.html">RubyのProc#callをjavascriptの関数みたいに呼び出す（引数なし）</a>
 </h1>
-<pre class="highlight ruby">  <span class="k">class</span> <span class="nc">Proc</span>
-    <span class="n">alias_method</span> <span class="ss">:[]</span><span class="p">,</span> <span class="ss">:call</span>
-  <span class="k">end</span>
-
-  <span class="n">a</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="s1">'hi'</span> <span class="p">}</span>
-
-  <span class="n">a</span><span class="o">[]</span> <span class="c1"># =&gt; "hi"</span>
-</pre><p>ブラケットをパーレンに読み替えると何かそれっぽい。くだらない。</p><p><strong>2011/11/08 追記</strong></p><p>ursm先生に教えてもらったのだけど、作らなくても <code>Proc#[]</code> は既にありました。
+<pre class="highlight ruby">  <span class="k">class</span> <span class="nc">Proc</span>&#x000A;    <span class="n">alias_method</span> <span class="ss">:[]</span><span class="p">,</span> <span class="ss">:call</span>&#x000A;  <span class="k">end</span>&#x000A;&#x000A;  <span class="n">a</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="s1">'hi'</span> <span class="p">}</span>&#x000A;&#x000A;  <span class="n">a</span><span class="o">[]</span> <span class="c1"># =&gt; "hi"</span></pre><p>ブラケットをパーレンに読み替えると何かそれっぽい。くだらない。</p><p><strong>2011/11/08 追記</strong></p><p>ursm先生に教えてもらったのだけど、作らなくても <code>Proc#[]</code> は既にありました。
 もしかしてくだらなくなかったのか。実際に使ってる事例（こう使うといいよ的な）とかあるのか気になる。</p>
 </article>
 <div id='comments'><div id='disqus_thread'>
@@ -61,7 +54,10 @@
 <div class='recent-entries'>
 <ul>
 <li>
-<a href="/entries/20140216/a0.html">Rewriting Retter gem</a>
+<a href="/entries/20140216/a0.html">Installing Gentoo linux with UEFI boot</a>
+</li>
+<li>
+<a href="/entries/20140215/a0.html">Rewriting Retter gem</a>
 </li>
 <li>
 <a href="/entries/20130418/a0.html">春から学生になった</a>
@@ -74,9 +70,6 @@
 </li>
 <li>
 <a href="/entries/20130105/a1.html">cline gem を更新した</a>
-</li>
-<li>
-<a href="/entries/20130102/a0.html">PROMPTを2階建てにした</a>
 </li>
 </ul>
 <div class='archives'><a href="/entries.html">Archives</a></div>

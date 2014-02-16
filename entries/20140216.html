@@ -30,9 +30,25 @@
 <div id='content'><article class='article'>
 <h1 class='date'><a href="/entries/20140216.html">2014-02-16</a></h1>
 <h1 class='retter_entry_article' id='retter_entry_article_20140216a0'>
-<a href="/entries/20140216/a0.html">Rewriting Retter gem</a>
+<a href="/entries/20140216/a0.html">Installing Gentoo linux with UEFI boot</a>
 </h1>
-<p>Next version will be 1.0.0 (<a href="https://github.com/hibariya/retter/compare/eccee81600d16eadba15e55e80e7fcf6200d83e2...3a2d73b3afd3b54d62425dc2fea7ff881767dd28" target="_blank">Current changes</a>).</p>
+<p>年末に Funtoo でアップデートに失敗して、依存関係を何だかよくわからないちぐはぐな状態にしてしまったので、一旦環境を捨てて Gentoo を試してみることにした。
+その頃ちょうど Funtoo で <a href="http://bugs.funtoo.org/browse/FL-948">GNOME の入れ直しが難しい</a> 状態になっていて、どうせ入れ直すなら Gentoo の方が楽そうという理由から。</p><p>そのときの記録を (断片的だけどだいたい順番に) 残しておく。
+足りない分はだいたい <a href="http://www.gentoo.org/doc/ja/handbook/handbook-amd64.xml?full=1">Gentoo Linux AMD64 ハンドブック</a> と同じ。</p><pre class="highlight plaintext">$ # パーティションの作成&#x000A;$ parted&#x000A;(parted) mklabel gpt&#x000A;(parted) mkpart primary fat32 0% 512m&#x000A;(parted) set 1 boot on&#x000A;(parted) mkpart primary linux-swap 512m 1024m&#x000A;(parted) mkpart pimrary ext4 1024m -1s&#x000A;&#x000A;$ # ファイルシステムの作成&#x000A;$ mkfs.vfat -F 32 /dev/sda1&#x000A;$ mkswap /dev/sda2&#x000A;$ swapon /dev/sda2&#x000A;$ mkfs.ext4 /dev/sda3&#x000A;&#x000A;$ # ファイルシステムのマウント、chroot&#x000A;$ mount /dev/sda3 /mnt/gentoo&#x000A;$ mkdir -p /mnt/gentoo/boot/efi&#x000A;$ mount /dev/sda1 /mnt/gentoo/boot/efi&#x000A;$ cd /mnt/gentoo&#x000A;$ # (stage3 と portage を落としてきて展開)&#x000A;$ mount -t proc none proc&#x000A;$ mount --rbind /dev dev&#x000A;$ cp /etc/resolv.conf /mnt/gentoo/etc/&#x000A;$ chroot /mnt/gentoo /bin/bash&#x000A;$ env-update&#x000A;$ source /etc/profile&#x000A;$ export PS1="(chroot) $PS1"&#x000A;&#x000A;$ # タイムゾーンの設定&#x000A;$ # (BIOS の設定に応じて /etc/conf.d/hwclock で clock="local" にする必要があるかも。うまいことやって)&#x000A;$ cp -p /usr/share/zoneinfo/Asia/Tokyo /etc/localtime&#x000A;&#x000A;$ # make.conf の設定とか&#x000A;$ nano -w /etc/portage/make.conf&#x000A;$ mirrorselect -i -o &gt;&gt; /mnt/gentoo/etc/make.conf&#x000A;$ emerge --sync&#x000A;&#x000A;$ # /usr/src/linux の symlink を常に最新にしてくれるように、カーネルに symlink フラグを設定&#x000A;$ echo 'sys-kernel/gentoo-sources symlink' &gt;&gt; /etc/portage/package.use&#x000A;&#x000A;$ # システムの profile を変更 (default/linux/amd64/13.0/desktop/gnome/systemd にした)&#x000A;$ eselect profile list&#x000A;$ eselect profile set NUM&#x000A;&#x000A;$ # カーネルをビルドするための準備 (ついでに vim と eix も入れておく)&#x000A;$ emerge -av -j5 gentoo-sources vim eix&#x000A;$ # (/usr/src/linux/.config をうまいこと生成する)&#x000A;&#x000A;$ # このひとが起動してくるとインターネットに支障があるので切る&#x000A;$ systemctl disable dhcpcd</pre><h2>Kernel の設定</h2><p>Systemd を使う場合、推奨されている設定があるので必要なものは有効にしておく。
+<a href="https://wiki.gentoo.org/wiki/Systemd" target="_blank"></a><a href="https://wiki.gentoo.org/wiki/Systemd">https://wiki.gentoo.org/wiki/Systemd</a> を参考に。</p><p>加えて <code>CONFIG_CMDLINE</code> の設定も必要。<a href="http://hrysd.hatenablog.com/entry/2013/10/02/231108" target="_blank">この記事</a>を参考に。</p><pre class="highlight plaintext">CONFIG_CMDLINE="root=/dev/sda3 init=/usr/lib/systemd/systemd"</pre><p>それから、<code>EFI</code> のつく設定はだいたい y にした。</p><p><a href="https://gist.github.com/ursm/3972978" target="_blank"> このスクリプト</a> を <code>/etc/kernel/postinst.d/efi</code> に配置しておくと、カーネルのビルド後に適切な場所へイメージを配置してくれる。</p><h2>rc-update -&gt; systemctl</h2><p><a href="https://wiki.gentoo.org/wiki/Systemd" target="_blank"></a><a href="https://wiki.gentoo.org/wiki/Systemd">https://wiki.gentoo.org/wiki/Systemd</a> を参考に。</p><h2>次のインストールで</h2><ul>
+<li>まず時刻を正しくするんだ。<a href="http://www.gentoo.org/doc/ja/handbook/handbook-amd64.xml?full=1#book_part1_chap5__chap1_sect1" target="_blank">Gentoo ハンドブック</a>にもそう書いてる</li>
+<li>Systemd で NetworkManager を有効にするの、最後あたりがいいかも</li>
+</ul>
+<p>時刻を適当なままにしておいたおかげで、必要な Perl パッケージがインストールできなくなる悲しい時間の浪費があった。
+設定は Systemd の <code>timedatectl</code> でやれる。
+<code>RTC in local TZ</code> を設定しようとしたら、完全にサポートしてないみたいなことを言われたので BIOS の時刻を UTC にした。</p><p>NetworkManager がうまく起動しない問題があって、権限に絡む問題みたいだけど、結局原因はよくわからなかった。
+<code>/etc/dbus-1/system.d/org.freedesktop.NetworkManager.conf</code> の <code>&lt;policy context="default"&gt;</code> 下を弄って無理矢理解決したけど別の問題がありそうで心配。
+<code>systemctl enable NetworkManager.service</code> するのが早すぎたりしたのかなと想像してるけどよくわからない。</p><h2>See also</h2><ul>
+<li><a href="http://www.gentoo.org/doc/ja/handbook/handbook-amd64.xml?full=1" target="_blank">Gentoo Linux AMD64 ハンドブック</a></li>
+<li><a href="http://hrysd.hatenablog.com/entry/2013/10/02/231108" target="_blank">UEFI Boot な Gentoo をインストール - :soy_milk:</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/Systemd" target="_blank">systemd - Gentoo Wiki</a></li>
+<li><a href="https://gist.github.com/ursm/3972978" target="_blank">/etc/kernel/postinst.d/efi</a></li>
+</ul>
 </article>
 </div>
 <aside id='sidebar'>
@@ -42,7 +58,10 @@
 <div class='recent-entries'>
 <ul>
 <li>
-<a href="/entries/20140216/a0.html">Rewriting Retter gem</a>
+<a href="/entries/20140216/a0.html">Installing Gentoo linux with UEFI boot</a>
+</li>
+<li>
+<a href="/entries/20140215/a0.html">Rewriting Retter gem</a>
 </li>
 <li>
 <a href="/entries/20130418/a0.html">春から学生になった</a>
@@ -55,9 +74,6 @@
 </li>
 <li>
 <a href="/entries/20130105/a1.html">cline gem を更新した</a>
-</li>
-<li>
-<a href="/entries/20130102/a0.html">PROMPTを2階建てにした</a>
 </li>
 </ul>
 <div class='archives'><a href="/entries.html">Archives</a></div>

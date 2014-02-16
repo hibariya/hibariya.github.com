@@ -32,8 +32,7 @@
 <h1 class='retter_entry_article' id='retter_entry_article_20120329a0'>
 <a href="/entries/20120329/a0.html">所在の分からないWARNINGが出力されるときのこと</a>
 </h1>
-<p>Railsを使ってるときとかにActiveSupport::MemoizableがDEPRECATEDだとかそんなWARNINGっぽいメッセージがどこからともなく出てくるときのこと。</p><p>ひとまずraiseする。IOで出力する系のメソッドたちはだいたい最後にwriteを呼ぶ筈なので、writeを上書きしてる。</p><pre class="highlight ruby"><span class="k">def</span> <span class="nc">STDERR</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">raise</span> <span class="k">end</span>
-</pre><p>Railsだと<code>config/application.rb</code>の頭あたりに書いておく。</p><p>起動してstacktraceを見ればどのgemが問題かだいたい分かるので<code>bundle update [gem name]</code>で問題のgemをupdateしてみると直っていたりする。
+<p>Railsを使ってるときとかにActiveSupport::MemoizableがDEPRECATEDだとかそんなWARNINGっぽいメッセージがどこからともなく出てくるときのこと。</p><p>ひとまずraiseする。IOで出力する系のメソッドたちはだいたい最後にwriteを呼ぶ筈なので、writeを上書きしてる。</p><pre class="highlight ruby"><span class="k">def</span> <span class="nc">STDERR</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">raise</span> <span class="k">end</span></pre><p>Railsだと<code>config/application.rb</code>の頭あたりに書いておく。</p><p>起動してstacktraceを見ればどのgemが問題かだいたい分かるので<code>bundle update [gem name]</code>で問題のgemをupdateしてみると直っていたりする。
 最新でも直ってなかったら自分で直してpull requestを送ったりする。</p>
 </article>
 <div id='comments'><div id='disqus_thread'>
@@ -55,7 +54,10 @@
 <div class='recent-entries'>
 <ul>
 <li>
-<a href="/entries/20140216/a0.html">Rewriting Retter gem</a>
+<a href="/entries/20140216/a0.html">Installing Gentoo linux with UEFI boot</a>
+</li>
+<li>
+<a href="/entries/20140215/a0.html">Rewriting Retter gem</a>
 </li>
 <li>
 <a href="/entries/20130418/a0.html">春から学生になった</a>
@@ -68,9 +70,6 @@
 </li>
 <li>
 <a href="/entries/20130105/a1.html">cline gem を更新した</a>
-</li>
-<li>
-<a href="/entries/20130102/a0.html">PROMPTを2階建てにした</a>
 </li>
 </ul>
 <div class='archives'><a href="/entries.html">Archives</a></div>

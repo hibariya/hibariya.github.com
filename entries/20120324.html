@@ -42,12 +42,7 @@ ERBとかが使えるようになります。</p><h2>固定ページの生成抑
 <li>entries.html</li>
 <li>feed.rss</li>
 </ul>
-<p>ページの生成を抑止する例です。Retterfileに追記します。</p><pre class="highlight ruby"><span class="c1"># prfile, entries, feed すべてを生成しない</span>
-<span class="n">allow_binding</span> <span class="ss">:none</span>
-
-<span class="c1"># entries, feedは生成する</span>
-<span class="n">allow_binding</span> <span class="o">[</span><span class="ss">:entries</span><span class="p">,</span> <span class="ss">:feed</span><span class="o">]</span>
-</pre><h2>日付指定の方法</h2><p><a href="https://github.com/mojombo/chronic">Chronic</a>を使うようになったので、今までより多くの方法で日付の指定ができるようになりました。
+<p>ページの生成を抑止する例です。Retterfileに追記します。</p><pre class="highlight ruby"><span class="c1"># prfile, entries, feed すべてを生成しない</span>&#x000A;<span class="n">allow_binding</span> <span class="ss">:none</span>&#x000A;&#x000A;<span class="c1"># entries, feedは生成する</span>&#x000A;<span class="n">allow_binding</span> <span class="o">[</span><span class="ss">:entries</span><span class="p">,</span> <span class="ss">:feed</span><span class="o">]</span></pre><h2>日付指定の方法</h2><p><a href="https://github.com/mojombo/chronic">Chronic</a>を使うようになったので、今までより多くの方法で日付の指定ができるようになりました。
 <code>retter edit this\ wednesday</code>とか指定できます。</p>
 </article>
 </div>
@@ -58,7 +53,10 @@ ERBとかが使えるようになります。</p><h2>固定ページの生成抑
 <div class='recent-entries'>
 <ul>
 <li>
-<a href="/entries/20140216/a0.html">Rewriting Retter gem</a>
+<a href="/entries/20140216/a0.html">Installing Gentoo linux with UEFI boot</a>
+</li>
+<li>
+<a href="/entries/20140215/a0.html">Rewriting Retter gem</a>
 </li>
 <li>
 <a href="/entries/20130418/a0.html">春から学生になった</a>
@@ -71,9 +69,6 @@ ERBとかが使えるようになります。</p><h2>固定ページの生成抑
 </li>
 <li>
 <a href="/entries/20130105/a1.html">cline gem を更新した</a>
-</li>
-<li>
-<a href="/entries/20130102/a0.html">PROMPTを2階建てにした</a>
 </li>
 </ul>
 <div class='archives'><a href="/entries.html">Archives</a></div>

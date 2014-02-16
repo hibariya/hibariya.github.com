@@ -38,39 +38,8 @@
 <li>ページング機能を強化できるようにした</li>
 <li>細かいバグ修正と、組込みデザインの細かい修正</li>
 </ul>
-<h2>相対的な日時の指定ができるようになった</h2><pre class="highlight plaintext">  retter edit yesterday    # 昨日
-  retter edit today        # 今日
-  retter edit tommorow     # 明日
-
-  retter edit '3 days ago' # 3日前
-  retter edit 3.days.ago   # 3日前
-  retter edit 3.days.since # 3日後
-  retter edit 1.week.ago   # 1週間前
-  retter edit 3.weeks.ago  # 3週間前
-  retter edit 3.months.ago # 3カ月前
-  retter edit 3.years.ago  # 3年前
-</pre><h2>これまでに書いた記事の一覧を見られるコマンドを追加した</h2><pre class="highlight plaintext">  retter list
-  [e0] 2011-10-12
-    記事ごとにPermlinkがつくようにした, retter 0.1.0
-
-  [e1] 2011-10-10
-    Rubyのトップレベルについて整理する
-
-  [e2] 2011-10-03
-    モジュール関数がprivateな理由
-
-  [e3] 2011-09-19
-    スタイルシートを追加してテーマを変えられるようにした
-</pre><h2>ページング機能を強化できるようにした</h2><p>HAMLテンプレート内の<code>entry</code>や<code>article</code>にページングのためのいくつかのメソッドを追加しました。
-これでページングをし易くなったり、 Autopagerize などへの対応ができるようになりました。</p><pre class="highlight html">%nav
-  .prev
-    - if prev_entry = entry.prev
-      %link{href: entry_path(prev_entry), rel: :prev}
-
-  .next
-    - if next_entry = entry.next
-      %link{href: entry_path(next_entry), rel: :next}
-</pre><h2>細かいバグ修正と、組込みデザインの細かい修正</h2><ul>
+<h2>相対的な日時の指定ができるようになった</h2><pre class="highlight plaintext">  retter edit yesterday    # 昨日&#x000A;  retter edit today        # 今日&#x000A;  retter edit tommorow     # 明日&#x000A;&#x000A;  retter edit '3 days ago' # 3日前&#x000A;  retter edit 3.days.ago   # 3日前&#x000A;  retter edit 3.days.since # 3日後&#x000A;  retter edit 1.week.ago   # 1週間前&#x000A;  retter edit 3.weeks.ago  # 3週間前&#x000A;  retter edit 3.months.ago # 3カ月前&#x000A;  retter edit 3.years.ago  # 3年前</pre><h2>これまでに書いた記事の一覧を見られるコマンドを追加した</h2><pre class="highlight plaintext">  retter list&#x000A;  [e0] 2011-10-12&#x000A;    記事ごとにPermlinkがつくようにした, retter 0.1.0&#x000A;&#x000A;  [e1] 2011-10-10&#x000A;    Rubyのトップレベルについて整理する&#x000A;&#x000A;  [e2] 2011-10-03&#x000A;    モジュール関数がprivateな理由&#x000A;&#x000A;  [e3] 2011-09-19&#x000A;    スタイルシートを追加してテーマを変えられるようにした</pre><h2>ページング機能を強化できるようにした</h2><p>HAMLテンプレート内の<code>entry</code>や<code>article</code>にページングのためのいくつかのメソッドを追加しました。
+これでページングをし易くなったり、 Autopagerize などへの対応ができるようになりました。</p><pre class="highlight html">%nav&#x000A;  .prev&#x000A;    - if prev_entry = entry.prev&#x000A;      %link{href: entry_path(prev_entry), rel: :prev}&#x000A;&#x000A;  .next&#x000A;    - if next_entry = entry.next&#x000A;      %link{href: entry_path(next_entry), rel: :next}</pre><h2>細かいバグ修正と、組込みデザインの細かい修正</h2><ul>
 <li>
 <code>retter -h</code> でヘルプが表示できない不具合を修正</li>
 <li>日付の表現方法を <code>2011/01/01</code> 形式から <code>2011-01-01</code> 形式に変更</li>
@@ -98,7 +67,10 @@
 <div class='recent-entries'>
 <ul>
 <li>
-<a href="/entries/20140216/a0.html">Rewriting Retter gem</a>
+<a href="/entries/20140216/a0.html">Installing Gentoo linux with UEFI boot</a>
+</li>
+<li>
+<a href="/entries/20140215/a0.html">Rewriting Retter gem</a>
 </li>
 <li>
 <a href="/entries/20130418/a0.html">春から学生になった</a>
@@ -111,9 +83,6 @@
 </li>
 <li>
 <a href="/entries/20130105/a1.html">cline gem を更新した</a>
-</li>
-<li>
-<a href="/entries/20130102/a0.html">PROMPTを2階建てにした</a>
 </li>
 </ul>
 <div class='archives'><a href="/entries.html">Archives</a></div>
