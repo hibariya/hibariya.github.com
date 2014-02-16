@@ -7,35 +7,36 @@
 <description>hibariya.github.com</description>
 <items>
 <rdf:Seq>
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20140216/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20140215/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20130418/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20130218/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20130105/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20130105/a1.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20130102/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20121206/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20121125/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20120928/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20120923/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20120830/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20120731/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20120723/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20120602/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20120505/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20120411/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20120329/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20120328/a0.html.html' />
-<rdf:li rdf:resource='http://hibariya.github.com/entries/20120326/a0.html.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20140216/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20140215/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20130418/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20130218/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20130105/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20130105/a1.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20130102/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20121206/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20121125/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120928/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120923/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120830/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120731/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120723/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120602/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120505/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120411/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120329/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120328/a0.html' />
+<rdf:li rdf:resource='http://hibariya.github.com/entries/20120326/a0.html' />
 </rdf:Seq>
 </items>
 </channel>
-<item rdf:about='http://hibariya.github.com/entries/20140216/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20140216/a0.html'>
 <title>Installing Gentoo linux with UEFI boot</title>
-<link>http://hibariya.github.com/entries/20140216/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20140216/a0.html</link>
 <dc:date>2014-02-15T15:00:00Z</dc:date>
 <description>年末に Funtoo でアップデートに失敗して、依存関係を何だかよくわからないちぐはぐな状態にしてしまったので、一旦環境を捨てて Gentoo を試してみることにした。
-その頃ちょうど Funtoo で GNOME の入れ直しが難しい 状態になっていて、どうせ入れ直すなら Gentoo の方が楽そうという理由から。そのときの記録を (断片的だけどだいたい順番に) 残しておく。
+その頃ちょうど Funtoo で GNOME の入れ直しが難しい 状態になっていて、どうせ入れ直すなら Gentoo の方が楽そうという理由から。
+そのときの記録を (断片的だけどだいたい順番に) 残しておく。
 足りない分はだいたい Gentoo Linux AMD64 ハンドブック と同じ。$ # パーティションの作成
 $ parted
 (parted) mklabel gpt
@@ -105,9 +106,10 @@ systemd - Gentoo Wiki
 <content:encoded>
 <![CDATA[
     <p>年末に Funtoo でアップデートに失敗して、依存関係を何だかよくわからないちぐはぐな状態にしてしまったので、一旦環境を捨てて Gentoo を試してみることにした。
-    その頃ちょうど Funtoo で <a href="http://bugs.funtoo.org/browse/FL-948">GNOME の入れ直しが難しい</a> 状態になっていて、どうせ入れ直すなら Gentoo の方が楽そうという理由から。</p><p>そのときの記録を (断片的だけどだいたい順番に) 残しておく。
-    足りない分はだいたい <a href="http://www.gentoo.org/doc/ja/handbook/handbook-amd64.xml?full=1">Gentoo Linux AMD64 ハンドブック</a> と同じ。</p><pre class="highlight plaintext">$ # パーティションの作成&#x000A;    $ parted&#x000A;    (parted) mklabel gpt&#x000A;    (parted) mkpart primary fat32 0% 512m&#x000A;    (parted) set 1 boot on&#x000A;    (parted) mkpart primary linux-swap 512m 1024m&#x000A;    (parted) mkpart pimrary ext4 1024m -1s&#x000A;    &#x000A;    $ # ファイルシステムの作成&#x000A;    $ mkfs.vfat -F 32 /dev/sda1&#x000A;    $ mkswap /dev/sda2&#x000A;    $ swapon /dev/sda2&#x000A;    $ mkfs.ext4 /dev/sda3&#x000A;    &#x000A;    $ # ファイルシステムのマウント、chroot&#x000A;    $ mount /dev/sda3 /mnt/gentoo&#x000A;    $ mkdir -p /mnt/gentoo/boot/efi&#x000A;    $ mount /dev/sda1 /mnt/gentoo/boot/efi&#x000A;    $ cd /mnt/gentoo&#x000A;    $ # (stage3 と portage を落としてきて展開)&#x000A;    $ mount -t proc none proc&#x000A;    $ mount --rbind /dev dev&#x000A;    $ cp /etc/resolv.conf /mnt/gentoo/etc/&#x000A;    $ chroot /mnt/gentoo /bin/bash&#x000A;    $ env-update&#x000A;    $ source /etc/profile&#x000A;    $ export PS1="(chroot) $PS1"&#x000A;    &#x000A;    $ # タイムゾーンの設定&#x000A;    $ # (BIOS の設定に応じて /etc/conf.d/hwclock で clock="local" にする必要があるかも。うまいことやって)&#x000A;    $ cp -p /usr/share/zoneinfo/Asia/Tokyo /etc/localtime&#x000A;    &#x000A;    $ # make.conf の設定とか&#x000A;    $ nano -w /etc/portage/make.conf&#x000A;    $ mirrorselect -i -o &gt;&gt; /mnt/gentoo/etc/make.conf&#x000A;    $ emerge --sync&#x000A;    &#x000A;    $ # /usr/src/linux の symlink を常に最新にしてくれるように、カーネルに symlink フラグを設定&#x000A;    $ echo 'sys-kernel/gentoo-sources symlink' &gt;&gt; /etc/portage/package.use&#x000A;    &#x000A;    $ # システムの profile を変更 (default/linux/amd64/13.0/desktop/gnome/systemd にした)&#x000A;    $ eselect profile list&#x000A;    $ eselect profile set NUM&#x000A;    &#x000A;    $ # カーネルをビルドするための準備 (ついでに vim と eix も入れておく)&#x000A;    $ emerge -av -j5 gentoo-sources vim eix&#x000A;    $ # (/usr/src/linux/.config をうまいこと生成する)&#x000A;    &#x000A;    $ # このひとが起動してくるとインターネットに支障があるので切る&#x000A;    $ systemctl disable dhcpcd&#x000A;    </pre><h2>Kernel の設定</h2><p>Systemd を使う場合、推奨されている設定があるので必要なものは有効にしておく。
-    <a href="https://wiki.gentoo.org/wiki/Systemd" target="_blank"></a><a href="https://wiki.gentoo.org/wiki/Systemd">https://wiki.gentoo.org/wiki/Systemd</a> を参考に。</p><p>加えて <code>CONFIG_CMDLINE</code> の設定も必要。<a href="http://hrysd.hatenablog.com/entry/2013/10/02/231108" target="_blank">この記事</a>を参考に。</p><pre class="highlight plaintext">CONFIG_CMDLINE="root=/dev/sda3 init=/usr/lib/systemd/systemd"&#x000A;    </pre><p>それから、<code>EFI</code> のつく設定はだいたい y にした。</p><p><a href="https://gist.github.com/ursm/3972978" target="_blank"> このスクリプト</a> を <code>/etc/kernel/postinst.d/efi</code> に配置しておくと、カーネルのビルド後に適切な場所へイメージを配置してくれる。</p><h2>rc-update -&gt; systemctl</h2><p><a href="https://wiki.gentoo.org/wiki/Systemd" target="_blank"></a><a href="https://wiki.gentoo.org/wiki/Systemd">https://wiki.gentoo.org/wiki/Systemd</a> を参考に。</p><h2>次のインストールで</h2><ul>
+    その頃ちょうど Funtoo で <a href="http://bugs.funtoo.org/browse/FL-948" target="_blank">GNOME の入れ直しが難しい</a> 状態になっていて、どうせ入れ直すなら Gentoo の方が楽そうという理由から。
+    そのときの記録を (断片的だけどだいたい順番に) 残しておく。
+    足りない分はだいたい <a href="http://www.gentoo.org/doc/ja/handbook/handbook-amd64.xml?full=1" target="_blank">Gentoo Linux AMD64 ハンドブック</a> と同じ。</p><pre class="highlight plaintext">$ # パーティションの作成&#x000A;    $ parted&#x000A;    (parted) mklabel gpt&#x000A;    (parted) mkpart primary fat32 0% 512m&#x000A;    (parted) set 1 boot on&#x000A;    (parted) mkpart primary linux-swap 512m 1024m&#x000A;    (parted) mkpart pimrary ext4 1024m -1s&#x000A;    &#x000A;    $ # ファイルシステムの作成&#x000A;    $ mkfs.vfat -F 32 /dev/sda1&#x000A;    $ mkswap /dev/sda2&#x000A;    $ swapon /dev/sda2&#x000A;    $ mkfs.ext4 /dev/sda3&#x000A;    &#x000A;    $ # ファイルシステムのマウント、chroot&#x000A;    $ mount /dev/sda3 /mnt/gentoo&#x000A;    $ mkdir -p /mnt/gentoo/boot/efi&#x000A;    $ mount /dev/sda1 /mnt/gentoo/boot/efi&#x000A;    $ cd /mnt/gentoo&#x000A;    $ # (stage3 と portage を落としてきて展開)&#x000A;    $ mount -t proc none proc&#x000A;    $ mount --rbind /dev dev&#x000A;    $ cp /etc/resolv.conf /mnt/gentoo/etc/&#x000A;    $ chroot /mnt/gentoo /bin/bash&#x000A;    $ env-update&#x000A;    $ source /etc/profile&#x000A;    $ export PS1="(chroot) $PS1"&#x000A;    &#x000A;    $ # タイムゾーンの設定&#x000A;    $ # (BIOS の設定に応じて /etc/conf.d/hwclock で clock="local" にする必要があるかも。うまいことやって)&#x000A;    $ cp -p /usr/share/zoneinfo/Asia/Tokyo /etc/localtime&#x000A;    &#x000A;    $ # make.conf の設定とか&#x000A;    $ nano -w /etc/portage/make.conf&#x000A;    $ mirrorselect -i -o &gt;&gt; /mnt/gentoo/etc/make.conf&#x000A;    $ emerge --sync&#x000A;    &#x000A;    $ # /usr/src/linux の symlink を常に最新にしてくれるように、カーネルに symlink フラグを設定&#x000A;    $ echo 'sys-kernel/gentoo-sources symlink' &gt;&gt; /etc/portage/package.use&#x000A;    &#x000A;    $ # システムの profile を変更 (default/linux/amd64/13.0/desktop/gnome/systemd にした)&#x000A;    $ eselect profile list&#x000A;    $ eselect profile set NUM&#x000A;    &#x000A;    $ # カーネルをビルドするための準備 (ついでに vim と eix も入れておく)&#x000A;    $ emerge -av -j5 gentoo-sources vim eix&#x000A;    $ # (/usr/src/linux/.config をうまいこと生成する)&#x000A;    &#x000A;    $ # このひとが起動してくるとインターネットに支障があるので切る&#x000A;    $ systemctl disable dhcpcd&#x000A;    </pre><h2>Kernel の設定</h2><p>Systemd を使う場合、推奨されている設定があるので必要なものは有効にしておく。
+    <a href="https://wiki.gentoo.org/wiki/Systemd" target="_blank">https://wiki.gentoo.org/wiki/Systemd</a> を参考に。</p><p>加えて <code>CONFIG_CMDLINE</code> の設定も必要。<a href="http://hrysd.hatenablog.com/entry/2013/10/02/231108" target="_blank">この記事</a>を参考に。</p><pre class="highlight plaintext">CONFIG_CMDLINE="root=/dev/sda3 init=/usr/lib/systemd/systemd"&#x000A;    </pre><p>それから、<code>EFI</code> のつく設定はだいたい y にした。</p><p><a href="https://gist.github.com/ursm/3972978" target="_blank"> このスクリプト</a> を <code>/etc/kernel/postinst.d/efi</code> に配置しておくと、カーネルのビルド後に適切な場所へイメージを配置してくれる。</p><h2>rc-update -&gt; systemctl</h2><p><a href="https://wiki.gentoo.org/wiki/Systemd" target="_blank">https://wiki.gentoo.org/wiki/Systemd</a> を参考に。</p><h2>次のインストールで</h2><ul>
     <li>まず時刻を正しくするんだ。<a href="http://www.gentoo.org/doc/ja/handbook/handbook-amd64.xml?full=1#book_part1_chap5__chap1_sect1" target="_blank">Gentoo ハンドブック</a>にもそう書いてる</li>
     <li>Systemd で NetworkManager を有効にするの、最後あたりがいいかも</li>
     </ul>
@@ -124,9 +126,9 @@ systemd - Gentoo Wiki
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20140215/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20140215/a0.html'>
 <title>Rewriting Retter gem</title>
-<link>http://hibariya.github.com/entries/20140215/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20140215/a0.html</link>
 <dc:date>2014-02-14T15:00:00Z</dc:date>
 <description>Next version will be 1.0.0 (Current changes).</description>
 <content:encoded>
@@ -135,9 +137,9 @@ systemd - Gentoo Wiki
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20130418/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20130418/a0.html'>
 <title>春から学生になった</title>
-<link>http://hibariya.github.com/entries/20130418/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20130418/a0.html</link>
 <dc:date>2013-04-17T15:00:00Z</dc:date>
 <description>4月に、帝京大学理工学部情報科学科に入学した。通信教育課程なので、お仕事は継続。
 大学は mizzy さんのエントリ のおかげで知った。今年で28歳になった。
@@ -158,9 +160,9 @@ systemd - Gentoo Wiki
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20130218/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20130218/a0.html'>
 <title>東京競馬場へ馬をみにいった</title>
-<link>http://hibariya.github.com/entries/20130218/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20130218/a0.html</link>
 <dc:date>2013-02-17T15:00:00Z</dc:date>
 <description>前の2日間ほとんど自宅にこもって作業していたらとうとう集中できなくなったので、日曜日は奥さんと馬を見に行くことになった。
 競馬について何も知らないまま府中にある東京競馬場に行ったら、フェブラリーステークスといわれる割と大事そうなレースをやっていた。天気の良い日に目の前を全力で走っている馬を見るのはとっても刺激的で良い気分転換になるのでおすすめ。
@@ -179,9 +181,9 @@ JRAのサイトは使いづらいのでどうにかしてほしい。</descripti
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20130105/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20130105/a0.html'>
 <title>reditor gem を更新した</title>
-<link>http://hibariya.github.com/entries/20130105/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20130105/a0.html</link>
 <dc:date>2013-01-04T15:00:00Z</dc:date>
 <description>Reditor は、gem や pure ruby な Ruby 標準添付ライブラリを $EDITOR で開くためのコマンドラインツールで、インストールすると bundle open や gem edit に似たコマンド reditor を使えるようになる。
 今回はライブラリが見つからなかったときに候補を出す機能を追加したのだった。require するときは active_support なのに gem の名前は activesupport みたいな gem が結構あって、じゃあ reditor で開くときは今までどんな感じだったかというと、  $ reditor activesupport  # 開ける
@@ -212,9 +214,9 @@ gem の名前をある程度適当に与えても候補から選べるように�
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20130105/a1.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20130105/a1.html'>
 <title>cline gem を更新した</title>
-<link>http://hibariya.github.com/entries/20130105/a1.html.html</link>
+<link>http://hibariya.github.com/entries/20130105/a1.html</link>
 <dc:date>2013-01-04T15:00:00Z</dc:date>
 <description>Cline は、フィードとか GitHub の Activity を収集(一定周期でポーリング)してきて、terminal で簡単に垂れ流し表示するためにつくったやつ。コミットログを見る感じだと数カ月ぶりのバージョンアップ。
 cline をリリースした。
@@ -239,9 +241,9 @@ tick コマンドの使い方が変わった  $ cline tick OFFSET INTERVAL
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20130102/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20130102/a0.html'>
 <title>PROMPTを2階建てにした</title>
-<link>http://hibariya.github.com/entries/20130102/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20130102/a0.html</link>
 <dc:date>2013-01-01T15:00:00Z</dc:date>
 <description>結構前からだったのだけど、oh-my-zsh が割と良くて乗り換えたはいいが気に入ったテーマだけは見つからなかったので自分で適当に変えたのだった。
 いままでは雑多な情報はRPROMPTに出すようにしていたのだけど、同僚から影響を受けて二階建てに。
@@ -270,9 +272,9 @@ $SHLVL
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20121206/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20121206/a0.html'>
 <title>自宅用に Kinesis を買った</title>
-<link>http://hibariya.github.com/entries/20121206/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20121206/a0.html</link>
 <dc:date>2012-12-05T15:00:00Z</dc:date>
 <description>慣れたら使い心地良さそうだなーと思っていた Kinesis さん、いきなり仕事で使うと全然仕事が進まなくなるのでまずは自宅用に購入。
 以前同僚から貸し出してもらって挫折したこともあり、今回は少しは使える状態からスタート。
@@ -285,9 +287,9 @@ $SHLVL
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20121125/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20121125/a0.html'>
 <title>RubyConf 2012</title>
-<link>http://hibariya.github.com/entries/20121125/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20121125/a0.html</link>
 <dc:date>2012-11-24T15:00:00Z</dc:date>
 <description>先月末から今月の頭は角谷さんと RubyConf 2012 に行っていた。行きで寄ったロサンゼルスの気候は、勝手に想像していたカリフォルニアとだいたい一緒で、乾燥していたけどいい天気で過ごしやすかった。
 コロラド州デンバーは、空港からダウンタウンまでのタクシー窓からの景色が大自然すぎて、本当に屋根のあるところで開催されるのだろうかと心配になるほど。
@@ -344,16 +346,16 @@ Proc も 継続も、なんでも保存できるってすごい。
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20120928/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20120928/a0.html'>
 <title>Gentoo 環境を手に入れてた</title>
-<link>http://hibariya.github.com/entries/20120928/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20120928/a0.html</link>
 <dc:date>2012-09-27T15:00:00Z</dc:date>
 <description>この前 30% 割引をやっているのを同僚に教えてもらって Thinkpad の X230 を購入。
 半月くらいかけてねんがんの Gentoo (Funtoo) + Awesome WM 環境を手に入れた。
 細かいところはまだ設定が足りないけど、毎日問題なく使えている感じ。しいて言えばもっと大きな机を買えばよかった。参考にしたのは、
 http://lab.ursm.jp/blog/2011/08/28/funtoo-on-thinkpad-x220/
-http://www.thinkwiki.org/wiki/Installing_Gentoo_on_a_ThinkPad_X220
-http://www.funtoo.org/wiki/Funtoo_Linux_Installation
+http://www.thinkwiki.org/wiki/InstallingGentooonaThinkPad_X220
+http://www.funtoo.org/wiki/FuntooLinuxInstallation
 
 あたり。
 3つ目の画面は USB でつなぐ DisplayLink のアダプタをつかっていて、こことかを参考にしたら一応表示はできた（自分の設定に不備があるのか、使い勝手は最悪だけど）。それから、画面のミラーリングが解除できなかったり、ImageMagick が依存で入ってきたらいつの間にか壁紙が ImageMagick のおっさんの画像がすり替えられたり意味不明な現象が多発したので頭を抱えながらいろいろ手間取った結果、結局 ursm 先生の make.conf とかの設定を参考にさせてもらったら治った。
@@ -365,9 +367,9 @@ http://www.funtoo.org/wiki/Funtoo_Linux_Installation
     <p>この前 30% 割引をやっているのを同僚に教えてもらって Thinkpad の X230 を購入。
     半月くらいかけてねんがんの Gentoo (Funtoo) + Awesome WM 環境を手に入れた。
     細かいところはまだ設定が足りないけど、毎日問題なく使えている感じ。しいて言えばもっと大きな机を買えばよかった。</p><p><img src="http://distilleryimage3.instagram.com/1da383da056111e2b70422000a1e8867_7.jpg" alt="大きな机がほしい"></p><p>参考にしたのは、</p><ul>
-    <li><a href="http://lab.ursm.jp/blog/2011/08/28/funtoo-on-thinkpad-x220/">http://lab.ursm.jp/blog/2011/08/28/funtoo-on-thinkpad-x220/</a></li>
-    <li><a href="http://www.thinkwiki.org/wiki/Installing_Gentoo_on_a_ThinkPad_X220">http://www.thinkwiki.org/wiki/Installing_Gentoo_on_a_ThinkPad_X220</a></li>
-    <li><a href="http://www.funtoo.org/wiki/Funtoo_Linux_Installation">http://www.funtoo.org/wiki/Funtoo_Linux_Installation</a></li>
+    <li>http://lab.ursm.jp/blog/2011/08/28/funtoo-on-thinkpad-x220/</li>
+    <li>http://www.thinkwiki.org/wiki/Installing<em>Gentoo</em>on<em>a</em>ThinkPad_X220</li>
+    <li>http://www.funtoo.org/wiki/Funtoo<em>Linux</em>Installation</li>
     </ul>
     <p>あたり。
     3つ目の画面は USB でつなぐ DisplayLink のアダプタをつかっていて、<a href="http://wiki.gentoo.org/wiki/DisplayLink">ここ</a>とかを参考にしたら一応表示はできた（自分の設定に不備があるのか、使い勝手は最悪だけど）。</p><p>それから、画面のミラーリングが解除できなかったり、ImageMagick が依存で入ってきたらいつの間にか壁紙が ImageMagick のおっさんの画像がすり替えられたり意味不明な現象が多発したので頭を抱えながらいろいろ手間取った結果、結局 <a href="https://twitter.com/ursm">ursm</a> 先生の make.conf とかの設定を参考にさせてもらったら治った。
@@ -377,9 +379,9 @@ http://www.funtoo.org/wiki/Funtoo_Linux_Installation
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20120923/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20120923/a0.html'>
 <title>札幌RubyKaigi2012でLTしてきたこと #sprk2012</title>
-<link>http://hibariya.github.com/entries/20120923/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20120923/a0.html</link>
 <dc:date>2012-09-22T15:00:00Z</dc:date>
 <description>先週は SapporoRubyKaigi2012 で北海道に行ってきた。
 快適な Kaigi を提供してくださった実行委員・スタッフの方々に感謝。
@@ -404,9 +406,9 @@ http://www.funtoo.org/wiki/Funtoo_Linux_Installation
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20120830/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20120830/a0.html'>
 <title>map が返す Enumerator のこと</title>
-<link>http://hibariya.github.com/entries/20120830/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20120830/a0.html</link>
 <dc:date>2012-08-29T15:00:00Z</dc:date>
 <description>Enumerable が提供する色々なメソッドは、受け取る筈のブロックが与えられなかった場合 Enumerator オブジェクトを返す。
 Enumerator オブジェクトは、each.with_index.with_objectみたいに each にブロックを渡さずに使うとかいうのにたまに使う。
@@ -452,9 +454,9 @@ while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてル
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20120731/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20120731/a0.html'>
 <title>簡単に Ruby のリファレンス・マニュアルを開く ruremai を色々直した</title>
-<link>http://hibariya.github.com/entries/20120731/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20120731/a0.html</link>
 <dc:date>2012-07-30T15:00:00Z</dc:date>
 <description>気がついたら色々な人から良い感じのパッチをもらったので取り込んで 0.0.3 をリリースしました。Ruremai はirbなどを使っている際に、メソッドのリファレンス・マニュアルをお手軽にブラウザで開くためのツールです。
 require 'ruremai' すると、Method#rurema! が追加されます。例えば、「何かそれっぽいメソッドが記憶の片隅にあるんだけど、使い方がイマイチ思い出せない」ようなときに便利。hibariya@ ;-) irb
@@ -481,9 +483,9 @@ require 'ruremai' すると、Method#rurema! が追加されます。例えば�
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20120723/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20120723/a0.html'>
 <title>簡単に Ruby のリファレンス・マニュアルを開く ruremai をつくった</title>
-<link>http://hibariya.github.com/entries/20120723/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20120723/a0.html</link>
 <dc:date>2012-07-22T15:00:00Z</dc:date>
 <description>Ruby リファレンスマニュアル、通称るりまを開くのが日頃から割と面倒だったので、irb からさっと開けるようなものを作った。ruremairequire すると Method#rurema! が追加される。これを呼び出すと、るりまの該当メソッドのページをブラウザで開く。  Object.method(:name).rurema!
 APIDock とかも見るようにできるといいのかな。~/.irbrc あたりで require 'ruremai' しておくとよさそう。勉強などのお供に。</description>
@@ -493,9 +495,9 @@ APIDock とかも見るようにできるといいのかな。~/.irbrc あたり
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20120602/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20120602/a0.html'>
 <title>社内で code についての発表をした</title>
-<link>http://hibariya.github.com/entries/20120602/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20120602/a0.html</link>
 <dc:date>2012-06-01T15:00:00Z</dc:date>
 <description>@koic先輩に「新卒向けにライブラリやツールを作ることについての話をしてよ」と言われたので二つ返事で受けさせてもらったのだった。自分のための code を書こう永和に転職して暫く経ったある日、金曜の夜、飲み屋「ボヤキ」で@koicさんに言われた言葉がぼんやりと印象に残ってる。大体だけど↓のような感じ。「hibariya は Kaminari の Contributors に入ってると思ってたけど違ったからびっくりした」そう言われたからといっていきなり Kaminari にパッチを送れるほどの行動力はないのだけど、普段から code を読み書きしている人とそうでない人の間にある、防弾ガラスみたいな、見えないけどはっきりした差を意識し始めるきっかけになった。発表は、自分の中でいい棚卸になった。</description>
 <content:encoded>
@@ -504,9 +506,9 @@ APIDock とかも見るようにできるといいのかな。~/.irbrc あたり
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20120505/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20120505/a0.html'>
 <title>cline-0.3.0</title>
-<link>http://hibariya.github.com/entries/20120505/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20120505/a0.html</link>
 <dc:date>2012-05-04T15:00:00Z</dc:date>
 <description>いくつか便利そうな機能をつけてアップデートしました。
 簡単にURLを開く機能
@@ -546,9 +548,9 @@ end
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20120411/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20120411/a0.html'>
 <title>標準添付ライブラリもエディタで開けるreditorを作った</title>
-<link>http://hibariya.github.com/entries/20120411/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20120411/a0.html</link>
 <dc:date>2012-04-10T15:00:00Z</dc:date>
 <description>Rubyにはbundle openやgemeditのgem editみたいに、gemを自分のエディタで簡単に開くための方法があるのだけど、たまに標準添付ライブラリも開きたいことがあるのだった。
 そこでreditorというgemを作ってみた。インストールするとreditorコマンドが使えるようになって、開きたいライブラリの名前を渡すと$LOAD_PATHやrubygemsの中からそれっぽいものを見つけてエディタで開いてくれる。  $ reditor csv
@@ -561,9 +563,9 @@ end
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20120329/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20120329/a0.html'>
 <title>所在の分からないWARNINGが出力されるときのこと</title>
-<link>http://hibariya.github.com/entries/20120329/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20120329/a0.html</link>
 <dc:date>2012-03-28T15:00:00Z</dc:date>
 <description>Railsを使ってるときとかにActiveSupport::MemoizableがDEPRECATEDだとかそんなWARNINGっぽいメッセージがどこからともなく出てくるときのこと。ひとまずraiseする。IOで出力する系のメソッドたちはだいたい最後にwriteを呼ぶ筈なので、writeを上書きしてる。def STDERR.write(*) raise end
 Railsだとconfig/application.rbの頭あたりに書いておく。起動してstacktraceを見ればどのgemが問題かだいたい分かるのでbundle update [gem name]で問題のgemをupdateしてみると直っていたりする。
@@ -575,9 +577,9 @@ Railsだとconfig/application.rbの頭あたりに書いておく。起動して
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20120328/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20120328/a0.html'>
 <title>記号がうまく入力できない</title>
-<link>http://hibariya.github.com/entries/20120328/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20120328/a0.html</link>
 <dc:date>2012-03-27T15:00:00Z</dc:date>
 <description>感覚でキーボードを使うという悪癖が抜けないので、特に苦手な記号の入力を克服するべくコンソールで練習するためのプログラムを書くことにした。kigouついでに実装は男らしい感じのコードにしようと思ったけどあまりうまくいかなくて、ただの汚いコードになった。</description>
 <content:encoded>
@@ -586,9 +588,9 @@ Railsだとconfig/application.rbの頭あたりに書いておく。起動して
 ]]>
 </content:encoded>
 </item>
-<item rdf:about='http://hibariya.github.com/entries/20120326/a0.html.html'>
+<item rdf:about='http://hibariya.github.com/entries/20120326/a0.html'>
 <title>プロセスをforkするときのこと</title>
-<link>http://hibariya.github.com/entries/20120326/a0.html.html</link>
+<link>http://hibariya.github.com/entries/20120326/a0.html</link>
 <dc:date>2012-03-25T15:00:00Z</dc:date>
 <description>孤児プロセスとゾンビプロセスの違いがうまく理解できてなかったけど、ようやく違いを確認することができた。孤児プロセス孤児プロセスは、親プロセスがwaitせずに先に逝ってしまった後も走り続けている子プロセス。
 Orphan Process とも呼ばれる。
