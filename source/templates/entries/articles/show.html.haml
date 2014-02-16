@@ -4,6 +4,6 @@
   %h1[article]
     = link_to article.title, retter_entry_article_path(entry, article, format: 'html')
 
-  != article.body
+  !~ article.body
 
 #comments= render_disqus_comment_form
