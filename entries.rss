@@ -3,7 +3,7 @@
 <channel rdf:about='http://hibariya.github.com/'>
 <title>Joy Luck Crab</title>
 <link>http://hibariya.github.com/</link>
-<dc:date>2014-02-16</dc:date>
+<dc:date>2014-02-15T15:00:00Z</dc:date>
 <description>hibariya.github.com</description>
 <items>
 <rdf:Seq>
@@ -33,7 +33,7 @@
 <item rdf:about='http://hibariya.github.com/entries/20140216/a0.html.html'>
 <title>Rewriting Retter gem</title>
 <link>http://hibariya.github.com/entries/20140216/a0.html.html</link>
-<dc:date>2014-02-16</dc:date>
+<dc:date>2014-02-15T15:00:00Z</dc:date>
 <description>Next version will be 1.0.0 (Current changes).</description>
 <content:encoded>
 <![CDATA[
@@ -44,7 +44,7 @@
 <item rdf:about='http://hibariya.github.com/entries/20130418/a0.html.html'>
 <title>春から学生になった</title>
 <link>http://hibariya.github.com/entries/20130418/a0.html.html</link>
-<dc:date>2013-04-18</dc:date>
+<dc:date>2013-04-17T15:00:00Z</dc:date>
 <description>4月に、帝京大学理工学部情報科学科に入学した。通信教育課程なので、お仕事は継続。
 大学は mizzy さんのエントリ のおかげで知った。今年で28歳になった。
 10年前、本に関わる仕事をしようと思って編集の専門学校に進んだ。
@@ -67,7 +67,7 @@
 <item rdf:about='http://hibariya.github.com/entries/20130218/a0.html.html'>
 <title>東京競馬場へ馬をみにいった</title>
 <link>http://hibariya.github.com/entries/20130218/a0.html.html</link>
-<dc:date>2013-02-18</dc:date>
+<dc:date>2013-02-17T15:00:00Z</dc:date>
 <description>前の2日間ほとんど自宅にこもって作業していたらとうとう集中できなくなったので、日曜日は奥さんと馬を見に行くことになった。
 競馬について何も知らないまま府中にある東京競馬場に行ったら、フェブラリーステークスといわれる割と大事そうなレースをやっていた。天気の良い日に目の前を全力で走っている馬を見るのはとっても刺激的で良い気分転換になるのでおすすめ。
 馬が走るのはだいたい30分に1回なので、その間次のレースの予想をしてごく少額(100円とか)で適当に投票すると多少エキサイティングかもしれない。
@@ -88,7 +88,7 @@ JRAのサイトは使いづらいのでどうにかしてほしい。</descripti
 <item rdf:about='http://hibariya.github.com/entries/20130105/a0.html.html'>
 <title>reditor gem を更新した</title>
 <link>http://hibariya.github.com/entries/20130105/a0.html.html</link>
-<dc:date>2013-01-05</dc:date>
+<dc:date>2013-01-04T15:00:00Z</dc:date>
 <description>Reditor は、gem や pure ruby な Ruby 標準添付ライブラリを $EDITOR で開くためのコマンドラインツールで、インストールすると bundle open や gem edit に似たコマンド reditor を使えるようになる。
 今回はライブラリが見つからなかったときに候補を出す機能を追加したのだった。require するときは active_support なのに gem の名前は activesupport みたいな gem が結構あって、じゃあ reditor で開くときは今までどんな感じだったかというと、  $ reditor activesupport  # 開ける
   $ reditor active_support # 開けない
@@ -121,7 +121,7 @@ gem の名前をある程度適当に与えても候補から選べるように�
 <item rdf:about='http://hibariya.github.com/entries/20130105/a1.html.html'>
 <title>cline gem を更新した</title>
 <link>http://hibariya.github.com/entries/20130105/a1.html.html</link>
-<dc:date>2013-01-05</dc:date>
+<dc:date>2013-01-04T15:00:00Z</dc:date>
 <description>Cline は、フィードとか GitHub の Activity を収集(一定周期でポーリング)してきて、terminal で簡単に垂れ流し表示するためにつくったやつ。コミットログを見る感じだと数カ月ぶりのバージョンアップ。
 cline をリリースした。
 サブコマンドの使い方が変わってしまったのでメジャーバージョンをひとつインクリメント。デーモン化できるようにした今の使い方だと screen を起動すると 3 つの cline プロセスが起動するようになっていて、ひとつあたりのメモリ使用量が割と多めなのだった。
@@ -148,7 +148,7 @@ tick コマンドの使い方が変わった  $ cline tick OFFSET INTERVAL
 <item rdf:about='http://hibariya.github.com/entries/20130102/a0.html.html'>
 <title>PROMPTを2階建てにした</title>
 <link>http://hibariya.github.com/entries/20130102/a0.html.html</link>
-<dc:date>2013-01-02</dc:date>
+<dc:date>2013-01-01T15:00:00Z</dc:date>
 <description>結構前からだったのだけど、oh-my-zsh が割と良くて乗り換えたはいいが気に入ったテーマだけは見つからなかったので自分で適当に変えたのだった。
 いままでは雑多な情報はRPROMPTに出すようにしていたのだけど、同僚から影響を受けて二階建てに。
 (Kinesis といい Funtoo といい、去年は何かと影響を受けまくり)カスタマイズしているうちにごちゃごちゃしてしまった PROMPT が出しているのはこんなの。
@@ -179,7 +179,7 @@ $SHLVL
 <item rdf:about='http://hibariya.github.com/entries/20121206/a0.html.html'>
 <title>自宅用に Kinesis を買った</title>
 <link>http://hibariya.github.com/entries/20121206/a0.html.html</link>
-<dc:date>2012-12-06</dc:date>
+<dc:date>2012-12-05T15:00:00Z</dc:date>
 <description>慣れたら使い心地良さそうだなーと思っていた Kinesis さん、いきなり仕事で使うと全然仕事が進まなくなるのでまずは自宅用に購入。
 以前同僚から貸し出してもらって挫折したこともあり、今回は少しは使える状態からスタート。
 奥さんが仕事から帰ってきたときに早速自慢したのだけど、金額を白状したら蹴られた。</description>
@@ -194,7 +194,7 @@ $SHLVL
 <item rdf:about='http://hibariya.github.com/entries/20121125/a0.html.html'>
 <title>RubyConf 2012</title>
 <link>http://hibariya.github.com/entries/20121125/a0.html.html</link>
-<dc:date>2012-11-25</dc:date>
+<dc:date>2012-11-24T15:00:00Z</dc:date>
 <description>先月末から今月の頭は角谷さんと RubyConf 2012 に行っていた。行きで寄ったロサンゼルスの気候は、勝手に想像していたカリフォルニアとだいたい一緒で、乾燥していたけどいい天気で過ごしやすかった。
 コロラド州デンバーは、空港からダウンタウンまでのタクシー窓からの景色が大自然すぎて、本当に屋根のあるところで開催されるのだろうかと心配になるほど。
 もちろんダウンタウンはちゃんとあったし、会場は想像以上に立派だった。
@@ -253,7 +253,7 @@ Proc も 継続も、なんでも保存できるってすごい。
 <item rdf:about='http://hibariya.github.com/entries/20120928/a0.html.html'>
 <title>Gentoo 環境を手に入れてた</title>
 <link>http://hibariya.github.com/entries/20120928/a0.html.html</link>
-<dc:date>2012-09-28</dc:date>
+<dc:date>2012-09-27T15:00:00Z</dc:date>
 <description>この前 30% 割引をやっているのを同僚に教えてもらって Thinkpad の X230 を購入。
 半月くらいかけてねんがんの Gentoo (Funtoo) + Awesome WM 環境を手に入れた。
 細かいところはまだ設定が足りないけど、毎日問題なく使えている感じ。しいて言えばもっと大きな机を買えばよかった。参考にしたのは、
@@ -286,7 +286,7 @@ http://www.funtoo.org/wiki/Funtoo_Linux_Installation
 <item rdf:about='http://hibariya.github.com/entries/20120923/a0.html.html'>
 <title>札幌RubyKaigi2012でLTしてきたこと #sprk2012</title>
 <link>http://hibariya.github.com/entries/20120923/a0.html.html</link>
-<dc:date>2012-09-23</dc:date>
+<dc:date>2012-09-22T15:00:00Z</dc:date>
 <description>先週は SapporoRubyKaigi2012 で北海道に行ってきた。
 快適な Kaigi を提供してくださった実行委員・スタッフの方々に感謝。
 2日目の15日に LT 枠で、Coding for yourself というタイトルで5分間話してきた。Ruby を使って自分や身の回りの人の生活を便利にしたいという漠然とした希望はあるけれど、漠然としているから何をすればいいかわからないし、何もできなかった。
@@ -313,7 +313,7 @@ http://www.funtoo.org/wiki/Funtoo_Linux_Installation
 <item rdf:about='http://hibariya.github.com/entries/20120830/a0.html.html'>
 <title>map が返す Enumerator のこと</title>
 <link>http://hibariya.github.com/entries/20120830/a0.html.html</link>
-<dc:date>2012-08-30</dc:date>
+<dc:date>2012-08-29T15:00:00Z</dc:date>
 <description>Enumerable が提供する色々なメソッドは、受け取る筈のブロックが与えられなかった場合 Enumerator オブジェクトを返す。
 Enumerator オブジェクトは、each.with_index.with_objectみたいに each にブロックを渡さずに使うとかいうのにたまに使う。
 あとは、外部イテレータのために使ったり、each 以外のメソッドを使って Enumerable のメソッドを使ったりするのに使える。each 以外の繰り返しを行うメソッドも、ブロックを受け取らなかったときは Enumerator オブジェクトを返したりする。Enumerable#map とか。%w(a b c).map # =&amp;gt; #&amp;lt;Enumerator: [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]:map&amp;gt;
@@ -361,7 +361,7 @@ while じゃなくて Kernel.#loop を使うと StopIteration を捕まえてル
 <item rdf:about='http://hibariya.github.com/entries/20120731/a0.html.html'>
 <title>簡単に Ruby のリファレンス・マニュアルを開く ruremai を色々直した</title>
 <link>http://hibariya.github.com/entries/20120731/a0.html.html</link>
-<dc:date>2012-07-31</dc:date>
+<dc:date>2012-07-30T15:00:00Z</dc:date>
 <description>気がついたら色々な人から良い感じのパッチをもらったので取り込んで 0.0.3 をリリースしました。Ruremai はirbなどを使っている際に、メソッドのリファレンス・マニュアルをお手軽にブラウザで開くためのツールです。
 require 'ruremai' すると、Method#rurema! が追加されます。例えば、「何かそれっぽいメソッドが記憶の片隅にあるんだけど、使い方がイマイチ思い出せない」ようなときに便利。hibariya@ ;-) irb
 &amp;gt;&amp;gt; require 'ruremai'
@@ -390,7 +390,7 @@ require 'ruremai' すると、Method#rurema! が追加されます。例えば�
 <item rdf:about='http://hibariya.github.com/entries/20120723/a0.html.html'>
 <title>簡単に Ruby のリファレンス・マニュアルを開く ruremai をつくった</title>
 <link>http://hibariya.github.com/entries/20120723/a0.html.html</link>
-<dc:date>2012-07-23</dc:date>
+<dc:date>2012-07-22T15:00:00Z</dc:date>
 <description>Ruby リファレンスマニュアル、通称るりまを開くのが日頃から割と面倒だったので、irb からさっと開けるようなものを作った。ruremairequire すると Method#rurema! が追加される。これを呼び出すと、るりまの該当メソッドのページをブラウザで開く。  Object.method(:name).rurema!
 APIDock とかも見るようにできるといいのかな。~/.irbrc あたりで require 'ruremai' しておくとよさそう。勉強などのお供に。</description>
 <content:encoded>
@@ -402,7 +402,7 @@ APIDock とかも見るようにできるといいのかな。~/.irbrc あたり
 <item rdf:about='http://hibariya.github.com/entries/20120602/a0.html.html'>
 <title>社内で code についての発表をした</title>
 <link>http://hibariya.github.com/entries/20120602/a0.html.html</link>
-<dc:date>2012-06-02</dc:date>
+<dc:date>2012-06-01T15:00:00Z</dc:date>
 <description>@koic先輩に「新卒向けにライブラリやツールを作ることについての話をしてよ」と言われたので二つ返事で受けさせてもらったのだった。自分のための code を書こう永和に転職して暫く経ったある日、金曜の夜、飲み屋「ボヤキ」で@koicさんに言われた言葉がぼんやりと印象に残ってる。大体だけど↓のような感じ。「hibariya は Kaminari の Contributors に入ってると思ってたけど違ったからびっくりした」そう言われたからといっていきなり Kaminari にパッチを送れるほどの行動力はないのだけど、普段から code を読み書きしている人とそうでない人の間にある、防弾ガラスみたいな、見えないけどはっきりした差を意識し始めるきっかけになった。発表は、自分の中でいい棚卸になった。</description>
 <content:encoded>
 <![CDATA[
@@ -413,7 +413,7 @@ APIDock とかも見るようにできるといいのかな。~/.irbrc あたり
 <item rdf:about='http://hibariya.github.com/entries/20120505/a0.html.html'>
 <title>cline-0.3.0</title>
 <link>http://hibariya.github.com/entries/20120505/a0.html.html</link>
-<dc:date>2012-05-05</dc:date>
+<dc:date>2012-05-04T15:00:00Z</dc:date>
 <description>いくつか便利そうな機能をつけてアップデートしました。
 簡単にURLを開く機能
 フィルタリングのためのインターフェース
@@ -455,7 +455,7 @@ end
 <item rdf:about='http://hibariya.github.com/entries/20120411/a0.html.html'>
 <title>標準添付ライブラリもエディタで開けるreditorを作った</title>
 <link>http://hibariya.github.com/entries/20120411/a0.html.html</link>
-<dc:date>2012-04-11</dc:date>
+<dc:date>2012-04-10T15:00:00Z</dc:date>
 <description>Rubyにはbundle openやgemeditのgem editみたいに、gemを自分のエディタで簡単に開くための方法があるのだけど、たまに標準添付ライブラリも開きたいことがあるのだった。
 そこでreditorというgemを作ってみた。インストールするとreditorコマンドが使えるようになって、開きたいライブラリの名前を渡すと$LOAD_PATHやrubygemsの中からそれっぽいものを見つけてエディタで開いてくれる。  $ reditor csv
 とか。  $ reditor faraday
@@ -470,7 +470,7 @@ end
 <item rdf:about='http://hibariya.github.com/entries/20120329/a0.html.html'>
 <title>所在の分からないWARNINGが出力されるときのこと</title>
 <link>http://hibariya.github.com/entries/20120329/a0.html.html</link>
-<dc:date>2012-03-29</dc:date>
+<dc:date>2012-03-28T15:00:00Z</dc:date>
 <description>Railsを使ってるときとかにActiveSupport::MemoizableがDEPRECATEDだとかそんなWARNINGっぽいメッセージがどこからともなく出てくるときのこと。ひとまずraiseする。IOで出力する系のメソッドたちはだいたい最後にwriteを呼ぶ筈なので、writeを上書きしてる。def STDERR.write(*) raise end
 Railsだとconfig/application.rbの頭あたりに書いておく。起動してstacktraceを見ればどのgemが問題かだいたい分かるのでbundle update [gem name]で問題のgemをupdateしてみると直っていたりする。
 最新でも直ってなかったら自分で直してpull requestを送ったりする。</description>
@@ -484,7 +484,7 @@ Railsだとconfig/application.rbの頭あたりに書いておく。起動して
 <item rdf:about='http://hibariya.github.com/entries/20120328/a0.html.html'>
 <title>記号がうまく入力できない</title>
 <link>http://hibariya.github.com/entries/20120328/a0.html.html</link>
-<dc:date>2012-03-28</dc:date>
+<dc:date>2012-03-27T15:00:00Z</dc:date>
 <description>感覚でキーボードを使うという悪癖が抜けないので、特に苦手な記号の入力を克服するべくコンソールで練習するためのプログラムを書くことにした。kigouついでに実装は男らしい感じのコードにしようと思ったけどあまりうまくいかなくて、ただの汚いコードになった。</description>
 <content:encoded>
 <![CDATA[
@@ -495,7 +495,7 @@ Railsだとconfig/application.rbの頭あたりに書いておく。起動して
 <item rdf:about='http://hibariya.github.com/entries/20120326/a0.html.html'>
 <title>プロセスをforkするときのこと</title>
 <link>http://hibariya.github.com/entries/20120326/a0.html.html</link>
-<dc:date>2012-03-26</dc:date>
+<dc:date>2012-03-25T15:00:00Z</dc:date>
 <description>孤児プロセスとゾンビプロセスの違いがうまく理解できてなかったけど、ようやく違いを確認することができた。孤児プロセス孤児プロセスは、親プロセスがwaitせずに先に逝ってしまった後も走り続けている子プロセス。
 Orphan Process とも呼ばれる。
 親のいなくなった子プロセスはinitプロセスの子（孤児）になる。親プロセスが死んで、子プロセスの親が変化する様子を見るには以下のようなスクリプトを実行したあとでファイルをtailすると分かりやすそう。Process.fork do
@@ -567,7 +567,7 @@ Process.waitpid pid
 <item rdf:about='http://hibariya.github.com/entries/20120324/a0.html.html'>
 <title>Retter 0.2.2</title>
 <link>http://hibariya.github.com/entries/20120324/a0.html.html</link>
-<dc:date>2012-03-24</dc:date>
+<dc:date>2012-03-23T15:00:00Z</dc:date>
 <description>built-inなテーマにサイドバーをつけました。</description>
 <content:encoded>
 <![CDATA[
