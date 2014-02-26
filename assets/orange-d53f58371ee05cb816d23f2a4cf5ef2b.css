@@ -6,7 +6,7 @@ body {
   padding: 0;
   font-family: sans-serif;
   background: #EEE;
-  background-image: url("/assets/orange/bg_body-4a1e67ec830caa7360a1b0284c956bb7.jpg");
+  background-image: url("/assets/orange/bg_body-4cfd0e2808422e7d532a7d65f324fff2.jpg");
   background-attachment: fixed;
   height: 100%;
   line-height: 1.5em; }
@@ -20,7 +20,7 @@ a {
 
 #header {
   height: 40px;
-  background-image: url("/assets/orange/bg_header-2fc9112b82129dcdf40ab17c67afa2d6.png");
+  background-image: url("/assets/orange/bg_header-9a17d171f242dd7e182a5f60c5528543.png");
   background-repeat: repeat-x;
   margin: 0;
   padding: 0.2em 0 0.2em 1em;
@@ -71,7 +71,7 @@ a {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   padding: 0em 1em 1em 1em;
-  background-image: url("/assets/orange/bg_entry-f10441b1d96e48639009a14e837408e6.jpg"); }
+  background-image: url("/assets/orange/bg_entry-b32b822237ab33d28f6713116f9035f4.jpg"); }
 
 #page #sidebar h3 {
   margin-bottom: 0;
@@ -116,7 +116,7 @@ article {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   padding: 1em 3em;
-  background-image: url("/assets/orange/bg_entry-f10441b1d96e48639009a14e837408e6.jpg");
+  background-image: url("/assets/orange/bg_entry-b32b822237ab33d28f6713116f9035f4.jpg");
   position: relative; }
 
 article.article {
@@ -124,7 +124,7 @@ article.article {
   padding: 2em 3em; }
 
 article.article ul li {
-  list-style-image: url("/assets/orange/ic_li01-331fcfcb6919ae8cf63ee315f72df370.gif"); }
+  list-style-image: url("/assets/orange/ic_li01-c11d9949b20a73bf8ed8d9182d89beb4.gif"); }
 
 article p a {
   color: #F30; }
@@ -184,17 +184,25 @@ article img {
   -webkit-border-radius: 10px;
   padding: 2em 3em;
   margin: 1em 0 1em 0;
-  background-image: url("/assets/orange/bg_entry-f10441b1d96e48639009a14e837408e6.jpg");
+  background-image: url("/assets/orange/bg_entry-b32b822237ab33d28f6713116f9035f4.jpg");
   position: relative; }
 
 pre {
-  background: #EEE;
+  background: #EEE !important;
   color: #001e43;
   padding: 1em;
   border-radius: 10px;
   border: 1px #BBB solid;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px; }
+
+code {
+  background: rgba(238, 238, 238, 0.4);
+  color: #001e43;
+  border-radius: 3px;
+  border: 1px #CCC solid;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px; }
 
 #footer {
   text-align: center;
