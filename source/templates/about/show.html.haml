@@ -1,7 +1,13 @@
 %article
-  %h1 Profile
+  %h1 About
   %dl
     %dt Author
-    %dd= config.author
-    %dt= config.title
-    %dd= config.description
+    %dd= link_to config.author, 'http://hibariya.org/', target: '_blank'
+    %dt GitHub
+    %dd
+      - link = 'https://github.com/hibariya'
+      = link_to link, link, target: '_blank'
+    %dt Twitter
+    %dd
+      - link = 'https://twitter.com/hibariya'
+      = link_to link, link, target: '_blank'
