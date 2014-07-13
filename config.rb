@@ -1,53 +1,7 @@
 require 'yaml'
 require 'date'
 
-class Middleman::Retter < Middleman::Extension
-  Article = Struct.new(:date, :title, :name, :file_path) do
-    class_attribute :app
-
-    def date_str
-      date.strftime('%Y%m%d')
-    end
-
-    def partial_path
-      "entries/#{date_str}/#{name}"
-    end
-
-    def path
-      "/entries/#{date_str}/#{name}.html"
-    end
-
-    def url
-      app.settings.base_url + path
-    end
-
-    def render
-      rendered = app.partial(partial_path)
-
-      app.find_and_preserve(rendered)
-    end
-  end
-
-  def app=(app)
-    super
-
-    Article.app = app
-  end
-
-  helpers do
-    def articles
-      Dir["#{Middleman::Application.root}/source/entries/**/*.md"].map {|entry|
-        file_path   = File.expand_path(entry)
-        frontmatter = YAML.load_file(file_path)
-        date, name  = %r{source/entries/(?<date>.+)/(?<name>.+)\.html\.md}.match(file_path).captures
-
-        Article.new(Date.parse(date), frontmatter['title'], name, file_path)
-      }.sort_by(&:date).reverse
-    end
-  end
-
-  Middleman::Extensions.register :retter, self
-end
+Time.zone = 'Asia/Tokyo'
 
 set :css_dir,    'stylesheets'
 set :js_dir,     'javascripts'
@@ -84,7 +38,11 @@ configure :build do
 end
 
 activate :rouge_syntax
-activate :retter
+
+activate :blog do |blog|
+  blog.permalink = '/entries/{year}{month}{day}/{title}.html'
+  blog.sources = 'entries/{year}{month}{day}/{title}.html'
+end
 
 activate :deploy do |deploy|
   deploy.method = :git

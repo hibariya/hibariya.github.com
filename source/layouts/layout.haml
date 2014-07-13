@@ -29,8 +29,8 @@
         %h3 Recent entries
         .recent-entries
           %ul
-            - articles[0..5].each do |article|
-              %li= link_to article.title, article.path
+            - blog.articles[0..5].each do |article|
+              %li= link_to article.title, article
           .archives= link_to 'Archives', '/entries.html'
         %h3 Coderwall
         .coderwall{'data-coderwall-username' => settings.author, 'data-coderwall-orientation' => 'horizontal'}

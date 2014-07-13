@@ -1,9 +1,9 @@
 ---
-title:  'Hi'
+title: Hi
 ---
 #entries
-  - articles[0..4].each do |article|
+  - blog.articles[0..4].each do |article|
     %article.article
-      %h1= link_to article.title, article.path
+      %h1= link_to article.title, article
 
-      = article.render
+      = article.body
