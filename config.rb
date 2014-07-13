@@ -1,5 +1,6 @@
 require 'yaml'
 require 'date'
+
 class Middleman::Retter < Middleman::Extension
   Article = Struct.new(:date, :title, :name, :file_path) do
     class_attribute :app
@@ -91,4 +92,4 @@ activate :deploy do |deploy|
 end
 
 page '/entries/*/*.html', layout: 'article'
-page '/entries.rss',      layout: false
+page '/entries.rss',      layout: false, format: :xhtml
