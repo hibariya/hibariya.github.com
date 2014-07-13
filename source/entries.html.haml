@@ -1,0 +1,10 @@
+%article
+  %h1 Archives
+  #articles
+    - articles.group_by {|a| a.date.year }.sort_by {|y, _| -y }.each do |year, articlez|
+      %h2= year
+      %ul
+        - articlez.each do |article|
+          - date = article.date.strftime('%m-%d')
+          %li.article
+            = link_to "#{date} #{article.title}", article.path
