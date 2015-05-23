@@ -22,7 +22,6 @@ set :markdown, {
   fenced_code_blocks:  true,
   strikethrough:       true,
   superscript:         true,
-  fenced_code_blocks:  true,
   tables:              true
 }
 
@@ -37,7 +36,7 @@ configure :build do
   activate :relative_assets
 end
 
-activate :rouge_syntax
+activate :syntax
 
 activate :blog do |blog|
   blog.permalink = '/entries/{year}{month}{day}/{title}.html'
