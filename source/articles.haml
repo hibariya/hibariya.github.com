@@ -1,0 +1,14 @@
+---
+title: Articles
+---
+
+%section#articles
+  %h1 Articles
+
+  - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+    %h2= year
+    %ul
+      - articles.each do |article|
+        - date = article.date.strftime('%m-%d')
+        %li.article
+          = link_to "#{date} #{article.title}", article

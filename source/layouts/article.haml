@@ -1,18 +1,17 @@
 - content_for :content do
-  %article.article
+  %article
     %h1= link_to current_article.title, current_article
-    .date= current_article.date.to_date
+    %time= current_article.date.to_date
 
     = find_and_preserve(yield)
 
   #comments
-    #disqus_thread
-      :javascript
-        var disqus_shortname = '#{settings.disqus_shortname}';
-        (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
+    :javascript
+      var disqus_shortname = '#{settings.disqus_shortname}';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
 
 = partial 'layouts/layout'
