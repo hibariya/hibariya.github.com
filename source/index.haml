@@ -2,9 +2,10 @@
 title: Hi
 ---
 
-#entries
+#articles
   - blog.articles[0..4].each do |article|
     %article
+      %time= article.date.to_date
       %h1= link_to article.title, article
 
       = find_and_preserve(article.body)

@@ -10,7 +10,7 @@ set :images_dir, 'images'
 set :relative_links, true
 
 set :title,            'Hi'
-set :site_name,        'Joy Luck Crab'
+set :site_name,        'Hika Hibariya'
 set :author,           'hibariya'
 set :base_url,         'http://hibariya.github.io'
 set :disqus_shortname, 'joyluckcrab'

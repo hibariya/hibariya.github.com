@@ -1,15 +1,12 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css)
 @import url(http://fonts.googleapis.com/css?family=Inconsolata)
-@import url(http://fonts.googleapis.com/css?family=Raleway)
+@import url(http://fonts.googleapis.com/css?family=Asap)
 
 body
   font-size: 17px
   font-family: 'Noto Sans Japanese', sans-serif
   font-weight: 200
   line-height: 1.7rem
-
-  header > h1
-    font-family: 'Raleway', sans-serif
 
   a
     text-decoration: none
@@ -18,11 +15,11 @@ body
     &:hover
       text-decoration: underline
 
-  header
-    padding-top: 0
+  > header
+    padding: 10rem 0 8rem 0
 
-    h1
-      margin: 1em 0
+    > h1
+      font-family: 'Asap', serif
 
   nav
     ul
@@ -32,7 +29,6 @@ body
 
       li
         margin-right: 2rem
-
 
   > *
     background: white
@@ -44,16 +40,22 @@ body
       margin-top: 1rem
 
     article
-      margin-top: 5rem
+      margin-top: 8rem
 
-      strong
-        font-weight: 400
+      time
+        display: block
+        margin-bottom: -1rem
+        font-size: 1rem
+        color: #CCC
+
+      h2
+        margin: 1.5em 0 0.85em 0
 
       p
         margin: 1.5rem 0
 
-      h2
-        margin: 1.5em 0 0.85em 0
+      strong
+        font-weight: 400
 
     dl dd
       margin-bottom: 1em
