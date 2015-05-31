@@ -1,3 +1,6 @@
+- content_for :head do
+  %link(rel='canonical'){href: URI.join(settings.base_url, current_article.url)}
+
 - content_for :content do
   %article
     %time= current_article.date.to_date
@@ -9,7 +12,7 @@
     <div id="disqus_thread"></div>
     :javascript
       /* * * CONFIGURATION VARIABLES * * */
-      var disqus_shortname = 'memo-hibariya-org';
+      var disqus_shortname = '#{settings.disqus_shortname}';
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
