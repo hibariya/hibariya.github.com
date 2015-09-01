@@ -15,3 +15,5 @@ title: 'Borrow と AsRef について調べて Rust of Us へ行った'
 まず、発表するために準備をするとそれだけで勉強になる。人に何かを伝えるためには実際に伝えることよりも広い範囲を把握していないと難しくて、今回は `Borrow` と `AsRef` について話すために Rust の基礎を全体的に復習する必要があったし、今まで曖昧にしてきた部分や知らなかった概念にも触れることにもなった。人に説明するために情報をまとめる時間は自分用のメモ作りと比べてずっと濃い。
 
 それに、何か話すことでバランスが取れる。自分の力だけでは限界があるから人の集まるところに話を聞きにきているのだけど、ただ話を聞きにいく (情報をもらう) だけではちょっと申し訳ないかなという気になることがある。何でもいいから何らかのかたちでバランスを取りたくて、例えば自分の知ったことを共有することで「受け取る」だけでなく「交換」しているような気になれるのだった。
+
+<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=hibariya-22&o=9&p=8&l=as1&asins=B00LGFD3UM&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
