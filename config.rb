@@ -10,7 +10,7 @@ set :images_dir, 'images'
 set :relative_links, true
 
 set :title,            'Hi'
-set :site_name,        'Hika Hibariya'
+set :site_name,        'Hibariya'
 set :author,           'hibariya'
 set :base_url,         'http://note.hibariya.org'
 set :disqus_shortname, 'note-hibariya-org'
