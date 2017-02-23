@@ -9,9 +9,9 @@ title: 'pty crate を作って Rust of Us へ行った'
 <a href="https://github.com/hibariya/pty-rs" target="_blank">hibariya/pty-rs</a>
 
 さいきん調べた [PTY を使ってシェルの入出力を好きなようにする](/articles/20150628/pty.html) ための処理を Rust で簡単に書けるようにしたいという動機で作った。
-この crate が提供する `pty::fork()` は、新しい疑似端末 (PTY) を割り付けた子プロセスをつくる。Ruby の `PTY.spawn` に似ている (exec はしない)。
+この crate が提供する `pty::fork()` は、新しい疑似端末 (PTY) を割り当てた子プロセスをつくる。Ruby の `PTY.spawn` に似ている (exec はしない)。
 
-次のように呼び出すと、疑似端末の割り付けられた子プロセスの入出力を `pty_master` 越しに読み書きできる。
+次のように呼び出すと、疑似端末の割り当てられた子プロセスの入出力を `pty_master` 越しに読み書きできる。
 
 ```rust
 let (child_process, mut pty_master) = pty::fork();
