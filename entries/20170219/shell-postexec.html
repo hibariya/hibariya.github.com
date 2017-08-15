@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>シェルでコマンドの実行前後をフックする - Hibariya</title>
+    <meta charset='utf-8'>
+    <meta content='hibariya' name='author'>
+    <link href='/favicon-f5e12bf5.png' rel='icon' type='image/png'>
+    <link href='/articles.xml' rel='alternate' title='Atom' type='application/atom+xml'>
+    <link href="../../stylesheets/application-458a848e.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="../../javascripts/application-5ad96b48.js" type="text/javascript"></script>
+    <link href='http://note.hibariya.org/articles/20170219/shell-postexec.html' rel='canonical'>
+  </head>
+  <body class='articles articles_20170219 articles_20170219_shell-postexec'>
+    <header>
+      <h1>
+        <a href="/">Hibariya</a>
+      </h1>
+      <nav>
+        <ul id='menu'>
+          <li><a href="/">Home</a></li>
+          <li><a href="../../articles.html">Articles</a></li>
+          <li><a target="_blank" href="https://github.com/hibariya">Github</a></li>
+          <li><a target="_blank" href="https://twitter.com/hibariya">Twitter</a></li>
+          <li><a target="_blank" href="https://hibariya.org">hibariya.org</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <time>2017-02-19</time>
+        <h1><a href="shell-postexec.html">シェルでコマンドの実行前後をフックする</a></h1>
+        <p>私達の使うアプリケーションは色々な音を出します。通知やエラーを知らせる効果音、たまにジングル (短かい音楽) を鳴らすものもあります。好みや事情によって無効にしている人も少なくないと思いますが、個人的には鳴らせるときには鳴らす方が好みです。なので、毎日使うアプリケーションのひとつであるシェルからも音が出ると楽しいのではないかと思います。例えば、コマンドを実行するときに効果音を出してみたり、失敗したとき (<code>$? -ne 0</code>) には悲しい感じの音が出るとか。もっと発展させて、状況に応じてリアルタイムにサウンドを作り出すとか。</p>
+        
+        <p>そんな「音の鳴るシェル」作りの一環として、今回はコマンド実行の前後で音を出す方法を考えてみます。どうすればコマンドを叩くタイミングで任意の処理を実行できるのでしょう。1年くらい前に <a href="http://note.hibariya.org/articles/20160118/pty-shell.html">シェルを操作する</a> 記事を書きました。この方法ではシェルの入出力を操作できますが、シェル上で実行されたコマンドの実行結果は得られません。そこで、シェルの機能を使ってコマンドの実行をフックし、コマンドの結果などを取得する方法を調べました。</p>
+        
+        <h2>fish</h2>
+        
+        <p>fish では <a href="http://fishshell.com/docs/current/index.html#event">イベントハンドラ</a> というかたちでコマンド実行前後の処理を実装できます。function 定義にイベントを指定しておくと、イベントが発火されたタイミングでその function が実行されます。この仕組みを利用してコマンド実行前後をフックするには、組込みの <code>fish_preexec</code> と <code>fish_postexec</code> イベントが使えます。</p>
+        <pre class="highlight plaintext"><code>function my_preexec --on-event fish_preexec&#x000A;  echo "preexec: $argv[1]"&#x000A;end&#x000A;&#x000A;function my_postexec --on-event fish_postexec&#x000A;  echo "postexec: $argv[1] ($status)"&#x000A;end&#x000A;</code></pre>
+        
+        <p>実行してみましょう。</p>
+        <pre class="highlight plaintext"><code>$ uname&#x000A;preexec: uname&#x000A;Linux&#x000A;postexec: uname (0)&#x000A;$ hi&#x000A;preexec: hi&#x000A;fish: Unknown command 'hi'&#x000A;postexec: hi (127)&#x000A;</code></pre>
+        
+        <p>ちなみに function 定義には <code>--on-variable</code> や <code>--on-signal</code> というオプションもあり、値の変化やシグナルの受信を監視できて便利そうです。</p>
+        <pre class="highlight plaintext"><code>function my_pwd_changed --on-variable PWD&#x000A;  echo "PWD: $PWD"&#x000A;end&#x000A;&#x000A;function my_term_trap --on-signal SIGUSR1&#x000A;  echo "SIGUSR1 received"&#x000A;end&#x000A;</code></pre>
+        
+        <p>実行結果は次のようになります。</p>
+        <pre class="highlight plaintext"><code>$ cd /tmp/&#x000A;PWD: /tmp&#x000A;$ kill -USR1 %self&#x000A;SIGUSR1 received&#x000A;</code></pre>
+        
+        <h2>zsh</h2>
+        
+        <p>zsh の場合は、<code>add-zsh-hook</code> でフックを登録できます。<code>fish_postexec</code> にあたるものは無いので、プロンプト表示前に実行される <code>precmd</code> を、コマンド実行後のフックとして代用しました。ここには実行したコマンドが渡ってくるわけではないので、もし必要ならばもう少し工夫が要りそうです。</p>
+        <pre class="highlight shell"><code>autoload -Uz add-zsh-hook&#x000A;&#x000A;add-zsh-hook preexec my_preexec&#x000A;add-zsh-hook precmd my_precmd&#x000A;&#x000A;my_preexec<span class="o">()</span> <span class="o">{</span>&#x000A;  <span class="nb">echo</span> <span class="s2">"preexec: </span><span class="k">${</span><span class="nv">1</span><span class="k">}</span><span class="s2">"</span>&#x000A;<span class="o">}</span>&#x000A;&#x000A;my_precmd<span class="o">()</span> <span class="o">{</span>&#x000A;  <span class="nb">echo</span> <span class="s2">"precmd (</span><span class="k">${</span><span class="p">?</span><span class="k">}</span><span class="s2">)"</span>&#x000A;<span class="o">}</span>&#x000A;</code></pre>
+        
+        <p>実行結果です。</p>
+        <pre class="highlight plaintext"><code>% uname&#x000A;preexec: uname&#x000A;Linux&#x000A;precmd (0)&#x000A;% hi&#x000A;preexec: hi&#x000A;zsh: command not found: hi&#x000A;precmd (127)&#x000A;</code></pre>
+        
+        <h2>bash</h2>
+        
+        <p>bash では <a href="https://github.com/rcaloras/bash-preexec"><code>bash-preexec</code></a> を使うと比較的簡単に実現できました。zsh と同様、コマンド実行後のフックは <code>precmd</code> で代用しています。実行結果は zsh の場合とほぼ同じなので省略します。</p>
+        <pre class="highlight shell"><code><span class="c"># https://github.com/rcaloras/bash-preexec</span>&#x000A;<span class="nb">source</span> ./bash-preexec.sh&#x000A;&#x000A;preexec_functions+<span class="o">=(</span>my_preexec<span class="o">)</span>&#x000A;precmd_functions+<span class="o">=(</span>my_precmd<span class="o">)</span>&#x000A;&#x000A;my_preexec<span class="o">()</span> <span class="o">{</span>&#x000A;  <span class="nb">echo</span> <span class="s2">"preexec: </span><span class="k">${</span><span class="nv">1</span><span class="k">}</span><span class="s2">"</span>&#x000A;<span class="o">}</span>&#x000A;&#x000A;my_precmd<span class="o">()</span> <span class="o">{</span>&#x000A;  <span class="nb">echo</span> <span class="s2">"precmd (</span><span class="nv">$?</span><span class="s2">)"</span>&#x000A;<span class="o">}</span>&#x000A;</code></pre>
+        
+        <h2>おわりに</h2>
+        
+        <p>私がよく使うシェルを対象に、コマンド実行前後をフックする方法について調べました。別の実現方法としては ptrace(2) や DTrace、trap(1) を駆使することで似たようなことができるかもしれません (試してない)。が、私の知っている範囲だとシェルを使うのが比較的シンプルなやり方だと思いました。もしもっと良いやり方があれば教えてください。</p>
+      </article>
+      <div id='comments'>
+        <div id="disqus_thread"></div>
+        <script>
+          /* * * CONFIGURATION VARIABLES * * */
+          var disqus_shortname = 'note-hibariya-org';
+          
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+      </div>
+    </main>
+  </body>
+</html>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-64572851-1', 'auto');
+  ga('send', 'pageview');
+</script>

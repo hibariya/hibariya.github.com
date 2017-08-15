@@ -1,0 +1,1 @@
+var completeLinkTarget=function(){var t=document.getElementsByTagName("a");for(i=0;i<t.length;i++){var e=t[i];e.getAttribute("href").match("^https?:")&&!e.getAttribute("target")&&e.setAttribute("target","_blank")}};document.addEventListener("DOMContentLoaded",completeLinkTarget,!1);

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hibariya</title>
+  <id>http://note.hibariya.org</id>
+  <link href="http://note.hibariya.org"/>
+  <link href="http://note.hibariya.org/articles.xml" rel="self"/>
+  <updated>2017-04-29T00:00:00+09:00</updated>
+  <author>
+    <name>hibariya</name>
+  </author>
+  <entry>
+    <title>Tokyo Rubyist Meetup / 読んだ本</title>
+    <link rel="alternate" href="http://note.hibariya.org/articles/20170429/trbmeetup.html"/>
+    <id>http://note.hibariya.org/articles/20170429/trbmeetup.html</id>
+    <published>2017-04-29T00:00:00+09:00</published>
+    <updated>2017-04-29T11:17:09+09:00</updated>
+    <author>
+      <name>hibariya</name>
+    </author>
+    <content type="html">&lt;h2&gt;Tokyo Rubyist Meetup で発表してきた&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="https://trbmeetup.doorkeeper.jp/events/59184"&gt;4/19&lt;/a&gt; の回で GraphQL について話してきた。「GraphQL は、Web API でありがちな諸問題への解決策のひとつとして良いもので、こんな感じで使います。」という内容。&lt;/p&gt;
+
+&lt;script async class="speakerdeck-embed" data-id="99920bda53c24c8bad73a579e16d144e" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;Paul さんに発表しないかとメールで誘ってもらったのがきっかけ。その後、せっかくなので会場の提供も永和ですることになった。英語が下手でも問題ないか確認したところ「英語で発表したことがない人に登壇できる場所を提供したい」から大丈夫とのこと。&lt;/p&gt;
+
+&lt;p&gt;準備のために大量の英文を書いた結果、思ったことをその場で文にするのがずっと楽になった。録音した自分の発音を確認する作業を繰り返したおかげか、聞き取れる程度には発音できるようになったらしい。とはいえ、まだ満足に会話できるレベルには色々足りなくて、発表後の質問タイムではいくつかの質問にうまく答えられなかった。これは次の機会までの課題になりそう。もうしばらくお勉強と実践を繰り返していくつもり。&lt;/p&gt;
+
+&lt;h2&gt;&lt;a href="https://www.amazon.co.jp/gp/product/4150503761/ref=as_li_tl?ie=UTF8&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;creativeASIN=4150503761&amp;amp;linkCode=as2&amp;amp;tag=hibariya-22&amp;amp;linkId=851ceafadf2a00561a4e2efc4508d0c7"&gt;これからの「正義」の話をしよう&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;これまで何となく「正しいだろう」と素通りしてきたことについて、新たな視点が得られたような。最後あたりの話はちょっと難しい。&lt;/p&gt;
+
+&lt;h2&gt;&lt;a href="https://www.amazon.co.jp/gp/product/4560034966/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;amp;tag=hibariya-22&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;linkCode=as2&amp;amp;creativeASIN=4560034966&amp;amp;linkId=8bc1b17e0a89d44fbb62d47e9e15a64b"&gt;ゴドーを待ちながら&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;「ゴドーを待つんだ。」「ああそうか。」&lt;/p&gt;
+
+&lt;p&gt;こういうの好きだ、と思いながらささっと読了。その時代の背景を知っているともっと面白く読めるんだろうかと発行年を調べたら1952年。第二次世界大戦が終わったり、太宰治が入水して数年後。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>3月上旬のようす (ゆるデ部/GraphQL/How We Learn)</title>
+    <link rel="alternate" href="http://note.hibariya.org/articles/20170312/note.html"/>
+    <id>http://note.hibariya.org/articles/20170312/note.html</id>
+    <published>2017-03-12T00:00:00+09:00</published>
+    <updated>2017-03-12T23:01:57+09:00</updated>
+    <author>
+      <name>hibariya</name>
+    </author>
+    <content type="html">&lt;h2&gt;&lt;a href="https://github.com/yurufuwa/meetups/issues/76"&gt;ゆるデ部 meetup 64回&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;前回で初参加して、今回が二回目。&lt;/p&gt;
+
+&lt;p&gt;前回 &lt;a href="https://github.com/hibariya/ashell"&gt;音の鳴るシェル&lt;/a&gt; を作るために Pure Data で SE を作ってるんですがこういうのに使えるゲームの効果音みたいな素材ないんですかね、というようなことを言ったら &lt;a href="http://osabisi.sakura.ne.jp/m2/"&gt;ザ・マッチメイカァズ&lt;/a&gt; のようなまさに探していた感じの素材のありかを教えてもらう。「ダンジョンの壁に当たったとき」みたいな簡単な音を作るのさえけっこう手間だったので、ここで聞けてよかった。&lt;/p&gt;
+
+&lt;p&gt;効果音が揃ったのでそれなりに楽しくなったものの、もう少し面白くできないかなあと思ってしばらくほったらかしにしてた状態で2回目に参加。ドラムとか使ったシンプルな BGM があって、シェルを操作したときの音をそれにうまく合わせられると気持ちいいんじゃないかと言われてなるほどと思う。音ゲー的な感じだろうか。似たコンセプトのゲームに Rez というのがあるらしい。PS4買ったらやってみようかなあ。&lt;/p&gt;
+
+&lt;h2&gt;GraphQL&lt;/h2&gt;
+
+&lt;p&gt;年始から少し気になっていた GraphQL がおもしろくて API の実装を試してみたりしている。何が必要かをクライアント側がクエリではっきり簡潔に記述できるのいいなあ。スキーマから最低限の API ドキュメントが生成できるのも助かる。あと GraphiQL べんり。いいとこたくさん。でもサーバ側の実装はそんなに簡単じゃないかも。&lt;/p&gt;
+
+&lt;p&gt;作った API の使い心地を確認するために、いくつかクライアント側の実装も試してみた。Relay とか Apollo は色々やってくれて便利な反面、既にあるものを置き換えるにはそれなりに大きな変更が必要そうに見えた。その点 Lokka は単純な GraphQL のクライアントなので当たり前だけど自由度が高く、ちょっとした用途には使いやすかった。&lt;/p&gt;
+
+&lt;p&gt;参考にしたサンプルアプリは webpack でビルドできるものが多くて、試しに自分でも使いはじめてみたところけっこう楽ができてる気がする。&lt;/p&gt;
+
+&lt;h2&gt;&lt;a href="https://www.amazon.co.jp/gp/product/B0192JTW62/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;amp;tag=hibariya-22&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;linkCode=as2&amp;amp;creativeASIN=B0192JTW62&amp;amp;linkId=50b0bcb67717c7f65ed070f706c01720"&gt;脳が認める勉強法&lt;/a&gt; (How We Learn) を読んだ&lt;/h2&gt;
+
+&lt;p&gt;記憶力や創造性についての事実が発見されていくまでのストーリー。その過程で行なわれた数々の実験についても詳しめに書かれていて面白かった。記憶の謎を解明するために何の意味もないたくさんの文字列を家族全員で学習する話とか、レム睡眠が発見されたときのエピソードとか。&lt;/p&gt;
+
+&lt;p&gt;学習の環境に変化をつけると何が変わるのか。学習前にテストを行なうことにはどれほどの意味があるか。アイデアの「孵化」はどのようにして起こるか。そんな感じのことが書いてある。巻末には TL;DR 的な Q&amp;amp;A が載っていて、実践的な内容としてはその数ページを読めば十分かも。&lt;/p&gt;
+
+&lt;p&gt;ここで読んだ孵化の話は &lt;a href="https://www.amazon.co.jp/gp/product/4484881047/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;amp;tag=hibariya-22&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;linkCode=as2&amp;amp;creativeASIN=4484881047&amp;amp;linkId=1ff9d48ea98825429a45694a377baa19"&gt;アイデアのつくり方&lt;/a&gt; にもあった気がする。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>シェルでコマンドの実行前後をフックする</title>
+    <link rel="alternate" href="http://note.hibariya.org/articles/20170219/shell-postexec.html"/>
+    <id>http://note.hibariya.org/articles/20170219/shell-postexec.html</id>
+    <published>2017-02-19T00:00:00+09:00</published>
+    <updated>2017-02-19T21:52:50+09:00</updated>
+    <author>
+      <name>hibariya</name>
+    </author>
+    <content type="html">&lt;p&gt;私達の使うアプリケーションは色々な音を出します。通知やエラーを知らせる効果音、たまにジングル (短かい音楽) を鳴らすものもあります。好みや事情によって無効にしている人も少なくないと思いますが、個人的には鳴らせるときには鳴らす方が好みです。なので、毎日使うアプリケーションのひとつであるシェルからも音が出ると楽しいのではないかと思います。例えば、コマンドを実行するときに効果音を出してみたり、失敗したとき (&lt;code&gt;$? -ne 0&lt;/code&gt;) には悲しい感じの音が出るとか。もっと発展させて、状況に応じてリアルタイムにサウンドを作り出すとか。&lt;/p&gt;
+
+&lt;p&gt;そんな「音の鳴るシェル」作りの一環として、今回はコマンド実行の前後で音を出す方法を考えてみます。どうすればコマンドを叩くタイミングで任意の処理を実行できるのでしょう。1年くらい前に &lt;a href="http://note.hibariya.org/articles/20160118/pty-shell.html"&gt;シェルを操作する&lt;/a&gt; 記事を書きました。この方法ではシェルの入出力を操作できますが、シェル上で実行されたコマンドの実行結果は得られません。そこで、シェルの機能を使ってコマンドの実行をフックし、コマンドの結果などを取得する方法を調べました。&lt;/p&gt;
+
+&lt;h2&gt;fish&lt;/h2&gt;
+
+&lt;p&gt;fish では &lt;a href="http://fishshell.com/docs/current/index.html#event"&gt;イベントハンドラ&lt;/a&gt; というかたちでコマンド実行前後の処理を実装できます。function 定義にイベントを指定しておくと、イベントが発火されたタイミングでその function が実行されます。この仕組みを利用してコマンド実行前後をフックするには、組込みの &lt;code&gt;fish_preexec&lt;/code&gt; と &lt;code&gt;fish_postexec&lt;/code&gt; イベントが使えます。&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;function my_preexec --on-event fish_preexec
+  echo "preexec: $argv[1]"
+end
+
+function my_postexec --on-event fish_postexec
+  echo "postexec: $argv[1] ($status)"
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;実行してみましょう。&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ uname
+preexec: uname
+Linux
+postexec: uname (0)
+$ hi
+preexec: hi
+fish: Unknown command 'hi'
+postexec: hi (127)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ちなみに function 定義には &lt;code&gt;--on-variable&lt;/code&gt; や &lt;code&gt;--on-signal&lt;/code&gt; というオプションもあり、値の変化やシグナルの受信を監視できて便利そうです。&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;function my_pwd_changed --on-variable PWD
+  echo "PWD: $PWD"
+end
+
+function my_term_trap --on-signal SIGUSR1
+  echo "SIGUSR1 received"
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;実行結果は次のようになります。&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ cd /tmp/
+PWD: /tmp
+$ kill -USR1 %self
+SIGUSR1 received
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;zsh&lt;/h2&gt;
+
+&lt;p&gt;zsh の場合は、&lt;code&gt;add-zsh-hook&lt;/code&gt; でフックを登録できます。&lt;code&gt;fish_postexec&lt;/code&gt; にあたるものは無いので、プロンプト表示前に実行される &lt;code&gt;precmd&lt;/code&gt; を、コマンド実行後のフックとして代用しました。ここには実行したコマンドが渡ってくるわけではないので、もし必要ならばもう少し工夫が要りそうです。&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;code&gt;autoload -Uz add-zsh-hook
+
+add-zsh-hook preexec my_preexec
+add-zsh-hook precmd my_precmd
+
+my_preexec&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"preexec: &lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;1&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+my_precmd&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"precmd (&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="p"&gt;?&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;)"&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;実行結果です。&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;% uname
+preexec: uname
+Linux
+precmd (0)
+% hi
+preexec: hi
+zsh: command not found: hi
+precmd (127)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;bash&lt;/h2&gt;
+
+&lt;p&gt;bash では &lt;a href="https://github.com/rcaloras/bash-preexec"&gt;&lt;code&gt;bash-preexec&lt;/code&gt;&lt;/a&gt; を使うと比較的簡単に実現できました。zsh と同様、コマンド実行後のフックは &lt;code&gt;precmd&lt;/code&gt; で代用しています。実行結果は zsh の場合とほぼ同じなので省略します。&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;code&gt;&lt;span class="c"&gt;# https://github.com/rcaloras/bash-preexec&lt;/span&gt;
+&lt;span class="nb"&gt;source&lt;/span&gt; ./bash-preexec.sh
+
+preexec_functions+&lt;span class="o"&gt;=(&lt;/span&gt;my_preexec&lt;span class="o"&gt;)&lt;/span&gt;
+precmd_functions+&lt;span class="o"&gt;=(&lt;/span&gt;my_precmd&lt;span class="o"&gt;)&lt;/span&gt;
+
+my_preexec&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"preexec: &lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;1&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+my_precmd&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"precmd (&lt;/span&gt;&lt;span class="nv"&gt;$?&lt;/span&gt;&lt;span class="s2"&gt;)"&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;おわりに&lt;/h2&gt;
+
+&lt;p&gt;私がよく使うシェルを対象に、コマンド実行前後をフックする方法について調べました。別の実現方法としては ptrace(2) や DTrace、trap(1) を駆使することで似たようなことができるかもしれません (試してない)。が、私の知っている範囲だとシェルを使うのが比較的シンプルなやり方だと思いました。もしもっと良いやり方があれば教えてください。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>2月上旬の出来事</title>
+    <link rel="alternate" href="http://note.hibariya.org/articles/20170210/note.html"/>
+    <id>http://note.hibariya.org/articles/20170210/note.html</id>
+    <published>2017-02-10T00:00:00+09:00</published>
+    <updated>2017-02-10T12:33:51+09:00</updated>
+    <author>
+      <name>hibariya</name>
+    </author>
+    <content type="html">&lt;h2&gt;普段使いのバッグを変えた&lt;/h2&gt;
+
+&lt;p&gt;今までは &lt;a href="https://www.amazon.co.jp/gp/product/B01DLS32P2/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;creativeASIN=B01DLS32P2&amp;amp;linkCode=as2&amp;amp;tag=hibariya-22"&gt;FJALL RAVEN KANKEN&lt;/a&gt; の紺色+黄色のやつを使っていたんだけど、16Lだと少し心細い。PCとヘッドホンケースを入れたらあまりスペースに余裕がなくなってしまう感じ。&lt;/p&gt;
+
+&lt;p&gt;新しいのは少し大きめにして &lt;a href="https://www.amazon.co.jp/gp/product/B01BWLMDH8/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;creativeASIN=B01BWLMDH8&amp;amp;linkCode=as2&amp;amp;tag=hibariya-22"&gt;MILLET TARN 25&lt;/a&gt; にした。これくらいの大きさだとちょと遠くへ行くにも安心感があっていい。それと、このバッグは上下2部屋に分けられるところがよくて、少し狭い下段の部屋には普段使わないが持っておきたい折り畳み傘とか電源ケーブルみたいなものを突っ込んでおける。&lt;/p&gt;
+
+&lt;p&gt;今更だけど FJALL RAVEN は手提げで使うのが便利なのではという気がしてきた。だからこれからも何かと用途はありそう。よかったよかった。&lt;/p&gt;
+
+&lt;h2&gt;hibariya.org の DNS を Cloudflare に移行した&lt;/h2&gt;
+
+&lt;p&gt;Cloudflare も &lt;a href="https://api.cloudflare.com/"&gt;API&lt;/a&gt; を公開していたので、以前やったような &lt;a href="http://note.hibariya.org/articles/20150525/zerigo-api.html"&gt;たまに変わるIPアドレスを更新する&lt;/a&gt; ためのコードをガガガと書いた。プロセスの管理が面倒なので適当なスケジューラ (Systemd の timer) を使って、決まった時間に叩いている。Systemd の timer は cron に比べて設定が冗長で面倒だと思っていたけど、エラー含めた出力がデフォルトで journal に流れるのはいいな。というのと、こういう用途には実行可能なバイナリ形式が楽そうだなあと思った。&lt;/p&gt;
+
+&lt;h2&gt;アボカドをハイドロカルチャーにした&lt;/h2&gt;
+
+&lt;p&gt;アボカドの種を水につけて栽培していたんだけど、色々面倒になってきたので栽培方法をハイドロカルチャーに変えた。容器の底に &lt;a href="https://www.amazon.co.jp/gp/product/B0091GFTB4/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;creativeASIN=B0091GFTB4&amp;amp;linkCode=as2&amp;amp;tag=hibariya-22"&gt;ミリオンA&lt;/a&gt; と &lt;a href="https://www.amazon.co.jp/gp/search/ref=as_li_qf_sp_sr_il_tl?ie=UTF8&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;index=aps&amp;amp;keywords=B00UFKAMD0&amp;amp;linkCode=as2&amp;amp;tag=hibariya-22"&gt;イオン交換樹脂剤&lt;/a&gt; を入れて、 &lt;a href="https://www.amazon.co.jp/gp/product/B00C0KG1OC/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;creativeASIN=B00C0KG1OC&amp;amp;linkCode=as2&amp;amp;tag=hibariya-22"&gt;ハイドロコーン&lt;/a&gt; で種を固定したらできあがり。毎日水をかえなくてよくなったし、万一容器を倒してしまっても掃除が楽そう。&lt;/p&gt;
+
+&lt;p&gt;ハイドロカルチャーというのは和製英語で、hydro (水) + culture (栽培) ということらしい。cultureに栽培や養殖という意味もあるというのを初めて知った。じゃあ単に水につけて栽培するのも魚の養殖もハイドロカルチャーなんだろうかという気がしてくるが、その辺はよくわからない。水で養殖してるわけじゃないんだから魚は言いすぎか。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Ember.js Tokyo Reborn へ行った</title>
+    <link rel="alternate" href="http://note.hibariya.org/articles/20170203/emberjs-tokyo-reborn.html"/>
+    <id>http://note.hibariya.org/articles/20170203/emberjs-tokyo-reborn.html</id>
+    <published>2017-02-03T00:00:00+09:00</published>
+    <updated>2017-02-03T09:46:25+09:00</updated>
+    <author>
+      <name>hibariya</name>
+    </author>
+    <content type="html">&lt;p&gt;昨日 (2/2) の &lt;a href="https://emberjs.doorkeeper.jp/events/56135"&gt;Ember.js Tokyo Reborn&lt;/a&gt;。LT枠もあったので最近 Ember Data まわりの悩みごとについて発表してきました。&lt;/p&gt;
+
+&lt;script async class="speakerdeck-embed" data-id="396313f98d8d42ea87a3e98b10dd80a2" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;何かを削除するアクションをしたとき、即座にサーバへ反映したいけど、そのアクションを起こしたクライアント上ではまだちょっと表示していたい。例えば Twitter の Like 一覧で Unlike してもしばらく残ってるみたいな動きを Ember + Ember Data でやるときに、もっとうまくやれないかなという内容です。&lt;/p&gt;
+
+&lt;p&gt;会場では、直接の解決策ではないけど、&lt;a href="https://pouchdb.com/"&gt;pouchdb&lt;/a&gt; のようなものを使ってうまくやれないかとか、ちょっと違うかもだけど &lt;a href="https://github.com/DockYard/ember-changeset"&gt;ember-changeset&lt;/a&gt; 便利ですよという話を聞けた。便利そう。&lt;/p&gt;
+
+&lt;p&gt;その他に気になった話題とか:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Ember.computed.filterBy&lt;/code&gt; が激重で困ってる。&lt;/li&gt;
+&lt;li&gt;Ember.js のユニットテスト使うといいよ (そういえば使ってないな...)。&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/dopin/ember-tokyo-reborn"&gt;https://github.com/dopin/ember-tokyo-reborn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;近所の Ember ユーザの話を聞ける貴重な時間だったなあ。それとさくらインターネットさんのオフィスから見える夜景たいへんきれいでした。&lt;/p&gt;
+
+&lt;blockquote class="twitter-tweet" data-lang="en"&gt;&lt;p lang="ja" dir="ltr"&gt;かわいい。 &lt;a href="https://t.co/CXl72OGOt4"&gt;pic.twitter.com/CXl72OGOt4&lt;/a&gt;&lt;/p&gt;&amp;mdash; Hibariya (@hibariya) &lt;a href="https://twitter.com/hibariya/status/827128229546782723"&gt;February 2, 2017&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Android で Pure Data のヘルプを動かす</title>
+    <link rel="alternate" href="http://note.hibariya.org/articles/20170119/pd-with-mob-mu-plat.html"/>
+    <id>http://note.hibariya.org/articles/20170119/pd-with-mob-mu-plat.html</id>
+    <published>2017-01-19T00:00:00+09:00</published>
+    <updated>2017-02-10T11:21:52+09:00</updated>
+    <author>
+      <name>hibariya</name>
+    </author>
+    <content type="html">&lt;p&gt;Pure Data に付属しているヘルプはパッチなので実際に動かしながら理解できて便利。スキマ時間にスマホで触りたい。MobMuPlat は Pure Data のパッチを開けるそうなので試してみたところだいたい動いた。&lt;/p&gt;
+
+&lt;p&gt;パッチには次のような感じでちょっと手を加える必要があった (&lt;code&gt;output~&lt;/code&gt; を &lt;code&gt;dac~&lt;/code&gt; にして、&lt;code&gt;number&lt;/code&gt; の幅を広げる)。&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;code&gt;sed -i -e &lt;span class="s1"&gt;'s/output~;/dac~;/g'&lt;/span&gt; &lt;span class="k"&gt;*&lt;/span&gt;.pd
+sed -i -re &lt;span class="s1"&gt;'s/X floatatom ([0-9]+) ([0-9]+) 0 /X floatatom \1 \2 5 /g'&lt;/span&gt; &lt;span class="k"&gt;*&lt;/span&gt;.pd
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Android File Transfer を使ってパッチをコピーして MobMuPlat から開くとだいたい動く。線が描画されないのはご愛嬌。&lt;/p&gt;
+</content>
+  </entry>
+</feed>

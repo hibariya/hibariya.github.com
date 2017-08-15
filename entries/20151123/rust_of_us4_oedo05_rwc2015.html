@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Idobata会議, Rust of Us, 大江戸Ruby会議そして RWC - Hibariya</title>
+    <meta charset='utf-8'>
+    <meta content='hibariya' name='author'>
+    <link href='/favicon-f5e12bf5.png' rel='icon' type='image/png'>
+    <link href='/articles.xml' rel='alternate' title='Atom' type='application/atom+xml'>
+    <link href="../../stylesheets/application-458a848e.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="../../javascripts/application-5ad96b48.js" type="text/javascript"></script>
+    <link href='http://note.hibariya.org/articles/20151123/rust_of_us4_oedo05_rwc2015.html' rel='canonical'>
+  </head>
+  <body class='articles articles_20151123 articles_20151123_rust_of_us4_oedo05_rwc2015'>
+    <header>
+      <h1>
+        <a href="/">Hibariya</a>
+      </h1>
+      <nav>
+        <ul id='menu'>
+          <li><a href="/">Home</a></li>
+          <li><a href="../../articles.html">Articles</a></li>
+          <li><a target="_blank" href="https://github.com/hibariya">Github</a></li>
+          <li><a target="_blank" href="https://twitter.com/hibariya">Twitter</a></li>
+          <li><a target="_blank" href="https://hibariya.org">hibariya.org</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <time>2015-11-23</time>
+        <h1><a href="rust_of_us4_oedo05_rwc2015.html">Idobata会議, Rust of Us, 大江戸Ruby会議そして RWC</a></h1>
+        <p>最近の外出記録。</p>
+        
+        <h2 id="idobata-kaigi">10/29 <a href="https://idobata.doorkeeper.jp/events/31060">Idobata会議02:Rescheduled</a></h2>
+        
+        <p>これまでの Idobata の取り組みを基調講演で <a href="https://github.com/flada-auxv/todobackend-rust">報告</a> した。
+        当日の様子は esa 社の方が <a href="https://docs.esa.io/posts/154">まとめて</a> くださっている。
+        普段 Idobata を使っている人たちと直接会って話をしたことで、自分たちがこれまでやろうと思っていたことと求められていることとの距離を確認できたと思う。</p>
+        
+        <h2 id="rust-of-us">10/31 <a href="https://rust-of-us.doorkeeper.jp/events/32615">Rust of Us - Chapter 4</a></h2>
+        
+        <p>今回で4回目。さいきんロゴもできた Rust of Us。Eric Findlay と cosmo がやってきた。</p>
+        
+        <p><a href="https://github.com/idobata/hokaido">hokaido</a> を Rust で書いていたものが動くようになったので、その <a href="https://speakerdeck.com/hibariya/introducing-hokaido">成果発表</a> をしてきた。
+        デモをしつつ触ってもらっていたところ、Mac で動作しないというバグが判明してその場で <a href="https://github.com/idobata/hokaido/pull/2">パッチをもらう</a>。
+        さらに、<a href="https://github.com/idobata/hokaido/compare/hakodate...cosmo0920:use-docopt-macros">docopt のマクロでよりシンプルに書く方法</a> も教えてもらったけど、nightly でしか動かないため投入できなかった。</p>
+        
+        <script async class="speakerdeck-embed" data-id="dfaeaa76f2454137b4d58fe7a73c0248" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+        
+        <p>takkanm は <a href="https://gist.github.com/takkanm/13776f716cce525753aa">さいきん気になった Rust 関連の記事</a> について話していた。
+        その中の crate を作るためのプラクティスが勉強になったので、後日 <a href="https://github.com/hibariya/pty-rs">pty-rs</a> でいくつか試した。
+        具体的には組込みの Lint を強化し <a href="https://github.com/Manishearth/rust-clippy">rustc-clippy</a> で微妙なコードを修正、さらに <a href="https://github.com/nrc/rustfmt">rustfmt</a> で見た目のスタイルを統一した。rustfmt には概ね満足しているのだけど、文字列リテラル (複数行) の中も変更してきてしかもあまり綺麗に見えない結果になることがあってままならないところがある。</p>
+        
+        <p>flada_auxv は <a href="https://github.com/iron">iron</a> の話をしていた。iron 本体はシンプルに保たれており、必要に応じてユーザがプラグインやミドルウェアを組み合わせるのが iron way というような話だった気がする。しかしそのときはあまり聞けておらず特に資料も残っていなかったので、もっとよく人の話を聞いておけばよかったと思っている。</p>
+        
+        <h2 id="oedo-ruby-kaigi">11/08 <a href="http://regional.rubykaigi.org/oedo05/">大江戸Ruby会議05</a></h2>
+        
+        <p>感想を書きはじめると長くなりそう。</p>
+        
+        <p>濃いプログラムだったのでだいたいメイン会場の7階にいて話をきいていた。午後にコーヒーブレイクの時間があって、13階で電源につなぎつつ普段顔をあわせない人たちと話したりだらっとできて快適だった。
+        その日懇親会には参加できなかったので、江渡さんの招待講演をきいたあと帰宅。</p>
+        
+        <h2 id="rwc">11/12 - 13 <a href="http://2015.rubyworld-conf.org/">RubyWorld Conference 2015</a></h2>
+        
+        <p>初参加 の RWC。島根知事や松江市長が Ruby について話していたり、制服を着た中学生か高校生が Matz の基調講演をきいている様子の別世界感が印象的だった。</p>
+        
+        <p>1日目のレセプションは普段会わない人や会ったことがなかった人と話して回った。その日はアルコール抜きで過ごしてみたところ、いつもより人の話をちゃんと聞けて意外に良かった。2日目の夜に地ビールを飲んでから帰宅。ukstudio に TOEIC 受験の話をきいた。まだ模試しかやったことがなくて、もう少し本番の話を聞いておけばよかった。</p>
+        
+        <p>Linda Liukas の「Principles of Play」が一番の収穫だった。身近な子供たちのためにできることがあるといいな。</p>
+        
+        <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=hibariya-22&o=9&p=8&l=as1&asins=4757420900&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+        
+        <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=hibariya-22&o=9&p=8&l=as1&asins=4900790052&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+      </article>
+      <div id='comments'>
+        <div id="disqus_thread"></div>
+        <script>
+          /* * * CONFIGURATION VARIABLES * * */
+          var disqus_shortname = 'note-hibariya-org';
+          
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+      </div>
+    </main>
+  </body>
+</html>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-64572851-1', 'auto');
+  ga('send', 'pageview');
+</script>

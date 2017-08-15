@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Borrow と AsRef について調べて Rust of Us へ行った - Hibariya</title>
+    <meta charset='utf-8'>
+    <meta content='hibariya' name='author'>
+    <link href='/favicon-f5e12bf5.png' rel='icon' type='image/png'>
+    <link href='/articles.xml' rel='alternate' title='Atom' type='application/atom+xml'>
+    <link href="../../stylesheets/application-458a848e.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="../../javascripts/application-5ad96b48.js" type="text/javascript"></script>
+    <link href='http://note.hibariya.org/articles/20150831/rust-of-us-chapter3.html' rel='canonical'>
+  </head>
+  <body class='articles articles_20150831 articles_20150831_rust-of-us-chapter3'>
+    <header>
+      <h1>
+        <a href="/">Hibariya</a>
+      </h1>
+      <nav>
+        <ul id='menu'>
+          <li><a href="/">Home</a></li>
+          <li><a href="../../articles.html">Articles</a></li>
+          <li><a target="_blank" href="https://github.com/hibariya">Github</a></li>
+          <li><a target="_blank" href="https://twitter.com/hibariya">Twitter</a></li>
+          <li><a target="_blank" href="https://hibariya.org">hibariya.org</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <time>2015-08-31</time>
+        <h1><a href="rust-of-us-chapter3.html">Borrow と AsRef について調べて Rust of Us へ行った</a></h1>
+        <p><a href="https://rust-of-us.doorkeeper.jp/events/26870" target="_blank">前回</a> は話す内容としては特にテーマもなく <a href="../20150718/pty-rust-of-us.html">Rust で PTY を使う</a> 話をしてきた。
+        <a href="https://rust-of-us.doorkeeper.jp/events/28471" target="_blank">今回</a> は少し変わって、各々 <a href="https://doc.rust-lang.org/nightly/book/" target="_blank">TRPL</a> の好きなセクションについて事前に調べてきて発表するという内容だった。</p>
+        
+        <p>そういうわけで、最近 API Doc でよく見かける <code>AsRef</code> が個人的に気になっていたのでそれについて調べて分かったことを話してきた。発表に使った資料は Qiita に置いている。</p>
+        
+        <p><a href="http://qiita.com/hibariya/items/b24f893f88d0dc931c61" target="_blank">Borrow and AsRef - Qiita</a></p>
+        
+        <p>前回と同様、それぞれ自分の知っていることを話したり知らないことを他の参加者に教えてもらったりという感じの場だった。
+        聞くだけではなくて話す、というのにはふたつ良い点があると感じている。</p>
+        
+        <p>まず、発表するために準備をするとそれだけで勉強になる。人に何かを伝えるためには実際に伝えることよりも広い範囲を把握していないと難しくて、今回は <code>Borrow</code> と <code>AsRef</code> について話すために Rust の基礎を全体的に復習する必要があったし、今まで曖昧にしてきた部分や知らなかった概念にも触れることにもなった。人に説明するために情報をまとめる時間は自分用のメモ作りと比べてずっと濃い。</p>
+        
+        <p>それに、何か話すことでバランスが取れる。自分の力だけでは限界があるから人の集まるところに話を聞きにきているのだけど、ただ話を聞きにいく (情報をもらう) だけではちょっと申し訳ないかなという気になることがある。何でもいいから何らかのかたちでバランスを取りたくて、例えば自分の知ったことを共有することで「受け取る」だけでなく「交換」しているような気になれるのだった。</p>
+        
+        <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=hibariya-22&o=9&p=8&l=as1&asins=B00LGFD3UM&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+      </article>
+      <div id='comments'>
+        <div id="disqus_thread"></div>
+        <script>
+          /* * * CONFIGURATION VARIABLES * * */
+          var disqus_shortname = 'note-hibariya-org';
+          
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+      </div>
+    </main>
+  </body>
+</html>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-64572851-1', 'auto');
+  ga('send', 'pageview');
+</script>

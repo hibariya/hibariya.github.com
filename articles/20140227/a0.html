@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>「設定」を設計するための資料 - Hibariya</title>
+    <meta charset='utf-8'>
+    <meta content='hibariya' name='author'>
+    <link href='/favicon-f5e12bf5.png' rel='icon' type='image/png'>
+    <link href='/articles.xml' rel='alternate' title='Atom' type='application/atom+xml'>
+    <link href="../../stylesheets/application-458a848e.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="../../javascripts/application-5ad96b48.js" type="text/javascript"></script>
+    <link href='http://note.hibariya.org/articles/20140227/a0.html' rel='canonical'>
+  </head>
+  <body class='articles articles_20140227 articles_20140227_a0'>
+    <header>
+      <h1>
+        <a href="/">Hibariya</a>
+      </h1>
+      <nav>
+        <ul id='menu'>
+          <li><a href="/">Home</a></li>
+          <li><a href="../../articles.html">Articles</a></li>
+          <li><a target="_blank" href="https://github.com/hibariya">Github</a></li>
+          <li><a target="_blank" href="https://twitter.com/hibariya">Twitter</a></li>
+          <li><a target="_blank" href="https://hibariya.org">hibariya.org</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <time>2014-02-27</time>
+        <h1><a href="a0.html">「設定」を設計するための資料</a></h1>
+        <p>プログラムは、なるべく何もしなくても良い感じに動いてくれるのが理想的だけど、実際には何らかのかたちでユーザの設定を必要とすることがある。
+        Rails を使うときは <code>config/application.rb</code> でタイムゾーンを指定したり、DB へ接続するための情報を <code>config/database.yml</code> に指定する。
+        Bundler の挙動を変えたければ <code>bundle config</code> で設定を変更する。
+        Gem をインストールするときに毎回指定したいオプションがあれば、<code>~/.gemrc</code> に追記する。</p>
+        
+        <p>もし自分の関わるプロダクトに「設定」のAPIが必要になったとき、何を判断の基準にして設計すればいいだろう。
+        ちょっと近所を見渡すだけでも、「設定」のやり方には色々ありそうだ。
+        設定という視点から、Rubyist にとって身近なプロダクトたちを資料として眺めてみた。</p>
+        
+        <p>(NOTE: ちょっと悩みながら「設定」という言葉を選んだけど、もしかしたら「入力」と言った方が良いかもしれない。ここで言いたかった「設定」というのは「プログラムが適切に動作するために必要なあらゆる入力」の中の色々だ。)</p>
+        
+        <h2>IRB: グローバルなハッシュを使う</h2>
+        
+        <p>irb は起動時に <code>~/.irbrc</code> ファイルを読む。
+        ファイルの中身は Ruby スクリプトとして評価されるが、基本的には <code>IRB.conf</code> でアクセスできる Hash オブジェクトを変更することで設定を行なう。
+        起動時に tapp gem を require したいなら以下のように書く。</p>
+        <pre class="highlight ruby"><code><span class="no">IRB</span><span class="p">.</span><span class="nf">conf</span><span class="p">[</span><span class="ss">:LOAD_MODULES</span><span class="p">]</span> <span class="o">=</span> <span class="sx">%w(tapp)</span>&#x000A;</code></pre>
+        
+        <p><code>IRB.conf</code> には、どこからでもグローバルにアクセスできる。
+        irb は内部で <code>IRB.conf</code> をさまざまな場所からさまざまなタイミングで呼ぶ。
+        毎回直接呼ぶこともあれば、オブジェクトが生成されるタイミングにだけ呼んでインスタンス変数としてセットすることもある。</p>
+        
+        <p>設定情報をひとつのグローバルな Hash オブジェクトとして保持するという方法は、 <strong>シンプルで比較的実装が簡単</strong> そうだ。</p>
+        
+        <h2>RubyGems: 情報をデータの性格に応じて分ける</h2>
+        
+        <p><code>gem</code> コマンドの挙動を変更したいなら、コマンドへオプションを渡す他に <code>~/.gemrc</code> ファイルに設定を書く方法がある。
+        <code>gem install</code> や <code>gem update</code> コマンドへ常に <code>--no-document</code> オプションを渡したいなら以下のように書く。
+        ファイルの中身はYAMLだ。</p>
+        <pre class="highlight yaml"><code><span class="s">install</span><span class="pi">:</span> <span class="s">--no-document</span>&#x000A;<span class="s">update</span><span class="pi">:</span> <span class="s">--no-document</span>&#x000A;</code></pre>
+        
+        <p>設定の内容は、 <code>Gem.configuration</code> に <code>Gem::ConfigFile</code> オブジェクト (Hash オブジェクトのようにアクセスできる) として保持される。
+        <code>Gem.configuration</code> は RubyGems 内の様々な場所から呼び出される。
+        例として <code>gem install</code> コマンドが実行される際には、コマンドラインオプションと <code>Gem.configuration[:install]</code> の中身がマージされる。</p>
+        
+        <p><code>Gem.configuration</code> が保持する情報は、 <code>~/.gemrc</code> で設定できる項目だけではない。
+        rubygems.org 上の gem を管理する際に使う API キーも保持している。
+        ハッシュっぽいアクセス方法だと <code>~/.gemrc</code> で設定できる一般的な設定を扱えるし、そうでない普通のメソッド呼び出しでは他の情報にもアクセスできる。</p>
+        <pre class="highlight ruby"><code><span class="no">Gem</span><span class="p">.</span><span class="nf">configuration</span><span class="p">[</span><span class="ss">:install</span><span class="p">]</span> <span class="c1"># =&gt; "--no-document"</span>&#x000A;<span class="no">Gem</span><span class="p">.</span><span class="nf">configuration</span><span class="p">.</span><span class="nf">api_keys</span>  <span class="c1"># =&gt; {:rubygems=&gt;"****************************"}</span>&#x000A;</code></pre>
+        
+        <p>api_keys の値は <code>~/.gem/credentials</code> から読み込まれたものだ。
+        慎重に扱うべき情報は明確に分けられ、別物として扱われている。
+        こうすることによって、例えば、通常の設定ファイル (<code>~/.gemrc</code>) から api_keys を指定できてしまうというような <strong>望まない使われ方を簡単にはっきりと予防する</strong> ことになりそうだ。</p>
+        
+        <p>ちなみに <code>Gem.configuration</code> にハッシュっぽくアクセスする際には、文字列もシンボルも同じキーとして扱われる。</p>
+        
+        <h2>Rack: オブジェクトに包む</h2>
+        
+        <p><code>rackup</code> コマンドはカレントディレクトリの <code>config.ru</code> ファイルを読み込む。
+        ファイルの中身は Ruby スクリプトだ。</p>
+        <pre class="highlight ruby"><code><span class="c1"># rack に添付されている、ロブスターを表示するサンプル</span>&#x000A;<span class="nb">require</span> <span class="s1">'rack/lobster'</span>&#x000A;&#x000A;<span class="n">use</span> <span class="no">Rack</span><span class="o">::</span><span class="no">ShowExceptions</span>&#x000A;<span class="n">run</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Lobster</span><span class="p">.</span><span class="nf">new</span>&#x000A;</code></pre>
+        
+        <p><code>config.ru</code> の内容は <code>Rack::Builder</code> オブジェクトの中で評価される (instance_eval)。
+        <code>Rack::Builder</code> には Rack アプリケーションを構築するためのシンプルな DSL が実装されていて、 <code>use</code> <code>map</code> <code>run</code> を使えば、呼び出したいアプリケーションや挿し込みたいミドルウェアを指定できる仕組みになっている。</p>
+        
+        <p><code>config.ru</code> の中身は普通の Ruby スクリプトなので、簡単な Rack アプリケーションなら直接書いてもいい。
+        以下は固定の文字列を返すだけの単純な例だ。</p>
+        <pre class="highlight ruby"><code><span class="n">run</span> <span class="o">-&gt;</span><span class="p">(</span><span class="n">env</span><span class="p">)</span> <span class="p">{</span>&#x000A;  <span class="n">body</span> <span class="o">=</span> <span class="s1">'Hi, Rack.'</span>&#x000A;&#x000A;  <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'text/plain'</span><span class="p">,</span> <span class="s1">'Content-Length'</span> <span class="o">=&gt;</span> <span class="n">body</span><span class="p">.</span><span class="nf">length</span><span class="p">.</span><span class="nf">to_s</span><span class="p">},</span> <span class="p">[</span><span class="n">body</span><span class="p">]]</span>&#x000A;<span class="p">}</span>&#x000A;</code></pre>
+        
+        <p><code>config.ru</code> を読み込む処理には eval 以外にもちょっとした仕掛けがあり、ファイルの先頭でコマンドラインオプションを指定できる。
+        以下の例の 1 行目は shebang ではないし、Ruby 的にはコメントだが、なんと <code>rackup</code> すると 4423 番ポートで起動する (デフォルトは 9292)。</p>
+        <pre class="highlight ruby"><code><span class="c1">#\ --port 4423</span>&#x000A;&#x000A;<span class="n">run</span> <span class="o">-&gt;</span><span class="p">(</span><span class="n">env</span><span class="p">)</span> <span class="p">{</span>&#x000A;  <span class="c1"># (省略...)</span>&#x000A;<span class="p">}</span>&#x000A;</code></pre>
+        
+        <p>Rackが <code>config.ru</code> を評価し終えると、できあがった Rack アプリケーションがすぐに起動をはじめる。
+        必要なもの (サーバの起動オプションやミドルウェアの設定、そしてアプリケーションそのもの) は <strong>すべて <code>Rack::Builder</code> オブジェクトか <code>Rack::Server</code> オブジェクトのインスタンス変数として保持</strong> されている。
+        グローバルにアクセスできる <code>IRB.conf</code> や <code>Gem.configuration</code> のようなものは無い。</p>
+        
+        <h3>Rack::Config</h3>
+        
+        <p>Rack そのものの設定ではないが、Rack の仕組みを使って「Rack アプリケーションやミドルウェア間でやりとりするための」グローバルな設定を共有できる。
+        ほんの数十行からなる <code>Rack::Config</code> は、他のミドルウェアが必要としている値を設定するのに使える。</p>
+        <pre class="highlight ruby"><code><span class="n">use</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Config</span> <span class="k">do</span> <span class="o">|</span><span class="n">env</span><span class="o">|</span>&#x000A;  <span class="n">env</span><span class="p">[</span><span class="s1">'greeting.default'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Hi'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">use</span> <span class="no">GreetingSupportMiddleware</span> <span class="c1"># このミドルウェアが env['greeting.default'] を必要としている</span>&#x000A;<span class="n">run</span> <span class="no">GreetingApp</span>&#x000A;</code></pre>
+        
+        <h2>Bundler</h2>
+        
+        <h3>Gemfile: 内部 DSL を使う</h3>
+        
+        <p>依存したい gem を Bundler に教えるには <code>Gemfile</code> を使う。<code>Gemfile</code> の中身は以下のような感じだ。</p>
+        <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">ruby</span> <span class="s1">'2.1.1'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'middleman'</span><span class="p">,</span> <span class="s1">'~&gt; 3.2.2'</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:development</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'rake'</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+        
+        <p>Bundler は <code>Gemfile</code> を読み込んで、依存関係の情報を <code>Bundler.definition</code> に <code>Bundler::Definition</code> オブジェクトとして保持する。
+        <code>IRB.conf</code> や <code>Gem.configuration</code> もそうだけど、プロセス毎にせいぜい 1 つしか持たなくていいような設定は、こんな風にモジュールで直接保持して問題無さそうだ。</p>
+        
+        <p><code>Gemfile</code> のための DSL は <code>Bundler::Dsl</code> に実装されている。<code>Bundler::Dsl</code> には、依存したい gem を指定するための <code>gem</code> や <code>group</code> というようなメソッドが用意されている。
+        Gemfile には Ruby スクリプトを自由に書けるとはいえ、独自の コードを書く機会は滅多に無い。
+        そして Gemfile に書く内容は、 JSON や XML でも書けそうな内容だ。
+        それでも、 <strong>Gemfile のために設計された専用の書き方</strong> はそのぶん読み書きがしやすい (ように思う)。</p>
+        
+        <h3>.bundle/config: 柔軟な指定を受け付ける</h3>
+        
+        <p>依存を指定するには Gemfile を使った。Bundler の具体的な動作を設定するには <code>.bundle/config</code> を使う。
+        ここには、gem をどこにどうやってインストールするか、のようなマシン毎に異なる情報を設定できる (そのためリポジトリには含まれないことが多い)。</p>
+        
+        <p><code>.bundle/config</code> の中身は以下のように YAML に似た <code>KEY: VALUE</code> 形式で記述される。KEY には <code>BUNDLE_</code> というプリフィクスがつく。</p>
+        <pre class="highlight yaml"><code><span class="nn">---</span>&#x000A;<span class="s">BUNDLE_PATH</span><span class="pi">:</span> <span class="s">put/gems/here</span>&#x000A;</code></pre>
+        
+        <p>このファイルは手で編集してもいいが、 <code>bundle config</code> コマンドで設定した方が簡単だ (詳細: <code>bundle help config</code>)。</p>
+        
+        <p>設定を保持できる場所は <code>.bundle/config</code> 以外にもある。それぞれ影響する範囲が異なり、優先順位がある (上の方が優先される)。</p>
+        
+        <ul>
+        <li><code>.bundle/config</code> で local (プロジェクト毎) に保持</li>
+        <li>環境変数として保持</li>
+        <li><code>~/.bundle/config</code> で global (ユーザ毎) に保持</li>
+        </ul>
+        
+        <p>これをどう実現しているかは実装を見た方が早い。<code>value</code> に代入している箇所がそれだ。</p>
+        <pre class="highlight ruby"><code><span class="c1"># lib/bundler/settings.rb の一部</span>&#x000A;<span class="k">module</span> <span class="nn">Bundler</span>&#x000A;  <span class="k">class</span> <span class="nc">Settings</span>&#x000A;    <span class="c1"># (中略...)</span>&#x000A;    <span class="k">def</span> <span class="nf">[]</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>&#x000A;      <span class="n">the_key</span> <span class="o">=</span> <span class="n">key_for</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>&#x000A;      <span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="vi">@local_config</span><span class="p">[</span><span class="n">the_key</span><span class="p">]</span> <span class="o">||</span> <span class="no">ENV</span><span class="p">[</span><span class="n">the_key</span><span class="p">]</span> <span class="o">||</span> <span class="vi">@global_config</span><span class="p">[</span><span class="n">the_key</span><span class="p">])</span>&#x000A;      <span class="n">is_bool</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="p">?</span> <span class="n">to_bool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">:</span> <span class="n">value</span>&#x000A;    <span class="k">end</span>&#x000A;    <span class="c1"># (中略...)</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+        
+        <p><code>.bundle/config</code> ファイルには ERB で式を埋め込むようなことはできないが、必要に応じて <strong>環境変数で指定したり、プロジェクト毎に異なる指定ができる</strong> 。</p>
+        
+        <p>読み込まれた設定は、<code>Bundler.settings</code> に <code>Bundler::Settings</code> オブジェクトとして保持される。
+        このオブジェクトにはハッシュっぽくアクセスできる。
+        が、普通の Hash オブジェクトとは違い、<code>:path</code> も <code>&#39;path&#39;</code> も <code>&#39;PATH&#39;</code> も同一のキーとして扱われる。</p>
+        
+        <p>ちなみに、 <code>Bundler::Settings</code> には <strong>設定を書き込むための実装</strong> もある。<code>Bundler::Settings#[]=</code> は local な <code>.bundle/config</code> ファイルへ、<code>Bundler::Settings#set_global</code> は global な <code>~/.bundle/config</code> ファイルへそれぞれ値を上書きする。</p>
+        
+        <h2>Ruby on Rails</h2>
+        
+        <h3>database.yml: 式を埋め込める YAML</h3>
+        
+        <p>SQLite、PostgreSQL や MySQL などのデータベースへの接続情報は <code>config/database.yml</code> に設定する。
+        内容は YAML 文書で、かつ <strong>ERB で Ruby の式を埋め込む</strong> ことが可能だ。
+        実行する環境によって接続するデータベースを変えたり、デプロイ先での接続情報を環境変数などから読み込みたいときに使われる。</p>
+        
+        <p>こういった設定方法をお手軽に採用したいときには Settingslogic のような既存の gem を使えそうだ。</p>
+        
+        <p>YAML を設定に使う利点として特筆したいのは、アンカーとエイリアスによって似たような内容をまとめられる点だ。
+        このおかげで、似たような設定項目があるときにすっきり書ける。</p>
+        <pre class="highlight yaml"><code><span class="s">development</span><span class="pi">:</span> <span class="nl">&amp;development</span>&#x000A;  <span class="s">adapter</span><span class="pi">:</span> <span class="s">postgresql</span>&#x000A;  <span class="s">username</span><span class="pi">:</span> <span class="s">postgres</span>&#x000A;  <span class="s">encoding</span><span class="pi">:</span> <span class="s">unicode</span>&#x000A;  <span class="s">pool</span><span class="pi">:</span> <span class="s">5</span>&#x000A;  <span class="s">database</span><span class="pi">:</span> <span class="s">app_development</span>&#x000A;&#x000A;<span class="s">test</span><span class="pi">:</span>&#x000A;  <span class="s">&lt;&lt;</span><span class="pi">:</span> <span class="nv">*development</span> <span class="c1"># ここに development の内容がドカッと入る</span>&#x000A;  <span class="s">database</span><span class="pi">:</span> <span class="s">app_test</span>&#x000A;</code></pre>
+        
+        <h3>Railtie: 複数のコンポーネントと協調する</h3>
+        
+        <p>Railtie は、ActiveRecord など Rails の各コンポーネント、そして Rails アプリケーションの基盤となるコアだ。
+        プラグインや Engine など Rails を拡張するための何かを実装したいとき、Rails の世界で初期化処理をいいタイミングに実行したいとき、そして Rails アプリケーションと設定をやりとりしたいときには、Railtie の機能が使える。</p>
+        
+        <h4>Railtie で設定を共有する</h4>
+        
+        <p>Railtie を使って Rails を拡張するには <code>Rails::Railtie</code> クラスを継承する。
+        <code>Rails::Railtie.config</code> は設定を出し入れするためのオブジェクト (<code>Rails::Railtie::Configuration</code>) を返す。
+        このオブジェクトに設定した値は、 Rails アプリケーション全体でグローバルに共有される。
+        例として、Rails を起動する直前に以下のようなコードを読み込んでみよう。</p>
+        <pre class="highlight ruby"><code><span class="c1"># config/environment.rb の先頭あたりでこのコードを require する</span>&#x000A;<span class="k">module</span> <span class="nn">MyExtention</span>&#x000A;  <span class="k">class</span> <span class="nc">Railtie</span> <span class="o">&lt;</span> <span class="o">::</span><span class="no">Rails</span><span class="o">::</span><span class="no">Railtie</span>&#x000A;    <span class="n">config</span><span class="p">.</span><span class="nf">my_extention_value</span> <span class="o">=</span> <span class="s1">'Hi'</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+        
+        <p>設定した <code>my_extention_value</code> には様々な場所からアクセスできる。
+        例えば <code>config/environments/development.rb</code> の中から。</p>
+        <pre class="highlight ruby"><code><span class="c1"># config/environments/development.rb</span>&#x000A;<span class="no">Hi</span><span class="o">::</span><span class="no">Application</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span>&#x000A;  <span class="n">config</span><span class="p">.</span><span class="nf">my_extention_value</span> <span class="c1"># =&gt; "Hi"</span>&#x000A;  <span class="c1"># (中略...)</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+        
+        <p><code>MyExtention</code> と Rails アプリケーションとの間でうまく設定を共有できていることが確認できる。
+        この値には <code>Rails.application.config</code> でRails アプリケーションのどこからでもアクセスできる。</p>
+        
+        <p>ところで、この例でアクセスしている config と <code>MyExtention::Railtie</code> 内の config は、実は異なる別々のオブジェクトだ。
+        にもかかわらず、 事前に設定した値に問題無くアクセスできている。
+        何が起こっているのかより詳しく言うと、 <code>Rails::Railtie::Configuration</code> オブジェクトにセットした設定に <code>Rails::Application::Configuration</code> オブジェクトを通してアクセスできている。
+        とても不思議だ。</p>
+        
+        <p>なぜそんなことができるのかというと、実は config に出し入れした値は <code>Rails::Railtie::Configuration</code> の <strong>クラス変数</strong> として保持されていて、「config オブジェクト」のクラスはみなこのクラスを継承しているからだった。</p>
+        
+        <p>Railtie の config オブジェクトを見ていると、クラス変数をうまく使うことで <strong>同じ設定を共有しつつ異なる API を提供できる</strong> ことがわかる。
+        例えば、 <code>Rails::Railtie::Configuration</code> はデータベースの接続情報など持たないが、 <code>Rails::Application::Configuration</code> は <code>database_configuration</code> というメソッドを持つ。
+        そういった違いがありつつも、ふたつのクラスは同じ設定 <code>my_extention_value</code> を共有している。</p>
+        <pre class="highlight ruby"><code><span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">class</span>                     <span class="c1"># =&gt; Rails::Application::Configuration</span>&#x000A;<span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">my_extention_value</span>        <span class="c1"># =&gt; "Hi"</span>&#x000A;<span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">database_configuration</span>    <span class="c1"># =&gt; {"development"=&gt;{"adapter"=&gt;"sqlite3", "database"=&gt;"db/...}</span>&#x000A;&#x000A;<span class="no">MyExtention</span><span class="o">::</span><span class="no">Railtie</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">class</span>                  <span class="c1"># =&gt; Rails::Railtie::Configuration</span>&#x000A;<span class="no">MyExtention</span><span class="o">::</span><span class="no">Railtie</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">my_extention_value</span>     <span class="c1"># =&gt; "Hi"</span>&#x000A;<span class="no">MyExtention</span><span class="o">::</span><span class="no">Railtie</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">database_configuration</span> <span class="c1"># NoMethodError</span>&#x000A;</code></pre>
+        
+        <h4>sprockets-rails の例</h4>
+        
+        <p><code>Rails::Railtie::Configuration</code> (とそれを継承したクラスたち) は、Rails アプリケーション起動時の様々なタイミングでフックできるメソッドを供えている。
+        これを利用すれば、アプリケーションの初期化前にデフォルト値を設定しておき、初期化中にユーザ (プログラマ) によってカスタマイズされた設定値を、初期化後に受け取って利用することが可能になる。</p>
+        
+        <p>具体的な例を見てみる。
+        sprockets-rails の <code>Sprockets::Railtie</code> は、<code>config.assets.prefix</code> という値を扱う。
+        該当個所を以下に抜き出してコメントを書いてみた。</p>
+        <pre class="highlight ruby"><code><span class="k">module</span> <span class="nn">Sprockets</span>&#x000A;  <span class="k">class</span> <span class="nc">Railtie</span> <span class="o">&lt;</span> <span class="o">::</span><span class="no">Rails</span><span class="o">::</span><span class="no">Railtie</span>&#x000A;    <span class="c1"># (中略)</span>&#x000A;&#x000A;    <span class="c1"># 1. sprockets-rails が require されるとこの辺が実行される</span>&#x000A;    <span class="n">config</span><span class="p">.</span><span class="nf">assets</span> <span class="o">=</span> <span class="no">OrderedOptions</span><span class="p">.</span><span class="nf">new</span>&#x000A;    <span class="n">config</span><span class="p">.</span><span class="nf">assets</span><span class="p">.</span><span class="nf">_blocks</span>    <span class="o">=</span> <span class="p">[]</span>&#x000A;    <span class="n">config</span><span class="p">.</span><span class="nf">assets</span><span class="p">.</span><span class="nf">paths</span>      <span class="o">=</span> <span class="p">[]</span>&#x000A;    <span class="n">config</span><span class="p">.</span><span class="nf">assets</span><span class="p">.</span><span class="nf">prefix</span>     <span class="o">=</span> <span class="s2">"/assets"</span> <span class="c1"># 2. ここでデフォルト値が設定される</span>&#x000A;    <span class="c1"># (中略)</span>&#x000A;    <span class="n">config</span><span class="p">.</span><span class="nf">after_initialize</span> <span class="k">do</span> <span class="o">|</span><span class="n">app</span><span class="o">|</span>&#x000A;      <span class="c1"># 3. Rails アプリケーションの初期化が完了すると、このブロックが実行される</span>&#x000A;      <span class="n">config</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="nf">config</span>&#x000A;      <span class="c1"># (中略)</span>&#x000A;      <span class="no">ActionView</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">instance_eval</span> <span class="k">do</span>&#x000A;        <span class="kp">include</span> <span class="no">Sprockets</span><span class="o">::</span><span class="no">Rails</span><span class="o">::</span><span class="no">Helper</span>&#x000A;&#x000A;        <span class="c1"># Copy relevant config to AV context</span>&#x000A;        <span class="nb">self</span><span class="p">.</span><span class="nf">debug_assets</span>  <span class="o">=</span> <span class="n">config</span><span class="p">.</span><span class="nf">assets</span><span class="p">.</span><span class="nf">debug</span>&#x000A;        <span class="nb">self</span><span class="p">.</span><span class="nf">digest_assets</span> <span class="o">=</span> <span class="n">config</span><span class="p">.</span><span class="nf">assets</span><span class="p">.</span><span class="nf">digest</span>&#x000A;        <span class="nb">self</span><span class="p">.</span><span class="nf">assets_prefix</span> <span class="o">=</span> <span class="n">config</span><span class="p">.</span><span class="nf">assets</span><span class="p">.</span><span class="nf">prefix</span> <span class="c1"># 4. ここで最終的に設定された値がセットされる</span>&#x000A;        <span class="c1"># (中略)</span>&#x000A;      <span class="k">end</span>&#x000A;      <span class="c1"># (中略)</span>&#x000A;    <span class="k">end</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+        
+        <p><code>config.assets.prefix</code> というのは precompile した assetsをどこに配置するか指定するもので、デフォルトは <code>&#39;/assets&#39;</code> になっている。
+        その結果、通常は precompile 済みの assets が <code>public/assets</code> 下に配置される。
+        この値は Rails アプリケーションの設定 (<code>config/application.rb</code> など) で、以下のように上書きできる。</p>
+        <pre class="highlight ruby"><code><span class="c1"># config/application.rb</span>&#x000A;&#x000A;<span class="c1"># (中略)</span>&#x000A;<span class="k">module</span> <span class="nn">Hi</span>&#x000A;  <span class="k">class</span> <span class="nc">Application</span> <span class="o">&lt;</span> <span class="no">Rails</span><span class="o">::</span><span class="no">Application</span>&#x000A;    <span class="n">config</span><span class="p">.</span><span class="nf">assets</span><span class="p">.</span><span class="nf">prefix</span> <span class="o">=</span> <span class="s1">'/put-assets-here'</span>&#x000A;    <span class="c1"># (中略)</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;</code></pre>
+        
+        <p>上記のコードが実行されアプリケーションの初期化処理も完了すると、<code>Sprockets::Railtie</code> クラスで定義された <code>config.after_initialize</code> フックが呼び出される。
+        こうしてカスタマイズされた値 <code>&#39;/put-assets-here&#39;</code> が <code>ActionView::Base.assets_prefix</code> にセットされるという寸法だ。</p>
+        
+        <p>Railtie が提供するフックポイントは色々ある。
+        <code>before_initialize</code> や <code>before_configuration</code> など、<code>after_initialize</code> 以外にも様々だ。</p>
+        
+        <h4>ActiveSupport::OrderedOptions</h4>
+        
+        <p>これは Railtie とはあまり関係無いけれど、もしも <code>MyExtention</code> に関する設定が複数あり、それも階層で表現できた方がより都合が良いときは <code>ActiveSupport::OrderedOptions</code> を利用できる。これはハッシュのような API を備えていて、かつ、キーの名前をメソッド名のようにして呼び出すことができる。</p>
+        <pre class="highlight ruby"><code><span class="k">module</span> <span class="nn">MyExtention</span>&#x000A;  <span class="k">class</span> <span class="nc">Railtie</span> <span class="o">&lt;</span> <span class="o">::</span><span class="no">Rails</span><span class="o">::</span><span class="no">Railtie</span>&#x000A;    <span class="n">config</span><span class="p">.</span><span class="nf">my_extention</span> <span class="o">=</span> <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">OrderedOptions</span><span class="p">.</span><span class="nf">new</span>&#x000A;    <span class="n">config</span><span class="p">.</span><span class="nf">my_extention</span><span class="p">.</span><span class="nf">alpha</span> <span class="o">=</span> <span class="s1">'Alpha'</span>&#x000A;    <span class="n">config</span><span class="p">.</span><span class="nf">my_extention</span><span class="p">.</span><span class="nf">bravo</span> <span class="o">=</span> <span class="s1">'Bravo'</span>&#x000A;&#x000A;    <span class="n">config</span><span class="p">.</span><span class="nf">my_extention</span><span class="p">.</span><span class="nf">alpha</span> <span class="c1"># =&gt; 'Alpha'</span>&#x000A;    <span class="n">config</span><span class="p">.</span><span class="nf">my_extention</span><span class="p">.</span><span class="nf">bravo</span> <span class="c1"># =&gt; 'Bravo'</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+        
+        <h2>最後に</h2>
+        
+        <p>「設定」の API はユーザに公開する「変更が大変な部分」なので、なるべく先を見越して設計しておきたい。
+        「この項目は本当にこんな名前で、こういう扱いでいいのか」ということを悩んだときには、ここで挙げたような先人の知恵が助けになりそうだ。</p>
+        
+        <h3>バージョン情報</h3>
+        
+        <ul>
+        <li>irb 0.9.6</li>
+        <li>rubygems 2.2.2</li>
+        <li>rack 1.5.2</li>
+        <li>bundler 1.5.3</li>
+        <li>rails (railties) 4.0.2</li>
+        <li>sprockets-rails 2.0.1</li>
+        </ul>
+      </article>
+      <div id='comments'>
+        <div id="disqus_thread"></div>
+        <script>
+          /* * * CONFIGURATION VARIABLES * * */
+          var disqus_shortname = 'note-hibariya-org';
+          
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+      </div>
+    </main>
+  </body>
+</html>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-64572851-1', 'auto');
+  ga('send', 'pageview');
+</script>
