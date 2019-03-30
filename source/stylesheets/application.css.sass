@@ -1,3 +1,100 @@
+@charset "utf-8"
+
+// Base
+@import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css)
+@import url(//fonts.googleapis.com/css?family=Inconsolata)
+@import url(//fonts.googleapis.com/css?family=Asap)
+
+body
+  background: white
+  font-size: 17px
+  font-family: 'Noto Sans Japanese', sans-serif
+  font-weight: 200
+  line-height: 1.7rem
+
+  a
+    text-decoration: none
+    color: black
+
+    &:hover
+      text-decoration: underline
+
+  > header
+    padding: 10rem 0 8rem 0
+
+    > h1
+      font-family: 'Asap', serif
+
+  nav
+    ul
+      list-style: none
+      padding: 0
+      display: flex
+
+      li
+        margin-right: 2rem
+
+  > *
+    background: white
+    width: 42rem
+    padding: 1rem 4rem
+    margin: 0 auto
+
+    article:first-child
+      margin-top: 1rem
+
+    article
+      margin-top: 8rem
+
+      a
+        text-decoration: underline
+
+      time
+        display: block
+        margin-bottom: -1rem
+        font-size: 1rem
+        color: #CCC
+
+      h1
+        a
+          text-decoration: none
+
+      h2
+        margin: 1.5em 0 0.85em 0
+
+      p
+        margin: 1.5rem 0
+
+      strong
+        font-weight: 400
+
+    #comments
+      margin-top: 10rem
+
+    dl dd
+      margin-bottom: 1em
+
+    pre
+      background: #f8f8f8
+      overflow: auto
+      line-height: 1.3em
+
+    code
+      font-family: "Inconsolata", monospace
+
+    p > code
+      background: #f8f8f8
+      border: 1px solid #CCC
+      border-radius: 2px
+      padding: 0 5px
+
+    blockquote
+      margin: 0
+      padding: 0 15px
+      border-left: 4px solid #DDD
+      color: #777
+
+// Highlight
 /*
  * GitHub style for Pygments syntax highlighter, for use with Jekyll
  * Courtesy of GitHub.com

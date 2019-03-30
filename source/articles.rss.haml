@@ -2,19 +2,19 @@
 %rdf:RDF(xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/")
   - recent_articles = blog.articles[0..0]
 
-  %channel{'rdf:about' => base_url}
-    %title= settings.site_name
-    %link= settings.base_url
+  %channel{'rdf:about' => config.base_url}
+    %title= config.site_name
+    %link= config.base_url
     - if latest = recent_articles.first
       %dc:date= latest.date.to_time.iso8601
-    %description= settings.site_name
+    %description= config.site_name
     %items
       %rdf:Seq
         - recent_articles.each do |article|
-          %rdf:li{'rdf:resource' => URI.join(settings.base_url, article.url)}/
+          %rdf:li{'rdf:resource' => URI.join(config.base_url, article.url)}/
 
   - recent_articles.each do |article|
-    - content, url = article.body, URI.join(settings.base_url, article.url)
+    - content, url = article.body, URI.join(config.base_url, article.url)
     %item{'rdf:about' => url}
       %title= article.title
       %link= url

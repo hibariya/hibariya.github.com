@@ -3,6 +3,10 @@ require 'date'
 
 Time.zone = 'Tokyo'
 
+page '/*.xml', layout: false
+page '/*.json', layout: false
+page '/*.txt', layout: false
+
 set :css_dir,    'stylesheets'
 set :js_dir,     'javascripts'
 set :images_dir, 'images'
@@ -45,19 +49,3 @@ activate :blog do |blog|
 end
 
 page '/articles.xml', layout: false
-
-activate :deploy do |deploy|
-  deploy.method = :git
-  deploy.branch = 'master'
-end
-
-# TODO: remove me
-page '/articles.rss', layout: false, format: :xhtml
-after_build do |builder|
-  builder.run <<-SCRIPT
-    cd build;
-    rm -rf entries entries.rss
-    cp -rp articles     entries;
-    cp -p  articles.rss entries.rss;
-  SCRIPT
-end

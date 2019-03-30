@@ -1,5 +1,3 @@
-//= require_tree .
-
 var completeLinkTarget = function() {
   var links = document.getElementsByTagName('a');
 

@@ -1,9 +1,9 @@
 !!! 5
 %html
   %head
-    %title= "#{current_page.data.title || settings.title} - #{settings.site_name}"
+    %title= "#{current_page.data.title || config.title} - #{config.site_name}"
     %meta(charset='utf-8')
-    %meta(name='author'){content: settings.author}
+    %meta(name='author'){content: config.author}
     %link(rel='icon' type='image/png' href='/favicon.png')
     %link(rel='alternate' title='Atom' type='application/atom+xml' href='/articles.xml')
 
@@ -16,7 +16,7 @@
   %body{class: page_classes}
     %header
       %h1
-        = link_to settings.site_name, '/'
+        = link_to config.site_name, '/'
       %nav
         %ul#menu
           %li= link_to 'Home',     '/'

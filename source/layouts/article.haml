@@ -1,5 +1,5 @@
 - content_for :head do
-  %link(rel='canonical'){href: URI.join(settings.base_url, current_article.url)}
+  %link(rel='canonical'){href: URI.join(config.base_url, current_article.url)}
 
 - content_for :content do
   %article
@@ -12,7 +12,7 @@
     <div id="disqus_thread"></div>
     :javascript
       /* * * CONFIGURATION VARIABLES * * */
-      var disqus_shortname = '#{settings.disqus_shortname}';
+      var disqus_shortname = '#{config.disqus_shortname}';
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
