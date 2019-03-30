@@ -16,7 +16,7 @@ set :relative_links, true
 set :title,            'Hi'
 set :site_name,        'Hibariya'
 set :author,           'hibariya'
-set :base_url,         'http://note.hibariya.org'
+set :base_url,         'https://note.hibariya.org'
 set :disqus_shortname, 'note-hibariya-org'
 
 set :markdown_engine, :redcarpet
