@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  middleman:
+    build: .
+    working_dir: /work
+    command: ['bundle', 'exec', 'middleman', 'server']
+    ports: ['4567:4567']
+    volumes:
+      - .:/work
+      - bundler:/usr/local/bundle
+
+volumes:
+  bundler:
