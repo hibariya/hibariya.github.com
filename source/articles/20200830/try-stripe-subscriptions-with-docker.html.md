@@ -114,7 +114,7 @@ docker run --rm -it \
     "cd fixed-price-subscriptions/server/ruby && bundle && bundle exec ruby server.rb -o 0.0.0.0"
 ```
 
-これで `localhost:4242` を手元のブラウザで開き、subscription の機能が動作している様子を確認できるようになったはずだ。この参考実装では、subscription の作成、変更、キャンセルなどを試すことができる。Stripe CLI の出力は特定のイベントがどのタイミングで起きるかを知るのに便利だ。
+これで `localhost:4242` を手元のブラウザで開き、subscription の機能が動作している様子を確認できるようになったはずだ。この参考実装では、subscription の作成、変更、キャンセルなどを試すことができる。Stripe CLI の出力は特定のイベントがどのタイミングで起きるかを知るのに便利なので活用しよう。
 
 <img alt="" src="https://rip.hibariya.org/post/try-stripe-subscriptions-with-docker/Selection_361.png" style="max-width: 670px">
 
