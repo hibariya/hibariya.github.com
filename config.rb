@@ -1,5 +1,7 @@
 require 'yaml'
 require 'date'
+require 'cgi'
+require 'uri'
 
 Time.zone = 'Tokyo'
 
@@ -16,6 +18,7 @@ set :relative_links, true
 set :title,            'Hi'
 set :site_name,        'Hibariya'
 set :author,           'hibariya'
+set :site_description, 'Notes by hibariya'
 set :base_url,         'https://note.hibariya.org'
 set :disqus_shortname, 'note-hibariya-org'
 
@@ -49,3 +52,11 @@ activate :blog do |blog|
 end
 
 page '/articles.xml', layout: false
+
+helpers do
+  # Plain-text excerpt of an article for <meta name="description"> and og:description.
+  def article_description(article, max = 160)
+    text = CGI.unescapeHTML(article.body.gsub(/<[^>]+>/, ' ')).gsub(/\s+/, ' ').strip
+    text.length > max ? "#{text[0, max].rstrip}…" : text
+  end
+end

@@ -4,8 +4,9 @@
     %title= "#{current_page.data.title || config.title} - #{config.site_name}"
     %meta(charset='utf-8')
     %meta(name='author'){content: config.author}
-    %link(rel='icon' type='image/png' href='/favicon.png')
+    %link(rel='icon' type='image/png'){href: url_for('/favicon.png')}
     %link(rel='alternate' title='Atom' type='application/atom+xml' href='/articles.xml')
+    = partial 'og_meta', locals: { title: current_article.title, description: article_description(current_article), url: URI.join(config.base_url, current_article.url).to_s, type: 'article', published: current_article.date }
 
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'

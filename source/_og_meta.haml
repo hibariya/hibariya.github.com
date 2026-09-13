@@ -1,0 +1,19 @@
+- image = URI.join(config.base_url, current_page.url, image_path('og-image.png')).to_s
+%meta(name='description'){content: description}
+%meta(property='og:type'){content: type}
+%meta(property='og:site_name'){content: config.site_name}
+%meta(property='og:title'){content: title}
+%meta(property='og:description'){content: description}
+%meta(property='og:url'){content: url}
+%meta(property='og:image'){content: image}
+%meta(property='og:image:width' content='1200')
+%meta(property='og:image:height' content='630')
+%meta(property='og:locale' content='ja_JP')
+- if published
+  %meta(property='article:published_time'){content: published.to_time.iso8601}
+%meta(name='twitter:card' content='summary_large_image')
+%meta(name='twitter:site' content='@hibariya')
+%meta(name='twitter:creator' content='@hibariya')
+%meta(name='twitter:title'){content: title}
+%meta(name='twitter:description'){content: description}
+%meta(name='twitter:image'){content: image}
